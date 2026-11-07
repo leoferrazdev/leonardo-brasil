@@ -205,6 +205,10 @@ export function Navigate({ to, replace }: NavigateProps) {
   return null;
 }
 
+export function useNavigate() {
+  return useRequiredRouter().navigate;
+}
+
 export function useLocation() {
   return useRequiredRouter().location;
 }
