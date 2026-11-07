@@ -35,6 +35,8 @@ function buildRoutes() {
   const staticRoutes = [
     "/",
     "/google-meu-negocio",
+    "/otimizacao-google-meu-negocio",
+    "/recuperar-perfil-suspenso-google",
     "/consultoria",
     "/blog",
     "/brandbook",
@@ -49,10 +51,11 @@ function buildRoutes() {
   const blogSlugs = readSlugs(BLOG_PATH, "blogData.ts");
 
   const gmnHubRoutes = niches.map((slug) => `/google-meu-negocio/${slug}`);
+  const otimizacaoHubRoutes = niches.map((slug) => `/otimizacao-google-meu-negocio/${slug}`);
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   // Set para evitar rotas duplicadas
-  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...blogRoutes])];
+  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...otimizacaoHubRoutes, ...blogRoutes])];
 }
 
 function outputPathFor(route) {

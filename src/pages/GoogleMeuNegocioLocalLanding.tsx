@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "../lib/local-router";
+import { Link, useParams, useLocation } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 import locationsData from "../data/seoLocations.json";
@@ -60,10 +60,14 @@ function formatNiche(nicho?: string) {
 
 export default function GoogleMeuNegocioLocalLanding() {
   const { nicho, estado, cidade } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [nicho, estado, cidade]);
+
+  const isOptimization = location.pathname.startsWith("/otimizacao-google-meu-negocio");
+  const basePath = isOptimization ? "/otimizacao-google-meu-negocio" : "/google-meu-negocio";
 
   const formattedCidade = formatLocationName(cidade);
   const formattedEstado = formatLocationName(estado).toUpperCase();
@@ -73,11 +77,20 @@ export default function GoogleMeuNegocioLocalLanding() {
     ? seoNicheData[nicho]
     : getDefaultNicheData(formattedNicho, formattedCidade);
 
-  const title = `Especialista em Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
-  const description = `Otimização e gestão de Perfil da Empresa no Google (Google Meu Negócio) para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Apareça no Top 3 do Google Maps e receba ligações e mensagens no WhatsApp.`;
-  const canonicalUrl = `https://leonardobrasil.com.br/google-meu-negocio/${nicho}/${estado}/${cidade}`;
+  const title = isOptimization
+    ? `Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} | Top 3 Maps`
+    : `Especialista em Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
 
-  const whatsappMessage = `Olá, Leonardo! Vi seu site e gostaria de um diagnóstico do meu Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
+  const description = isOptimization
+    ? `Serviço especializado de otimização de Google Meu Negócio e Perfil da Empresa para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Auditoria, SEO local e posicionamento no Top 3 do Google Maps.`
+    : `Otimização e gestão de Perfil da Empresa no Google (Google Meu Negócio) para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Apareça no Top 3 do Google Maps e receba ligações e mensagens no WhatsApp.`;
+
+  const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}/${estado}/${cidade}`;
+
+  const whatsappMessage = isOptimization
+    ? `Olá, Leonardo! Vi seu site sobre otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} e gostaria de uma avaliação do meu perfil no Google Maps.`
+    : `Olá, Leonardo! Vi seu site e gostaria de um diagnóstico do meu Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
+
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Navegação cruzada (cidades próximas no mesmo estado)
@@ -94,7 +107,9 @@ export default function GoogleMeuNegocioLocalLanding() {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": `Leonardo Brasil — Google Meu Negócio para ${formattedNicho} em ${formattedCidade}`,
+      "name": isOptimization
+        ? `Leonardo Brasil — Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade}`
+        : `Leonardo Brasil — Google Meu Negócio para ${formattedNicho} em ${formattedCidade}`,
       "description": description,
       "url": canonicalUrl,
       "telephone": "+55-51-99256-8861",
@@ -151,6 +166,9 @@ export default function GoogleMeuNegocioLocalLanding() {
             Leonardo Brasil
           </Link>
           <div className="flex items-center gap-4">
+            <Link to="/recuperar-perfil-suspenso-google" className="hidden sm:inline-block text-xs font-semibold text-red-400 hover:text-red-300 transition-colors">
+              Perfil Suspenso?
+            </Link>
             <Link to="/cidades" className="hidden sm:inline-block text-xs font-semibold text-muted hover:text-text transition-colors">
               Cidades Atendidas
             </Link>
@@ -174,11 +192,11 @@ export default function GoogleMeuNegocioLocalLanding() {
             
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent-300 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              SEO Local & Google Maps · Atendendo {formattedCidade} e região
+              {isOptimization ? `Otimização & Gestão de Google Maps em ${formattedCidade}` : `SEO Local & Google Maps · Atendendo ${formattedCidade} e região`}
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] text-text max-w-4xl mx-auto">
-              Otimização de Google Meu Negócio para{" "}
+              {isOptimization ? "Otimização de Google Meu Negócio para " : "Posicionamento no Top 3 do Google Maps para "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-accent to-gold">
                 {formattedNicho}
               </span>{" "}
@@ -392,6 +410,20 @@ export default function GoogleMeuNegocioLocalLanding() {
         {/* NAVEGAÇÃO CRUZADA (HUB & SPOKE) */}
         <section className="py-16 bg-ink">
           <div className="mx-auto max-w-5xl px-5">
+            {/* CALLOUT SUSPENSÃO */}
+            <div className="mb-12 rounded-2xl border border-red-500/30 bg-red-950/15 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-left">
+                <p className="text-xs font-bold text-red-400 uppercase tracking-wider">Teve a Ficha Suspensa pelo Google?</p>
+                <p className="text-sm text-text font-semibold">Perfil desativado ou sob restrição de diretrizes em {formattedCidade}?</p>
+              </div>
+              <Link
+                to="/recuperar-perfil-suspenso-google"
+                className="shrink-0 text-xs font-bold bg-red-500/20 text-red-300 border border-red-500/40 px-4 py-2 rounded-full hover:bg-red-500/30 transition-all"
+              >
+                Como recuperar ficha suspensa →
+              </Link>
+            </div>
+
             <h3 className="text-sm font-bold uppercase tracking-wider text-muted mb-8">Navegação Local & Especialidades</h3>
             <div className="grid md:grid-cols-2 gap-8 text-sm">
               <div>
@@ -400,7 +432,7 @@ export default function GoogleMeuNegocioLocalLanding() {
                   {nearbyCities.map((c) => (
                     <li key={c.cidade}>
                       <Link
-                        to={`/google-meu-negocio/${nicho}/${c.estado}/${c.cidade}`}
+                        to={`${basePath}/${nicho}/${c.estado}/${c.cidade}`}
                         className="text-muted hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-line"
                       >
                         <span>{formattedNicho} em {c.nome}</span>
@@ -409,7 +441,7 @@ export default function GoogleMeuNegocioLocalLanding() {
                     </li>
                   ))}
                   <li>
-                    <Link to={`/google-meu-negocio/${nicho}`} className="text-accent font-semibold inline-block mt-3 hover:underline">
+                    <Link to={`${basePath}/${nicho}`} className="text-accent font-semibold inline-block mt-3 hover:underline">
                       Ver todas as cidades para {formattedNicho} →
                     </Link>
                   </li>
@@ -422,7 +454,7 @@ export default function GoogleMeuNegocioLocalLanding() {
                   {otherNiches.map((n) => (
                     <li key={n.slug}>
                       <Link
-                        to={`/google-meu-negocio/${n.slug}/${estado}/${cidade}`}
+                        to={`${basePath}/${n.slug}/${estado}/${cidade}`}
                         className="text-muted hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-line"
                       >
                         <span>{n.nome} em {formattedCidade}</span>

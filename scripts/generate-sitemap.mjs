@@ -16,6 +16,8 @@ const MAX_URLS_PER_SITEMAP = 40000;
 const STATIC_ROUTES = [
   "",
   "/google-meu-negocio",
+  "/otimizacao-google-meu-negocio",
+  "/recuperar-perfil-suspenso-google",
   "/brandbook",
   "/cidades",
   "/termos",
@@ -79,15 +81,16 @@ function generateSitemap() {
 
   const allSitemapFiles = [];
 
-  // 1. Core Sitemap (Rotas Estáticas + Hubs de Nicho Google Meu Negócio + Blog)
+  // 1. Core Sitemap (Rotas Estáticas + Hubs de Nicho + Blog)
   const coreUrls = [];
   STATIC_ROUTES.forEach((route) => {
     coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
   });
 
-  // Hubs de Nicho do Google Meu Negócio
+  // Hubs de Nicho das Verticais (Google Meu Negócio + Otimização)
   nicheSlugs.forEach((niche) => {
     coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
+    coreUrls.push(generateUrlNode(`/otimizacao-google-meu-negocio/${niche}`, "0.9", "weekly"));
   });
 
   // Blog
@@ -98,13 +101,22 @@ function generateSitemap() {
 
   allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-core", coreUrls));
 
-  // 2. Google Meu Negócio Local Sitemap (5.570 Cidades x 14 Nichos = 77.980 rotas)
+  // 2. Google Meu Negócio & Otimização Local Sitemap (5.570 Cidades x 14 Nichos x 2 Verticais = 155.988 rotas)
   const localGmnUrls = [];
   TARGET_CITIES.forEach((location) => {
     nicheSlugs.forEach((niche) => {
+      // Vertical 1: Especialista Google Meu Negócio
       localGmnUrls.push(
         generateUrlNode(
           `/google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
+          "0.7",
+          "monthly"
+        )
+      );
+      // Vertical 2: Otimização de Google Meu Negócio
+      localGmnUrls.push(
+        generateUrlNode(
+          `/otimizacao-google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
           "0.7",
           "monthly"
         )
@@ -131,7 +143,7 @@ function generateSitemap() {
 
   console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
   console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);
-  console.log(`🚀 Rotas Locais Google Meu Negócio: ${localGmnUrls.length}`);
+  console.log(`🚀 Rotas Locais Multiplicadas (2 verticais): ${localGmnUrls.length}`);
 }
 
 generateSitemap();

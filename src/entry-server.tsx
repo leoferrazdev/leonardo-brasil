@@ -11,6 +11,7 @@ import PortoAlegreDigital from "./pages/PortoAlegreDigital";
 import GoogleMeuNegocioLanding from "./pages/GoogleMeuNegocioLanding";
 import GoogleMeuNegocioNicheHub from "./pages/GoogleMeuNegocioNicheHub";
 import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
+import RecuperarPerfilSuspenso from "./pages/RecuperarPerfilSuspenso";
 import { TermsPage, PrivacyPage, DataDeletionPage } from "./pages/LegalPages";
 
 /**
@@ -40,6 +41,10 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
           <Route path="/google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
           <Route path="/google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+          <Route path="/otimizacao-google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
+          <Route path="/otimizacao-google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
+          <Route path="/otimizacao-google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+          <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
           <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

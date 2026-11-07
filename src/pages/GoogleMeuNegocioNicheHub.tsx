@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "../lib/local-router";
+import { Link, useParams, useLocation } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 import locationsData from "../data/seoLocations.json";
 
 export default function GoogleMeuNegocioNicheHub() {
   const { nicho } = useParams();
+  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedState, setSelectedState] = useState("TODOS");
 
@@ -13,14 +14,23 @@ export default function GoogleMeuNegocioNicheHub() {
     window.scrollTo(0, 0);
   }, [nicho]);
 
+  const isOptimization = location.pathname.startsWith("/otimizacao-google-meu-negocio");
+  const basePath = isOptimization ? "/otimizacao-google-meu-negocio" : "/google-meu-negocio";
+
   const nicheInfo = locationsData.NICHES.find((n) => n.slug === nicho) || {
     nome: nicho || "Negócios Locais",
     slug: nicho || "geral"
   };
 
-  const title = `Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
-  const description = `Encontre a consultoria de otimização de Google Meu Negócio e presença no Google Maps para ${nicheInfo.nome} na sua cidade e estado.`;
-  const canonicalUrl = `https://leonardobrasil.com.br/google-meu-negocio/${nicho}`;
+  const title = isOptimization
+    ? `Otimização de Google Meu Negócio para ${nicheInfo.nome} no Brasil`
+    : `Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
+
+  const description = isOptimization
+    ? `Encontre serviços especializados de otimização de Perfil da Empresa no Google Maps para ${nicheInfo.nome} na sua cidade e estado. Suba para o Top 3 das buscas locais.`
+    : `Encontre a consultoria de otimização de Google Meu Negócio e presença no Google Maps para ${nicheInfo.nome} na sua cidade e estado.`;
+
+  const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}`;
 
   const allCities = locationsData.TARGET_CITIES;
   const statesList = ["TODOS", ...Array.from(new Set(allCities.map((c) => c.estado.toUpperCase()))).sort()];
@@ -59,24 +69,28 @@ export default function GoogleMeuNegocioNicheHub() {
             Leonardo Brasil
           </Link>
           <div className="flex items-center gap-4">
-            <Link to="/google-meu-negocio" className="text-xs font-semibold text-muted hover:text-text transition-colors">
-              Google Meu Negócio
+            <Link to="/recuperar-perfil-suspenso-google" className="text-xs font-semibold text-red-400 hover:text-red-300 transition-colors">
+              Perfil Suspenso?
             </Link>
             <Link to="/cidades" className="text-xs font-semibold text-muted hover:text-text transition-colors">
-              Todas as Cidades
+              Cidades Atendidas
+            </Link>
+            <Link to="/" className="text-xs font-semibold text-muted hover:text-text transition-colors">
+              Início
             </Link>
           </div>
         </div>
       </header>
 
       <main className="py-16 md:py-24">
-        <div className="mx-auto max-w-5xl px-5">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent-300 mb-4">
-              Cobertura Nacional · 5.570 Municípios
-            </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-text tracking-tight">
-              Google Meu Negócio para{" "}
+        <div className="mx-auto max-w-6xl px-5">
+          {/* HEADER DO NICHO */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+              {isOptimization ? "Otimização & Gestão de Google Maps" : "Especialista em Google Meu Negócio"}
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-black text-text mt-4">
+              {isOptimization ? "Otimização de Google Meu Negócio para " : "Google Meu Negócio para "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-gold">
                 {nicheInfo.nome}
               </span>
@@ -124,7 +138,7 @@ export default function GoogleMeuNegocioNicheHub() {
                   {citiesByState[uf].slice(0, 40).map((city) => (
                     <Link
                       key={city.cidade}
-                      to={`/google-meu-negocio/${nicho}/${city.estado}/${city.cidade}`}
+                      to={`${basePath}/${nicho}/${city.estado}/${city.cidade}`}
                       className="p-2.5 rounded-lg border border-line/40 bg-ink/60 hover:border-accent hover:bg-panel transition-all text-xs font-medium text-muted hover:text-text truncate"
                       title={`${nicheInfo.nome} em ${city.nome} - ${uf}`}
                     >

@@ -109,6 +109,7 @@ export default function App() {
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-sm font-medium text-muted hover:text-text transition-colors">{n.label}</a>
             ))}
+            <Link to="/recuperar-perfil-suspenso-google" className="text-sm font-medium text-red-400 hover:text-red-300 transition-colors">Perfil Suspenso?</Link>
             <Link to="/cidades" className="text-sm font-medium text-muted hover:text-text transition-colors">Cidades</Link>
             <Link to="/blog" className="text-sm font-medium text-muted hover:text-text transition-colors">Blog</Link>
           </nav>
@@ -129,6 +130,7 @@ export default function App() {
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-lg font-medium">{n.label}</a>
             ))}
+            <Link to="/recuperar-perfil-suspenso-google" onClick={() => setMenu(false)} className="text-lg font-medium text-red-400">Perfil Suspenso no Google?</Link>
             <Link to="/cidades" onClick={() => setMenu(false)} className="text-lg font-medium">Cidades Atendidas</Link>
             <Link to="/blog" onClick={() => setMenu(false)} className="text-lg font-medium">Blog</Link>
             <a href={WA_DIAG} target="_blank" rel="noreferrer" className="mt-2 inline-flex justify-center items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold text-white">Avaliar meu Perfil <Arrow className="w-5 h-5" /></a>
@@ -362,6 +364,27 @@ export default function App() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* CALLOUT RECUPERAR PERFIL */}
+        <section className="py-12 bg-red-950/20 border-b border-red-900/30">
+          <div className="mx-auto max-w-6xl px-5 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <span className="p-3 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-400 text-2xl shrink-0">⚠️</span>
+              <div>
+                <h3 className="text-xl sm:text-2xl font-black text-white">Seu Perfil no Google foi Suspenso ou Desativado?</h3>
+                <p className="mt-1 text-sm sm:text-base text-zinc-300 max-w-2xl">
+                  Não tente reenviar documentos ou abrir recursos sem adequar o perfil às diretrizes. Eu realizo a auditoria documental e o processo técnico de reativação com o suporte do Google.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/recuperar-perfil-suspenso-google"
+              className="shrink-0 px-6 py-3.5 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-[0_0_25px_rgba(239,68,68,0.35)] transition-all active:scale-95 text-center"
+            >
+              Recuperar Perfil Suspenso →
+            </Link>
           </div>
         </section>
 

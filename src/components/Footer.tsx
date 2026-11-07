@@ -124,6 +124,10 @@ export function Footer() {
             <span className="text-line-strong">·</span>
             <Link to="/google-meu-negocio" className="hover:text-accent text-accent transition-colors font-medium">Google Meu Negócio</Link>
             <span className="text-line-strong">·</span>
+            <Link to="/otimizacao-google-meu-negocio" className="hover:text-accent transition-colors">Otimização Maps</Link>
+            <span className="text-line-strong">·</span>
+            <Link to="/recuperar-perfil-suspenso-google" className="hover:text-red-400 text-red-400/90 transition-colors font-medium">Perfil Suspenso?</Link>
+            <span className="text-line-strong">·</span>
             <Link to="/cidades" className="hover:text-text transition-colors">Cidades Atendidas</Link>
             <span className="text-line-strong">·</span>
             <Link to="/blog" className="hover:text-text transition-colors">Blog</Link>

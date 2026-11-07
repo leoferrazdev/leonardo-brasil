@@ -18,3 +18,8 @@ dist-ssr
 # Env / segredos (NUNCA versionar)
 .env
 .env.*
+
+# Generated tooling
+codex-generated-assets/
+graphify-out/
+

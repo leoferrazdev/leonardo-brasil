@@ -14,6 +14,7 @@ const App = lazy(() => import("./App"));
 const GoogleMeuNegocioLanding = lazy(() => import("./pages/GoogleMeuNegocioLanding"));
 const GoogleMeuNegocioNicheHub = lazy(() => import("./pages/GoogleMeuNegocioNicheHub"));
 const GoogleMeuNegocioLocalLanding = lazy(() => import("./pages/GoogleMeuNegocioLocalLanding"));
+const RecuperarPerfilSuspenso = lazy(() => import("./pages/RecuperarPerfilSuspenso"));
 const BlogIndex = lazy(() => import("./pages/BlogIndex"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Brandbook = lazy(() => import("./pages/Brandbook"));
@@ -60,6 +61,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
             <Route path="/google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
             <Route path="/google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+            <Route path="/otimizacao-google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
+            <Route path="/otimizacao-google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
+            <Route path="/otimizacao-google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+            <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
             <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
