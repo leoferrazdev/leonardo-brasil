@@ -35,6 +35,7 @@ function readSlugs(filePath, label) {
 function buildRoutes() {
   const staticRoutes = [
     "/",
+    "/google-meu-negocio",
     "/consultoria",
     "/blog",
     "/brandbook",
@@ -50,6 +51,7 @@ function buildRoutes() {
   const locations = readSlugs(LOCATIONS_PATH, "locations.ts");
   const blogSlugs = readSlugs(BLOG_PATH, "blogData.ts");
 
+  const gmnHubRoutes = niches.map((slug) => `/google-meu-negocio/${slug}`);
   const nicheRoutes = niches.map((slug) => `/estrutura-de-vendas-para-${slug}`);
   const cityRoutes = [];
   for (const niche of niches) {
@@ -60,7 +62,7 @@ function buildRoutes() {
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   // Set para evitar rotas duplicadas
-  return [...new Set([...staticRoutes, ...nicheRoutes, ...cityRoutes, ...blogRoutes])];
+  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...nicheRoutes, ...cityRoutes, ...blogRoutes])];
 }
 
 function outputPathFor(route) {

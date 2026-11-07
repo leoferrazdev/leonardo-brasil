@@ -69,6 +69,9 @@ const CitiesDirectory = lazy(() => import("./pages/CitiesDirectory"));
 const CalculatorPage = lazy(() => import("./pages/CalculatorPage"));
 const Consultoria = lazy(() => import("./pages/Consultoria"));
 const PortoAlegreDigital = lazy(() => import("./pages/PortoAlegreDigital"));
+const GoogleMeuNegocioLanding = lazy(() => import("./pages/GoogleMeuNegocioLanding"));
+const GoogleMeuNegocioNicheHub = lazy(() => import("./pages/GoogleMeuNegocioNicheHub"));
+const GoogleMeuNegocioLocalLanding = lazy(() => import("./pages/GoogleMeuNegocioLocalLanding"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
@@ -93,6 +96,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Suspense fallback={<div className="min-h-screen bg-ink flex items-center justify-center text-accent">Carregando...</div>}>
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
+            <Route path="/google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
+            <Route path="/google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
             <Route path="/consultoria" element={<Consultoria />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

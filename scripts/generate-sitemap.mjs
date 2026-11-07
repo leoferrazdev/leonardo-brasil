@@ -1,14 +1,21 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const SITEMAP_PATH = path.resolve(process.cwd(), "public/sitemap.xml");
-const NICHES_PATH = path.resolve(process.cwd(), "src/data/niches.ts");
-const BLOG_PATH = path.resolve(process.cwd(), "src/data/blogData.ts");
-const LOCATIONS_PATH = path.resolve(process.cwd(), "src/data/locations.ts");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Rotas estáticas
+const DOMAIN = "https://leonardobrasil.com.br";
+const PUBLIC_DIR = path.resolve(__dirname, "../public");
+const SITEMAP_INDEX_PATH = path.join(PUBLIC_DIR, "sitemap.xml");
+const LOCATIONS_JSON_PATH = path.resolve(__dirname, "../src/data/seoLocations.json");
+const BLOG_PATH = path.resolve(__dirname, "../src/data/blogData.ts");
+
+const MAX_URLS_PER_SITEMAP = 40000;
+
 const STATIC_ROUTES = [
   "",
+  "/google-meu-negocio",
   "/consultoria",
   "/brandbook",
   "/cidades",
@@ -19,81 +26,115 @@ const STATIC_ROUTES = [
   "/blog"
 ];
 
-// Lê o arquivo de nichos usando regex
-function getDynamicNiches() {
-  try {
-    const content = fs.readFileSync(NICHES_PATH, "utf8");
-    const matches = [...content.matchAll(/slug:\s*"([^"]+)"/g)];
-    return matches.map((m) => m[1]); // Retorna apenas o slug cru
-  } catch (error) {
-    console.error("Erro ao ler niches.ts para o Sitemap", error);
-    return [];
-  }
+function generateUrlNode(route, priority, freq) {
+  return `
+  <url>
+    <loc>${DOMAIN}${route}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>${freq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
 }
 
-// Lê o arquivo de cidades usando regex
-function getLocations() {
-  try {
-    const content = fs.readFileSync(LOCATIONS_PATH, "utf8");
-    const matches = [...content.matchAll(/slug:\s*"([^"]+)"/g)];
-    return matches.map((m) => m[1]); // Retorna apenas o slug cru
-  } catch (error) {
-    console.error("Erro ao ler locations.ts para o Sitemap", error);
-    return [];
+function chunkUrls(urls) {
+  const chunks = [];
+  for (let i = 0; i < urls.length; i += MAX_URLS_PER_SITEMAP) {
+    chunks.push(urls.slice(i, i + MAX_URLS_PER_SITEMAP));
   }
+  return chunks;
 }
 
-// Lê o arquivo de blog usando regex
+function writeSitemapFiles(publicDir, prefix, urlNodesArray) {
+  const chunks = chunkUrls(urlNodesArray);
+  const sitemapFiles = [];
+  
+  chunks.forEach((chunk, index) => {
+    const fileName = chunks.length === 1 ? `${prefix}.xml` : `${prefix}-${index + 1}.xml`;
+    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${chunk.join('')}\n</urlset>`;
+    fs.writeFileSync(path.join(publicDir, fileName), sitemapContent, "utf8");
+    sitemapFiles.push(fileName);
+  });
+  
+  return sitemapFiles;
+}
+
 function getDynamicBlogPosts() {
   try {
+    if (!fs.existsSync(BLOG_PATH)) return [];
     const content = fs.readFileSync(BLOG_PATH, "utf8");
     const matches = [...content.matchAll(/slug:\s*"([^"]+)"/g)];
     return matches.map((m) => `/blog/${m[1]}`);
   } catch (error) {
-    console.error("Erro ao ler blogData.ts para o Sitemap", error);
+    console.error("Erro ao ler blogData.ts:", error);
     return [];
   }
 }
 
-function generateSitemapXML() {
-  const baseUrl = "https://leonardobrasil.com.br";
-  const date = new Date().toISOString();
-  
-  const nicheSlugs = getDynamicNiches();
-  const locationSlugs = getLocations();
+function generateSitemap() {
+  if (!fs.existsSync(PUBLIC_DIR)) {
+    fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+  }
+
+  const locationsData = JSON.parse(fs.readFileSync(LOCATIONS_JSON_PATH, "utf8"));
+  const { TARGET_CITIES, NICHES } = locationsData;
+  const nicheSlugs = NICHES.map((n) => n.slug);
+
+  const allSitemapFiles = [];
+
+  // 1. Core Sitemap (Rotas Estáticas + Hubs de Nicho + Blog)
+  const coreUrls = [];
+  STATIC_ROUTES.forEach((route) => {
+    coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
+  });
+
+  // Hubs de Nicho do Google Meu Negócio
+  nicheSlugs.forEach((niche) => {
+    coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
+    coreUrls.push(generateUrlNode(`/estrutura-de-vendas-para-${niche}`, "0.7", "monthly"));
+  });
+
+  // Blog
   const blogRoutes = getDynamicBlogPosts();
-  
-  const dynamicNicheRoutes = nicheSlugs.map(slug => `/estrutura-de-vendas-para-${slug}`);
-  const programmaticCityRoutes = [];
-  
-  nicheSlugs.forEach(niche => {
-    locationSlugs.forEach(city => {
-      programmaticCityRoutes.push(`/estrutura-de-vendas-para-${niche}-em-${city}`);
+  blogRoutes.forEach((route) => {
+    coreUrls.push(generateUrlNode(route, "0.8", "weekly"));
+  });
+
+  allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-core", coreUrls));
+
+  // 2. Google Meu Negócio Local Sitemap (5.570 Cidades x 14 Nichos = 77.980 rotas)
+  const localGmnUrls = [];
+  TARGET_CITIES.forEach((location) => {
+    nicheSlugs.forEach((niche) => {
+      localGmnUrls.push(
+        generateUrlNode(
+          `/google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
+          "0.7",
+          "monthly"
+        )
+      );
     });
   });
 
-  const allRoutes = [...STATIC_ROUTES, ...dynamicNicheRoutes, ...programmaticCityRoutes, ...blogRoutes];
+  allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-local", localGmnUrls));
 
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  // 3. Sitemap Index Master (Índice Raiz)
+  const sitemapIndexNodes = allSitemapFiles
+    .map(
+      (file) => `
+  <sitemap>
+    <loc>${DOMAIN}/${file}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </sitemap>`
+    )
+    .join("");
 
-  for (const route of allRoutes) {
-    xml += `  <url>\n`;
-    xml += `    <loc>${baseUrl}${route}</loc>\n`;
-    xml += `    <lastmod>${date}</lastmod>\n`;
-    xml += `    <changefreq>${route === "" ? "weekly" : "monthly"}</changefreq>\n`;
-    xml += `    <priority>${route === "" ? "1.0" : "0.8"}</priority>\n`;
-    xml += `  </url>\n`;
-  }
+  const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapIndexNodes}\n</sitemapindex>`;
 
-  xml += `</urlset>`;
-  return xml;
+  fs.writeFileSync(SITEMAP_INDEX_PATH, sitemapIndex, "utf8");
+
+  console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
+  console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);
+  console.log(`🚀 Rotas Locais Google Meu Negócio: ${localGmnUrls.length}`);
 }
 
-try {
-  const xmlContent = generateSitemapXML();
-  fs.writeFileSync(SITEMAP_PATH, xmlContent, "utf8");
-  console.log(`Sitemap gerado com sucesso em ${SITEMAP_PATH}`);
-} catch (error) {
-  console.error("Erro ao gerar sitemap:", error);
-}
+generateSitemap();

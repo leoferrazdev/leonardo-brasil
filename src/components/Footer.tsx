@@ -12,11 +12,29 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12 text-sm text-muted">
         
         {/* SEO Linking Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10 pb-10 border-b border-line">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 pb-10 border-b border-line">
           <div>
-            <h4 className="font-semibold text-text mb-4">Áreas de Atuação (Especialidades)</h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {NICHES.map(niche => (
+            <h4 className="font-semibold text-text mb-4">Google Meu Negócio</h4>
+            <ul className="grid grid-cols-1 gap-2">
+              {NICHES.slice(0, 6).map(niche => (
+                <li key={niche.slug}>
+                  <Link to={`/google-meu-negocio/${niche.slug}`} className="hover:text-accent transition-colors">
+                    Google Maps para {niche.badge}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link to="/google-meu-negocio" className="text-accent font-semibold inline-block mt-2 hover:underline">
+                  Ver Todos os Nichos no Google →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-text mb-4">Estrutura de Vendas</h4>
+            <ul className="grid grid-cols-1 gap-2">
+              {NICHES.slice(0, 6).map(niche => (
                 <li key={niche.slug}>
                   <Link to={`/estrutura-de-vendas-para-${niche.slug}`} className="hover:text-primary transition-colors">
                     {niche.badge}
@@ -25,19 +43,20 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
           <div>
             <h4 className="font-semibold text-text mb-4">Principais Cidades</h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <ul className="grid grid-cols-1 gap-2">
               {TOP_LOCATIONS.map(city => (
                 <li key={city.slug}>
-                  <Link to={`/estrutura-de-vendas-para-dentistas-em-${city.slug}`} className="hover:text-primary transition-colors">
-                    Em {city.name}
+                  <Link to={`/google-meu-negocio/dentistas/${city.state.toLowerCase()}/${city.slug}`} className="hover:text-accent transition-colors">
+                    Dentistas em {city.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/blog" className="hover:text-primary transition-colors mt-2 block font-medium underline underline-offset-4">
-                  Ler Artigos do Blog →
+                <Link to="/cidades" className="hover:text-accent transition-colors mt-2 block font-medium underline underline-offset-4">
+                  Todas as Cidades Atendidas →
                 </Link>
               </li>
             </ul>
@@ -48,7 +67,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <p className="font-semibold text-text">Leonardo Brasil</p>
-            <p className="text-xs text-muted">Estrutura de Vendas para Negócios Locais</p>
+            <p className="text-xs text-muted">Consultor em Google Meu Negócio & Estrutura de Vendas Local</p>
           </div>
 
           {/* Redes Sociais */}
@@ -93,12 +112,14 @@ export function Footer() {
           <div className="flex items-center gap-4 text-xs">
             <a href="mailto:contato@leonardobrasil.com.br" className="hover:text-text transition-colors">contato@leonardobrasil.com.br</a>
             <span className="text-line-strong">·</span>
-            <a href="https://funilcomercial.com" target="_blank" rel="noreferrer" className="hover:text-text transition-colors">Funil Comercial ↗</a>
+            <a href="https://funilcomercial.com" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">Funil Comercial ↗</a>
           </div>
         </div>
         
         <div className="mt-6 pt-6 border-t border-line text-center text-xs leading-relaxed text-muted/80">
           <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 mb-3">
+            <Link to="/google-meu-negocio" className="hover:text-accent text-accent transition-colors font-medium">Google Meu Negócio</Link>
+            <span className="text-line-strong">·</span>
             <Link to="/termos" className="hover:text-text transition-colors">Termos</Link>
             <span className="text-line-strong">·</span>
             <Link to="/privacidade" className="hover:text-text transition-colors">Privacidade</Link>
@@ -112,7 +133,7 @@ export function Footer() {
             <Link to="/calculadora" className="hover:text-text transition-colors">Calculadora Comercial</Link>
           </div>
           <p>LEONARDO FERRAZ DA SILVA BRASIL · CNPJ 65.993.728/0001-07</p>
-          <p className="mt-1">© {new Date().getFullYear()} · Estrutura de vendas para negócio local · leonardobrasil.com.br</p>
+          <p className="mt-1">© {new Date().getFullYear()} · Otimização Google Meu Negócio & Estrutura de Vendas · leonardobrasil.com.br</p>
         </div>
       </div>
     </footer>

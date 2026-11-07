@@ -102,6 +102,7 @@ export default function App() {
             Leonardo Brasil
           </a>
           <nav className="hidden md:flex gap-8">
+            <Link to="/google-meu-negocio" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">Google Meu Negócio</Link>
             <Link to="/consultoria" className="text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors">Consultoria</Link>
             <Link to="/calculadora" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Calculadora</Link>
             <Link to="/blog" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Blog</Link>
@@ -121,6 +122,7 @@ export default function App() {
         </div>
         {menu && (
           <div className="md:hidden border-t border-line bg-ink px-5 py-6 flex flex-col gap-5">
+            <Link to="/google-meu-negocio" onClick={() => setMenu(false)} className="text-lg font-bold text-accent">Google Meu Negócio</Link>
             <Link to="/consultoria" onClick={() => setMenu(false)} className="text-lg font-bold text-gold-400">Consultoria</Link>
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-lg font-medium">{n.label}</a>
