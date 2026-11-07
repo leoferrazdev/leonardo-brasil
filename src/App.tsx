@@ -39,20 +39,20 @@ const PILARES = [
 
 const PASSOS = [
   { t: "1. Diagnóstico Gratuito", d: "Você me chama no WhatsApp e eu avalio seu perfil no Google Maps, apontando exatamente o que está afastando clientes." },
-  { t: "2. Otimização Cirúrgica", d: "Executamos a revisão completa: categorias, catálogo, textos, fotos, horários e conexão direta com seu WhatsApp." },
+  { t: "2. Otimização Cirúrgica", d: "Executo a revisão completa: categorias, catálogo, textos, fotos, horários e conexão direta com seu WhatsApp." },
   { t: "3. Tração & Autoridade", d: "Seu perfil sobe posições no Maps, atrai ligações e você recebe o kit prático para continuar conquistando avaliações 5 estrelas." },
 ];
 
 const FAQ = [
-  { q: "Vocês garantem a 1ª posição no Google?", a: "Nenhum profissional sério pode garantir primeira posição absoluta, pois o Google considera proximidade física e histórico. O que fazemos é aplicar todas as técnicas oficiais de SEO Local para colocar seu negócio entre os primeiros destacados no Google Maps (Top 3)." },
-  { q: "Serve para quem não tem loja física ou consultório?", a: "Sim. Se você presta serviços na cidade ou atende em domicílio/online, configuramos como 'Área de Atendimento', permitindo aparecer no Google Maps sem expor seu endereço residencial." },
+  { q: "Você garante a 1ª posição no Google?", a: "Nenhum profissional sério pode garantir primeira posição absoluta, pois o Google considera proximidade física e histórico. O que eu faço é aplicar todas as técnicas oficiais de SEO Local para colocar seu negócio entre os primeiros destacados no Google Maps (Top 3)." },
+  { q: "Serve para quem não tem loja física ou consultório?", a: "Sim. Se você presta serviços na cidade ou atende em domicílio/online, eu configuro como 'Área de Atendimento', permitindo aparecer no Google Maps sem expor seu endereço residencial." },
   { q: "Existe mensalidade?", a: "Não. A otimização e reestruturação do Google Meu Negócio é realizada como investimento único. Você paga uma vez para blindar e organizar o seu perfil." },
   { q: "Quanto tempo leva para surtir efeito?", a: "Muitos negócios começam a notar aumento significativo nas ligações, rotas e mensagens no WhatsApp já nas primeiras duas a três semanas após as correções no perfil." },
   { q: "Por que contratar um especialista em vez de fazer sozinho?", a: "Porque detalhes técnicos como categoria primária, consistência de dados externos e resposta com palavras-chave fazem a diferença entre ficar na página 3 ou dominar o Top 3 da sua rua e bairro." },
 ];
 
 const NAV = [
-  { id: "pilares", label: "O que fazemos" },
+  { id: "pilares", label: "O que eu faço no seu Perfil" },
   { id: "comparativo", label: "Comparativo" },
   { id: "especialidades", label: "Especialidades" },
   { id: "faq", label: "FAQ" },
@@ -208,7 +208,7 @@ export default function App() {
         <section id="pilares" className="mx-auto max-w-6xl px-5 py-20 scroll-mt-16">
           <div className="max-w-2xl">
             <span className="text-xs font-bold uppercase tracking-widest text-accent">Metodologia Especializada</span>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight mt-2">O que fazemos no seu Perfil</h2>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight mt-2">O que eu faço no seu Perfil</h2>
             <p className="mt-4 text-muted text-base sm:text-lg">
               Um processo técnico e prático para transformar um perfil esquecido em uma máquina de novos clientes locais.
             </p>
