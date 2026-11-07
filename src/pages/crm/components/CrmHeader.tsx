@@ -38,13 +38,17 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   const navigate = useNavigate();
 
   const handleLogout = async () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("crm_offline_session");
+      localStorage.removeItem("crm_user_email");
+    }
     try {
       await supabase.auth.signOut();
-      toast.success("Sessão encerrada");
-      navigate("/crm/login");
     } catch {
-      navigate("/crm/login");
+      // Ignora erro se não conectado ao Supabase
     }
+    toast.success("Sessão encerrada");
+    navigate("/crm/login");
   };
 
   const countByStage = (stage: PipelineStageId) => leads.filter(l => l.stage === stage).length;

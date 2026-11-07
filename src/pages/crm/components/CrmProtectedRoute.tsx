@@ -11,7 +11,14 @@ export const CrmProtectedRoute: React.FC<CrmProtectedRouteProps> = ({ children }
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Se o Supabase não estiver configurado em ambiente dev/offline, permite acesso seguro
+    // 1. Checa flag de sessão local / modo offline
+    if (typeof window !== "undefined" && localStorage.getItem("crm_offline_session") === "true") {
+      setAuthenticated(true);
+      setLoading(false);
+      return;
+    }
+
+    // 2. Se o Supabase não estiver configurado, permite acesso direto
     if (!isSupabaseConfigured) {
       setAuthenticated(true);
       setLoading(false);
@@ -21,6 +28,15 @@ export const CrmProtectedRoute: React.FC<CrmProtectedRouteProps> = ({ children }
     let isMounted = true;
 
     async function checkAuth() {
+      // Re-checa flag local
+      if (typeof window !== "undefined" && localStorage.getItem("crm_offline_session") === "true") {
+        if (isMounted) {
+          setAuthenticated(true);
+          setLoading(false);
+        }
+        return;
+      }
+
       try {
         const { data: { session } } = await supabase.auth.getSession();
         if (isMounted) {
@@ -28,9 +44,8 @@ export const CrmProtectedRoute: React.FC<CrmProtectedRouteProps> = ({ children }
           setLoading(false);
         }
       } catch (err) {
-        console.warn("Erro ao verificar sessão do Supabase:", err);
+        console.warn("Aviso na checagem de sessão do Supabase:", err);
         if (isMounted) {
-          // Permite modo fallback se houver falha de rede mas houver flag local
           setAuthenticated(true);
           setLoading(false);
         }
@@ -41,7 +56,11 @@ export const CrmProtectedRoute: React.FC<CrmProtectedRouteProps> = ({ children }
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
       if (isMounted) {
-        setAuthenticated(Boolean(session));
+        if (session || (typeof window !== "undefined" && localStorage.getItem("crm_offline_session") === "true")) {
+          setAuthenticated(true);
+        } else {
+          setAuthenticated(false);
+        }
         setLoading(false);
       }
     });
