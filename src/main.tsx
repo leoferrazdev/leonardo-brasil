@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation, Navigate } from "./lib/local
 import { HelmetProvider } from "react-helmet-async";
 import { initAnalytics } from "./lib/analytics";
 import { RouteAnnouncementBar } from "./components/RouteAnnouncementBar";
+import { Toaster } from "react-hot-toast";
 import "./index.css";
 
 // Inicia interceptador global de UTMs para o WhatsApp
@@ -21,6 +22,15 @@ const PortoAlegreDigital = lazy(() => import("./pages/PortoAlegreDigital"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
+
+// Módulo CRM de Prospecção Local
+const CrmLogin = lazy(() => import("./pages/crm/Login"));
+const CrmDashboard = lazy(() => import("./pages/crm/Dashboard"));
+const CrmProtectedRoute = lazy(() =>
+  import("./pages/crm/components/CrmProtectedRoute").then((m) => ({
+    default: m.CrmProtectedRoute,
+  }))
+);
 
 /**
  * Redirecionamento de rotas legadas para a nova máquina de Google Meu Negócio
@@ -43,6 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <HelmetProvider>
       <BrowserRouter>
         <RouteAnnouncementBar />
+        <Toaster position="top-right" toastOptions={{ className: "text-xs font-semibold" }} />
         <Suspense fallback={<div className="min-h-screen bg-ink flex items-center justify-center text-accent">Carregando...</div>}>
           <Routes>
             <Route path="/" element={<App />} />
@@ -58,6 +69,19 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/termos" element={<TermsPage />} />
             <Route path="/privacidade" element={<PrivacyPage />} />
             <Route path="/exclusao-de-dados" element={<DataDeletionPage />} />
+
+            {/* Rotas do CRM de Prospecção Local */}
+            <Route path="/crm" element={<Navigate to="/crm/dashboard" replace />} />
+            <Route path="/crm/login" element={<CrmLogin />} />
+            <Route
+              path="/crm/dashboard"
+              element={
+                <CrmProtectedRoute>
+                  <CrmDashboard />
+                </CrmProtectedRoute>
+              }
+            />
+
             <Route path="*" element={<RouteFallback />} />
           </Routes>
         </Suspense>
