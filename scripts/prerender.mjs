@@ -20,7 +20,6 @@ const serverEntry = path.join(distDir, "server", "entry-server.js");
 
 const NICHES_PATH = path.resolve(root, "src/data/niches.ts");
 const BLOG_PATH = path.resolve(root, "src/data/blogData.ts");
-const LOCATIONS_PATH = path.resolve(root, "src/data/locations.ts");
 
 function readSlugs(filePath, label) {
   try {
@@ -40,7 +39,6 @@ function buildRoutes() {
     "/blog",
     "/brandbook",
     "/cidades",
-    "/calculadora",
     "/porto-alegre-digital",
     "/termos",
     "/privacidade",
@@ -48,21 +46,13 @@ function buildRoutes() {
   ];
 
   const niches = readSlugs(NICHES_PATH, "niches.ts");
-  const locations = readSlugs(LOCATIONS_PATH, "locations.ts");
   const blogSlugs = readSlugs(BLOG_PATH, "blogData.ts");
 
   const gmnHubRoutes = niches.map((slug) => `/google-meu-negocio/${slug}`);
-  const nicheRoutes = niches.map((slug) => `/estrutura-de-vendas-para-${slug}`);
-  const cityRoutes = [];
-  for (const niche of niches) {
-    for (const city of locations) {
-      cityRoutes.push(`/estrutura-de-vendas-para-${niche}-em-${city}`);
-    }
-  }
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   // Set para evitar rotas duplicadas
-  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...nicheRoutes, ...cityRoutes, ...blogRoutes])];
+  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...blogRoutes])];
 }
 
 function outputPathFor(route) {
@@ -99,26 +89,22 @@ async function main() {
       fs.writeFileSync(outPath, html, "utf8");
       ok += 1;
     } catch (error) {
-      failures.push({ route, message: error.message });
-      console.error(`[prerender] ERRO em ${route}:`, error.message);
+      failures.push({ route, error: error.message });
     }
   }
 
-  // Limpa o bundle de servidor (não deve ir para produção).
-  try {
-    fs.rmSync(path.join(distDir, "server"), { recursive: true, force: true });
-  } catch {
-    /* ignora */
-  }
-
-  console.log(`[prerender] ${ok}/${routes.length} páginas geradas com sucesso.`);
+  console.log(`[prerender] ${ok}/${routes.length} rotas geradas com sucesso.`);
   if (failures.length > 0) {
-    console.error(`[prerender] ${failures.length} rota(s) falharam.`);
-    process.exit(1);
+    console.warn(`[prerender] ${failures.length} falhas:`);
+    for (const f of failures) {
+      console.warn(`  - ${f.route}: ${f.error}`);
+    }
+    // Falha o build se alguma rota quebrar
+    process.exitCode = 1;
   }
 }
 
-main().catch((error) => {
-  console.error("[prerender] Falha geral:", error);
+main().catch((err) => {
+  console.error("[prerender] Erro fatal:", err);
   process.exit(1);
 });

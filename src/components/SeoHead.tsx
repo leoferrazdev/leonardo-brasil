@@ -25,9 +25,9 @@ export function SeoHead({
   const location = useLocation();
   const currentPath = location.pathname === "/" ? "" : location.pathname;
   
-  const defaultTitle = "Leonardo Brasil — Estrutura de Vendas para Negócios Locais";
+  const defaultTitle = "Leonardo Brasil — Especialista em Google Meu Negócio e SEO Local";
   const defaultDescription =
-    "Leonardo Brasil monta a estrutura de vendas do seu negócio local, presença no Google, aquisição, conversão no WhatsApp e escala. Diagnóstico gratuito.";
+    "Especialista em Google Meu Negócio e SEO Local. Otimização de perfil no Google Maps, posicionamento orgânico e atração de clientes locais. Diagnóstico gratuito.";
   const autoCanonical = `https://leonardobrasil.com.br${currentPath}`;
   const defaultOgImage = "https://leonardobrasil.com.br/logo-completo.png";
 
@@ -56,49 +56,41 @@ export function SeoHead({
             email: "contato@leonardobrasil.com.br",
             taxID: "65.993.728/0001-07",
             description:
-              "Estrutura de vendas para negócios locais e profissionais de saúde: presença no Google, aquisição de pacientes particulares, conversão no WhatsApp e escala.",
+              "Especialista em Google Meu Negócio e SEO Local: posicionamento no topo do Google Maps, atração de clientes locais e otimização de perfil comercial.",
             sameAs: [
               "https://www.instagram.com/leonardobrasil.com.br/",
               "https://www.facebook.com/leonardobrasil.com.br",
               "https://funilcomercial.com",
             ],
             knowsAbout: [
-              "Estrutura de Vendas para Psicólogas",
-              "Captação de Pacientes Particulares no Google",
-              "SEO Local para Médicos e Dentistas",
-              "Funil de Atendimento Consultivo no WhatsApp",
-              "Consultoria Comercial de Vendas Locais",
+              "Google Meu Negócio",
+              "SEO Local",
+              "Google Maps",
+              "Otimização de Perfil da Empresa no Google",
+              "Posicionamento no Topo das Buscas Locais",
+              "Captação de Clientes Locais",
               "Generative Engine Optimization (GEO)",
             ],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
-              name: "Serviços de Estruturação Comercial",
+              name: "Serviços de Google Meu Negócio e SEO Local",
               itemListElement: [
                 {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name: "Estrutura de Vendas para Psicólogas",
-                    description: "Captação ética de pacientes particulares via Google Search e atendimento consultivo no WhatsApp.",
-                    url: "https://leonardobrasil.com.br/estrutura-de-vendas-para-psicologas",
+                    name: "Otimização e Gestão de Google Meu Negócio",
+                    description: "Colocamos sua empresa nas 3 primeiras posições do Google Maps para atrair clientes prontos para comprar.",
+                    url: "https://leonardobrasil.com.br/google-meu-negocio",
                   },
                 },
                 {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name: "Consultoria Comercial de Vendas Locais",
-                    description: "Reestruturação do processo comercial de clínicas, consultórios e negócios locais.",
-                    url: "https://leonardobrasil.com.br/consultoria",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Calculadora de Gargalo Comercial",
-                    description: "Ferramenta gratuita para diagnóstico de perdas financeiras no atendimento comercial.",
-                    url: "https://leonardobrasil.com.br/calculadora",
+                    name: "Diagnóstico Gratuito de Google Meu Negócio",
+                    description: "Análise completa do seu perfil da empresa no Google e mapa de oportunidades para dominar as buscas locais.",
+                    url: "https://leonardobrasil.com.br",
                   },
                 },
               ],
@@ -108,23 +100,24 @@ export function SeoHead({
             "@type": "Person",
             "@id": "https://leonardobrasil.com.br/#person",
             name: "Leonardo Brasil",
-            jobTitle: "Especialista em Estrutura de Vendas para Negócios Locais e Saúde",
+            jobTitle: "Especialista em Google Meu Negócio e SEO Local",
             worksFor: { "@id": "https://leonardobrasil.com.br/#organization" },
             image: "https://leonardobrasil.com.br/avatar-leonardo-brasil.jpg",
             sameAs: [
               "https://www.instagram.com/leonardobrasil.com.br/",
             ],
             knowsAbout: [
-              "Captação de Pacientes Particulares",
-              "Processos Comerciais no WhatsApp",
-              "Google Ads para Serviços Locais",
+              "Google Meu Negócio",
+              "Google Maps",
+              "SEO Local",
               "SEO Programático Local",
+              "Otimização de Conversão no Google",
             ],
           },
           {
             "@type": "ProfessionalService",
             "@id": "https://leonardobrasil.com.br/#service",
-            name: "Leonardo Brasil — Estrutura de Vendas para Negócios Locais",
+            name: "Leonardo Brasil — Especialista em Google Meu Negócio e SEO Local",
             url: "https://leonardobrasil.com.br",
             priceRange: "$$$",
             areaServed: "BR",

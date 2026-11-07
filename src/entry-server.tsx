@@ -3,13 +3,10 @@ import { StaticRouter, Routes, Route, useLocation } from "./lib/local-router";
 import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { RouteAnnouncementBar } from "./components/RouteAnnouncementBar";
 import App from "./App";
-import NicheLanding from "./pages/NicheLanding";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import Brandbook from "./pages/Brandbook";
 import CitiesDirectory from "./pages/CitiesDirectory";
-import CalculatorPage from "./pages/CalculatorPage";
-import Consultoria from "./pages/Consultoria";
 import PortoAlegreDigital from "./pages/PortoAlegreDigital";
 import GoogleMeuNegocioLanding from "./pages/GoogleMeuNegocioLanding";
 import GoogleMeuNegocioNicheHub from "./pages/GoogleMeuNegocioNicheHub";
@@ -17,20 +14,19 @@ import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
 import { TermsPage, PrivacyPage, DataDeletionPage } from "./pages/LegalPages";
 
 /**
- * Catch-all: as URLs de nicho (/estrutura-de-vendas-para-...) não são um
- * segmento dinâmico simples do React Router, então resolvemos pelo caminho.
+ * Fallback: direciona qualquer rota legada para o fluxo principal de Google Meu Negócio
  */
 function RouteFallback() {
   const { pathname } = useLocation();
   if (pathname.startsWith("/estrutura-de-vendas-para-")) {
-    return <NicheLanding />;
+    return <GoogleMeuNegocioLanding />;
   }
   return <App />;
 }
 
 /**
  * Renderiza uma rota em HTML no servidor (build), para pré-renderização estática.
- * As mesmas rotas do cliente (src/main.tsx) precisam existir aqui.
+ * As mesmas rotas do cliente (src/main.tsx) existem aqui.
  */
 export function render(url: string): { appHtml: string; head: string } {
   const helmetContext: { helmet?: HelmetServerState } = {};
@@ -44,12 +40,11 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
           <Route path="/google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
           <Route path="/google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
-          <Route path="/consultoria" element={<Consultoria />} />
+          <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/brandbook" element={<Brandbook />} />
           <Route path="/cidades" element={<CitiesDirectory />} />
-          <Route path="/calculadora" element={<CalculatorPage />} />
           <Route path="/porto-alegre-digital" element={<PortoAlegreDigital />} />
           <Route path="/termos" element={<TermsPage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />

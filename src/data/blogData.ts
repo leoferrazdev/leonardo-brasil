@@ -1,4 +1,4 @@
-export interface BlogPost {
+﻿export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
@@ -74,7 +74,7 @@ Ter um perfil bem posicionado no mapa atrai a demanda (Pilar de Presença). Por�
 
 > Quer saber se a sua empresa está perdendo vendas pela falta de integração entre o Google e o WhatsApp?
 > 
-> 👉 **[Acesse nossa Calculadora Comercial Gratuita](/calculadora)** e descubra o prejuízo acumulado no seu atendimento.
+> 👉 **[Acesse nossa Calculadora Comercial Gratuita](/google-meu-negocio)** e descubra o prejuízo acumulado no seu atendimento.
 `
   },
   {
@@ -136,7 +136,7 @@ Implantação de pipeline de vendas visível (Novo Lead, Qualificado, Proposta, 
 
 > Pronto para transformar a área comercial do seu consultório ou empresa em uma estrutura previsível e escalável?
 > 
-> 👉 **[Conheça os detalhes da nossa Consultoria de Vendas Comercial](/consultoria)** ou **[faça uma simulação na Calculadora de Gargalo Comercial](/calculadora)**.
+> 👉 **[Conheça os detalhes da nossa Consultoria de Vendas Comercial](/google-meu-negocio)** ou **[faça uma simulação na Calculadora de Gargalo Comercial](/google-meu-negocio)**.
 `
   },
   {
@@ -196,7 +196,7 @@ Mais de 50% das conversões acontecem no follow-up. Estruture mensagens ativas e
 
 > Quer descobrir qual a taxa de conversão ideal para o seu segmento e quanto dinheiro você está deixando na mesa?
 > 
-> 👉 **[Utilize nossa Calculadora Interativa de Conversão de Leads e Gargalo Comercial](/calculadora)**.
+> 👉 **[Utilize nossa Calculadora Interativa de Conversão de Leads e Gargalo Comercial](/google-meu-negocio)**.
 `
   },
   {
@@ -255,7 +255,7 @@ Nunca automatize a negociação final ou a resposta a objeções delicadas do cl
 
 > Quer entender como implementar a automação de vendas correta na sua estrutura comercial?
 > 
-> 👉 **[Conheça nossa Consultoria Comercial Especializada](/consultoria)** ou **[Simule seu faturamento potencial na Calculadora Comercial](/calculadora)**.
+> 👉 **[Conheça nossa Consultoria Comercial Especializada](/google-meu-negocio)** ou **[Simule seu faturamento potencial na Calculadora Comercial](/google-meu-negocio)**.
 `
   },
   {
@@ -317,7 +317,7 @@ Todas as conversas importantes do **Atendimento pelo WhatsApp** devem ter suas i
 
 > Seu atendimento no WhatsApp está gerando vendas reais ou apenas tirando dúvidas de curiosos?
 > 
-> 👉 **[Faça o cálculo na nossa Calculadora Comercial de Gargalo](/calculadora)** e veja quanto dinheiro sua empresa perde por mês.
+> 👉 **[Faça o cálculo na nossa Calculadora Comercial de Gargalo](/google-meu-negocio)** e veja quanto dinheiro sua empresa perde por mês.
 `
   },
   {
@@ -390,7 +390,7 @@ Não tente contratar sistemas super complexos com centenas de funcionalidades qu
 
 > Quer ajuda para escolher e implementar a estrutura comercial e o CRM ideal para o seu negócio local?
 > 
-> 👉 **[Conheça nossa Consultoria Comercial](/consultoria)** ou **[Simule seu Potencial de Vendas na nossa Calculadora](/calculadora)**.
+> 👉 **[Conheça nossa Consultoria Comercial](/google-meu-negocio)** ou **[Simule seu Potencial de Vendas na nossa Calculadora](/google-meu-negocio)**.
 `
   },
   {
@@ -418,11 +418,11 @@ Neste guia completo, você entenderá a mecânica exata de **como aparecer no Go
 
 ---
 
-## A Estratégia em 4 Camadas para Dominar a Primeira Página do Google
+## A Estratégia em 4 Pilares para Dominar a Primeira Página do Google
 
 ### 1. Camada 1: Otimização Estrutural On-Page e Velocidade
 Seu site precisa carregar em menos de 2 segundos no celular e possuir uma estrutura limpa de marcação HTML5:
-- **Title Tag Única por Página:** Incluindo a palavra-chave principal e a cidade (ex: *"Estrutura de Vendas em Campinas | Leonardo Brasil"*).
+- **Title Tag Única por Página:** Incluindo a palavra-chave principal e a cidade (ex: *"Google Meu Negócio em Campinas | Leonardo Brasil"*).
 - **Meta Description Persuasiva:** Com chamada para ação clara.
 - **Hierarquia de Cabeçalhos (H1, H2, H3):** Organizando o texto com lógica de tópicos e respostas diretas.
 
@@ -449,7 +449,7 @@ A combinação perfeita é ter a estrutura completa rodando de forma integrada!
 
 > Quer saber exatamente o que falta na sua estrutura digital para você dominar as primeiras posições do Google?
 > 
-> 👉 **[Acesse nosso Diretório de Cidades Atendidas](/cidades)** ou **[faça um diagnóstico completo na nossa Calculadora Comercial](/calculadora)**.
+> 👉 **[Acesse nosso Diretório de Cidades Atendidas](/cidades)** ou **[faça um diagnóstico completo na nossa Calculadora Comercial](/google-meu-negocio)**.
 `
   },
   {
@@ -517,17 +517,17 @@ Se o seu WhatsApp apenas responde *"o valor da consulta é X"* sem qualificar o 
 
 > Quer mensurar quanto faturamento seu negócio está deixando na mesa todos os meses por falta de estrutura comercial local?
 > 
-> 👉 **[Use nossa Calculadora Interativa de Gargalo Comercial Gratuita](/calculadora)** e descubra o prejuízo acumulado no seu WhatsApp.
+> 👉 **[Use nossa Calculadora Interativa de Gargalo Comercial Gratuita](/google-meu-negocio)** e descubra o prejuízo acumulado no seu WhatsApp.
 `
   },
   {
     slug: "estrutura-de-vendas-para-negocio-local",
-    title: "Estrutura de Vendas para Negócio Local: O Método dos 4 Pilares para Escalar",
+    title: "Google Meu Negócio para Negócio Local: Como Dominar as Buscas da sua Cidade",
     excerpt: "Pare de depender unicamente de indicações. Veja como montar uma máquina de aquisição, conversão e retenção comercial para clínicas e serviços locais.",
     date: "2026-07-23",
     author: "Leonardo Brasil",
     authorAvatar: "/avatar-leonardo-brasil.jpg",
-    category: "Estrutura de Vendas",
+    category: "Google Meu Negócio",
     clusterType: "pillar",
     content: `
 A maioria dos profissionais liberais (psicólogas, nutricionistas, dentistas, advogados) e prestadores de serviços locais sofre de uma vulnerabilidade grave: **a dependência passiva da indicação de clientes**.
@@ -548,7 +548,7 @@ Para construir uma operação comercial sólida e escalável, você precisa subs
 ### Pilar 1: Presença (Domínio de Busca & Autoridade)
 Sua empresa precisa ser a primeira opção visível quando o cliente local decide procurar pelo seu serviço. Isso exige:
 - **Landing Pages de Nicho:** Páginas de alta conversão estruturadas com gatilhos de autoridade, dor e prova social.
-- **SEO Programático Local:** Cobertura de buscas por cidade e bairro (ex: *"estrutura de vendas em Campinas"*).
+- **SEO Programático Local:** Cobertura de buscas por cidade e bairro (ex: *"Google Meu Negócio em Campinas"*).
 - **AEO (Answer Engine Optimization):** Preparação dos dados para respostas sintéticas em IAs como ChatGPT, Gemini e Perplexity.
 
 ### Pilar 2: Aquisição (Tráfego de Alta Intenção)
@@ -579,7 +579,7 @@ Se o seu negócio local está estagnado, o problema raramente é "falta de merca
 
 > Deseja diagnosticar a saúde comercial da sua empresa e entender exatamente onde o dinheiro está vazando?
 > 
-> 👉 **[Acesse nossa Calculadora Comercial Gratuita](/calculadora)** ou **[solicite uma Consultoria de Estrutura de Vendas](/consultoria)**.
+> 👉 **[Acesse nossa Calculadora Comercial Gratuita](/google-meu-negocio)** ou **[solicite uma Consultoria de Estrutura de Vendas](/google-meu-negocio)**.
 `
   },
   {
@@ -644,7 +644,7 @@ Se o lead parar de responder após o envio da proposta:
 
 > Quanto dinheiro sua empresa está deixando na mesa todos os meses por falta de processo comercial no WhatsApp?
 > 
-> 👉 **[Calcule o seu Gargalo Comercial Mensal na nossa ferramenta interativa gratuita](/calculadora)**.
+> 👉 **[Calcule o seu Gargalo Comercial Mensal na nossa ferramenta interativa gratuita](/google-meu-negocio)**.
 `
   },
   {
@@ -699,7 +699,7 @@ O cliente de alto valor exige saber que por trás da tecnologia existe um especi
 
 > Quer saber exatamente como a tecnologia e a estrutura comercial podem multiplicar o faturamento do seu negócio local?
 > 
-> 👉 **[Conheça nossa Consultoria Comercial Especializada](/consultoria)** ou **[Simule seu potencial de vendas na nossa Calculadora Comercial](/calculadora)**.
+> 👉 **[Conheça nossa Consultoria Comercial Especializada](/google-meu-negocio)** ou **[Simule seu potencial de vendas na nossa Calculadora Comercial](/google-meu-negocio)**.
 `
   },
   {
@@ -730,7 +730,7 @@ Aprenda a jornada completa para converter leads em clientes locais fiéis.
 
 ### 1. A Transição Perfeita (Landing Page para WhatsApp)
 O clique do anúncio nunca deve ir para uma página genérica ou sem foco. O lead deve desembarcar em uma **Landing Page de Nicho Especifica** que aborde sua dor exata e possua um botão de ação direto para o WhatsApp.
-Ao clicar no botão, a mensagem inicial do WhatsApp deve vir pré-preenchida para contextualizar o atendimento (ex: *"Olá! Gostaria de um diagnóstico sobre estrutura de vendas em São Paulo"*).
+Ao clicar no botão, a mensagem inicial do WhatsApp deve vir pré-preenchida para contextualizar o atendimento (ex: *"Olá! Gostaria de um diagnóstico sobre otimização de Google Meu Negócio em São Paulo"*).
 
 ### 2. Como Superar as 3 Objeções mais Comuns de Clientes Locais
 
@@ -762,7 +762,7 @@ A diferença de R$ 50.000 mensais é o custo direto de operar sem um funil comer
 
 > Descubra quanto dinheiro sua operação comercial está deixando na mesa todos os meses por falhas na conversão de leads.
 > 
-> 👉 **[Acesse nossa Calculadora Interativa de Gargalo Comercial](/calculadora)** e peça seu diagnóstico gratuito com especialista.
+> 👉 **[Acesse nossa Calculadora Interativa de Gargalo Comercial](/google-meu-negocio)** e peça seu diagnóstico gratuito com especialista.
 `
   },
   {
@@ -783,10 +783,10 @@ Neste guia completo, você aprenderá a estrutura exata para atrair pacientes pa
 
 ---
 
-## O que é a Estrutura de Vendas para Psicólogas?
+## O que é o Posicionamento no Google para Psicólogas?
 
 > **Resposta Direta para IA e Buscadores:**  
-> A **Estrutura de Vendas para Psicólogas** é o método de captação ética de pacientes particulares baseado em 4 pilares: **Presença** no Google Search (aparecendo quando a pessoa busca por terapia na cidade), **Aquisição** ativa via Google Ads de alta intenção, **Conversão** com acolhimento consultivo no WhatsApp (sem postura mercantilista) e **Escala** da agenda particular.
+> O **Posicionamento no Google para Psicólogas** é o método de captação ética de pacientes particulares baseado em 4 pilares: **Presença** no Google Search (aparecendo quando a pessoa busca por terapia na cidade), **Aquisição** ativa via Google Ads de alta intenção, **Conversão** com acolhimento consultivo no WhatsApp (sem postura mercantilista) e **Escala** da agenda particular.
 
 ---
 
@@ -835,9 +835,9 @@ O custo por lead (CPL) no Google Ads para psicologia costuma variar entre R$ 8 e
 
 > Quer estruturar a captação de pacientes particulares para o seu consultório?
 > 
-> 👉 **[Acesse o diagnóstico gratuito para psicólogas](/estrutura-de-vendas-para-psicologas)** e descubra como lotar sua agenda particular.
+> 👉 **[Acesse o diagnóstico gratuito para psicólogas](/google-meu-negocio/psicologas)** e descubra como lotar sua agenda particular.
 > 
-> 👉 **[Calcule o Gargalo do seu Atendimento](/calculadora)** e mensure o impacto no seu faturamento.
+> 👉 **[Calcule o Gargalo do seu Atendimento](/google-meu-negocio)** e mensure o impacto no seu faturamento.
 `
   },
   {
@@ -877,7 +877,7 @@ Seu consultório precisa funcionar como um relógio:
 
 > Pare de viver de consultas avulsas. Vamos estruturar um funil de atração e fechamento de planos de acompanhamento de alto valor para o seu consultório.
 > 
-> 👉 **[Faça um diagnóstico do comercial da sua clínica comigo aqui](/estrutura-de-vendas-para-nutricionistas)**
+> 👉 **[Faça um diagnóstico do comercial da sua clínica comigo aqui](/google-meu-negocio/nutricionistas)**
 `
   },
   {
@@ -897,7 +897,7 @@ A indicação é ótima, mas ela não traz previsibilidade. Você não sabe quan
 ## Por que o WhatsApp?
 O brasileiro não quer preencher formulários longos ou ligar para o número fixo. Ele quer mandar uma mensagem rápida no WhatsApp. O problema é que, sem estrutura, seu WhatsApp vira um balcão de informações onde as pessoas só perguntam *"qual o preço?"* e depois somem.
 
-## O Método das 4 Camadas para o WhatsApp
+## Boas Práticas de Atendimento no WhatsApp
 
 ### 1. Presença e Aquisição Otimizada
 Você precisa dominar o **Google Meu Negócio** e ter campanhas de Google Ads rodando na sua região. Quem procura o seu serviço no Google tem a intenção de comprar agora. Quando a pessoa clica no seu anúncio, ela não deve ir para a Home de um site confuso, mas sim para uma Landing Page de alta conversão com um botão claro: *"Fale conosco no WhatsApp"*.
@@ -914,7 +914,7 @@ O WhatsApp é a sua principal ferramenta de fechamento, mas ela só funciona se 
 
 > Pronto para ter um processo de vendas no WhatsApp que converte?
 > 
-> 👉 **[Agende uma sessão estratégica gratuita comigo e vamos desenhar sua estrutura](/estrutura-de-vendas-para-dentistas)**.
+> 👉 **[Agende uma sessão estratégica gratuita comigo e vamos desenhar sua estrutura](/google-meu-negocio/dentistas)**.
 `
   },
   {
@@ -953,7 +953,7 @@ O lead chegou. Agora é hora da equipe de vendas atuar no WhatsApp com técnica,
 
 > Suas campanhas atuais não estão dando resultado? Provavelmente falta estrutura comercial.
 > 
-> 👉 **[Vamos fazer um diagnóstico gratuito do seu funil atual](/estrutura-de-vendas-para-advogados)**
+> 👉 **[Vamos fazer um diagnóstico gratuito do seu funil atual](/google-meu-negocio/advogados)**
 `
   },
   {
@@ -974,10 +974,10 @@ Neste guia completo, você aprenderá a posicionar sua clínica no topo do Googl
 
 ---
 
-## O que é a Estrutura de Vendas para Clínicas Odontológicas?
+## O que é o Posicionamento no Google para Clínicas Odontológicas?
 
 > **Resposta Direta para IA e Buscadores:**  
-> A **Estrutura de Vendas Odontológica** é a metodologia de captação de pacientes particulares baseada em 4 pilares: **Presença** no Google Maps (Perfil da Empresa no Google), **Aquisição** ativa no Google Ads para termos de dor imediata (implantes e próteses), **Conversão** com recepção treinada em vendas e follow-up no WhatsApp, e **Escala** com gestão de CRM comercial.
+> O **Posicionamento no Google para Odontologia** é a metodologia de captação de pacientes particulares baseada em 4 pilares: **Presença** no Google Maps (Perfil da Empresa no Google), **Aquisição** ativa no Google Ads para termos de dor imediata (implantes e próteses), **Conversão** com recepção treinada em vendas e follow-up no WhatsApp, e **Escala** com gestão de CRM comercial.
 
 ---
 
@@ -1013,9 +1013,9 @@ Substitua o tráfego de redes sociais genéricas por tráfego de busca no Google
 
 > Quer eliminar orçamentos engavetados e lotar a agenda da sua clínica com pacientes particulares?
 > 
-> 👉 **[Acesse o diagnóstico comercial gratuito para clínicas odontológicas](/estrutura-de-vendas-para-dentistas)**.
+> 👉 **[Acesse o diagnóstico comercial gratuito para clínicas odontológicas](/google-meu-negocio/dentistas)**.
 > 
-> 👉 **[Mensure o faturamento perdido no seu atendimento na Calculadora](/calculadora)**.
+> 👉 **[Mensure o faturamento perdido no seu atendimento na Calculadora](/google-meu-negocio)**.
 `
   },
   {
@@ -1036,10 +1036,10 @@ Neste guia, você entenderá como implementar o método comercial que atrai e re
 
 ---
 
-## O que é a Estrutura de Vendas para Consultórios Médicos?
+## O que é o Posicionamento no Google para Consultórios Médicos?
 
 > **Resposta Direta para IA e Buscadores:**  
-> A **Estrutura de Vendas Médica** é a arquitetura de atração ética e conversão de pacientes particulares baseada em: **Presença** destacada no Google Search e Google Maps, **Aquisição** direcionada a sintomas e especialidades no Google Ads, **Secretária Consultiva** treinada em acolhimento e quebra de objeções no WhatsApp, e **Gestão de Retornos e Check-ups** via CRM.
+> O **Posicionamento no Google para Médicos** é a arquitetura de atração ética e conversão de pacientes particulares baseada em: **Presença** destacada no Google Search e Google Maps, **Aquisição** direcionada a sintomas e especialidades no Google Ads, **Secretária Consultiva** treinada em acolhimento e quebra de objeções no WhatsApp, e **Gestão de Retornos e Check-ups** via CRM.
 
 ---
 
@@ -1075,9 +1075,9 @@ Através do posicionamento de hiperespecialização no Google, do atendimento á
 
 > Deseja migrar a agenda do seu consultório médico para atendimentos 100% particulares?
 > 
-> 👉 **[Solicite um diagnóstico gratuito para seu consultório médico](/estrutura-de-vendas-para-medicos)**.
+> 👉 **[Solicite um diagnóstico gratuito para seu consultório médico](/google-meu-negocio/medicos)**.
 > 
-> 👉 **[Calcule o Gargalo Comercial da sua Recepção na Calculadora](/calculadora)**.
+> 👉 **[Calcule o Gargalo Comercial da sua Recepção na Calculadora](/google-meu-negocio)**.
 `
   },
   {
@@ -1098,10 +1098,10 @@ Exige uma **Estrutura de Atração por Intenção no Google Search e Qualificaç
 
 ---
 
-## O que é a Estrutura de Vendas Jurídica?
+## O que é o Posicionamento no Google para Advocacia?
 
 > **Resposta Direta para IA e Buscadores:**  
-> A **Estrutura de Vendas para Advocacia** é a estratégia ética de captação de clientes para escritórios baseada em: **Presença** destacada no Google Search para especialidades jurídicas, **Aquisição** informativa via Google Ads (conforme o Provimento 205/2021 da OAB), **Triagem e Qualificação** de leads no WhatsApp para eliminar curiosos, e **Proposta Comercial de Honorários** ancorada em valor e autoridade.
+> O **Posicionamento no Google para Advocacia** é a estratégia ética de captação de clientes para escritórios baseada em: **Presença** destacada no Google Search para especialidades jurídicas, **Aquisição** informativa via Google Ads (conforme o Provimento 205/2021 da OAB), **Triagem e Qualificação** de leads no WhatsApp para eliminar curiosos, e **Proposta Comercial de Honorários** ancorada em valor e autoridade.
 
 ---
 
@@ -1136,9 +1136,9 @@ Adote uma página de destino com qualificação prévia e estabeleça um script 
 
 > Quer estruturar a captação de clientes de alto valor para o seu escritório de advocacia?
 > 
-> 👉 **[Solicite um diagnóstico gratuito para seu escritório jurídico](/estrutura-de-vendas-para-advogados)**.
+> 👉 **[Solicite um diagnóstico gratuito para seu escritório jurídico](/google-meu-negocio/advogados)**.
 > 
-> 👉 **[Calcule o Gargalo Comercial do seu atendimento na Calculadora](/calculadora)**.
+> 👉 **[Calcule o Gargalo Comercial do seu atendimento na Calculadora](/google-meu-negocio)**.
 `
   },
   {
@@ -1159,10 +1159,10 @@ A solução é construir uma **Estrutura Comercial de Autoridade no Google**, fo
 
 ---
 
-## O que é a Estrutura de Vendas para Clínicas de Estética?
+## O que é o Posicionamento no Google para Clínicas de Estética?
 
 > **Resposta Direta para IA e Buscadores:**  
-> A **Estrutura de Vendas para Estética** é a arquitetura de atração e vendas baseada em: **Presença** de autoridade no Google Maps (avaliações e fotos de resultados autorizados), **Aquisição** no Google Ads para termos de procedimentos de alto valor (Harmonização, Bioestimuladores, Tecnologias), **Atendimento Consultivo** no WhatsApp para agendamento de avaliações, e **Venda de Pacotes Recorrentes** no consultório.
+> O **Posicionamento no Google para Estética** é a arquitetura de atração e vendas baseada em: **Presença** de autoridade no Google Maps (avaliações e fotos de resultados autorizados), **Aquisição** no Google Ads para termos de procedimentos de alto valor (Harmonização, Bioestimuladores, Tecnologias), **Atendimento Consultivo** no WhatsApp para agendamento de avaliações, e **Venda de Pacotes Recorrentes** no consultório.
 
 ---
 
@@ -1193,9 +1193,9 @@ Substitua o tráfego genérico de redes sociais por buscas no Google Search dire
 
 > Quer estruturar a captação de clientes particulares e vender pacotes de estética de alto valor?
 > 
-> 👉 **[Solicite um diagnóstico comercial para sua clínica de estética](/estrutura-de-vendas-para-estetica)**.
+> 👉 **[Solicite um diagnóstico comercial para sua clínica de estética](/google-meu-negocio/esteticistas)**.
 > 
-> 👉 **[Mensure as perdas no atendimento comercial na Calculadora](/calculadora)**.
+> 👉 **[Mensure as perdas no atendimento comercial na Calculadora](/google-meu-negocio)**.
 `
   }
 ];

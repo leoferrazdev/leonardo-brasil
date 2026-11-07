@@ -58,7 +58,7 @@ export default function BlogPost() {
             Leonardo Brasil
           </Link>
           <nav className="flex gap-6 items-center">
-            <Link to="/calculadora" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Calculadora</Link>
+            <Link to="/google-meu-negocio" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">Google Meu Negócio</Link>
             <Link to="/blog" className="text-sm font-medium text-muted hover:text-text transition-colors flex items-center gap-2">
               &larr; Voltar ao Blog
             </Link>
@@ -92,7 +92,7 @@ export default function BlogPost() {
                </div>
                <div className="text-left leading-tight">
                  <p className="font-semibold text-sm">{post.author}</p>
-                 <p className="text-xs text-muted">Especialista em Vendas</p>
+                 <p className="text-xs text-muted">Especialista em Google Meu Negócio</p>
                </div>
             </div>
           </header>

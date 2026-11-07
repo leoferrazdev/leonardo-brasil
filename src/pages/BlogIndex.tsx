@@ -7,8 +7,8 @@ export default function BlogIndex() {
   return (
     <div className="min-h-screen bg-ink text-text font-sans">
       <SeoHead 
-        title="Blog e Estratégias de Vendas | Leonardo Brasil"
-        description="Aprenda como estruturar a máquina de vendas da sua empresa. Artigos sobre CRM, Tráfego Pago, e SEO."
+        title="Blog de Google Meu Negócio e SEO Local | Leonardo Brasil"
+        description="Aprenda como dominar o Google Maps e atrair clientes locais todos os dias. Artigos sobre Google Meu Negócio, SEO Local e conversão."
         canonicalUrl="https://leonardobrasil.com.br/blog"
       />
       
@@ -18,7 +18,7 @@ export default function BlogIndex() {
             Leonardo Brasil
           </Link>
           <nav className="flex gap-6 items-center">
-            <Link to="/calculadora" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Calculadora</Link>
+            <Link to="/google-meu-negocio" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">Google Meu Negócio</Link>
             <Link to="/" className="text-sm font-medium text-muted hover:text-text transition-colors">
               Voltar ao Início
             </Link>
@@ -30,10 +30,10 @@ export default function BlogIndex() {
         <div className="mx-auto max-w-5xl px-5">
           <div className="mb-16 text-center">
             <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Conteúdo <span className="text-accent-400">Estratégico</span>
+              Google Meu Negócio & <span className="text-accent">SEO Local</span>
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              A inteligência e as táticas exatas que usamos para estruturar funis de vendas B2B e captação de clientes High-Ticket.
+              Estratégias avançadas para posicionar o Perfil da sua Empresa no Top 3 do Google Maps e transformar pesquisas locais em chamadas no WhatsApp.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ export default function BlogIndex() {
                 </div>
                 
                 <Link to={`/blog/${post.slug}`} className="block mt-2">
-                  <h2 className="text-2xl font-bold leading-tight group-hover:text-accent-300 transition-colors">
+                  <h2 className="text-2xl font-bold leading-tight group-hover:text-accent transition-colors">
                     {post.title}
                   </h2>
                 </Link>
@@ -60,7 +60,7 @@ export default function BlogIndex() {
                 </p>
                 
                 <div className="mt-8 flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent-400 text-sm overflow-hidden">
+                  <div className="h-9 w-9 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent text-sm overflow-hidden">
                     {post.authorAvatar ? (
                       <img src={post.authorAvatar} alt={post.author} className="h-full w-full object-cover" />
                     ) : (
@@ -69,7 +69,7 @@ export default function BlogIndex() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{post.author}</p>
-                    <p className="text-xs text-muted">Especialista em Vendas</p>
+                    <p className="text-xs text-muted">Especialista em Google Meu Negócio</p>
                   </div>
                 </div>
               </article>

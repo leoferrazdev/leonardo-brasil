@@ -16,10 +16,8 @@ const MAX_URLS_PER_SITEMAP = 40000;
 const STATIC_ROUTES = [
   "",
   "/google-meu-negocio",
-  "/consultoria",
   "/brandbook",
   "/cidades",
-  "/calculadora",
   "/termos",
   "/privacidade",
   "/exclusao-de-dados",
@@ -81,7 +79,7 @@ function generateSitemap() {
 
   const allSitemapFiles = [];
 
-  // 1. Core Sitemap (Rotas Estáticas + Hubs de Nicho + Blog)
+  // 1. Core Sitemap (Rotas Estáticas + Hubs de Nicho Google Meu Negócio + Blog)
   const coreUrls = [];
   STATIC_ROUTES.forEach((route) => {
     coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
@@ -90,7 +88,6 @@ function generateSitemap() {
   // Hubs de Nicho do Google Meu Negócio
   nicheSlugs.forEach((niche) => {
     coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
-    coreUrls.push(generateUrlNode(`/estrutura-de-vendas-para-${niche}`, "0.7", "monthly"));
   });
 
   // Blog

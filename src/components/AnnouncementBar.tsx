@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Link } from "../lib/local-router";
 
-const DISMISS_KEY = "lb_announcement_consultoria_v1";
+const DISMISS_KEY = "lb_announcement_gmn_v1";
+
+const WHATSAPP_NUMBER = "5551992568861";
+const WA_DIAG = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Leonardo! Vi o aviso no site e quero uma avaliação gratuita do perfil do meu negócio no Google Maps.")}`;
 
 function isDismissed() {
   try {
@@ -27,13 +29,15 @@ export function AnnouncementBar() {
 
   return (
     <div className="relative z-50 bg-gold text-ink">
-      <div className="mx-auto max-w-6xl px-10 sm:px-12 py-2.5 flex items-center justify-center text-center">
-        <Link
-          to="/consultoria"
+      <div className="mx-auto max-w-6xl px-10 sm:px-12 py-2 flex items-center justify-center text-center">
+        <a
+          href={WA_DIAG}
+          target="_blank"
+          rel="noreferrer"
           className="text-xs sm:text-sm font-bold leading-snug hover:underline underline-offset-2 decoration-2"
         >
-          <span className="font-black">Novidade:</span> Conheça minha Consultoria Comercial Estratégica para escalar suas vendas <span aria-hidden="true">-&gt;</span>
-        </Link>
+          <span className="font-black">Diagnóstico Gratuito:</span> Descubra por que sua empresa está perdendo clientes no Google Maps <span aria-hidden="true">-&gt;</span>
+        </a>
         <button
           onClick={dismiss}
           aria-label="Fechar aviso"

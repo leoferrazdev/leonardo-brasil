@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
-import { NICHES } from "../data/niches";
+import { Footer } from "../components/Footer";
+import locationsData from "../data/seoLocations.json";
 import { LOCATIONS, LocationData } from "../data/locations";
 
 export default function CitiesDirectory() {
@@ -12,6 +13,7 @@ export default function CitiesDirectory() {
     window.scrollTo(0, 0);
   }, []);
 
+  const niches = locationsData.NICHES;
   const states = ["TODOS", ...Array.from(new Set(LOCATIONS.map((l) => l.state)))];
 
   const filteredLocations = LOCATIONS.filter((loc) => {
@@ -22,7 +24,6 @@ export default function CitiesDirectory() {
     return matchesState && matchesSearch;
   });
 
-  // Agrupa cidades por estado para exibição visual limpa
   const locationsByState = filteredLocations.reduce((acc, loc) => {
     if (!acc[loc.state]) acc[loc.state] = [];
     acc[loc.state].push(loc);
@@ -38,10 +39,10 @@ export default function CitiesDirectory() {
   };
 
   return (
-    <div className="min-h-screen bg-ink text-text font-sans">
+    <div className="min-h-screen bg-ink text-text font-sans selection:bg-accent selection:text-white">
       <SeoHead
-        title="Regiões & Cidades Atendidas | Leonardo Brasil"
-        description="Diretório completo de estrutura de vendas para negócios locais e profissionais de saúde nas principais capitais e cidades do Brasil."
+        title="Regiões & Cidades Atendidas — Google Meu Negócio | Leonardo Brasil"
+        description="Diretório completo de otimização de Google Meu Negócio e presença no Google Maps para negócios locais nas principais capitais e cidades do Brasil."
         canonicalUrl="https://leonardobrasil.com.br/cidades"
       />
 
@@ -59,7 +60,9 @@ export default function CitiesDirectory() {
             Leonardo Brasil
           </Link>
           <nav className="flex gap-6 items-center">
-            <Link to="/calculadora" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Calculadora</Link>
+            <Link to="/google-meu-negocio" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">
+              Google Meu Negócio
+            </Link>
             <Link to="/" className="text-sm font-medium text-muted hover:text-text transition-colors">
               Voltar ao Início
             </Link>
@@ -72,13 +75,13 @@ export default function CitiesDirectory() {
           {/* HERO E BUSCA */}
           <div className="mb-12 text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 text-xs font-bold text-accent-400 uppercase tracking-wide mb-4">
-              Cobertura Regional
+              Presença Local & Google Maps
             </span>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Estrutura de Vendas <span className="text-accent-400">na sua Cidade</span>
+              Google Meu Negócio <span className="text-accent-400">na sua Cidade</span>
             </h1>
             <p className="text-lg text-muted leading-relaxed">
-              Explore o ecossistema de aquisição e conversão desenhado sob medida para profissionais da saúde e negócios locais nas principais regiões do Sul e Sudeste.
+              Explore o posicionamento no Top 3 do Google Maps desenhado sob medida para empresas e profissionais liberais nas principais cidades do Brasil.
             </p>
 
             {/* Filtros */}
@@ -98,33 +101,32 @@ export default function CitiesDirectory() {
                     className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
                       selectedState === st
                         ? "bg-accent text-white shadow-sm"
-                        : "bg-panel text-muted hover:text-text border border-line"
+                        : "bg-panel border border-line text-muted hover:text-text"
                     }`}
                   >
-                    {st}
+                    {st === "TODOS" ? "Todos os Estados" : st}
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* GRID POR ESTADO E NICHO */}
+          {/* GRID DE CIDADES */}
           <div className="space-y-16">
             {Object.keys(locationsByState).length === 0 ? (
               <div className="text-center py-12 text-muted">
-                Nenhuma cidade encontrada para a busca "{searchTerm}".
+                Nenhuma cidade encontrada para os filtros selecionados.
               </div>
             ) : (
-              Object.entries(locationsByState).map(([stateCode, cities]) => (
-                <section key={stateCode} className="rounded-3xl border border-line bg-panel/30 p-8 sm:p-10">
-                  <div className="flex items-center gap-3 mb-8 border-b border-line pb-4">
-                    <span className="grid place-items-center w-10 h-10 rounded-xl bg-accent/20 font-black text-accent-400 text-sm border border-accent/30">
-                      {stateCode}
+              Object.entries(locationsByState).map(([uf, cities]) => (
+                <section key={uf} className="scroll-mt-20">
+                  <div className="flex items-center gap-3 border-b border-line pb-4 mb-8">
+                    <h2 className="text-2xl font-bold tracking-tight text-text">
+                      {stateNames[uf] || uf}
+                    </h2>
+                    <span className="rounded-full bg-panel border border-line px-2.5 py-0.5 text-xs font-semibold text-muted">
+                      {cities.length} {cities.length === 1 ? "cidade" : "cidades"}
                     </span>
-                    <div>
-                      <h2 className="text-2xl font-bold">{stateNames[stateCode] || stateCode}</h2>
-                      <p className="text-xs text-muted">{cities.length} cidades mapeadas</p>
-                    </div>
                   </div>
 
                   <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -138,17 +140,17 @@ export default function CitiesDirectory() {
                             </span>
                           </h3>
                           <p className="text-xs font-bold uppercase tracking-wider text-muted mb-3">
-                            Nichos Atendidos:
+                            Google Maps por Especialidade:
                           </p>
                           <div className="flex flex-col gap-1.5">
-                            {NICHES.map((niche) => (
+                            {niches.slice(0, 8).map((niche) => (
                               <Link
                                 key={niche.slug}
-                                to={`/estrutura-de-vendas-para-${niche.slug}-em-${city.slug}`}
+                                to={`/google-meu-negocio/${niche.slug}/${city.state.toLowerCase()}/${city.slug}`}
                                 className="text-sm text-muted hover:text-accent-400 hover:translate-x-1 transition-all flex items-center gap-2"
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-accent-400/60" />
-                                {niche.badge} em {city.name}
+                                {niche.nome} em {city.name}
                               </Link>
                             ))}
                           </div>
@@ -163,34 +165,7 @@ export default function CitiesDirectory() {
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-line mt-20">
-        <div className="mx-auto max-w-6xl px-5 py-10 text-sm text-muted">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link to="/" className="font-semibold text-text hover:text-accent transition-colors">
-              Leonardo Brasil
-            </Link>
-            <a href="mailto:contato@leonardobrasil.com.br" className="hover:text-text transition-colors">
-              contato@leonardobrasil.com.br
-            </a>
-          </div>
-          <div className="mt-6 pt-6 border-t border-line text-center text-xs leading-relaxed text-muted/80">
-            <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 mb-3">
-              <Link to="/termos" className="hover:text-text transition-colors">Termos</Link>
-              <span className="text-line-strong">·</span>
-              <Link to="/privacidade" className="hover:text-text transition-colors">Privacidade</Link>
-              <span className="text-line-strong">·</span>
-              <Link to="/exclusao-de-dados" className="hover:text-text transition-colors">Exclusão de Dados</Link>
-              <span className="text-line-strong">·</span>
-              <Link to="/brandbook" className="hover:text-text transition-colors">Brandbook</Link>
-              <span className="text-line-strong">·</span>
-              <Link to="/cidades" className="hover:text-text transition-colors">Cidades Atendidas</Link>
-            </div>
-            <p>LEONARDO FERRAZ DA SILVA BRASIL · CNPJ 65.993.728/0001-07</p>
-            <p className="mt-1">© {new Date().getFullYear()} · leonardobrasil.com.br</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

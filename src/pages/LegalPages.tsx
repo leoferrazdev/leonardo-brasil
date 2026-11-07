@@ -236,9 +236,9 @@ export function TermsPage() {
 
       <H2>1. O que oferecemos</H2>
       <P>
-        {COMPANY.brand} é uma marca pessoal de consultoria em <strong>estrutura de vendas para negócios
-        locais</strong> (presença, aquisição, conversão e escala). O site apresenta o método e permite que
-        você entre em contato — principalmente por WhatsApp — para um diagnóstico e para conhecer os serviços.
+        {COMPANY.brand} é uma marca pessoal de consultoria especializada em <strong>Google Meu Negócio e SEO
+        Local</strong> (otimização de perfil no Google Maps, posicionamento orgânico e atração de clientes locais). O site apresenta os serviços e permite que
+        você entre em contato — principalmente por WhatsApp — para um diagnóstico gratuito e para conhecer os serviços.
         Escopo, condições e valores de eventuais serviços são combinados diretamente no atendimento.
       </P>
 
