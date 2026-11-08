@@ -1,0 +1,144 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Brasa — Leonardo Brasil",
+    "version": "1.0.0",
+    "description": "Descrição das rotas existentes de suporte ao aplicativo. Não concede autorização de uso externo.",
+    "contact": {
+      "email": "contato@leonardobrasil.com.br"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://leonardobrasil.com.br"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Estado e configuração das integrações",
+        "responses": {
+          "200": {
+            "description": "Estado do servidor (não verifica disponibilidade dos provedores)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/anthropic/messages": {
+      "post": {
+        "summary": "Processar mensagens do Brasa",
+        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          },
+          "4XX": {
+            "description": "Entrada inválida ou requisição recusada"
+          },
+          "5XX": {
+            "description": "Integração indisponível ou falha de processamento"
+          }
+        }
+      }
+    },
+    "/api/elevenlabs/tts": {
+      "post": {
+        "summary": "Sintetizar voz",
+        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          },
+          "4XX": {
+            "description": "Entrada inválida ou requisição recusada"
+          },
+          "5XX": {
+            "description": "Integração indisponível ou falha de processamento"
+          }
+        }
+      }
+    },
+    "/api/stt/transcribe": {
+      "post": {
+        "summary": "Transcrever áudio",
+        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          },
+          "4XX": {
+            "description": "Entrada inválida ou requisição recusada"
+          },
+          "5XX": {
+            "description": "Integração indisponível ou falha de processamento"
+          }
+        }
+      }
+    },
+    "/api/webhooks/automation": {
+      "post": {
+        "summary": "Encaminhar evento à automação",
+        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          },
+          "4XX": {
+            "description": "Entrada inválida ou requisição recusada"
+          },
+          "5XX": {
+            "description": "Integração indisponível ou falha de processamento"
+          }
+        }
+      }
+    }
+  }
+}

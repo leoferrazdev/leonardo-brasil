@@ -547,7 +547,7 @@ export function createMainApp(options = {}) {
       const catalogPath = path.join(distDir, '.well-known', 'api-catalog');
       if (existsSync(catalogPath)) {
         response.setHeader('Content-Type', 'application/linkset+json');
-        response.sendFile(catalogPath);
+        response.sendFile(catalogPath, { dotfiles: 'allow' });
         return;
       }
       response.status(404).end();

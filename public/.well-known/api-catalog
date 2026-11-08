@@ -1,26 +1,23 @@
 {
   "linkset": [
     {
-      "anchor": "https://leonardobrasil.com.br/api/brain",
+      "anchor": "https://leonardobrasil.com.br/api",
+      "service-desc": [
+        {
+          "href": "https://leonardobrasil.com.br/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
       "service-doc": [
         {
-          "href": "https://leonardobrasil.com.br/auth.md",
+          "href": "https://leonardobrasil.com.br/api-docs.md",
           "type": "text/markdown"
         }
       ],
       "status": [
         {
-          "href": "https://leonardobrasil.com.br/",
-          "type": "text/html"
-        }
-      ]
-    },
-    {
-      "anchor": "https://leonardobrasil.com.br/api/elevenlabs/tts",
-      "service-doc": [
-        {
-          "href": "https://leonardobrasil.com.br/auth.md",
-          "type": "text/markdown"
+          "href": "https://leonardobrasil.com.br/api/health",
+          "type": "application/json"
         }
       ]
     }

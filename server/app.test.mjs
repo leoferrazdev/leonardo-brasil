@@ -1,9 +1,31 @@
 import assert from 'node:assert/strict';
 import test, { afterEach } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import { createMainApp, resetTtsCircuitForTests } from './app.mjs';
 
 afterEach(() => {
   resetTtsCircuitForTests();
+});
+
+test('API catalog serves a hidden well-known file with discoverable specification, docs and status', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  const response = await request(app, '/.well-known/api-catalog');
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /^application\/linkset\+json/);
+  const catalog = await response.json();
+  assert.ok(catalog.linkset.length > 0);
+  for (const entry of catalog.linkset) {
+    assert.equal(new URL(entry.anchor).protocol, 'https:');
+    for (const relation of ['service-desc', 'service-doc', 'status']) {
+      const linked = await request(app, new URL(entry[relation][0].href).pathname);
+      assert.equal(linked.status, 200, relation);
+      if (relation === 'service-desc') {
+        const spec = await linked.json();
+        assert.equal(spec.openapi, '3.1.0');
+        assert.ok(spec.paths['/api/health']);
+      }
+    }
+  }
 });
 
 async function request(app, path, options = {}) {

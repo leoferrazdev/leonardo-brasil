@@ -31,3 +31,8 @@
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
+
+# RFC 9727: tipo de mídia do catálogo sem extensão
+<Files "api-catalog">
+  ForceType application/linkset+json
+</Files>
