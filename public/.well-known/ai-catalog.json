@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Leonardo Brasil",
+    "identifier": "https://leonardobrasil.com.br"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:leonardobrasil.com.br:api:brasa",
+      "displayName": "Especificação da API Brasa",
+      "type": "application/json",
+      "url": "https://leonardobrasil.com.br/openapi.json",
+      "representativeQueries": [
+        "Onde encontro a especificação das APIs do Brasa?",
+        "Quais operações e formatos a API Brasa documenta?",
+        "Como consultar o estado da API de Leonardo Brasil?"
+      ]
+    },
+    {
+      "identifier": "urn:air:leonardobrasil.com.br:skill:consultar-api-leonardo-brasil",
+      "displayName": "Consultar APIs de Leonardo Brasil",
+      "type": "text/markdown",
+      "url": "https://leonardobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
+      "representativeQueries": [
+        "Como localizar a documentação pública das APIs de Leonardo Brasil?",
+        "Como um agente consulta o catálogo de APIs sem executar operações?",
+        "Como interpretar o endpoint de saúde do Brasa?"
+      ]
+    }
+  ]
+}

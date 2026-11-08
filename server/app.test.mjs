@@ -8,6 +8,31 @@ afterEach(() => {
   resetTtsCircuitForTests();
 });
 
+test('ARD manifest serves JSON with public CORS and valid resolvable resources', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  const response = await request(app, '/.well-known/ai-catalog.json', { headers: { Origin: 'https://example.org' } });
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /^application\/json/);
+  assert.equal(response.headers.get('access-control-allow-origin'), '*');
+  const manifest = await response.json();
+  assert.equal(manifest.specVersion, '1.0');
+  assert.ok(manifest.host.displayName && manifest.host.identifier);
+  assert.ok(manifest.entries.length > 0);
+  const identifiers = new Set();
+  for (const entry of manifest.entries) {
+    assert.match(entry.identifier, /^urn:air:leonardobrasil\.com\.br:[a-z0-9-]+:[a-z0-9-]+$/);
+    assert.ok(!identifiers.has(entry.identifier));
+    identifiers.add(entry.identifier);
+    assert.ok(entry.displayName);
+    assert.ok(['application/json', 'text/markdown'].includes(entry.type));
+    assert.notEqual(Object.hasOwn(entry, 'url'), Object.hasOwn(entry, 'data'));
+    assert.ok(entry.representativeQueries.length >= 2 && entry.representativeQueries.length <= 5);
+    const linked = await request(app, new URL(entry.url).pathname);
+    assert.equal(linked.status, 200);
+    assert.ok(linked.headers.get('content-type').startsWith(entry.type));
+  }
+});
+
 test('skills discovery serves JSON and an artifact matching its advertised digest', async () => {
   const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
   const response = await request(app, '/.well-known/agent-skills/index.json');

@@ -542,6 +542,12 @@ export function createMainApp(options = {}) {
   });
 
   if (existsSync(distDir)) {
+    app.get('/.well-known/ai-catalog.json', (_request, response) => {
+      response.setHeader('Content-Type', 'application/json');
+      response.setHeader('Access-Control-Allow-Origin', '*');
+      response.sendFile(path.join(distDir, '.well-known', 'ai-catalog.json'), { dotfiles: 'allow' });
+    });
+
     // Serve apenas o diretório público de skills; não expõe outros dotfiles.
     app.use('/.well-known/agent-skills', express.static(path.join(distDir, '.well-known', 'agent-skills'), {
       dotfiles: 'allow', index: false, redirect: false, fallthrough: false, maxAge: 0
