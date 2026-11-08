@@ -584,7 +584,10 @@ export function createMainApp(options = {}) {
 
       // Agent Readiness: Link Headers for Discovery (RFC 8288) no root
       if (cleanPath === '' || cleanPath === '/') {
-        response.setHeader('Link', '</.well-known/api-catalog>; rel="api-catalog"');
+        response.setHeader(
+          'Link',
+          '</.well-known/api-catalog>; rel="api-catalog", </.well-known/agents-index.json>; rel="agents-index", </.well-known/mcp/server-card.json>; rel="mcp-server-card"'
+        );
       }
 
       // Serve a página pré-renderizada da rota (dist/<rota>/index.html), quando existir.

@@ -17,6 +17,13 @@
 
 # index.html sempre fresco; assets com hash são imutáveis
 <IfModule mod_headers.c>
+  # CORS irrestrito para endpoints de descoberta de agentes de IA
+  <FilesMatch "\.(json|txt|md)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+    Header set Access-Control-Allow-Headers "*"
+  </FilesMatch>
+
   <FilesMatch "index\.html$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
   </FilesMatch>
