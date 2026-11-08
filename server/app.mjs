@@ -542,6 +542,12 @@ export function createMainApp(options = {}) {
   });
 
   if (existsSync(distDir)) {
+    // Documentos públicos de descoberta podem ser consultados por outros origins.
+    app.use('/.well-known', (_request, response, next) => {
+      response.setHeader('Access-Control-Allow-Origin', '*');
+      next();
+    });
+
     app.get('/.well-known/poppy.json', (_request, response) => {
       response.setHeader('Content-Type', 'application/json');
       response.setHeader('Access-Control-Allow-Origin', '*');
@@ -556,7 +562,7 @@ export function createMainApp(options = {}) {
 
     // Serve apenas o diretório público de skills; não expõe outros dotfiles.
     app.use('/.well-known/agent-skills', express.static(path.join(distDir, '.well-known', 'agent-skills'), {
-      dotfiles: 'allow', index: false, redirect: false, fallthrough: false, maxAge: 0
+      dotfiles: 'allow', index: false, redirect: false, fallthrough: true, maxAge: 0
     }));
 
     // Agent Readiness: API Catalog Endpoint
@@ -570,15 +576,9 @@ export function createMainApp(options = {}) {
       response.status(404).end();
     });
 
-    // Agent Readiness: Web Bot Auth Endpoint
-    app.get('/.well-known/http-message-signatures-directory', (request, response) => {
-      const authPath = path.join(distDir, '.well-known', 'http-message-signatures-directory');
-      if (existsSync(authPath)) {
-        response.setHeader('Content-Type', 'application/jwk-set+json');
-        response.sendFile(authPath);
-        return;
-      }
-      response.status(404).end();
+    // A ausência de um protocolo não deve parecer sucesso com o HTML da SPA.
+    app.use('/.well-known', (_request, response) => {
+      response.status(404).json({ error: 'Discovery resource not found' });
     });
 
     app.use('/assets', express.static(path.join(distDir, 'assets'), { immutable: true, maxAge: '1y' }));
@@ -589,22 +589,23 @@ export function createMainApp(options = {}) {
     app.get(/.*/, (request, response) => {
       const cleanPath = request.path.replace(/\/+$/, '');
 
-      // Agent Readiness: Markdown Content-Negotiation
-      if (request.headers.accept && request.headers.accept.includes('text/markdown')) {
+      // Anuncia somente os documentos e capacidades realmente publicados.
+      if (cleanPath === '' || cleanPath === '/') {
+        response.vary('Accept');
+        response.setHeader(
+          'Link',
+          '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ai-catalog.json>; rel="ai-catalog", </.well-known/agent-skills/index.json>; rel="agent-skills", </llms.txt>; rel="alternate"; type="text/markdown"'
+        );
+      }
+
+      // O resumo Markdown descreve a página inicial, não todas as rotas do site.
+      if ((cleanPath === '' || cleanPath === '/') && request.headers.accept?.includes('text/markdown')) {
         const llmsTxtPath = path.join(distDir, 'llms.txt');
         if (existsSync(llmsTxtPath)) {
           response.setHeader('Content-Type', 'text/markdown; charset=utf-8');
           response.sendFile(llmsTxtPath);
           return;
         }
-      }
-
-      // Agent Readiness: Link Headers for Discovery (RFC 8288) no root
-      if (cleanPath === '' || cleanPath === '/') {
-        response.setHeader(
-          'Link',
-          '</.well-known/api-catalog>; rel="api-catalog", </.well-known/agents-index.json>; rel="agents-index", </.well-known/mcp/server-card.json>; rel="mcp-server-card"'
-        );
       }
 
       // Serve a página pré-renderizada da rota (dist/<rota>/index.html), quando existir.

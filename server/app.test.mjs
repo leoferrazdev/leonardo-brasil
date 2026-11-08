@@ -8,6 +8,44 @@ afterEach(() => {
   resetTtsCircuitForTests();
 });
 
+test('unsupported discovery protocols return JSON 404 instead of the SPA or fabricated capabilities', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  for (const path of [
+    '/.well-known/openid-configuration', '/.well-known/oauth-authorization-server',
+    '/.well-known/oauth-protected-resource', '/.well-known/http-message-signatures-directory',
+    '/.well-known/mcp/server-card.json', '/.well-known/agent-card.json',
+    '/.well-known/acp.json', '/.well-known/ucp',
+    '/.well-known/agent-skills/missing/SKILL.md'
+  ]) {
+    const response = await request(app, path, { headers: { Accept: 'text/markdown', Origin: 'https://example.org' } });
+    assert.equal(response.status, 404, path);
+    assert.match(response.headers.get('content-type'), /^application\/json/, path);
+    assert.deepEqual(await response.json(), { error: 'Discovery resource not found' });
+  }
+});
+
+test('Markdown discovery advertises only working public resources and current content', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  const response = await request(app, '/', { headers: { Accept: 'text/markdown' } });
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /^text\/markdown/);
+  assert.ok(response.headers.get('vary').includes('Accept'));
+  const links = response.headers.get('link');
+  assert.ok(links.includes('rel="api-catalog"') && links.includes('rel="ai-catalog"'));
+  assert.ok(!links.includes('mcp-server-card') && !links.includes('agents-index'));
+  const summary = await response.text();
+  assert.ok(summary.includes('/auditoria-perfil-google'));
+  assert.ok(!summary.includes('/calculadora'));
+  for (const path of [
+    '/.well-known/api-catalog', '/.well-known/ai-catalog.json',
+    '/.well-known/agent-skills/index.json', '/.well-known/poppy.json'
+  ]) {
+    const resource = await request(app, path, { headers: { Origin: 'https://example.org' } });
+    assert.equal(resource.status, 200);
+    assert.equal(resource.headers.get('access-control-allow-origin'), '*');
+  }
+});
+
 test('Poppy discovery declares website-only support without claiming OAuth or sessions', async () => {
   const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
   const response = await request(app, '/.well-known/poppy.json');

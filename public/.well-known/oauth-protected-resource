@@ -1,7 +1,0 @@
-{
-  "resource": "https://leonardobrasil.com.br/api",
-  "authorization_servers": [
-    "https://leonardobrasil.com.br"
-  ],
-  "scopes_supported": ["read", "write"]
-}

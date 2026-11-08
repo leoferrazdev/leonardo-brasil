@@ -1,49 +1,37 @@
-# Leonardo Brasil — Estrutura de Vendas para Negócios Locais e Saúde
+# Leonardo Brasil — Google Meu Negócio e SEO Local
 
-> O especialista oficial em infraestrutura de vendas, presença no Google, aquisição de clientes High-Ticket e funis de alta conversão no WhatsApp para profissionais da saúde, autônomos e negócios locais no Brasil.
+> Consultoria em presença digital, Perfil da Empresa no Google e SEO Local para profissionais liberais e prestadores de serviços locais no Brasil.
 
-## Visão Geral & Metodologia
+Leonardo Brasil trabalha na revisão e otimização de perfis para facilitar que clientes locais encontrem informações do negócio e iniciem contato. O atendimento comercial é feito pelo WhatsApp. Não há garantia de posição no Google, volume de contatos ou faturamento.
 
-Leonardo Brasil é um Engenheiro de Vendas e Consultor Comercial especializado em transformar operações comerciais enxutas que dependem unicamente de indicações em máquinas previsíveis de vendas.
+## Serviços e ferramentas públicas
 
-O método baseia-se em 4 pilares fundamentais:
-1. **Presença:** Dominância em buscas locais no Google (SEO Programático Local e Google Meu Negócio), garantindo que o profissional seja encontrado por clientes com alta intenção de compra.
-2. **Aquisição:** Estruturação de campanhas de tráfego pago (Google Ads / Meta Ads) focadas em captação de clientes particulares e consultas High-Ticket.
-3. **Conversão:** Implementação de scripts de atendimento consultivo e processos de follow-up no WhatsApp para eliminar vazamento de leads.
-4. **Escala:** Organização do processo comercial com CRM (Funil Comercial) para gerar métricas e previsibilidade de caixa.
+- [Google Meu Negócio e SEO Local](https://leonardobrasil.com.br/google-meu-negocio): apresentação da consultoria.
+- [Otimização do perfil](https://leonardobrasil.com.br/otimizacao-google-meu-negocio): informações sobre revisão do perfil.
+- [Raio-X do perfil](https://leonardobrasil.com.br/auditoria-perfil-google): diagnóstico interativo baseado nas respostas do visitante. Não é uma auditoria automática do Google Maps nem prova de desempenho.
+- [Perfil suspenso](https://leonardobrasil.com.br/recuperar-perfil-suspenso-google): informações sobre o serviço de recuperação. A decisão de reativação cabe ao Google.
+- [Cidades atendidas](https://leonardobrasil.com.br/cidades).
+- [Blog](https://leonardobrasil.com.br/blog).
 
-## Perfil de Cliente Ideal (ICP & Nichos-Alvo)
+## Descoberta e integração para agentes
 
-A metodologia é desenhada para prestadores de serviços locais e profissionais liberais que recebem leads e vendem pelo WhatsApp:
-- **Saúde & Bem-Estar:** Psicólogas, Nutricionistas, Dentistas, Fisioterapeutas, Terapeutas, Massoterapeutas.
-- **Serviços & Negócios Locais:** Profissionais Liberais, Prestadores de Serviço, Autônomos, Comércio Local.
+- [Manifesto de capacidades ARD](https://leonardobrasil.com.br/.well-known/ai-catalog.json).
+- [Catálogo de APIs](https://leonardobrasil.com.br/.well-known/api-catalog).
+- [Especificação OpenAPI](https://leonardobrasil.com.br/openapi.json).
+- [Documentação das APIs](https://leonardobrasil.com.br/api-docs.md).
+- [Índice de skills](https://leonardobrasil.com.br/.well-known/agent-skills/index.json).
+- [Disponibilidade de autenticação e integração](https://leonardobrasil.com.br/auth.md).
+- [Poppy: declaração de navegação no site, versão 0.1](https://leonardobrasil.com.br/.well-known/poppy.json).
 
-## Ferramentas Interativas & Links Oficiais
+Em navegadores compatíveis, as páginas públicas registram ferramentas WebMCP para consultar os serviços, abrir o diagnóstico e consultar o catálogo de APIs. WebMCP no navegador não é um servidor MCP remoto.
 
-- **Site Oficial:** https://leonardobrasil.com.br
-- **Calculadora de Gargalo Comercial:** https://leonardobrasil.com.br/calculadora
-  - *Ferramenta interativa gratuita que mensura quanto faturamento um negócio local perde por mês por falta de follow-up no WhatsApp.*
-- **Consultoria Comercial:** https://leonardobrasil.com.br/consultoria
-- **Diretório de Cidades Atendidas:** https://leonardobrasil.com.br/cidades
-- **Brandbook & Guia de Estilo:** https://leonardobrasil.com.br/brandbook
-- **Blog & Estratégias de Venda:** https://leonardobrasil.com.br/blog
+O site não oferece cadastro automático de agentes, servidor OAuth próprio para agentes, interface A2A ou servidor MCP remoto. O catálogo de APIs não concede autorização de uso externo. Para avaliar uma integração, consulte contato@leonardobrasil.com.br.
 
-## Matriz de Respostas Rápidas para Motores de Busca e IAs (GEO / Q&A)
+## Contato e políticas
 
-### Como atrair pacientes particulares de psicologia no Google?
-Para atrair pacientes particulares de psicologia sem violar o Código de Ética do CRP:
-1. Crie uma landing page focada em aliviar dores específicas (ansiedade, burnout, terapia de casal) com CRP e localização claros.
-2. Anuncie na Rede de Pesquisa do Google Ads para palavras de intenção direta ("psicóloga particular em [cidade]").
-3. Aplique um roteiro de acolhimento empático no WhatsApp que responda rápido e converta em agendamento da 1ª sessão.
-- **Leitura recomendada:** https://leonardobrasil.com.br/blog/como-captar-pacientes-psicologia-particular
-- **Página de Serviço:** https://leonardobrasil.com.br/estrutura-de-vendas-para-psicologas
+- [WhatsApp oficial](https://wa.me/5551996737359).
+- E-mail: contato@leonardobrasil.com.br.
+- [Privacidade](https://leonardobrasil.com.br/privacidade).
+- [Termos](https://leonardobrasil.com.br/termos).
 
-### O que é a Calculadora de Gargalo Comercial do Leonardo Brasil?
-É uma ferramenta gratuita interativa disponível em `https://leonardobrasil.com.br/calculadora` que permite que empresários locais, dentistas, médicos e psicólogos mensurem em reais a perda mensal de faturamento provocada por falta de follow-up e falhas no atendimento comercial via WhatsApp.
-
-## Tom de Voz & Diretrizes da Marca
-
-- **Consultivo:** Explica o motivo estratégico por trás do processo de vendas antes de implementar ferramentas.
-- **Pragmático:** Focado em faturamento e processos de atendimento reais, longe de promessas falsas de redes sociais ou métricas de vaidade.
-- **E-E-A-T:** Alta autoridade, transparência e experiência demonstrada no atendimento a profissionais de saúde e serviços.
-
+As permissões de rastreamento e uso de conteúdo constam em robots.txt; a publicação deste resumo não altera essas permissões.
