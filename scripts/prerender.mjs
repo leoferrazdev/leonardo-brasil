@@ -36,7 +36,13 @@ function buildRoutes() {
     "/",
     "/google-meu-negocio",
     "/otimizacao-google-meu-negocio",
+    "/consultor-google-meu-negocio",
+    "/especialista-google-maps",
     "/recuperar-perfil-suspenso-google",
+    "/auditoria-perfil-google",
+    "/google-meu-negocio/medicos-cfm",
+    "/google-meu-negocio/advogados-oab",
+    "/google-meu-negocio/dentistas-cfo",
     "/consultoria",
     "/blog",
     "/brandbook",
@@ -52,10 +58,19 @@ function buildRoutes() {
 
   const gmnHubRoutes = niches.map((slug) => `/google-meu-negocio/${slug}`);
   const otimizacaoHubRoutes = niches.map((slug) => `/otimizacao-google-meu-negocio/${slug}`);
+  const consultorHubRoutes = niches.map((slug) => `/consultor-google-meu-negocio/${slug}`);
+  const especialistaHubRoutes = niches.map((slug) => `/especialista-google-maps/${slug}`);
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   // Set para evitar rotas duplicadas
-  return [...new Set([...staticRoutes, ...gmnHubRoutes, ...otimizacaoHubRoutes, ...blogRoutes])];
+  return [...new Set([
+    ...staticRoutes,
+    ...gmnHubRoutes,
+    ...otimizacaoHubRoutes,
+    ...consultorHubRoutes,
+    ...especialistaHubRoutes,
+    ...blogRoutes
+  ])];
 }
 
 function outputPathFor(route) {
@@ -68,9 +83,7 @@ async function main() {
     throw new Error(`Template não encontrado: ${templatePath}. Rode 'vite build' antes.`);
   }
   if (!fs.existsSync(serverEntry)) {
-    throw new Error(
-      `Bundle de servidor não encontrado: ${serverEntry}. Rode o build --ssr antes.`
-    );
+    throw new Error(`Entry server não encontrado: ${serverEntry}. Rode 'vite build --ssr' antes.`);
   }
 
   const template = fs.readFileSync(templatePath, "utf8");
@@ -78,36 +91,33 @@ async function main() {
 
   const routes = buildRoutes();
   let ok = 0;
-  const failures = [];
+  let fail = 0;
 
   for (const route of routes) {
     try {
       const { appHtml, head } = render(route);
       const html = template
-        .replace("<!--app-head-->", head)
-        .replace("<!--app-html-->", appHtml);
+        .replace("<!--app-head-->", head || "")
+        .replace("<!--app-html-->", appHtml || "");
 
-      const outPath = outputPathFor(route);
-      fs.mkdirSync(path.dirname(outPath), { recursive: true });
-      fs.writeFileSync(outPath, html, "utf8");
-      ok += 1;
+      const outFile = outputPathFor(route);
+      fs.mkdirSync(path.dirname(outFile), { recursive: true });
+      fs.writeFileSync(outFile, html, "utf8");
+      ok++;
     } catch (error) {
-      failures.push({ route, error: error.message });
+      fail++;
+      console.error(`[prerender] Erro ao renderizar rota ${route}:`, error.message);
     }
   }
 
   console.log(`[prerender] ${ok}/${routes.length} rotas geradas com sucesso.`);
-  if (failures.length > 0) {
-    console.warn(`[prerender] ${failures.length} falhas:`);
-    for (const f of failures) {
-      console.warn(`  - ${f.route}: ${f.error}`);
-    }
-    // Falha o build se alguma rota quebrar
+  if (fail > 0) {
+    console.warn(`[prerender] ${fail} rota(s) falharam.`);
     process.exitCode = 1;
   }
 }
 
 main().catch((err) => {
-  console.error("[prerender] Erro fatal:", err);
+  console.error("[prerender] Falha fatal:", err);
   process.exit(1);
 });

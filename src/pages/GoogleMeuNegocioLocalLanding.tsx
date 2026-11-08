@@ -66,31 +66,45 @@ export default function GoogleMeuNegocioLocalLanding() {
     window.scrollTo(0, 0);
   }, [nicho, estado, cidade]);
 
-  const isOptimization = location.pathname.startsWith("/otimizacao-google-meu-negocio");
-  const basePath = isOptimization ? "/otimizacao-google-meu-negocio" : "/google-meu-negocio";
-
   const formattedCidade = formatLocationName(cidade);
   const formattedEstado = formatLocationName(estado).toUpperCase();
   const formattedNicho = formatNiche(nicho);
+
+  let basePath = "/google-meu-negocio";
+  let title = `Especialista em Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+  let description = `Otimização e gestão de Perfil da Empresa no Google (Google Meu Negócio) para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Apareça no Top 3 do Google Maps e receba ligações e mensagens no WhatsApp.`;
+  let eyebrow = "Especialista em Google Meu Negócio & SEO Local";
+  let h1Text = `Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+  let whatsappMessage = `Olá, Leonardo! Vi seu site e gostaria de um diagnóstico do meu Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
+
+  if (location.pathname.startsWith("/otimizacao-google-meu-negocio")) {
+    basePath = "/otimizacao-google-meu-negocio";
+    title = `Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} | Top 3 Maps`;
+    description = `Serviço especializado de otimização de Google Meu Negócio e Perfil da Empresa para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Auditoria, SEO local e posicionamento no Top 3 do Google Maps.`;
+    eyebrow = "Otimização de Perfil & Top 3 no Google Maps";
+    h1Text = `Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+    whatsappMessage = `Olá, Leonardo! Vi seu site sobre otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} e gostaria de uma avaliação do meu perfil no Google Maps.`;
+  } else if (location.pathname.startsWith("/consultor-google-meu-negocio")) {
+    basePath = "/consultor-google-meu-negocio";
+    title = `Consultor Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+    description = `Consultoria individual com Leonardo Brasil em Google Meu Negócio para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Auditoria, posicionamento no Google Maps e atração de clientes locais.`;
+    eyebrow = "Consultor Especialista Google Meu Negócio";
+    h1Text = `Consultoria de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+    whatsappMessage = `Olá, Leonardo! Vi seu site e gostaria de contratar sua consultoria de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
+  } else if (location.pathname.startsWith("/especialista-google-maps")) {
+    basePath = "/especialista-google-maps";
+    title = `Especialista em Google Maps para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} | SEO Local`;
+    description = `Contrate especialista em Google Maps e presença local para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Coloque sua empresa no Top 3 do mapa e receba mais ligações e rotas.`;
+    eyebrow = "Especialista em Google Maps & SEO Local";
+    h1Text = `Especialista em Google Maps para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
+    whatsappMessage = `Olá, Leonardo! Gostaria de falar com você como especialista em Google Maps para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
+  }
 
   const nicheData = nicho && seoNicheData[nicho]
     ? seoNicheData[nicho]
     : getDefaultNicheData(formattedNicho, formattedCidade);
 
-  const title = isOptimization
-    ? `Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} | Top 3 Maps`
-    : `Especialista em Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}`;
-
-  const description = isOptimization
-    ? `Serviço especializado de otimização de Google Meu Negócio e Perfil da Empresa para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Auditoria, SEO local e posicionamento no Top 3 do Google Maps.`
-    : `Otimização e gestão de Perfil da Empresa no Google (Google Meu Negócio) para ${formattedNicho} em ${formattedCidade} (${formattedEstado}). Apareça no Top 3 do Google Maps e receba ligações e mensagens no WhatsApp.`;
-
   const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}/${estado}/${cidade}`;
-
-  const whatsappMessage = isOptimization
-    ? `Olá, Leonardo! Vi seu site sobre otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado} e gostaria de uma avaliação do meu perfil no Google Maps.`
-    : `Olá, Leonardo! Vi seu site e gostaria de um diagnóstico do meu Google Meu Negócio para ${formattedNicho} em ${formattedCidade} - ${formattedEstado}.`;
-
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Navegação cruzada (cidades próximas no mesmo estado)
@@ -107,9 +121,7 @@ export default function GoogleMeuNegocioLocalLanding() {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": isOptimization
-        ? `Leonardo Brasil — Otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade}`
-        : `Leonardo Brasil — Google Meu Negócio para ${formattedNicho} em ${formattedCidade}`,
+      "name": `Leonardo Brasil — ${h1Text}`,
       "description": description,
       "url": canonicalUrl,
       "telephone": "+55-51-99256-8861",
@@ -131,7 +143,7 @@ export default function GoogleMeuNegocioLocalLanding() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": `Como funciona a otimização de Google Meu Negócio para ${formattedNicho} em ${formattedCidade}?`,
+          "name": `Como funciona o serviço para ${formattedNicho} em ${formattedCidade}?`,
           "acceptedAnswer": {
             "@type": "Answer",
             "text": `Leonardo Brasil realiza a revisão completa do Perfil da Empresa no Google, configurando categorias primárias e secundárias estratégicas, descrição comercial com SEO local, catálogo de serviços, fotografias de alta conversão e método ativo de coleta de avaliações 5 estrelas.`
@@ -139,10 +151,10 @@ export default function GoogleMeuNegocioLocalLanding() {
         },
         {
           "@type": "Question",
-          "name": `Quanto tempo leva para o perfil de ${formattedNicho} começar a subir posições no Google Maps em ${formattedCidade}?`,
+          "name": `Quanto tempo leva para ver resultados no Google Maps em ${formattedCidade}?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `Muitos perfis começam a notar aumento de chamadas e rotas já nos primeiros 15 a 30 dias após as correções críticas de relevância e consistência NAP (nome, endereço e telefone).`
+            "text": `Muitos perfis começam a notar aumento significativo nas ligações e solicitações de rota no WhatsApp nas primeiras duas a três semanas após as correções cirúrgicas de SEO Local.`
           }
         }
       ]
@@ -150,9 +162,9 @@ export default function GoogleMeuNegocioLocalLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-ink text-text font-sans selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-ink text-text font-sans">
       <SeoHead
-        title={title}
+        title={`${title} | Leonardo Brasil`}
         description={description}
         canonicalUrl={canonicalUrl}
         schema={schema}
@@ -166,6 +178,9 @@ export default function GoogleMeuNegocioLocalLanding() {
             Leonardo Brasil
           </Link>
           <div className="flex items-center gap-4">
+            <Link to="/auditoria-perfil-google" className="hidden sm:inline-block text-xs font-semibold text-accent hover:underline">
+              Raio-X Gratuito
+            </Link>
             <Link to="/recuperar-perfil-suspenso-google" className="hidden sm:inline-block text-xs font-semibold text-red-400 hover:text-red-300 transition-colors">
               Perfil Suspenso?
             </Link>
@@ -192,15 +207,11 @@ export default function GoogleMeuNegocioLocalLanding() {
             
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent-300 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              {isOptimization ? `Otimização & Gestão de Google Maps em ${formattedCidade}` : `SEO Local & Google Maps · Atendendo ${formattedCidade} e região`}
+              {eyebrow} · {formattedCidade} - {formattedEstado}
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] text-text max-w-4xl mx-auto">
-              {isOptimization ? "Otimização de Google Meu Negócio para " : "Posicionamento no Top 3 do Google Maps para "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-accent to-gold">
-                {formattedNicho}
-              </span>{" "}
-              em {formattedCidade}
+              {h1Text}
             </h1>
 
             <p className="mt-6 text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
@@ -219,12 +230,12 @@ export default function GoogleMeuNegocioLocalLanding() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
-              <a
-                href="#como-funciona"
-                className="w-full sm:w-auto inline-flex items-center justify-center font-bold text-sm text-muted hover:text-text px-6 py-4 rounded-full border border-line hover:border-line-strong transition-all"
+              <Link
+                to="/auditoria-perfil-google"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-bold text-sm text-accent hover:text-accent-300 px-6 py-4 rounded-full border border-accent/30 hover:border-accent transition-all"
               >
-                Ver como funciona o serviço
-              </a>
+                Fazer Raio-X do Perfil Online →
+              </Link>
             </div>
 
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-left">
@@ -394,15 +405,21 @@ export default function GoogleMeuNegocioLocalLanding() {
             <p className="mt-4 text-base text-muted">
               Envie uma mensagem agora e receba uma análise preliminar gratuita do seu perfil em {formattedCidade}.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-accent text-white font-black text-lg px-8 py-4 rounded-full hover:bg-accent-600 transition-all shadow-xl shadow-accent/25 hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent text-white font-black text-lg px-8 py-4 rounded-full hover:bg-accent-600 transition-all shadow-xl shadow-accent/25 hover:scale-105"
               >
                 Falar com Leonardo Brasil no WhatsApp
               </a>
+              <Link
+                to="/auditoria-perfil-google"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-bold text-sm text-muted hover:text-text px-6 py-4 rounded-full border border-line hover:border-line-strong transition-all"
+              >
+                Fazer Raio-X Online
+              </Link>
             </div>
           </div>
         </section>

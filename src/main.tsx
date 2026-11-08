@@ -15,6 +15,10 @@ const GoogleMeuNegocioLanding = lazy(() => import("./pages/GoogleMeuNegocioLandi
 const GoogleMeuNegocioNicheHub = lazy(() => import("./pages/GoogleMeuNegocioNicheHub"));
 const GoogleMeuNegocioLocalLanding = lazy(() => import("./pages/GoogleMeuNegocioLocalLanding"));
 const RecuperarPerfilSuspenso = lazy(() => import("./pages/RecuperarPerfilSuspenso"));
+const AuditoriaPerfilGoogle = lazy(() => import("./pages/AuditoriaPerfilGoogle"));
+const GoogleMeuNegocioMedicosCfm = lazy(() => import("./pages/GoogleMeuNegocioMedicosCfm"));
+const GoogleMeuNegocioAdvogadosOab = lazy(() => import("./pages/GoogleMeuNegocioAdvogadosOab"));
+const GoogleMeuNegocioDentistasCfo = lazy(() => import("./pages/GoogleMeuNegocioDentistasCfo"));
 const BlogIndex = lazy(() => import("./pages/BlogIndex"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Brandbook = lazy(() => import("./pages/Brandbook"));
@@ -58,12 +62,33 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Suspense fallback={<div className="min-h-screen bg-ink flex items-center justify-center text-accent">Carregando...</div>}>
           <Routes>
             <Route path="/" element={<App />} />
+            
+            {/* Ferramenta Interativa & Hubs Regulatórios */}
+            <Route path="/auditoria-perfil-google" element={<AuditoriaPerfilGoogle />} />
+            <Route path="/google-meu-negocio/medicos-cfm" element={<GoogleMeuNegocioMedicosCfm />} />
+            <Route path="/google-meu-negocio/advogados-oab" element={<GoogleMeuNegocioAdvogadosOab />} />
+            <Route path="/google-meu-negocio/dentistas-cfo" element={<GoogleMeuNegocioDentistasCfo />} />
+
+            {/* Vertical 1: Google Meu Negócio */}
             <Route path="/google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
             <Route path="/google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
             <Route path="/google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+            {/* Vertical 2: Otimização Google Meu Negócio */}
             <Route path="/otimizacao-google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
             <Route path="/otimizacao-google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
             <Route path="/otimizacao-google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+            {/* Vertical 3: Consultor Google Meu Negócio */}
+            <Route path="/consultor-google-meu-negocio" element={<GoogleMeuNegocioLanding />} />
+            <Route path="/consultor-google-meu-negocio/:nicho" element={<GoogleMeuNegocioNicheHub />} />
+            <Route path="/consultor-google-meu-negocio/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+            {/* Vertical 4: Especialista Google Maps */}
+            <Route path="/especialista-google-maps" element={<GoogleMeuNegocioLanding />} />
+            <Route path="/especialista-google-maps/:nicho" element={<GoogleMeuNegocioNicheHub />} />
+            <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
             <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
             <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
             <Route path="/blog" element={<BlogIndex />} />

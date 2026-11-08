@@ -14,9 +14,9 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12 text-sm text-muted">
         
         {/* SEO Linking Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 pb-10 border-b border-line">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-line">
           <div>
-            <h4 className="font-semibold text-text mb-4">Google Meu Negócio (Por Nicho)</h4>
+            <h4 className="font-semibold text-text mb-4">Google Meu Negócio</h4>
             <ul className="grid grid-cols-1 gap-2 text-xs">
               {niches.slice(0, 7).map(niche => (
                 <li key={niche.slug}>
@@ -43,6 +43,47 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-text mb-4">Hubs Éticos & Ferramentas</h4>
+            <ul className="grid grid-cols-1 gap-2 text-xs">
+              <li>
+                <Link to="/auditoria-perfil-google" className="text-accent font-bold hover:underline">
+                  ★ Raio-X do Perfil (Auditoria Gratuita)
+                </Link>
+              </li>
+              <li>
+                <Link to="/google-meu-negocio/medicos-cfm" className="hover:text-emerald-400 transition-colors">
+                  Médicos & Clínicas (Regras CFM)
+                </Link>
+              </li>
+              <li>
+                <Link to="/google-meu-negocio/advogados-oab" className="hover:text-blue-400 transition-colors">
+                  Advogados & Bancas (Provimento OAB)
+                </Link>
+              </li>
+              <li>
+                <Link to="/google-meu-negocio/dentistas-cfo" className="hover:text-accent-300 transition-colors">
+                  Dentistas Particulares (Normas CFO)
+                </Link>
+              </li>
+              <li>
+                <Link to="/recuperar-perfil-suspenso-google" className="text-red-400 hover:text-red-300 transition-colors font-medium">
+                  Recuperar Perfil Suspenso no Google
+                </Link>
+              </li>
+              <li>
+                <Link to="/consultor-google-meu-negocio" className="hover:text-accent transition-colors">
+                  Consultor Google Meu Negócio
+                </Link>
+              </li>
+              <li>
+                <Link to="/especialista-google-maps" className="hover:text-accent transition-colors">
+                  Especialista em Google Maps
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -122,9 +163,15 @@ export function Footer() {
           <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 mb-3">
             <Link to="/" className="hover:text-accent transition-colors">Início</Link>
             <span className="text-line-strong">·</span>
+            <Link to="/auditoria-perfil-google" className="hover:text-accent text-accent transition-colors font-bold">Raio-X Gratuito</Link>
+            <span className="text-line-strong">·</span>
             <Link to="/google-meu-negocio" className="hover:text-accent text-accent transition-colors font-medium">Google Meu Negócio</Link>
             <span className="text-line-strong">·</span>
             <Link to="/otimizacao-google-meu-negocio" className="hover:text-accent transition-colors">Otimização Maps</Link>
+            <span className="text-line-strong">·</span>
+            <Link to="/consultor-google-meu-negocio" className="hover:text-accent transition-colors">Consultor GMN</Link>
+            <span className="text-line-strong">·</span>
+            <Link to="/especialista-google-maps" className="hover:text-accent transition-colors">Especialista Maps</Link>
             <span className="text-line-strong">·</span>
             <Link to="/recuperar-perfil-suspenso-google" className="hover:text-red-400 text-red-400/90 transition-colors font-medium">Perfil Suspenso?</Link>
             <span className="text-line-strong">·</span>

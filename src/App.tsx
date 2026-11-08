@@ -105,10 +105,11 @@ export default function App() {
             Leonardo Brasil
           </Link>
 
-          <nav className="hidden md:flex gap-7 items-center">
+          <nav className="hidden md:flex gap-6 items-center">
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-sm font-medium text-muted hover:text-text transition-colors">{n.label}</a>
             ))}
+            <Link to="/auditoria-perfil-google" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">Raio-X Gratuito</Link>
             <Link to="/recuperar-perfil-suspenso-google" className="text-sm font-medium text-red-400 hover:text-red-300 transition-colors">Perfil Suspenso?</Link>
             <Link to="/cidades" className="text-sm font-medium text-muted hover:text-text transition-colors">Cidades</Link>
             <Link to="/blog" className="text-sm font-medium text-muted hover:text-text transition-colors">Blog</Link>
@@ -130,6 +131,7 @@ export default function App() {
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-lg font-medium">{n.label}</a>
             ))}
+            <Link to="/auditoria-perfil-google" onClick={() => setMenu(false)} className="text-lg font-bold text-accent">Fazer Raio-X do Perfil (Grátis)</Link>
             <Link to="/recuperar-perfil-suspenso-google" onClick={() => setMenu(false)} className="text-lg font-medium text-red-400">Perfil Suspenso no Google?</Link>
             <Link to="/cidades" onClick={() => setMenu(false)} className="text-lg font-medium">Cidades Atendidas</Link>
             <Link to="/blog" onClick={() => setMenu(false)} className="text-lg font-medium">Blog</Link>
@@ -156,11 +158,11 @@ export default function App() {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a href={WA_DIAG} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_40px_rgba(59,130,246,0.35)]">
-                  <WhatsApp className="w-5 h-5" /> Diagnóstico gratuito no WhatsApp
+                  <WhatsApp className="w-5 h-5" /> Diagnóstico no WhatsApp
                 </a>
-                <a href="#pilares" onClick={(e) => scrollTo(e, "pilares")} className="inline-flex justify-center items-center gap-2 rounded-full border border-line-strong px-7 py-4 text-base font-semibold text-text hover:bg-panel transition-colors">
-                  Ver o que está incluso
-                </a>
+                <Link to="/auditoria-perfil-google" className="inline-flex justify-center items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-7 py-4 text-base font-bold text-accent-300 hover:bg-accent/20 transition-colors shadow-sm">
+                  Fazer Raio-X Online (Grátis) →
+                </Link>
               </div>
               <p className="mt-6 text-xs text-muted">Consultoria técnica individualizada · Atendimento direto comigo.</p>
             </div>
@@ -313,14 +315,53 @@ export default function App() {
         {/* ESPECIALIDADES / NICHOS */}
         <section id="especialidades" className="py-20 bg-panel scroll-mt-16 border-b border-line">
           <div className="mx-auto max-w-6xl px-5">
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-xs font-bold uppercase tracking-widest text-accent">Segmentos Especializados</span>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight mt-2">
                 Otimização de Google Meu Negócio por Especialidade
               </h2>
               <p className="mt-3 text-muted text-sm sm:text-base">
-                Selecione o seu segmento para acessar o hub nacional com todas as cidades atendidas.
+                Selecione o seu segmento para acessar a estratégia sob medida e todas as cidades atendidas.
               </p>
+            </div>
+
+            {/* HUBS ÉTICOS & REGULATÓRIOS (DESTAQUE) */}
+            <div className="mb-10 grid sm:grid-cols-3 gap-4">
+              <Link
+                to="/google-meu-negocio/medicos-cfm"
+                className="p-5 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 hover:border-emerald-500 hover:bg-emerald-950/40 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-[11px] font-bold uppercase text-emerald-400 tracking-wider">Regras CFM 2.336</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-emerald-300 transition-colors">Médicos & Clínicas</h3>
+                  <p className="text-xs text-muted mt-2 leading-relaxed">Captação ética de pacientes particulares sem ferir o Manual de Publicidade Médica.</p>
+                </div>
+                <span className="text-xs font-bold text-emerald-400 mt-4 flex items-center gap-1">Ver diretrizes do CFM →</span>
+              </Link>
+
+              <Link
+                to="/google-meu-negocio/advogados-oab"
+                className="p-5 rounded-2xl border border-blue-500/30 bg-blue-950/20 hover:border-blue-500 hover:bg-blue-950/40 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-[11px] font-bold uppercase text-blue-400 tracking-wider">Provimento 205 OAB</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-blue-300 transition-colors">Advogados & Bancas</h3>
+                  <p className="text-xs text-muted mt-2 leading-relaxed">SEO Local sóbrio e informativo para atração passiva de clientes na sua comarca.</p>
+                </div>
+                <span className="text-xs font-bold text-blue-400 mt-4 flex items-center gap-1">Ver regras da OAB →</span>
+              </Link>
+
+              <Link
+                to="/google-meu-negocio/dentistas-cfo"
+                className="p-5 rounded-2xl border border-accent/30 bg-accent/10 hover:border-accent hover:bg-accent/20 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-[11px] font-bold uppercase text-accent-300 tracking-wider">Normas CFO</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-accent-300 transition-colors">Dentistas Particulares</h3>
+                  <p className="text-xs text-muted mt-2 leading-relaxed">Atraia procedimentos de alto ticket (implantes, alinhadores e estética) sem convênio.</p>
+                </div>
+                <span className="text-xs font-bold text-accent-300 mt-4 flex items-center gap-1">Ver estratégia CFO →</span>
+              </Link>
             </div>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -413,9 +454,14 @@ export default function App() {
               <p className="mt-4 text-muted text-base sm:text-lg max-w-xl mx-auto">
                 Envie uma mensagem e receba uma análise preliminar gratuita do seu perfil. Descubra onde estão as brechas que você pode consertar hoje.
               </p>
-              <a href={WA_DIAG} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-full sm:w-auto justify-center items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-base sm:text-lg font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_50px_rgba(59,130,246,0.4)]">
-                <WhatsApp className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" /> Diagnóstico gratuito no WhatsApp
-              </a>
+              <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href={WA_DIAG} target="_blank" rel="noreferrer" className="inline-flex w-full sm:w-auto justify-center items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-base sm:text-lg font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_50px_rgba(59,130,246,0.4)]">
+                  <WhatsApp className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" /> Diagnóstico gratuito no WhatsApp
+                </a>
+                <Link to="/auditoria-perfil-google" className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-8 py-4 text-base sm:text-lg font-bold text-accent-300 hover:bg-accent/20 transition-all">
+                  Fazer Raio-X do Perfil Online →
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -14,21 +14,36 @@ export default function GoogleMeuNegocioNicheHub() {
     window.scrollTo(0, 0);
   }, [nicho]);
 
-  const isOptimization = location.pathname.startsWith("/otimizacao-google-meu-negocio");
-  const basePath = isOptimization ? "/otimizacao-google-meu-negocio" : "/google-meu-negocio";
-
   const nicheInfo = locationsData.NICHES.find((n) => n.slug === nicho) || {
     nome: nicho || "Negócios Locais",
     slug: nicho || "geral"
   };
 
-  const title = isOptimization
-    ? `Otimização de Google Meu Negócio para ${nicheInfo.nome} no Brasil`
-    : `Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
+  let basePath = "/google-meu-negocio";
+  let verticalBadge = "Especialista em Google Meu Negócio";
+  let verticalPrefix = "Google Meu Negócio para ";
+  let verticalTitle = `Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
+  let verticalDesc = `Encontre a consultoria de otimização de Google Meu Negócio e presença no Google Maps para ${nicheInfo.nome} na sua cidade e estado.`;
 
-  const description = isOptimization
-    ? `Encontre serviços especializados de otimização de Perfil da Empresa no Google Maps para ${nicheInfo.nome} na sua cidade e estado. Suba para o Top 3 das buscas locais.`
-    : `Encontre a consultoria de otimização de Google Meu Negócio e presença no Google Maps para ${nicheInfo.nome} na sua cidade e estado.`;
+  if (location.pathname.startsWith("/otimizacao-google-meu-negocio")) {
+    basePath = "/otimizacao-google-meu-negocio";
+    verticalBadge = "Otimização & Gestão de Google Maps";
+    verticalPrefix = "Otimização de Google Meu Negócio para ";
+    verticalTitle = `Otimização de Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
+    verticalDesc = `Encontre serviços especializados de otimização de Perfil da Empresa no Google Maps para ${nicheInfo.nome} na sua cidade e estado. Suba para o Top 3 das buscas locais.`;
+  } else if (location.pathname.startsWith("/consultor-google-meu-negocio")) {
+    basePath = "/consultor-google-meu-negocio";
+    verticalBadge = "Consultor Especialista Google Meu Negócio";
+    verticalPrefix = "Consultoria de Google Meu Negócio para ";
+    verticalTitle = `Consultor Google Meu Negócio para ${nicheInfo.nome} no Brasil`;
+    verticalDesc = `Contrate consultoria especializada em Google Meu Negócio e presença local para ${nicheInfo.nome} na sua cidade e estado com Leonardo Brasil.`;
+  } else if (location.pathname.startsWith("/especialista-google-maps")) {
+    basePath = "/especialista-google-maps";
+    verticalBadge = "Especialista em Google Maps & SEO Local";
+    verticalPrefix = "Especialista em Google Maps para ";
+    verticalTitle = `Especialista em Google Maps para ${nicheInfo.nome} no Brasil`;
+    verticalDesc = `Encontre especialista dedicado em Google Maps para colocar ${nicheInfo.nome} no Top 3 da sua cidade e estado.`;
+  }
 
   const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}`;
 
@@ -57,8 +72,8 @@ export default function GoogleMeuNegocioNicheHub() {
   return (
     <div className="min-h-screen bg-ink text-text font-sans">
       <SeoHead
-        title={`${title} | Leonardo Brasil`}
-        description={description}
+        title={`${verticalTitle} | Leonardo Brasil`}
+        description={verticalDesc}
         canonicalUrl={canonicalUrl}
       />
 
@@ -69,6 +84,9 @@ export default function GoogleMeuNegocioNicheHub() {
             Leonardo Brasil
           </Link>
           <div className="flex items-center gap-4">
+            <Link to="/auditoria-perfil-google" className="text-xs font-semibold text-accent hover:underline">
+              Raio-X Gratuito
+            </Link>
             <Link to="/recuperar-perfil-suspenso-google" className="text-xs font-semibold text-red-400 hover:text-red-300 transition-colors">
               Perfil Suspenso?
             </Link>
@@ -87,10 +105,10 @@ export default function GoogleMeuNegocioNicheHub() {
           {/* HEADER DO NICHO */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
-              {isOptimization ? "Otimização & Gestão de Google Maps" : "Especialista em Google Meu Negócio"}
+              {verticalBadge}
             </span>
             <h1 className="text-3xl sm:text-5xl font-black text-text mt-4">
-              {isOptimization ? "Otimização de Google Meu Negócio para " : "Google Meu Negócio para "}
+              {verticalPrefix}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-gold">
                 {nicheInfo.nome}
               </span>

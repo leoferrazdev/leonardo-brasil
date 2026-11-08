@@ -17,7 +17,13 @@ const STATIC_ROUTES = [
   "",
   "/google-meu-negocio",
   "/otimizacao-google-meu-negocio",
+  "/consultor-google-meu-negocio",
+  "/especialista-google-maps",
   "/recuperar-perfil-suspenso-google",
+  "/auditoria-perfil-google",
+  "/google-meu-negocio/medicos-cfm",
+  "/google-meu-negocio/advogados-oab",
+  "/google-meu-negocio/dentistas-cfo",
   "/brandbook",
   "/cidades",
   "/termos",
@@ -87,10 +93,12 @@ function generateSitemap() {
     coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
   });
 
-  // Hubs de Nicho das Verticais (Google Meu Negócio + Otimização)
+  // Hubs de Nicho das 4 Verticais
   nicheSlugs.forEach((niche) => {
     coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
     coreUrls.push(generateUrlNode(`/otimizacao-google-meu-negocio/${niche}`, "0.9", "weekly"));
+    coreUrls.push(generateUrlNode(`/consultor-google-meu-negocio/${niche}`, "0.9", "weekly"));
+    coreUrls.push(generateUrlNode(`/especialista-google-maps/${niche}`, "0.9", "weekly"));
   });
 
   // Blog
@@ -101,7 +109,7 @@ function generateSitemap() {
 
   allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-core", coreUrls));
 
-  // 2. Google Meu Negócio & Otimização Local Sitemap (5.570 Cidades x 14 Nichos x 2 Verticais = 155.988 rotas)
+  // 2. Malha Local Multivertical (5.571 Cidades x 14 Nichos x 4 Verticais = 311.976 rotas)
   const localGmnUrls = [];
   TARGET_CITIES.forEach((location) => {
     nicheSlugs.forEach((niche) => {
@@ -117,6 +125,22 @@ function generateSitemap() {
       localGmnUrls.push(
         generateUrlNode(
           `/otimizacao-google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
+          "0.7",
+          "monthly"
+        )
+      );
+      // Vertical 3: Consultor Google Meu Negócio
+      localGmnUrls.push(
+        generateUrlNode(
+          `/consultor-google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
+          "0.7",
+          "monthly"
+        )
+      );
+      // Vertical 4: Especialista Google Maps
+      localGmnUrls.push(
+        generateUrlNode(
+          `/especialista-google-maps/${niche}/${location.estado}/${location.cidade}`,
           "0.7",
           "monthly"
         )
@@ -143,7 +167,7 @@ function generateSitemap() {
 
   console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
   console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);
-  console.log(`🚀 Rotas Locais Multiplicadas (2 verticais): ${localGmnUrls.length}`);
+  console.log(`🚀 Rotas Locais Multiplicadas (4 verticais): ${localGmnUrls.length}`);
 }
 
 generateSitemap();
