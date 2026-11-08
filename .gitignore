@@ -19,7 +19,8 @@ dist-ssr
 .env
 .env.*
 
-# Generated tooling
+# Obsidian local workspace
+**/.obsidian/workspace.json
 codex-generated-assets/
 graphify-out/
 
