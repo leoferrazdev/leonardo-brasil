@@ -71,7 +71,7 @@ A metodologia comercial cirúrgica de prospecção, qualificação, abordagem no
 * [[Fluxo Modular de Abordagem WhatsApp (4 Blocos)]] — A cadência conversacional em 4 blocos sem textão invasivo.
 * [[Roteiros e Scripts Cirúrgicos por Nicho]] — Casos reais auditados na Zona Sul de Porto Alegre (Veterinária, Oficinas, Odonto, Restaurantes).
 * [[Gestão de Objeções e Scripts de Contorno]] — Contorno para *"vou arrumar sozinho"*, *"já tenho agência"*, *"Google é de graça"* e *"tá caro"*.
-* [[Sistema CRM Local (/crm) e Manual Operacional]] — O Kanban de 5 colunas, rotina diária de vendas e modo contingência.
+* [[Sistema CRM Local e Manual Operacional]] — O Kanban de 5 colunas, rotina diária de vendas e modo contingência.
 * [[Base de 40 Leads Auditados de Porto Alegre]] — Tabela consolidada da Rodada 01 (Tristeza, Ipanema, Vila Assunção, Cristal).
 * [[Branding, Perfil Comercial e Presença Digital]] — Retrato executivo com terno azul, capa de WhatsApp Business 16:9, bio e `@leonardobrasil`.
 

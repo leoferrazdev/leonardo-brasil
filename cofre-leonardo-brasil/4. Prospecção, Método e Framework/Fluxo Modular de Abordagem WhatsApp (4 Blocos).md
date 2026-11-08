@@ -1,4 +1,4 @@
----
+﻿---
 title: Fluxo Modular de Abordagem WhatsApp (4 Blocos)
 tags:
   - whatsapp
@@ -124,5 +124,5 @@ No painel operacional em `leonardobrasil.com.br/crm`, cada card de prospect poss
 * [[O Framework dos 3 Pilares da Oferta]]
 * [[Roteiros e Scripts Cirúrgicos por Nicho]]
 * [[Gestão de Objeções e Scripts de Contorno]]
-* [[Sistema CRM Local (/crm) e Manual Operacional]]
+* [[Sistema CRM Local e Manual Operacional]]
 * [[00 - MOC - Índice Geral|Voltar ao MOC]]

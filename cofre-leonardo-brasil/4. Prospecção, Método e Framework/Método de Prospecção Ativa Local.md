@@ -1,4 +1,4 @@
----
+﻿---
 title: Método de Prospecção Ativa Local
 tags:
   - prospeccao
@@ -91,5 +91,5 @@ A triagem prévia audita 5 dimensões objetivas antes de qualquer contato comerc
 * [[Fluxo Modular de Abordagem WhatsApp (4 Blocos)]]
 * [[Roteiros e Scripts Cirúrgicos por Nicho]]
 * [[Gestão de Objeções e Scripts de Contorno]]
-* [[Sistema CRM Local (/crm) e Manual Operacional]]
+* [[Sistema CRM Local e Manual Operacional]]
 * [[00 - MOC - Índice Geral|Voltar ao MOC]]

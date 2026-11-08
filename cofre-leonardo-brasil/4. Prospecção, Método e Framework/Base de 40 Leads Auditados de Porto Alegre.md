@@ -1,4 +1,4 @@
----
+﻿---
 title: Base de 40 Leads Auditados de Porto Alegre
 tags:
   - leads
@@ -58,5 +58,5 @@ pie title Distribuição de Leads por Segmento
 ## Conexões Relacionadas
 * [[Método de Prospecção Ativa Local]]
 * [[Roteiros e Scripts Cirúrgicos por Nicho]]
-* [[Sistema CRM Local (/crm) e Manual Operacional]]
+* [[Sistema CRM Local e Manual Operacional]]
 * [[00 - MOC - Índice Geral|Voltar ao MOC]]
