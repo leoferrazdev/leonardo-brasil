@@ -30,17 +30,24 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
   onSaveNotes,
 }) => {
   const [activeTab, setActiveTab] = useState<1 | 2 | 3 | 4>(1);
+  const [bloco1Mode, setBloco1Mode] = useState<"volume" | "falha">("volume");
   const [copiedBlock, setCopiedBlock] = useState<number | null>(null);
   const [notes, setNotes] = useState(lead?.notes || "");
 
   if (!lead) return null;
 
+  const bloco1ActiveText = bloco1Mode === "volume"
+    ? (lead.bloco1Volume || lead.bloco1)
+    : (lead.bloco1Falha || lead.bloco1);
+
   const blocks = [
     {
       num: 1 as const,
       name: "Bloco 1: Gancho Inicial",
-      subtitle: "Abertura consultiva e verificação da falha",
-      text: lead.bloco1,
+      subtitle: bloco1Mode === "volume"
+        ? `Modelo A: Volume de Buscas (~${lead.monthlySearches || "2.400"}/mês) & Top 3`
+        : "Modelo B: Falha Concreta / Divergência Auditada",
+      text: bloco1ActiveText,
       targetStage: "contatado" as PipelineStageId,
       advanceLabel: "Marcar Bloco 1 Enviado -> Mover para Contatado",
     },
@@ -94,18 +101,26 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
         {/* Cabeçalho da Gaveta */}
         <div className="p-5 border-b border-slate-800 bg-[#0d121c] flex items-start justify-between">
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="font-mono text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-bold">
                 {lead.sampleId}
               </span>
               <span className="text-xs px-2.5 py-0.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-semibold">
                 {lead.opportunityClass}
               </span>
+              {lead.monthlySearches && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                  <Sparkles className="w-3 h-3 text-emerald-400" />
+                  ~{lead.monthlySearches} buscas/mês
+                </span>
+              )}
             </div>
+
             <h2 className="text-xl font-bold text-white mt-1.5 flex items-center gap-2">
               {lead.name}
             </h2>
-            <div className="flex items-center gap-3 text-xs text-slate-400 mt-1">
+
+            <div className="flex items-center gap-3 text-xs text-slate-400 mt-1 flex-wrap">
               <span className="flex items-center gap-1">
                 <Building2 className="w-3.5 h-3.5 text-slate-500" />
                 {lead.segment}
@@ -115,6 +130,14 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
                 <MapPin className="w-3.5 h-3.5 text-slate-500" />
                 {lead.neighborhood}, Porto Alegre
               </span>
+              {lead.searchKeyword && (
+                <>
+                  <span>•</span>
+                  <span className="text-slate-300 font-medium">
+                    Busca: "{lead.searchKeyword}"
+                  </span>
+                </>
+              )}
             </div>
           </div>
 
@@ -131,9 +154,13 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
           <div className="flex items-center gap-2 font-mono text-slate-300">
             <Phone className="w-4 h-4 text-emerald-400" />
             <span>{lead.phone || "Sem telefone"}</span>
-            {lead.whatsappConfirmed && (
+            {lead.whatsappConfirmed ? (
               <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 font-bold">
                 WhatsApp Confirmado ✓
+              </span>
+            ) : (
+              <span className="text-[10px] text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20 font-medium">
+                {lead.canalStatus || "Apenas Fixo"}
               </span>
             )}
           </div>
@@ -164,7 +191,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
           </div>
         </div>
 
-        {/* Alerta de Diagnóstico */}
+        {/* Alerta de Diagnóstico / Falha Observada */}
         <div className="px-5 py-2.5 bg-amber-500/5 border-b border-amber-500/20 flex items-start gap-2.5 text-xs text-amber-200/90">
           <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           <div>
@@ -207,6 +234,36 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
               </span>
             </div>
 
+            {/* Alternador de Modelo A (Volume) vs Modelo B (Falha) no Bloco 1 */}
+            {activeTab === 1 && (
+              <div className="flex items-center gap-2 p-1.5 bg-[#080b11] border border-slate-800 rounded-xl mb-3">
+                <button
+                  type="button"
+                  onClick={() => setBloco1Mode("volume")}
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all ${
+                    bloco1Mode === "volume"
+                      ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 border border-transparent"
+                  }`}
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Modelo A: Volume de Buscas (~{lead.monthlySearches}/mês)</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBloco1Mode("falha")}
+                  className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all ${
+                    bloco1Mode === "falha"
+                      ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 border border-transparent"
+                  }`}
+                >
+                  <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Modelo B: Falha Factual Auditada</span>
+                </button>
+              </div>
+            )}
+
             {/* Caixa de Texto do WhatsApp com scroll */}
             <div className="relative rounded-xl border border-slate-700/80 bg-[#06080e] p-4 text-xs font-mono text-slate-200 leading-relaxed whitespace-pre-wrap selection:bg-emerald-500 selection:text-white shadow-inner">
               {currentBlock.text}
@@ -247,7 +304,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
                 disabled
                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-600 font-bold text-xs cursor-not-allowed"
               >
-                WhatsApp Web Indisponível
+                WhatsApp Web Indisponível (Apenas Fixo)
               </button>
             )}
           </div>

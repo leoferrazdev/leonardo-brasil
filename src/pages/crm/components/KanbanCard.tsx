@@ -131,15 +131,27 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
         <span className="line-clamp-2 leading-relaxed">{lead.opportunityIssue}</span>
       </div>
 
+      {/* Busca e Volume de Demanda */}
+      {lead.searchKeyword && (
+        <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400 bg-[#070a10] px-2 py-1 rounded-md border border-slate-800/80">
+          <span className="truncate max-w-[130px] text-slate-300 font-medium">"{lead.searchKeyword}"</span>
+          <span className="text-emerald-400 font-semibold shrink-0">~{lead.monthlySearches}/mês</span>
+        </div>
+      )}
+
       {/* Telefone e WhatsApp */}
-      <div className="mt-3 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/60 pt-2.5">
+      <div className="mt-2.5 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/60 pt-2">
         <div className="flex items-center gap-1 text-slate-300 font-mono text-[11px]">
           <Phone className="w-3 h-3 text-slate-500" />
           {lead.phone || "Sem telefone"}
         </div>
-        {lead.whatsappConfirmed && (
+        {lead.whatsappConfirmed ? (
           <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
             WhatsApp ✓
+          </span>
+        ) : (
+          <span className="text-[10px] font-medium text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
+            Apenas Fixo
           </span>
         )}
       </div>

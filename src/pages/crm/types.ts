@@ -16,22 +16,28 @@ export interface ProspectLead {
   id: string;
   sampleId: string;
   name: string;
-  segment: "Clínica Veterinária" | "Clínica Odontológica" | "Oficina Mecânica" | "Restaurante";
-  neighborhood: "Tristeza" | "Ipanema" | "Vila Assunção" | "Cristal";
+  segment: string;
+  neighborhood: string;
   city: string;
   address?: string;
   phone: string;
   formattedPhone: string;
   whatsappConfirmed: boolean;
+  canalStatus?: string;
   mapsUrl: string;
   siteUrl?: string;
-  opportunityClass: "Classe B (20 pts)" | "Classe C (15 pts)" | "Classe C (5 pts)" | "Classe D (0 pts)";
+  opportunityClass: "Classe B (20 pts)" | "Classe C (15 pts)" | "Classe C (5 pts)" | "Classe D (0 pts)" | string;
   opportunityIssue: string;
+  searchKeyword: string;
+  monthlySearches: string;
+  competitorsObserved?: string;
   stage: PipelineStageId;
-  bloco1: string;
-  bloco2: string;
-  bloco3: string;
-  bloco4: string;
+  bloco1: string; // Mensagem ativa (padrão)
+  bloco1Volume: string; // Variação 1: Modelo de Volume de Buscas & Top 3
+  bloco1Falha: string; // Variação 2: Modelo de Falha / Inconsistência Factual
+  bloco2: string; // Diagnóstico gratuito quando o lead aceita
+  bloco3: string; // Escopo dos 4 pilares de serviço
+  bloco4: string; // Proposta comercial (R$ 650 / R$ 380)
   notes?: string;
   updatedAt: string;
 }

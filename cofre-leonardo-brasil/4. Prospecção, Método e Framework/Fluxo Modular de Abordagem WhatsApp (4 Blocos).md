@@ -1,4 +1,4 @@
-﻿---
+---
 title: Fluxo Modular de Abordagem WhatsApp (4 Blocos)
 tags:
   - whatsapp
@@ -45,17 +45,25 @@ sequenceDiagram
 
 ## Estrutura Detalhada dos 4 Blocos
 
-### 🟢 Bloco 1: O Gancho (Abertura Factual)
-* **Objetivo:** Conseguir a primeira resposta (taxa de abertura e engajamento).
-* **Gatilhos Mentais:** Especificidade, Proximidade Geográfica, Não-Acusação.
-* **Template Mestre:**
-> *"Olá! Tudo bem? Falo com a equipe da *{{Nome da Empresa}}* em {{Bairro}}?*  
+### 🟢 Bloco 1: O Gancho (Abertura com Permissão de Envio)
+* **Objetivo:** Conseguir a primeira resposta com autorização para enviar a análise (taxa de abertura e micro-compromisso).
+* **Gatilhos Mentais:** Identificação Pessoal Imediata, Dado Concreto de Mercado (Volume de Buscas), Curiosidade e Chamada Leve sem Venda.
+
+O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
+
+#### 🎯 Modelo A (O Modelo Padrão — Volume de Buscas & Posicionamento):
+> *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.*  
 >  
-> *Estava pesquisando {{Segmento}} na Zona Sul pelo Google Maps e vi o perfil de vocês.*  
+> *Só a palavra \"{{Palavra-Chave do Nicho}}\" tem cerca de {{Volume Estimado}} buscas por mês na cidade e o perfil da *{{Nome da Empresa}}* ainda não aparece entre os primeiros.*  
 >  
-> *Notei um detalhe prático no perfil do Google que pode estar gerando desencontro com clientes: *{{Fato Real Observado}}*.*  
+> *Posso te mandar uma análise rápida e gratuita, mostrando o que dá para melhorar?"*
+
+#### 🔍 Modelo B (Modelo Factual — Falha Cadastral / Desencontro Auditado):
+> *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.*  
 >  
-> *Vocês sabiam dessa divergência ou o perfil está desatualizado por lá?"*
+> *Estava analisando o perfil da *{{Nome da Empresa}}* em {{Bairro}} pelo Google Maps e notei um detalhe prático: *{{Falha Específica Observada}}*.*  
+>  
+> *Posso te mandar uma análise rápida e gratuita, mostrando o que dá para melhorar?"*
 
 ---
 
