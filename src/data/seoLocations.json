@@ -27912,6 +27912,42 @@
     {
       "slug": "oficinas-mecanicas",
       "nome": "Oficinas Mecânicas"
+    },
+    {
+      "slug": "eletricistas",
+      "nome": "Eletricistas"
+    },
+    {
+      "slug": "pedreiros",
+      "nome": "Pedreiros e Empreiteiras"
+    },
+    {
+      "slug": "guinchos",
+      "nome": "Guinchos e Auto Socorro"
+    },
+    {
+      "slug": "assistencia-celulares",
+      "nome": "Assistência Técnica de Celulares"
+    },
+    {
+      "slug": "manutencao-computadores",
+      "nome": "Manutenção de Computadores"
+    },
+    {
+      "slug": "clinicas-veterinarias",
+      "nome": "Clínicas Veterinárias"
+    },
+    {
+      "slug": "pet-shops",
+      "nome": "Pet Shops e Banho e Tosa"
+    },
+    {
+      "slug": "agropecuarias",
+      "nome": "Casas Agropecuárias"
+    },
+    {
+      "slug": "restaurantes",
+      "nome": "Restaurantes"
     }
   ]
 }

@@ -54,7 +54,16 @@ function formatNiche(nicho?: string) {
   if (nicho === "arquitetos") return "arquitetos";
   if (nicho === "esteticistas" || nicho === "estetica") return "clínicas de estética";
   if (nicho === "corretores") return "corretores de imóveis";
-  if (nicho === "oficinas-mecanicas") return "oficinas mecânicas";
+  if (nicho === "oficinas-mecanicas") return "oficinas mecânicas e auto centers";
+  if (nicho === "eletricistas") return "eletricistas";
+  if (nicho === "pedreiros") return "pedreiros e empreiteiras";
+  if (nicho === "guinchos") return "guinchos e auto socorro";
+  if (nicho === "assistencia-celulares") return "assistências técnicas de celulares";
+  if (nicho === "manutencao-computadores") return "assistências de computadores e notebooks";
+  if (nicho === "clinicas-veterinarias") return "clínicas veterinárias";
+  if (nicho === "pet-shops") return "pet shops e banho e tosa";
+  if (nicho === "agropecuarias") return "casas agropecuárias";
+  if (nicho === "restaurantes") return "restaurantes";
   return nicho.split("-").join(" ");
 }
 
