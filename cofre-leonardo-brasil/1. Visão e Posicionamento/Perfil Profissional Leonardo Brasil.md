@@ -40,7 +40,10 @@ Diferente de profissionais genéricos de "marketing digital", Leonardo projeta e
 ## 2. Redes e Presença Digital
 
 * **Site Principal:** [leonardobrasil.com.br](https://leonardobrasil.com.br)
-* **LinkedIn:** `linkedin.com/in/leonardo-brasil` (ver [[docs/linkedin-perfil-leonardo-brasil.md]])
+* **LinkedIn:** `https://www.linkedin.com/in/oleonardobrasil/` (ver [[docs/linkedin-perfil-leonardo-brasil.md]])
+* **Instagram:** `https://www.instagram.com/oleonardobrasil/`
+* **Facebook:** `https://www.facebook.com/oleonardobrasil`
+* **Threads:** `https://www.threads.com/@oleonardobrasil`
 * **GitHub:** `github.com/leoferrazdev/leonardo-brasil`
 
 ---

@@ -58,8 +58,10 @@ export function SeoHead({
             description:
               "Especialista em Google Meu Negócio e SEO Local: posicionamento no topo do Google Maps, atração de clientes locais e otimização de perfil comercial.",
             sameAs: [
-              "https://www.instagram.com/leonardobrasil.com.br/",
-              "https://www.facebook.com/leonardobrasil.com.br",
+              "https://www.linkedin.com/in/oleonardobrasil/",
+              "https://www.instagram.com/oleonardobrasil/",
+              "https://www.facebook.com/oleonardobrasil",
+              "https://www.threads.com/@oleonardobrasil",
               "https://funilcomercial.com",
             ],
             knowsAbout: [
@@ -104,7 +106,10 @@ export function SeoHead({
             worksFor: { "@id": "https://leonardobrasil.com.br/#organization" },
             image: "https://leonardobrasil.com.br/avatar-leonardo-brasil.jpg",
             sameAs: [
-              "https://www.instagram.com/leonardobrasil.com.br/",
+              "https://www.linkedin.com/in/oleonardobrasil/",
+              "https://www.instagram.com/oleonardobrasil/",
+              "https://www.facebook.com/oleonardobrasil",
+              "https://www.threads.com/@oleonardobrasil",
             ],
             knowsAbout: [
               "Google Meu Negócio",

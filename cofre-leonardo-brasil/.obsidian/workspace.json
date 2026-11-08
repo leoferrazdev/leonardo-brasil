@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "c29c68278fa12ee9",
+    "type": "split",
+    "children": [
+      {
+        "id": "89d2102a3256cfb6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a008b1748ae7981d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nova aba"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8b7a9a83c7913845",
+    "type": "split",
+    "children": [
+      {
+        "id": "41451b65c5bcbb90",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8219f22e61dc679",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "e9c5dc9ed6f5c5ce",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "831f0d5afd2ec4e7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fc9ed61e9b30b064",
+    "type": "split",
+    "children": [
+      {
+        "id": "360e890a1c5abfd6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e52ed11ccfb80a9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos"
+            }
+          },
+          {
+            "id": "62c03420ef3c4c85",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "513c63441c21af73",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "9e26aacc4b2f2a1d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "a14316ddf0c053ff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "c8219f22e61dc679",
+  "lastOpenFiles": [
+    "4. Prospecção, Método e Framework/Sistema CRM Local e Manual Operacional.md",
+    "4. Prospecção, Método e Framework/Branding, Perfil Comercial e Presença Digital.md",
+    "4. Prospecção, Método e Framework/Base de 40 Leads Auditados de Porto Alegre.md",
+    "5. Operações e Manutenção/Comandos e Rotinas de Deploy.md",
+    "4. Prospecção, Método e Framework/Sistema CRM Local (/crm) e Manual Operacional.md",
+    "4. Prospecção, Método e Framework/Sistema CRM Local (",
+    "5. Operações e Manutenção/Gestão de Segurança e Dependências Node.js.md",
+    "5. Operações e Manutenção/Checklist de Verificação e Testes.md",
+    "4. Prospecção, Método e Framework/Gestão de Objeções e Scripts de Contorno.md",
+    "4. CRM e Máquina de Vendas/Base de Diagnósticos Locais de Porto Alegre.md",
+    "4. Prospecção, Método e Framework/Roteiros e Scripts Cirúrgicos por Nicho.md",
+    "4. CRM e Máquina de Vendas/Scripts e Roteiros de Abordagem WhatsApp.md",
+    "4. CRM e Máquina de Vendas/Pipeline e Estágios do Kanban.md",
+    "4. Prospecção, Método e Framework/Fluxo Modular de Abordagem WhatsApp (4 Blocos).md",
+    "4. CRM e Máquina de Vendas/Manual Operacional do CRM.md",
+    "4. Prospecção, Método e Framework/O Framework dos 3 Pilares da Oferta.md",
+    "4. CRM e Máquina de Vendas/Sistema CRM de Prospecção Local.md",
+    "4. CRM e Máquina de Vendas",
+    "3. Inteligência de SEO e Motores/Blog e Estratégia de Topic Clusters.md",
+    "4. Prospecção, Método e Framework/Método de Prospecção Ativa Local.md",
+    "3. Inteligência de SEO e Motores/Recuperação de Perfis Suspensos no Google.md",
+    "5. Operações e Manutenção",
+    "4. Prospecção, Método e Framework",
+    "3. Inteligência de SEO e Motores/Sitemaps XML e Particionamento GSC.md",
+    "3. Inteligência de SEO e Motores/Motor 3 - Hubs Éticos (CFM, OAB, CFO).md",
+    "3. Inteligência de SEO e Motores/Motor 2 - Malha Programática 3.0 (312k URLs).md",
+    "3. Inteligência de SEO e Motores/Motor 1 - Raio-X e Auditoria Interativa.md",
+    "3. Inteligência de SEO e Motores/Máquina de SEO Local - Visão Geral.md",
+    "3. Inteligência de SEO e Motores",
+    "2. Engenharia e Arquitetura/Rotas e Componentes Principais.md",
+    "2. Engenharia e Arquitetura/Supabase Auth e Banco de Dados.md",
+    "2. Engenharia e Arquitetura",
+    "1. Visão e Posicionamento"
+  ]
+}

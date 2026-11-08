@@ -3,7 +3,7 @@
 **Elaborado como:** Diretor de RH Sênior / Personal Branding
 **Objetivo:** posicionar o projeto Leonardo Brasil como a experiência profissional atual e transformar o perfil em ativo de aquisição.
 **Público prioritário:** ICP do funil — profissionais liberais e donos de negócio local.
-**URL:** linkedin.com/in/leoferrazbrasil
+**URL:** https://www.linkedin.com/in/oleonardobrasil/
 
 > **Nota de método:** o LinkedIn bloqueia leitura automatizada de perfis, então este documento foi construído a partir da identidade documentada do projeto (site, brandbook, nichos, cidades, tom de voz). Campos que dependem do seu histórico estão marcados com `[PREENCHER]`.
 
