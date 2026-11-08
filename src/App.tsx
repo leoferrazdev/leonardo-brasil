@@ -52,10 +52,10 @@ const FAQ = [
 ];
 
 const NAV = [
-  { id: "pilares", label: "O que eu faço no seu Perfil" },
-  { id: "comparativo", label: "Comparativo" },
-  { id: "especialidades", label: "Especialidades" },
-  { id: "faq", label: "FAQ" },
+  { id: "pilares", label: "O que faço", mobileLabel: "O que faço no seu Perfil" },
+  { id: "comparativo", label: "Comparativo", mobileLabel: "Comparativo" },
+  { id: "especialidades", label: "Especialidades", mobileLabel: "Especialidades" },
+  { id: "faq", label: "FAQ", mobileLabel: "FAQ" },
 ];
 
 export default function App() {
@@ -97,45 +97,51 @@ export default function App() {
 
       {/* HEADER */}
       <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5 font-extrabold tracking-tight hover:text-accent transition-colors">
+        <div className="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between gap-4">
+          <Link to="/" className="flex items-center gap-2.5 font-extrabold tracking-tight hover:text-accent transition-colors whitespace-nowrap flex-shrink-0">
             <span className="grid place-items-center w-8 h-8 rounded-lg bg-accent/15 border border-accent/30">
               <svg viewBox="0 0 48 48" className="w-[18px] h-[18px]" fill="none"><rect x="6" y="9" width="36" height="9" rx="4" fill="#3b82f6" opacity="0.4" /><rect x="13" y="21" width="22" height="9" rx="4" fill="#3b82f6" opacity="0.7" /><rect x="20" y="33" width="8" height="9" rx="4" fill="#60a5fa" /></svg>
             </span>
             Leonardo Brasil
           </Link>
 
-          <nav className="hidden md:flex gap-6 items-center">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
             {NAV.map((n) => (
-              <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-sm font-medium text-muted hover:text-text transition-colors">{n.label}</a>
+              <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">{n.label}</a>
             ))}
-            <Link to="/auditoria-perfil-google" className="text-sm font-bold text-accent hover:text-accent-300 transition-colors">Raio-X Gratuito</Link>
-            <Link to="/recuperar-perfil-suspenso-google" className="text-sm font-medium text-red-400 hover:text-red-300 transition-colors">Perfil Suspenso?</Link>
-            <Link to="/cidades" className="text-sm font-medium text-muted hover:text-text transition-colors">Cidades</Link>
-            <Link to="/blog" className="text-sm font-medium text-muted hover:text-text transition-colors">Blog</Link>
+            <Link to="/auditoria-perfil-google" className="whitespace-nowrap text-xs xl:text-sm font-bold text-accent hover:text-accent-300 transition-colors flex items-center gap-1.5">
+              <span>Raio-X</span>
+              <span className="text-[10px] uppercase tracking-wider bg-accent/20 px-1.5 py-0.5 rounded text-accent-300 font-extrabold">Grátis</span>
+            </Link>
+            <Link to="/recuperar-perfil-suspenso-google" className="whitespace-nowrap text-xs xl:text-sm font-medium text-red-400 hover:text-red-300 transition-colors">Perfil Suspenso?</Link>
+            <Link to="/cidades" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">Cidades</Link>
+            <Link to="/blog" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">Blog</Link>
           </nav>
 
-          <div className="hidden md:block">
-            <a href={WA_DIAG} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_24px_rgba(59,130,246,0.35)]">
-              Avaliar meu Perfil <Arrow className="w-4 h-4" />
+          <div className="hidden lg:block flex-shrink-0">
+            <a href={WA_DIAG} target="_blank" rel="noreferrer" className="whitespace-nowrap inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 xl:px-5 xl:py-2.5 text-xs xl:text-sm font-semibold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_24px_rgba(59,130,246,0.35)]">
+              Avaliar meu Perfil <Arrow className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
             </a>
           </div>
 
-          <button className="md:hidden p-2 -mr-2 text-muted" onClick={() => setMenu(!menu)} aria-label="Menu">
+          <button className="lg:hidden p-2 -mr-2 text-muted" onClick={() => setMenu(!menu)} aria-label="Menu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">{menu ? <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" /> : <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />}</svg>
           </button>
         </div>
 
         {menu && (
-          <div className="md:hidden border-t border-line bg-ink px-5 py-6 flex flex-col gap-5">
+          <div className="lg:hidden border-t border-line bg-ink px-5 py-6 flex flex-col gap-4">
             {NAV.map((n) => (
-              <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-lg font-medium">{n.label}</a>
+              <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-base font-medium text-text hover:text-accent transition-colors">{n.mobileLabel || n.label}</a>
             ))}
-            <Link to="/auditoria-perfil-google" onClick={() => setMenu(false)} className="text-lg font-bold text-accent">Fazer Raio-X do Perfil (Grátis)</Link>
-            <Link to="/recuperar-perfil-suspenso-google" onClick={() => setMenu(false)} className="text-lg font-medium text-red-400">Perfil Suspenso no Google?</Link>
-            <Link to="/cidades" onClick={() => setMenu(false)} className="text-lg font-medium">Cidades Atendidas</Link>
-            <Link to="/blog" onClick={() => setMenu(false)} className="text-lg font-medium">Blog</Link>
-            <a href={WA_DIAG} target="_blank" rel="noreferrer" className="mt-2 inline-flex justify-center items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold text-white">Avaliar meu Perfil <Arrow className="w-5 h-5" /></a>
+            <Link to="/auditoria-perfil-google" onClick={() => setMenu(false)} className="text-base font-bold text-accent flex items-center justify-between py-1 border-t border-line/60 pt-3">
+              <span>Fazer Raio-X do Perfil</span>
+              <span className="text-[10px] uppercase tracking-wider bg-accent/20 px-2 py-0.5 rounded text-accent-300 font-extrabold">Grátis</span>
+            </Link>
+            <Link to="/recuperar-perfil-suspenso-google" onClick={() => setMenu(false)} className="text-base font-medium text-red-400">Perfil Suspenso no Google?</Link>
+            <Link to="/cidades" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Cidades Atendidas</Link>
+            <Link to="/blog" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Blog</Link>
+            <a href={WA_DIAG} target="_blank" rel="noreferrer" className="mt-2 inline-flex justify-center items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold text-white shadow-lg shadow-accent/20">Avaliar meu Perfil <Arrow className="w-5 h-5" /></a>
           </div>
         )}
       </header>
