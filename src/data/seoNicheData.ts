@@ -253,20 +253,164 @@ export const seoNicheData: Record<string, NicheData> = {
       { question: "Posso expor os sistemas já instalados?", answer: "Com certeza. Ter um portfólio de usinas instaladas na região gera a segurança necessária para o cliente fechar projetos caros." }
     ]
   },
-  'oficinas-mecanicas': {
-    title: "Site para Oficinas Mecânicas e Estética Automotiva",
-    heroSubtitle: "Atraia clientes locais que buscam confiança e qualidade para seus veículos. Lotamos o seu box com revisões rentáveis e vitrificação.",
-    painPointTitle: "Quando o carro quebra, o cliente pesquisa no Google. Você está lá?",
-    painPointDescription: "A escolha de uma oficina mecânica ou centro de detalhamento automotivo é 100% baseada em confiança e urgência. Se o seu site não mostra a sua estrutura, transparência e avaliações reais na sua cidade, o cliente escolhe o concorrente. Nós criamos a estrutura perfeita.",
+  "oficinas-mecanicas": {
+    title: "Google Meu Negócio para Oficinas Mecânicas e Auto Centers",
+    heroSubtitle: "Atraia proprietários de veículos para revisões, freios, suspensão e motor. Coloque sua oficina mecânica e centro automotivo no Top 3 do Google Maps.",
+    painPointTitle: "Quando o carro quebra ou precisa de revisão, o cliente abre o Google Maps. Você está no topo?",
+    painPointDescription: "A escolha de uma oficina mecânica, auto center ou oficina de veículos é baseada em confiança, avaliações reais e rapidez. Se o seu perfil no Google Maps não exibe sua estrutura limpa, avaliações positivas respondidas e catálogo de serviços, o motorista vai para o concorrente da avenida vizinha.",
     benefits: [
-      "Botão de agendamento de revisão e 'SOS' direto para o WhatsApp",
-      "Galeria mostrando a organização, equipamentos premium e limpeza do box",
-      "Foco em serviços altamente rentáveis (revisão programada, PPF)"
+      "Botão de agendamento de revisão preventiva e SOS mecânico direto no WhatsApp",
+      "Galeria de fotos destacando equipamentos computadorizados, limpeza do box e organização",
+      "Foco em serviços automotivos de alto ticket (cabeçote, suspensão, freios e injeção eletrônica)"
     ],
     faqs: [
-      { question: "Funciona para estética automotiva (Detailer)?", answer: "Perfeitamente. O site destaca os resultados de polimento, vitrificação e PPF, atraindo donos de carros premium da região." },
-      { question: "Como captar clientes para revisão mecânica?", answer: "Focamos a copy em 'segurança da família' e 'manutenção preventiva', incentivando o cliente a não esperar o carro quebrar." },
-      { question: "O site passa confiança para quem não entende de carro?", answer: "Sim. O copywriting é focado em transparência, honestidade e explicação fácil, quebrando o maior medo do cliente de mecânica." }
+      { question: "O perfil otimizado atrai clientes para serviços mecânicos de alto valor?", answer: "Sim. Otimizamos as categorias primárias e secundárias para atrair motoristas que buscam diagnóstico computadorizado, troca de embreagem e reparos pesados, além de trocas rápidas de óleo." },
+      { question: "Como funciona para auto centers e estética automotiva?", answer: "Estruturamos catálogos segmentados no Perfil da Empresa no Google, permitindo ranquear tanto para serviços mecânicos quanto para alinhamento, balanceamento e polimento." },
+      { question: "Como superar oficinas concorrentes mais antigas?", answer: "Através da consistência NAP, fotos atualizadas semanalmente, postagens locais de ofertas e um fluxo ativo de avaliações 5 estrelas com palavras-chave de peças e serviços." }
+    ]
+  },
+  "eletricistas": {
+    title: "Google Meu Negócio para Eletricistas e Instalações Elétricas",
+    heroSubtitle: "Receba chamados de emergência elétrica residencial e predial na sua cidade. Posicione seus serviços no topo das pesquisas locais do Google Maps.",
+    painPointTitle: "Chamados de emergência elétrica vão para quem está no Top 3 do Google Maps",
+    painPointDescription: "Ninguém espera o dia seguinte quando um disjuntor desarma, ocorre um curto-circuito ou falta fase na rede elétrica. O morador ou síndico abre o celular e liga imediatamente para os primeiros resultados locais. Se você não aparece no mapa, está perdendo chamados urgentes todos os dias.",
+    benefits: [
+      "Chamada de emergência 24h com botão direto de ligação e WhatsApp",
+      "Destaque para serviços residenciais, comerciais e industriais de alta margem",
+      "Posicionamento local geolocalizado para atender chamados no menor raio de deslocamento"
+    ],
+    faqs: [
+      { question: "Eletricista autônomo sem ponto comercial pode aparecer no Google Maps?", answer: "Sim. O Google permite cadastrar como 'Área de Atendimento', exibindo os bairros e cidades onde você atende sem precisar expor seu endereço residencial particular." },
+      { question: "Como captar reformas elétricas e troca de padrão de luz?", answer: "Configuramos o catálogo de serviços com termos estratégicos de alta intenção como 'troca de fiação', 'instalação de padrão Copel/Enel/Ceee' e 'laudo elétrico'." },
+      { question: "Quanto tempo leva para começar a receber chamados?", answer: "Por se tratar de um nicho de urgência extrema, a maioria dos eletricistas começa a receber ligações nas primeiras duas semanas após a correção de categorias e publicação do perfil." }
+    ]
+  },
+  "pedreiros": {
+    title: "Google Meu Negócio para Pedreiros, Obras e Empreiteiras",
+    heroSubtitle: "Feche contratos de reformas e construções na sua cidade. Conquiste previsibilidade de agenda no Google Maps sem depender de indicação boca a boca.",
+    painPointTitle: "Cansado de depender de indicação ou disputar diárias apertadas?",
+    painPointDescription: "Proprietários que vão reformar apartamentos, construir casas ou revitalizar imóveis comerciais buscam no Google Maps por profissionais sérios, com fotos de obras finalizadas e avaliações de pontualidade. Um perfil blindado posiciona você como empreiteiro de confiança.",
+    benefits: [
+      "Portfólio visual com fotos de obras, assentamento de porcelanato e acabamentos",
+      "Foco em fechar contratos por empreitada completa em vez de diárias avulsas",
+      "Reputação blindada com avaliações de clientes destacando pontualidade e limpeza"
+    ],
+    faqs: [
+      { question: "Como o Google Maps ajuda a fechar obras maiores?", answer: "Clientes com maior poder aquisitivo exigem ver fotos de serviços executados e depoimentos reais antes de contratar. Um perfil profissional no Google transmite a segurança que fecha contratos de alto valor." },
+      { question: "Posso atender mais de uma cidade da minha região?", answer: "Sim. Configuramos sua área de cobertura metropolitana para cobrir municípios vizinhos onde o ticket de construção civil é mais elevado." },
+      { question: "Preciso de CNPJ para ter perfil de pedreiro no Google?", answer: "Não é obrigatório ter CNPJ para criar o perfil, mas ter MEI registrado aumenta a credibilidade, facilita a verificação e permite atrair clientes corporativos." }
+    ]
+  },
+  "guinchos": {
+    title: "Google Meu Negócio para Guinchos e Auto Socorro 24h",
+    heroSubtitle: "Esteja no primeiro lugar do Google Maps no momento exato em que o motorista precisa de resgate na rodovia ou na cidade. Chamadas diretas 24 horas.",
+    painPointTitle: "90% das ligações de socorro mecânico vão para os três primeiros do Google Maps",
+    painPointDescription: "Quando o veículo quebra no trânsito ou sofre um acidente, o condutor não pesquisa muito: ele digita 'guincho 24h perto de mim' e liga para o primeiro telefone que aparece. Ter o perfil posicionado no Top 3 é a garantia de manter os caminhões rodando sem parar.",
+    benefits: [
+      "Botão de ligação imediata e compartilhamento de localização via WhatsApp",
+      "Configuração de horário de atendimento 24 horas com plantão ativo",
+      "Destaque para guincho plataforma, reboque de motos, vans e utilitários leves e pesados"
+    ],
+    faqs: [
+      { question: "Como ranquear o guincho para buscas em rodovias e cidades vizinhas?", answer: "Definimos uma malha de 'Área de Atendimento' cobrindo o raio rodoviário e as cidades-satélite atendidas pelas suas bases e caminhões." },
+      { question: "Vale a pena investir no Google Maps se já presto serviço para seguradoras?", answer: "Com certeza. Os chamados particulares captados diretamente pelo Google Maps pagam à vista no PIX, sem tabelas defasadas e sem prazos de 30 a 60 dias das seguradoras." },
+      { question: "Como evitar suspensão da ficha de guincho no Google?", answer: "O nicho de guinchos é rigorosamente monitorado contra spams. Nossa consultoria aplica todas as diretrizes documentais oficiais para garantir um perfil 100% legítimo e blindado." }
+    ]
+  },
+  "assistencia-celulares": {
+    title: "Google Meu Negócio para Assistência Técnica de Celulares",
+    heroSubtitle: "Lote a bancada da sua assistência técnica com troca de tela, substituição de bateria e consertos rápidos de smartphones na sua cidade.",
+    painPointTitle: "O cliente quebra a tela do smartphone e procura a assistência mais confiável no Maps",
+    painPointDescription: "O smartphone guarda a vida pessoal e bancária das pessoas. Na hora de escolher onde deixar o aparelho, o cliente prioriza a loja mais bem avaliada, com fotos do balcão e dezenas de depoimentos de clientes satisfeitos. Se sua loja não tem esse destaque, o cliente vai ao concorrente.",
+    benefits: [
+      "Destaque para consertos no mesmo dia (troca de tela express, conectores e baterias)",
+      "Catálogo de marcas mais buscadas: Apple iPhone, Samsung Galaxy, Xiaomi e Motorola",
+      "Mecanismo de captação de avaliações que transforma clientes atendidos em notas 5 estrelas"
+    ],
+    faqs: [
+      { question: "Como se destacar da grande concorrência de bancadas informais?", answer: "Destacamos sua garantia de peças, fotos do laboratório com equipamentos antiestáticos e depoimentos que comprovam o sigilo e segurança dos dados do cliente." },
+      { question: "Posso incluir serviços de troca de vidro sem trocar o display?", answer: "Sim, configuramos itens específicos no catálogo de serviços para captar buscas por recuperação de vidro original, aumentando sua margem de lucro." },
+      { question: "O perfil ajuda a vender acessórios como capas e películas?", answer: "Sim. O fluxo de clientes que vão até sua loja física buscar reparos aproveita para comprar cabos, carregadores homologados e películas de proteção." }
+    ]
+  },
+  "manutencao-computadores": {
+    title: "Google Meu Negócio para Assistência de Computadores e Notebooks",
+    heroSubtitle: "Atraia reparos de notebooks, upgrades para SSD, montagem de PCs gamers e suporte técnico para empresas da sua região pelo Google Maps.",
+    painPointTitle: "Usuários e empresas locais buscam técnicos de informática qualificados no Google",
+    painPointDescription: "Seja um notebook de trabalho que não liga ou uma empresa local precisando de manutenção preventiva na rede, a busca começa no Google Maps. Posicionamos sua assistência técnica para atrair demandas particulares e contratos B2B recorrentes.",
+    benefits: [
+      "Captação de reparos avançados em placas-mãe de notebooks e computadores",
+      "Abertura de canal de atendimento direto para empresas locais e escritórios",
+      "Catálogo detalhado de formatação, limpeza térmica, upgrades e recuperação de dados"
+    ],
+    faqs: [
+      { question: "Como o Google Maps ajuda a conseguir contratos de suporte corporativo (B2B)?", answer: "Empresários locais procuram no Google Maps por assistências próximas para suporte rápido. Posicionamos seu perfil com palavras-chave de TI corporativa, servidores e contratos mensais." },
+      { question: "Vale a pena destacar montagem de computadores gamers?", answer: "Sim. A busca por montagem, cable management e otimização de PCs gamers tem ticket médio alto e atrai clientes apaixonados dispostos a pagar pelo serviço especializado." },
+      { question: "Como mostrar autoridade técnica no perfil?", answer: "Utilizamos fotos da bancada com osciloscópios, gravadores de BIOS e certificações técnicas que comprovam expertise em nível eletrônico." }
+    ]
+  },
+  "clinicas-veterinarias": {
+    title: "Google Meu Negócio para Clínicas Veterinárias e Hospitais Pet",
+    heroSubtitle: "Atraia tutores para consultas, exames, vacinas e emergências 24h com segurança e total conformidade com o Conselho Federal de Medicina Veterinária (CFMV).",
+    painPointTitle: "Tutores tratam pets como membros da família e exigem clínicas com máxima credibilidade",
+    painPointDescription: "Em momentos de urgência ou para procedimentos de rotina, o tutor pesquisa no Google Maps avaliando a estrutura hospitalar, a equipe médica veterinária e os comentários de outros donos de animais. Estruturamos seu perfil com foco em acolhimento e respeito às normas do CFMV.",
+    benefits: [
+      "Canal de emergência pet 24 horas destacado com rota direta e ligação no WhatsApp",
+      "Total conformidade ética com as normas de publicidade veterinária do CFMV",
+      "Destaque para especialidades (oncologia, dermatologia, odontologia veterinária e felinos)"
+    ],
+    faqs: [
+      { question: "Médicos veterinários podem ter perfil no Google sem violar as regras do CFMV?", answer: "Sim. O Perfil da Empresa no Google é considerado utilidade pública e informativa. Adequamos os textos para não prometer curas nem usar sensacionalismo, respeitando rigorosamente o código de ética do CFMV." },
+      { question: "Como atrair consultas para especialidades veterinárias?", answer: "Criamos categorias secundárias e catálogo de serviços detalhando cada área atendida, como ortopedia, cardiologia e exames de imagem (ultrassom e raio-x)." },
+      { question: "O perfil ajuda a lotar o plantão noturno da clínica?", answer: "Com certeza. Quando uma emergência acontece na madrugada, o Google Maps é o único lugar onde o tutor busca clínicas abertas 24h na cidade." }
+    ]
+  },
+  "pet-shops": {
+    title: "Google Meu Negócio para Pet Shops e Estética Animal",
+    heroSubtitle: "Lote a agenda de banho e tosa e aumente o fluxo de venda de rações e medicamentos no seu pet shop com presença dominante no seu bairro.",
+    painPointTitle: "Vizinhos do seu bairro estão comprando ração e tosa em concorrentes no Google",
+    painPointDescription: "A conveniência e o amor pelos animais movem o mercado pet. Quem tem cachorro ou gato quer um pet shop perto de casa que ofereça serviço de táxi dog, banho com produtos de qualidade e profissionais carinhosos. Posicionamos seu pet shop para ser a referência número 1 do bairro.",
+    benefits: [
+      "Agendamento de banho e tosa via WhatsApp com fotos de tosas de raças específicas",
+      "Catálogo de rações super premium, farmácia veterinária e petiscos",
+      "Avaliações 5 estrelas destacando higiene, ambiente climatizado e carinho com os animais"
+    ],
+    faqs: [
+      { question: "Como fidelizar tutores para planos semanais de banho?", answer: "Destacamos no perfil pacotes mensais e benefícios de rotina, incentivando o tutor a manter uma frequência de agendamentos no seu banho e tosa." },
+      { question: "Ajuda a divulgar o serviço de busca e entrega (táxi dog)?", answer: "Sim. O serviço de transporte pet é um dos maiores fatores de decisão para quem trabalha fora e pode ser destacado no topo do perfil." },
+      { question: "Como se diferenciar de grandes redes de pet shop?", answer: "O Google Maps privilegia a proximidade e o atendimento humanizado de lojas locais. Destacamos o cuidado individualizado que as grandes redes impessoais não conseguem entregar." }
+    ]
+  },
+  "agropecuarias": {
+    title: "Google Meu Negócio para Lojas Agropecuárias e Produtos Rurais",
+    heroSubtitle: "Destaque sua loja agropecuária no Google Maps para produtores rurais, criadores e clientes urbanos que buscam rações, ferramentas e insumos.",
+    painPointTitle: "Sua loja agropecuária perde vendas para distribuidoras por falta de presença no Google?",
+    painPointDescription: "Produtores rurais, chacreiros e moradores que cuidam de quintais ou animais de grande porte pesquisam no Google Maps por lojas que tenham estoque imediato de rações, sementes, arames, adubos e ferragens. Estruturamos seu perfil para mostrar tudo o que você vende.",
+    benefits: [
+      "Catálogo de insumos agrícolas, rações a granel, defensivos e ferramentas",
+      "Atendimento direto aos produtores rurais da região com cotação rápida no WhatsApp",
+      "Posicionamento para quem pesquisa termos rurais em cidades do interior e polos agrícolas"
+    ],
+    faqs: [
+      { question: "Lojas agropecuárias fora do centro urbano conseguem ranquear bem?", answer: "Sim. Configuramos o raio de cobertura para abranger tanto a zona urbana quanto a zona rural do município, facilitando a localização pelos produtores." },
+      { question: "Posso expor medicamentos veterinários para rebanho?", answer: "Sim. É possível estruturar o catálogo de saúde animal para bovinos, equinos, aves e suínos, respeitando as normas vigentes." },
+      { question: "O perfil atrai compradores de ferramentas e equipamentos rurais?", answer: "Com certeza. As pesquisas por roçadeiras, motosserras, bombas d'água e telas no Google Maps geram ligações diretas para a sua equipe de balcão." }
+    ]
+  },
+  "restaurantes": {
+    title: "Google Meu Negócio para Restaurantes e Gastronomia Local",
+    heroSubtitle: "Encha seu salão e receba pedidos no WhatsApp sem pagar comissões abusivas de aplicativos de entrega. Seja o restaurante mais desejado do Google Maps.",
+    painPointTitle: "Cansado de entregar até 27% do faturamento para aplicativos de delivery?",
+    painPointDescription: "Quando as pessoas sentem fome, elas abrem o Google Maps para ver fotos suculentas de pratos, cardápio atualizado e notas de outros frequentadores. Se o seu perfil estiver no Top 3 com botão direto de pedido no WhatsApp, você vende com margem integral e sem comissões.",
+    benefits: [
+      "Cardápio visual interativo com fotos de alta qualidade dos pratos e bebidas",
+      "Botão de pedidos de delivery direto no WhatsApp sem taxa de intermediação",
+      "Destaque para reservas de mesas, horário de almoço executivo e happy hour"
+    ],
+    faqs: [
+      { question: "Como o Google Maps ajuda a diminuir a dependência do iFood?", answer: "Ao posicionar seu restaurante no topo das buscas da cidade com o link do seu cardápio próprio no WhatsApp, os clientes compram diretamente de você com preços mais atrativos e margem livre de comissões." },
+      { question: "Como lidar com avaliações negativas de clientes?", answer: "Desenvolvemos respostas estratégicas profissionais que revertem a impressão negativa perante novos visitantes e incentivamos um fluxo constante de clientes satisfeitos deixando notas 5 estrelas." },
+      { question: "Funciona para restaurantes a quilo ou marmitarias?", answer: "Perfeitamente. O almoço executivo corporativo é uma das buscas mais frequentes no Google Maps durante a semana por trabalhadores da região." }
     ]
   }
 };
