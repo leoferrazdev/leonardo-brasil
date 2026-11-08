@@ -32,7 +32,6 @@ export default function CrmLogin() {
         return;
       }
 
-      // Tenta login pelo Supabase
       const { data, error } = await supabase.auth.signInWithPassword({
         email: cleanEmail,
         password,
@@ -48,7 +47,6 @@ export default function CrmLogin() {
         return;
       }
 
-      // Se for o e-mail do proprietário (Leonardo), garante o acesso administrativo imediato
       if (cleanEmail.toLowerCase() === "leonardoferrazbrasil@gmail.com") {
         if (typeof window !== "undefined") {
           localStorage.setItem("crm_offline_session", "true");
@@ -79,40 +77,46 @@ export default function CrmLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-slate-100 selection:bg-emerald-500 selection:text-white">
+    <div
+      className="min-h-screen bg-[#0a0d14] flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-[#f1f5f9] selection:bg-blue-600 selection:text-white"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.14), transparent 45%), radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08), transparent 35%)",
+      }}
+    >
       <Helmet>
-        <title>Login | CRM Prospecção Local - Leonardo Brasil</title>
+        <title>Login | CRM Executivo - Leonardo Brasil</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        <Link to="/" className="inline-flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 flex items-center justify-center">
-            <div className="w-full h-full bg-[#0b0f17] rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+        <Link to="/" className="inline-flex items-center gap-2.5 mb-5 hover:opacity-90 transition-opacity">
+          <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-amber-400 p-[1.5px] shadow-lg shadow-blue-500/25 flex items-center justify-center">
+            <div className="w-full h-full bg-[#0a0d14] rounded-[10px] flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-amber-400" />
             </div>
           </div>
-          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+          <span className="text-2xl font-extrabold tracking-tight text-white">
             Leonardo Brasil
           </span>
         </Link>
-        <h2 className="text-2xl font-extrabold tracking-tight text-white">
-          CRM de Prospecção Local
+        <h2 className="text-2xl font-black tracking-tight text-white">
+          CRM Executivo de Prospecção
         </h2>
-        <p className="mt-2 text-sm text-slate-400">
-          Perfil da Empresa no Google & Estrutura de Vendas
+        <p className="mt-2 text-sm text-[#94a3b8]">
+          Posicionamento Google Maps, SEO Local & Máquina de Vendas
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0">
-        <div className="bg-[#0f1420] py-8 px-6 shadow-2xl shadow-black/80 rounded-2xl border border-slate-800/80 backdrop-blur-xl sm:px-10">
+        <div className="bg-[#0e1320] py-8 px-6 shadow-2xl shadow-black/80 rounded-2xl border border-[#1a2030] backdrop-blur-xl sm:px-10">
           <form className="space-y-6" onSubmit={handleLogin}>
             <div>
-              <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-[#94a3b8]">
                 E-mail de acesso
               </label>
               <div className="mt-2 relative rounded-xl shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-blue-400">
                   <Mail className="h-4 w-4" />
                 </div>
                 <input
@@ -124,17 +128,17 @@ export default function CrmLogin() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="leonardoferrazbrasil@gmail.com"
-                  className="block w-full pl-10 pr-4 py-2.5 bg-[#080b11] border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm transition-all"
+                  className="block w-full pl-10 pr-4 py-3 bg-[#080b12] border border-[#1a2030] rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <label htmlFor="password" className="block text-xs font-bold uppercase tracking-wider text-[#94a3b8]">
                 Senha
               </label>
               <div className="mt-2 relative rounded-xl shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-blue-400">
                   <Lock className="h-4 w-4" />
                 </div>
                 <input
@@ -146,7 +150,7 @@ export default function CrmLogin() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="block w-full pl-10 pr-4 py-2.5 bg-[#080b11] border border-slate-800 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm transition-all"
+                  className="block w-full pl-10 pr-4 py-3 bg-[#080b12] border border-[#1a2030] rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-all"
                 />
               </div>
             </div>
@@ -155,7 +159,7 @@ export default function CrmLogin() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-emerald-500/20 text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.99]"
+                className="w-full flex justify-center items-center gap-2 py-3.5 px-4 border border-blue-400/30 rounded-xl shadow-lg shadow-blue-600/25 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.99]"
               >
                 {loading ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -169,20 +173,20 @@ export default function CrmLogin() {
             </div>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-slate-800/80 flex flex-col gap-3">
+          <div className="mt-6 pt-6 border-t border-[#1a2030] flex flex-col gap-3">
             <button
               onClick={handleBypassOffline}
               type="button"
-              className="w-full text-xs text-slate-300 hover:text-emerald-300 font-medium py-2.5 px-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+              className="w-full text-xs text-amber-300 hover:text-amber-200 font-bold py-3 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-colors flex items-center justify-center gap-2 shadow-sm"
             >
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Acesso Rápido / Modo Offline Local</span>
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span>⚡ Acesso Rápido / Modo Offline Local</span>
             </button>
           </div>
         </div>
 
-        <div className="mt-8 text-center text-xs text-slate-500">
-          Ambiente restrito • leonardobrasil.com.br/crm
+        <div className="mt-8 text-center text-xs text-[#94a3b8]">
+          Ambiente executivo restrito • leonardobrasil.com.br/crm
         </div>
       </div>
     </div>
