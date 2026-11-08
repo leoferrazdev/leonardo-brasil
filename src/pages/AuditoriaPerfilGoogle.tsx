@@ -3,7 +3,7 @@ import { Link } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 
 interface Question {
   id: string;

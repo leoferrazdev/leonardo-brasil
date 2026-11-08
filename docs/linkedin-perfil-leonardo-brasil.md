@@ -120,7 +120,7 @@ PRÓXIMO PASSO
 
 Comece pelo diagnóstico gratuito. São alguns minutos no WhatsApp e eu te mostro, com nome e sobrenome, onde está a venda que você perde hoje. Sem apresentação comercial de uma hora e sem compromisso.
 
-WhatsApp: (51) 99256-8861
+WhatsApp: (51) 99673-7359
 Site: leonardobrasil.com.br
 ```
 

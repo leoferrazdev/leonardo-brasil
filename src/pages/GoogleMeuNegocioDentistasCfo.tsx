@@ -2,7 +2,7 @@ import { Link } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 const waLink = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 const WA_DENTISTAS = waLink("Olá, Leonardo! Sou dentista / gestor de clínica odontológica e gostaria de uma avaliação do meu Perfil no Google Meu Negócio para captar mais pacientes particulares.");
 

@@ -6,7 +6,7 @@ import locationsData from "./data/seoLocations.json";
 import { LOCATIONS } from "./data/locations";
 
 // WhatsApp pessoal do Leonardo Brasil (só dígitos, DDI 55).
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 
 const waLink = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 const WA_DIAG = waLink("Olá, Leonardo! Quero uma avaliação gratuita do perfil da minha empresa no Google Meu Negócio.");

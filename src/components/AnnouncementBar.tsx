@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const DISMISS_KEY = "lb_announcement_gmn_v1";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 const WA_DIAG = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Leonardo! Vi o aviso no site e quero uma avaliação gratuita do perfil do meu negócio no Google Maps.")}`;
 
 function isDismissed() {

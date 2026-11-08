@@ -3,7 +3,7 @@ import { Link } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Leonardo! Meu perfil no Google Meu Negócio foi suspenso/desativado. Preciso de ajuda para recuperar minha ficha.")}`;
 
 const WhatsApp = ({ className = "" }: { className?: string }) => (

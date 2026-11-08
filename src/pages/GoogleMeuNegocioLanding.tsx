@@ -4,7 +4,7 @@ import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 import locationsData from "../data/seoLocations.json";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Leonardo! Tenho interesse na consultoria de otimização do Google Meu Negócio. Pode avaliar meu perfil?")}`;
 
 export default function GoogleMeuNegocioLanding() {

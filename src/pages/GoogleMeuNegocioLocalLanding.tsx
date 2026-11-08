@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import locationsData from "../data/seoLocations.json";
 import { seoNicheData, getDefaultNicheData } from "../data/seoNicheData";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 
 function formatLocationName(slug?: string) {
   if (!slug) return "";
@@ -124,7 +124,7 @@ export default function GoogleMeuNegocioLocalLanding() {
       "name": `Leonardo Brasil — ${h1Text}`,
       "description": description,
       "url": canonicalUrl,
-      "telephone": "+55-51-99256-8861",
+      "telephone": "+55-51-99673-7359",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": formattedCidade,

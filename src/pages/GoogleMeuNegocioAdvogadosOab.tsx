@@ -2,7 +2,7 @@ import { Link } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 
-const WHATSAPP_NUMBER = "5551992568861";
+const WHATSAPP_NUMBER = "5551996737359";
 const waLink = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 const WA_ADVOGADOS = waLink("Olá, Leonardo! Sou advogado / sócio de escritório de advocacia e gostaria de uma avaliação do meu Perfil no Google Meu Negócio dentro das normas da OAB.");
 
