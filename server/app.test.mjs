@@ -8,6 +8,19 @@ afterEach(() => {
   resetTtsCircuitForTests();
 });
 
+test('Poppy discovery declares website-only support without claiming OAuth or sessions', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  const response = await request(app, '/.well-known/poppy.json');
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /^application\/json/);
+  const manifest = await response.json();
+  assert.deepEqual(manifest, {
+    protocol_version: '0.1',
+    organization: { name: 'Leonardo Brasil', domain: 'leonardobrasil.com.br' },
+    web: {}
+  });
+});
+
 test('ARD manifest serves JSON with public CORS and valid resolvable resources', async () => {
   const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
   const response = await request(app, '/.well-known/ai-catalog.json', { headers: { Origin: 'https://example.org' } });

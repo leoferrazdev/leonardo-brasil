@@ -542,6 +542,12 @@ export function createMainApp(options = {}) {
   });
 
   if (existsSync(distDir)) {
+    app.get('/.well-known/poppy.json', (_request, response) => {
+      response.setHeader('Content-Type', 'application/json');
+      response.setHeader('Access-Control-Allow-Origin', '*');
+      response.sendFile(path.join(distDir, '.well-known', 'poppy.json'), { dotfiles: 'allow' });
+    });
+
     app.get('/.well-known/ai-catalog.json', (_request, response) => {
       response.setHeader('Content-Type', 'application/json');
       response.setHeader('Access-Control-Allow-Origin', '*');
