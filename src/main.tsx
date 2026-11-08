@@ -5,6 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { initAnalytics } from "./lib/analytics";
 import { RouteAnnouncementBar } from "./components/RouteAnnouncementBar";
 import { Toaster } from "react-hot-toast";
+import { WebMcpTools } from "./components/WebMcpTools";
 import "./index.css";
 
 // Inicia interceptador global de UTMs para o WhatsApp
@@ -57,6 +58,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
+        <WebMcpTools />
         <RouteAnnouncementBar />
         <Toaster position="top-right" toastOptions={{ className: "text-xs font-semibold" }} />
         <Suspense fallback={<div className="min-h-screen bg-ink flex items-center justify-center text-accent">Carregando...</div>}>
