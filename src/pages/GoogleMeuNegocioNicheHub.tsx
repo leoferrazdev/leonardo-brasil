@@ -3,6 +3,15 @@ import { Link, useParams, useLocation } from "../lib/local-router";
 import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 import locationsData from "../data/seoLocations.json";
+import { NICHES } from "../data/niches";
+
+const WHATSAPP_NUMBER = "5551996737359";
+
+const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.36-.5.04-.95.23-3.2-.67-2.7-1.07-4.42-3.83-4.55-4.01-.13-.18-1.1-1.46-1.1-2.78 0-1.32.69-1.97.94-2.24.24-.27.53-.33.7-.33.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.55.8 1.9.87 2.04.07.13.12.29.02.47-.09.18-.14.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.54.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.42.11.58-.07.16-.18.67-.78.85-1.05.18-.27.35-.22.6-.13.24.09 1.55.73 1.82.86.27.13.44.2.5.31.07.11.07.63-.17 1.32Z" />
+  </svg>
+);
 
 export default function GoogleMeuNegocioNicheHub() {
   const { nicho } = useParams();
@@ -44,6 +53,10 @@ export default function GoogleMeuNegocioNicheHub() {
     verticalTitle = `Especialista em Google Maps para ${nicheInfo.nome} no Brasil`;
     verticalDesc = `Encontre especialista dedicado em Google Maps para colocar ${nicheInfo.nome} no Top 3 da sua cidade e estado.`;
   }
+
+  const detailedNiche = NICHES.find((n) => n.slug === nicho);
+  const activeWaMessage = detailedNiche?.waMessage || `Olá, Leonardo! Tenho um negócio no segmento de ${nicheInfo.nome} e quero posicionar meu perfil no topo do Google Maps.`;
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeWaMessage)}`;
 
   const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}`;
 
@@ -114,8 +127,28 @@ export default function GoogleMeuNegocioNicheHub() {
               </span>
             </h1>
             <p className="mt-4 text-sm sm:text-base text-muted">
-              Selecione seu estado e cidade abaixo para ver como Leonardo Brasil estrutura o Perfil da Empresa no Google Maps para atrair clientes particulares na sua região.
+              {detailedNiche?.subheadline || "Selecione seu estado e cidade abaixo para ver como Leonardo Brasil estrutura o Perfil da Empresa no Google Maps para atrair clientes particulares na sua região."}
             </p>
+
+            {/* CTA DIRETO WHATSAPP & RAIO-X */}
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-accent/20 hover:scale-[1.02]"
+              >
+                <WhatsAppIcon className="w-5 h-5 text-white" />
+                <span>{detailedNiche?.ctaText || `Falar com Leonardo sobre ${nicheInfo.nome}`}</span>
+              </a>
+              <Link
+                to="/auditoria-perfil-google"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-line bg-panel hover:bg-panel/80 text-text font-semibold text-sm transition-all"
+              >
+                <span>Fazer Raio-X Gratuito</span>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
           </div>
 
           {/* BUSCA E FILTROS */}

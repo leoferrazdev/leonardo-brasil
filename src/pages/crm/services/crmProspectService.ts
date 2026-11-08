@@ -2,7 +2,7 @@ import { supabase, isSupabaseConfigured } from "../../../lib/supabase";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { INITIAL_PROSPECTS } from "../data/initialProspects";
 
-const STORAGE_KEY = "crm_prospect_leads_v1";
+const STORAGE_KEY = "crm_prospect_leads_v2";
 
 export const crmProspectService = {
   async getLeads(): Promise<ProspectLead[]> {
@@ -31,6 +31,10 @@ export const crmProspectService = {
               mapsUrl: "",
               opportunityClass: "Classe B (20 pts)",
               opportunityIssue: d.proxima_acao || "",
+              searchKeyword: d.interesse || "Google Meu Negócio",
+              monthlySearches: "1.000+",
+              bloco1Volume: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
+              bloco1Falha: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               stage: (d.status === "novo" ? "a_abordar" : d.status === "em_atendimento" ? "contatado" : d.status === "qualificado" ? "em_conversa" : d.status === "convertido" ? "proposta_enviada" : "fechado_arquivado") as PipelineStageId,
               bloco1: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               bloco2: `Gostaria de apresentar oportunidades observadas no perfil do Google.`,
