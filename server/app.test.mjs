@@ -1,10 +1,33 @@
 import assert from 'node:assert/strict';
 import test, { afterEach } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { createMainApp, resetTtsCircuitForTests } from './app.mjs';
 
 afterEach(() => {
   resetTtsCircuitForTests();
+});
+
+test('skills discovery serves JSON and an artifact matching its advertised digest', async () => {
+  const app = createMainApp({ env: {}, distDir: fileURLToPath(new URL('../public/', import.meta.url)) });
+  const response = await request(app, '/.well-known/agent-skills/index.json');
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /application\/json/);
+  const index = await response.json();
+  assert.equal(index.$schema, 'https://schemas.agentskills.io/discovery/0.2.0/schema.json');
+  assert.ok(index.skills.length > 0);
+  for (const skill of index.skills) {
+    assert.match(skill.name, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.equal(skill.type, 'skill-md');
+    assert.ok(skill.description);
+    const artifact = await request(app, new URL(skill.url).pathname);
+    assert.equal(artifact.status, 200);
+    const bytes = Buffer.from(await artifact.arrayBuffer());
+    assert.equal(skill.digest, `sha256:${createHash('sha256').update(bytes).digest('hex')}`);
+    assert.match(bytes.toString(), /^---\nname:/);
+  }
+  const missing = await request(app, '/.well-known/agent-skills/missing/SKILL.md');
+  assert.equal(missing.status, 404);
 });
 
 test('API catalog serves a hidden well-known file with discoverable specification, docs and status', async () => {

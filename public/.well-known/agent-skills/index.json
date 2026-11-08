@@ -1,12 +1,12 @@
 {
-  "$schema": "https://agentskills.io/schema/index.json",
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
     {
-      "name": "brain",
-      "type": "api",
-      "description": "AI language generation for local businesses.",
-      "url": "https://leonardobrasil.com.br/api/brain",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "name": "consultar-api-leonardo-brasil",
+      "type": "skill-md",
+      "description": "Consulte o catálogo público de APIs de Leonardo Brasil para localizar documentação, especificação OpenAPI e estado do serviço.",
+      "url": "https://leonardobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
+      "digest": "sha256:1d0a9c0e4cb354d197e0156d4cc0061803f1d25a2d4c77216d9f41bae82936a8"
     }
   ]
 }

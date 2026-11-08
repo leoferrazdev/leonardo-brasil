@@ -542,6 +542,11 @@ export function createMainApp(options = {}) {
   });
 
   if (existsSync(distDir)) {
+    // Serve apenas o diretório público de skills; não expõe outros dotfiles.
+    app.use('/.well-known/agent-skills', express.static(path.join(distDir, '.well-known', 'agent-skills'), {
+      dotfiles: 'allow', index: false, redirect: false, fallthrough: false, maxAge: 0
+    }));
+
     // Agent Readiness: API Catalog Endpoint
     app.get('/.well-known/api-catalog', (request, response) => {
       const catalogPath = path.join(distDir, '.well-known', 'api-catalog');
