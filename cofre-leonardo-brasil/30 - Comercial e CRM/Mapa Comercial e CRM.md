@@ -27,7 +27,8 @@ Oferta, abordagem consultiva e organização da operação comercial.
 ## CRM e leads
 
 - [[Sistema CRM Local e Manual Operacional]]
-- [[Base de 40 Leads Auditados de Porto Alegre]]
+- [[Base de Leads Fora do Top 3 (Rodada 02)]]
+- [[Base de 40 Leads Auditados de Porto Alegre|Arquivo: Base de 40 Leads (Rodada 01 Top 3)]]
 
 > [!note] Uso das referências
 > A base de leads e os scripts são registros existentes. Confira a situação de cada contato e a oferta vigente antes de utilizar os materiais.

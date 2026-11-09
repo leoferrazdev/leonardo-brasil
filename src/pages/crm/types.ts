@@ -30,6 +30,8 @@ export interface ProspectLead {
   opportunityIssue: string;
   searchKeyword: string;
   monthlySearches: string;
+  observedPosition?: number; // Posição real no Google Maps (ex: 4, 5, 6...)
+  rankingContext?: string; // Contexto visual (ex: "4º no Maps (Fora do Top 3)")
   competitorsObserved?: string;
   stage: PipelineStageId;
   bloco1: string; // Mensagem ativa (padrão)

@@ -96,6 +96,11 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
             <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#080b12] text-[#94a3b8] border border-[#1a2030]">
               {lead.sampleId}
             </span>
+            {lead.observedPosition && (
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                📍 {lead.observedPosition}º no Maps
+              </span>
+            )}
             <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
               {lead.opportunityClass}
             </span>

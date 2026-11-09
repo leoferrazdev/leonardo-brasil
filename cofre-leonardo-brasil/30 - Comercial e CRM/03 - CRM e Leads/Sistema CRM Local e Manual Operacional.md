@@ -56,7 +56,7 @@ flowchart LR
   1. **Autenticação Cloud:** E-mail e senha gerenciados pelo Supabase Auth;
   2. **Modo Offline Local (Acesso Rápido):** Botão de contingência imediata que armazena `localStorage.setItem("crm_offline_session", "true")`, garantindo acesso total mesmo em instabilidades de rede ou durante manutenções no Supabase.
 * **Segurança de Indexação:** Todas as rotas do CRM contêm `<meta name="robots" content="noindex, nofollow" />` e são excluídas da pré-renderização estática do SSR.
-* **Versionamento de Leads:** Utilização da chave de armazenamento `crm_prospect_leads_v2` em `crmProspectService.ts`, garantindo integridade de encoding UTF-8 e preservação do estado local do navegador.
+* **Versionamento de Leads:** Utilização da chave de armazenamento `crm_prospect_leads_v4` em `crmProspectService.ts`, carregando a base de leads rigorosamente fora do Top 3 (Critério P) com integridade UTF-8 e preservação do estado local do navegador.
 
 ---
 
@@ -133,7 +133,8 @@ Todos os 4 blocos são exibidos em campos de texto (`<textarea>`) editáveis ao 
 * [[Método de Prospecção Ativa Local]]
 * [[Fluxo Modular de Abordagem WhatsApp (4 Blocos)]]
 * [[O Framework dos 3 Pilares da Oferta]]
-* [[Base de 40 Leads Auditados de Porto Alegre]]
+* [[Base de Leads Fora do Top 3 (Rodada 02)]]
+* [[Base de 40 Leads Auditados de Porto Alegre|Arquivo: Base de 40 Leads (Rodada 01 Top 3)]]
 * [[Branding, Perfil Comercial e Presença Digital]]
 * [[Blindagem Cadastral e Proteção contra Suspensões]]
 * [[Início|Voltar ao MOC]]

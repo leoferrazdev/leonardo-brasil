@@ -131,6 +131,11 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
               <span className="text-xs px-2.5 py-0.5 rounded-full border border-amber-500/35 bg-amber-500/15 text-amber-300 font-bold">
                 {lead.opportunityClass}
               </span>
+              {lead.observedPosition && (
+                <span className="text-xs px-2.5 py-0.5 rounded-full border border-amber-500/40 bg-amber-500/20 text-amber-300 font-bold inline-flex items-center gap-1">
+                  📍 {lead.observedPosition}º lugar no Maps (Fora do Top 3)
+                </span>
+              )}
               {lead.monthlySearches && (
                 <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-300 bg-blue-500/15 px-2.5 py-0.5 rounded-full border border-blue-500/30">
                   <Sparkles className="w-3.5 h-3.5 text-amber-400" />

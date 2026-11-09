@@ -36,7 +36,7 @@ Estratégia, aquisição, vendas e tecnologia em um só lugar.
 ## Acessos rápidos
 
 - [[Sistema CRM Local e Manual Operacional|Consultar o manual do CRM]]
-- [[Base de 40 Leads Auditados de Porto Alegre|Abrir a base de leads documentada]]
+- [[Base de Leads Fora do Top 3 (Rodada 02)|Abrir a base de leads qualificados (Fora do Top 3)]]
 - [[Fluxo Modular de Abordagem WhatsApp (4 Blocos)|Consultar os blocos de abordagem]]
 - [[Checklist de Verificação e Testes|Consultar a rotina de verificação]]
 
