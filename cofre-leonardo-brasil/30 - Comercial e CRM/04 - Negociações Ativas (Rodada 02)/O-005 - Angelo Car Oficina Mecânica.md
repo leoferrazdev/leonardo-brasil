@@ -85,6 +85,56 @@ sequenceDiagram
    > *"Está parado o serviço"*  
    > *"Tô cheio de contas"*
 
+8. **Leonardo (Solução & Facilitação de Caixa):**
+   > Mensagem demonstrando que o serviço está parado justamente pela falta de visibilidade no Maps e oferecendo **2x de R$ 250 no Pix**.
+
+9. **Angelo Car (Aceite com Resguardo de Confiança):**
+   > *"Assim da"*  
+   > *"Mas quero ver resultado"*  
+   > *"Não me engana"*  
+   > *"Por favor"*  
+   > *"Tu é de Poa ?"*
+
+10. **Leonardo (Rapport de Vizinhança & Confiança Total):**
+    > *"Vou na sua loja pessoalmente"*  
+    > *"Sou teu vizinho"*  
+    > *"Perto da Agafarma da Pereira Neto"*
+
+11. **Angelo Car (Abertura Total e Pedido do Serviço):**
+    > Envia o link oficial da ficha e o endereço:  
+    > *`Av. Vicente Monteggia, 333`*  
+    > *"Tem como arrumar o nome"*  
+    > *"Mechanical?"*  
+    > *"Colocar mecânica?"*  
+    > *"Tem como tu arrumar pra min ?"*
+
+---
+
+## 🎯 Mensagem de Fechamento & Handshake (Copiar e Colar)
+
+Como o cliente pediu expressamente para arrumar o nome em inglês (*"Mechanical"*) e já concordou com a condição de 2x de R$ 250, a resposta deve:
+1. **Validar tecnicamente** que tirar o "mechanical" em inglês e colocar "oficina mecânica" é vital para o algoritmo do Google e para os motoristas da Zona Sul;
+2. **Reafirmar a proximidade e segurança** ("sou teu vizinho");
+3. **Passar os 2 passos práticos**: Chave Pix (R$ 250) + E-mail do Gmail para solicitar acesso administrativo no Google;
+4. **Dar a opção de visita presencial** na Vicente Monteggia para eliminar qualquer receio remanescente.
+
+```text
+Com certeza, Angelo! Tem como arrumar sim, e isso é fundamental.
+
+Colocar "mechanical" em inglês no Google prejudica você, porque o motorista de Porto Alegre pesquisa por "oficina mecânica" ou "mecânica". Eu vou ajustar o nome certinho para as normas do Google não bloquearem, colocar *Angelo Car - Oficina Mecânica*, cadastrar as categorias certas de serviços e ativar o botão de WhatsApp direto para você.
+
+Pode ficar 100% tranquilo que sou teu vizinho aqui da Pereira Neto, trabalho sério e transparente.
+
+Para a gente dar a largada e eu já começar a arrumar o nome hoje mesmo:
+
+1. A chave Pix para a primeira parcela de R$ 250 é: [Sua Chave Pix Aqui]
+2. Me passa o teu e-mail do Gmail que hoje acessa a ficha da oficina no Google.
+
+Assim que você me passar o e-mail, eu já peço a autorização oficial pelo painel do Google e começo a mexer agora à tarde.
+
+(E se preferir, eu dou um pulo aí na oficina na Vicente Monteggia para te dar um aperto de mão e te mostrar no celular, sem problema nenhum!).
+```
+
 ---
 
 ## 🎯 Quebra da Objeção: "Está parado o serviço / Tô cheio de contas"
