@@ -77,7 +77,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
     countByStage("proposta_enviada") + 
     countByStage("fechado_ganho") + 
     countByStage("perdido_invalido");
-  const inNegotiationCount = countByStage("em_conversa") + countByStage("proposta_enviada");
+  const inNegotiationCount = countByStage("proposta_enviada");
   const closedCount = countByStage("fechado_ganho");
   const lostCount = countByStage("perdido_invalido");
 
@@ -250,13 +250,13 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
             </div>
           </div>
 
-          {/* KPI 5: Em Negociação (R$) */}
+          {/* KPI 5: 4. Em Proposta (R$) */}
           <div className="bg-[#0e131f] border border-amber-500/25 rounded-xl p-3 flex items-center justify-between">
             <div>
-              <p className="text-[11px] font-semibold text-amber-300/90">Em Proposta (R$)</p>
+              <p className="text-[11px] font-semibold text-amber-300/90">4. Em Proposta (R$)</p>
               <p className="text-lg font-black text-amber-400 mt-0.5">{formatBRL(negotiationValue)}</p>
               <p className="text-[10px] text-[#94a3b8] mt-0.5">
-                {inNegotiationCount} em negociação ativa
+                {inNegotiationCount} proposta(s) enviada(s)
               </p>
             </div>
             <div className="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center shrink-0">
