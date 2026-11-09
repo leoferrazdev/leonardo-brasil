@@ -25,6 +25,7 @@ const STATIC_ROUTES = [
   "/google-meu-negocio/advogados-oab",
   "/google-meu-negocio/dentistas-cfo",
   "/segmentos-locais-google-maps",
+  "/primeiro-lugar-no-google-2027",
   "/como-colocar-minha-empresa-no-google",
   "/como-ficar-na-primeira-pagina-do-google",
   "/como-divulgar-minha-empresa-no-google",

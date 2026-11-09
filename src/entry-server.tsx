@@ -14,6 +14,7 @@ import ComoDivulgarEmpresaNoGoogle from "./pages/ComoDivulgarEmpresaNoGoogle";
 import ComoAparecerNoGoogleMaps from "./pages/ComoAparecerNoGoogleMaps";
 import ComoVenderMaisNoGoogle from "./pages/ComoVenderMaisNoGoogle";
 import SegmentosLocaisGoogleMaps from "./pages/SegmentosLocaisGoogleMaps";
+import PrimeiroLugarNoGoogle2027 from "./pages/PrimeiroLugarNoGoogle2027";
 import GoogleMeuNegocioLanding from "./pages/GoogleMeuNegocioLanding";
 import GoogleMeuNegocioNicheHub from "./pages/GoogleMeuNegocioNicheHub";
 import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
@@ -76,6 +77,7 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
 
           {/* Guias Estratégicos de SEO Local e Aquisição */}
+          <Route path="/primeiro-lugar-no-google-2027" element={<PrimeiroLugarNoGoogle2027 />} />
           <Route path="/segmentos-locais-google-maps" element={<SegmentosLocaisGoogleMaps />} />
           <Route path="/como-colocar-minha-empresa-no-google" element={<ComoColocarEmpresaNoGoogle />} />
           <Route path="/como-ficar-na-primeira-pagina-do-google" element={<ComoFicarNaPrimeiraPaginaGoogle />} />

@@ -31,6 +31,7 @@ const ComoDivulgarEmpresaNoGoogle = lazy(() => import("./pages/ComoDivulgarEmpre
 const ComoAparecerNoGoogleMaps = lazy(() => import("./pages/ComoAparecerNoGoogleMaps"));
 const ComoVenderMaisNoGoogle = lazy(() => import("./pages/ComoVenderMaisNoGoogle"));
 const SegmentosLocaisGoogleMaps = lazy(() => import("./pages/SegmentosLocaisGoogleMaps"));
+const PrimeiroLugarNoGoogle2027 = lazy(() => import("./pages/PrimeiroLugarNoGoogle2027"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
@@ -99,6 +100,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
 
             {/* Guias Estratégicos de SEO Local e Aquisição */}
+            <Route path="/primeiro-lugar-no-google-2027" element={<PrimeiroLugarNoGoogle2027 />} />
             <Route path="/segmentos-locais-google-maps" element={<SegmentosLocaisGoogleMaps />} />
             <Route path="/como-colocar-minha-empresa-no-google" element={<ComoColocarEmpresaNoGoogle />} />
             <Route path="/como-ficar-na-primeira-pagina-do-google" element={<ComoFicarNaPrimeiraPaginaGoogle />} />

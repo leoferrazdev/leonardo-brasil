@@ -86,6 +86,11 @@ export function Footer() {
               </li>
               <li className="pt-2 text-text font-semibold">Guias de SEO Local:</li>
               <li>
+                <Link to="/primeiro-lugar-no-google-2027" className="text-emerald-400 hover:text-emerald-300 transition-colors font-semibold">
+                  ★ Primeiro Lugar no Google em 2027
+                </Link>
+              </li>
+              <li>
                 <Link to="/segmentos-locais-google-maps" className="text-accent hover:text-accent-light transition-colors font-medium">
                   ★ Os 6 Segmentos Mais Lucrativos
                 </Link>
