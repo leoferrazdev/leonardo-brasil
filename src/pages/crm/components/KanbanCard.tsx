@@ -11,7 +11,9 @@ import {
   Copy,
   Check,
   Sparkles,
-  FileText
+  FileText,
+  PhoneOff,
+  RotateCcw
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import type { ProspectLead, PipelineStageId } from "../types";
@@ -28,7 +30,7 @@ const STAGES_ORDER: PipelineStageId[] = [
   "contatado",
   "em_conversa",
   "proposta_enviada",
-  "fechado_arquivado"
+  "fechado_ganho"
 ];
 
 export const KanbanCard: React.FC<KanbanCardProps> = ({
@@ -101,9 +103,15 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
                 📍 {lead.observedPosition}º no Maps
               </span>
             )}
-            <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
-              {lead.opportunityClass}
-            </span>
+            {lead.stage === "perdido_invalido" ? (
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 border border-rose-500/35">
+                ✕ Descartado
+              </span>
+            ) : (
+              <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${badgeColor}`}>
+                {lead.opportunityClass}
+              </span>
+            )}
           </div>
           <h4 className="text-[15px] font-extrabold text-[#f1f5f9] mt-2 leading-snug group-hover:text-blue-400 transition-colors">
             {lead.name}
@@ -220,24 +228,44 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
         </button>
 
         <div className="flex items-center gap-1">
-          {prevStage && onPreviousStage && (
+          {lead.stage === "perdido_invalido" ? (
             <button
-              onClick={() => onPreviousStage(lead.id, prevStage)}
-              title="Voltar etapa anterior"
-              className="p-1.5 rounded-lg text-[#94a3b8] hover:text-white hover:bg-[#161d2e] transition-colors"
+              onClick={() => onAdvanceStage(lead.id, "a_abordar")}
+              title="Restaurar contato para A Abordar"
+              className="inline-flex items-center gap-1 py-1 px-2.5 rounded-lg bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 font-bold text-[11px] transition-colors"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Restaurar</span>
             </button>
-          )}
-          {nextStage && (
-            <button
-              onClick={() => onAdvanceStage(lead.id, nextStage)}
-              title="Avançar para próxima etapa"
-              className="inline-flex items-center gap-1 py-1 px-2.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 font-bold text-[11px] transition-colors"
-            >
-              <span>Avançar</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
+          ) : (
+            <>
+              {prevStage && onPreviousStage && (
+                <button
+                  onClick={() => onPreviousStage(lead.id, prevStage)}
+                  title="Voltar etapa anterior"
+                  className="p-1.5 rounded-lg text-[#94a3b8] hover:text-white hover:bg-[#161d2e] transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+              )}
+              {nextStage && (
+                <button
+                  onClick={() => onAdvanceStage(lead.id, nextStage)}
+                  title="Avançar para próxima etapa"
+                  className="inline-flex items-center gap-1 py-1 px-2.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 font-bold text-[11px] transition-colors"
+                >
+                  <span>Avançar</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              )}
+              <button
+                onClick={() => onAdvanceStage(lead.id, "perdido_invalido")}
+                title="Descartar (Número inexistente ou contato errado)"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/15 border border-transparent hover:border-rose-500/30 transition-colors ml-0.5"
+              >
+                <PhoneOff className="w-3.5 h-3.5" />
+              </button>
+            </>
           )}
         </div>
       </div>

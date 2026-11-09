@@ -62,15 +62,24 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
 
   const countByStage = (stage: PipelineStageId) => leads.filter(l => l.stage === stage).length;
 
-  // Cálculos de KPIs e Metas Financeiras (Ticket R$ 497 pontual / R$ 380 recorrente)
+  // Cálculos de KPIs e Metas Financeiras (Ticket R$ 497 pontual ou 2x de R$ 250 / R$ 380 recorrente)
   const TICKET_PONTUAL = 497;
   const TICKET_RECORRENTE = 380;
   const META_DIARIA_CONTATOS = 5;
 
-  const whatsappLeadsCount = leads.filter(l => l.whatsappConfirmed).length;
-  const actionedCount = countByStage("contatado") + countByStage("em_conversa") + countByStage("proposta_enviada") + countByStage("fechado_arquivado");
+  // Apenas leads válidos e não descartados compõem a base ativa de prospecção
+  const activeWhatsappLeads = leads.filter(l => l.whatsappConfirmed && l.stage !== "perdido_invalido");
+  const whatsappLeadsCount = activeWhatsappLeads.length;
+
+  const actionedCount = 
+    countByStage("contatado") + 
+    countByStage("em_conversa") + 
+    countByStage("proposta_enviada") + 
+    countByStage("fechado_ganho") + 
+    countByStage("perdido_invalido");
   const inNegotiationCount = countByStage("em_conversa") + countByStage("proposta_enviada");
-  const closedCount = countByStage("fechado_arquivado");
+  const closedCount = countByStage("fechado_ganho");
+  const lostCount = countByStage("perdido_invalido");
 
   const potentialPipelineValue = whatsappLeadsCount * TICKET_PONTUAL;
   const negotiationValue = inNegotiationCount * TICKET_PONTUAL;
@@ -311,9 +320,16 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
               </button>
             ))}
 
-            <span className="ml-2 text-[11px] font-mono text-[#94a3b8] bg-[#0f1420] px-2.5 py-1 rounded-lg border border-[#1a2030] flex items-center gap-1">
+            <span className="ml-2 text-[11px] font-mono text-[#94a3b8] bg-[#0f1420] px-2.5 py-1 rounded-lg border border-[#1a2030] flex items-center gap-1.5">
               <Filter className="w-3 h-3 text-blue-400" />
-              Exibindo <strong className="text-white">{filteredCount}</strong> de {leads.length}
+              <span>
+                Exibindo <strong className="text-white">{filteredCount}</strong> de {leads.length}
+              </span>
+              {lostCount > 0 && (
+                <span className="text-[10px] text-rose-400 font-bold bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20">
+                  {lostCount} inválido(s)
+                </span>
+              )}
             </span>
           </div>
         </div>

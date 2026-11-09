@@ -90,7 +90,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     {
       num: 4 as const,
       name: "Bloco 4: Proposta e Valores",
-      subtitle: "Condições comerciais (R$ 497 pontual / R$ 380 mensal)",
+      subtitle: "Condições comerciais: R$ 497 à vista (ou 2x R$ 250) / R$ 380 mensal",
       targetStage: "proposta_enviada" as PipelineStageId,
       advanceLabel: "Confirmar Proposta Enviada",
     },
@@ -357,7 +357,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
           </div>
 
           {/* Botão de Avanço Rápido de Etapa */}
-          <div className="pt-1">
+          <div className="pt-1 space-y-2">
             <button
               onClick={() => onAdvanceStage(lead.id, currentBlock.targetStage)}
               className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 text-amber-300 font-bold text-xs transition-colors"
@@ -365,6 +365,23 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
               <span>{currentBlock.advanceLabel}</span>
               <ChevronRight className="w-4 h-4" />
             </button>
+
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => onAdvanceStage(lead.id, "fechado_ganho")}
+                className="py-2 px-3 rounded-lg text-xs font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all text-center"
+              >
+                ✓ Marcar Fechado (Ganho)
+              </button>
+              <button
+                type="button"
+                onClick={() => onAdvanceStage(lead.id, "perdido_invalido")}
+                className="py-2 px-3 rounded-lg text-xs font-bold bg-rose-500/15 text-rose-300 border border-rose-500/30 hover:bg-rose-500/25 transition-all text-center"
+              >
+                ✕ Descartar (Inválido/Perdido)
+              </button>
+            </div>
           </div>
 
           {/* Anotações e Histórico */}

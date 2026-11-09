@@ -37,13 +37,19 @@ const PIPELINE_STAGES: PipelineStage[] = [
     id: "proposta_enviada",
     title: "4. Proposta Enviada",
     badgeColor: "bg-amber-500",
-    description: "Bloco 4 (Condições R$ 497 / R$ 380) apresentado",
+    description: "Bloco 4 (R$ 497 à vista ou 2x R$ 250 / R$ 380) apresentado",
   },
   {
-    id: "fechado_arquivado",
-    title: "5. Fechado / Arquivado",
+    id: "fechado_ganho",
+    title: "5. Fechado (Ganho)",
     badgeColor: "bg-emerald-400",
-    description: "Contrato fechado ou lead arquivado",
+    description: "Venda concluída e receita confirmada (+R$ 497)",
+  },
+  {
+    id: "perdido_invalido",
+    title: "6. Perdido / Contato Inválido",
+    badgeColor: "bg-rose-500",
+    description: "Número inexistente, contato errado ou sem interesse",
   },
 ];
 
@@ -192,9 +198,9 @@ export default function CrmDashboard() {
         setSearchQuery={setSearchQuery}
       />
 
-      {/* Área Principal do Kanban */}
+      {/* Área Principal do Kanban (6 Etapas com scroll horizontal suave se necessário) */}
       <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-auto">
-        <div className="max-w-[1760px] mx-auto min-w-[1320px]">
+        <div className="max-w-[1920px] mx-auto min-w-[1680px]">
           <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
             <div className="flex gap-4 items-start justify-between">
               {PIPELINE_STAGES.map((stage) => (

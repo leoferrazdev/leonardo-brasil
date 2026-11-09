@@ -2,7 +2,7 @@ import { supabase, isSupabaseConfigured } from "../../../lib/supabase";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { INITIAL_PROSPECTS } from "../data/initialProspects";
 
-const STORAGE_KEY = "crm_prospect_leads_v7";
+const STORAGE_KEY = "crm_prospect_leads_v8";
 
 export const crmProspectService = {
   async getLeads(): Promise<ProspectLead[]> {
@@ -35,11 +35,11 @@ export const crmProspectService = {
               monthlySearches: "1.000+",
               bloco1Volume: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               bloco1Falha: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
-              stage: (d.status === "novo" ? "a_abordar" : d.status === "em_atendimento" ? "contatado" : d.status === "qualificado" ? "em_conversa" : d.status === "convertido" ? "proposta_enviada" : "fechado_arquivado") as PipelineStageId,
+              stage: (d.status === "novo" ? "a_abordar" : d.status === "em_atendimento" ? "contatado" : d.status === "qualificado" ? "em_conversa" : d.status === "convertido" ? "proposta_enviada" : "fechado_ganho") as PipelineStageId,
               bloco1: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               bloco2: `Gostaria de apresentar oportunidades observadas no perfil do Google.`,
               bloco3: `Nossa solução de Otimização e Implantação do Google Meu Negócio.`,
-              bloco4: `Investimento único R$ 650 ou gestão mensal R$ 380.`,
+              bloco4: `Investimento único R$ 497 (ou 2x de R$ 250) ou gestão mensal R$ 380.`,
               notes: "",
               updatedAt: d.created_at || new Date().toISOString()
             }));
@@ -97,8 +97,9 @@ export const crmProspectService = {
           a_abordar: "novo",
           contatado: "em_atendimento",
           em_conversa: "qualificado",
-          proposta_enviada: "convertido",
-          fechado_arquivado: "perdido"
+          proposta_enviada: "em_atendimento",
+          fechado_ganho: "convertido",
+          perdido_invalido: "perdido"
         };
         await supabase
           .from("leads")

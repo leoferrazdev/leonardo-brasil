@@ -25,9 +25,11 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   return (
     <div
       ref={setNodeRef}
-      className={`flex flex-col rounded-2xl bg-[#0b0f19]/90 border transition-all min-w-[310px] max-w-[360px] flex-1 shadow-xl ${
+      className={`flex flex-col rounded-2xl bg-[#0b0f19]/90 border transition-all min-w-[270px] max-w-[325px] flex-1 shadow-xl ${
         isOver
           ? "border-blue-500/80 bg-blue-950/15 shadow-2xl shadow-blue-500/15"
+          : stage.id === "perdido_invalido"
+          ? "border-rose-950/40 bg-[#0c0910]/80"
           : "border-[#1a2030]"
       }`}
     >
