@@ -24,8 +24,8 @@ aliases:
 # 1. Typecheck Estrito de TypeScript (Zero erros permitidos)
 npm run typecheck
 
-# 2. Testes de Servidor e Rotas (18/18 testes passando)
-npm run test:server
+# 2. Testes de Servidor, Catálogo e Rotas (28/28 testes passando)
+npm test
 
 # 3. Compilação Completa de Produção + SSR + Sitemaps
 npm run build

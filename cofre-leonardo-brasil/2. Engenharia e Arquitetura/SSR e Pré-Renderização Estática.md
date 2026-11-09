@@ -24,16 +24,16 @@ Para solucionar isso de forma definitiva e veloz, [leonardobrasil.com.br](https:
 ```mermaid
 flowchart LR
     Step1["1. vite build<br>(Assets do Cliente em dist/)"] --> Step2["2. vite build --ssr<br>(entry-server.tsx em dist/server/)"]
-    Step2 --> Step3["3. node prerender.mjs<br>(82 HTMLs Estáticos com Conteúdo Real)"]
+    Step2 --> Step3["3. node prerender.mjs<br>(122 HTMLs Estáticos com Conteúdo Real)"]
 ```
 
 1. **Build do Cliente:** Compila os componentes React, Tailwind e assets para a pasta `dist/`.
 2. **Build do Servidor:** Compila `src/entry-server.tsx` em um bundle SSR em `dist/server/entry-server.js`.
-3. **Execução de `scripts/prerender.mjs`:** O script Node.js itera sobre todas as 82 rotas core e hubs de nicho, invoca a função `render(url)` do bundle SSR e grava no disco arquivos `index.html` estáticos preenchidos com o HTML completo, metatags do Helmet e schemas JSON-LD.
+3. **Execução de `scripts/prerender.mjs`:** O script Node.js itera sobre todas as 122 rotas core e hubs de nicho, invoca a função `render(url)` do bundle SSR e grava no disco arquivos `index.html` estáticos preenchidos com o HTML completo, metatags do Helmet e schemas JSON-LD.
 
 ---
 
-## 2. Rotas Pré-Renderizadas no Build (82 Rotas)
+## 2. Rotas Pré-Renderizadas no Build (122 Rotas)
 
 O script [`scripts/prerender.mjs`](file:///d:/LEONARDO/Drive/Projetos/leonardo-brasil/scripts/prerender.mjs) pré-renderiza:
 
@@ -54,20 +54,13 @@ O script [`scripts/prerender.mjs`](file:///d:/LEONARDO/Drive/Projetos/leonardo-b
    * `/termos`, `/privacidade`, `/exclusao-de-dados`
    * `/porto-alegre-digital` (Regra de isolamento comercial)
 2. **Hubs de Nicho das 4 Verticais:**
-   * 14 nichos × 4 verticais = 56 páginas de nicho (ex: `/consultor-google-meu-negocio/advogados`).
+   * 23 nichos × 4 verticais = 92 páginas de nicho (ex: `/consultor-google-meu-negocio/guinchos`, `/google-meu-negocio/eletricistas`).
 3. **Artigos do Blog:** Todas as postagens de `src/data/blogData.ts`.
 
 ---
 
-## 3. Benefícios Práticos para SEO
-
-* **First Contentful Paint (FCP) Instantâneo:** O navegador recebe o texto pronto em menos de 100ms.
-* **Leitura Imediata por Robôs de IA:** ChatGPT, Gemini, Perplexity e Googlebot leem o conteúdo sem depender de renderização JavaScript assíncrona.
-* **Hidratação Transparente:** Quando o JavaScript termina de baixar, o React "hidrata" os nós existentes sem saltos de layout (CLS = 0).
-
----
-
 ## Conexões Relacionadas
-* [[Arquitetura do Sistema e Stack Técnica]]
+* [[Motor 2 - Malha Programática 3.0 (512k URLs)]]
+* [[Clusterização Semântica e GEO para Nichos Essenciais]]
 * [[Sitemaps XML e Particionamento GSC]]
 * [[00 - MOC - Índice Geral|Voltar ao MOC]]

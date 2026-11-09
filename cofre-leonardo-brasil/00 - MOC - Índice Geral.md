@@ -49,19 +49,20 @@ Fundamentos de posicionamento do especialista independente, contratos de marca e
 ### 2. [[Arquitetura do Sistema e Stack Técnica|2. Engenharia e Arquitetura]]
 A infraestrutura fullstack, pré-renderização estática (SSG/SSR) e compatibilidade com buscadores.
 * [[Arquitetura do Sistema e Stack Técnica]] — Vite 8, React 18, Tailwind CSS, Express 5 e TypeScript.
-* [[SSR e Pré-Renderização Estática]] — Como 82 páginas HTML reais são geradas para robôs e rastreadores de IA.
+* [[SSR e Pré-Renderização Estática]] — Como 122 páginas HTML reais são pré-renderizadas para robôs e rastreadores de IA.
 * [[Infraestrutura e Deploy na Hostinger]] — Configuração do runtime Node.js, scripts de ciclo de vida e `.env`.
 * [[Supabase Auth e Banco de Dados]] — Autenticação do CRM, sessões locais seguras e persistência PostgreSQL.
 * [[Rotas e Componentes Principais]] — Mapeamento do roteamento cliente/servidor (`local-router.tsx`).
 
 ### 3. [[Máquina de SEO Local - Visão Geral|3. Inteligência de SEO e Motores]]
 A estratégia determinística de captura de leads orgânicos em escala industrial.
-* [[Máquina de SEO Local - Visão Geral]] — A arquitetura dos 3 Motores de multiplicação orgânica.
+* [[Máquina de SEO Local - Visão Geral]] — A arquitetura dos 3 Motores de multiplicação orgânica e camada GEO.
 * [[Motor 1 - Raio-X e Auditoria Interativa]] — Ferramenta de diagnóstico em `/auditoria-perfil-google` com score 0–100.
-* [[Motor 2 - Malha Programática 3.0 (312k URLs)]] — 4 verticais × 14 nichos × 5.571 municípios brasileiros.
+* [[Motor 2 - Malha Programática 3.0 (512k URLs)]] — 4 verticais × 23 nichos × 5.571 municípios brasileiros (512.532 URLs locais).
+* [[Clusterização Semântica e GEO para Nichos Essenciais]] — Estrutura de 10 clusters canônicos, BLUF para AI Overviews, SearchGPT e Schema.org específico.
 * [[Motor 3 - Hubs Éticos (CFM, OAB, CFO)]] — Captação de alta intenção com conformidade regulatória para Médicos, Advogados e Dentistas.
 * [[Recuperação de Perfis Suspensos no Google]] — Hub `/recuperar-perfil-suspenso-google` para captação de clientes em crise aguda.
-* [[Sitemaps XML e Particionamento GSC]] — 8 sitemaps particionados respeitando o limite de 50.000 URLs do Google.
+* [[Sitemaps XML e Particionamento GSC]] — 14 sitemaps particionados respeitando o limite de 50.000 URLs do Google.
 * [[Blog e Estratégia de Topic Clusters]] — Artigos aprofundados em Markdown com SEO on-page estruturado.
 
 ### 4. [[Método de Prospecção Ativa Local|4. Prospecção, Método e Framework]]

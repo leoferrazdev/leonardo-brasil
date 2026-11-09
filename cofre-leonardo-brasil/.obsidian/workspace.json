@@ -11,10 +11,14 @@
             "id": "a008b1748ae7981d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00 - MOC - Índice Geral.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "00 - MOC - Índice Geral"
             }
           }
         ]
@@ -181,8 +185,11 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "c8219f22e61dc679",
+  "active": "a008b1748ae7981d",
   "lastOpenFiles": [
+    "3. Inteligência de SEO e Motores/Blindagem Cadastral e Proteção contra Suspensões.md",
+    "3. Inteligência de SEO e Motores/Motor 2 - Malha Programática 3.0 (512k URLs).md",
+    "3. Inteligência de SEO e Motores/Clusterização Semântica e GEO para Nichos Essenciais.md",
     "3. Inteligência de SEO e Motores/DNS-AID e Descoberta de Agentes IA.md",
     "4. Prospecção, Método e Framework/Sistema CRM Local e Manual Operacional.md",
     "4. Prospecção, Método e Framework/Branding, Perfil Comercial e Presença Digital.md",
@@ -210,10 +217,7 @@
     "3. Inteligência de SEO e Motores/Sitemaps XML e Particionamento GSC.md",
     "3. Inteligência de SEO e Motores/Motor 3 - Hubs Éticos (CFM, OAB, CFO).md",
     "3. Inteligência de SEO e Motores/Motor 2 - Malha Programática 3.0 (312k URLs).md",
-    "3. Inteligência de SEO e Motores/Motor 1 - Raio-X e Auditoria Interativa.md",
-    "3. Inteligência de SEO e Motores/Máquina de SEO Local - Visão Geral.md",
     "3. Inteligência de SEO e Motores",
-    "2. Engenharia e Arquitetura/Rotas e Componentes Principais.md",
     "2. Engenharia e Arquitetura",
     "1. Visão e Posicionamento"
   ]
