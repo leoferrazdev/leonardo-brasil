@@ -44,7 +44,7 @@ export const crmProspectService = {
               updatedAt: d.created_at || new Date().toISOString()
             }));
             
-            // Mescla com a base dos 40 prospects para garantir diagnósticos ricos
+            // Mescla com a base inicial para garantir diagnósticos ricos
             return this.mergeWithInitial(mapped);
           }
         }
@@ -53,13 +53,20 @@ export const crmProspectService = {
       }
     }
 
-    // 2. Fallback para LocalStorage
+    // 2. Fallback para LocalStorage (preserva estados manuais e injeta novos leads)
     if (typeof window !== "undefined") {
       try {
         const cached = localStorage.getItem(STORAGE_KEY);
         if (cached) {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
+            const existingIds = new Set(parsed.map((p: any) => p.id));
+            const newLeadsToAdd = INITIAL_PROSPECTS.filter(p => !existingIds.has(p.id));
+            if (newLeadsToAdd.length > 0) {
+              const merged = [...parsed, ...newLeadsToAdd];
+              this.saveLocal(merged);
+              return merged;
+            }
             return parsed;
           }
         }
@@ -68,7 +75,7 @@ export const crmProspectService = {
       }
     }
 
-    // 3. Carga padrão inicial com os 40 perfis auditados
+    // 3. Carga padrão inicial com os perfis auditados
     this.saveLocal(INITIAL_PROSPECTS);
     return INITIAL_PROSPECTS;
   },

@@ -101,8 +101,10 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
     { label: "Todos", val: "todos" },
     { label: "Tristeza", val: "Tristeza" },
     { label: "Ipanema", val: "Ipanema" },
-    { label: "Vila Assunção", val: "Vila Assunção" },
+    { label: "Cavalhada", val: "Cavalhada" },
+    { label: "Menino Deus", val: "Menino Deus" },
     { label: "Cristal", val: "Cristal" },
+    { label: "Vila Assunção", val: "Vila Assunção" },
   ];
 
   return (
