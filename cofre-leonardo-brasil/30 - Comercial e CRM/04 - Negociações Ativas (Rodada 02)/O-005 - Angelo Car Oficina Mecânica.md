@@ -55,6 +55,9 @@ sequenceDiagram
     Angelo-->>Leo: "Quanto gasto para arrumar isto?"
     Note over Leo,Angelo: Lead foi direto ao preço! Envio da Proposta (R$ 497)
     Leo->>Angelo: Bloco de Escopo + Proposta R$ 497 (ou 2x R$ 250)
+    Angelo-->>Leo: "Vou pensar"
+    Note over Leo,Angelo: Objeção clássica: Desarmar, ancorar ROI e clarificar dúvida
+    Leo->>Angelo: Resposta de desarme + perspectiva de retorno + pergunta aberta
 ```
 
 ### Histórico Registrado:
@@ -68,6 +71,42 @@ sequenceDiagram
 
 3. **Angelo Car (Logo em seguida):**
    > *"Quanto gasto para arrumar isto?"*
+
+4. **Leonardo (Proposta Enviada):**
+   > Envio dos 4 pilares técnicos do Google e do valor de R$ 497 à vista ou 2x de R$ 250.
+
+5. **Angelo Car:**
+   > *"Vou pensar"*
+
+---
+
+## 🎯 Quebra da Objeção "Vou Pensar" (Mensagem Pronta para WhatsApp)
+
+Para responder a um dono de oficina mecânica quando ele diz *"Vou pensar"*, a melhor abordagem é **desarmar a pressão de venda**, ancorar o **retorno sobre o investimento (ROI)** com serviços do dia a dia dele (troca de pastilha, bateria, revisão) e fazer uma pergunta suave para identificar se a hesitação é técnica ou de momento financeiro:
+
+```text
+Tranquilo, compreendo perfeitamente! Decisão de investimento no negócio tem que ser bem pensada mesmo.
+
+Só para você colocar na ponta do lápis: como a Zona Sul tem cerca de 1.900 buscas por mês de motoristas precisando de oficina, um único cliente que encontrar a Angelo Car pelo Maps para fazer uma troca de pastilhas, bateria ou revisão de suspensão já paga 100% desse investimento de R$ 497.
+
+Para eu entender melhor o seu lado: ficou alguma dúvida técnica sobre como funciona a reestruturação no Google, ou é mais uma questão de fluxo de caixa para este mês?
+```
+
+---
+
+## 🔄 Plano de Follow-up (Caso ele não responda em 24h a 48h)
+
+Se após enviar a mensagem acima ele não responder em até 48 horas, enviar este toque suave e sem cobrança:
+
+```text
+Fala, tudo bem?
+
+Passando só para ver se conseguiu pensar sobre o posicionamento da oficina no Maps. 
+
+Como as buscas de motoristas na Cavalhada continuam acontecendo todos os dias, se quiser que eu parcele os R$ 497 em 2x de R$ 250 no Pix sem burocracia para não pesar no seu caixa, a gente já inicia os ajustes esta semana. 
+
+O que acha?
+```
 
 ---
 
