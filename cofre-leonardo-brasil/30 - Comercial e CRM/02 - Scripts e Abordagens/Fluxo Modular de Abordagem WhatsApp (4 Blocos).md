@@ -92,9 +92,9 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 * **Quando enviar:** Quando o lead demonstra interesse em resolver ou pergunta como funciona.
 * **Objetivo:** Descrever com clareza cristalina os 4 entregáveis concretos da consultoria.
 * **Template Mestre:**
-> *"Nós somos especialistas em estruturação e gestão estratégica do *Perfil da Empresa no Google* para negócios e clínicas locais.*  
+> *"Eu sou especialista em estruturação e gestão estratégica do *Perfil da Empresa no Google* para negócios e clínicas locais.*  
 >  
-> *O nosso trabalho de **Otimização, Implantação e Blindagem** resolve isso de ponta a ponta em 4 pilares:*  
+> *O meu trabalho de **Otimização, Implantação e Blindagem** resolve isso de ponta a ponta em 4 pilares:*  
 >  
 > *1. **Alinhamento Cadastral Total:** Horários corretos, canais oficiais e link de WhatsApp direto de 1 toque com mensagem personalizada de rastreamento;*  
 > *2. **Blindagem e Reivindicação:** Proteção contra sugestões automáticas indevidas de usuários e concorrentes, evitando bloqueios ou suspensão de conta;*  
@@ -109,7 +109,7 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 * **Template Mestre:**
 > *"Os benefícios diretos são o fim de clientes perdidos por dados desencontrados e mais mensagens no seu WhatsApp de pessoas da Zona Sul prontas para contratar.*  
 >  
-> *Trabalhamos com dois formatos práticos:*  
+> *Eu trabalho com dois formatos práticos:*  
 >  
 > *📌 **1. Implantação e Otimização Total (Pontual):***  
 > *Diagnóstico completo, correção de todas as falhas, reestruturação e blindagem do perfil.*  

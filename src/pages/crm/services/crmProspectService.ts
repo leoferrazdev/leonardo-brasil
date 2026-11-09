@@ -2,7 +2,7 @@ import { supabase, isSupabaseConfigured } from "../../../lib/supabase";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { INITIAL_PROSPECTS } from "../data/initialProspects";
 
-const STORAGE_KEY = "crm_prospect_leads_v4";
+const STORAGE_KEY = "crm_prospect_leads_v5";
 
 export const crmProspectService = {
   async getLeads(): Promise<ProspectLead[]> {
