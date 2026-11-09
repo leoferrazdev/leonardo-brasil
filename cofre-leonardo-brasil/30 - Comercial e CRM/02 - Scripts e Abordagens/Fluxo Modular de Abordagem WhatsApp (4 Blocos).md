@@ -99,7 +99,7 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 > *1. **Alinhamento Cadastral Total:** Horários corretos, canais oficiais e link de WhatsApp direto de 1 toque com mensagem personalizada de rastreamento;*  
 > *2. **Blindagem e Reivindicação:** Proteção contra sugestões automáticas indevidas de usuários e concorrentes, evitando bloqueios ou suspensão de conta;*  
 > *3. **Catálogo de Especialidades:** Inclusão dos serviços e procedimentos mais buscados no seu bairro para você dominar as buscas orgânicas no Google Maps;*  
-> *4. **Estratégia de Reputação Ativa:** Roteiro prático para a sua equipe captar avaliações 5 estrelas legítimas de clientes no dia a dia."*
+> *4. **Link Oficial de Avaliações:** Ativação do link direto do Google que abre a tela de 5 estrelas em 1 toque no celular do cliente para acelerar avaliações sem burocracia."*
 
 ---
 

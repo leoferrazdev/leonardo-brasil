@@ -40,7 +40,7 @@ Diferente de agências tradicionais que cobram mensalidades (fee mensal) para fa
   3. Redação persuasiva da descrição do perfil (750 caracteres com SEO Local).
   4. Organização do catálogo de serviços e produtos com links diretos para WhatsApp.
   5. Curadoria e upload de imagens e vídeos reais.
-  6. Envio do **Kit Prático de Avaliações 5 Estrelas** (roteiro + link direto).
+  6. Ativação do **Link Oficial de Avaliações 5 Estrelas do Google** (link direto que abre as 5 estrelas em 1 toque no celular do cliente).
 * **Prazo Médio de Execução:** 3 a 5 dias úteis.
 
 ### Serviço B: Recuperação de Perfil Suspenso ou Desativado
