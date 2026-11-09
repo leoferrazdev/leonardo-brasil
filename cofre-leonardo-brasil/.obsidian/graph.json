@@ -1,22 +1,86 @@
 {
-  "collapse-filter": true,
-  "search": "",
+  "collapse-filter": false,
+  "search": "-path:\"80 - Recursos/Modelos\" -path:\"80 - Recursos/Anexos\" -path:\"90 - Arquivo\"",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"00 - Painel\"",
+      "color": {
+        "a": 1,
+        "rgb": 6333946
+      }
+    },
+    {
+      "query": "path:\"01 - Entrada\"",
+      "color": {
+        "a": 1,
+        "rgb": 16498468
+      }
+    },
+    {
+      "query": "path:\"10 - Estratégia e Marca\"",
+      "color": {
+        "a": 1,
+        "rgb": 12891645
+      }
+    },
+    {
+      "query": "path:\"20 - SEO e Aquisição\"",
+      "color": {
+        "a": 1,
+        "rgb": 6220500
+      }
+    },
+    {
+      "query": "path:\"30 - Comercial e CRM\"",
+      "color": {
+        "a": 1,
+        "rgb": 8843180
+      }
+    },
+    {
+      "query": "path:\"40 - Engenharia\"",
+      "color": {
+        "a": 1,
+        "rgb": 8246268
+      }
+    },
+    {
+      "query": "path:\"50 - Operação\"",
+      "color": {
+        "a": 1,
+        "rgb": 16628340
+      }
+    },
+    {
+      "query": "path:\"80 - Recursos\"",
+      "color": {
+        "a": 1,
+        "rgb": 16361684
+      }
+    },
+    {
+      "query": "path:\"90 - Arquivo\"",
+      "color": {
+        "a": 1,
+        "rgb": 9741240
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "nodeSizeMultiplier": 1.35,
+  "lineSizeMultiplier": 1.15,
   "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 1,
+  "centerStrength": 0.5,
+  "repelStrength": 12,
+  "linkStrength": 0.8,
+  "linkDistance": 180,
+  "scale": 0.4,
   "close": false
 }

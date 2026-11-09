@@ -1,0 +1,150 @@
+/* Leonardo Brasil — organização e legibilidade do cofre.
+ * Estilo local, sem plugins; desligue em Aparência > Fragmentos CSS.
+ */
+body {
+  --font-ui-smaller: 14px;
+  --font-ui-small: 15px;
+  --font-ui-medium: 16px;
+  --font-ui-large: 18px;
+  --nav-item-size: 16px;
+  --nav-item-weight: 450;
+  --nav-item-weight-active: 650;
+  --line-height-normal: 1.75;
+  --file-line-width: 880px;
+  --h1-size: 2em;
+  --h2-size: 1.42em;
+  --h3-size: 1.15em;
+}
+.theme-dark {
+  --background-primary: #080d18;
+  --background-primary-alt: #0d1423;
+  --background-secondary: #0d1423;
+  --background-secondary-alt: #111b2e;
+  --background-modifier-border: #25334a;
+  --background-modifier-hover: rgba(96, 165, 250, .09);
+  --text-normal: #e2e8f0;
+  --text-muted: #a6b5ca;
+  --text-faint: #8597b3;
+  --link-color: #93c5fd;
+  --link-color-hover: #bfdbfe;
+  --link-unresolved-color: #fbbf24;
+  --graph-text: #e2e8f0;
+  --graph-line: #4b6387;
+  --graph-node: #93c5fd;
+  --graph-node-unresolved: #fbbf24;
+}
+.workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding: 12px 10px 24px;
+}
+.nav-folder-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  min-height: 36px;
+  padding-block: 6px;
+  border-radius: 7px;
+  color: var(--lb-area-color, var(--text-normal));
+}
+.nav-files-container .nav-folder-title:not([data-path*="/"]) {
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 42px;
+  margin-block: 7px 3px;
+  padding-block: 9px;
+  border-inline-start: 3px solid var(--lb-area-color, var(--interactive-accent));
+  background: rgba(var(--lb-area-rgb, 96, 165, 250), .08);
+}
+.nav-folder-title .collapse-icon {
+  color: var(--lb-area-color, var(--text-muted));
+}
+.nav-folder-title-content {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.nav-file-title {
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 32px;
+  padding-block: 5px;
+  border-radius: 6px;
+}
+.nav-file-title.is-active {
+  background: rgba(var(--lb-area-rgb, 96, 165, 250), .15);
+  color: var(--lb-area-color, var(--link-color));
+  box-shadow: inset 3px 0 var(--lb-area-color, var(--interactive-accent));
+}
+.nav-folder-title:hover {
+  background: rgba(var(--lb-area-rgb, 96, 165, 250), .14);
+}
+.markdown-rendered h1, .markdown-source-view .cm-header-1 {
+  letter-spacing: -.025em;
+}
+.markdown-rendered h2 {
+  color: var(--text-normal);
+  padding-bottom: .35em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.markdown-rendered blockquote {
+  border-inline-start-color: #60a5fa;
+}
+.markdown-rendered .callout {
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+.metadata-container { font-size: 16px; }
+.markdown-preview-view.lb-painel .metadata-container,
+.markdown-source-view.lb-painel .metadata-container { display: none !important; }
+.lb-painel .markdown-preview-sizer { padding-top: 24px; }
+.lb-painel h1 { color: #f1f5f9; margin-bottom: .25em; }
+.lb-painel table { width: 100%; }
+.lb-painel th { background: rgba(59, 130, 246, .1); }
+.lb-painel td, .lb-painel th { padding: 13px 16px; }
+.lb-painel td:first-child { min-width: 210px; font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-folder-title, .nav-file-title { transition: none; }
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="00 - Painel"]) {
+  --lb-area-color: #60a5fa;
+  --lb-area-rgb: 96, 165, 250;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="01 - Entrada"]) {
+  --lb-area-color: #fbbf24;
+  --lb-area-rgb: 251, 191, 36;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="10 - Estratégia e Marca"]) {
+  --lb-area-color: #c4b5fd;
+  --lb-area-rgb: 196, 181, 253;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="20 - SEO e Aquisição"]) {
+  --lb-area-color: #5eead4;
+  --lb-area-rgb: 94, 234, 212;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="30 - Comercial e CRM"]) {
+  --lb-area-color: #86efac;
+  --lb-area-rgb: 134, 239, 172;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="40 - Engenharia"]) {
+  --lb-area-color: #7dd3fc;
+  --lb-area-rgb: 125, 211, 252;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="50 - Operação"]) {
+  --lb-area-color: #fdba74;
+  --lb-area-rgb: 253, 186, 116;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="80 - Recursos"]) {
+  --lb-area-color: #f9a8d4;
+  --lb-area-rgb: 249, 168, 212;
+}
+
+.nav-folder:has(> .nav-folder-title[data-path="90 - Arquivo"]) {
+  --lb-area-color: #94a3b8;
+  --lb-area-rgb: 148, 163, 184;
+}

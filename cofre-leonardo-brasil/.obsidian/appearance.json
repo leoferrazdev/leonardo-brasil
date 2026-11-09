@@ -1,1 +1,10 @@
-{}
+{
+  "baseFontSize": 20,
+  "interfaceFontFamily": "Inter, Segoe UI",
+  "textFontFamily": "Inter, Segoe UI",
+  "theme": "obsidian",
+  "accentColor": "#3b82f6",
+  "enabledCssSnippets": [
+    "leonardo-brasil-cofre"
+  ]
+}

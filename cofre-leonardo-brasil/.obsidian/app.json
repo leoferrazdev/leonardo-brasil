@@ -1,1 +1,9 @@
-{}
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "01 - Entrada",
+  "attachmentFolderPath": "80 - Recursos/Anexos",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "showInlineTitle": false
+}
