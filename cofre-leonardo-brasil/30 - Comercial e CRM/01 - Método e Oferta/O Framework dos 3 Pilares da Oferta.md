@@ -10,7 +10,7 @@ tags:
 aliases:
 - Framework da Oferta
 - Os 3 Pilares da Oferta
-- Como Vender por R$ 650
+- Como Vender por R$ 497
 tipo: referencia
 area: Comercial e CRM
 revisao_estrutura: 2026-11-08
@@ -21,7 +21,7 @@ revisao_estrutura: 2026-11-08
 # 💎 O Framework dos 3 Pilares da Oferta
 
 > [!question] O Dilema Central da Precificação
-> *"Se o gancho inicial for uma falha simples (como alterar um horário de sábado ou cadastrar o WhatsApp no perfil), como cobrar R$ 650,00 pontual ou R$ 380,00/mês sem que o cliente ache caro ou tente fazer sozinho?"*
+> *"Se o gancho inicial for uma falha simples (como alterar um horário de sábado ou cadastrar o WhatsApp no perfil), como cobrar R$ 497,00 pontual ou R$ 380,00/mês sem que o cliente ache caro ou tente fazer sozinho?"*
 
 A resposta reside no **Framework dos 3 Pilares**: o cliente nunca compra a alteração do botão; ele compra a **proteção patrimonial do negócio e a esteira de novos clientes**.
 
@@ -42,7 +42,7 @@ flowchart LR
   * O telefone cadastrado ser apenas o fixo, enquanto o site destaca WhatsApp;
   * O status constar como *"Aberto 24 horas"*, mas o plantão ser apenas sobreaviso;
   * O perfil exibir o botão público *"Reivindicar esta empresa"*.
-* **O Erro Fatal:** Se você parar aqui e disser *"Cobro R$ 650 para arrumar o seu horário"*, a venda está morta. O ajuste técnico é apenas o sintoma de um problema muito mais profundo.
+* **O Erro Fatal:** Se você parar aqui e disser *"Cobro R$ 497 para arrumar o seu horário"*, a venda está morta. O ajuste técnico é apenas o sintoma de um problema muito mais profundo.
 
 ---
 
@@ -76,7 +76,7 @@ classDiagram
     class OfertaPontual {
         +Nome: Implantação e Otimização Total
         +Prazo: 48 horas a 5 dias úteis
-        +Investimento: R$ 650,00 (ou 2x R$ 350,00)
+        +Investimento: R$ 497,00 (ou 2x R$ 350,00)
         +Auditoria completa de conformidade
         +Correção de todas as divergências
         +Blindagem e reivindicação
@@ -100,7 +100,7 @@ classDiagram
 * Para uma **Oficina Mecânica:** Um único socorro mecânico ou revisão completa rende de **R$ 800 a R$ 3.000**.
 * Para uma **Clínica Odontológica:** Uma única avaliação de implante ou alinhador rende de **R$ 2.000 a R$ 12.000**.
 
-> Quando comparado ao ticket do cliente, o investimento de **R$ 650,00** é infinitamente menor do que o custo de continuar perdendo clientes para o concorrente ao lado no Google Maps.
+> Quando comparado ao ticket do cliente, o investimento de **R$ 497,00** é infinitamente menor do que o custo de continuar perdendo clientes para o concorrente ao lado no Google Maps.
 
 ---
 

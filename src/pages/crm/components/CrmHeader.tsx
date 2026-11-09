@@ -62,8 +62,8 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
 
   const countByStage = (stage: PipelineStageId) => leads.filter(l => l.stage === stage).length;
 
-  // Cálculos de KPIs e Metas Financeiras (Ticket R$ 650 pontual / R$ 380 recorrente)
-  const TICKET_PONTUAL = 650;
+  // Cálculos de KPIs e Metas Financeiras (Ticket R$ 497 pontual / R$ 380 recorrente)
+  const TICKET_PONTUAL = 497;
   const TICKET_RECORRENTE = 380;
   const META_DIARIA_CONTATOS = 5;
 
@@ -197,7 +197,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
               </p>
               <p className="text-lg font-black text-white mt-0.5">{formatBRL(potentialPipelineValue)}</p>
               <p className="text-[10px] text-[#94a3b8] mt-0.5">
-                {whatsappLeadsCount} leads aptos × R$ 650
+                {whatsappLeadsCount} leads aptos × R$ 497
               </p>
             </div>
             <div className="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-400 border border-blue-500/30 flex items-center justify-center shrink-0">

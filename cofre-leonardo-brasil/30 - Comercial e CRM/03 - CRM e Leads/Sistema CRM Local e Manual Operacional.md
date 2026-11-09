@@ -35,8 +35,8 @@ flowchart LR
         C1["1. A Abordar<br>(Cards Pré-Auditados)"]
         C2["2. Contatado<br>(Bloco 1 Disparado)"]
         C3["3. Em Conversa<br>(Bloco 2 / Diagnóstico)"]
-        C4["4. Proposta Enviada<br>(Bloco 3 e 4 / R$ 650)"]
-        C5["5. Fechado / Ativo<br>(Contrato R$ 650 / R$ 380)"]
+        C4["4. Proposta Enviada<br>(Bloco 3 e 4 / R$ 497)"]
+        C5["5. Fechado / Ativo<br>(Contrato R$ 497 / R$ 380)"]
     end
     
     D --> C1
@@ -74,7 +74,7 @@ flowchart TD
     subgraph 6 KPIs Financeiros
         K1["Base Ativa: Total de empresas auditadas"]
         K2["Com WhatsApp: Leads prontos para 1 clique"]
-        K3["Potencial na Mesa: Valor da carteira em R$ (Ticket R$ 650)"]
+        K3["Potencial na Mesa: Valor da carteira em R$ (Ticket R$ 497)"]
         K4["Em Abordagem: Leads em conversa ativa"]
         K5["Em Negociação: Pipeline de propostas enviadas em R$"]
         K6["Receita Fechada: Faturamento acumulado e % de conversão"]
@@ -125,7 +125,7 @@ Todos os 4 blocos são exibidos em campos de texto (`<textarea>`) editáveis ao 
 | **09:00 - 09:45** | **Abordagem Inicial (Coluna 1 → Coluna 2):** Com o filtro *"Só WhatsApp Ativo"* ligado, abrir os 5 primeiros cards do topo, revisar o Bloco 1 e disparar no WhatsApp. | 5 novas abordagens / dia |
 | **11:30 - 12:00** | **Primeira Rodada de Respostas:** Responder leads que interagiram enviando o Bloco 2 (Diagnóstico). Mover card para *"3. Em Conversa"*. | Follow-up ágil |
 | **14:30 - 15:30** | **Apresentação de Solução e Proposta (Coluna 3 → Coluna 4):** Enviar Blocos 3 e 4 para leads qualificados. Agendar conversa de 10 min. | 2 propostas / dia |
-| **17:30 - 18:00** | **Fechamento e Atualização:** Registrar pagamentos de R$ 650 em *"5. Fechado"* e salvar notas de observação no card. | 1 a 2 fechamentos / semana |
+| **17:30 - 18:00** | **Fechamento e Atualização:** Registrar pagamentos de R$ 497 em *"5. Fechado"* e salvar notas de observação no card. | 1 a 2 fechamentos / semana |
 
 ---
 

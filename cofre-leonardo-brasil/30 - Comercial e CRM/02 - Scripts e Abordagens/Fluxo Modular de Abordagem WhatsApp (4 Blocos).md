@@ -43,7 +43,7 @@ sequenceDiagram
     Lead-->>Leonardo: "Interessante! Quanto custa um trabalho desses?"
     
     Note over Leonardo,Lead: Etapa 4: Fechamento (Bloco 4)
-    Leonardo->>Lead: Bloco 4 (Opção Pontual R$ 650 vs Recorrente R$ 380 + CTA de 10 min)
+    Leonardo->>Lead: Bloco 4 (Opção Pontual R$ 497 vs Recorrente R$ 380 + CTA de 10 min)
 ```
 
 ---
@@ -113,7 +113,7 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 >  
 > *📌 **1. Implantação e Otimização Total (Pontual):***  
 > *Diagnóstico completo, correção de todas as falhas, reestruturação e blindagem do perfil.*  
-> *💰 Investimento único: *R$ 650,00* (ou 2x de R$ 350,00).*  
+> *💰 Investimento único: *R$ 497,00* (ou 2x de R$ 250,00).*  
 >  
 > *📌 **2. Gestão Mensal Recorrente (Opcional):***  
 > *Acompanhamento contínuo, publicação mensal de fotos/atualizações com geotag, monitoramento de avaliações e relatórios mensais.*  

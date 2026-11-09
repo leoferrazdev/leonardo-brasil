@@ -37,7 +37,7 @@ const PIPELINE_STAGES: PipelineStage[] = [
     id: "proposta_enviada",
     title: "4. Proposta Enviada",
     badgeColor: "bg-amber-500",
-    description: "Bloco 4 (Condições R$ 650 / R$ 380) apresentado",
+    description: "Bloco 4 (Condições R$ 497 / R$ 380) apresentado",
   },
   {
     id: "fechado_arquivado",

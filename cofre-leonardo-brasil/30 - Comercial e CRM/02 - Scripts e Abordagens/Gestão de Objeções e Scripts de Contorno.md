@@ -42,7 +42,7 @@ revisao_estrutura: 2026-11-08
 * **A Resposta Mestre:**
 > *"Perfeito! É excelente que vocês já invistam em marketing. Geralmente as agências focam em redes sociais e tráfego pago, enquanto a nossa especialidade é estritamente **Engenharia de Busca Local e SEO no Google Maps**.*  
 >  
-> *Inclusive, esse desencontro de informações que notei muitas vezes passa batido justamente porque a agência não faz a blindagem técnica do painel do Google. Nós podemos fazer apenas essa implantação técnica pontual de R$ 650 para somar com o trabalho da sua agência e garantir que vocês não percam clientes que buscam no Maps. Faz sentido?"*
+> *Inclusive, esse desencontro de informações que notei muitas vezes passa batido justamente porque a agência não faz a blindagem técnica do painel do Google. Nós podemos fazer apenas essa implantação técnica pontual de R$ 497 para somar com o trabalho da sua agência e garantir que vocês não percam clientes que buscam no Maps. Faz sentido?"*
 
 ---
 
@@ -55,14 +55,14 @@ revisao_estrutura: 2026-11-08
 
 ---
 
-## 4. Objeção de Preço: *"Achei R$ 650 caro para arrumar um perfil."*
+## 4. Objeção de Preço: *"Achei R$ 497 caro para arrumar um perfil."*
 
 * **A Resposta Mestre (Ancoragem por Ticket Médio):**
 > *"Entendo perfeitamente a sua cautela com investimentos. Mas vale colocar na ponta do lápis:*  
 >  
 > *Quanto vale para a sua empresa um único cliente novo de {{Serviço de Maior Ticket}}?*  
 >  
-> *Um único cliente ou atendimento que chegue pelo Google Maps já paga com folga o investimento de R$ 650,00. E todo o fluxo de clientes dos próximos meses e anos fica 100% como lucro limpo para o seu negócio. Além disso, parcelamos em 2x de R$ 350,00 para caber com tranquilidade no fluxo de caixa da semana."*
+> *Um único cliente ou atendimento que chegue pelo Google Maps já paga com folga o investimento de R$ 497,00. E todo o fluxo de clientes dos próximos meses e anos fica 100% como lucro limpo para o seu negócio. Além disso, parcelamos em 2x de R$ 350,00 para caber com tranquilidade no fluxo de caixa da semana."*
 
 ---
 

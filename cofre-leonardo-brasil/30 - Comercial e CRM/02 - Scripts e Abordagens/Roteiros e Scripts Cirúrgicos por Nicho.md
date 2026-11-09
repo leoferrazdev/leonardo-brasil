@@ -34,7 +34,7 @@ revisao_estrutura: 2026-11-08
 * **Bloco 1 (Gancho):**
   > *"Olá! Tudo bem? Falo com a equipe da Ceron Centro Veterinário de Ipanema? Estava pesquisando clínicas veterinárias na Zona Sul pelo Google e notei que a reputação de vocês é excelente (nota 4,9!). Notei apenas um detalhe prático: no perfil do Google o fechamento de sábado aparece às 18h, mas no site oficial de vocês consta às 17h. Vocês realmente atendem até às 18h aos sábados ou é uma divergência cadastral do perfil?"*
 * **Transição para a Oferta:**
-  > *"Exato! Essa 1 hora de divergência pode fazer tutores baterem na porta e gerarem avaliações negativas de frustração. Mas além do horário, vi que o perfil está sem o catálogo de exames, cirurgias e vacinas. Nós estruturamos e blindamos o perfil de vocês por R$ 650,00 pontual."*
+  > *"Exato! Essa 1 hora de divergência pode fazer tutores baterem na porta e gerarem avaliações negativas de frustração. Mas além do horário, vi que o perfil está sem o catálogo de exames, cirurgias e vacinas. Nós estruturamos e blindamos o perfil de vocês por R$ 497,00 pontual."*
 
 ---
 

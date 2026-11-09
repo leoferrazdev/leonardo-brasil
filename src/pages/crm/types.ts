@@ -39,7 +39,7 @@ export interface ProspectLead {
   bloco1Falha: string; // Variação 2: Modelo de Falha / Inconsistência Factual
   bloco2: string; // Diagnóstico gratuito quando o lead aceita
   bloco3: string; // Escopo dos 4 pilares de serviço
-  bloco4: string; // Proposta comercial (R$ 650 / R$ 380)
+  bloco4: string; // Proposta comercial (R$ 497 / R$ 380)
   notes?: string;
   updatedAt: string;
 }
