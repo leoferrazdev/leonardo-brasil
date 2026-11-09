@@ -2,7 +2,8 @@ import React, { useEffect, useState, useMemo } from "react";
 import { 
   DndContext, 
   DragEndEvent, 
-  PointerSensor, 
+  MouseSensor,
+  TouchSensor,
   useSensor, 
   useSensors 
 } from "@dnd-kit/core";
@@ -64,10 +65,19 @@ export default function CrmDashboard() {
   const [whatsappOnly, setWhatsappOnly] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Foco de Etapa (Mobile & Desktop): "todas" para panorâmico ou id da etapa para coluna única
+  const [activeStageView, setActiveStageView] = useState<PipelineStageId | "todas">("todas");
+
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 8,
+      },
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 200,
+        tolerance: 6,
       },
     })
   );
@@ -198,24 +208,102 @@ export default function CrmDashboard() {
         setSearchQuery={setSearchQuery}
       />
 
-      {/* Área Principal do Kanban (6 Etapas com scroll horizontal suave se necessário) */}
-      <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-auto">
-        <div className="max-w-[1920px] mx-auto min-w-[1680px]">
-          <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-            <div className="flex gap-4 items-start justify-between">
-              {PIPELINE_STAGES.map((stage) => (
-                <KanbanColumn
+      {/* Barra de Foco e Navegação de Etapas (Mobile & Desktop) */}
+      <div className="border-b border-[#1a2030] bg-[#0c101b]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sticky top-[73px] z-20">
+        <div className="max-w-[1760px] mx-auto flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none flex-nowrap w-full sm:w-auto">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1.5 hidden md:inline-flex items-center gap-1">
+              Etapas:
+            </span>
+            <button
+              onClick={() => setActiveStageView("todas")}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border ${
+                activeStageView === "todas"
+                  ? "bg-blue-600 text-white border-blue-400 shadow-lg shadow-blue-600/25"
+                  : "bg-[#080b12] text-[#94a3b8] border-[#1a2030] hover:text-white hover:border-[#2d3748]"
+              }`}
+            >
+              Todas as 6 Colunas ({filteredLeads.length})
+            </button>
+            {PIPELINE_STAGES.map((stage) => {
+              const count = filteredLeads.filter((l) => l.stage === stage.id).length;
+              const isSelected = activeStageView === stage.id;
+              return (
+                <button
                   key={stage.id}
-                  stage={stage}
-                  leads={filteredLeads.filter((lead) => lead.stage === stage.id)}
-                  onOpenDrawer={(lead) => setSelectedLead(lead)}
-                  onAdvanceStage={handleAdvanceStage}
-                  onPreviousStage={handlePreviousStage}
-                />
-              ))}
-            </div>
-          </DndContext>
+                  onClick={() => setActiveStageView(stage.id)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 border ${
+                    isSelected
+                      ? "bg-slate-800 text-white border-amber-400/80 shadow-md shadow-black/40"
+                      : "bg-[#080b12] text-[#94a3b8] border-[#1a2030] hover:text-white hover:border-[#2d3748]"
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${stage.badgeColor}`} />
+                  <span>{stage.title.split(". ")[1] || stage.title}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                      isSelected
+                        ? "bg-amber-400/20 text-amber-300"
+                        : "bg-[#161d2e] text-slate-400"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {activeStageView !== "todas" && (
+            <button
+              onClick={() => setActiveStageView("todas")}
+              className="text-xs text-blue-400 hover:text-blue-300 font-semibold underline underline-offset-4 decoration-blue-500/40 hidden sm:inline-block"
+            >
+              ← Voltar para Visão Panorâmica
+            </button>
+          )}
         </div>
+      </div>
+
+      {/* Área Principal do Kanban (6 Etapas Panorâmicas ou Foco em Etapa Única) */}
+      <main className="flex-1 p-4 sm:p-6 lg:p-8">
+        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+          {activeStageView === "todas" ? (
+            <div className="overflow-x-auto pb-4">
+              <div className="max-w-[1920px] mx-auto min-w-[1740px]">
+                <div className="flex gap-4 items-start justify-between">
+                  {PIPELINE_STAGES.map((stage) => (
+                    <KanbanColumn
+                      key={stage.id}
+                      stage={stage}
+                      leads={filteredLeads.filter((lead) => lead.stage === stage.id)}
+                      onOpenDrawer={(lead) => setSelectedLead(lead)}
+                      onAdvanceStage={handleAdvanceStage}
+                      onPreviousStage={handlePreviousStage}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto py-2">
+              {(() => {
+                const stage = PIPELINE_STAGES.find((s) => s.id === activeStageView);
+                if (!stage) return null;
+                return (
+                  <KanbanColumn
+                    stage={stage}
+                    leads={filteredLeads.filter((lead) => lead.stage === stage.id)}
+                    onOpenDrawer={(lead) => setSelectedLead(lead)}
+                    onAdvanceStage={handleAdvanceStage}
+                    onPreviousStage={handlePreviousStage}
+                    isSingleView={true}
+                  />
+                );
+              })()}
+            </div>
+          )}
+        </DndContext>
       </main>
 
       {/* Gaveta de Roteiros de Mensagens para WhatsApp */}

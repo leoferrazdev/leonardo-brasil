@@ -29,3 +29,30 @@
   html { scroll-behavior: auto; }
   .lb-rise, .lb-ping { animation: none; }
 }
+
+/* CRM Kanban scrollbars refinados e sem overflow lateral */
+.crm-card-scroll {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b transparent;
+}
+
+.crm-card-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 0px !important; /* Elimina qualquer scrollbar horizontal no Chrome/Edge/Windows */
+}
+
+.crm-card-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crm-card-scroll::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+.crm-card-scroll::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
