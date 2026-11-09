@@ -65,7 +65,7 @@ pie title Rodada 03: 16 Leads Segmentados
 | **V-009** | **Vets Clínica Veterinária** | Vila Assunção | **4º lugar** | `(51) 99511-7393` | ~2.200/mês | Botão de chamada no celular oculto; ausência de catálogo de vacinas e consultas. |
 | **V-010** | **VidaPet Clínica Veterinária** | Tristeza | **4º lugar** | `(51) 99738-5651` | ~2.200/mês | 4º lugar na Dr. Barcelos; sem catálogo de cirurgias e exames cadastrados como produtos. |
 | **V-011** | **Bem Estar Pet Clínica Veterinária** | Ipanema | **5º lugar** | `(51) 99182-4545` | ~2.400/mês | Maps marca 24h incorretamente enquanto o site fecha às 20h; sem WhatsApp integrado. |
-| **V-012** | **Pet Care Veterinária Integrativa** | Cristal | **5º lugar** | `(51) 98039-2330` | ~3.100/mês | 5º lugar no Cristal; sem catálogo de reabilitação e acupuntura pet cadastrado. |
+| **V-012** | **VetCare - Atendimento Veterinário** | Cristal | **5º lugar** | `(51) 98039-2330` | ~3.100/mês | 5º lugar no Cristal; perfil confundido com pet shop/loja por falta de categorização médica. |
 
 ---
 
