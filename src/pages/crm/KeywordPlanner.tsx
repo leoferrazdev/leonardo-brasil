@@ -87,6 +87,167 @@ const QUICK_NICHES = [
   { label: "Restaurante", seed: "restaurante almoço, restaurante jantar", ticket: 140 }
 ];
 
+export function getNicheBenchmark(seedKeywords: string[] | string = []) {
+  const text = (Array.isArray(seedKeywords) ? seedKeywords.join(" ") : String(seedKeywords)).toLowerCase();
+
+  if (/\b(odonto|dentist|implant|clareament|aparelho|ortodont|protese|invisalign|faceta|canal)\b/i.test(text)) {
+    return {
+      niche: "odontologia",
+      volumeMultiplier: 2.2,
+      cpcMin: 4.8,
+      cpcMax: 16.5,
+      compBase: "HIGH" as const,
+      compIdx: 86,
+      specificTerms: [
+        "implante dentário valor",
+        "dentista 24 horas emergência",
+        "aparelho invisível preço",
+        "clareamento dental a laser",
+        "prótese protocolo dentária",
+        "consulta avaliação dentista"
+      ],
+      negatives: ["faculdade de odontologia", "atendimento gratuito", "posto de saúde", "grátis", "sus", "curso", "vagas"]
+    };
+  }
+
+  if (/\b(advoga|juridic|direito|processo|oab|trabalhista|previdenciar|divorcio|pensao|criminal)\b/i.test(text)) {
+    return {
+      niche: "advocacia",
+      volumeMultiplier: 1.15,
+      cpcMin: 9.8,
+      cpcMax: 34.5,
+      compBase: "HIGH" as const,
+      compIdx: 93,
+      specificTerms: [
+        "advogado trabalhista urgente",
+        "advogado divórcio e pensão",
+        "aposentadoria inss especialista",
+        "escritório de advocacia consulta",
+        "dar entrada processo trabalhista",
+        "advogado online whatsapp"
+      ],
+      negatives: ["defensoria pública", "oab prova", "modelo de petição", "jusbrasil", "grátis", "estágio direito", "concurso"]
+    };
+  }
+
+  if (/\b(medic|clinica medica|consulta|dermatolog|psiquiatr|pediatr|cardiolog|ortoped|oftalmo|cirurgi|exame)\b/i.test(text)) {
+    return {
+      niche: "medicina",
+      volumeMultiplier: 1.7,
+      cpcMin: 3.9,
+      cpcMax: 12.8,
+      compBase: "HIGH" as const,
+      compIdx: 82,
+      specificTerms: [
+        "consulta médica particular hoje",
+        "clínica médica agendamento rápido",
+        "médico especialista consulta",
+        "checkup médico exames",
+        "consulta particular valor"
+      ],
+      negatives: ["sus", "posto de saúde", "hospital público", "grátis", "residência médica", "concurso médico", "estágio"]
+    };
+  }
+
+  if (/\b(veterin|pet|cachorro|gato|castra|vacina|clinica pet)\b/i.test(text)) {
+    return {
+      niche: "veterinaria",
+      volumeMultiplier: 1.3,
+      cpcMin: 2.15,
+      cpcMax: 5.95,
+      compBase: "HIGH" as const,
+      compIdx: 77,
+      specificTerms: [
+        "veterinário 24 horas emergência",
+        "hospital veterinário pronto socorro",
+        "consulta cão e gato particular",
+        "vacina v10 filhote preço",
+        "castração segura veterinária"
+      ],
+      negatives: ["adoção", "doação", "ong", "resgate", "hospital veterinário público", "grátis", "curso veterinária"]
+    };
+  }
+
+  if (/\b(oficina|mecanic|carro|auto|motor|pneu|freio|suspens|troca de oleo|eletrica auto)\b/i.test(text)) {
+    return {
+      niche: "mecanica",
+      volumeMultiplier: 1.25,
+      cpcMin: 1.95,
+      cpcMax: 5.4,
+      compBase: "MEDIUM" as const,
+      compIdx: 68,
+      specificTerms: [
+        "mecânica automotiva revisão geral",
+        "socorro auto elétrico rápido",
+        "troca de freio e suspensão carro",
+        "oficina mecânica de confiança",
+        "revisão motor e injeção"
+      ],
+      negatives: ["peças usadas", "ferro velho", "desmanche", "manual pdf", "curso de mecânica", "vagas mecânico"]
+    };
+  }
+
+  if (/\b(restaurant|comida|almoco|jantar|pizz|hamburg|buffet|rodizio|gastronom|lanche|bar)\b/i.test(text)) {
+    return {
+      niche: "restaurante",
+      volumeMultiplier: 3.6,
+      cpcMin: 0.95,
+      cpcMax: 2.65,
+      compBase: "MEDIUM" as const,
+      compIdx: 58,
+      specificTerms: [
+        "melhor restaurante para almoçar",
+        "restaurante almoço executivo buffet",
+        "reserva mesa jantar a dois",
+        "rodízio completo promoção",
+        "restaurante perto de mim agora"
+      ],
+      negatives: ["receita caseira", "como fazer", "curso culinária", "vagas garçom", "salário cozinheiro", "trabalhe conosco"]
+    };
+  }
+
+  let hash = 0;
+  for (let i = 0; i < text.length; i++) {
+    hash = (hash << 5) - hash + text.charCodeAt(i);
+    hash |= 0;
+  }
+  const posHash = Math.abs(hash);
+  const volMulti = 0.85 + ((posHash % 100) / 100) * 1.3;
+  const cpcMin = Number((1.6 + ((posHash % 50) / 20)).toFixed(2));
+  const cpcMax = Number((cpcMin + 2.4 + ((posHash % 80) / 12)).toFixed(2));
+
+  return {
+    niche: "personalizado",
+    volumeMultiplier: volMulti,
+    cpcMin,
+    cpcMax,
+    compBase: "MEDIUM" as const,
+    compIdx: 55 + (posHash % 25),
+    specificTerms: [],
+    negatives: ["grátis", "gratuito", "curso", "vagas", "emprego", "salário", "reclame aqui"]
+  };
+}
+
+function classifyClientSideKeyword(kw: string, cityLabel = "", neighborhood = "") {
+  const lower = kw.toLowerCase();
+  const cityToken = cityLabel.split(",")[0].trim().toLowerCase();
+  const nbToken = neighborhood.trim().toLowerCase();
+
+  const isUrgent = /\b(24h|24 horas|urgente|emerg[eê]ncia|plant[aã]o|agora|hoje|telefone|whatsapp|agendar|contato)\b/i.test(lower);
+  const isPrice = /\b(pre[cç]o|valor|quanto custa|or[cç]amento|consulta|barato|particular|tabela|plano)\b/i.test(lower);
+  const isGeo =
+    (cityToken && lower.includes(cityToken)) ||
+    (nbToken && lower.includes(nbToken)) ||
+    /\b(perto de mim|pr[oó]ximo|zona sul|zona norte|zona leste|zona oeste|centro|bairro)\b/i.test(lower);
+  const isInfo = /\b(como|o que [eé]|d[uú]vida|sintomas|pode|caseiro|curso|faculdade|vaga)\b/i.test(lower);
+
+  if (isUrgent) return { intent: "transacional" as const, cluster: "01. Urgência & Atendimento Imediato" };
+  if (isPrice) return { intent: "comercial" as const, cluster: "02. Preço, Valor & Consulta" };
+  if (isGeo) return { intent: "local" as const, cluster: "03. Localização & Proximidade" };
+  if (isInfo) return { intent: "informacional" as const, cluster: "05. Pesquisa Institucional & Dúvidas" };
+  return { intent: "transacional" as const, cluster: "04. Especialidade & Procedimentos" };
+}
+
 function buildClientSideFallback(
   seedInput: string,
   citySlug: string,
@@ -94,68 +255,108 @@ function buildClientSideFallback(
 ): KeywordPlannerResponse {
   const seeds = seedInput
     .split(",")
-    .map((s) => s.trim())
+    .map((s) => s.trim().toLowerCase())
     .filter(Boolean);
-  const primary = (seeds[0] || "clínica veterinária").toLowerCase();
+  const primarySeeds = seeds.length ? seeds : ["serviço local"];
   const cityObj = CITIES.find((c) => c.slug === citySlug) || CITIES[0];
   const cityShort = cityObj.label.split(",")[0].trim().toLowerCase();
   const nb = neighborhood.trim().toLowerCase();
+  const benchmark = getNicheBenchmark(primarySeeds);
 
   const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
   const factors = [0.94, 0.91, 1.04, 1.02, 1.05, 0.98, 0.96, 1.06, 1.08, 1.07, 1.03, 0.88];
 
-  const rows: Array<{
-    suffix: string;
-    vol: number;
-    comp: "LOW" | "MEDIUM" | "HIGH";
-    idx: number;
-    low: number;
-    high: number;
-    intent: KeywordIdeaItem["intent"];
-    cluster: string;
-  }> = [
-    { suffix: "", vol: 2400, comp: "HIGH", idx: 78, low: 2.1, high: 5.4, intent: "transacional", cluster: "04. Especialidade & Procedimentos" },
-    { suffix: cityShort, vol: 1600, comp: "HIGH", idx: 81, low: 2.35, high: 6.1, intent: "local", cluster: "03. Localização & Proximidade" },
-    ...(nb
-      ? [
-          { suffix: `${nb} ${cityShort}`, vol: 480, comp: "MEDIUM" as const, idx: 54, low: 1.9, high: 4.5, intent: "local" as const, cluster: "03. Localização & Proximidade" },
-          { suffix: `no bairro ${nb}`, vol: 320, comp: "LOW" as const, idx: 38, low: 1.65, high: 3.8, intent: "local" as const, cluster: "03. Localização & Proximidade" }
-        ]
-      : []),
-    { suffix: "perto de mim", vol: 1350, comp: "HIGH", idx: 84, low: 2.5, high: 6.4, intent: "local", cluster: "03. Localização & Proximidade" },
-    { suffix: "24 horas", vol: 890, comp: "HIGH", idx: 88, low: 3.1, high: 7.9, intent: "transacional", cluster: "01. Urgência & Atendimento Imediato" },
-    { suffix: "urgente agora", vol: 540, comp: "HIGH", idx: 79, low: 2.9, high: 7.2, intent: "transacional", cluster: "01. Urgência & Atendimento Imediato" },
-    { suffix: "preço consulta", vol: 720, comp: "MEDIUM", idx: 64, low: 1.8, high: 4.4, intent: "comercial", cluster: "02. Preço, Valor & Consulta" },
-    { suffix: "quanto custa", vol: 610, comp: "MEDIUM", idx: 58, low: 1.6, high: 3.9, intent: "comercial", cluster: "02. Preço, Valor & Consulta" },
-    { suffix: "telefone whatsapp", vol: 460, comp: "MEDIUM", idx: 62, low: 2.2, high: 5.3, intent: "transacional", cluster: "01. Urgência & Atendimento Imediato" },
-    { suffix: "especialista particular", vol: 390, comp: "MEDIUM", idx: 60, low: 2.4, high: 5.9, intent: "transacional", cluster: "04. Especialidade & Procedimentos" },
-    { suffix: `zona sul ${cityShort}`, vol: 510, comp: "MEDIUM", idx: 57, low: 1.95, high: 4.8, intent: "local", cluster: "03. Localização & Proximidade" },
-    { suffix: "avaliações e indicação", vol: 290, comp: "LOW", idx: 34, low: 1.3, high: 3.1, intent: "informacional", cluster: "05. Pesquisa Institucional & Dúvidas" }
-  ];
+  const seen = new Set<string>();
+  const ideas: KeywordIdeaItem[] = [];
 
-  const ideas: KeywordIdeaItem[] = rows.map((r) => {
-    const avgMonthlySearches = Math.max(30, Math.round((r.vol * cityObj.factor) / 10) * 10);
-    return {
-      keyword: `${primary} ${r.suffix}`.trim().replace(/\s+/g, " "),
-      avgMonthlySearches,
-      competition: r.comp,
-      competitionIndex: r.idx,
-      lowTopOfPageBidBrl: r.low,
-      highTopOfPageBidBrl: r.high,
-      intent: r.intent,
-      adGroupCluster: r.cluster,
-      monthlySearchVolumes: months.map((m, idx) => ({
-        month: m,
-        year: 2026,
-        searches: Math.max(10, Math.round(avgMonthlySearches * factors[idx]))
-      }))
-    };
-  });
+  for (const seed of primarySeeds.slice(0, 4)) {
+    const seedTemplates = [
+      { suffix: "", baseVol: 2200, comp: benchmark.compBase, compIdx: benchmark.compIdx, lowMod: 1.0, highMod: 1.0 },
+      { suffix: cityShort, baseVol: 1700, comp: benchmark.compBase, compIdx: benchmark.compIdx + 3, lowMod: 1.1, highMod: 1.15 },
+      ...(nb
+        ? [
+            { suffix: `${nb} ${cityShort}`, baseVol: 520, comp: "MEDIUM" as const, compIdx: 58, lowMod: 0.95, highMod: 0.9 },
+            { suffix: `no bairro ${nb}`, baseVol: 340, comp: "LOW" as const, compIdx: 42, lowMod: 0.85, highMod: 0.8 }
+          ]
+        : []),
+      { suffix: "perto de mim", baseVol: 1450, comp: benchmark.compBase, compIdx: benchmark.compIdx + 4, lowMod: 1.15, highMod: 1.2 },
+      { suffix: "preço consulta", baseVol: 780, comp: "MEDIUM" as const, compIdx: 68, lowMod: 0.9, highMod: 0.95 },
+      { suffix: "quanto custa", baseVol: 650, comp: "MEDIUM" as const, compIdx: 62, lowMod: 0.85, highMod: 0.88 },
+      { suffix: "telefone whatsapp", baseVol: 490, comp: "MEDIUM" as const, compIdx: 65, lowMod: 1.05, highMod: 1.05 },
+      { suffix: "urgente 24 horas", baseVol: 620, comp: benchmark.compBase, compIdx: benchmark.compIdx + 6, lowMod: 1.35, highMod: 1.4 }
+    ];
+
+    for (const tpl of seedTemplates) {
+      const kw = `${seed} ${tpl.suffix}`.trim().replace(/\s+/g, " ");
+      if (seen.has(kw)) continue;
+      seen.add(kw);
+
+      const avgMonthlySearches = Math.max(
+        30,
+        Math.round((tpl.baseVol * benchmark.volumeMultiplier * cityObj.factor) / 10) * 10
+      );
+      const lowBid = Number((benchmark.cpcMin * tpl.lowMod).toFixed(2));
+      const highBid = Number((benchmark.cpcMax * tpl.highMod).toFixed(2));
+      const classification = classifyClientSideKeyword(kw, cityObj.label, neighborhood);
+
+      ideas.push({
+        keyword: kw,
+        avgMonthlySearches,
+        competition: tpl.comp,
+        competitionIndex: Math.min(100, Math.max(10, tpl.compIdx)),
+        lowTopOfPageBidBrl: lowBid,
+        highTopOfPageBidBrl: highBid,
+        intent: classification.intent,
+        adGroupCluster: classification.cluster,
+        monthlySearchVolumes: months.map((m, idx) => ({
+          month: m,
+          year: 2026,
+          searches: Math.max(10, Math.round(avgMonthlySearches * factors[idx]))
+        }))
+      });
+    }
+  }
+
+  for (const term of benchmark.specificTerms) {
+    const termWithGeo = `${term} ${cityShort}`;
+    if (!seen.has(termWithGeo)) {
+      seen.add(termWithGeo);
+      const avgMonthlySearches = Math.max(
+        40,
+        Math.round((950 * benchmark.volumeMultiplier * cityObj.factor) / 10) * 10
+      );
+      const classification = classifyClientSideKeyword(termWithGeo, cityObj.label, neighborhood);
+      ideas.push({
+        keyword: termWithGeo,
+        avgMonthlySearches,
+        competition: benchmark.compBase,
+        competitionIndex: benchmark.compIdx,
+        lowTopOfPageBidBrl: benchmark.cpcMin,
+        highTopOfPageBidBrl: benchmark.cpcMax,
+        intent: classification.intent,
+        adGroupCluster: classification.cluster,
+        monthlySearchVolumes: months.map((m, idx) => ({
+          month: m,
+          year: 2026,
+          searches: Math.max(10, Math.round(avgMonthlySearches * factors[idx]))
+        }))
+      });
+    }
+  }
+
+  ideas.sort((a, b) => b.avgMonthlySearches - a.avgMonthlySearches);
 
   const totalMonthlySearches = ideas.reduce((a, b) => a + b.avgMonthlySearches, 0);
   const highIntentSearches = ideas
     .filter((i) => i.intent === "transacional" || i.intent === "local")
     .reduce((a, b) => a + b.avgMonthlySearches, 0);
+
+  const avgLowCpcBrl = ideas.length
+    ? Number((ideas.reduce((acc, i) => acc + i.lowTopOfPageBidBrl, 0) / ideas.length).toFixed(2))
+    : benchmark.cpcMin;
+  const avgHighCpcBrl = ideas.length
+    ? Number((ideas.reduce((acc, i) => acc + i.highTopOfPageBidBrl, 0) / ideas.length).toFixed(2))
+    : benchmark.cpcMax;
 
   return {
     source: "local-intelligence-fallback",
@@ -170,27 +371,11 @@ function buildClientSideFallback(
       totalKeywords: ideas.length,
       totalMonthlySearches,
       highIntentSearches,
-      avgLowCpcBrl: 2.15,
-      avgHighCpcBrl: 5.45,
-      recommendedDailyBudgetBrl: 45
+      avgLowCpcBrl,
+      avgHighCpcBrl,
+      recommendedDailyBudgetBrl: Math.max(25, Math.round(avgHighCpcBrl * 8))
     },
-    negativeKeywords: [
-      "grátis",
-      "gratuito",
-      "sus",
-      "prefeitura",
-      "curso",
-      "faculdade",
-      "salário",
-      "vaga",
-      "emprego",
-      "estágio",
-      "concurso",
-      "como fazer",
-      "caseiro",
-      "pdf",
-      "reclame aqui"
-    ]
+    negativeKeywords: benchmark.negatives
   };
 }
 
@@ -571,7 +756,7 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              runSearch();
+              runSearch(seedInput, citySlug, neighborhood);
             }}
             className="mt-4 grid grid-cols-1 md:grid-cols-12 gap-3 items-end"
           >
@@ -597,7 +782,11 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
               </label>
               <select
                 value={citySlug}
-                onChange={(e) => setCitySlug(e.target.value)}
+                onChange={(e) => {
+                  const newCity = e.target.value;
+                  setCitySlug(newCity);
+                  runSearch(seedInput, newCity, neighborhood);
+                }}
                 className="w-full px-3 py-2.5 rounded-xl bg-[#070a12] border border-slate-800 text-xs text-white focus:border-blue-500 focus:outline-none"
               >
                 {CITIES.map((c) => (

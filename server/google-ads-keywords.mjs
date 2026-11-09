@@ -355,90 +355,265 @@ async function requestOfficialGoogleAdsIdeas({ env, fetchImpl, seedKeywords, pag
   });
 }
 
+export function getNicheBenchmark(seedKeywords = []) {
+  const text = (Array.isArray(seedKeywords) ? seedKeywords.join(' ') : String(seedKeywords)).toLowerCase();
+
+  if (/\b(odonto|dentist|implant|clareament|aparelho|ortodont|protese|invisalign|faceta|canal)\b/i.test(text)) {
+    return {
+      niche: 'odontologia',
+      volumeMultiplier: 2.2,
+      cpcMin: 4.8,
+      cpcMax: 16.5,
+      compBase: 'HIGH',
+      compIdx: 86,
+      specificTerms: [
+        'implante dentário valor',
+        'dentista 24 horas emergência',
+        'aparelho invisível preço',
+        'clareamento dental a laser',
+        'prótese protocolo dentária',
+        'consulta avaliação dentista'
+      ]
+    };
+  }
+
+  if (/\b(advoga|juridic|direito|processo|oab|trabalhista|previdenciar|divorcio|pensao|criminal)\b/i.test(text)) {
+    return {
+      niche: 'advocacia',
+      volumeMultiplier: 1.15,
+      cpcMin: 9.8,
+      cpcMax: 34.5,
+      compBase: 'HIGH',
+      compIdx: 93,
+      specificTerms: [
+        'advogado trabalhista urgente',
+        'advogado divórcio e pensão',
+        'aposentadoria inss especialista',
+        'escritório de advocacia consulta',
+        'dar entrada processo trabalhista',
+        'advogado online whatsapp'
+      ]
+    };
+  }
+
+  if (/\b(medic|clinica medica|consulta|dermatolog|psiquiatr|pediatr|cardiolog|ortoped|oftalmo|cirurgi|exame)\b/i.test(text)) {
+    return {
+      niche: 'medicina',
+      volumeMultiplier: 1.7,
+      cpcMin: 3.9,
+      cpcMax: 12.8,
+      compBase: 'HIGH',
+      compIdx: 82,
+      specificTerms: [
+        'consulta médica particular hoje',
+        'clínica médica agendamento rápido',
+        'médico especialista consulta',
+        'checkup médico exames',
+        'consulta particular valor'
+      ]
+    };
+  }
+
+  if (/\b(veterin|pet|cachorro|gato|castra|vacina|clinica pet)\b/i.test(text)) {
+    return {
+      niche: 'veterinaria',
+      volumeMultiplier: 1.3,
+      cpcMin: 2.15,
+      cpcMax: 5.95,
+      compBase: 'HIGH',
+      compIdx: 77,
+      specificTerms: [
+        'veterinário 24 horas emergência',
+        'hospital veterinário pronto socorro',
+        'consulta cão e gato particular',
+        'vacina v10 filhote preço',
+        'castração segura veterinária'
+      ]
+    };
+  }
+
+  if (/\b(oficina|mecanic|carro|auto|motor|pneu|freio|suspens|troca de oleo|eletrica auto)\b/i.test(text)) {
+    return {
+      niche: 'mecanica',
+      volumeMultiplier: 1.25,
+      cpcMin: 1.95,
+      cpcMax: 5.4,
+      compBase: 'MEDIUM',
+      compIdx: 68,
+      specificTerms: [
+        'mecânica automotiva revisão geral',
+        'socorro auto elétrico rápido',
+        'troca de freio e suspensão carro',
+        'oficina mecânica de confiança',
+        'revisão motor e injeção'
+      ]
+    };
+  }
+
+  if (/\b(restaurant|comida|almoco|jantar|pizz|hamburg|buffet|rodizio|gastronom|lanche|bar)\b/i.test(text)) {
+    return {
+      niche: 'restaurante',
+      volumeMultiplier: 3.6,
+      cpcMin: 0.95,
+      cpcMax: 2.65,
+      compBase: 'MEDIUM',
+      compIdx: 58,
+      specificTerms: [
+        'melhor restaurante para almoçar',
+        'restaurante almoço executivo buffet',
+        'reserva mesa jantar a dois',
+        'rodízio completo promoção',
+        'restaurante perto de mim agora'
+      ]
+    };
+  }
+
+  // Cálculo determinístico para termos personalizados
+  let hash = 0;
+  for (let i = 0; i < text.length; i++) {
+    hash = (hash << 5) - hash + text.charCodeAt(i);
+    hash |= 0;
+  }
+  const posHash = Math.abs(hash);
+  const volMulti = 0.85 + ((posHash % 100) / 100) * 1.3;
+  const cpcMin = Number((1.6 + ((posHash % 50) / 20)).toFixed(2));
+  const cpcMax = Number((cpcMin + 2.4 + ((posHash % 80) / 12)).toFixed(2));
+
+  return {
+    niche: 'personalizado',
+    volumeMultiplier: volMulti,
+    cpcMin,
+    cpcMax,
+    compBase: 'MEDIUM',
+    compIdx: 55 + (posHash % 25),
+    specificTerms: []
+  };
+}
+
 async function generateFallbackIdeas({ fetchImpl, seedKeywords, geo, neighborhood }) {
-  const primary = (seedKeywords[0] || 'serviço local').trim().toLowerCase();
+  const seeds = (seedKeywords.length ? seedKeywords : ['serviço local'])
+    .map((s) => String(s || '').trim().toLowerCase())
+    .filter(Boolean);
+  const primary = seeds[0] || 'serviço local';
   const cityShort = geo.name.split(',')[0].trim().toLowerCase();
   const neighborhoodClean = (neighborhood || '').trim().toLowerCase();
+  const benchmark = getNicheBenchmark(seeds);
 
   let autocompleteSuggestions = [];
   try {
-    const suggestUrl = `https://suggestqueries.google.com/complete/search?client=firefox&hl=pt-BR&gl=br&q=${encodeURIComponent(`${primary} ${cityShort}`)}`;
-    const res = await fetchImpl(suggestUrl);
-    if (res.ok) {
-      const json = await res.json();
-      if (Array.isArray(json?.[1])) {
-        autocompleteSuggestions = json[1].slice(0, 6);
+    const suggestPromises = seeds.slice(0, 3).map(async (seed) => {
+      const suggestUrl = `https://suggestqueries.google.com/complete/search?client=firefox&hl=pt-BR&gl=br&q=${encodeURIComponent(`${seed} ${cityShort}`)}`;
+      const res = await fetchImpl(suggestUrl);
+      if (res.ok) {
+        const json = await res.json();
+        return Array.isArray(json?.[1]) ? json[1].slice(0, 4) : [];
       }
-    }
+      return [];
+    });
+    const results = await Promise.all(suggestPromises);
+    autocompleteSuggestions = results.flat();
   } catch {
     // Segue com os templates determinísticos locais se offline
   }
 
-  const baseTemplates = [
-    { suffix: '', baseVol: 2400, comp: 'HIGH', compIdx: 78, lowBid: 2.1, highBid: 5.4 },
-    { suffix: cityShort, baseVol: 1600, comp: 'HIGH', compIdx: 81, lowBid: 2.35, highBid: 6.1 },
-    ...(neighborhoodClean
-      ? [
-          { suffix: `${neighborhoodClean} ${cityShort}`, baseVol: 480, comp: 'MEDIUM', compIdx: 54, lowBid: 1.9, highBid: 4.5 },
-          { suffix: `no bairro ${neighborhoodClean}`, baseVol: 320, comp: 'LOW', compIdx: 38, lowBid: 1.65, highBid: 3.8 }
-        ]
-      : []),
-    { suffix: 'perto de mim', baseVol: 1350, comp: 'HIGH', compIdx: 84, lowBid: 2.5, highBid: 6.4 },
-    { suffix: '24 horas', baseVol: 890, comp: 'HIGH', compIdx: 88, lowBid: 3.1, highBid: 7.9 },
-    { suffix: 'urgente agora', baseVol: 540, comp: 'HIGH', compIdx: 79, lowBid: 2.9, highBid: 7.2 },
-    { suffix: 'preço consulta', baseVol: 720, comp: 'MEDIUM', compIdx: 64, lowBid: 1.8, highBid: 4.4 },
-    { suffix: 'quanto custa', baseVol: 610, comp: 'MEDIUM', compIdx: 58, lowBid: 1.6, highBid: 3.9 },
-    { suffix: 'telefone whatsapp', baseVol: 460, comp: 'MEDIUM', compIdx: 62, lowBid: 2.2, highBid: 5.3 },
-    { suffix: 'especialista particular', baseVol: 390, comp: 'MEDIUM', compIdx: 60, lowBid: 2.4, highBid: 5.9 },
-    { suffix: `zona sul ${cityShort}`, baseVol: 510, comp: 'MEDIUM', compIdx: 57, lowBid: 1.95, highBid: 4.8 },
-    { suffix: 'avaliações e indicação', baseVol: 290, comp: 'LOW', compIdx: 34, lowBid: 1.3, highBid: 3.1 }
-  ];
-
   const seen = new Set();
   const ideas = [];
 
-  for (const tpl of baseTemplates) {
-    const keyword = `${primary} ${tpl.suffix}`.trim().replace(/\s+/g, ' ');
-    if (seen.has(keyword)) continue;
-    seen.add(keyword);
+  // 1. Processa cada uma das sementes informadas pelo usuário
+  for (const seed of seeds.slice(0, 4)) {
+    const seedTemplates = [
+      { suffix: '', baseVol: 2200, comp: benchmark.compBase, compIdx: benchmark.compIdx, lowMod: 1.0, highMod: 1.0 },
+      { suffix: cityShort, baseVol: 1700, comp: benchmark.compBase, compIdx: benchmark.compIdx + 3, lowMod: 1.1, highMod: 1.15 },
+      ...(neighborhoodClean
+        ? [
+            { suffix: `${neighborhoodClean} ${cityShort}`, baseVol: 520, comp: 'MEDIUM', compIdx: 58, lowMod: 0.95, highMod: 0.9 },
+            { suffix: `no bairro ${neighborhoodClean}`, baseVol: 340, comp: 'LOW', compIdx: 42, lowMod: 0.85, highMod: 0.8 }
+          ]
+        : []),
+      { suffix: 'perto de mim', baseVol: 1450, comp: benchmark.compBase, compIdx: benchmark.compIdx + 4, lowMod: 1.15, highMod: 1.2 },
+      { suffix: 'preço consulta', baseVol: 780, comp: 'MEDIUM', compIdx: 68, lowMod: 0.9, highMod: 0.95 },
+      { suffix: 'quanto custa', baseVol: 650, comp: 'MEDIUM', compIdx: 62, lowMod: 0.85, highMod: 0.88 },
+      { suffix: 'telefone whatsapp', baseVol: 490, comp: 'MEDIUM', compIdx: 65, lowMod: 1.05, highMod: 1.05 },
+      { suffix: 'urgente 24 horas', baseVol: 620, comp: benchmark.compBase, compIdx: benchmark.compIdx + 6, lowMod: 1.35, highMod: 1.4 }
+    ];
 
-    const avgMonthlySearches = Math.max(
-      30,
-      Math.round((tpl.baseVol * geo.populationFactor) / 10) * 10
-    );
-    const classification = classifyKeyword(keyword, geo.name, neighborhood);
+    for (const tpl of seedTemplates) {
+      const keyword = `${seed} ${tpl.suffix}`.trim().replace(/\s+/g, ' ');
+      if (seen.has(keyword)) continue;
+      seen.add(keyword);
 
-    ideas.push({
-      keyword,
-      avgMonthlySearches,
-      competition: tpl.comp,
-      competitionIndex: tpl.compIdx,
-      lowTopOfPageBidBrl: tpl.lowBid,
-      highTopOfPageBidBrl: tpl.highBid,
-      intent: classification.intent,
-      adGroupCluster: classification.adGroupCluster,
-      monthlySearchVolumes: MONTHS_PT.map((m) => ({
-        month: m.label,
-        year: 2026,
-        searches: Math.max(10, Math.round(avgMonthlySearches * m.factor))
-      }))
-    });
+      const avgMonthlySearches = Math.max(
+        30,
+        Math.round((tpl.baseVol * benchmark.volumeMultiplier * geo.populationFactor) / 10) * 10
+      );
+      const lowBid = Number((benchmark.cpcMin * tpl.lowMod).toFixed(2));
+      const highBid = Number((benchmark.cpcMax * tpl.highMod).toFixed(2));
+      const classification = classifyKeyword(keyword, geo.name, neighborhood);
+
+      ideas.push({
+        keyword,
+        avgMonthlySearches,
+        competition: tpl.comp,
+        competitionIndex: Math.min(100, Math.max(10, tpl.compIdx)),
+        lowTopOfPageBidBrl: lowBid,
+        highTopOfPageBidBrl: highBid,
+        intent: classification.intent,
+        adGroupCluster: classification.adGroupCluster,
+        monthlySearchVolumes: MONTHS_PT.map((m) => ({
+          month: m.label,
+          year: 2026,
+          searches: Math.max(10, Math.round(avgMonthlySearches * m.factor))
+        }))
+      });
+    }
   }
 
+  // 2. Termos específicos do nicho calibrados
+  for (const term of benchmark.specificTerms) {
+    const termWithGeo = `${term} ${cityShort}`;
+    if (!seen.has(termWithGeo)) {
+      seen.add(termWithGeo);
+      const avgMonthlySearches = Math.max(
+        40,
+        Math.round((950 * benchmark.volumeMultiplier * geo.populationFactor) / 10) * 10
+      );
+      const classification = classifyKeyword(termWithGeo, geo.name, neighborhood);
+      ideas.push({
+        keyword: termWithGeo,
+        avgMonthlySearches,
+        competition: benchmark.compBase,
+        competitionIndex: benchmark.compIdx,
+        lowTopOfPageBidBrl: benchmark.cpcMin,
+        highTopOfPageBidBrl: benchmark.cpcMax,
+        intent: classification.intent,
+        adGroupCluster: classification.adGroupCluster,
+        monthlySearchVolumes: MONTHS_PT.map((m) => ({
+          month: m.label,
+          year: 2026,
+          searches: Math.max(10, Math.round(avgMonthlySearches * m.factor))
+        }))
+      });
+    }
+  }
+
+  // 3. Sugestões de autocomplete em tempo real do Google
   for (const suggestion of autocompleteSuggestions) {
     const clean = String(suggestion || '').trim().toLowerCase();
     if (!clean || seen.has(clean)) continue;
     seen.add(clean);
 
-    const avgMonthlySearches = Math.max(40, Math.round(420 * geo.populationFactor));
+    const avgMonthlySearches = Math.max(
+      40,
+      Math.round((480 * benchmark.volumeMultiplier * geo.populationFactor) / 10) * 10
+    );
     const classification = classifyKeyword(clean, geo.name, neighborhood);
     ideas.push({
       keyword: clean,
       avgMonthlySearches,
       competition: 'MEDIUM',
-      competitionIndex: 55,
-      lowTopOfPageBidBrl: 1.85,
-      highTopOfPageBidBrl: 4.6,
+      competitionIndex: 60,
+      lowTopOfPageBidBrl: Number((benchmark.cpcMin * 0.9).toFixed(2)),
+      highTopOfPageBidBrl: Number((benchmark.cpcMax * 0.95).toFixed(2)),
       intent: classification.intent,
       adGroupCluster: classification.adGroupCluster,
       monthlySearchVolumes: MONTHS_PT.map((m) => ({
