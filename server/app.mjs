@@ -2,6 +2,15 @@ import express from 'express';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  GEO_TARGETS,
+  buildGoogleAdsOAuthUrl,
+  exchangeGoogleAdsOAuthCode,
+  generateKeywordIdeas,
+  getAdsIntegrationStatus,
+  persistEnvVariables,
+  sanitizeCustomerId
+} from './google-ads-keywords.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -538,6 +547,95 @@ export function createMainApp(options = {}) {
       response.json({ ok: true, skipped: false });
     } catch {
       response.status(202).json({ ok: false, skipped: false });
+    }
+  });
+
+  app.get('/api/ads/status', (_request, response) => {
+    response.json({
+      ...getAdsIntegrationStatus(env),
+      locations: Object.entries(GEO_TARGETS).map(([slug, meta]) => ({
+        slug,
+        name: meta.name,
+        geoId: meta.id
+      }))
+    });
+  });
+
+  app.post('/api/ads/credentials', (request, response) => {
+    const body = request.body || {};
+    const updates = {};
+
+    if (body.developerToken !== undefined) updates.GOOGLE_ADS_DEVELOPER_TOKEN = String(body.developerToken).trim();
+    if (body.clientId !== undefined) updates.GOOGLE_ADS_CLIENT_ID = String(body.clientId).trim();
+    if (body.clientSecret !== undefined) updates.GOOGLE_ADS_CLIENT_SECRET = String(body.clientSecret).trim();
+    if (body.refreshToken !== undefined) updates.GOOGLE_ADS_REFRESH_TOKEN = String(body.refreshToken).trim();
+    if (body.loginCustomerId !== undefined) {
+      updates.GOOGLE_ADS_LOGIN_CUSTOMER_ID = sanitizeCustomerId(body.loginCustomerId);
+    }
+    if (body.customerId !== undefined) {
+      updates.GOOGLE_ADS_CUSTOMER_ID = sanitizeCustomerId(body.customerId);
+    }
+
+    try {
+      const envPath = path.resolve(__dirname, '..', '.env');
+      persistEnvVariables(envPath, updates, env);
+      response.json({
+        ok: true,
+        ...getAdsIntegrationStatus(env)
+      });
+    } catch (error) {
+      jsonError(response, 500, error.message || 'Falha ao salvar credenciais do Google Ads.');
+    }
+  });
+
+  app.get('/api/ads/oauth/url', (request, response) => {
+    try {
+      const host = request.headers.host || 'localhost:3000';
+      const protocol = request.headers['x-forwarded-proto'] || (host.includes('localhost') ? 'http' : 'https');
+      const redirectUri = `${protocol}://${host}/api/ads/oauth/callback`;
+      const authUrl = buildGoogleAdsOAuthUrl({ env, redirectUri });
+      response.json({ url: authUrl, redirectUri });
+    } catch (error) {
+      jsonError(response, 400, error.message || 'Falha ao gerar URL OAuth2.');
+    }
+  });
+
+  app.get('/api/ads/oauth/callback', async (request, response) => {
+    const code = String(request.query.code || '').trim();
+    if (!code) {
+      jsonError(response, 400, 'Código de autorização OAuth ausente.');
+      return;
+    }
+
+    try {
+      const host = request.headers.host || 'localhost:3000';
+      const protocol = request.headers['x-forwarded-proto'] || (host.includes('localhost') ? 'http' : 'https');
+      const redirectUri = `${protocol}://${host}/api/ads/oauth/callback`;
+      const tokens = await exchangeGoogleAdsOAuthCode({ env, fetchImpl, code, redirectUri });
+
+      const envPath = path.resolve(__dirname, '..', '.env');
+      persistEnvVariables(envPath, { GOOGLE_ADS_REFRESH_TOKEN: tokens.refresh_token }, env);
+
+      response.redirect('/crm/planejador?oauth=success');
+    } catch (error) {
+      response.redirect(`/crm/planejador?oauth=error&reason=${encodeURIComponent(error.message || 'oauth_failed')}`);
+    }
+  });
+
+  app.post('/api/ads/keyword-ideas', async (request, response) => {
+    const body = request.body || {};
+    try {
+      const result = await generateKeywordIdeas({
+        env,
+        fetchImpl,
+        keywords: body.keywords || [],
+        pageUrl: body.pageUrl || '',
+        citySlug: body.citySlug || 'porto-alegre',
+        neighborhood: body.neighborhood || ''
+      });
+      response.json(result);
+    } catch (error) {
+      jsonError(response, error.status || 500, error.message || 'Falha ao gerar ideias de palavras-chave.');
     }
   });
 

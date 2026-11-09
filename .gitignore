@@ -18,6 +18,8 @@ dist-ssr
 # Env / segredos (NUNCA versionar)
 .env
 .env.*
+prospeccao-ativa-cricao-sites-*.json
+*service-account*.json
 
 # Obsidian local workspace
 **/.obsidian/workspace.json

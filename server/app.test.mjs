@@ -522,3 +522,131 @@ test('assistant route falls back to Anthropic and returns text', async () => {
     { role: 'user', content: 'Comando' }
   ]);
 });
+
+test('GET /api/ads/status reports credential status and fallback mode when unconfigured', async () => {
+  const app = createMainApp({ env: {} });
+  const response = await request(app, '/api/ads/status');
+  const body = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(body.ready, false);
+  assert.equal(body.mode, 'local-intelligence-fallback');
+  assert.equal(body.configured.developerToken, false);
+  assert.equal(body.configured.refreshToken, false);
+});
+
+test('POST /api/ads/keyword-ideas calls official Google Ads REST API when credentials are present', async () => {
+  const calls = [];
+  const app = createMainApp({
+    env: {
+      GOOGLE_ADS_DEVELOPER_TOKEN: 'dev-token-123',
+      GOOGLE_ADS_CLIENT_ID: 'client-id-123.apps.googleusercontent.com',
+      GOOGLE_ADS_CLIENT_SECRET: 'client-secret-123',
+      GOOGLE_ADS_REFRESH_TOKEN: 'refresh-token-123',
+      GOOGLE_ADS_LOGIN_CUSTOMER_ID: '123-456-7890',
+      GOOGLE_ADS_CUSTOMER_ID: '987-654-3210'
+    },
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      if (url === 'https://oauth2.googleapis.com/token') {
+        return new Response(JSON.stringify({ access_token: 'ya29.mock-access-token' }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+      if (url.includes('googleads.googleapis.com') && url.includes(':generateKeywordIdeas')) {
+        return new Response(
+          JSON.stringify({
+            results: [
+              {
+                text: 'clínica veterinária porto alegre 24h',
+                keywordIdeaMetrics: {
+                  avgMonthlySearches: '1900',
+                  competition: 'HIGH',
+                  competitionIndex: '82',
+                  lowTopOfPageBidMicros: '2400000',
+                  highTopOfPageBidMicros: '6800000',
+                  monthlySearchVolumes: [
+                    { year: '2026', month: 'JANUARY', monthlySearches: '1800' },
+                    { year: '2026', month: 'FEBRUARY', monthlySearches: '1950' }
+                  ]
+                }
+              },
+              {
+                text: 'consulta veterinário preço',
+                keywordIdeaMetrics: {
+                  avgMonthlySearches: '880',
+                  competition: 'MEDIUM',
+                  competitionIndex: '55',
+                  lowTopOfPageBidMicros: '1800000',
+                  highTopOfPageBidMicros: '4500000',
+                  monthlySearchVolumes: []
+                }
+              }
+            ]
+          }),
+          { status: 200, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+      throw new Error(`Unexpected fetch URL: ${url}`);
+    }
+  });
+
+  const response = await request(app, '/api/ads/keyword-ideas', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      keywords: ['clínica veterinária'],
+      citySlug: 'porto-alegre',
+      neighborhood: 'Tristeza'
+    })
+  });
+
+  const body = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(body.source, 'google-ads-api');
+  assert.ok(Array.isArray(body.ideas));
+  assert.equal(body.ideas.length, 2);
+  assert.equal(body.ideas[0].keyword, 'clínica veterinária porto alegre 24h');
+  assert.equal(body.ideas[0].avgMonthlySearches, 1900);
+  assert.equal(body.ideas[0].lowTopOfPageBidBrl, 2.4);
+  assert.equal(body.ideas[0].highTopOfPageBidBrl, 6.8);
+  assert.equal(body.ideas[0].intent, 'transacional');
+  assert.ok(body.ideas[0].adGroupCluster.includes('Urgência'));
+  assert.ok(Array.isArray(body.negativeKeywords));
+  assert.ok(body.negativeKeywords.length > 5);
+
+  const adsCall = calls.find((c) => c.url.includes('generateKeywordIdeas'));
+  assert.ok(adsCall);
+  assert.equal(adsCall.init.headers['developer-token'], 'dev-token-123');
+  assert.equal(adsCall.init.headers['login-customer-id'], '1234567890');
+});
+
+test('POST /api/ads/keyword-ideas returns local intelligence fallback when Google Ads credentials are not configured', async () => {
+  const app = createMainApp({
+    env: {},
+    fetchImpl: async () => {
+      return new Response(JSON.stringify(['clínica odontológica', ['clínica odontológica tristeza', 'dentista urgente porto alegre']]), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+  });
+
+  const response = await request(app, '/api/ads/keyword-ideas', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      keywords: ['clínica odontológica'],
+      citySlug: 'porto-alegre',
+      neighborhood: 'Tristeza'
+    })
+  });
+
+  const body = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(body.source, 'local-intelligence-fallback');
+  assert.ok(body.ideas.length >= 10);
+  assert.ok(body.summary.totalMonthlySearches > 0);
+  assert.ok(body.negativeKeywords.includes('grátis'));
+});

@@ -32,6 +32,7 @@ const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ 
 // Módulo CRM de Prospecção Local
 const CrmLogin = lazy(() => import("./pages/crm/Login"));
 const CrmDashboard = lazy(() => import("./pages/crm/Dashboard"));
+const CrmKeywordPlanner = lazy(() => import("./pages/crm/KeywordPlanner"));
 const CrmProtectedRoute = lazy(() =>
   import("./pages/crm/components/CrmProtectedRoute").then((m) => ({
     default: m.CrmProtectedRoute,
@@ -113,6 +114,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 </CrmProtectedRoute>
               }
             />
+            <Route
+              path="/crm/planejador"
+              element={
+                <CrmProtectedRoute>
+                  <CrmKeywordPlanner />
+                </CrmProtectedRoute>
+              }
+            />
+            <Route path="/crm/keywords" element={<Navigate to="/crm/planejador" replace />} />
 
             <Route path="*" element={<RouteFallback />} />
           </Routes>

@@ -50,6 +50,21 @@ function chunkUrls(urls) {
   return chunks;
 }
 
+function safeWriteFileSync(filePath, content) {
+  let attempts = 5;
+  while (attempts > 0) {
+    try {
+      fs.writeFileSync(filePath, content, "utf8");
+      return;
+    } catch (err) {
+      attempts -= 1;
+      if (attempts === 0) throw err;
+      const end = Date.now() + 150;
+      while (Date.now() < end) {} // sleep síncrono simples para liberar lock de arquivo no Google Drive
+    }
+  }
+}
+
 function writeSitemapFiles(publicDir, prefix, urlNodesArray) {
   const chunks = chunkUrls(urlNodesArray);
   const sitemapFiles = [];
@@ -57,7 +72,7 @@ function writeSitemapFiles(publicDir, prefix, urlNodesArray) {
   chunks.forEach((chunk, index) => {
     const fileName = chunks.length === 1 ? `${prefix}.xml` : `${prefix}-${index + 1}.xml`;
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${chunk.join('')}\n</urlset>`;
-    fs.writeFileSync(path.join(publicDir, fileName), sitemapContent, "utf8");
+    safeWriteFileSync(path.join(publicDir, fileName), sitemapContent);
     sitemapFiles.push(fileName);
   });
   
@@ -163,7 +178,7 @@ function generateSitemap() {
 
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapIndexNodes}\n</sitemapindex>`;
 
-  fs.writeFileSync(SITEMAP_INDEX_PATH, sitemapIndex, "utf8");
+  safeWriteFileSync(SITEMAP_INDEX_PATH, sitemapIndex);
 
   console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
   console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);
