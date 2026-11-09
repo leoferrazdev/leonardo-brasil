@@ -29,6 +29,7 @@ Este documento acompanha em tempo real o andamento de cada conversa ativa origin
 | **Angelo Car Oficina** | Oficina (Cavalhada) | `(51) 98428-1009` | *"Quanto gasto para arrumar isto?"* | **Escopo + Proposta R$ 497** | 🟠 Proposta | [[O-005 - Angelo Car Oficina Mecânica\|Abrir Ficha]] |
 | **Drive Service** | Oficina e Guincho (Cavalhada) | `(51) 98486-3861` | *"sim"* | **Bloco 2 (Diagnóstico Socorro 24h)** | 🟣 Em Conversa | [[O-004 - Drive Service - Mecânica e Guincho\|Abrir Ficha]] |
 | **DogDoc Veterinária** | Clínica Veterinária (Tristeza) | `(51) 99978-6295` | *"Sim, gostaria de de uma analise"* | **Bloco 2 (Diagnóstico Exames/Maps)** | 🟣 Em Conversa | [[V-003 - DogDoc Veterinária e Petshop\|Abrir Ficha]] |
+| **Clínica Suellen Stefan** | Clínica Veterinária (Ipanema) | `(51) 99145-6761` | *"Bom dia, pode me mandar sim"* | **Bloco 2 (Diagnóstico Xavier da Costa)** | 🟣 Em Conversa | [[V-001 - Clínica Veterinária Suellen Stefan\|Abrir Ficha]] |
 
 ---
 
