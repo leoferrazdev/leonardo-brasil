@@ -27948,6 +27948,22 @@
     {
       "slug": "restaurantes",
       "nome": "Restaurantes"
+    },
+    {
+      "slug": "chaveiros",
+      "nome": "Chaveiros 24h"
+    },
+    {
+      "slug": "encanadores",
+      "nome": "Encanadores"
+    },
+    {
+      "slug": "desentupidoras",
+      "nome": "Desentupidoras"
+    },
+    {
+      "slug": "instalacao-ar-condicionado",
+      "nome": "Instalação de Ar-Condicionado"
     }
   ]
 }

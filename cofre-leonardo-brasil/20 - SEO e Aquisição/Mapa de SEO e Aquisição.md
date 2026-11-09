@@ -26,6 +26,7 @@ Conhecimento de descoberta, presença local e aquisição orgânica.
 - [[Motor 3 - Hubs Éticos (CFM, OAB, CFO)]]
 - [[Clusterização Semântica e GEO para Nichos Essenciais]]
 - [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
+- [[Taxonomia dos 6 Pilares de Negócios Locais e Diretrizes GEO]]
 - [[Blog e Estratégia de Topic Clusters]]
 - [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
 - [[Sitemaps XML e Particionamento GSC]]

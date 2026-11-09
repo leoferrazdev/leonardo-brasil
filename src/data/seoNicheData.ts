@@ -412,6 +412,70 @@ export const seoNicheData: Record<string, NicheData> = {
       { question: "Como lidar com avaliações negativas de clientes?", answer: "Desenvolvemos respostas estratégicas profissionais que revertem a impressão negativa perante novos visitantes e incentivamos um fluxo constante de clientes satisfeitos deixando notas 5 estrelas." },
       { question: "Funciona para restaurantes a quilo ou marmitarias?", answer: "Perfeitamente. O almoço executivo corporativo é uma das buscas mais frequentes no Google Maps durante a semana por trabalhadores da região." }
     ]
+  },
+  "chaveiros": {
+    title: "Google Meu Negócio para Chaveiros e Aberturas 24h",
+    heroSubtitle: "Esteja no Top 3 do Google Maps quando o cliente trancar a chave para dentro. Receba chamados de emergência residencial e automotiva 24h no WhatsApp.",
+    painPointTitle: "Por que chaveiros dependem 100% da velocidade e do Google Maps?",
+    painPointDescription: "Ninguém agenda um chaveiro com antecedência: é uma emergência pura. O cliente busca 'chaveiro perto de mim' no celular e liga imediatamente para quem tem o status 'aberto agora' e a maior nota média da região.",
+    benefits: [
+      "Configuração de horário de atendimento emergencial 24h verificado",
+      "Destaque para chaves codificadas, abertura de cofres e travas automotivas",
+      "Botão de chamada urgente no WhatsApp com tempo de resposta em menos de 5 minutos"
+    ],
+    faqs: [
+      { question: "O Google prioriza quem atende 24 horas?", answer: "Sim. Em buscas noturnas ou finais de semana, o Google filtra apenas perfis que possuem horários de atendimento 24h ativos e confirmados." },
+      { question: "Posso aparecer sem ter uma loja física de chaveiro?", answer: "Sim. A configuração é feita como 'Área de Atendimento', ocultando seu endereço particular e definindo os bairros onde você presta socorro com a moto ou furgão." },
+      { question: "Como combater perfis falsos ou golpistas no mapa?", answer: "O Google tem regras rígidas contra perfis fantasmas. Um perfil verificado e blindado ganha prioridade algorítmica sobre fichas spam." }
+    ]
+  },
+  "encanadores": {
+    title: "Google Meu Negócio para Encanadores e Caça-Vazamentos",
+    heroSubtitle: "Coloque seus serviços hidráulicos no topo do Google Maps. Receba ligações de caça-vazamento, desentupimento e reparos hidráulicos urgentes.",
+    painPointTitle: "Vazamentos ocultos geram pânico e exigem encanador imediato",
+    painPointDescription: "Quando um cano estoura ou o hidrômetro dispara, o proprietário procura no Google Maps por um encanador experiente. Se o seu perfil exibir equipamentos de caça-vazamento eletrônico e notas 5 estrelas, você é o escolhido.",
+    benefits: [
+      "Posicionamento para serviços de alto valor (caça-vazamento não destrutivo com geofone)",
+      "Fotos profissionais de serviços executados em condomínios e residências",
+      "Área de cobertura calibrada para os bairros de maior tíquete médio da cidade"
+    ],
+    faqs: [
+      { question: "Vale a pena anunciar termos de caça-vazamento?", answer: "Os cliques em anúncios de caça-vazamento são caros. Posicionar seu perfil organicamente no Google Maps garante leads qualificados sem custo por clique." },
+      { question: "Como demonstrar credibilidade para entrar na casa do cliente?", answer: "Avaliações detalhadas de clientes residenciais elogiando pontualidade, limpeza e honestidade no laudo são o maior fator de conversão do perfil." },
+      { question: "Ajuda a fechar contratos de manutenção preventiva com condomínios?", answer: "Sim. Síndicos e administradoras de condomínio consultam a reputação da empresa no Google Maps antes de aprovar orçamentos prediais." }
+    ]
+  },
+  "desentupidoras": {
+    title: "Google Meu Negócio para Desentupidoras e Hidrojateamento 24h",
+    heroSubtitle: "Lidere as buscas de desentupimento de esgoto, pias, ralos e hidrojateamento no Google Maps com custo por clique zero.",
+    painPointTitle: "Cansado de pagar fortunas por clique no Google Ads de desentupimento?",
+    painPointDescription: "O setor de desentupimento tem um dos lances de CPC mais caros da internet brasileira (chegando a ultrapassar R$ 50 por clique). Otimizar seu Perfil da Empresa no Google Maps permite que você receba ligações diárias sem ficar refém do saldo diário de anúncios.",
+    benefits: [
+      "Posicionamento orgânico perpétuo no Top 3 do Google Maps sem pagar por clique",
+      "Destaque para caminhão de hidrojateamento, limpeza de fossa e máquina desentupidora",
+      "Reversão da desconfiança do setor com avaliações reais e fotos autênticas da equipe"
+    ],
+    faqs: [
+      { question: "Como evitar suspensões frequentes no perfil de desentupidora?", answer: "O nicho de desentupimento sofre vigilância rigorosa do Google. Aplicamos blindagem cadastral com CNPJ, contrato social e alvará para garantir estabilidade da ficha." },
+      { question: "Consigo atender tanto residências quanto indústrias e comércios?", answer: "Sim. O catálogo de serviços é estruturado para separar desentupimentos residenciais simples de hidrojateamento industrial de alta pressão." },
+      { question: "Quanto tempo para começar a receber chamados no Maps?", answer: "Com o perfil otimizado e bem avaliado, os chamados emergenciais começam a entrar diretamente no WhatsApp e telefone já nas primeiras semanas." }
+    ]
+  },
+  "instalacao-ar-condicionado": {
+    title: "Google Meu Negócio para Instalação e Manutenção de Ar-Condicionado",
+    heroSubtitle: "Lote sua agenda de instalação split, manutenção preventiva, recarga de gás e higienização de ar-condicionado pelo Google Maps.",
+    painPointTitle: "Como acabar com a sazonalidade e ter serviços o ano todo?",
+    painPointDescription: "No verão a demanda explode, mas no inverno muitas empresas passam sufoco. Estruturamos seu Perfil da Empresa no Google Maps para atrair tanto instalações residenciais quanto contratos de manutenção corporativa (PMOC) recorrentes.",
+    benefits: [
+      "Destaque para instalação de splits, multi-split, sistemas VRF e recarga de gás R410/R32",
+      "Catálogo de higienização antibacteriana e laudos PMOC para empresas e clínicas",
+      "Conquista de autoridade local com fotos de instalações limpas e clientes satisfeitos"
+    ],
+    faqs: [
+      { question: "Como captar contratos corporativos de PMOC pelo Google?", answer: "Otimizamos as categorias secundárias e a descrição para termos técnicos empresariais que gerentes prediais e diretores de clínicas buscam no Google." },
+      { question: "Ajuda a cobrar o valor justo e fugir da briga de preço?", answer: "Sim. Perfis com dezenas de avaliações 5 estrelas e fotos de ferramentas de precisão (bomba de vácuo, manifold digital) transmitem confiança superior ao cliente." },
+      { question: "Posso atender várias cidades vizinhas?", answer: "Sim. Como prestador de serviço de climatização, configuramos sua Área de Atendimento para abranger toda a região metropolitana." }
+    ]
   }
 };
 

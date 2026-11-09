@@ -347,5 +347,69 @@ export const NICHES: NicheData[] = [
     ],
     ctaText: "Diagnóstico de Google Meu Negócio para Restaurantes",
     waMessage: "Olá, Leonardo! Tenho restaurante e quero posicionar meu estabelecimento no Google Maps para atrair clientes locais sem intermediários."
+  },
+  {
+    slug: "chaveiros",
+    title: "Google Meu Negócio para Chaveiros e Aberturas 24h | Leonardo Brasil",
+    description: "Esteja no Top 3 do Google Maps quando o cliente trancar a chave para fora. Receba chamados de emergência residencial e automotiva 24h no WhatsApp.",
+    badge: "Chaveiro & Aberturas 24h",
+    h1: "Perdendo aberturas de emergência na sua cidade? Domine o ",
+    h1Highlight: "Google Maps para chaveiros 24h.",
+    subheadline: "Quando a pessoa fica trancada para fora de casa ou do carro, ela abre o Google Maps e liga para os três primeiros colocados. Estruturamos seu perfil para você liderar os atendimentos rápidos da sua região.",
+    painPoints: [
+      "Perfil sem configuração de horário 24h perdendo os chamados de maior rentabilidade",
+      "Concorrentes informais aparecendo na frente apenas por termos 'aberto agora'",
+      "Falta de catálogo com serviços de cópias codificadas, travas e abertura de cofres"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Chaveiros",
+    waMessage: "Olá, Leonardo! Sou chaveiro e quero posicionar meu serviço de emergência no Top 3 do Google Maps."
+  },
+  {
+    slug: "encanadores",
+    title: "Google Meu Negócio para Encanadores e Caça-Vazamentos | Leonardo Brasil",
+    description: "Coloque seus serviços hidráulicos no topo do Google Maps. Receba ligações de caça-vazamento, desentupimento e reparos hidráulicos urgentes.",
+    badge: "Serviços Hidráulicos & Caça-Vazamento",
+    h1: "Cano estourado ou vazamento oculto? Seja o primeiro ",
+    h1Highlight: "encanador encontrado no Google Maps.",
+    subheadline: "Vazamentos geram contas de água altíssimas e desespero. O morador busca encanador no Google Maps e liga imediatamente para quem tem avaliações de confiança e atendimento rápido.",
+    painPoints: [
+      "Perfil sem relevância para termos de alto valor como 'caça-vazamento não destrutivo'",
+      "Dependência de indicações lentas enquanto os vizinhos fecham reparos diários no Google",
+      "Ausência de fotos de ferramentas especializadas e geolocalização por bairros atendidos"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Encanadores",
+    waMessage: "Olá, Leonardo! Sou encanador / caça-vazamento e quero atrair chamados pelo Google Maps."
+  },
+  {
+    slug: "desentupidoras",
+    title: "Google Meu Negócio para Desentupidoras e Hidrojateamento 24h | Leonardo Brasil",
+    description: "Lidere as buscas de desentupimento de esgoto, pias, ralos e hidrojateamento no Google Maps. Atenda condomínios, residências e empresas da sua região.",
+    badge: "Desentupimento & Hidrojateamento 24h",
+    h1: "Esgoto entupido exige socorro imediato. Coloque sua ",
+    h1Highlight: "desentupidora no topo do Google Maps.",
+    subheadline: "Desentupimento é o nicho com o maior CPC do Google Ads. Posicionamos sua desentupidora organicamente no Top 3 do Google Maps para você faturar com margem alta e custo por clique zero.",
+    painPoints: [
+      "Custos astronômicos no Google Ads comendo toda a margem de lucro dos serviços",
+      "Perfil suspenso ou mal visto devido à má reputação histórica do mercado de desentupimento",
+      "Falta de contratos recorrentes de manutenção preventiva com condomínios e restaurantes"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Desentupidoras",
+    waMessage: "Olá, Leonardo! Tenho uma desentupidora e quero dominar o topo do Google Maps organicamente."
+  },
+  {
+    slug: "instalacao-ar-condicionado",
+    title: "Google Meu Negócio para Instalação e Limpeza de Ar-Condicionado | Leonardo Brasil",
+    description: "Atraia clientes para instalação split, manutenção preventiva, recarga de gás e higienização de ar-condicionado pelo Google Maps na sua cidade.",
+    badge: "Climatização & Refrigeração",
+    h1: "Dias quentes com agenda vazia? Coloque sua empresa de ",
+    h1Highlight: "ar-condicionado no topo do Google Maps.",
+    subheadline: "Nas ondas de calor, a procura por instalação de ar-condicionado e recarga de gás explode no Google. Quem domina o Top 3 do Maps fecha orçamentos todos os dias sem pagar comissões.",
+    painPoints: [
+      "Sazonalidade extrema sofrendo com meses de baixa por não captar contratos corporativos e PMOC",
+      "Perfil sem catálogo de serviços (instalação split, inverter, higienização e conserto)",
+      "Poucas avaliações que atestem acabamento limpo e pontualidade na instalação"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Climatização",
+    waMessage: "Olá, Leonardo! Trabalho com instalação e manutenção de ar-condicionado e quero lotar minha agenda pelo Google Maps."
   }
 ];

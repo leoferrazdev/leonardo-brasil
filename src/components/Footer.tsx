@@ -86,6 +86,11 @@ export function Footer() {
               </li>
               <li className="pt-2 text-text font-semibold">Guias de SEO Local:</li>
               <li>
+                <Link to="/segmentos-locais-google-maps" className="text-accent hover:text-accent-light transition-colors font-medium">
+                  ★ Os 6 Segmentos Mais Lucrativos
+                </Link>
+              </li>
+              <li>
                 <Link to="/como-colocar-minha-empresa-no-google" className="hover:text-accent transition-colors">
                   Como Colocar Empresa no Google
                 </Link>
