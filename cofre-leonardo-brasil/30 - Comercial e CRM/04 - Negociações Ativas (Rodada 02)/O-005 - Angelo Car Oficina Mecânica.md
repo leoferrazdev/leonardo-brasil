@@ -78,6 +78,40 @@ sequenceDiagram
 5. **Angelo Car:**
    > *"Vou pensar"*
 
+6. **Leonardo (Desarme + ROI):**
+   > Mensagem de desarme e pergunta aberta sobre a dúvida/fluxo de caixa.
+
+7. **Angelo Car (Dor Profunda / Confissão):**
+   > *"Está parado o serviço"*  
+   > *"Tô cheio de contas"*
+
+---
+
+## 🎯 Quebra da Objeção: "Está parado o serviço / Tô cheio de contas"
+
+Esta resposta é uma demonstração de **alta dor e vulnerabilidade**. O cliente não está rejeitando o serviço; ele está com medo financeiro. O contorno exige:
+1. **Empatia profunda**: Validar o sufoco de manter uma oficina aberta com contas chegando;
+2. **Reenquadramento de causa e efeito**: O serviço está parado *precisamente* porque o perfil está na 5ª posição e os clientes estão indo para os 3 concorrentes da frente;
+3. **Ponte de alívio de caixa (2x de R$ 250)**: R$ 250 de entrada agora e R$ 250 apenas daqui a 30 dias;
+4. **Ancoragem de sobrevivência**: Um único carro no elevador (troca de pastilhas/óleo/freio) já quita a entrada de R$ 250 e traz lucro.
+
+### Mensagem Pronta para Envio no WhatsApp:
+
+```text
+Te entendo perfeitamente, de verdade! Manter empresa aberta e ver o pátio vazio com conta chegando é um sufoco que tira o sono de qualquer um.
+
+Mas olha com atenção: o serviço tá parado justamente porque quem tá precisando de oficina na Cavalhada agora não tá te achando. O pessoal pesquisa no Google e cai direto nos 3 primeiros colocados, enchendo o pátio deles.
+
+Você não precisa de mais uma despesa. Você precisa de carro no elevador para pagar essas contas.
+
+Para te ajudar de verdade e não pesar no seu caixa:
+A gente divide em *2x de R$ 250 no Pix*. Você me passa R$ 250 agora para eu já começar a reestruturação hoje mesmo, e os outros R$ 250 você só paga daqui a 30 dias, quando os motoristas já estiverem chamando no seu WhatsApp.
+
+Um único serviço simples que entrar — uma troca de freio ou suspensão — já paga os R$ 250 e sobra lucro.
+
+Bora botar carro nesse pátio para aliviar essas contas? Se topar, já começo agora à tarde.
+```
+
 ---
 
 ## 🎯 Quebra da Objeção "Vou Pensar" (Mensagem Pronta para WhatsApp)
