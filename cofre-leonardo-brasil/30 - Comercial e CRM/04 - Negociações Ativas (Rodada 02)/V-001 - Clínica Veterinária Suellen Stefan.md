@@ -13,7 +13,7 @@ aliases:
 - V-001 Suellen Stefan
 tipo: ficha-negociacao
 area: Comercial e CRM
-status_comercial: em_conversa
+status_comercial: proposta_enviada
 posicao_maps: 4º lugar
 ticket_ofertado: R$ 497,00 (ou 2x R$ 250,00)
 data_inicio: 2026-11-09
@@ -52,8 +52,13 @@ sequenceDiagram
     
     Leo->>Suellen: Bloco 1 (Gancho: 4º lugar no Maps + 2.400 buscas/mês em Ipanema)
     Suellen-->>Leo: "Bom dia, pode me mandar sim"
-    Note over Leo,Suellen: Autorização concedida! Envio imediato do Diagnóstico
     Leo->>Suellen: Bloco 2 (Diagnóstico: 4º lugar na Xavier da Costa + Catálogo ausente)
+    Suellen-->>Leo: "Pode ser"
+    Leo->>Suellen: Bloco 3 (Escopo dos 4 pilares técnicos) + Pergunta de envio de valores
+    Suellen-->>Leo: "Pode"
+    Suellen-->>Leo: "Mas no momento eu provavelmente não vá estar fechando nada"
+    Note over Leo,Suellen: Objeção de Prevenção/Defesa: Desarmar, passar proposta leve e ancorar ROI
+    Leo->>Suellen: Bloco 4 (Proposta sem compromisso R$ 497 / 2x R$ 250 + ROI de 1 consulta)
 ```
 
 ### Histórico Registrado:
@@ -65,22 +70,42 @@ sequenceDiagram
 2. **Clínica Suellen Stefan:**
    > *"Bom dia, pode me mandar sim"*
 
+3. **Leonardo (Bloco 2 - Diagnóstico):**
+   > Apresentação dos 3 gargalos: 4º lugar na Xavier da Costa, ausência de catálogo de especialidades e blindagem cadastral.
+
+4. **Clínica Suellen Stefan:**
+   > *"Pode ser"*
+
+5. **Leonardo (Bloco 3 - Escopo Técnico):**
+   > Apresentação dos 4 pilares e pergunta: *"Se fizer sentido, já posso te passar as condições e valores para começarmos. Posso te enviar?"*
+
+6. **Clínica Suellen Stefan (Defesa Prévia de Preço):**
+   > *"Pode"*  
+   > *"Mas no momento eu provavelmente não vá estar fechando nada"*
+
 ---
 
-## 🎯 Mensagem Pronta para Copiar e Colar (Próximo Passo)
+## 🎯 Quebra de Objeção Prévia & Envio da Proposta (Copiar e Colar no WhatsApp)
 
-Entregar a análise técnica prometida, mostrando a dor da 4ª colocação na Xavier da Costa / Ipanema:
+A cliente pediu os valores (*"Pode"*), mas colocou a armadura defensiva por medo de ser empurrada para um contrato caro de agência.  
+A resposta deve **desarmar a pressão completamente**, mostrar que o investimento é **acessível e pontual (sem mensalidade nem fidelidade)** e ancorar que **1 único atendimento pet** já paga o serviço:
 
 ```text
-Com certeza! Fiz uma checagem rápida no perfil da clínica e separei os 3 pontos principais:
+Sem problema nenhum, Dra. Suellen! Fica 100% tranquila, a ideia é justamente você conhecer os valores e como funciona, sem nenhum compromisso de fechar agora.
 
-1. *Posição no Maps:* Em 4º lugar na Xavier da Costa, a clínica fica logo abaixo do bloco de 3 empresas que o Google exibe na tela inicial do celular quando um tutor de Ipanema busca por atendimento ou vacinas;
-2. *Catálogo de Especialidades:* Falta de cadastro dos procedimentos mais buscados (consultas, vacinação, exames e cirurgias) nas abas nativas de serviços e produtos do perfil do Maps;
-3. *Blindagem Cadastral:* Perfil sem amarração semântica com o bairro Ipanema e sem proteção contra alterações automáticas indevidas do Google.
+Até porque muitos veterinários acham que reestruturar no Google envolve contratos caros de agência de R$ 1.500 ou mensalidades obrigatórias. O meu trabalho é focado em resolver a raiz do problema de forma pontual:
 
-Com esses ajustes, a clínica passa a disputar diretamente as 3 primeiras posições de Ipanema, captando os tutores da região que hoje vão para a concorrência.
+💰 *Investimento único para a reestruturação e blindagem:*
+* R$ 497,00 à vista (no Pix)
+* Ou em 2x de R$ 250,00
 
-Eu faço essa reestruturação e blindagem completa. Quer dar uma olhada em como funciona?
+(Sem nenhuma mensalidade obrigatória, sem fidelidade e com prazo de 3 a 5 dias úteis para deixar tudo pronto).
+
+Como Ipanema tem mais de 2.400 buscas por mês de tutores procurando atendimento, na prática, *uma única consulta com vacinas ou exames* que entrar pelo Maps já paga os R$ 497 com folga.
+
+Fica com essa análise e os valores guardados. Quando você sentir que é o momento de colocar a clínica no Top 3 da Xavier da Costa para puxar esses tutores, é só me dar um toque que a gente inicia!
+
+Ficou com alguma dúvida sobre o que é feito na ficha?
 ```
 
 ---
