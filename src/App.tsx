@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ClipboardCheck, Info, MapPin, Phone, Search, Star } from "lucide-react";
 import { Link } from "./lib/local-router";
 import { SeoHead } from "./components/SeoHead";
 import { Footer } from "./components/Footer";
@@ -153,8 +154,8 @@ export default function App() {
           <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-20 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-bold text-accent-300">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                Especialista em Google Meu Negócio & SEO Local
+                <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+                Perfil da Empresa no Google · SEO Local
               </span>
               <h1 className="mt-5 text-4xl sm:text-5xl font-black leading-[1.08] tracking-tight text-balance">
                 Seu concorrente no Google Maps não é melhor.<br />Ele só está <span className="text-accent-400">mais visível</span>.
@@ -188,6 +189,27 @@ export default function App() {
                   <p className="text-xs text-accent-300 font-semibold">Consultor em Google Meu Negócio & Presença Local</p>
                 </div>
               </div>
+              <div className="relative mt-4 rounded-2xl border border-accent/20 bg-panel p-5 shadow-xl">
+                <p className="text-sm font-bold text-text">Meu foco no seu perfil</p>
+                <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-xs font-medium text-muted">
+                  <li className="flex items-center gap-2">
+                    <Search className="h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
+                    Presença nas buscas
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Info className="h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
+                    Dados do perfil
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Star className="h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
+                    Avaliações
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
+                    Ligações e WhatsApp
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -210,6 +232,45 @@ export default function App() {
             <div>
               <p className="text-3xl font-black text-accent-300">5 Estrelas</p>
               <p className="text-xs text-muted mt-1">Método ativo de coleta de avaliações</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ENTREGA REAL: RAIO-X INTERATIVO */}
+        <section aria-labelledby="raio-x-na-pratica" className="mx-auto max-w-6xl px-5 pt-16">
+          <div className="grid items-center gap-8 rounded-3xl border border-line bg-panel p-6 sm:p-8 lg:grid-cols-2 lg:p-10">
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent-300">
+                <ClipboardCheck className="h-4 w-4 shrink-0" aria-hidden="true" />
+                Ferramenta própria
+              </span>
+              <h2 id="raio-x-na-pratica" className="mt-3 text-2xl font-black tracking-tight sm:text-3xl">Conheça meu trabalho na prática</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+                Experimente o Raio-X gratuito do seu perfil. Responda a 6 perguntas e receba uma pontuação de 0 a 100, com os pontos que merecem atenção.
+              </p>
+              <Link to="/auditoria-perfil-google" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-300 sm:w-auto">
+                Testar o Raio-X gratuito <Arrow className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="rounded-2xl border border-line bg-ink/70 p-5 sm:p-6">
+              <h3 className="text-base font-bold text-text">O que você pode conferir</h3>
+              <ul className="mt-5 space-y-4 text-sm text-muted">
+                <li className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                  Categorias e dados cadastrais
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                  Descrição e catálogo de serviços
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                  Avaliações e fotos recentes
+                </li>
+              </ul>
+              <p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-muted">
+                Autoavaliação baseada nas suas respostas, com resultado na própria ferramenta.
+              </p>
             </div>
           </div>
         </section>
