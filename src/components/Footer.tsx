@@ -84,6 +84,32 @@ export function Footer() {
                   Especialista em Google Maps
                 </Link>
               </li>
+              <li className="pt-2 text-text font-semibold">Guias de SEO Local:</li>
+              <li>
+                <Link to="/como-colocar-minha-empresa-no-google" className="hover:text-accent transition-colors">
+                  Como Colocar Empresa no Google
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-ficar-na-primeira-pagina-do-google" className="hover:text-accent transition-colors">
+                  Como Ficar na 1ª Página do Google
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-divulgar-minha-empresa-no-google" className="hover:text-accent transition-colors">
+                  Como Divulgar Empresa no Google
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-aparecer-no-google-maps" className="hover:text-accent transition-colors">
+                  Como Aparecer no Google Maps (Top 3)
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-vender-mais-no-google" className="hover:text-accent transition-colors">
+                  Como Vender Mais no Google
+                </Link>
+              </li>
             </ul>
           </div>
 

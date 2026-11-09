@@ -25,6 +25,11 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Brandbook = lazy(() => import("./pages/Brandbook"));
 const CitiesDirectory = lazy(() => import("./pages/CitiesDirectory"));
 const PortoAlegreDigital = lazy(() => import("./pages/PortoAlegreDigital"));
+const ComoColocarEmpresaNoGoogle = lazy(() => import("./pages/ComoColocarEmpresaNoGoogle"));
+const ComoFicarNaPrimeiraPaginaGoogle = lazy(() => import("./pages/ComoFicarNaPrimeiraPaginaGoogle"));
+const ComoDivulgarEmpresaNoGoogle = lazy(() => import("./pages/ComoDivulgarEmpresaNoGoogle"));
+const ComoAparecerNoGoogleMaps = lazy(() => import("./pages/ComoAparecerNoGoogleMaps"));
+const ComoVenderMaisNoGoogle = lazy(() => import("./pages/ComoVenderMaisNoGoogle"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
@@ -91,6 +96,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/especialista-google-maps" element={<GoogleMeuNegocioLanding />} />
             <Route path="/especialista-google-maps/:nicho" element={<GoogleMeuNegocioNicheHub />} />
             <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+            {/* Guias Estratégicos de SEO Local e Aquisição */}
+            <Route path="/como-colocar-minha-empresa-no-google" element={<ComoColocarEmpresaNoGoogle />} />
+            <Route path="/como-ficar-na-primeira-pagina-do-google" element={<ComoFicarNaPrimeiraPaginaGoogle />} />
+            <Route path="/como-divulgar-minha-empresa-no-google" element={<ComoDivulgarEmpresaNoGoogle />} />
+            <Route path="/como-aparecer-no-google-maps" element={<ComoAparecerNoGoogleMaps />} />
+            <Route path="/como-vender-mais-no-google" element={<ComoVenderMaisNoGoogle />} />
 
             <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
             <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />

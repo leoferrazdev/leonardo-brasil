@@ -1,4 +1,4 @@
----
+﻿---
 title: Mapa de SEO e Aquisição
 tipo: indice
 area: SEO e Aquisição
@@ -25,7 +25,9 @@ Conhecimento de descoberta, presença local e aquisição orgânica.
 - [[Motor 2 - Malha Programática 3.0 (512k URLs)]]
 - [[Motor 3 - Hubs Éticos (CFM, OAB, CFO)]]
 - [[Clusterização Semântica e GEO para Nichos Essenciais]]
+- [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
 - [[Blog e Estratégia de Topic Clusters]]
+- [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
 - [[Sitemaps XML e Particionamento GSC]]
 - [[DNS-AID e Descoberta de Agentes IA]]
 

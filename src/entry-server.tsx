@@ -8,6 +8,11 @@ import BlogPost from "./pages/BlogPost";
 import Brandbook from "./pages/Brandbook";
 import CitiesDirectory from "./pages/CitiesDirectory";
 import PortoAlegreDigital from "./pages/PortoAlegreDigital";
+import ComoColocarEmpresaNoGoogle from "./pages/ComoColocarEmpresaNoGoogle";
+import ComoFicarNaPrimeiraPaginaGoogle from "./pages/ComoFicarNaPrimeiraPaginaGoogle";
+import ComoDivulgarEmpresaNoGoogle from "./pages/ComoDivulgarEmpresaNoGoogle";
+import ComoAparecerNoGoogleMaps from "./pages/ComoAparecerNoGoogleMaps";
+import ComoVenderMaisNoGoogle from "./pages/ComoVenderMaisNoGoogle";
 import GoogleMeuNegocioLanding from "./pages/GoogleMeuNegocioLanding";
 import GoogleMeuNegocioNicheHub from "./pages/GoogleMeuNegocioNicheHub";
 import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
@@ -68,6 +73,13 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/especialista-google-maps" element={<GoogleMeuNegocioLanding />} />
           <Route path="/especialista-google-maps/:nicho" element={<GoogleMeuNegocioNicheHub />} />
           <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+          {/* Guias Estratégicos de SEO Local e Aquisição */}
+          <Route path="/como-colocar-minha-empresa-no-google" element={<ComoColocarEmpresaNoGoogle />} />
+          <Route path="/como-ficar-na-primeira-pagina-do-google" element={<ComoFicarNaPrimeiraPaginaGoogle />} />
+          <Route path="/como-divulgar-minha-empresa-no-google" element={<ComoDivulgarEmpresaNoGoogle />} />
+          <Route path="/como-aparecer-no-google-maps" element={<ComoAparecerNoGoogleMaps />} />
+          <Route path="/como-vender-mais-no-google" element={<ComoVenderMaisNoGoogle />} />
 
           <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
           <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
