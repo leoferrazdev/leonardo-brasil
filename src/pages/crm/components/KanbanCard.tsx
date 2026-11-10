@@ -16,6 +16,7 @@ import {
   RotateCcw
 } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { resolveLeadScore } from "../utils/deterministicScoring";
 import type { ProspectLead, PipelineStageId } from "../types";
 
 interface KanbanCardProps {
@@ -74,10 +75,14 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const badgeColor = 
-    lead.opportunityClass.includes("Classe B")
+  const scoreResult = resolveLeadScore(lead);
+
+  const badgeColor =
+    scoreResult.tier === "A"
+      ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/40"
+      : scoreResult.tier === "B"
       ? "bg-amber-500/15 text-amber-300 border-amber-500/35"
-      : lead.opportunityClass.includes("Classe C")
+      : scoreResult.tier === "C"
       ? "bg-blue-500/15 text-blue-300 border-blue-500/35"
       : "bg-slate-800/80 text-slate-400 border-slate-700";
 
@@ -90,6 +95,8 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
           ? "border-blue-500 shadow-2xl shadow-blue-500/25 opacity-90 scale-[1.02]"
           : lead.stage === "perdido_invalido"
           ? "border-rose-950/40 opacity-80 hover:opacity-100 hover:border-rose-500/40"
+          : scoreResult.tier === "A"
+          ? "border-emerald-500/25 hover:border-emerald-400/50 hover:shadow-xl hover:shadow-black/50"
           : "border-[#1a2030] hover:border-[#2d3748] hover:shadow-xl hover:shadow-black/50"
       }`}
     >
@@ -100,9 +107,14 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
             <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#080b12] text-[#94a3b8] border border-[#1a2030] shrink-0">
               {lead.sampleId}
             </span>
+            {lead.round && (
+              <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/25 shrink-0">
+                {lead.round.replace("Rodada ", "R")}
+              </span>
+            )}
             {lead.observedPosition && (
               <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 shrink-0">
-                📍 {lead.observedPosition}º no Maps
+                📍 {lead.observedPosition}º Maps
               </span>
             )}
             {lead.stage === "perdido_invalido" ? (
@@ -111,7 +123,12 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
               </span>
             ) : (
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${badgeColor}`}>
-                {lead.opportunityClass}
+                {scoreResult.classLabel}
+              </span>
+            )}
+            {lead.claimStatus === "nao_reivindicado" && (
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/15 text-rose-300 border border-rose-500/35 shrink-0">
+                Não reivindicado
               </span>
             )}
           </div>
@@ -164,7 +181,7 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
         </div>
       </div>
 
-      {/* Segmento e Bairro */}
+      {/* Segmento, Nota e Bairro */}
       <div className="mt-1.5 text-[11px] text-[#94a3b8] flex items-center gap-1.5 min-w-0">
         <span className="text-blue-300 font-semibold truncate shrink-0 max-w-[130px]">{lead.segment}</span>
         <span className="text-slate-600 shrink-0">•</span>
@@ -172,6 +189,12 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
           <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
           <span className="truncate">{lead.neighborhood}</span>
         </span>
+        {lead.ratingText && (
+          <>
+            <span className="text-slate-600 shrink-0">•</span>
+            <span className="text-amber-300 font-semibold shrink-0">{lead.ratingText}</span>
+          </>
+        )}
       </div>
 
       {/* Pílula de Volume de Demanda Mensal */}

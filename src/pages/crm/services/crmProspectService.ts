@@ -1,8 +1,19 @@
 import { supabase, isSupabaseConfigured } from "../../../lib/supabase";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { INITIAL_PROSPECTS } from "../data/initialProspects";
+import { resolveLeadScore } from "../utils/deterministicScoring";
 
 const STORAGE_KEY = "crm_prospect_leads_v8";
+
+function hydrateDeterministicFields(lead: ProspectLead): ProspectLead {
+  const computed = resolveLeadScore(lead);
+  return {
+    ...lead,
+    opportunityClass: computed.classLabel,
+    deterministicScore: computed.score,
+    deterministicBreakdown: computed.breakdown.signalsTriggered,
+  };
+}
 
 export const crmProspectService = {
   async getLeads(): Promise<ProspectLead[]> {
@@ -17,7 +28,6 @@ export const crmProspectService = {
             .order("created_at", { ascending: false });
 
           if (!error && data && data.length > 0) {
-            // Mapeia leads da tabela para ProspectLead se houver dados customizados
             const mapped: ProspectLead[] = data.map((d: any) => ({
               id: d.id,
               sampleId: d.proxima_acao?.includes("sample:") ? d.proxima_acao.split("sample:")[1] : d.id,
@@ -29,7 +39,7 @@ export const crmProspectService = {
               formattedPhone: d.telefone.replace(/\D/g, ""),
               whatsappConfirmed: true,
               mapsUrl: "",
-              opportunityClass: "Classe B (20 pts)",
+              opportunityClass: "Classe B (65 pts)",
               opportunityIssue: d.proxima_acao || "",
               searchKeyword: d.interesse || "Google Meu Negócio",
               monthlySearches: "1.000+",
@@ -38,13 +48,12 @@ export const crmProspectService = {
               stage: (d.status === "novo" ? "a_abordar" : d.status === "em_atendimento" ? "contatado" : d.status === "qualificado" ? "em_conversa" : d.status === "convertido" ? "proposta_enviada" : "fechado_ganho") as PipelineStageId,
               bloco1: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               bloco2: `Gostaria de apresentar oportunidades observadas no perfil do Google.`,
-              bloco3: `Nossa solução de Otimização e Implantação do Google Meu Negócio.`,
+              bloco3: `O meu trabalho de Otimização e Implantação do Perfil da Empresa no Google.`,
               bloco4: `Investimento único R$ 497 (ou 2x de R$ 250) ou gestão mensal R$ 380.`,
               notes: "",
               updatedAt: d.created_at || new Date().toISOString()
             }));
-            
-            // Mescla com a base inicial para garantir diagnósticos ricos
+
             return this.mergeWithInitial(mapped);
           }
         }
@@ -53,21 +62,38 @@ export const crmProspectService = {
       }
     }
 
-    // 2. Fallback para LocalStorage (preserva estados manuais e injeta novos leads)
+    // 2. Fallback para LocalStorage (preserva stage e notes manuais + injeta novos leads + hidrata score determinístico)
     if (typeof window !== "undefined") {
       try {
         const cached = localStorage.getItem(STORAGE_KEY);
         if (cached) {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
+            const initialMap = new Map(INITIAL_PROSPECTS.map(p => [p.id, p]));
+            const hydratedExisting = parsed.map((cachedLead: any) => {
+              const fresh = initialMap.get(cachedLead.id);
+              const base: ProspectLead = fresh
+                ? {
+                    ...fresh,
+                    stage: cachedLead.stage ?? fresh.stage,
+                    notes:
+                      cachedLead.notes !== undefined && cachedLead.notes !== ""
+                        ? cachedLead.notes
+                        : fresh.notes,
+                    updatedAt: cachedLead.updatedAt || fresh.updatedAt,
+                  }
+                : cachedLead;
+              return hydrateDeterministicFields(base);
+            });
+
             const existingIds = new Set(parsed.map((p: any) => p.id));
-            const newLeadsToAdd = INITIAL_PROSPECTS.filter(p => !existingIds.has(p.id));
-            if (newLeadsToAdd.length > 0) {
-              const merged = [...parsed, ...newLeadsToAdd];
-              this.saveLocal(merged);
-              return merged;
-            }
-            return parsed;
+            const newLeadsToAdd = INITIAL_PROSPECTS
+              .filter(p => !existingIds.has(p.id))
+              .map(hydrateDeterministicFields);
+
+            const merged = [...hydratedExisting, ...newLeadsToAdd];
+            this.saveLocal(merged);
+            return merged;
           }
         }
       } catch (e) {
@@ -75,29 +101,28 @@ export const crmProspectService = {
       }
     }
 
-    // 3. Carga padrão inicial com os perfis auditados
-    this.saveLocal(INITIAL_PROSPECTS);
-    return INITIAL_PROSPECTS;
+    // 3. Carga padrão inicial com os perfis auditados e pontuados deterministicamente
+    const hydratedInitial = INITIAL_PROSPECTS.map(hydrateDeterministicFields);
+    this.saveLocal(hydratedInitial);
+    return hydratedInitial;
   },
 
   mergeWithInitial(remoteLeads: ProspectLead[]): ProspectLead[] {
     const map = new Map<string, ProspectLead>();
-    INITIAL_PROSPECTS.forEach(p => map.set(p.id, p));
-    remoteLeads.forEach(r => map.set(r.id, { ...(map.get(r.id) || r), ...r }));
+    INITIAL_PROSPECTS.forEach(p => map.set(p.id, hydrateDeterministicFields(p)));
+    remoteLeads.forEach(r => map.set(r.id, hydrateDeterministicFields({ ...(map.get(r.id) || r), ...r })));
     const merged = Array.from(map.values());
     this.saveLocal(merged);
     return merged;
   },
 
   async updateLeadStage(leadId: string, stage: PipelineStageId): Promise<void> {
-    // 1. Atualizar no LocalStorage imediatamente para resposta instantânea
     const currentLeads = await this.getLeads();
-    const updated = currentLeads.map(l => 
-      l.id === leadId ? { ...l, stage, updatedAt: new Date().toISOString() } : l
+    const updated = currentLeads.map(l =>
+      l.id === leadId ? hydrateDeterministicFields({ ...l, stage, updatedAt: new Date().toISOString() }) : l
     );
     this.saveLocal(updated);
 
-    // 2. Se logado no Supabase, tenta sincronizar
     if (isSupabaseConfigured) {
       try {
         const statusMap: Record<PipelineStageId, string> = {
@@ -120,7 +145,7 @@ export const crmProspectService = {
 
   async updateLeadNotes(leadId: string, notes: string): Promise<void> {
     const currentLeads = await this.getLeads();
-    const updated = currentLeads.map(l => 
+    const updated = currentLeads.map(l =>
       l.id === leadId ? { ...l, notes, updatedAt: new Date().toISOString() } : l
     );
     this.saveLocal(updated);
@@ -137,7 +162,8 @@ export const crmProspectService = {
   },
 
   async resetToInitial(): Promise<ProspectLead[]> {
-    this.saveLocal(INITIAL_PROSPECTS);
-    return INITIAL_PROSPECTS;
+    const hydratedInitial = INITIAL_PROSPECTS.map(hydrateDeterministicFields);
+    this.saveLocal(hydratedInitial);
+    return hydratedInitial;
   }
 };

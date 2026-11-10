@@ -15,6 +15,7 @@ import {
   RotateCcw
 } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { resolveLeadScore } from "../utils/deterministicScoring";
 import type { ProspectLead, PipelineStageId } from "../types";
 
 interface MessageBlocksDrawerProps {
@@ -61,6 +62,8 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
   }, [defaultBlockText, activeTab, bloco1Mode]);
 
   if (!lead) return null;
+
+  const scoreResult = resolveLeadScore(lead);
 
   const blocks = [
     {
@@ -128,9 +131,27 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
               <span className="font-mono text-xs px-2.5 py-0.5 rounded-md bg-[#080b12] text-[#94a3b8] border border-[#1a2030] font-bold">
                 {lead.sampleId}
               </span>
-              <span className="text-xs px-2.5 py-0.5 rounded-full border border-amber-500/35 bg-amber-500/15 text-amber-300 font-bold">
-                {lead.opportunityClass}
+              <span
+                className={`text-xs px-2.5 py-0.5 rounded-full border font-bold ${
+                  scoreResult.tier === "A"
+                    ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-300"
+                    : scoreResult.tier === "B"
+                    ? "border-amber-500/35 bg-amber-500/15 text-amber-300"
+                    : "border-blue-500/35 bg-blue-500/15 text-blue-300"
+                }`}
+              >
+                {scoreResult.classLabel}
               </span>
+              {lead.ratingText && (
+                <span className="text-xs px-2 py-0.5 rounded-full border border-slate-700 bg-slate-800/80 text-amber-300 font-semibold">
+                  {lead.ratingText}
+                </span>
+              )}
+              {lead.claimStatus === "nao_reivindicado" && (
+                <span className="text-xs px-2 py-0.5 rounded-full border border-rose-500/40 bg-rose-500/15 text-rose-300 font-bold">
+                  Perfil Não Reivindicado
+                </span>
+              )}
               {lead.observedPosition && (
                 <span className="text-xs px-2.5 py-0.5 rounded-full border border-amber-500/40 bg-amber-500/20 text-amber-300 font-bold inline-flex items-center gap-1">
                   📍 {lead.observedPosition}º lugar no Maps (Fora do Top 3)
@@ -219,13 +240,30 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
           </div>
         </div>
 
-        {/* Alerta de Diagnóstico Observado */}
-        <div className="px-5 py-3 bg-amber-500/10 border-b border-amber-500/25 flex items-start gap-2.5 text-xs text-amber-200">
-          <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-          <div>
-            <strong className="text-amber-300 font-bold">Evidência Auditada: </strong>
-            {lead.opportunityIssue}
+        {/* Alerta de Diagnóstico Observado + Pontuação Determinística */}
+        <div className="px-5 py-3 bg-amber-500/10 border-b border-amber-500/25 space-y-2 text-xs text-amber-200">
+          <div className="flex items-start gap-2.5">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div>
+              <strong className="text-amber-300 font-bold">Evidência Auditada: </strong>
+              {lead.opportunityIssue}
+            </div>
           </div>
+          {scoreResult.breakdown.signalsTriggered.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-300 mr-1">
+                Critérios ({scoreResult.score}/100):
+              </span>
+              {scoreResult.breakdown.signalsTriggered.map((sig, idx) => (
+                <span
+                  key={idx}
+                  className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-md bg-[#0a0d14]/80 text-emerald-300 border border-emerald-500/25"
+                >
+                  {sig}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Abas dos 4 Blocos */}

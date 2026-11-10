@@ -13,6 +13,7 @@ import { CrmHeader } from "./components/CrmHeader";
 import { KanbanColumn } from "./components/KanbanColumn";
 import { MessageBlocksDrawer } from "./components/MessageBlocksDrawer";
 import { crmProspectService } from "./services/crmProspectService";
+import { resolveLeadScore, parseMonthlySearchVolume } from "./utils/deterministicScoring";
 import type { ProspectLead, PipelineStage, PipelineStageId } from "./types";
 
 const PIPELINE_STAGES: PipelineStage[] = [
@@ -63,6 +64,7 @@ export default function CrmDashboard() {
   const [selectedSegment, setSelectedSegment] = useState("todos");
   const [selectedNeighborhood, setSelectedNeighborhood] = useState("todos");
   const [whatsappOnly, setWhatsappOnly] = useState(true);
+  const [scoreTierFilter, setScoreTierFilter] = useState<"todos" | "A" | "AB">("todos");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Foco de Etapa (Mobile & Desktop): "todas" para panorâmico ou id da etapa para coluna única
@@ -100,12 +102,37 @@ export default function CrmDashboard() {
     return () => { isMounted = false; };
   }, []);
 
-  // Filtragem dos cards
+  // Filtragem e ordenação 100% determinística (Maior Pontuação -> Melhor Posição -> Maior Demanda)
   const filteredLeads = useMemo(() => {
-    return leads.filter((lead) => {
+    const filtered = leads.filter((lead) => {
       const matchWhatsapp = !whatsappOnly || lead.whatsappConfirmed;
-      const matchSegment = selectedSegment === "todos" || lead.segment === selectedSegment;
-      const matchNeighborhood = selectedNeighborhood === "todos" || lead.neighborhood === selectedNeighborhood;
+      const segLow = lead.segment.toLowerCase();
+      const matchSegment =
+        selectedSegment === "todos" ||
+        (selectedSegment === "URGENCIA_24H"
+          ? segLow.includes("chaveiro") ||
+            segLow.includes("desentupidora") ||
+            segLow.includes("elétrica") ||
+            segLow.includes("eletrica") ||
+            segLow.includes("bateria") ||
+            segLow.includes("guincho") ||
+            (segLow.includes("veterin") &&
+              (lead.name.toLowerCase().includes("24") ||
+                (lead.canalStatus || "").toLowerCase().includes("24h") ||
+                (lead.opportunityIssue || "").toLowerCase().includes("24h")))
+          : selectedSegment === "Oficina Mecânica"
+            ? lead.segment === "Oficina Mecânica" ||
+              segLow.includes("elétrica") ||
+              segLow.includes("eletrica") ||
+              segLow.includes("bateria") ||
+              segLow.includes("automot")
+            : lead.segment === selectedSegment);
+      const matchNeighborhood =
+        selectedNeighborhood === "todos" || lead.neighborhood === selectedNeighborhood;
+      const scoreObj = resolveLeadScore(lead);
+      const matchScoreTier =
+        scoreTierFilter === "todos" ||
+        (scoreTierFilter === "A" ? scoreObj.tier === "A" : scoreObj.tier === "A" || scoreObj.tier === "B");
       const matchQuery =
         !searchQuery ||
         lead.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -113,9 +140,25 @@ export default function CrmDashboard() {
         lead.sampleId.toLowerCase().includes(searchQuery.toLowerCase()) ||
         lead.neighborhood.toLowerCase().includes(searchQuery.toLowerCase());
 
-      return matchWhatsapp && matchSegment && matchNeighborhood && matchQuery;
+      return matchWhatsapp && matchSegment && matchNeighborhood && matchScoreTier && matchQuery;
     });
-  }, [leads, whatsappOnly, selectedSegment, selectedNeighborhood, searchQuery]);
+
+    return filtered.sort((a, b) => {
+      const scoreA = resolveLeadScore(a).score;
+      const scoreB = resolveLeadScore(b).score;
+      if (scoreB !== scoreA) return scoreB - scoreA;
+
+      const posA = a.observedPosition ?? 99;
+      const posB = b.observedPosition ?? 99;
+      if (posA !== posB) return posA - posB;
+
+      const volA = parseMonthlySearchVolume(a.monthlySearches);
+      const volB = parseMonthlySearchVolume(b.monthlySearches);
+      if (volB !== volA) return volB - volA;
+
+      return a.id.localeCompare(b.id);
+    });
+  }, [leads, whatsappOnly, selectedSegment, selectedNeighborhood, scoreTierFilter, searchQuery]);
 
   // Ação de arrastar e soltar
   const handleDragEnd = async (event: DragEndEvent) => {
@@ -204,6 +247,8 @@ export default function CrmDashboard() {
         setSelectedNeighborhood={setSelectedNeighborhood}
         whatsappOnly={whatsappOnly}
         setWhatsappOnly={setWhatsappOnly}
+        scoreTierFilter={scoreTierFilter}
+        setScoreTierFilter={setScoreTierFilter}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />

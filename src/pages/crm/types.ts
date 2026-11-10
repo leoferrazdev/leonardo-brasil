@@ -13,9 +13,37 @@ export interface PipelineStage {
   description: string;
 }
 
+export interface DeterministicAuditSignals {
+  observedPosition: number;
+  archetypeTier: 1 | 2 | 3 | 4;
+  divergenciaD: boolean;
+  falhaCanalWhatsApp: boolean;
+  semCatalogoOuNaoReivindicado: boolean;
+  horarioOuReviewsSemResposta: boolean;
+  linkQuebradoL: boolean;
+  whatsappConfirmed: boolean;
+  monthlySearchVolume: number;
+}
+
+export interface DeterministicScoreResult {
+  score: number;
+  tier: "A" | "B" | "C" | "D";
+  classLabel: string;
+  priorityTag: string;
+  eligible: boolean;
+  breakdown: {
+    positionPts: number;
+    archetypePts: number;
+    technicalPts: number;
+    channelDemandPts: number;
+    signalsTriggered: string[];
+  };
+}
+
 export interface ProspectLead {
   id: string;
   sampleId: string;
+  round?: string; // Ex: "Rodada 02", "Rodada 03", "Rodada 04"
   name: string;
   segment: string;
   neighborhood: string;
@@ -27,13 +55,19 @@ export interface ProspectLead {
   canalStatus?: string;
   mapsUrl: string;
   siteUrl?: string;
-  opportunityClass: "Classe B (20 pts)" | "Classe C (15 pts)" | "Classe C (5 pts)" | "Classe D (0 pts)" | string;
+  ratingText?: string; // Ex: "4.6 ★ (142)"
+  claimStatus?: "reivindicado" | "nao_reivindicado" | "desconhecido";
+  opportunityClass: string;
   opportunityIssue: string;
   searchKeyword: string;
   monthlySearches: string;
   observedPosition?: number; // Posição real no Google Maps (ex: 4, 5, 6...)
   rankingContext?: string; // Contexto visual (ex: "4º no Maps (Fora do Top 3)")
   competitorsObserved?: string;
+  deterministicSignals?: DeterministicAuditSignals;
+  deterministicScore?: number; // Score puro 0-100
+  deterministicBreakdown?: string[]; // Ex: ["P4 (+20)", "Arq1 (+20)", "WA (+15)", "U/C (+10)"]
+  auditTimestamp?: string;
   stage: PipelineStageId;
   bloco1: string; // Mensagem ativa (padrão)
   bloco1Volume: string; // Variação 1: Modelo de Volume de Buscas & Top 3

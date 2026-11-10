@@ -17,6 +17,7 @@ import {
   Filter
 } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { resolveLeadScore } from "../utils/deterministicScoring";
 import type { ProspectLead, PipelineStageId } from "../types";
 
 interface CrmHeaderProps {
@@ -28,6 +29,8 @@ interface CrmHeaderProps {
   setSelectedNeighborhood: (n: string) => void;
   whatsappOnly: boolean;
   setWhatsappOnly: (val: boolean) => void;
+  scoreTierFilter: "todos" | "A" | "AB";
+  setScoreTierFilter: (tier: "todos" | "A" | "AB") => void;
   searchQuery: string;
   setSearchQuery: (q: string) => void;
 }
@@ -41,6 +44,8 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   setSelectedNeighborhood,
   whatsappOnly,
   setWhatsappOnly,
+  scoreTierFilter,
+  setScoreTierFilter,
   searchQuery,
   setSearchQuery,
 }) => {
@@ -70,6 +75,9 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   // Apenas leads válidos e não descartados compõem a base ativa de prospecção
   const activeWhatsappLeads = leads.filter(l => l.whatsappConfirmed && l.stage !== "perdido_invalido");
   const whatsappLeadsCount = activeWhatsappLeads.length;
+  const tierACount = activeWhatsappLeads.filter(
+    l => l.stage === "a_abordar" && resolveLeadScore(l).tier === "A"
+  ).length;
 
   const actionedCount = 
     countByStage("contatado") + 
@@ -92,19 +100,23 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   const segments = [
     { label: "Todos", val: "todos" },
     { label: "Veterinárias", val: "Clínica Veterinária" },
-    { label: "Odontologia", val: "Clínica Odontológica" },
     { label: "Oficinas Mecânicas", val: "Oficina Mecânica" },
+    { label: "Urgência 24h", val: "URGENCIA_24H" },
+    { label: "Odontologia", val: "Clínica Odontológica" },
+    { label: "Climatização", val: "Climatização / Ar-Condicionado" },
     { label: "Restaurantes", val: "Restaurante" },
   ];
 
+  const neighborhoodCounts = leads.reduce<Record<string, number>>((acc, l) => {
+    if (l.neighborhood) acc[l.neighborhood] = (acc[l.neighborhood] || 0) + 1;
+    return acc;
+  }, {});
+  const dynamicNeighborhoods = Object.keys(neighborhoodCounts).sort(
+    (a, b) => neighborhoodCounts[b] - neighborhoodCounts[a] || a.localeCompare(b)
+  );
   const neighborhoods = [
     { label: "Todos", val: "todos" },
-    { label: "Tristeza", val: "Tristeza" },
-    { label: "Ipanema", val: "Ipanema" },
-    { label: "Cavalhada", val: "Cavalhada" },
-    { label: "Menino Deus", val: "Menino Deus" },
-    { label: "Cristal", val: "Cristal" },
-    { label: "Vila Assunção", val: "Vila Assunção" },
+    ...dynamicNeighborhoods.map((n) => ({ label: n, val: n })),
   ];
 
   return (
@@ -334,6 +346,37 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
               )}
             </span>
           </div>
+        </div>
+
+        {/* Linha 4: Filtro Determinístico de Prioridade de Ataque */}
+        <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-[#1a2030]/70">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-xs font-semibold text-[#94a3b8] flex items-center gap-1 mr-1.5">
+              <Target className="w-3.5 h-3.5 text-emerald-400" />
+              Score Determinístico:
+            </span>
+            {[
+              { label: "Todas Classes (Ordenado ↓)", val: "todos" as const },
+              { label: `Só Classe A ≥75 (${tierACount} na fila)`, val: "A" as const },
+              { label: "Classe A + B (≥60)", val: "AB" as const },
+            ].map((tierOpt) => (
+              <button
+                key={tierOpt.val}
+                type="button"
+                onClick={() => setScoreTierFilter(tierOpt.val)}
+                className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+                  scoreTierFilter === tierOpt.val
+                    ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/45 shadow-sm"
+                    : "bg-[#0f1420] text-[#94a3b8] hover:bg-[#161d2e] hover:text-white border border-[#1a2030]"
+                }`}
+              >
+                {tierOpt.label}
+              </button>
+            ))}
+          </div>
+          <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
+            Ordenação automática por Score (0–100 pts) • Posição ≥ 4º Maps
+          </span>
         </div>
       </div>
     </header>
