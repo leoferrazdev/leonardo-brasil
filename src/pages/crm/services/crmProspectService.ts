@@ -49,7 +49,7 @@ export const crmProspectService = {
               bloco1: `Olá! Tudo bem? Falo com a equipe da *${d.nome}*?`,
               bloco2: `Gostaria de apresentar oportunidades observadas no perfil do Google.`,
               bloco3: `O meu trabalho de Otimização e Implantação do Perfil da Empresa no Google.`,
-              bloco4: `Investimento único R$ 497 (ou 2x de R$ 250) ou gestão mensal R$ 380.`,
+              bloco4: `O meu formato de trabalho é 100% pontual, sem mensalidade nem fidelidade:\n\n📌 *Implantação e Otimização Total (Pontual):*\nDiagnóstico completo, alinhamento cadastral com WhatsApp de 1 toque, blindagem contra edições, catálogo de serviços e link oficial de avaliações 5 estrelas — tudo entregue em *3 a 5 dias úteis* sem você precisar parar a operação.\n💰 Investimento único: *R$ 497,00* à vista no Pix (ou em *2x de R$ 250,00*).\n\nSe fizer sentido para você, eu já libero o início esta semana pelo WhatsApp mesmo, sem reunião nem burocracia. Prefere no Pix à vista ou em 2x de R$ 250?`,
               notes: "",
               updatedAt: d.created_at || new Date().toISOString()
             }));
@@ -110,7 +110,22 @@ export const crmProspectService = {
   mergeWithInitial(remoteLeads: ProspectLead[]): ProspectLead[] {
     const map = new Map<string, ProspectLead>();
     INITIAL_PROSPECTS.forEach(p => map.set(p.id, hydrateDeterministicFields(p)));
-    remoteLeads.forEach(r => map.set(r.id, hydrateDeterministicFields({ ...(map.get(r.id) || r), ...r })));
+    remoteLeads.forEach(r => {
+      const existing = map.get(r.id);
+      if (existing) {
+        map.set(
+          r.id,
+          hydrateDeterministicFields({
+            ...existing,
+            stage: r.stage || existing.stage,
+            notes: r.notes !== undefined && r.notes !== "" ? r.notes : existing.notes,
+            updatedAt: r.updatedAt || existing.updatedAt,
+          })
+        );
+      } else {
+        map.set(r.id, hydrateDeterministicFields(r));
+      }
+    });
     const merged = Array.from(map.values());
     this.saveLocal(merged);
     return merged;

@@ -16,7 +16,7 @@ aliases:
 - Critério P Fora do Top 3
 tipo: referencia
 area: Comercial e CRM
-revisao_estrutura: 2026-11-09
+revisao_estrutura: 2026-11-10
 ---
 
 > [[Início|Painel]] › [[Mapa Comercial e CRM|Comercial e CRM]]
@@ -48,7 +48,7 @@ flowchart TD
         C2 --> D1["Bloco 1: Gancho com Posição Real e Falha"]
         D1 --> D2["Bloco 2: Diagnóstico & Impacto"]
         D2 --> D3["Bloco 3: Escopo do Serviço"]
-        D3 --> D4["Bloco 4: Proposta (R$ 497 / R$ 380)"]
+        D3 --> D4["Bloco 4: Proposta Pontual (R$ 497 ou 2x de R$ 250)"]
     end
 ```
 

@@ -98,7 +98,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     {
       num: 4 as const,
       name: "Bloco 4: Proposta e Valores",
-      subtitle: "Condições comerciais: R$ 497 à vista (ou 2x R$ 250) / R$ 380 mensal",
+      subtitle: "Implantação pontual única: R$ 497,00 à vista no Pix (ou 2x de R$ 250,00) — sem mensalidade",
       targetStage: "proposta_enviada" as PipelineStageId,
       advanceLabel: "Confirmar Proposta Enviada",
     },

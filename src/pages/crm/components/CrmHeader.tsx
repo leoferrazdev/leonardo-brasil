@@ -68,9 +68,8 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
 
   const countByStage = (stage: PipelineStageId) => leads.filter(l => l.stage === stage).length;
 
-  // Cálculos de KPIs e Metas Financeiras (Ticket R$ 497 pontual ou 2x de R$ 250 / R$ 380 recorrente)
+  // Cálculos de KPIs e Metas Financeiras (Prospecção inicial focada em implantação pontual R$ 497 ou 2x de R$ 250)
   const TICKET_PONTUAL = 497;
-  const TICKET_RECORRENTE = 380;
   const META_DIARIA_CONTATOS = 5;
 
   // Apenas leads válidos e não descartados compõem a base ativa de prospecção
@@ -286,7 +285,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
               <p className="text-[11px] font-semibold text-emerald-300">Receita Fechada</p>
               <p className="text-lg font-black text-emerald-400 mt-0.5">{formatBRL(closedRevenue)}</p>
               <p className="text-[10px] text-emerald-400/80 mt-0.5">
-                {closedCount} contrato(s) (+R$ {TICKET_RECORRENTE}/mês)
+                {closedCount} implantação(ões) pontual(is) × R$ {TICKET_PONTUAL}
               </p>
             </div>
             <div className="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">

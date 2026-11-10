@@ -13,7 +13,7 @@ aliases:
 - Roteiro Modular WhatsApp
 tipo: referencia
 area: Comercial e CRM
-revisao_estrutura: 2026-11-08
+revisao_estrutura: 2026-11-10
 ---
 
 > [[Início|Painel]] › [[Mapa Comercial e CRM|Comercial e CRM]]
@@ -43,7 +43,7 @@ sequenceDiagram
     Lead-->>Leonardo: "Interessante! Quanto custa um trabalho desses?"
     
     Note over Leonardo,Lead: Etapa 4: Fechamento (Bloco 4)
-    Leonardo->>Lead: Bloco 4 (Opção Pontual R$ 497 vs Recorrente R$ 380 + CTA de 10 min)
+    Leonardo->>Lead: Bloco 4 (Oferta Pontual Única R$ 497 ou 2x de R$ 250 + Fechamento direto no WhatsApp)
 ```
 
 ---
@@ -103,23 +103,27 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 
 ---
 
-### 🟣 Bloco 4: A Proposta Comercial & Fechamento
+### 🟣 Bloco 4: A Proposta Comercial & Fechamento (100% Pontual)
 * **Quando enviar:** Logo após o Bloco 3 ou quando o lead perguntar valores.
-* **Objetivo:** Apresentar a ancoragem dupla (Pontual vs. Recorrente) e fechar com uma chamada para ação leve e de baixo atrito.
+* **Objetivo:** Apresentar exclusivamente a **Implantação e Otimização Total (Pontual)** em 1ª pessoa do singular (`"Eu"`), sem mensalidade nem fidelidade, com prazo fechado (`3 a 5 dias úteis`) e CTA direto pelo WhatsApp (sem fricção de agendar reunião).
 * **Template Mestre:**
-> *"Os benefícios diretos são o fim de clientes perdidos por dados desencontrados e mais mensagens no seu WhatsApp de pessoas da Zona Sul prontas para contratar.*  
+> *"Com isso ajustado, você para de perder buscas locais para os concorrentes de cima e transforma o perfil da *{{Nome da Empresa}}* em um canal direto de mensagens no WhatsApp de quem procura por *{{Palavra-Chave / Segmento}}* em {{Bairro}}.*  
 >  
-> *Eu trabalho com dois formatos práticos:*  
+> *O meu formato de trabalho é 100% pontual, sem mensalidade nem fidelidade:*  
 >  
-> *📌 **1. Implantação e Otimização Total (Pontual):***  
-> *Diagnóstico completo, correção de todas as falhas, reestruturação e blindagem do perfil.*  
-> *💰 Investimento único: *R$ 497,00* (ou 2x de R$ 250,00).*  
+> *📌 **Implantação e Otimização Total (Pontual):***  
+> *- Alinhamento completo dos dados, horários e link direto do WhatsApp no Maps*  
+> *- Reivindicação oficial e blindagem contra edições de terceiros*  
+> *- Catálogo de especialidades/serviços com foco em buscas locais*  
+> *- Link oficial de 1 toque do Google para acelerar avaliações 5 estrelas*  
 >  
-> *📌 **2. Gestão Mensal Recorrente (Opcional):***  
-> *Acompanhamento contínuo, publicação mensal de fotos/atualizações com geotag, monitoramento de avaliações e relatórios mensais.*  
-> *💰 Mensalidade: *R$ 380,00/mês* (sem qualquer fidelidade contratual).*  
+> *⏱️ **Prazo de entrega:** *3 a 5 dias úteis* sem você precisar parar a operação.*  
+> *💰 **Investimento único:** *R$ 497,00* à vista no Pix (ou em *2x de R$ 250,00*).*  
 >  
-> *Podemos agendar uma conversa rápida de 10 minutos amanhã às 14h ou 16h para eu mostrar os pontos exatos na tela?"*
+> *Se quiser aproveitar esse fluxo de buscas em {{Bairro}} já nesta semana, eu já libero a análise completa da ficha e dou início às correções por aqui mesmo. Prefere no Pix à vista ou em 2x de R$ 250?"*
+
+> [!note] Regra Comercial de Recorrência
+> Na **primeira prospecção**, o **Bloco 4** nunca apresenta *"dois formatos"* nem mensalidade recorrente. Eventual continuidade/manutenção só é apresentada após a entrega e comprovação dos primeiros resultados em `/crm/clientes`.
 
 ---
 

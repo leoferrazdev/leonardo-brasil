@@ -35,7 +35,7 @@ flowchart LR
         C1["1. A Abordar<br>(Ordenado por Score ↓)"]
         C2["2. Contatado<br>(Bloco 1 Disparado)"]
         C3["3. Em Conversa<br>(Bloco 2 / Diagnóstico)"]
-        C4["4. Proposta Enviada<br>(R$ 497 ou 2x R$ 250 / R$ 380)"]
+        C4["4. Proposta Enviada<br>(Bloco 4: Pontual R$ 497 ou 2x R$ 250)"]
         C5["5. Fechado / Ganho<br>(Venda Confirmada)"]
         C6["6. Perdido / Inválido<br>(Contato Inexistente / Sem Fit)"]
     end
@@ -80,7 +80,7 @@ flowchart TD
         K3["2. Contatados: Bloco 1 enviado"]
         K4["3. Em Conversa: Diagnóstico ativo"]
         K5["4. Em Proposta (R$): Pipeline de propostas enviadas"]
-        K6["Receita Fechada: Faturamento acumulado (+R$ 380/mês opcional)"]
+        K6["Receita Fechada: Faturamento acumulado (implantações pontuais × R$ 497)"]
     end
 
     Header Cockpit --> 6 KPIs Financeiros
@@ -115,7 +115,7 @@ Ao tocar no botão *"Ver Roteiro"* de qualquer card, a gaveta lateral (`MessageB
   > *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google. Estava analisando o segmento na região de [bairro] pelo Google Maps e notei um ponto técnico claro no perfil da [empresa]: [falha específica auditada]. Posso te mandar uma análise rápida e gratuita mostrando o que dá para ajustar para vocês subirem para o Top 3?"*
 
 ### 4.2. Edição ao Vivo nos Blocos 1 a 4 (1ª Pessoa & 100% Nativos Google)
-Todos os 4 blocos são exibidos em campos de texto (`<textarea>`) editáveis ao vivo em **1ª pessoa do singular**, com entregáveis **100% nativos do Perfil da Empresa no Google** e proposta comercial unificada (**R$ 497,00 à vista no Pix ou em 2x de R$ 250,00** + **R$ 380,00/mês opcional**).
+Todos os 4 blocos são exibidos em campos de texto (`<textarea>`) editáveis ao vivo em **1ª pessoa do singular**, com entregáveis **100% nativos do Perfil da Empresa no Google** e proposta comercial pontual exclusiva na primeira abordagem (**R$ 497,00 à vista no Pix ou em 2x de R$ 250,00** — *sem mensalidade nem fidelidade*, com fechamento direto pelo WhatsApp sem agendar reunião). A gestão contínua pós-entrega é controlada separadamente no painel `/crm/clientes`.
 
 ---
 

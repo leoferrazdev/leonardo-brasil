@@ -13,7 +13,7 @@ aliases:
 - Como Vender por R$ 497
 tipo: referencia
 area: Comercial e CRM
-revisao_estrutura: 2026-11-08
+revisao_estrutura: 2026-11-10
 ---
 
 > [[Início|Painel]] › [[Mapa Comercial e CRM|Comercial e CRM]]
@@ -21,7 +21,7 @@ revisao_estrutura: 2026-11-08
 # 💎 O Framework dos 3 Pilares da Oferta
 
 > [!question] O Dilema Central da Precificação
-> *"Se o gancho inicial for uma falha simples (como alterar um horário de sábado ou cadastrar o WhatsApp no perfil), como cobrar R$ 497,00 pontual ou R$ 380,00/mês sem que o cliente ache caro ou tente fazer sozinho?"*
+> *"Se o gancho inicial for uma falha simples (como alterar um horário de sábado ou cadastrar o WhatsApp no perfil), como cobrar R$ 497,00 pontual sem que o cliente ache caro ou tente fazer sozinho?"*
 
 A resposta reside no **Framework dos 3 Pilares**: o cliente nunca compra a alteração do botão; ele compra a **proteção patrimonial do negócio e a esteira de novos clientes**.
 
@@ -73,27 +73,30 @@ Aqui você apresenta o verdadeiro produto. O escopo abrange a reestruturação c
 
 ```mermaid
 classDiagram
-    class OfertaPontual {
+    class OfertaProspeccaoPontual {
         +Nome: Implantação e Otimização Total
-        +Prazo: 48 horas a 5 dias úteis
-        +Investimento: R$ 497,00 (ou 2x R$ 350,00)
-        +Auditoria completa de conformidade
-        +Correção de todas as divergências
-        +Blindagem e reivindicação
-        +Catálogo de até 20 especialidades
-        +Roteiro de captação de reviews
+        +Etapa: Primeira Prospecção (Bloco 4)
+        +Prazo: 3 a 5 dias úteis
+        +Investimento: R$ 497,00 à vista no Pix (ou 2x de R$ 250,00)
+        +Regra: 100% pontual, sem mensalidade nem fidelidade
+        +Alinhamento completo de dados, horários e WhatsApp direto
+        +Blindagem e reivindicação oficial da ficha
+        +Catálogo de serviços focado em buscas locais
+        +Link oficial Google de 1 toque para reviews 5 estrelas
     }
-    class OfertaRecorrente {
-        +Nome: Gestão Mensal Recorrente
-        +Fidelidade: Nenhuma (cancela quando quiser)
-        +Investimento: R$ 380,00 / mês
-        +Acompanhamento contínuo de métricas
-        +Publicações semanais com geotag
-        +Monitoramento e resposta a avaliações
-        +Proteção ativa contra alterações indevidas
-        +Relatório mensal de chamadas e rotas
+    class ContinuidadePosEntrega {
+        +Nome: Gestão Contínua (Opcional)
+        +Etapa: Apenas Pós-Entrega em /crm/clientes (30+ dias)
+        +Fidelidade: Nenhuma (proibido ofertar no Bloco 4)
+        +Acompanhamento de métricas e buscas
+        +Atualizações locais e manutenção cadastral
+        +Monitoramento e proteção contínua contra edições indevidas
+        +Relatório Antes vs Depois no fechamento do ciclo
     }
 ```
+
+> [!important] Regra de Separação de Etapas
+> No **Bloco 4 de prospecção ativa**, apresenta-se **exclusivamente** a **Implantação e Otimização Total (Pontual)** (`R$ 497,00` ou `2x de R$ 250,00`), sem citar mensalidade para não gerar paralisia de decisão. Eventual continuidade recorrente só existe como upsell opcional em `/crm/clientes` após a entrega e comprovação de resultado.
 
 ### A Ancoragem de Valor Insuperável
 * Para uma **Clínica Veterinária:** Uma única internação ou cirurgia de urgência evitada/salva rende de **R$ 1.500 a R$ 5.000**.
