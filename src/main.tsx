@@ -44,6 +44,8 @@ const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ 
 const CrmLogin = lazy(() => import("./pages/crm/Login"));
 const CrmDashboard = lazy(() => import("./pages/crm/Dashboard"));
 const CrmKeywordPlanner = lazy(() => import("./pages/crm/KeywordPlanner"));
+const CrmClientPortfolio = lazy(() => import("./pages/crm/ClientPortfolio"));
+const CrmClientDetail = lazy(() => import("./pages/crm/ClientDetail"));
 const CrmProtectedRoute = lazy(() =>
   import("./pages/crm/components/CrmProtectedRoute").then((m) => ({
     default: m.CrmProtectedRoute,
@@ -147,6 +149,22 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               }
             />
             <Route path="/crm/keywords" element={<Navigate to="/crm/planejador" replace />} />
+            <Route
+              path="/crm/clientes"
+              element={
+                <CrmProtectedRoute>
+                  <CrmClientPortfolio />
+                </CrmProtectedRoute>
+              }
+            />
+            <Route
+              path="/crm/clientes/:slug"
+              element={
+                <CrmProtectedRoute>
+                  <CrmClientDetail />
+                </CrmProtectedRoute>
+              }
+            />
 
             <Route path="*" element={<RouteFallback />} />
           </Routes>
