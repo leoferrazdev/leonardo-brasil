@@ -1,5 +1,7 @@
 import { getAdsIntegrationStatus, sanitizeCustomerId } from '../../server/google-ads-keywords.mjs';
 
+const DEFAULT_TIMEOUT_MS = 12000;
+
 function buildMonthDateRange(periodKey) {
   const match = /^(\d{4})-(\d{2})$/.exec(String(periodKey || '').trim());
   if (!match) {
@@ -13,17 +15,34 @@ function buildMonthDateRange(periodKey) {
   return { startDate, endDate };
 }
 
+async function fetchWithTimeout(fetchImpl, url, init = {}, timeoutMs = DEFAULT_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchImpl(url, {
+      ...init,
+      signal: controller.signal
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function fetchAdsAccessToken({ env, fetchImpl }) {
-  const response = await fetchImpl('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      client_id: env.GOOGLE_ADS_CLIENT_ID?.trim() || '',
-      client_secret: env.GOOGLE_ADS_CLIENT_SECRET?.trim() || '',
-      refresh_token: env.GOOGLE_ADS_REFRESH_TOKEN?.trim() || '',
-      grant_type: 'refresh_token'
-    }).toString()
-  });
+  const response = await fetchWithTimeout(
+    fetchImpl,
+    'https://oauth2.googleapis.com/token',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: env.GOOGLE_ADS_CLIENT_ID?.trim() || '',
+        client_secret: env.GOOGLE_ADS_CLIENT_SECRET?.trim() || '',
+        refresh_token: env.GOOGLE_ADS_REFRESH_TOKEN?.trim() || '',
+        grant_type: 'refresh_token'
+      }).toString()
+    }
+  );
   const data = await response.json();
   if (!response.ok || !data.access_token) {
     throw new Error(data.error_description || data.error || 'Falha OAuth2 Google Ads.');
@@ -75,7 +94,8 @@ export async function collectMonthlyAdsMetrics({
     };
     if (loginCustomerId) headers['login-customer-id'] = loginCustomerId;
 
-    const res = await fetchImpl(
+    const res = await fetchWithTimeout(
+      fetchImpl,
       `https://googleads.googleapis.com/v18/customers/${cleanId}/googleAds:search`,
       {
         method: 'POST',

@@ -33,6 +33,7 @@ async function fetchPageSpeedScore({ fetchImpl, targetUrl, strategy, apiKey }) {
     15000
   );
   if (!response.ok) {
+    try { await response.body?.cancel?.(); } catch {}
     throw new Error(`HTTP ${response.status}`);
   }
   const data = await response.json();
@@ -90,8 +91,11 @@ export async function auditClientWebsite({
           const html = await res.text();
           homeTitleFound = /<title>[^<]+<\/title>/i.test(html);
           hasWhatsappCta = /(wa\.me\/|api\.whatsapp\.com|whatsapp)/i.test(html);
+        } else {
+          try { await res.body?.cancel?.(); } catch {}
         }
       } else {
+        try { await res.body?.cancel?.(); } catch {}
         brokenPaths.push(routePath);
       }
     } catch (error) {
