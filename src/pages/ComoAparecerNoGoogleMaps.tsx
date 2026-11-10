@@ -90,12 +90,12 @@ export default function ComoAparecerNoGoogleMaps() {
       {
         "@type": "Article",
         "@id": "https://leonardobrasil.com.br/como-aparecer-no-google-maps#article",
-        headline: "Como Aparecer no Google Maps: Guia Completo para Estar no Top 3",
-        description: "Aprenda como colocar sua empresa no Google Maps gratuitamente e como ranquear entre os primeiros colocados para receber rotas e mensagens no WhatsApp.",
+        headline: "Como Aparecer no Google Maps: Guia Completo de SEO Local e GEO para Estar no Top 3",
+        description: "Aprenda como colocar sua empresa no Google Maps gratuitamente, otimizar sinais de entidade para IAs (GEO) e ranquear no Top 3 para gerar ligações e WhatsApp.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
-          jobTitle: "Especialista em Google Meu Negócio e SEO Local",
+          jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
           url: "https://leonardobrasil.com.br"
         },
         publisher: {
@@ -105,7 +105,7 @@ export default function ComoAparecerNoGoogleMaps() {
         },
         mainEntityOfPage: "https://leonardobrasil.com.br/como-aparecer-no-google-maps",
         datePublished: "2026-02-01T08:00:00-03:00",
-        dateModified: "2026-11-09T09:00:00-03:00"
+        dateModified: "2026-11-10T16:45:00-03:00"
       },
       {
         "@type": "HowTo",
@@ -135,9 +135,10 @@ export default function ComoAparecerNoGoogleMaps() {
   return (
     <div className="min-h-screen bg-ink text-text selection:bg-accent selection:text-white">
       <SeoHead
-        title="Como Aparecer no Google Maps: Guia para Estar no Top 3 | Leonardo Brasil"
-        description="Descubra como colocar sua empresa no Google Maps e como ranquear no topo para atrair rotas, ligações e clientes locais na sua região."
+        title="Como Aparecer no Google Maps: Guia Top 3, SEO Local e IA | Leonardo Brasil"
+        description="Descubra como colocar sua empresa no Google Maps gratuitamente, otimizar sinais de entidade para Google AI Overviews (GEO) e ranquear no Top 3 da sua região."
         canonicalUrl="https://leonardobrasil.com.br/como-aparecer-no-google-maps"
+        ogType="article"
         schema={schema}
       />
 
@@ -149,7 +150,7 @@ export default function ComoAparecerNoGoogleMaps() {
               Leonardo Brasil
             </span>
             <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium">
-              Google Maps SEO
+              Google Maps SEO & GEO
             </span>
           </Link>
           <a
@@ -170,19 +171,25 @@ export default function ComoAparecerNoGoogleMaps() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
             <span>Geolocalização & Tráfego Local</span>
             <span className="text-white/40">•</span>
-            <span>Google Maps Brasil</span>
+            <span>Google Maps & IA (GEO)</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
             Como Aparecer no Google Maps <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-              e Atrair Quem Está Perto de Você
+              e Conquistar o Top 3 da Sua Região
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
-            Mais de 75% dos consumidores pesquisam no Google Maps antes de ir a um consultório, escritório ou loja. Aprenda a colocar seu pino no mapa e subir para o Top 3.
-          </p>
+          {/* BLUF Box para IAs (GEO / AI Overviews) */}
+          <div className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl bg-ink-card/80 border border-accent/25 text-left">
+            <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">
+              Resposta Direta: Como aparecer e subir no Google Maps
+            </div>
+            <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+              Para <strong className="text-white">aparecer no Google Maps</strong>, cadastre e verifique gratuitamente sua empresa no <strong className="text-white">Google Perfil de Empresa</strong>. Para subir ao <strong className="text-white">Top 3 (Local Pack)</strong> e ser recomendado nos resumos de IA do Google, otimize os 3 pilares do algoritmo: categoria primária exata (Relevância), raio geográfico real (Distância) e avaliações frequentes + consistência cadastral NAP (Proeminência).
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -261,6 +268,28 @@ export default function ComoAparecerNoGoogleMaps() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 p-6 rounded-2xl bg-ink-card border border-accent/25">
+            <div className="text-xs font-bold uppercase tracking-wider text-accent mb-2">
+              Entity Anchoring & Sinais de IA (GEO no Google Maps)
+            </div>
+            <p className="text-xs sm:text-sm text-text-muted leading-relaxed mb-4">
+              Nos novos resultados com Inteligência Artificial (Google AI Overviews e Gemini), o buscador cruza os dados do seu pino no Maps com o conteúdo do seu site oficial e menções externas. Empresas com horários sempre corretos, respostas em Perguntas e Respostas, aba de serviços preenchida e site bem estruturado são recomendadas diretamente aos usuários da sua cidade.
+            </p>
+            <div className="flex flex-wrap gap-3 text-xs font-semibold">
+              <Link to="/segmentos-locais-google-maps" className="text-accent hover:underline">
+                Ver os 6 segmentos que mais faturam no Maps →
+              </Link>
+              <span className="text-white/20">•</span>
+              <Link to="/como-colocar-minha-empresa-no-google" className="text-accent hover:underline">
+                Cadastrar empresa gratuitamente →
+              </Link>
+              <span className="text-white/20">•</span>
+              <Link to="/como-fazer-meu-site-aparecer-no-google-em-primeiro" className="text-accent hover:underline">
+                Alinhar site no 1º lugar orgânico →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

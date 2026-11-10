@@ -5,7 +5,7 @@ area: SEO e Aquisição
 tags:
 - leonardo-brasil
 - cofre/indice
-revisao_estrutura: 2026-11-08
+revisao_estrutura: 2026-11-10
 ---
 
 # SEO e Aquisição
@@ -27,8 +27,8 @@ Conhecimento de descoberta, presença local e aquisição orgânica.
 - [[Clusterização Semântica e GEO para Nichos Essenciais]]
 - [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
 - [[Taxonomia dos 6 Pilares de Negócios Locais e Diretrizes GEO]]
+- [[Cluster de Aquisição Orgânica - Site, Ads e Gratuito]]
 - [[Blog e Estratégia de Topic Clusters]]
-- [[Pesquisa de Palavras-Chave - A Mente do Dono de Negócio Local]]
 - [[Sitemaps XML e Particionamento GSC]]
 - [[DNS-AID e Descoberta de Agentes IA]]
 

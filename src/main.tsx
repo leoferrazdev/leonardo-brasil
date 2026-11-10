@@ -32,6 +32,10 @@ const ComoAparecerNoGoogleMaps = lazy(() => import("./pages/ComoAparecerNoGoogle
 const ComoVenderMaisNoGoogle = lazy(() => import("./pages/ComoVenderMaisNoGoogle"));
 const SegmentosLocaisGoogleMaps = lazy(() => import("./pages/SegmentosLocaisGoogleMaps"));
 const PrimeiroLugarNoGoogle2027 = lazy(() => import("./pages/PrimeiroLugarNoGoogle2027"));
+const ComoAparecerNoGoogleDeGraca = lazy(() => import("./pages/ComoAparecerNoGoogleDeGraca"));
+const AnunciarNoGoogle = lazy(() => import("./pages/AnunciarNoGoogle"));
+const ComoFazerSiteAparecerEmPrimeiro = lazy(() => import("./pages/ComoFazerSiteAparecerEmPrimeiro"));
+const ComoFazerSiteAparecerNoGoogle = lazy(() => import("./pages/ComoFazerSiteAparecerNoGoogle"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
@@ -107,6 +111,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/como-divulgar-minha-empresa-no-google" element={<ComoDivulgarEmpresaNoGoogle />} />
             <Route path="/como-aparecer-no-google-maps" element={<ComoAparecerNoGoogleMaps />} />
             <Route path="/como-vender-mais-no-google" element={<ComoVenderMaisNoGoogle />} />
+            <Route path="/como-aparecer-no-google-de-graca" element={<ComoAparecerNoGoogleDeGraca />} />
+            <Route path="/anunciar-no-google" element={<AnunciarNoGoogle />} />
+            <Route path="/como-fazer-meu-site-aparecer-no-google-em-primeiro" element={<ComoFazerSiteAparecerEmPrimeiro />} />
+            <Route path="/como-fazer-um-site-aparecer-no-google" element={<ComoFazerSiteAparecerNoGoogle />} />
 
             <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
             <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />

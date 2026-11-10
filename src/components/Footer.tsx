@@ -120,6 +120,26 @@ export function Footer() {
                   Como Vender Mais no Google
                 </Link>
               </li>
+              <li>
+                <Link to="/como-aparecer-no-google-de-graca" className="hover:text-accent transition-colors">
+                  Como Aparecer no Google de Graça
+                </Link>
+              </li>
+              <li>
+                <Link to="/anunciar-no-google" className="hover:text-accent transition-colors">
+                  Anunciar no Google (Ads + Maps)
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-fazer-um-site-aparecer-no-google" className="hover:text-accent transition-colors">
+                  Como Fazer um Site Aparecer no Google
+                </Link>
+              </li>
+              <li>
+                <Link to="/como-fazer-meu-site-aparecer-no-google-em-primeiro" className="hover:text-accent transition-colors">
+                  Como Fazer Meu Site Aparecer em Primeiro
+                </Link>
+              </li>
             </ul>
           </div>
 

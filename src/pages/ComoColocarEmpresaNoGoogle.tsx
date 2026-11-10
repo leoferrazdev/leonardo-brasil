@@ -112,12 +112,12 @@ export default function ComoColocarEmpresaNoGoogle() {
       {
         "@type": "Article",
         "@id": "https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google#article",
-        headline: "Como Colocar Minha Empresa no Google: Passo a Passo Definitivo e Gratuito",
-        description: "Aprenda como cadastrar sua empresa no Google e Google Maps gratuitamente em 2026. Guia prático com requisitos, verificação e dicas para atrair clientes locais.",
+        headline: "Como Colocar Minha Empresa no Google Gratuitamente: Passo a Passo Definitivo",
+        description: "Aprenda como colocar sua empresa no Google gratuitamente usando o Perfil da Empresa no Google e Google Maps. Guia prático com verificação, proteção contra golpes e dicas para atrair clientes locais.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
-          jobTitle: "Especialista em Google Meu Negócio e SEO Local",
+          jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
           url: "https://leonardobrasil.com.br"
         },
         publisher: {
@@ -127,7 +127,7 @@ export default function ComoColocarEmpresaNoGoogle() {
         },
         mainEntityOfPage: "https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google",
         datePublished: "2026-01-15T08:00:00-03:00",
-        dateModified: "2026-11-09T09:00:00-03:00"
+        dateModified: "2026-11-10T16:45:00-03:00"
       },
       {
         "@type": "HowTo",
@@ -157,9 +157,10 @@ export default function ComoColocarEmpresaNoGoogle() {
   return (
     <div className="min-h-screen bg-ink text-text selection:bg-accent selection:text-white">
       <SeoHead
-        title="Como Colocar Minha Empresa no Google: Passo a Passo Gratuito | Leonardo Brasil"
-        description="Descubra como colocar sua empresa no Google e no Google Maps gratuitamente. Passo a passo oficial, verificação sem erros e otimização para atrair clientes."
+        title="Como Colocar Minha Empresa no Google Gratuitamente | Leonardo Brasil"
+        description="Descubra como colocar sua empresa no Google gratuitamente usando o Google Perfil de Empresa e Google Maps. Passo a passo oficial, blindagem contra golpes e SEO Local."
         canonicalUrl="https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google"
+        ogType="article"
         schema={schema}
       />
 
@@ -171,7 +172,7 @@ export default function ComoColocarEmpresaNoGoogle() {
               Leonardo Brasil
             </span>
             <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium">
-              Guia Prático
+              Cadastro Gratuito
             </span>
           </Link>
           <a
@@ -190,22 +191,27 @@ export default function ComoColocarEmpresaNoGoogle() {
       <section className="relative pt-16 pb-20 overflow-hidden border-b border-line bg-gradient-to-b from-ink via-ink-card/30 to-ink">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
-            <span>Google Meu Negócio • Perfil da Empresa</span>
+            <span>Google Perfil de Empresa • Cadastro Gratuito</span>
             <span className="text-white/40">•</span>
-            <span>Atualizado 2026</span>
+            <span>SEO Local & GEO</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-            Como Colocar Minha Empresa no Google <br className="hidden sm:inline" />
+            Como Colocar Minha Empresa no Google Gratuitamente <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-              e Atrair Clientes de Graça
+              e Atrair Clientes Todos os Dias
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
-            Aprenda o passo a passo oficial para cadastrar seu negócio no Google e no Google Maps. 
-            Sem custos, sem taxas abusivas e com a estrutura certa para o seu telefone tocar todos os dias.
-          </p>
+          {/* BLUF Box para IAs (GEO / AI Overviews) */}
+          <div className="max-w-3xl mx-auto mb-8 p-5 rounded-2xl bg-ink-card/80 border border-accent/25 text-left">
+            <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">
+              Resposta Direta: Como cadastrar sua empresa no Google sem pagar nada
+            </div>
+            <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+              Para <strong className="text-white">colocar sua empresa no Google gratuitamente</strong>, acesse <code className="text-white">google.com/business</code> com sua conta Google, informe o nome comercial exato do negócio, selecione a categoria principal, cadastre o endereço físico ou área de atendimento e conclua a verificação por vídeo ou telefone. O cadastro e a exibição no Google Maps têm <strong className="text-white">custo zero</strong>.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -318,6 +324,32 @@ export default function ComoColocarEmpresaNoGoogle() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <div>
+              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1.5">
+                <Check className="w-4 h-4" />
+                Alerta Anti-Golpe: O cadastro no Google é 100% gratuito
+              </div>
+              <p className="text-xs sm:text-sm text-text-muted leading-relaxed">
+                O Google nunca liga nem envia boletos cobrando anuidade para manter sua empresa no Maps. Você só paga quando escolhe fazer mídia paga ou contrata uma consultoria estratégica para ranquear no topo.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2.5 flex-shrink-0 text-xs font-semibold">
+              <Link
+                to="/como-aparecer-no-google-de-graca"
+                className="px-3.5 py-2 rounded-xl bg-ink-card border border-line text-white hover:border-accent/40 transition-colors"
+              >
+                Canais Gratuitos →
+              </Link>
+              <Link
+                to="/anunciar-no-google"
+                className="px-3.5 py-2 rounded-xl bg-ink-card border border-line text-accent hover:border-accent/40 transition-colors"
+              >
+                Quando Anunciar →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

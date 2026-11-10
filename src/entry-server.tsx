@@ -15,6 +15,10 @@ import ComoAparecerNoGoogleMaps from "./pages/ComoAparecerNoGoogleMaps";
 import ComoVenderMaisNoGoogle from "./pages/ComoVenderMaisNoGoogle";
 import SegmentosLocaisGoogleMaps from "./pages/SegmentosLocaisGoogleMaps";
 import PrimeiroLugarNoGoogle2027 from "./pages/PrimeiroLugarNoGoogle2027";
+import ComoAparecerNoGoogleDeGraca from "./pages/ComoAparecerNoGoogleDeGraca";
+import AnunciarNoGoogle from "./pages/AnunciarNoGoogle";
+import ComoFazerSiteAparecerEmPrimeiro from "./pages/ComoFazerSiteAparecerEmPrimeiro";
+import ComoFazerSiteAparecerNoGoogle from "./pages/ComoFazerSiteAparecerNoGoogle";
 import GoogleMeuNegocioLanding from "./pages/GoogleMeuNegocioLanding";
 import GoogleMeuNegocioNicheHub from "./pages/GoogleMeuNegocioNicheHub";
 import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
@@ -84,6 +88,10 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/como-divulgar-minha-empresa-no-google" element={<ComoDivulgarEmpresaNoGoogle />} />
           <Route path="/como-aparecer-no-google-maps" element={<ComoAparecerNoGoogleMaps />} />
           <Route path="/como-vender-mais-no-google" element={<ComoVenderMaisNoGoogle />} />
+          <Route path="/como-aparecer-no-google-de-graca" element={<ComoAparecerNoGoogleDeGraca />} />
+          <Route path="/anunciar-no-google" element={<AnunciarNoGoogle />} />
+          <Route path="/como-fazer-meu-site-aparecer-no-google-em-primeiro" element={<ComoFazerSiteAparecerEmPrimeiro />} />
+          <Route path="/como-fazer-um-site-aparecer-no-google" element={<ComoFazerSiteAparecerNoGoogle />} />
 
           <Route path="/recuperar-perfil-suspenso-google" element={<RecuperarPerfilSuspenso />} />
           <Route path="/consultoria" element={<GoogleMeuNegocioLanding />} />
