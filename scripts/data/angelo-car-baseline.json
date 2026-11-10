@@ -1,0 +1,398 @@
+{
+  "client": {
+    "slug": "angelo-car",
+    "lead_id": "O-005",
+    "name": "Ângelo Car",
+    "segment": "Oficina Mecânica",
+    "city": "Porto Alegre",
+    "neighborhood": "Cavalhada",
+    "address": "Av. Vicente Monteggia, 333 - Cavalhada, Porto Alegre - RS",
+    "whatsapp": "5551984281009",
+    "owner_name": "Ângelo Pereira",
+    "owner_email": "mangelopereira73@gmail.com",
+    "status": "onboarding",
+    "services_scope": {
+      "gbp": true,
+      "google_ads": true,
+      "website": true,
+      "website_mode": "redesign"
+    },
+    "external_ids": {
+      "gbpMapsUrl": "https://www.google.com/maps/search/?api=1&query=Angelo+Car+Mecanica+Vicente+Monteggia+Cavalhada+Porto+Alegre",
+      "gbpReviewUrl": "https://g.page/r/CftB11Iuk1hzEBM/review",
+      "websiteDomain": "https://angelocarmecanica.com.br",
+      "websiteVersionLabel": "v1 (Atual legado)",
+      "monitoredPaths": ["/", "/socorro-mecanico-24h", "/bateria/24horas"],
+      "adsAccountIds": ["623-199-6692", "219-234-5984", "521-209-8291", "323-951-6460"]
+    },
+    "contract_meta": {
+      "planLabel": "Piloto Completo — Otimização GMN + Novo Site v2 + Higiene Google Ads",
+      "privateNotes": "Acesso GBP como Gerente em angelocarapp@gmail.com e leonardoferrazbrasil@gmail.com. Ex-agência Clientes IS7 ainda mantém acesso Gerente (remoção pendente pelo Proprietário Principal mangelopereira73@gmail.com). Zero edições aplicadas antes das confirmações operacionais da Fase 1."
+    },
+    "started_at": "2026-11-10"
+  },
+  "checklistItems": [
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_profile_strength",
+      "category_label": "Completude",
+      "title": "Força do perfil & Confirmação das informações comerciais",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Força do perfil em 20% com alerta 'Confirme suas informações comerciais'",
+      "current_status": "pendente",
+      "current_value": "Aguardando execução da Fase 2",
+      "sort_order": 1
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_categories",
+      "category_label": "SEO Local & Categorias",
+      "title": "Categoria 'Mecânica para carros', 'Mecânico' e especialidades",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Principal: Oficina mecânica; Secundárias: Serviço de reboque, Regulagem automotiva, Autoelétrico (sem Mecânica para carros)",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 2
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_native_services",
+      "category_label": "SEO Local & Serviços",
+      "title": "Serviços nativos marcados (Elétrico, Bateria, Freios) + descrições",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Serviço 'Elétrico' e 'Bateria' desmarcados; 28 serviços sem descrição (0/300 chars) e sem preço",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 3
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_description_seo",
+      "category_label": "SEO Local",
+      "title": "Descrição comercial SEO (Cavalhada, Zona Sul, 14 anos, especialidades)",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Texto desatualizado ('mais de 10 anos'), sem 'Cavalhada'/'Zona Sul' e com CTA promocional",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 4
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_social_profiles",
+      "category_label": "Cadastro & Redes",
+      "title": "Vincular perfis oficiais de Instagram (@angelo_rcar) e Facebook",
+      "impact_level": "media",
+      "before_status": "ausente",
+      "before_value": "0 perfis de redes sociais vinculados no GBP",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 5
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_links_utm_booking",
+      "category_label": "Conversão & Links",
+      "title": "Link do Site com UTM + Link de Serviços + Agendamentos",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Site sem UTM; links de Serviços e Agendamentos vazios (0 agendamentos)",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 6
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_hours_holiday",
+      "category_label": "Conformidade",
+      "title": "Alinhamento horário real 24h vs comercial + Feriado 15/11/2026",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "Aberto 24h todos os dias gerando reclamações 1★ e alerta de feriado vazio",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 7
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_photos_facade_logo",
+      "category_label": "Mídia & Fachada",
+      "title": "Nova capa, logo limpa sem fixo 3241-7954 e foto externa da rampa",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "Capa com bloco de motor cortado, 4 cópias de logo antiga e alerta 'Inclua foto externa'",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 8
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_products_posts_qa",
+      "category_label": "Vitrine & Atividade",
+      "title": "Catálogo de Produtos âncora, Google Posts recentes e Q&A",
+      "impact_level": "media",
+      "before_status": "ausente",
+      "before_value": "0 produtos, 0 Q&A, últimos 5 posts de 2018 (há 8 anos)",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 9
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_reviews_reputation",
+      "category_label": "Reputação",
+      "title": "Responder backlog 1★ + personalizar 5★ + campanha rumo a 4,5★",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "4,1★ (267 av.: 198×5★ e 57×1★); backlog 1★ sem resposta e respostas genéricas 'Obrigado'",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 10
+    },
+    {
+      "pillar": "gbp",
+      "item_key": "gbp_access_security",
+      "category_label": "Governança",
+      "title": "Revogar acesso da ex-agência 'Clientes IS7' pelo Proprietário",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "Ex-agência 'Clientes IS7' ativa como Gerente na ficha",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 11
+    },
+    {
+      "pillar": "website",
+      "item_key": "site_404_architecture",
+      "category_label": "Estrutura Site",
+      "title": "Novo site v2: corrigir 404 /socorro-mecanico-24h e criar páginas de serviço",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "Site one-page v1 com URL /socorro-mecanico-24h retornando HTTP 404 no Google",
+      "current_status": "pendente",
+      "current_value": "Em planejamento de redesign v2",
+      "sort_order": 12
+    },
+    {
+      "pillar": "website",
+      "item_key": "site_schema_tracking",
+      "category_label": "SEO & Tracking",
+      "title": "Schema AutoRepair completo, mapa da rampa e GTM/GA4 (WhatsApp/Ligar)",
+      "impact_level": "alta",
+      "before_status": "incompleto",
+      "before_value": "Schema sem geo/CEP/hasMap; links WhatsApp sem eventos segmentados e aviso de scanner ausente",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 13
+    },
+    {
+      "pillar": "google_ads",
+      "item_key": "ads_waste_negative_keywords",
+      "category_label": "Higiene Ads",
+      "title": "Desligar aplicação automática e negativar termos sem aderência",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "Conta 623-199-6692 comprando 'borracharia 24h', 'autozone', 'Viamão' e concorrentes",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 14
+    },
+    {
+      "pillar": "google_ads",
+      "item_key": "ads_accounts_linking",
+      "category_label": "Estrutura Ads",
+      "title": "Alinhar vínculo GBP ↔ conta ativa (623) e encerrar contas lixo 521/323",
+      "impact_level": "alta",
+      "before_status": "incorreto",
+      "before_value": "GBP ligado à conta antiga 219-234-5984 + 2 contas duplicadas (521/323) com keywords de software",
+      "current_status": "pendente",
+      "current_value": null,
+      "sort_order": 15
+    }
+  ],
+  "snapshots": [
+    {
+      "period_key": "2026-06",
+      "period_label": "Jun/2026",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": false,
+      "source": "agente_browser",
+      "gbp_metrics": {
+        "interactionsTotal": 152,
+        "calls": 67,
+        "routes": 67,
+        "siteClicks": 16,
+        "chatClicks": 2,
+        "bookings": 0,
+        "periodNotes": "Mês pré-gestão extraído do Painel Google Meu Negócio."
+      },
+      "overall_status": "baseline",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "period_key": "2026-07",
+      "period_label": "Jul/2026",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": false,
+      "source": "agente_browser",
+      "gbp_metrics": {
+        "interactionsTotal": 159,
+        "calls": 56,
+        "routes": 86,
+        "siteClicks": 15,
+        "chatClicks": 2,
+        "bookings": 0,
+        "periodNotes": "Mês pré-gestão extraído do Painel Google Meu Negócio."
+      },
+      "overall_status": "baseline",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "period_key": "2026-08",
+      "period_label": "Ago/2026",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": false,
+      "source": "agente_browser",
+      "gbp_metrics": {
+        "interactionsTotal": 211,
+        "calls": 98,
+        "routes": 90,
+        "siteClicks": 19,
+        "chatClicks": 4,
+        "bookings": 0,
+        "periodNotes": "Mês pré-gestão extraído do Painel Google Meu Negócio."
+      },
+      "overall_status": "baseline",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "period_key": "2026-09",
+      "period_label": "Set/2026",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": false,
+      "source": "agente_browser",
+      "gbp_metrics": {
+        "interactionsTotal": 152,
+        "calls": 68,
+        "routes": 59,
+        "siteClicks": 22,
+        "chatClicks": 3,
+        "bookings": 0,
+        "periodNotes": "Mês pré-gestão extraído do Painel Google Meu Negócio."
+      },
+      "overall_status": "baseline",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "period_key": "2026-10",
+      "period_label": "Out/2026",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": false,
+      "source": "agente_browser",
+      "gbp_metrics": {
+        "interactionsTotal": 249,
+        "calls": 107,
+        "routes": 112,
+        "siteClicks": 22,
+        "chatClicks": 8,
+        "bookings": 0,
+        "periodNotes": "Último mês fechado antes da gestão (249 interações)."
+      },
+      "overall_status": "baseline",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "period_key": "2026-11",
+      "period_label": "Nov/2026 (Antes 10/11)",
+      "snapshot_type": "baseline_historico",
+      "is_baseline": true,
+      "source": "hibrido",
+      "gbp_metrics": {
+        "viewsTotal": 1906,
+        "viewsSearch": 4821,
+        "viewsMaps": 2146,
+        "interactionsTotal": 82,
+        "calls": 17,
+        "routes": 56,
+        "siteClicks": 7,
+        "chatClicks": 2,
+        "bookings": 0,
+        "rating": 4.1,
+        "reviewCount": 267,
+        "profileStrengthPct": 20,
+        "targetKeyword": "oficina mecânica cavalhada porto alegre",
+        "targetKeywordRank": 6,
+        "periodNotes": "Marco Zero pré-otimização em 10/11/2026: 82 interações parciais (01-10/11), 1.906 views na Pesquisa (30d) e acumulado jun-nov de 6.967 visualizações (84% mobile) / 1.005 interações."
+      },
+      "ads_metrics": {
+        "activeAccountId": "623-199-6692",
+        "legacyAccountsCount": 3,
+        "spendBrl": 42484.6,
+        "statusLabel": "Auditoria Inicial: gasto histórico R$ 42.484,60 + Pix R$ 150 em 10/11; 3 contas antigas/duplicadas"
+      },
+      "site_metrics": {
+        "versionLabel": "v1 (Atual legado)",
+        "targetUrl": "https://angelocarmecanica.com.br/",
+        "httpOkCount": 1,
+        "brokenUrlsCount": 1,
+        "brokenPaths": ["/socorro-mecanico-24h"],
+        "hasSsl": true,
+        "hasWhatsappCta": true
+      },
+      "overall_status": "baseline",
+      "executive_summary": "Marco Zero registrado em 10/11/2026 antes de qualquer alteração: força do perfil em 20%, nota 4,1★ (267 av.), fora do Top 3 no Local Pack, URL /socorro-mecanico-24h em erro 404 e 4 IDs de Google Ads fragmentados.",
+      "collection_warnings": [],
+      "recorded_at": "2026-11-10T16:54:00Z"
+    }
+  ],
+  "changeLogs": [
+    {
+      "occurred_at": "2026-11-10T16:54:00Z",
+      "pillar": "gbp",
+      "action_type": "auditoria_inicial",
+      "title": "Auditoria Completa 8 Pilares + Registro Oficial do 'Antes' (Zero Edições Aplicadas)",
+      "before_state": "Força do perfil 20%, #6 no Maps Cavalhada, 4,1★ (267 av.), redes sociais ausentes, site v1 com 404 e 4 contas Ads",
+      "after_state": "Marco Zero completo documentado e checklist de 15 frentes estruturado para execução da Fase 2",
+      "automation_source": "antigravity",
+      "visible_to_client": true,
+      "external_ref": "angelo-car-auditoria-2026-11-10"
+    }
+  ],
+  "evidences": [
+    {
+      "pillar": "gbp",
+      "phase": "antes",
+      "period_key": "2026-11",
+      "pair_key": "perfil-capa-logo",
+      "title": "Galeria, Capa e Logo Obsoleto (Antes)",
+      "caption": "Capa atual mostra bloco de motor cortado e 4 duplicatas do logo com telefone fixo antigo (51) 3241-7954.",
+      "localPath": "evidences/angelo-car/evidencia-fotos-capa-logo.png"
+    },
+    {
+      "pillar": "gbp",
+      "phase": "antes",
+      "period_key": "2026-11",
+      "pair_key": "maps-publico",
+      "title": "Visão Pública no Google Maps (Antes)",
+      "caption": "Perfil público em 10/11/2026: 4,1★ (267 avaliações), aberto 24h sem vínculo de redes sociais ou produtos.",
+      "localPath": "evidences/angelo-car/evidencia-maps-publico.png"
+    },
+    {
+      "pillar": "gbp",
+      "phase": "antes",
+      "period_key": "2026-11",
+      "pair_key": "fachada-streetview",
+      "title": "Entrada no Street View Sem Placa (Antes)",
+      "caption": "Rampa descendente na Av. Vicente Monteggia, 333 sem identificação visual externa para quem chega via GPS (470 rotas).",
+      "localPath": "evidences/angelo-car/evidencia-streetview-fachada.png"
+    }
+  ]
+}
