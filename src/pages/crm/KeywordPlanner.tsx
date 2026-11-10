@@ -3,12 +3,11 @@ import { Link, useNavigate } from "../../lib/local-router";
 import { SeoHead } from "../../components/SeoHead";
 import { supabase } from "../../lib/supabase";
 import { AdsApiConfigModal, type AdsIntegrationStatus } from "./components/AdsApiConfigModal";
+import { CrmNavBar } from "./components/CrmNavBar";
 import {
   Sparkles,
   Search,
   MapPin,
-  BarChart3,
-  Kanban,
   LogOut,
   KeyRound,
   TrendingUp,
@@ -654,8 +653,8 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
       {/* HEADER UNIFICADO DO CRM */}
       <header className="border-b border-slate-800/80 bg-[#0a0d14]/90 backdrop-blur-md sticky top-0 z-30">
         <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-4 flex-wrap">
-            <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full md:w-auto min-w-0">
+            <Link to="/" className="flex items-center gap-2.5 group shrink-0">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 p-0.5 shadow-md shadow-blue-500/20 flex items-center justify-center">
                 <div className="w-full h-full bg-[#0b0f17] rounded-[10px] flex items-center justify-center">
                   <Sparkles className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
@@ -672,22 +671,7 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
               </div>
             </Link>
 
-            <nav className="flex items-center gap-1.5 bg-[#0f1420] border border-slate-800/80 p-1 rounded-xl">
-              <Link
-                to="/crm/dashboard"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
-              >
-                <Kanban className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Kanban Prospecção</span>
-              </Link>
-              <Link
-                to="/crm/planejador"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30 transition-all"
-              >
-                <BarChart3 className="w-3.5 h-3.5 text-blue-400" />
-                <span>Planejador Google Ads</span>
-              </Link>
-            </nav>
+            <CrmNavBar />
           </div>
 
           <div className="flex items-center gap-2.5 w-full md:w-auto justify-end">

@@ -13,6 +13,7 @@ import { CrmHeader } from "./components/CrmHeader";
 import { KanbanColumn } from "./components/KanbanColumn";
 import { MessageBlocksDrawer } from "./components/MessageBlocksDrawer";
 import { crmProspectService } from "./services/crmProspectService";
+import { crmClientService } from "./services/crmClientService";
 import { resolveLeadScore, parseMonthlySearchVolume } from "./utils/deterministicScoring";
 import type { ProspectLead, PipelineStage, PipelineStageId } from "./types";
 
@@ -59,6 +60,7 @@ export default function CrmDashboard() {
   const [leads, setLeads] = useState<ProspectLead[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<ProspectLead | null>(null);
+  const [clientSlugByLeadId, setClientSlugByLeadId] = useState<Record<string, string>>({});
 
   // Filtros (WhatsApp Confirmado ativo por padrão para focar na conversão imediata)
   const [selectedSegment, setSelectedSegment] = useState("todos");
@@ -99,6 +101,21 @@ export default function CrmDashboard() {
       }
     }
     loadData();
+
+    crmClientService
+      .listClients()
+      .then(({ clients }) => {
+        if (!isMounted) return;
+        const nextMap: Record<string, string> = {};
+        for (const c of clients) {
+          if (c.lead_id) nextMap[c.lead_id] = c.slug;
+        }
+        setClientSlugByLeadId(nextMap);
+      })
+      .catch(() => {
+        // Silencioso: Kanban continua operacional mesmo antes da migração
+      });
+
     return () => { isMounted = false; };
   }, []);
 
@@ -325,6 +342,7 @@ export default function CrmDashboard() {
                       onOpenDrawer={(lead) => setSelectedLead(lead)}
                       onAdvanceStage={handleAdvanceStage}
                       onPreviousStage={handlePreviousStage}
+                      clientSlugByLeadId={clientSlugByLeadId}
                     />
                   ))}
                 </div>
@@ -343,6 +361,7 @@ export default function CrmDashboard() {
                     onAdvanceStage={handleAdvanceStage}
                     onPreviousStage={handlePreviousStage}
                     isSingleView={true}
+                    clientSlugByLeadId={clientSlugByLeadId}
                   />
                 );
               })()}
@@ -357,6 +376,7 @@ export default function CrmDashboard() {
         onClose={() => setSelectedLead(null)}
         onAdvanceStage={handleAdvanceStage}
         onSaveNotes={handleSaveNotes}
+        linkedClientSlug={selectedLead ? clientSlugByLeadId[selectedLead.id] ?? null : null}
       />
     </div>
   );

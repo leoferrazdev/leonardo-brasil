@@ -1,5 +1,6 @@
 import React from "react";
 import { useDraggable } from "@dnd-kit/core";
+import { useNavigate } from "../../../lib/local-router";
 import { 
   Phone, 
   MapPin, 
@@ -13,7 +14,8 @@ import {
   Sparkles,
   FileText,
   PhoneOff,
-  RotateCcw
+  RotateCcw,
+  Users
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
@@ -24,6 +26,7 @@ interface KanbanCardProps {
   onOpenDrawer: (lead: ProspectLead) => void;
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onPreviousStage?: (leadId: string, prevStage: PipelineStageId) => void;
+  linkedClientSlug?: string | null;
 }
 
 const STAGES_ORDER: PipelineStageId[] = [
@@ -38,8 +41,10 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
   lead,
   onOpenDrawer,
   onAdvanceStage,
-  onPreviousStage
+  onPreviousStage,
+  linkedClientSlug,
 }) => {
+  const navigate = useNavigate();
   const [copied, setCopied] = React.useState(false);
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: lead.id,
@@ -262,6 +267,24 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
           <span className="truncate">Ver Roteiro</span>
         </button>
       </div>
+
+      {(lead.stage === "fechado_ganho" || linkedClientSlug) && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            if (linkedClientSlug) {
+              navigate(`/crm/clientes/${linkedClientSlug}`);
+            } else {
+              navigate(`/crm/clientes?fromLead=${encodeURIComponent(lead.id)}`);
+            }
+          }}
+          className="mt-2 w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/35 text-amber-300 text-[11px] font-bold transition-all"
+        >
+          <Users className="w-3.5 h-3.5 shrink-0" />
+          <span>{linkedClientSlug ? "Abrir Ficha & Histórico do Cliente" : "Criar Ficha de Cliente"}</span>
+        </button>
+      )}
 
       {/* Rodapé do Card: Copiar e Navegação de Etapa (Sem aperto e com mais de 100px livres) */}
       <div className="mt-2.5 pt-2 border-t border-[#1a2030]/70 flex items-center justify-between text-xs min-w-0">

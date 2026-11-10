@@ -10,6 +10,7 @@ interface KanbanColumnProps {
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onPreviousStage?: (leadId: string, prevStage: PipelineStageId) => void;
   isSingleView?: boolean;
+  clientSlugByLeadId?: Record<string, string>;
 }
 
 export const KanbanColumn: React.FC<KanbanColumnProps> = ({
@@ -19,6 +20,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
   onAdvanceStage,
   onPreviousStage,
   isSingleView = false,
+  clientSlugByLeadId,
 }) => {
   const { setNodeRef, isOver } = useDroppable({
     id: stage.id,
@@ -72,6 +74,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({
               onOpenDrawer={onOpenDrawer}
               onAdvanceStage={onAdvanceStage}
               onPreviousStage={onPreviousStage}
+              linkedClientSlug={clientSlugByLeadId?.[lead.id] ?? null}
             />
           ))
         )}

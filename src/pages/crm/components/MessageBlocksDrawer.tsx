@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "../../../lib/local-router";
 import { 
   X, 
   Copy, 
@@ -12,7 +13,8 @@ import {
   Phone, 
   ChevronRight,
   Sparkles,
-  RotateCcw
+  RotateCcw,
+  Users
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
@@ -23,6 +25,7 @@ interface MessageBlocksDrawerProps {
   onClose: () => void;
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onSaveNotes: (leadId: string, notes: string) => void;
+  linkedClientSlug?: string | null;
 }
 
 export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
@@ -30,7 +33,9 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
   onClose,
   onAdvanceStage,
   onSaveNotes,
+  linkedClientSlug,
 }) => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<1 | 2 | 3 | 4>(1);
   const [bloco1Mode, setBloco1Mode] = useState<"volume" | "falha">("volume");
   const [copiedBlock, setCopiedBlock] = useState<number | null>(null);
@@ -420,6 +425,27 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
                 ✕ Descartar (Inválido/Perdido)
               </button>
             </div>
+
+            {(lead.stage === "fechado_ganho" || linkedClientSlug) && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (linkedClientSlug) {
+                    navigate(`/crm/clientes/${linkedClientSlug}`);
+                  } else {
+                    navigate(`/crm/clientes?fromLead=${encodeURIComponent(lead.id)}`);
+                  }
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-bold bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/35 transition-all"
+              >
+                <Users className="w-4 h-4 text-amber-400" />
+                <span>
+                  {linkedClientSlug
+                    ? "Abrir Ficha de Cliente & Histórico"
+                    : "Converter em Ficha de Cliente (/crm/clientes)"}
+                </span>
+              </button>
+            )}
           </div>
 
           {/* Anotações e Histórico */}

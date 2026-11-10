@@ -19,6 +19,7 @@ import {
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
 import type { ProspectLead, PipelineStageId } from "../types";
+import { CrmNavBar } from "./CrmNavBar";
 
 interface CrmHeaderProps {
   leads: ProspectLead[];
@@ -127,8 +128,8 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
       <div className="max-w-[1760px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
         {/* Linha 1: Identidade Executiva, Barra de Meta Diária, Busca e Logout */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="flex items-center gap-3 group">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full lg:w-auto min-w-0">
+            <Link to="/" className="flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-amber-400 p-[1.5px] shadow-lg shadow-blue-500/20 flex items-center justify-center">
                 <div className="w-full h-full bg-[#0a0d14] rounded-[10px] flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform" />
@@ -148,6 +149,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
                 </p>
               </div>
             </Link>
+            <CrmNavBar />
           </div>
 
           {/* Barra Central de Meta Diária de Prospecção */}
