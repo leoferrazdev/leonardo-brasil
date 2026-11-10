@@ -282,14 +282,14 @@ export default function ClientDetail() {
                   onClick={() => setAddModalMode("log")}
                   className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 text-xs font-bold whitespace-nowrap"
                 >
-                  <Plus className="w-3.5 h-3.5" /> + Entrega / Versão
+                  <Plus className="w-3.5 h-3.5" /> Entrega / Versão
                 </button>
                 <button
                   type="button"
                   onClick={() => setAddModalMode("checklist")}
                   className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0e1320] border border-[#1a2030] text-slate-200 text-xs font-bold whitespace-nowrap"
                 >
-                  <Plus className="w-3.5 h-3.5" /> + Item Checklist
+                  <Plus className="w-3.5 h-3.5" /> Item Checklist
                 </button>
                 <button
                   type="button"

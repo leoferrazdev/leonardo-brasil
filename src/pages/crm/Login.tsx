@@ -47,18 +47,10 @@ export default function CrmLogin() {
         return;
       }
 
-      if (cleanEmail.toLowerCase() === "leonardoferrazbrasil@gmail.com") {
-        if (typeof window !== "undefined") {
-          localStorage.setItem("crm_offline_session", "true");
-          localStorage.setItem("crm_user_email", cleanEmail);
-        }
-        toast.success("Credenciais do gestor validadas!");
-        navigate("/crm/dashboard");
-        return;
-      }
-
       if (error) {
         toast.error(`Falha no login: ${error.message}`);
+      } else {
+        toast.error("Sessão não iniciada. Verifique suas credenciais ou use o modo offline.");
       }
     } catch (err: any) {
       toast.error(`Erro ao autenticar: ${err.message || err}`);
