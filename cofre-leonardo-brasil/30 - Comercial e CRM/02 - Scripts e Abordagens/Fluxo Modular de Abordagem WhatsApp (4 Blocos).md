@@ -109,7 +109,7 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 * **Template Mestre:**
 > *"Com isso ajustado, você para de perder buscas locais para os concorrentes de cima e transforma o perfil da *{{Nome da Empresa}}* em um canal direto de mensagens no WhatsApp de quem procura por *{{Palavra-Chave / Segmento}}* em {{Bairro}}.*  
 >  
-> *O meu formato de trabalho é 100% pontual, sem mensalidade nem fidelidade:*  
+> *Esse formato de trabalho é 100% pontual, sem mensalidade nem fidelidade:*  
 >  
 > *📌 **Implantação e Otimização Total (Pontual):***  
 > *- Alinhamento completo dos dados, horários e link direto do WhatsApp no Maps*  
