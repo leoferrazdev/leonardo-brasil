@@ -174,3 +174,33 @@ test('formatClientWhatsAppReport mensal includes MoM comparison without rank gua
   assert.match(report, /Site \(v2 Nova\)/);
   assert.doesNotMatch(report, /garantimos 1º lugar/i);
 });
+
+test('formatClientWhatsAppReport omits literal undefined when site_metrics.brokenUrlsCount is undefined', () => {
+  const report = mod.formatClientWhatsAppReport({
+    client: baseClient,
+    snapshots: [
+      {
+        id: 's-hist',
+        client_id: 'c1',
+        period_key: '2026-10',
+        period_label: 'Out/2026',
+        snapshot_type: 'baseline_historico',
+        is_baseline: true,
+        source: 'agente_browser',
+        gbp_metrics: { viewsTotal: 1900, interactionsTotal: 200, calls: 90, routes: 80, rating: 4.1, reviewCount: 267 },
+        ads_metrics: {},
+        site_metrics: { versionLabel: 'v1' },
+        overall_status: 'baseline',
+        collection_warnings: [],
+        recorded_at: '2026-10-31T10:00:00Z'
+      }
+    ],
+    checklist: [],
+    changeLogs: [],
+    style: 'mensal'
+  });
+
+  assert.match(report, /Site \(v1\)/);
+  assert.match(report, /Monitoramento ativo/);
+  assert.doesNotMatch(report, /undefined/);
+});

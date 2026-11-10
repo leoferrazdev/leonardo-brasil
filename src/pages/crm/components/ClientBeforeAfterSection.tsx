@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, Clock, Image as ImageIcon, Trash2, X, ZoomIn } from "lucide-react";
 import type {
   ChecklistCurrentStatus,
@@ -56,6 +56,17 @@ export const ClientBeforeAfterSection: React.FC<ClientBeforeAfterSectionProps> =
   const [evidenceViewMode, setEvidenceViewMode] = useState<"antes" | "depois" | "lado_a_lado">("lado_a_lado");
   const [zoomedEvidence, setZoomedEvidence] = useState<ClientEvidence | null>(null);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!zoomedEvidence) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setZoomedEvidence(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [zoomedEvidence]);
 
   const visibleChecklist = useMemo(() => {
     const allowedPillars = new Set<ClientPillar>([
@@ -181,7 +192,7 @@ export const ClientBeforeAfterSection: React.FC<ClientBeforeAfterSectionProps> =
                             type="button"
                             disabled={updatingId === item.id}
                             onClick={() => handleStatusClick(item, opt)}
-                            className={`min-h-[40px] rounded-lg text-[11px] font-bold border transition-all ${
+                            className={`min-h-[44px] rounded-lg text-[11px] font-bold border transition-all ${
                               item.current_status === opt
                                 ? "bg-blue-600 text-white border-blue-400"
                                 : "bg-[#0e1320] text-[#94a3b8] border-[#1a2030]"
@@ -284,7 +295,7 @@ export const ClientBeforeAfterSection: React.FC<ClientBeforeAfterSectionProps> =
                 key={mode.id}
                 type="button"
                 onClick={() => setEvidenceViewMode(mode.id)}
-                className={`min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                className={`min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                   evidenceViewMode === mode.id
                     ? "bg-blue-600 text-white"
                     : "text-[#94a3b8] hover:text-white"
@@ -355,7 +366,7 @@ export const ClientBeforeAfterSection: React.FC<ClientBeforeAfterSectionProps> =
                                     type="button"
                                     onClick={() => onDeleteEvidence(ev)}
                                     title="Remover print"
-                                    className="p-1.5 text-slate-400 hover:text-rose-400 rounded-lg"
+                                    className="min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-rose-400 rounded-lg"
                                   >
                                     <Trash2 className="w-3.5 h-3.5" />
                                   </button>
@@ -411,7 +422,7 @@ export const ClientBeforeAfterSection: React.FC<ClientBeforeAfterSectionProps> =
                                     type="button"
                                     onClick={() => onDeleteEvidence(ev)}
                                     title="Remover print"
-                                    className="p-1.5 text-slate-400 hover:text-rose-400 rounded-lg"
+                                    className="min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400 hover:text-rose-400 rounded-lg"
                                   >
                                     <Trash2 className="w-3.5 h-3.5" />
                                   </button>

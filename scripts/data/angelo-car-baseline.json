@@ -171,7 +171,7 @@
       "title": "Novo site v2: corrigir 404 /socorro-mecanico-24h e criar páginas de serviço",
       "impact_level": "alta",
       "before_status": "incorreto",
-      "before_value": "Site one-page v1 com URL /socorro-mecanico-24h retornando HTTP 404 no Google",
+      "before_value": "Site one-page v1 com URLs /socorro-mecanico-24h e /bateria/24horas retornando HTTP 404 no Google",
       "current_status": "pendente",
       "current_value": "Em planejamento de redesign v2",
       "sort_order": 12
@@ -342,13 +342,13 @@
         "versionLabel": "v1 (Atual legado)",
         "targetUrl": "https://angelocarmecanica.com.br/",
         "httpOkCount": 1,
-        "brokenUrlsCount": 1,
-        "brokenPaths": ["/socorro-mecanico-24h"],
+        "brokenUrlsCount": 2,
+        "brokenPaths": ["/socorro-mecanico-24h", "/bateria/24horas"],
         "hasSsl": true,
         "hasWhatsappCta": true
       },
       "overall_status": "baseline",
-      "executive_summary": "Marco Zero registrado em 10/11/2026 antes de qualquer alteração: força do perfil em 20%, nota 4,1★ (267 av.), fora do Top 3 no Local Pack, URL /socorro-mecanico-24h em erro 404 e 4 IDs de Google Ads fragmentados.",
+      "executive_summary": "Marco Zero registrado em 10/11/2026 antes de qualquer alteração: força do perfil em 20%, nota 4,1★ (267 av.), fora do Top 3 no Local Pack, 2 URLs em erro 404 (/socorro-mecanico-24h e /bateria/24horas) e 4 IDs de Google Ads fragmentados.",
       "collection_warnings": [],
       "recorded_at": "2026-11-10T16:54:00Z"
     }

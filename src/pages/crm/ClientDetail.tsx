@@ -120,21 +120,25 @@ export default function ClientDetail() {
 
   const handleToggleChecklist = async (item: ClientChecklistItem, nextStatus: ChecklistCurrentStatus) => {
     if (!bundle) return;
-    const updated = await crmClientService.updateChecklistStatus(
-      bundle.client.id,
-      bundle.client.slug,
-      item,
-      nextStatus,
-    );
-    setBundle((prev) =>
-      prev
-        ? {
-            ...prev,
-            checklist: prev.checklist.map((c) => (c.id === updated.id ? updated : c)),
-          }
-        : prev,
-    );
-    toast.success("Status atualizado no checklist.");
+    try {
+      const updated = await crmClientService.updateChecklistStatus(
+        bundle.client.id,
+        bundle.client.slug,
+        item,
+        nextStatus,
+      );
+      setBundle((prev) =>
+        prev
+          ? {
+              ...prev,
+              checklist: prev.checklist.map((c) => (c.id === updated.id ? updated : c)),
+            }
+          : prev,
+      );
+      toast.success("Status atualizado no checklist.");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Erro ao atualizar checklist.");
+    }
   };
 
   const handleDeleteEvidence = async (ev: ClientEvidence) => {
@@ -206,7 +210,7 @@ export default function ClientDetail() {
               {!presentationMode && (
                 <Link
                   to="/crm/clientes"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#94a3b8] hover:text-white shrink-0"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-bold text-[#94a3b8] hover:text-white shrink-0"
                 >
                   <ArrowLeft className="w-4 h-4" /> Carteira
                 </Link>
@@ -253,7 +257,7 @@ export default function ClientDetail() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActivePillar(tab.id)}
-                  className={`min-h-[40px] px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap border transition-all ${
+                  className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap border transition-all ${
                     activePillar === tab.id
                       ? "bg-blue-600 text-white border-blue-400"
                       : "bg-[#0e1320] text-[#94a3b8] border-[#1a2030] hover:text-white"
@@ -269,28 +273,28 @@ export default function ClientDetail() {
                 <button
                   type="button"
                   onClick={() => setSnapshotModalOpen(true)}
-                  className="min-h-[40px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600/20 border border-blue-500/35 text-blue-300 text-xs font-bold whitespace-nowrap"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-600/20 border border-blue-500/35 text-blue-300 text-xs font-bold whitespace-nowrap"
                 >
                   <Calendar className="w-3.5 h-3.5" /> + Registrar Mês
                 </button>
                 <button
                   type="button"
                   onClick={() => setAddModalMode("log")}
-                  className="min-h-[40px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 text-xs font-bold whitespace-nowrap"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 text-xs font-bold whitespace-nowrap"
                 >
                   <Plus className="w-3.5 h-3.5" /> + Entrega / Versão
                 </button>
                 <button
                   type="button"
                   onClick={() => setAddModalMode("checklist")}
-                  className="min-h-[40px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0e1320] border border-[#1a2030] text-slate-200 text-xs font-bold whitespace-nowrap"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0e1320] border border-[#1a2030] text-slate-200 text-xs font-bold whitespace-nowrap"
                 >
                   <Plus className="w-3.5 h-3.5" /> + Item Checklist
                 </button>
                 <button
                   type="button"
                   onClick={() => setEvidenceModalOpen(true)}
-                  className="min-h-[40px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/35 text-amber-300 text-xs font-bold whitespace-nowrap"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/35 text-amber-300 text-xs font-bold whitespace-nowrap"
                 >
                   <Upload className="w-3.5 h-3.5" /> + Print
                 </button>
@@ -391,7 +395,9 @@ export default function ClientDetail() {
                 <p className="text-lg sm:text-xl font-black text-white mt-1">
                   {latest?.site_metrics?.brokenUrlsCount === 0
                     ? "100% Online"
-                    : `${latest?.site_metrics?.brokenUrlsCount ?? "—"} erro(s) 404`}
+                    : typeof latest?.site_metrics?.brokenUrlsCount === "number"
+                      ? `${latest.site_metrics.brokenUrlsCount} erro(s) 404`
+                      : "Monitoramento web"}
                 </p>
                 <span className="text-[11px] text-[#94a3b8] block mt-1">
                   {latest?.site_metrics?.pagespeedMobile !== undefined
@@ -479,8 +485,9 @@ export default function ClientDetail() {
         {!presentationMode && (
           <>
             {(client.contract_meta?.planLabel ||
-              client.contract_meta?.monthlyFeeBrl ||
-              client.contract_meta?.setupFeeBrl ||
+              typeof client.contract_meta?.monthlyFeeBrl === "number" ||
+              typeof client.contract_meta?.setupFeeBrl === "number" ||
+              client.contract_meta?.paymentNotes ||
               client.contract_meta?.privateNotes) && (
               <section className="rounded-2xl border border-amber-500/30 bg-[#0e1320] p-4 sm:p-5 space-y-2 text-xs">
                 <h2 className="text-sm font-extrabold text-amber-300 flex items-center gap-2">
@@ -492,9 +499,19 @@ export default function ClientDetail() {
                     <strong>Escopo / Plano:</strong> {client.contract_meta.planLabel}
                   </p>
                 )}
+                {typeof client.contract_meta?.setupFeeBrl === "number" && (
+                  <p className="text-slate-200">
+                    <strong>Implantação / Setup:</strong> R$ {client.contract_meta.setupFeeBrl.toLocaleString("pt-BR")}
+                  </p>
+                )}
                 {typeof client.contract_meta?.monthlyFeeBrl === "number" && (
                   <p className="text-slate-200">
                     <strong>Mensalidade:</strong> R$ {client.contract_meta.monthlyFeeBrl.toLocaleString("pt-BR")}
+                  </p>
+                )}
+                {client.contract_meta?.paymentNotes && (
+                  <p className="text-slate-200">
+                    <strong>Condições de Pagamento:</strong> {client.contract_meta.paymentNotes}
                   </p>
                 )}
                 {client.contract_meta?.privateNotes && (

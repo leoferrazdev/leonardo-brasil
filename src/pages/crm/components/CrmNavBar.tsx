@@ -46,7 +46,7 @@ export const CrmNavBar: React.FC = () => {
           <Link
             key={item.to}
             to={item.to}
-            className={`inline-flex items-center gap-1.5 px-3 min-h-[40px] sm:min-h-[34px] py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all border ${
+            className={`inline-flex items-center gap-1.5 px-3 min-h-[44px] sm:min-h-[36px] py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all border ${
               item.active
                 ? `${item.activeClass} shadow-sm`
                 : "text-[#94a3b8] border-transparent hover:text-white hover:bg-[#161d2e]"

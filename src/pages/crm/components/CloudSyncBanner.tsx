@@ -24,7 +24,7 @@ export const CloudSyncBanner: React.FC<CloudSyncBannerProps> = ({ visible }) => 
       </div>
       <Link
         to="/crm/login"
-        className="inline-flex items-center justify-center min-h-[40px] px-3.5 py-2 rounded-lg bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-colors whitespace-nowrap shrink-0"
+        className="inline-flex items-center justify-center min-h-[44px] px-3.5 py-2 rounded-lg bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition-colors whitespace-nowrap shrink-0"
       >
         Fazer Login Real (Nuvem)
       </Link>

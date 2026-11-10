@@ -166,10 +166,16 @@ export function formatClientWhatsAppReport({
   if (latest && client.services_scope.website) {
     const s = latest.site_metrics;
     const vLabel = s.versionLabel ? ` (${s.versionLabel})` : "";
+    const urlHealthLabel =
+      s.brokenUrlsCount === 0
+        ? "100% no ar (sem erros 404)"
+        : typeof s.brokenUrlsCount === "number"
+          ? `${s.brokenUrlsCount} URL(s) com atenção`
+          : "Monitoramento ativo (auditoria de URLs pendente)";
     lines.push(
       "",
       `*🌐 Site${vLabel}:*`,
-      `• Saúde das URLs: *${s.brokenUrlsCount === 0 ? "100% no ar (sem erros 404)" : `${s.brokenUrlsCount} URL(s) com atenção`}*`,
+      `• Saúde das URLs: *${urlHealthLabel}*`,
     );
     if (typeof s.pagespeedMobile === "number") {
       lines.push(`• Desempenho Mobile (PageSpeed): *${s.pagespeedMobile}/100*`);

@@ -191,6 +191,11 @@ export const crmClientService = {
               .order("created_at", { ascending: true }),
           ]);
 
+          const childError = checkRes.error || snapRes.error || logRes.error || evRes.error;
+          if (childError) {
+            throw new Error(childError.message || "Falha ao carregar dados relacionados do cliente.");
+          }
+
           const signedEvidences = await resolveSignedEvidenceUrls((evRes.data || []) as ClientEvidence[]);
           const bundle: ClientFullBundle = {
             client,
@@ -265,10 +270,15 @@ export const crmClientService = {
       const client = created as ClientAccount;
       const starterChecklist = buildDefaultChecklistForScope(client.id, client.services_scope);
       if (starterChecklist.length > 0) {
-        await supabase.from("client_checklists").insert(starterChecklist);
+        const { error: checklistErr } = await supabase
+          .from("client_checklists")
+          .insert(starterChecklist);
+        if (checklistErr) {
+          console.warn("Aviso ao inicializar checklist padrão do cliente:", checklistErr.message);
+        }
       }
 
-      await supabase.from("client_change_logs").insert({
+      const { error: logErr } = await supabase.from("client_change_logs").insert({
         client_id: client.id,
         pillar: "gbp",
         action_type: "auditoria_inicial",
@@ -279,6 +289,9 @@ export const crmClientService = {
         visible_to_client: true,
         external_ref: `onboarding-${client.slug}`,
       });
+      if (logErr) {
+        console.warn("Aviso ao registrar log inicial de onboarding:", logErr.message);
+      }
 
       const currentList = readLocalJson<ClientAccount[]>(CLIENTS_CACHE_KEY, []);
       writeLocalJson(CLIENTS_CACHE_KEY, [client, ...currentList.filter((c) => c.id !== client.id)]);
@@ -573,7 +586,14 @@ export const crmClientService = {
       .select()
       .single();
 
-    if (dbErr || !row) throw new Error(dbErr?.message || "Erro ao registrar metadados da evidência.");
+    if (dbErr || !row) {
+      try {
+        await supabase.storage.from("client-evidences").remove([storagePath]);
+      } catch {
+        // best-effort orphan cleanup
+      }
+      throw new Error(dbErr?.message || "Erro ao registrar metadados da evidência.");
+    }
 
     const [signed] = await resolveSignedEvidenceUrls([row as ClientEvidence]);
     return signed;

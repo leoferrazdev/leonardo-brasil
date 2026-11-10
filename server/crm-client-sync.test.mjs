@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {
+  buildDeterministicLogRef,
   buildStorageObjectPath,
   prepareChecklistUpsertRows,
   mergeChecklistPreservingBefore,
@@ -162,6 +163,85 @@ test('mergeSnapshotsPreservingBaseline allows baseline override when forceBaseli
 
   const result = mergeSnapshotsPreservingBaseline('uuid-1', existingSnapshots, incomingSnapshots, true);
   assert.equal(result[0].is_baseline, true);
+});
+
+test('mergeSnapshotsPreservingBaseline enforces at most one is_baseline=true across initial, forceBaseline and re-sync payloads', () => {
+  const snapA = {
+    period_key: '2026-10',
+    period_label: 'Out/2026',
+    snapshot_type: 'baseline_historico',
+    is_baseline: true
+  };
+  const snapB = {
+    period_key: '2026-11',
+    period_label: 'Nov/2026',
+    snapshot_type: 'baseline_historico',
+    is_baseline: true
+  };
+
+  // Initial multi-month payload with multiple is_baseline: true flags
+  const initialResult = mergeSnapshotsPreservingBaseline('uuid-1', [], [snapA, snapB], false);
+  assert.equal(initialResult.length, 2);
+  assert.equal(initialResult[0].is_baseline, true);
+  assert.equal(initialResult[1].is_baseline, false);
+
+  // forceBaseline = true with multiple incoming is_baseline: true flags
+  const existing = [
+    {
+      id: 'snap-old',
+      client_id: 'uuid-1',
+      period_key: '2026-03',
+      snapshot_type: 'baseline_historico',
+      is_baseline: true
+    }
+  ];
+  const forcedResult = mergeSnapshotsPreservingBaseline('uuid-1', existing, [snapA, snapB], true);
+  assert.equal(forcedResult[0].is_baseline, true);
+  assert.equal(forcedResult[1].is_baseline, false);
+
+  // Re-syncing the exact same existing baseline (period_key, snapshot_type) with forceBaseline = false keeps is_baseline = true
+  const existingNov = [
+    {
+      id: 'snap-nov',
+      client_id: 'uuid-1',
+      period_key: '2026-11',
+      snapshot_type: 'baseline_historico',
+      is_baseline: true
+    }
+  ];
+  const resyncResult = mergeSnapshotsPreservingBaseline(
+    'uuid-1',
+    existingNov,
+    [snapA, snapB],
+    false
+  );
+  assert.equal(resyncResult[0].is_baseline, false);
+  assert.equal(resyncResult[1].is_baseline, true);
+});
+
+test('buildDeterministicLogRef preserves explicit external_ref and derives deterministic auto-* slug when omitted', () => {
+  assert.equal(
+    buildDeterministicLogRef({
+      external_ref: '  angelo-car-auditoria-2026-11-10  ',
+      title: 'Qualquer título',
+      pillar: 'gbp'
+    }),
+    'angelo-car-auditoria-2026-11-10'
+  );
+
+  const sampleLog = {
+    occurred_at: '2026-11-10T16:54:00Z',
+    pillar: 'gbp',
+    title: 'Auditoria Inicial — Vínculo Redes & Horário!'
+  };
+  const ref1 = buildDeterministicLogRef(sampleLog, '2026-11-10');
+  const ref2 = buildDeterministicLogRef({ ...sampleLog }, '2026-11-10');
+  assert.equal(ref1, ref2);
+  assert.match(ref1, /^auto-2026-11-10-gbp-/);
+  assert.doesNotMatch(ref1, /-$/);
+
+  const fallbackRef = buildDeterministicLogRef({ title: 'Ação sem data' }, '2026-11-10');
+  assert.match(fallbackRef, /^auto-2026-11-10-gbp-acao-sem-data$/);
 });
 
 test('guessContentType detects png, webp, jpeg and octet-stream', () => {

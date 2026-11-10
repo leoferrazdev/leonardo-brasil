@@ -338,7 +338,9 @@ export const ClientEvolutionChart: React.FC<ClientEvolutionChartProps> = ({
                     <strong className="text-slate-200">
                       {snap.site_metrics?.brokenUrlsCount === 0
                         ? "URLs 100% OK"
-                        : `${snap.site_metrics?.brokenUrlsCount ?? "—"} erro(s) 404`}
+                        : typeof snap.site_metrics?.brokenUrlsCount === "number"
+                          ? `${snap.site_metrics.brokenUrlsCount} erro(s) 404`
+                          : "Monitoramento web"}
                     </strong>
                   </div>
                 )}

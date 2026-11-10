@@ -5,9 +5,9 @@ import { loadEnvFile } from './lib/envLoader.mjs';
 import { auditClientWebsite } from './lib/siteAuditor.mjs';
 import { collectMonthlyAdsMetrics } from './lib/adsMetricsCollector.mjs';
 import {
+  buildDeterministicLogRef,
   buildStorageObjectPath,
   guessContentType,
-  mergeChecklistPreservingBefore,
   mergeSnapshotsPreservingBaseline,
   prepareChecklistUpsertRows
 } from './lib/crmSyncCore.mjs';
@@ -213,7 +213,7 @@ export async function runSync(options = {}) {
     if (snapErr) throw new Error(`Erro ao salvar snapshots: ${snapErr.message}`);
   }
 
-  // 4. Logs de entregas (idempotentes quando external_ref informado)
+  // 4. Logs de entregas (sempre idempotentes via external_ref determinístico)
   for (const log of changeLogs) {
     const row = {
       client_id: clientId,
@@ -225,11 +225,11 @@ export async function runSync(options = {}) {
       after_state: log.after_state ?? null,
       automation_source: log.automation_source || 'antigravity',
       visible_to_client: log.visible_to_client !== false,
-      external_ref: log.external_ref ?? null
+      external_ref: buildDeterministicLogRef(log)
     };
-    const { error: logErr } = row.external_ref
-      ? await supabase.from('client_change_logs').upsert(row, { onConflict: 'client_id,external_ref' })
-      : await supabase.from('client_change_logs').insert(row);
+    const { error: logErr } = await supabase
+      .from('client_change_logs')
+      .upsert(row, { onConflict: 'client_id,external_ref' });
     if (logErr) throw new Error(`Erro ao salvar log "${log.title}": ${logErr.message}`);
   }
 

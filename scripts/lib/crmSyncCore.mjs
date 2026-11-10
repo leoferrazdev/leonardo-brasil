@@ -86,18 +86,48 @@ export function mergeSnapshotsPreservingBaseline(
     ? existingSnapshots
     : (existingSnapshots ? [existingSnapshots] : []);
   const existingBaseline = existingList.find((s) => s && s.is_baseline);
+  let baselineKey =
+    existingBaseline && !forceBaseline
+      ? `${existingBaseline.period_key}::${existingBaseline.snapshot_type}`
+      : null;
 
   return incomingSnapshots.map((s) => {
     const normalized = normalizeSnapshotPayload(clientId, s);
-    if (
-      normalized.is_baseline &&
-      existingBaseline &&
-      !forceBaseline &&
-      (existingBaseline.period_key !== normalized.period_key ||
-        existingBaseline.snapshot_type !== normalized.snapshot_type)
-    ) {
-      normalized.is_baseline = false;
+    if (normalized.is_baseline) {
+      const key = `${normalized.period_key}::${normalized.snapshot_type}`;
+      if (baselineKey === null) {
+        baselineKey = key;
+      } else if (baselineKey !== key) {
+        normalized.is_baseline = false;
+      }
     }
     return normalized;
   });
+}
+
+export function buildDeterministicLogRef(
+  log,
+  fallbackDate = new Date().toISOString().slice(0, 10)
+) {
+  if (typeof log?.external_ref === 'string' && log.external_ref.trim().length > 0) {
+    return log.external_ref.trim();
+  }
+  const datePart =
+    typeof log?.occurred_at === 'string' && /^\d{4}-\d{2}-\d{2}/.test(log.occurred_at)
+      ? log.occurred_at.slice(0, 10)
+      : fallbackDate;
+  const pillarPart =
+    String(log?.pillar || 'gbp')
+      .toLowerCase()
+      .replace(/[^a-z0-9_]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'gbp';
+  const titleSlug = String(log?.title || 'log')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 48)
+    .replace(/-+$/g, '');
+  return `auto-${datePart}-${pillarPart}-${titleSlug || 'log'}`;
 }

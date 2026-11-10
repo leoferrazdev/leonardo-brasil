@@ -622,7 +622,7 @@ export const AddChecklistOrLogModal: React.FC<AddChecklistOrLogModalProps> = ({
             <Plus className="w-4 h-4 text-blue-400" />
             <span>{mode === "log" ? "Registrar Entrega / Versão" : "Adicionar Item Antes × Depois"}</span>
           </h3>
-          <button type="button" onClick={onClose} className="min-h-[40px] min-w-[40px] flex items-center justify-center text-slate-400">
+          <button type="button" onClick={onClose} className="min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -783,7 +783,7 @@ export const UploadEvidenceModal: React.FC<UploadEvidenceModalProps> = ({
             <Upload className="w-4 h-4 text-amber-400" />
             <span>Enviar Print Antes × Depois</span>
           </h3>
-          <button type="button" onClick={onClose} className="min-h-[40px] min-w-[40px] flex items-center justify-center text-slate-400">
+          <button type="button" onClick={onClose} className="min-h-[44px] min-w-[44px] flex items-center justify-center text-slate-400">
             <X className="w-5 h-5" />
           </button>
         </div>

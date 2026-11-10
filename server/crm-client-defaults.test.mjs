@@ -14,6 +14,11 @@ test('slugifyClientName strips accents, symbols and spaces cleanly', () => {
   assert.equal(defaults.slugifyClientName('Clínica Saúde & Vida'), 'clinica-saude-vida');
 });
 
+test('slugifyClientName never leaves a trailing hyphen after 64-char truncation and ignores leading symbols', () => {
+  assert.equal(defaults.slugifyClientName('a'.repeat(63) + ' Extra'), 'a'.repeat(63));
+  assert.equal(defaults.slugifyClientName('!'.repeat(70) + 'abc'), 'abc');
+});
+
 test('buildDefaultChecklistForScope includes only items for enabled services', () => {
   const gbpOnly = defaults.buildDefaultChecklistForScope('c1', {
     gbp: true,

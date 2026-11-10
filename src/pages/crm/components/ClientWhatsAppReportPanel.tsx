@@ -80,7 +80,7 @@ export const ClientWhatsAppReportPanel: React.FC<ClientWhatsAppReportPanelProps>
           <button
             type="button"
             onClick={() => setStyle("mensal")}
-            className={`min-h-[40px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               style === "mensal" ? "bg-emerald-600 text-white" : "text-[#94a3b8] hover:text-white"
             }`}
           >
@@ -89,7 +89,7 @@ export const ClientWhatsAppReportPanel: React.FC<ClientWhatsAppReportPanelProps>
           <button
             type="button"
             onClick={() => setStyle("marco_zero")}
-            className={`min-h-[40px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`min-h-[44px] px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               style === "marco_zero" ? "bg-amber-500 text-slate-950" : "text-[#94a3b8] hover:text-white"
             }`}
           >
@@ -107,7 +107,7 @@ export const ClientWhatsAppReportPanel: React.FC<ClientWhatsAppReportPanelProps>
             <button
               type="button"
               onClick={() => setDraftText(generatedText)}
-              className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-300 hover:text-amber-200"
+              className="inline-flex items-center gap-1 min-h-[44px] px-2 text-[11px] font-bold text-amber-300 hover:text-amber-200"
             >
               <RefreshCw className="w-3 h-3" /> Restaurar automático
             </button>

@@ -175,7 +175,7 @@ export default function ClientPortfolio() {
                 key={tab.id}
                 type="button"
                 onClick={() => setStatusFilter(tab.id)}
-                className={`min-h-[40px] px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap border transition-all ${
+                className={`min-h-[44px] px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap border transition-all ${
                   statusFilter === tab.id
                     ? "bg-blue-600 text-white border-blue-400"
                     : "bg-[#0e1320] text-[#94a3b8] border-[#1a2030] hover:text-white"
