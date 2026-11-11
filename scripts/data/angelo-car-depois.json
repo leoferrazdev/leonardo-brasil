@@ -27,7 +27,7 @@
     },
     "contract_meta": {
       "planLabel": "Piloto Completo — Otimização GMN + Novo Site v2 + Higiene Google Ads",
-      "privateNotes": "Acesso GBP como Gerente em angelocarapp@gmail.com e leonardoferrazbrasil@gmail.com. Ex-agência 'Clientes IS7' ainda mantém acesso Gerente no GBP (remoção pendente pelo Proprietário Principal mangelopereira73@gmail.com). No Google Ads (623-199-6692), IS7 (is7suporte@gmail.com / MCC 778-244-1376) e The Spotted Marketing (thespotmkt@gmail.com / MCC 550-550-0535, login ativo 10/11/2026) mantêm acesso Admin/MCC. Fase 2 GMN executada ao vivo em 10/11/2026 com backup em backup-antes/ + galeria limpa (5 banners com 99149-3740 removidos; 5 novas 4:3 em selecionadas-gmn aguardando upload manual) + auditoria 100% somente leitura dos 4 IDs Google Ads salva. Escopo validado com o proprietário: oficina física 08h-19h todo dia por ordem de chegada + plantão mecânico móvel 24h; Scanner R$ 150; sem guincho próprio, sem geometria/alinhamento/balanceamento, sem câmbio automático, sem ar-condicionado, sem retífica no local e sem elétrica completa. Fones ativos: (51) 98428-1009 e (51) 3241-7954 (993027669 e 991493740 desativados)."
+      "privateNotes": "Acesso GBP como Gerente em angelocarapp@gmail.com e leonardoferrazbrasil@gmail.com. Ex-agência 'Clientes IS7' ainda mantém acesso Gerente no GBP (remoção pendente pelo Proprietário Principal mangelopereira73@gmail.com). No Google Ads (623-199-6692), IS7 (is7suporte@gmail.com / MCC 778-244-1376) e The Spotted Marketing (thespotmkt@gmail.com / MCC 550-550-0535, login ativo 10/11/2026) mantêm acesso Admin/MCC. Fase 2 GMN executada ao vivo em 10/11 e ampliada em 11/11/2026 com backup em backup-antes/, 5 novas fotos 4:3 aprovadas sem pendência na Pesquisa/Maps (duplicata removida), 26 serviços estruturados em Oficina mecânica (todos com descrições técnicas SEO), 2 posts obsoletos de 2018 removidos e 5 posts ativos limpos + auditoria 100% somente leitura dos 4 IDs Google Ads salva. Escopo validado com o proprietário: oficina física 08h-19h todo dia por ordem de chegada + plantão mecânico móvel 24h; Scanner R$ 150; sem guincho próprio, sem geometria/alinhamento/balanceamento, sem câmbio automático, sem ar-condicionado, sem retífica no local e sem elétrica completa. Fones ativos: (51) 98428-1009 e (51) 3241-7954 (993027669 e 991493740 desativados)."
     },
     "started_at": "2026-11-10"
   },
@@ -67,9 +67,9 @@
       "before_status": "incompleto",
       "before_value": "Serviço 'Elétrico' e 'Bateria' desmarcados; 28 serviços sem descrição (0/300 chars) e sem preço",
       "current_status": "otimizado",
-      "current_value": "Removidos serviços não prestados (ar-condicionado, câmbio automático/transmissão, alinhamento de pneus); Scanner e Diagnóstico de motor com preço fixo R$ 150,00; descrições técnicas de até 300 caracteres aplicadas nas 8 categorias.",
+      "current_value": "Removidos serviços não prestados (ar-condicionado, câmbio automático/transmissão, alinhamento de pneus); Scanner e Diagnóstico de motor com preço fixo R$ 150,00; adicionados 'Inspeção de segurança veicular', 'Inspeção veicular' e 'Reparo de vazamento de água em veículos'; 100% dos 26 serviços de 'Oficina mecânica' e das 8 categorias com descrições técnicas SEO até 300 chars.",
       "sort_order": 3,
-      "completed_at": "2026-11-10T22:25:00Z"
+      "completed_at": "2026-11-11T14:00:00Z"
     },
     {
       "pillar": "gbp",
@@ -131,9 +131,10 @@
       "impact_level": "alta",
       "before_status": "incorreto",
       "before_value": "Capa com bloco de motor cortado, 4 cópias de logo antiga e alerta 'Inclua foto externa'",
-      "current_status": "em_andamento",
-      "current_value": "Galeria limpa no Painel GMN: 5 banners/ruídos com WhatsApp desativado (51) 99149-3740 e '24 hrs' removidos (14 originais salvas em backup-antes/fotos); 7 fotos reais mantidas (~465,6k views). 5 novas fotos 4:3 (2268x1701) com placas borradas prontas em selecionadas-gmn/ para envio manual em 1 clique no modal aberto (upload via automação bloqueado por restrição de workspace do sandbox); placa física na rampa pendente.",
-      "sort_order": 8
+      "current_status": "otimizado",
+      "current_value": "Nova capa (01-capa-fachada-angelo-car.jpg), logotipo limpo e 4 fotos externas/internas aprovadas ao vivo no Painel, Pesquisa e Google Maps (status Pendente encerrado); duplicata da capa excluída; imagens legadas (~561,6k visualizações) preservadas e banners com telefone desativado removidos com backup local. Recomendação offline mantida: placa física externa na rampa.",
+      "sort_order": 8,
+      "completed_at": "2026-11-11T14:00:00Z"
     },
     {
       "pillar": "gbp",
@@ -144,7 +145,7 @@
       "before_status": "ausente",
       "before_value": "0 produtos, 0 Q&A, últimos 5 posts de 2018 (há 8 anos)",
       "current_status": "em_andamento",
-      "current_value": "Posts antigos de 2018 removidos e 2 novos Posts com CTA 'Ligar agora' publicados (Socorro 24h + FAQ 5 perguntas para alimentar a IA Pergunte ao Maps). Textos prontos para 5 Produtos aguardando envio manual conjunto das fotos.",
+      "current_value": "2 posts obsoletos de 2018 com banners (99149-3740 / câmbio automático) excluídos e 5 atualizações ativas limpas no ar: novo Post Scanner R$ 150 + Arrefecimento (ao vivo no Maps em 11/11), Post FAQ 5 perguntas + Post Socorro 24h (CTA Ligar agora), Post Multimarcas Nacionais/Importados com foto real na oficina e Post Mecânica Geral com link UTM Saiba mais (banner antigo removido). Produtos segue em 0 pois o formulário do Google exige upload de foto local (bloqueado no sandbox).",
       "sort_order": 9
     },
     {
@@ -484,13 +485,13 @@
         "hasWhatsappCta": true
       },
       "overall_status": "avanco",
-      "executive_summary": "Histórico completo de 6 meses (Jun-Nov/2026) salvo no GMN e Google Ads (R$ 26.948,14 / 488 conv. no período), otimização estrutural do GMN concluída ao vivo em 10/11/2026 (Força 20% -> 100%, 8 categorias, horário real, UTM, redes, Scanner R$ 150, Posts+FAQ, limpeza de 5 banners com fone desativado) e auditoria somente leitura das 4 contas Ads finalizada.",
+      "executive_summary": "Histórico completo de 6 meses (Jun-Nov/2026) salvo no GMN e Google Ads (R$ 26.948,14 / 488 conv. no período); otimização GMN concluída em 10–11/11/2026 com novas fotos 4:3 (capa fachada + rampas/interior + logotipo) aprovadas sem pendência na Pesquisa/Maps, duplicata excluída, 26 serviços em Oficina mecânica com descrições SEO até 300 chars + Scanner R$ 150,00 e 5 Posts limpos (removidos banners de 2018); auditoria somente leitura das 4 contas Ads finalizada.",
       "collection_warnings": [
-        "Upload das 5 fotos curadas (selecionadas-gmn/01..05) e 5 Produtos depende de ação manual em 1 clique na aba GBP aberta (restrição de sandbox MCP).",
-        "Aba 'Sobre' do Maps pode levar alguns dias para substituir sugestão antiga de agendamento.",
+        "Cadastro de Produtos permanece em 0 pois o formulário do Google exige upload local de imagem (bloqueado no sandbox; copys prontas para inclusão manual).",
+        "Aba 'Sobre' do Maps ainda exibe sugestão antiga 'É recomendado marcar hora' (ajuste para ordem de chegada já salvo no Painel).",
         "Google Ads (623-199-6692) em modo somente leitura aguardando autorização: campanha Ar Condicionado (R$ 50/dia) está ativa em serviço não ofertado e saldo Pix está em R$ 30,68."
       ],
-      "recorded_at": "2026-11-11T00:40:00Z"
+      "recorded_at": "2026-11-11T14:10:00Z"
     }
   ],
   "changeLogs": [
@@ -603,6 +604,17 @@
       "automation_source": "antigravity",
       "visible_to_client": true,
       "external_ref": "angelo-car-ads-auditoria-2026-11-10"
+    },
+    {
+      "occurred_at": "2026-11-11T14:10:00Z",
+      "pillar": "gbp",
+      "action_type": "implementacao",
+      "title": "Aprovação Mídia 4:3 + Exclusão Duplicata + 100% Descrições Serviços + Higiene Final Posts",
+      "before_state": "Fotos recém-enviadas em revisão pendente + duplicata da capa; 14 serviços canônicos sem descrição SEO; 3 posts de 2018 ainda guardando banners antigos (99149-3740 e câmbio automático)",
+      "after_state": "Nova capa, logotipo e 4 fotos 4:3 aprovadas sem Pendente na Pesquisa e Maps; duplicata excluída; 3 novos serviços (Inspeção de segurança, Inspeção veicular e Vazamento de água) + 17 descrições SEO preenchidas (26/26 em Oficina mecânica); 2 posts obsoletos excluídos, banner antigo removido de post UTM, post Multimarcas com foto real na oficina reescrito e novo post Scanner R$ 150 + Arrefecimento publicado ao vivo",
+      "automation_source": "antigravity",
+      "visible_to_client": true,
+      "external_ref": "angelo-car-gbp-continuacao-11-11-2026"
     }
   ],
   "evidences": [
@@ -638,8 +650,8 @@
       "phase": "depois",
       "period_key": "2026-11-depois",
       "pair_key": "perfil-capa-logo",
-      "title": "Galeria GMN Limpa: Banners Obsoletos Removidos (Depois)",
-      "caption": "5 banners/duplicatas com telefone desativado (51) 99149-3740 removidos ao vivo (backup preservado); 7 fotos reais (~465,6k views) e logo mantidos. 5 novas fotos 4:3 com placas borradas em selecionadas-gmn/ prontas para upload manual.",
+      "title": "Galeria GMN Aprovada: Nova Capa, Logo e 4 Fotos 4:3 (Depois)",
+      "caption": "Nova capa (01-capa-fachada-angelo-car.jpg), logotipo e 4 fotos da fachada/rampa/interior aprovados sem status Pendente; duplicata excluída e acervo legado (~561,6k views visíveis) preservado.",
       "localPath": "evidences/angelo-car/evidencia-fotos-organizadas-depois.png"
     },
     {
@@ -648,7 +660,7 @@
       "period_key": "2026-11-depois",
       "pair_key": "maps-publico",
       "title": "Visão Pública no Google Maps (Depois)",
-      "caption": "Perfil público após otimização em 10/11/2026: horário real 08h-19h ('Abre qua. às 08:00'), links com UTM em Website/Serviços e novo Post 'Do proprietário'.",
+      "caption": "Perfil público no Google Maps com nova foto de capa da fachada/rampa aprovada, horário real 08h-19h ('Aberto · Fecha 19:00'), links UTM e novo Post 'Do proprietário' de 11/11/2026 ao vivo.",
       "localPath": "evidences/angelo-car/evidencia-maps-depois.png"
     },
     {
@@ -657,7 +669,7 @@
       "period_key": "2026-11-depois",
       "pair_key": "perfil-seo-painel",
       "title": "Painel GMN 100% + Knowledge Panel SEO (Depois)",
-      "caption": "Força do perfil elevada para 'Informações completas' (100%), Perfis Facebook/Instagram vinculados, Descrição SEO Cavalhada/Zona Sul e 1.023 interações.",
+      "caption": "Força do perfil 'Informações completas' (100%), nova foto de capa e logotipo ao vivo na Pesquisa Google, redes vinculadas, Descrição SEO e 1.023 interações.",
       "localPath": "evidences/angelo-car/evidencia-perfil-depois.png"
     },
     {
@@ -665,8 +677,8 @@
       "phase": "depois",
       "period_key": "2026-11-depois",
       "pair_key": "servicos-nativos-seo",
-      "title": "Catálogo de 8 Categorias + Scanner R$ 150,00 (Depois)",
-      "caption": "Serviços não prestados removidos, Scanner automotivo com preço fixo R$ 150,00 e descrições técnicas nas 8 categorias ativas.",
+      "title": "Catálogo de 8 Categorias + 26 Serviços SEO + Scanner R$ 150,00 (Depois)",
+      "caption": "100% dos 26 serviços em 'Oficina mecânica' com descrições SEO até 300 caracteres, Scanner a R$ 150,00 e cobertura nas 8 categorias sem serviços fora do escopo.",
       "localPath": "evidences/angelo-car/evidencia-servicos-depois.png"
     }
   ]
