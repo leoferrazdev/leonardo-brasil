@@ -1,141 +1,783 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "API Brasa — Leonardo Brasil",
+    "title": "Leonardo Brasil API",
     "version": "1.0.0",
-    "description": "Descrição das rotas existentes de suporte ao aplicativo. Não concede autorização de uso externo.",
+    "summary": "API oficial v1 de diagnóstico de Google Meu Negócio, catálogo de serviços locais e sandbox OAuth 2.0 para agentes.",
+    "description": "API REST pública versionada sob /api/v1/. Oferece consulta gratuita sem chave aos catálogos públicos (/api/v1/services, /api/v1/niches, /api/v1/health) e provisionamento instantâneo de credenciais OAuth 2.0 sandbox (/api/v1/oauth/sandbox-clients + /api/v1/oauth/token) com escopos granulares (health:read, catalog:read, audit:write).\n\nPolítica de Versionamento e Depreciação: Todas as rotas estáveis usam o prefixo de versão /api/v1/ e aceitam o cabeçalho opcional X-API-Version: 1. Alterações incompatíveis geram novo prefixo (/api/v2/). Eventual descontinuação de rotas antigas é comunicada com antecedência mínima de 6 meses por meio dos cabeçalhos RFC 9745 Deprecation, RFC 8594 Sunset e Link rel=\"successor-version\".\n\nRate Limiting e Erros: Todas as respostas incluem cabeçalhos IETF RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset e API-Version. Erros 4xx/5xx seguem RFC 9457 application/problem+json com code, message e hint.",
     "contact": {
-      "email": "contato@leonardobrasil.com.br"
+      "name": "Leonardo Brasil",
+      "email": "contato@leonardobrasil.com.br",
+      "url": "https://leonardobrasil.com.br/docs"
+    },
+    "license": {
+      "name": "Proprietary - Public Sandbox API",
+      "url": "https://leonardobrasil.com.br/termos"
     }
   },
   "servers": [
     {
-      "url": "https://leonardobrasil.com.br"
+      "url": "https://leonardobrasil.com.br",
+      "description": "Servidor de produção Leonardo Brasil (API v1)"
+    }
+  ],
+  "tags": [
+    {
+      "name": "System",
+      "description": "Status operacional e versão da API"
+    },
+    {
+      "name": "Catalog",
+      "description": "Catálogo público de serviços e nichos locais atendidos"
+    },
+    {
+      "name": "OAuth2",
+      "description": "Onboarding self-serve de sandbox e emissão de tokens OAuth 2.0 client_credentials"
+    },
+    {
+      "name": "Audit",
+      "description": "Diagnóstico técnico de Perfil da Empresa no Google (Raio-X 0 a 100)"
     }
   ],
   "paths": {
-    "/api/health": {
+    "/api/v1/health": {
       "get": {
-        "summary": "Estado e configuração das integrações",
+        "operationId": "getApiHealth",
+        "tags": ["System"],
+        "summary": "Consultar estado operacional da API v1",
+        "description": "Retorna o estado do servidor, versão semântica da API e indicadores booleanos das integrações configuradas sem expor segredos. Não consome escopo restrito.",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Estado do servidor (não verifica disponibilidade dos provedores)",
+            "description": "Status operacional da API v1.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/HealthResponse"
                 }
               }
             }
-          }
+          },
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
         }
       }
     },
-    "/api/anthropic/messages": {
+    "/api/v1/services": {
+      "get": {
+        "operationId": "listServices",
+        "tags": ["Catalog"],
+        "summary": "Listar catálogo público de serviços de SEO Local",
+        "description": "Retorna os serviços públicos oferecidos por Leonardo Brasil, links de onboarding self-serve para agentes e informações de cobertura nacional.",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista estruturada de serviços públicos.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServicesListResponse"
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
+        }
+      }
+    },
+    "/api/v1/niches": {
+      "get": {
+        "operationId": "listLocalNiches",
+        "tags": ["Catalog"],
+        "summary": "Listar segmentos locais suportados para Google Meu Negócio",
+        "description": "Consulta os nichos e especialidades locais suportados com filtro textual opcional (q) e limite máximo de itens (limit).",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "description": "Filtro parcial por slug ou nome do segmento (case-insensitive).",
+            "schema": {
+              "type": "string",
+              "example": "dentistas"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "Quantidade máxima de nichos retornados (1 a 50).",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 25
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista filtrada de segmentos atendidos.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NichesListResponse"
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
+        }
+      }
+    },
+    "/api/v1/oauth/sandbox-clients": {
       "post": {
-        "summary": "Processar mensagens do Brasa",
-        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "operationId": "createSandboxClient",
+        "tags": ["OAuth2"],
+        "summary": "Provisionar credenciais OAuth 2.0 sandbox gratuitamente (self-serve)",
+        "description": "Emite imediatamente um par client_id e client_secret do tier free-sandbox para fluxo OAuth 2.0 client_credentials, sem aprovação manual ou contato comercial.",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
         "requestBody": {
-          "required": true,
+          "required": false,
+          "description": "Parâmetros opcionais de nome do agente e escopos desejados.",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "$ref": "#/components/schemas/SandboxClientRequest"
               }
             }
           }
         },
         "responses": {
-          "2XX": {
-            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          "201": {
+            "description": "Credenciais sandbox emitidas com sucesso.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SandboxClientResponse"
+                }
+              }
+            }
           },
-          "4XX": {
-            "description": "Entrada inválida ou requisição recusada"
-          },
-          "5XX": {
-            "description": "Integração indisponível ou falha de processamento"
-          }
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
         }
       }
     },
-    "/api/elevenlabs/tts": {
+    "/api/v1/oauth/token": {
       "post": {
-        "summary": "Sintetizar voz",
-        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
+        "operationId": "issueOAuthToken",
+        "tags": ["OAuth2"],
+        "summary": "Emitir access_token Bearer via OAuth 2.0 client_credentials",
+        "description": "Troca client_id e client_secret (via Basic Auth ou corpo form-urlencoded/JSON) por um Bearer JWT assinado com os escopos autorizados.",
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
         "requestBody": {
           "required": true,
+          "description": "Requisição OAuth 2.0 client_credentials (application/x-www-form-urlencoded ou application/json).",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/OAuthTokenRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OAuthTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Token Bearer JWT emitido conforme RFC 6749.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OAuthTokenResponse"
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "401": { "$ref": "#/components/responses/UnauthorizedProblem" },
+          "403": { "$ref": "#/components/responses/ForbiddenProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
+        }
+      }
+    },
+    "/api/v1/audit/checklist": {
+      "get": {
+        "operationId": "getAuditChecklist",
+        "tags": ["Audit"],
+        "summary": "Obter critérios e pesos dos 6 pilares do Raio-X do Google Meu Negócio",
+        "description": "Retorna os 6 pilares técnicos da auditoria de Perfil da Empresa no Google, pesos (total 100) e faixas de risco. Requer escopo OAuth 2.0 catalog:read.",
+        "security": [
+          { "oauth2": ["catalog:read"] }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Estrutura completa de pilares e faixas de classificação.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditChecklistResponse"
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "401": { "$ref": "#/components/responses/UnauthorizedProblem" },
+          "403": { "$ref": "#/components/responses/ForbiddenProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
+        }
+      }
+    },
+    "/api/v1/audit/score": {
+      "post": {
+        "operationId": "calculateAuditScore",
+        "tags": ["Audit"],
+        "summary": "Calcular score diagnóstico (0-100) do Perfil da Empresa no Google",
+        "description": "Recebe respostas booleanas para os 6 pilares técnicos e calcula pontuação, classificação de risco e lista priorizada de recomendações práticas. Requer escopo OAuth 2.0 audit:write.",
+        "security": [
+          { "oauth2": ["audit:write"] }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiVersionHeader"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Dados da empresa e respostas booleanas aos 6 pilares.",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "$ref": "#/components/schemas/AuditScoreRequest"
               }
             }
           }
         },
         "responses": {
-          "2XX": {
-            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
+          "200": {
+            "description": "Resultado calculado da auditoria com falhas detectadas e ações.",
+            "headers": {
+              "API-Version": { "$ref": "#/components/headers/ApiVersion" },
+              "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+              "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+              "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditScoreResponse"
+                }
+              }
+            }
           },
-          "4XX": {
-            "description": "Entrada inválida ou requisição recusada"
-          },
-          "5XX": {
-            "description": "Integração indisponível ou falha de processamento"
+          "400": { "$ref": "#/components/responses/BadRequestProblem" },
+          "401": { "$ref": "#/components/responses/UnauthorizedProblem" },
+          "403": { "$ref": "#/components/responses/ForbiddenProblem" },
+          "429": { "$ref": "#/components/responses/RateLimitProblem" },
+          "500": { "$ref": "#/components/responses/InternalErrorProblem" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "Autenticação OAuth 2.0 via client_credentials com credenciais sandbox self-serve emitidas por POST /api/v1/oauth/sandbox-clients.",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://leonardobrasil.com.br/api/v1/oauth/token",
+            "scopes": {
+              "health:read": "Consultar status operacional e metadados de versão da API v1.",
+              "catalog:read": "Consultar catálogo de serviços, nichos atendidos e matriz de auditoria.",
+              "audit:write": "Executar cálculo diagnóstico do perfil no Google Meu Negócio (0 a 100)."
+            }
           }
+        }
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Token Bearer JWT emitido pelo endpoint OAuth 2.0 /api/v1/oauth/token."
+      }
+    },
+    "parameters": {
+      "ApiVersionHeader": {
+        "name": "X-API-Version",
+        "in": "header",
+        "required": false,
+        "description": "Versão solicitada da API (padrão v1).",
+        "schema": {
+          "type": "string",
+          "enum": ["1", "1.0", "1.0.0", "v1"],
+          "default": "1"
         }
       }
     },
-    "/api/stt/transcribe": {
-      "post": {
-        "summary": "Transcrever áudio",
-        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/octet-stream": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "responses": {
-          "2XX": {
-            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
-          },
-          "4XX": {
-            "description": "Entrada inválida ou requisição recusada"
-          },
-          "5XX": {
-            "description": "Integração indisponível ou falha de processamento"
-          }
+    "headers": {
+      "ApiVersion": {
+        "description": "Versão semântica da API usada para processar a requisição.",
+        "schema": {
+          "type": "string",
+          "example": "1.0.0"
+        }
+      },
+      "RateLimitLimit": {
+        "description": "Número máximo de requisições permitidas por janela de 60 segundos.",
+        "schema": {
+          "type": "string",
+          "example": "60"
+        }
+      },
+      "RateLimitRemaining": {
+        "description": "Requisições restantes na janela atual de 60 segundos.",
+        "schema": {
+          "type": "string",
+          "example": "59"
+        }
+      },
+      "RateLimitReset": {
+        "description": "Segundos até o reinício da janela de rate limit.",
+        "schema": {
+          "type": "string",
+          "example": "60"
+        }
+      },
+      "RetryAfter": {
+        "description": "Segundos recomendados antes de repetir após HTTP 429.",
+        "schema": {
+          "type": "string",
+          "example": "60"
+        }
+      },
+      "Deprecation": {
+        "description": "Cabeçalho RFC 9745 emitido em rotas legadas em processo de descontinuação.",
+        "schema": {
+          "type": "string",
+          "example": "true"
+        }
+      },
+      "Sunset": {
+        "description": "Data RFC 8594 prevista para remoção de uma versão depreciada.",
+        "schema": {
+          "type": "string",
+          "example": "Fri, 31 Dec 2027 23:59:59 GMT"
         }
       }
     },
-    "/api/webhooks/automation": {
-      "post": {
-        "summary": "Encaminhar evento à automação",
-        "description": "Operação do aplicativo Brasa; disponibilidade depende das integrações configuradas. Contate o responsável antes de integrar.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
+    "schemas": {
+      "ProblemDetails": {
+        "type": "object",
+        "description": "Modelo tipado de erro conforme RFC 9457 (application/problem+json) com code, message e hint acionável.",
+        "required": ["type", "title", "status", "detail", "code", "message", "hint"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://leonardobrasil.com.br/docs#error-validation_error"
+          },
+          "title": {
+            "type": "string",
+            "example": "Payload de auditoria inválido"
+          },
+          "status": {
+            "type": "integer",
+            "example": 400
+          },
+          "detail": {
+            "type": "string",
+            "example": "O corpo JSON deve conter o objeto answers com valores booleanos para os 6 pilares."
+          },
+          "instance": {
+            "type": "string",
+            "example": "/api/v1/audit/score"
+          },
+          "code": {
+            "type": "string",
+            "example": "validation_error"
+          },
+          "message": {
+            "type": "string",
+            "example": "O corpo JSON deve conter o objeto answers com valores booleanos para os 6 pilares."
+          },
+          "hint": {
+            "type": "string",
+            "example": "Consulte GET /api/v1/audit/checklist ou /openapi.json para o schema completo."
+          },
+          "error": {
+            "type": "string",
+            "example": "O corpo JSON deve conter o objeto answers com valores booleanos para os 6 pilares."
           }
+        }
+      },
+      "IntegrationsStatus": {
+        "type": "object",
+        "required": ["anthropic", "geminiBrain", "geminiTts", "elevenLabs", "stt", "automationWebhook"],
+        "properties": {
+          "anthropic": { "type": "boolean" },
+          "geminiBrain": { "type": "boolean" },
+          "geminiTts": { "type": "boolean" },
+          "elevenLabs": { "type": "boolean" },
+          "stt": { "type": "boolean" },
+          "automationWebhook": { "type": "boolean" }
+        }
+      },
+      "RuntimeStatus": {
+        "type": "object",
+        "required": ["ttsCircuitOpen", "ttsCircuitOpenUntil"],
+        "properties": {
+          "ttsCircuitOpen": { "type": "boolean" },
+          "ttsCircuitOpenUntil": { "type": ["string", "null"], "format": "date-time" }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "required": ["ok", "apiVersion", "status", "integrations", "runtime", "docsUrl"],
+        "properties": {
+          "ok": { "type": "boolean", "example": true },
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "status": { "type": "string", "example": "operational" },
+          "integrations": { "$ref": "#/components/schemas/IntegrationsStatus" },
+          "runtime": { "$ref": "#/components/schemas/RuntimeStatus" },
+          "docsUrl": { "type": "string", "format": "uri", "example": "https://leonardobrasil.com.br/docs" }
+        }
+      },
+      "ServiceItem": {
+        "type": "object",
+        "required": ["id", "name", "summary", "url", "pricingModel"],
+        "properties": {
+          "id": { "type": "string", "example": "google-meu-negocio" },
+          "name": { "type": "string", "example": "Otimização e Gestão de Google Meu Negócio" },
+          "summary": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "pricingModel": { "type": "string", "enum": ["free", "one-time-project", "project"] }
+        }
+      },
+      "OnboardingInfo": {
+        "type": "object",
+        "required": ["tier", "registrationEndpoint", "tokenEndpoint", "docsUrl"],
+        "properties": {
+          "tier": { "type": "string", "example": "free-sandbox" },
+          "registrationEndpoint": { "type": "string", "format": "uri" },
+          "tokenEndpoint": { "type": "string", "format": "uri" },
+          "docsUrl": { "type": "string", "format": "uri" }
+        }
+      },
+      "ServicesListResponse": {
+        "type": "object",
+        "required": ["apiVersion", "provider", "citiesCovered", "onboarding", "services"],
+        "properties": {
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "provider": { "type": "string" },
+          "citiesCovered": { "type": "integer", "example": 5571 },
+          "onboarding": { "$ref": "#/components/schemas/OnboardingInfo" },
+          "services": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ServiceItem" }
+          }
+        }
+      },
+      "NicheItem": {
+        "type": "object",
+        "required": ["slug", "name", "url"],
+        "properties": {
+          "slug": { "type": "string", "example": "dentistas" },
+          "name": { "type": "string", "example": "Dentistas" },
+          "url": { "type": "string", "format": "uri", "example": "https://leonardobrasil.com.br/google-meu-negocio/dentistas" }
+        }
+      },
+      "NichesListResponse": {
+        "type": "object",
+        "required": ["apiVersion", "total", "returned", "items"],
+        "properties": {
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "total": { "type": "integer", "example": 25 },
+          "returned": { "type": "integer", "example": 10 },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/NicheItem" }
+          }
+        }
+      },
+      "SandboxClientRequest": {
+        "type": "object",
+        "properties": {
+          "clientName": {
+            "type": "string",
+            "description": "Nome identificador do agente ou aplicação cliente.",
+            "example": "Meu Agente SEO"
+          },
+          "requestedScopes": {
+            "type": "array",
+            "description": "Lista de escopos OAuth solicitados.",
+            "items": {
+              "type": "string",
+              "enum": ["health:read", "catalog:read", "audit:write"]
+            },
+            "example": ["health:read", "catalog:read", "audit:write"]
+          }
+        }
+      },
+      "SandboxClientResponse": {
+        "type": "object",
+        "required": ["client_id", "client_secret", "client_name", "tier", "grant_type", "token_endpoint", "scopes", "expires_in", "expires_at"],
+        "properties": {
+          "client_id": { "type": "string" },
+          "client_secret": { "type": "string" },
+          "client_name": { "type": "string" },
+          "tier": { "type": "string", "example": "free-sandbox" },
+          "grant_type": { "type": "string", "example": "client_credentials" },
+          "token_endpoint": { "type": "string", "format": "uri" },
+          "scopes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "expires_in": { "type": "integer", "example": 2592000 },
+          "expires_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "OAuthTokenRequest": {
+        "type": "object",
+        "required": ["grant_type"],
+        "properties": {
+          "grant_type": {
+            "type": "string",
+            "enum": ["client_credentials"],
+            "description": "Deve ser client_credentials."
+          },
+          "client_id": {
+            "type": "string",
+            "description": "Opcional caso enviado via cabeçalho Authorization Basic."
+          },
+          "client_secret": {
+            "type": "string",
+            "description": "Opcional caso enviado via cabeçalho Authorization Basic."
+          },
+          "scope": {
+            "type": "string",
+            "description": "Lista de escopos separados por espaço (subconjunto dos escopos concedidos ao cliente).",
+            "example": "catalog:read audit:write"
+          }
+        }
+      },
+      "OAuthTokenResponse": {
+        "type": "object",
+        "required": ["access_token", "token_type", "expires_in", "scope"],
+        "properties": {
+          "access_token": { "type": "string" },
+          "token_type": { "type": "string", "example": "Bearer" },
+          "expires_in": { "type": "integer", "example": 3600 },
+          "scope": { "type": "string", "example": "health:read catalog:read audit:write" }
+        }
+      },
+      "AuditPillar": {
+        "type": "object",
+        "required": ["id", "title", "weight", "recommendation"],
+        "properties": {
+          "id": { "type": "string", "enum": ["category", "nap", "description", "catalog", "reviews", "photos"] },
+          "title": { "type": "string" },
+          "weight": { "type": "integer" },
+          "recommendation": { "type": "string" }
+        }
+      },
+      "AuditTier": {
+        "type": "object",
+        "required": ["maxScore", "tier", "label"],
+        "properties": {
+          "maxScore": { "type": "integer" },
+          "tier": { "type": "string", "enum": ["critico", "vulneravel", "competitivo"] },
+          "label": { "type": "string" }
+        }
+      },
+      "AuditChecklistResponse": {
+        "type": "object",
+        "required": ["apiVersion", "totalWeight", "pillars", "tiers"],
+        "properties": {
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "totalWeight": { "type": "integer", "example": 100 },
+          "pillars": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/AuditPillar" }
+          },
+          "tiers": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/AuditTier" }
+          }
+        }
+      },
+      "AuditAnswersInput": {
+        "type": "object",
+        "required": ["category", "nap", "description", "catalog", "reviews", "photos"],
+        "properties": {
+          "category": { "type": "boolean", "description": "Categoria primária corresponde exatamente ao serviço principal" },
+          "nap": { "type": "boolean", "description": "Nome, Endereço e Telefone consistentes na web" },
+          "description": { "type": "boolean", "description": "Descrição de 750 caracteres otimizada para SEO Local" },
+          "catalog": { "type": "boolean", "description": "Catálogo de serviços com descrição e link direto" },
+          "reviews": { "type": "boolean", "description": "Fluxo ativo de avaliações 5 estrelas com respostas" },
+          "photos": { "type": "boolean", "description": "Fotos reais atualizadas da equipe e fachada" }
+        }
+      },
+      "AuditScoreRequest": {
+        "type": "object",
+        "required": ["answers"],
+        "properties": {
+          "companyName": { "type": "string", "example": "Clínica Exemplo" },
+          "cityState": { "type": "string", "example": "Porto Alegre - RS" },
+          "answers": { "$ref": "#/components/schemas/AuditAnswersInput" }
+        }
+      },
+      "FailedPillarItem": {
+        "type": "object",
+        "required": ["id", "title", "lostWeight", "recommendation"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "lostWeight": { "type": "integer" },
+          "recommendation": { "type": "string" }
+        }
+      },
+      "AuditScoreResponse": {
+        "type": "object",
+        "required": ["apiVersion", "companyName", "cityState", "score", "maxScore", "tier", "label", "summary", "failedPillars", "evaluatedAt"],
+        "properties": {
+          "apiVersion": { "type": "string", "example": "1.0.0" },
+          "companyName": { "type": ["string", "null"] },
+          "cityState": { "type": ["string", "null"] },
+          "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "maxScore": { "type": "integer", "example": 100 },
+          "tier": { "type": "string", "enum": ["critico", "vulneravel", "competitivo"] },
+          "label": { "type": "string" },
+          "summary": { "type": "string" },
+          "failedPillars": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FailedPillarItem" }
+          },
+          "evaluatedAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "responses": {
+      "BadRequestProblem": {
+        "description": "Entrada inválida, JSON malformado ou versão/escopo inválido (RFC 9457).",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/ProblemDetails" }
+          }
+        }
+      },
+      "UnauthorizedProblem": {
+        "description": "Token OAuth 2.0 Bearer ausente, inválido ou expirado (RFC 9457).",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/ProblemDetails" }
+          }
+        }
+      },
+      "ForbiddenProblem": {
+        "description": "Token válido sem o escopo necessário para a operação (RFC 9457).",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/ProblemDetails" }
+          }
+        }
+      },
+      "RateLimitProblem": {
+        "description": "Limite de requisições excedido (RFC 9457).",
+        "headers": {
+          "Retry-After": { "$ref": "#/components/headers/RetryAfter" },
+          "RateLimit-Limit": { "$ref": "#/components/headers/RateLimitLimit" },
+          "RateLimit-Remaining": { "$ref": "#/components/headers/RateLimitRemaining" },
+          "RateLimit-Reset": { "$ref": "#/components/headers/RateLimitReset" }
         },
-        "responses": {
-          "2XX": {
-            "description": "Resposta da operação; síntese retorna áudio, demais operações retornam JSON."
-          },
-          "4XX": {
-            "description": "Entrada inválida ou requisição recusada"
-          },
-          "5XX": {
-            "description": "Integração indisponível ou falha de processamento"
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/ProblemDetails" }
+          }
+        }
+      },
+      "InternalErrorProblem": {
+        "description": "Erro interno inesperado (RFC 9457).",
+        "content": {
+          "application/problem+json": {
+            "schema": { "$ref": "#/components/schemas/ProblemDetails" }
           }
         }
       }

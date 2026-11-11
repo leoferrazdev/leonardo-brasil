@@ -1,23 +1,36 @@
-# auth.md — Leonardo Brasil
+# auth.md — Leonardo Brasil API v1
 
-## Público e disponibilidade
+## Acesso público sem atrito (Sandbox & Tier Gratuito)
 
-Este documento orienta agentes que procuram acesso às APIs de Leonardo Brasil. O serviço não oferece cadastro automático de agentes, provisionamento de credenciais ou emissão de tokens OAuth para integrações externas.
+A API pública versionada de Leonardo Brasil (`/api/v1/*`) possui onboarding self-serve para agentes e desenvolvedores, sem exigir contato comercial prévio:
 
-## Solicitação de integração
+1. **Rotas públicas sem chave (`keyless`):**
+   - `GET /api/v1/health` — estado operacional e versão da API.
+   - `GET /api/v1/services` — catálogo oficial de serviços de SEO Local e Google Meu Negócio.
+   - `GET /api/v1/niches` — lista de segmentos locais atendidos com filtro por termo.
+2. **Rotas protegidas por OAuth 2.0 (`client_credentials`) com menor privilégio:**
+   - Provisione suas credenciais gratuitas em **`POST /api/v1/oauth/sandbox-clients`**.
+   - Troque `client_id` e `client_secret` por um Bearer JWT em **`POST /api/v1/oauth/token`** (`grant_type=client_credentials`, aceita HTTP Basic Auth ou `application/x-www-form-urlencoded` / JSON).
 
-Para solicitar uma avaliação humana de integração, entre em contato com contato@leonardobrasil.com.br e descreva a finalidade, as operações necessárias e o responsável pela integração. Esse contato não registra automaticamente o agente nem garante a emissão de credenciais.
+## Metadados e Escopos Declarados
 
-## Métodos e credenciais
+- **Authorization Server Metadata (RFC 8414):** https://leonardobrasil.com.br/.well-known/oauth-authorization-server
+- **Protected Resource Metadata (RFC 9728):** https://leonardobrasil.com.br/.well-known/oauth-protected-resource
+- **Escopos suportados (`scopes_supported`):**
+  - `health:read`: consultar status operacional e metadados de versão da API v1.
+  - `catalog:read`: ler a matriz oficial dos 6 pilares e pesos de auditoria em `GET /api/v1/audit/checklist`.
+  - `audit:write`: executar cálculos diagnósticos de 0 a 100 em `POST /api/v1/audit/score`.
 
-Não há métodos de registro de agentes, tipos de identidade ou credenciais de agente suportados atualmente. Não existe endpoint de registro, reivindicação de conta ou revogação de credenciais de agente.
+Solicite apenas os escopos mínimos necessários para a tarefa. Requisições sem token retornam `HTTP 401` (`application/problem+json`) e tokens válidos sem o escopo exigido retornam `HTTP 403 insufficient_scope`.
 
-O CRM usa autenticação de usuários pelo Supabase. A sessão do CRM não é um mecanismo de autorização para agentes acessarem as APIs do Brasa. Não solicite nem reutilize senhas, sessões ou chaves de provedores dos usuários para esse fim.
+## Limites e ambientes separados
+
+- **CRM (`/crm/*`) e integrações internas do aplicativo Brasa (`/api/anthropic/*`, `/api/elevenlabs/*`, `/api/stt/*`):** permanecem restritos ao aplicativo interno e autenticados separadamente; sessões de usuário do CRM (Supabase) não concedem acesso às rotas de agentes e vice-versa.
+- **Suporte e parcerias customizadas:** para necessidades corporativas além do sandbox gratuito, escreva para contato@leonardobrasil.com.br.
 
 ## Descoberta das APIs
 
-- [Catálogo de APIs](https://leonardobrasil.com.br/.well-known/api-catalog)
-- [Especificação OpenAPI](https://leonardobrasil.com.br/openapi.json)
-- [Documentação](https://leonardobrasil.com.br/api-docs.md)
-
-A existência de uma rota ou sua descrição no catálogo não constitui autorização de uso externo. Os metadados OAuth de recurso protegido e servidor de autorização para agentes não são publicados porque esse fluxo não está implementado.
+- [Portal de Documentação HTML](https://leonardobrasil.com.br/docs)
+- [Referência Markdown da API](https://leonardobrasil.com.br/api-docs.md)
+- [Especificação OpenAPI 3.1](https://leonardobrasil.com.br/openapi.json)
+- [Catálogo de APIs RFC 9727](https://leonardobrasil.com.br/.well-known/api-catalog)

@@ -12,11 +12,15 @@
         {
           "href": "https://leonardobrasil.com.br/api-docs.md",
           "type": "text/markdown"
+        },
+        {
+          "href": "https://leonardobrasil.com.br/docs",
+          "type": "text/html"
         }
       ],
       "status": [
         {
-          "href": "https://leonardobrasil.com.br/api/health",
+          "href": "https://leonardobrasil.com.br/api/v1/health",
           "type": "application/json"
         }
       ]

@@ -4,9 +4,9 @@
     {
       "name": "consultar-api-leonardo-brasil",
       "type": "skill-md",
-      "description": "Consulte o catálogo público de APIs de Leonardo Brasil para localizar documentação, especificação OpenAPI e estado do serviço.",
+      "description": "Use esta skill quando o usuário precisar consultar os serviços ou nichos de SEO Local de Leonardo Brasil, provisionar acesso gratuito OAuth 2.0 sandbox ou calcular a pontuação diagnóstica (0 a 100) de um Perfil da Empresa no Google via API v1.",
       "url": "https://leonardobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
-      "digest": "sha256:1d0a9c0e4cb354d197e0156d4cc0061803f1d25a2d4c77216d9f41bae82936a8"
+      "digest": "sha256:bae06a959f9e8115e3ca8e034311abf8acf42177e119dd725fe3a5b87fee076f"
     }
   ]
 }

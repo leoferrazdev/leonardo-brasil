@@ -40,8 +40,11 @@ function LegalLayout({ title, children }: { title: string; children: ReactNode }
             <span className="grid place-items-center w-8 h-8 rounded-lg bg-accent/15 border border-accent/30"><Mark /></span>
             Leonardo Brasil
           </Link>
-          <nav className="flex gap-6 items-center">
-            <Link to="/calculadora" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Calculadora</Link>
+          <nav className="flex flex-wrap gap-4 sm:gap-6 items-center">
+            <Link to="/auditoria-perfil-google" className="text-sm font-bold text-accent-400 hover:text-accent-300 transition-colors">Raio-X do Perfil</Link>
+            <Link to="/about" className="text-sm font-medium text-muted hover:text-text transition-colors">Sobre</Link>
+            <Link to="/contact" className="text-sm font-medium text-muted hover:text-text transition-colors">Contato</Link>
+            <Link to="/docs" className="text-sm font-medium text-muted hover:text-text transition-colors">API Docs</Link>
             <Link to="/" className="flex items-center gap-2 text-sm font-semibold text-muted hover:text-text transition-colors">
               Voltar ao site
             </Link>
@@ -92,12 +95,16 @@ export function PrivacyPage() {
       </P>
 
       <H2>2. Dados que coletamos</H2>
-      <P>Este é um site institucional de marca pessoal — não há cadastro de conta de usuário. Coletamos:</P>
+      <P>Este é um site institucional de marca pessoal e consultoria em SEO Local. Coletamos:</P>
       <UL>
         <li>
           <strong>Dados de contato que você nos envia</strong> — ao clicar em nossos botões de WhatsApp ou
           nos contatar, você pode nos fornecer nome, número de telefone/WhatsApp, e-mail e o conteúdo das
           mensagens e informações que voluntariamente compartilhar sobre o seu negócio;
+        </li>
+        <li>
+          <strong>API pública e sandbox OAuth 2.0 (`/api/v1/*`)</strong> — os tokens sandbox emitidos em{" "}
+          <code className="text-text">/api/v1/oauth/sandbox-clients</code> utilizam assinatura stateless (HMAC-SHA256) e não armazenam dados pessoais de clientes finais em banco de dados permanente;
         </li>
         <li>
           <strong>Dados de navegação e técnicos</strong> — endereço IP, tipo de navegador e dispositivo,

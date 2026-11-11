@@ -61,7 +61,14 @@ function buildRoutes() {
     "/como-fazer-um-site-aparecer-no-google",
     "/termos",
     "/privacidade",
+    "/privacy",
     "/exclusao-de-dados",
+    "/about",
+    "/contact",
+    "/docs",
+    "/api",
+    "/developers",
+    "/webmcp",
   ];
 
   const niches = readSlugs(NICHES_PATH, "niches.ts");

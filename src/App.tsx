@@ -90,8 +90,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-ink text-text overflow-x-hidden selection:bg-accent selection:text-white">
       <SeoHead
-        title="Leonardo Brasil — Especialista em Google Meu Negócio e SEO Local"
-        description="Coloque seu negócio no Top 3 do Google Maps. Otimização e gestão de Perfil da Empresa no Google para atrair clientes locais sem pagar por anúncios diários."
+        title="Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio"
+        description="Leonardo Brasil SEO Local e Google Meu Negócio: otimização e gestão de Perfil da Empresa no Google Maps para atrair clientes locais sem depender apenas de anúncios diários."
+        keywords="Leonardo Brasil SEO Local, Leonardo Brasil Google Meu Negócio, especialista SEO Local, consultor Google Maps, Perfil da Empresa no Google"
         canonicalUrl="https://leonardobrasil.com.br"
         schema={faqSchema}
       />
@@ -117,6 +118,8 @@ export default function App() {
             <Link to="/recuperar-perfil-suspenso-google" className="whitespace-nowrap text-xs xl:text-sm font-medium text-red-400 hover:text-red-300 transition-colors">Perfil Suspenso?</Link>
             <Link to="/cidades" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">Cidades</Link>
             <Link to="/blog" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">Blog</Link>
+            <Link to="/about" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">Sobre</Link>
+            <Link to="/docs" className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">API &amp; Docs</Link>
           </nav>
 
           <div className="hidden lg:block flex-shrink-0">
@@ -142,6 +145,9 @@ export default function App() {
             <Link to="/recuperar-perfil-suspenso-google" onClick={() => setMenu(false)} className="text-base font-medium text-red-400">Perfil Suspenso no Google?</Link>
             <Link to="/cidades" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Cidades Atendidas</Link>
             <Link to="/blog" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Blog</Link>
+            <Link to="/about" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Sobre Leonardo Brasil</Link>
+            <Link to="/contact" onClick={() => setMenu(false)} className="text-base font-medium text-muted hover:text-text transition-colors">Contato</Link>
+            <Link to="/docs" onClick={() => setMenu(false)} className="text-base font-medium text-accent hover:text-accent-300 transition-colors">API &amp; Documentação (/docs)</Link>
             <a href={WA_DIAG} target="_blank" rel="noreferrer" className="mt-2 inline-flex justify-center items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold text-white shadow-lg shadow-accent/20">Avaliar meu Perfil <Arrow className="w-5 h-5" /></a>
           </div>
         )}
@@ -155,13 +161,13 @@ export default function App() {
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-bold text-accent-300">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-                Perfil da Empresa no Google · SEO Local
+                Leonardo Brasil · SEO Local &amp; Google Meu Negócio
               </span>
               <h1 className="mt-5 text-4xl sm:text-5xl font-black leading-[1.08] tracking-tight text-balance">
                 Seu concorrente no Google Maps não é melhor.<br />Ele só está <span className="text-accent-400">mais visível</span>.
               </h1>
               <p className="mt-6 text-lg text-muted leading-relaxed max-w-xl">
-                Sou <strong className="text-text">Leonardo Brasil</strong>. Otimizo seu Perfil da Empresa no Google para transformar buscas locais em <strong className="text-text">ligações</strong>, <strong className="text-text">pedidos de rota</strong> e <strong className="text-text">mensagens no WhatsApp</strong>, sem você precisar torrar dinheiro com anúncios pagos todos os dias.
+                Sou <strong className="text-text">Leonardo Brasil</strong>, especialista em <strong className="text-text">SEO Local</strong> e <strong className="text-text">Google Meu Negócio</strong>. Otimizo seu Perfil da Empresa no Google para transformar buscas locais em <strong className="text-text">ligações</strong>, <strong className="text-text">pedidos de rota</strong> e <strong className="text-text">mensagens no WhatsApp</strong>, sem você precisar torrar dinheiro com anúncios pagos todos os dias.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a href={WA_DIAG} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_40px_rgba(59,130,246,0.35)]">
@@ -529,6 +535,30 @@ export default function App() {
                   Fazer Raio-X do Perfil Online →
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TRANSPARÊNCIA INSTITUCIONAL & RECURSOS PARA DESENVOLVEDORES / API */}
+        <section aria-labelledby="developers-trust-band" className="mx-auto max-w-6xl px-5 pb-12">
+          <div className="rounded-2xl border border-line bg-panel/60 p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div>
+              <h2 id="developers-trust-band" className="text-lg font-bold text-text">
+                Transparência Institucional &amp; Leonardo Brasil API
+              </h2>
+              <p className="mt-1 text-xs sm:text-sm text-muted max-w-2xl">
+                Consultoria em SEO Local e Google Meu Negócio em Porto Alegre - RS e todo o Brasil (CNPJ 65.993.728/0001-07), com API pública versionada (<code className="text-accent-300">/api/v1</code>) e sandbox OAuth 2.0 aberto para agentes.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2.5 text-xs font-semibold">
+              <Link to="/about" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-text hover:border-accent transition-colors">Sobre</Link>
+              <Link to="/contact" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-text hover:border-accent transition-colors">Contato</Link>
+              <Link to="/privacy" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-text hover:border-accent transition-colors">Privacidade (LGPD)</Link>
+              <Link to="/docs" className="rounded-lg border border-accent/40 bg-accent/10 px-3.5 py-2 text-accent-300 hover:bg-accent/20 transition-colors">API Docs (`/docs`)</Link>
+              <Link to="/webmcp" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-text hover:border-accent transition-colors">WebMCP</Link>
+              <a href="/openapi.json" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-muted hover:text-text transition-colors">OpenAPI 3.1</a>
+              <a href="/llms.txt" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-muted hover:text-text transition-colors">llms.txt</a>
+              <a href="https://github.com/leoferrazdev" target="_blank" rel="noreferrer" className="rounded-lg border border-line-strong bg-ink/70 px-3.5 py-2 text-muted hover:text-text transition-colors">GitHub Oficial ↗</a>
             </div>
           </div>
         </section>

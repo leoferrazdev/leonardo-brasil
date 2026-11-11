@@ -6,25 +6,47 @@
   },
   "entries": [
     {
-      "identifier": "urn:air:leonardobrasil.com.br:api:brasa",
-      "displayName": "Especificação da API Brasa",
+      "identifier": "urn:air:leonardobrasil.com.br:api:leonardo-brasil-v1",
+      "displayName": "Especificação OpenAPI 3.1 da API Leonardo Brasil (v1)",
       "type": "application/json",
       "url": "https://leonardobrasil.com.br/openapi.json",
       "representativeQueries": [
-        "Onde encontro a especificação das APIs do Brasa?",
-        "Quais operações e formatos a API Brasa documenta?",
-        "Como consultar o estado da API de Leonardo Brasil?"
+        "Onde encontro a especificação OpenAPI das APIs v1 de Leonardo Brasil?",
+        "Quais schemas tipados, códigos de erro e escopos OAuth a API v1 suporta?",
+        "Como calcular o score de diagnóstico de Perfil da Empresa no Google via API?"
+      ]
+    },
+    {
+      "identifier": "urn:air:leonardobrasil.com.br:docs:api-docs",
+      "displayName": "Documentação Markdown da API v1 de Leonardo Brasil",
+      "type": "text/markdown",
+      "url": "https://leonardobrasil.com.br/api-docs.md",
+      "representativeQueries": [
+        "Como provisionar credenciais OAuth 2.0 sandbox gratuitamente na API Leonardo Brasil?",
+        "Quais cabeçalhos RateLimit e políticas de versionamento a API v1 utiliza?",
+        "Como interpretar erros RFC 9457 retornados pela API?"
+      ]
+    },
+    {
+      "identifier": "urn:air:leonardobrasil.com.br:oauth:authorization-server",
+      "displayName": "Metadados OAuth 2.0 RFC 8414 — Leonardo Brasil",
+      "type": "application/json",
+      "url": "https://leonardobrasil.com.br/.well-known/oauth-authorization-server",
+      "representativeQueries": [
+        "Qual o endpoint token_endpoint e registration_endpoint OAuth 2.0 do domínio?",
+        "Quais scopes_supported estão disponíveis para agentes?",
+        "Qual fluxo OAuth 2.0 é aceito para autenticação máquina-máquina?"
       ]
     },
     {
       "identifier": "urn:air:leonardobrasil.com.br:skill:consultar-api-leonardo-brasil",
-      "displayName": "Consultar APIs de Leonardo Brasil",
+      "displayName": "Consultar APIs e Diagnóstico v1 de Leonardo Brasil",
       "type": "text/markdown",
       "url": "https://leonardobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
       "representativeQueries": [
-        "Como localizar a documentação pública das APIs de Leonardo Brasil?",
-        "Como um agente consulta o catálogo de APIs sem executar operações?",
-        "Como interpretar o endpoint de saúde do Brasa?"
+        "Quando e como um agente deve usar a API v1 de Leonardo Brasil?",
+        "Como obter credenciais sandbox e executar o cálculo de auditoria de Google Meu Negócio?",
+        "Como localizar a documentação pública da API sem adivinhar endpoints?"
       ]
     }
   ]

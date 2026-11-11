@@ -1,37 +1,52 @@
-# Leonardo Brasil — Google Meu Negócio e SEO Local
+# Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio
 
-> Consultoria em presença digital, Perfil da Empresa no Google e SEO Local para profissionais liberais e prestadores de serviços locais no Brasil.
+> Consultoria especializada em SEO Local, Perfil da Empresa no Google (Google Meu Negócio), Google Maps e funis de conversão para profissionais liberais e prestadores de serviços locais no Brasil.
 
-Leonardo Brasil trabalha na revisão e otimização de perfis para facilitar que clientes locais encontrem informações do negócio e iniciem contato. O atendimento comercial é feito pelo WhatsApp. Não há garantia de posição no Google, volume de contatos ou faturamento.
+Leonardo Brasil atua em Porto Alegre (RS) com atendimento nacional em mais de 5.570 cidades brasileiras. O trabalho otimiza perfis empresariais no Google Maps para aumentar ligações, rotas e contatos no WhatsApp, sem falsas promessas de posição absoluta ou garantia artificial de faturamento.
 
-## Serviços e ferramentas públicas
+## When to use this
 
+Utilize este site e a API v1 de Leonardo Brasil quando o usuário ou workflow precisar:
+- **Avaliar um Perfil da Empresa no Google (0 a 100):** via API em `POST /api/v1/audit/score` (escopo `audit:write`) ou pela ferramenta web interativa em `/auditoria-perfil-google`.
+- **Consultar segmentos locais e estrutura de SEO Local por nicho ou cidade:** via `GET /api/v1/niches` e páginas especializadas em `/google-meu-negocio/<nicho>/<uf>/<cidade>`.
+- **Entender diretrizes éticas setoriais para busca local:** hubs dedicados para médicos (`/google-meu-negocio/medicos-cfm`), advogados (`/google-meu-negocio/advogados-oab`) e dentistas (`/google-meu-negocio/dentistas-cfo`), além de recuperação de perfil suspenso (`/recuperar-perfil-suspenso-google`).
+- **Integrar agentes via OAuth 2.0 self-serve sandbox:** provisione credenciais gratuitas em `POST /api/v1/oauth/sandbox-clients` sem aprovação comercial prévia e consulte a referência completa em `/docs`.
+
+## Serviços, guias e confiança institucional
+
+- [Sobre Leonardo Brasil (`/about`)](https://leonardobrasil.com.br/about): história, CNPJ `65.993.728/0001-07`, atuação em Porto Alegre - RS e metodologia dos 4 pilares.
+- [Contato Oficial (`/contact`)](https://leonardobrasil.com.br/contact): WhatsApp comercial, e-mail, horário de atendimento e cobertura nacional.
+- [Política de Privacidade LGPD (`/privacy`)](https://leonardobrasil.com.br/privacy): tratamento de dados, conformidade LGPD e dados do sandbox API.
+- [Documentação da API (`/docs`)](https://leonardobrasil.com.br/docs): guia completo da API v1, sandbox OAuth 2.0, rate limits, versionamento e erros RFC 9457.
+- [Referência da API (`/api`)](https://leonardobrasil.com.br/api) e [Portal Developers (`/developers`)](https://leonardobrasil.com.br/developers).
 - [Google Meu Negócio e SEO Local](https://leonardobrasil.com.br/google-meu-negocio): apresentação da consultoria.
-- [Otimização do perfil](https://leonardobrasil.com.br/otimizacao-google-meu-negocio): informações sobre revisão do perfil.
-- [Raio-X do perfil](https://leonardobrasil.com.br/auditoria-perfil-google): diagnóstico interativo baseado nas respostas do visitante. Não é uma auditoria automática do Google Maps nem prova de desempenho.
-- [Perfil suspenso](https://leonardobrasil.com.br/recuperar-perfil-suspenso-google): informações sobre o serviço de recuperação. A decisão de reativação cabe ao Google.
-- [Cidades atendidas](https://leonardobrasil.com.br/cidades).
-- [Blog](https://leonardobrasil.com.br/blog).
+- [Otimização do perfil](https://leonardobrasil.com.br/otimizacao-google-meu-negocio): revisão dos 6 pilares.
+- [Raio-X do perfil](https://leonardobrasil.com.br/auditoria-perfil-google): diagnóstico interativo gratuito.
+- [Perfil suspenso](https://leonardobrasil.com.br/recuperar-perfil-suspenso-google): reativação e recursos técnicos no Google.
+- [Cidades atendidas](https://leonardobrasil.com.br/cidades) e [Blog](https://leonardobrasil.com.br/blog).
 
 ## Descoberta e integração para agentes
 
-- [Manifesto de capacidades ARD](https://leonardobrasil.com.br/.well-known/ai-catalog.json).
-- [Catálogo de APIs](https://leonardobrasil.com.br/.well-known/api-catalog).
-- [Especificação OpenAPI](https://leonardobrasil.com.br/openapi.json).
-- [Documentação das APIs](https://leonardobrasil.com.br/api-docs.md).
-- [Índice de skills](https://leonardobrasil.com.br/.well-known/agent-skills/index.json).
-- [Disponibilidade de autenticação e integração](https://leonardobrasil.com.br/auth.md).
-- [Poppy: declaração de navegação no site, versão 0.1](https://leonardobrasil.com.br/.well-known/poppy.json).
+- [Documentação HTML (`/docs`)](https://leonardobrasil.com.br/docs) e [Referência Markdown (`/api-docs.md`)](https://leonardobrasil.com.br/api-docs.md).
+- [Especificação OpenAPI 3.1 (`/openapi.json`)](https://leonardobrasil.com.br/openapi.json).
+- [Catálogo de APIs RFC 9727 (`/.well-known/api-catalog`)](https://leonardobrasil.com.br/.well-known/api-catalog).
+- [Metadados OAuth 2.0 Authorization Server (RFC 8414)](https://leonardobrasil.com.br/.well-known/oauth-authorization-server).
+- [Metadados OAuth 2.0 Protected Resource (RFC 9728)](https://leonardobrasil.com.br/.well-known/oauth-protected-resource).
+- [Autenticação, sandbox gratuito e escopos (`/auth.md`)](https://leonardobrasil.com.br/auth.md).
+- [Manifesto de capacidades ARD (`/.well-known/ai-catalog.json`)](https://leonardobrasil.com.br/.well-known/ai-catalog.json).
+- [Índice de Agent Skills (`/.well-known/agent-skills/index.json`)](https://leonardobrasil.com.br/.well-known/agent-skills/index.json).
+- [WebMCP no navegador (`/webmcp`)](https://leonardobrasil.com.br/webmcp): ferramentas client-side (`consultar_servicos`, `abrir_diagnostico`, `consultar_catalogo_apis`) disponíveis apenas no navegador.
+- [Poppy: declaração de navegação no site (`/.well-known/poppy.json`)](https://leonardobrasil.com.br/.well-known/poppy.json).
 
-Em navegadores compatíveis, as páginas públicas registram ferramentas WebMCP para consultar os serviços, abrir o diagnóstico e consultar o catálogo de APIs. WebMCP no navegador não é um servidor MCP remoto.
+## Versionamento, rate limits e autenticação OAuth 2.0
 
-O site não oferece cadastro automático de agentes, servidor OAuth próprio para agentes, interface A2A ou servidor MCP remoto. O catálogo de APIs não concede autorização de uso externo. Para avaliar uma integração, consulte contato@leonardobrasil.com.br.
+A API pública v1 usa prefixo `/api/v1/` (com suporte ao cabeçalho opcional `X-API-Version: 1`). Eventuais descontinuações são sinalizadas com `Deprecation`, `Sunset` e `Link; rel="successor-version"` com no mínimo 6 meses de aviso. Todas as rotas retornam cabeçalhos `RateLimit-Limit`, `RateLimit-Remaining`, `RateLimit-Reset` e erros estruturados RFC 9457 (`application/problem+json`). Escopos disponíveis: `health:read`, `catalog:read` e `audit:write`.
 
 ## Contato e políticas
 
-- [WhatsApp oficial](https://wa.me/5551996737359).
-- E-mail: contato@leonardobrasil.com.br.
-- [Privacidade](https://leonardobrasil.com.br/privacidade).
-- [Termos](https://leonardobrasil.com.br/termos).
+- [WhatsApp oficial](https://wa.me/5551996737359) (`+55 51 99673-7359`)
+- E-mail: `contato@leonardobrasil.com.br`
+- GitHub: [https://github.com/leoferrazdev](https://github.com/leoferrazdev)
+- [Privacidade](https://leonardobrasil.com.br/privacy) · [Termos](https://leonardobrasil.com.br/termos)
 
-As permissões de rastreamento e uso de conteúdo constam em robots.txt; a publicação deste resumo não altera essas permissões.
+As permissões de rastreamento constam em `/robots.txt`; a publicação deste resumo não altera essas permissões.

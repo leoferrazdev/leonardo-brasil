@@ -11,6 +11,27 @@ import {
   persistEnvVariables,
   sanitizeCustomerId
 } from './google-ads-keywords.mjs';
+import {
+  isKnownWebRoute,
+  normalizeWebPath,
+  resolveLegacyRedirectPath
+} from './routes-manifest.mjs';
+import {
+  API_VERSION,
+  BASE_URL,
+  LEGACY_SUNSET_HTTP_DATE,
+  createRateLimiter,
+  createV1ApiContext,
+  sendProblem,
+  versionHeaderMiddleware
+} from './v1-api.mjs';
+import {
+  buildNotFoundHtml,
+  buildNotFoundMarkdown,
+  getMarkdownForKnownRoute,
+  prefersJsonOverHtml,
+  prefersMarkdown
+} from './content-negotiation.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,8 +54,39 @@ const allowedOrigins = new Set([
   'http://127.0.0.1:5173'
 ]);
 
-function jsonError(response, status, error) {
-  response.status(status).json({ error });
+function defaultCodeForStatus(status) {
+  if (status === 400) return 'bad_request';
+  if (status === 401) return 'unauthorized';
+  if (status === 403) return 'forbidden';
+  if (status === 404) return 'not_found';
+  if (status === 429) return 'rate_limit_exceeded';
+  if (status === 503) return 'service_unavailable';
+  if (status === 504) return 'gateway_timeout';
+  if (status >= 500) return 'upstream_or_server_error';
+  return 'api_error';
+}
+
+function defaultTitleForStatus(status) {
+  if (status === 400) return 'Requisição inválida';
+  if (status === 401) return 'Não autorizado';
+  if (status === 403) return 'Acesso negado';
+  if (status === 404) return 'Recurso não encontrado';
+  if (status === 429) return 'Limite de taxa excedido';
+  if (status === 503) return 'Serviço temporariamente indisponível';
+  if (status === 504) return 'Tempo limite excedido no provedor';
+  return 'Erro ao processar requisição';
+}
+
+function jsonError(response, status, error, options = {}) {
+  sendProblem(response, {
+    status,
+    code: options.code || defaultCodeForStatus(status),
+    title: options.title || defaultTitleForStatus(status),
+    detail: error,
+    hint: options.hint,
+    instance: response.req?.originalUrl || '/',
+    headers: options.headers
+  });
 }
 
 class TimeoutError extends Error {
@@ -338,11 +390,23 @@ async function requestElevenLabsTts({ env, fetchImpl, text }) {
 
 function applyCors(request, response, next) {
   const origin = request.headers.origin;
+  const isPublicAgentEndpoint =
+    request.path.startsWith('/api/v1') || request.path.startsWith('/.well-known');
+
   if (allowedOrigins.has(origin)) {
     response.setHeader('Access-Control-Allow-Origin', origin);
     response.setHeader('Vary', 'Origin');
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  } else if (isPublicAgentEndpoint) {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+  }
+
+  if (allowedOrigins.has(origin) || isPublicAgentEndpoint) {
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-API-Version');
     response.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    response.setHeader(
+      'Access-Control-Expose-Headers',
+      'RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, RateLimit-Policy, Retry-After, API-Version, X-API-Version, X-API-Deprecation-Policy, Deprecation, Sunset, WWW-Authenticate'
+    );
   }
 
   if (request.method === 'OPTIONS') {
@@ -358,13 +422,71 @@ export function createMainApp(options = {}) {
   const fetchImpl = options.fetchImpl || fetch;
   const distDir = options.distDir || defaultDistDir;
   const app = express();
+  const v1Api = createV1ApiContext({ env });
+  const rateLimiter = createRateLimiter({
+    max: parsePositiveInteger(options.rateLimitMax ?? env.API_RATE_LIMIT_MAX, 60),
+    windowMs: parsePositiveInteger(options.rateLimitWindowMs ?? env.API_RATE_LIMIT_WINDOW_MS, 60_000),
+    nowFn: options.nowFn
+  });
 
   app.disable('x-powered-by');
   app.use(applyCors);
+  app.use(/^\/api\/.+/, rateLimiter, versionHeaderMiddleware);
   app.use('/api/stt/transcribe', express.raw({ type: '*/*', limit: '15mb' }));
+  app.use('/api/v1/oauth/token', express.urlencoded({ extended: false }));
   app.use(express.json({ limit: '1mb' }));
 
+  app.use((err, request, response, next) => {
+    if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+      sendProblem(response, {
+        status: 400,
+        code: 'invalid_json',
+        title: 'JSON inválido no corpo da requisição',
+        detail: 'Não foi possível interpretar o payload JSON enviado.',
+        hint: 'Envie um objeto JSON válido com cabeçalho Content-Type: application/json.',
+        instance: request.originalUrl
+      });
+      return;
+    }
+    next(err);
+  });
+
+  // Metadados OAuth 2.0 (RFC 8414 e RFC 9728) sempre ativos para descoberta de agentes.
+  app.get('/.well-known/oauth-authorization-server', (_request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Content-Type', 'application/json; charset=utf-8');
+    response.status(200).json(v1Api.getOAuthAuthorizationServerMetadata());
+  });
+
+  app.get('/.well-known/oauth-protected-resource', (_request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Content-Type', 'application/json; charset=utf-8');
+    response.status(200).json(v1Api.getOAuthProtectedResourceMetadata());
+  });
+
+  // Endpoints públicos versionados (/api/v1/*) com onboarding self-serve e escopos OAuth 2.0 reais.
+  app.get('/api/v1/health', (_request, response) => {
+    response.status(200).json({
+      ok: true,
+      apiVersion: API_VERSION,
+      status: 'operational',
+      integrations: getIntegrationStatus(env),
+      runtime: getRuntimeStatus(),
+      docsUrl: `${BASE_URL}/docs`
+    });
+  });
+
+  app.get('/api/v1/services', v1Api.listServices);
+  app.get('/api/v1/niches', v1Api.listNiches);
+  app.post('/api/v1/oauth/sandbox-clients', v1Api.registerSandboxClient);
+  app.post('/api/v1/oauth/token', v1Api.issueOAuthToken);
+  app.get('/api/v1/audit/checklist', v1Api.requireScope('catalog:read'), v1Api.getAuditChecklist);
+  app.post('/api/v1/audit/score', v1Api.requireScope('audit:write'), v1Api.scoreAudit);
+
   app.get('/api/health', (_request, response) => {
+    response.setHeader('Deprecation', 'true');
+    response.setHeader('Sunset', LEGACY_SUNSET_HTTP_DATE);
+    response.setHeader('Link', `<${BASE_URL}/api/v1/health>; rel="successor-version"`);
     response.json({
       ok: true,
       version: env.npm_package_version || '1.0.0',
@@ -639,6 +761,18 @@ export function createMainApp(options = {}) {
     }
   });
 
+  // Qualquer endpoint /api/* não mapeado retorna erro JSON estruturado (RFC 9457), nunca HTML da SPA.
+  app.use(/^\/api\/.+/, (request, response) => {
+    sendProblem(response, {
+      status: 404,
+      code: 'endpoint_not_found',
+      title: 'Endpoint da API não encontrado',
+      detail: `A rota '${request.method} ${request.path}' não existe na API de Leonardo Brasil.`,
+      hint: `Consulte os endpoints disponíveis em ${BASE_URL}/openapi.json ou ${BASE_URL}/docs.`,
+      instance: request.originalUrl
+    });
+  });
+
   if (existsSync(distDir)) {
     // Documentos públicos de descoberta podem ser consultados por outros origins.
     app.use('/.well-known', (_request, response, next) => {
@@ -664,7 +798,7 @@ export function createMainApp(options = {}) {
     }));
 
     // Agent Readiness: API Catalog Endpoint
-    app.get('/.well-known/api-catalog', (request, response) => {
+    app.get('/.well-known/api-catalog', (_request, response) => {
       const catalogPath = path.join(distDir, '.well-known', 'api-catalog');
       if (existsSync(catalogPath)) {
         response.setHeader('Content-Type', 'application/linkset+json');
@@ -683,41 +817,145 @@ export function createMainApp(options = {}) {
     // index:false e redirect:false para não servir index.html automaticamente nem
     // redirecionar para URLs com barra final. As rotas HTML são resolvidas abaixo,
     // servindo a página pré-renderizada correspondente quando ela existe.
-    app.use(express.static(distDir, { maxAge: '1h', index: false, redirect: false }));
+    app.use(express.static(distDir, {
+      maxAge: '1h',
+      index: false,
+      redirect: false,
+      setHeaders: (response, filePath) => {
+        if (/\.(json|txt|md)$/i.test(filePath)) {
+          response.setHeader('Access-Control-Allow-Origin', '*');
+        }
+      }
+    }));
+
     app.get(/.*/, (request, response) => {
-      const cleanPath = request.path.replace(/\/+$/, '');
+      const cleanPath = normalizeWebPath(request.path);
+
+      // Redirecionamento 301 apenas para rotas legadas cujo nicho é válido.
+      const legacyTarget = resolveLegacyRedirectPath(cleanPath);
+      if (legacyTarget) {
+        response.redirect(301, legacyTarget);
+        return;
+      }
 
       // Anuncia somente os documentos e capacidades realmente publicados.
-      if (cleanPath === '' || cleanPath === '/') {
+      if (cleanPath === '/') {
         response.vary('Accept');
         response.setHeader(
           'Link',
-          '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ai-catalog.json>; rel="ai-catalog", </.well-known/agent-skills/index.json>; rel="agent-skills", </llms.txt>; rel="alternate"; type="text/markdown"'
+          '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ai-catalog.json>; rel="ai-catalog", </.well-known/agent-skills/index.json>; rel="agent-skills", </.well-known/oauth-authorization-server>; rel="oauth-authorization-server", </docs>; rel="service-doc", </llms.txt>; rel="alternate"; type="text/markdown"'
         );
       }
 
-      // O resumo Markdown descreve a página inicial, não todas as rotas do site.
-      if ((cleanPath === '' || cleanPath === '/') && request.headers.accept?.includes('text/markdown')) {
-        const llmsTxtPath = path.join(distDir, 'llms.txt');
-        if (existsSync(llmsTxtPath)) {
+      // Entrada /api aceita negociação JSON além de Markdown e HTML.
+      if (cleanPath === '/api' && prefersJsonOverHtml(request.headers.accept)) {
+        response.vary('Accept');
+        response.status(200).json({
+          name: 'Leonardo Brasil API',
+          apiVersion: API_VERSION,
+          docsUrl: `${BASE_URL}/docs`,
+          openapiUrl: `${BASE_URL}/openapi.json`,
+          apiCatalogUrl: `${BASE_URL}/.well-known/api-catalog`,
+          oauthAuthorizationServerUrl: `${BASE_URL}/.well-known/oauth-authorization-server`,
+          oauthProtectedResourceUrl: `${BASE_URL}/.well-known/oauth-protected-resource`,
+          sandboxRegistrationUrl: `${BASE_URL}/api/v1/oauth/sandbox-clients`,
+          tokenUrl: `${BASE_URL}/api/v1/oauth/token`
+        });
+        return;
+      }
+
+      // Rotas inexistentes retornam HTTP 404 real (Markdown, JSON ProblemDetails ou HTML) em vez de soft-404.
+      if (!isKnownWebRoute(cleanPath)) {
+        response.status(404);
+        response.vary('Accept');
+        if (prefersMarkdown(request.headers.accept)) {
           response.setHeader('Content-Type', 'text/markdown; charset=utf-8');
-          response.sendFile(llmsTxtPath);
+          response.send(buildNotFoundMarkdown(cleanPath));
+          return;
+        }
+        if (prefersJsonOverHtml(request.headers.accept)) {
+          sendProblem(response, {
+            status: 404,
+            code: 'resource_not_found',
+            title: 'Recurso não encontrado',
+            detail: `O caminho '${cleanPath}' não existe em leonardobrasil.com.br.`,
+            hint: `Consulte ${BASE_URL}/docs, ${BASE_URL}/llms.txt ou ${BASE_URL}/sitemap.xml.`,
+            instance: request.originalUrl
+          });
+          return;
+        }
+        response.setHeader('Content-Type', 'text/html; charset=utf-8');
+        response.send(buildNotFoundHtml(cleanPath));
+        return;
+      }
+
+      // Negociação de conteúdo Markdown para a página inicial, documentação e páginas institucionais.
+      if (prefersMarkdown(request.headers.accept)) {
+        const markdown = getMarkdownForKnownRoute(cleanPath, distDir);
+        if (markdown) {
+          response.vary('Accept');
+          response.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+          response.send(markdown);
           return;
         }
       }
 
       // Serve a página pré-renderizada da rota (dist/<rota>/index.html), quando existir.
-      if (cleanPath && cleanPath !== '/') {
-        const prerendered = path.join(distDir, cleanPath, 'index.html');
+      if (cleanPath !== '/') {
+        const prerendered = path.join(distDir, cleanPath.slice(1), 'index.html');
         if (prerendered.startsWith(distDir) && existsSync(prerendered)) {
           response.sendFile(prerendered);
           return;
         }
       }
-      // Fallback (rotas não pré-renderizadas): SPA a partir do index.html raiz.
-      response.sendFile(path.join(distDir, 'index.html'));
+
+      const rootIndex = path.join(distDir, 'index.html');
+      if (existsSync(rootIndex)) {
+        response.sendFile(rootIndex);
+        return;
+      }
+
+      // Ambiente de testes usando distDir parcial (ex.: public/ sem index.html).
+      response.status(404);
+      response.setHeader('Content-Type', 'text/html; charset=utf-8');
+      response.send(buildNotFoundHtml(cleanPath));
+    });
+  } else {
+    app.get(/.*/, (request, response) => {
+      const cleanPath = normalizeWebPath(request.path);
+      response.status(404);
+      response.vary('Accept');
+      if (prefersMarkdown(request.headers.accept)) {
+        response.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+        response.send(buildNotFoundMarkdown(cleanPath));
+        return;
+      }
+      if (prefersJsonOverHtml(request.headers.accept)) {
+        sendProblem(response, {
+          status: 404,
+          code: 'resource_not_found',
+          title: 'Recurso não encontrado',
+          detail: `O caminho '${cleanPath}' não existe em leonardobrasil.com.br.`,
+          hint: `Consulte ${BASE_URL}/docs, ${BASE_URL}/llms.txt ou ${BASE_URL}/sitemap.xml.`,
+          instance: request.originalUrl
+        });
+        return;
+      }
+      response.setHeader('Content-Type', 'text/html; charset=utf-8');
+      response.send(buildNotFoundHtml(cleanPath));
     });
   }
+
+  app.use((err, request, response, _next) => {
+    sendProblem(response, {
+      status: err?.status || 500,
+      code: 'internal_server_error',
+      title: 'Erro interno do servidor',
+      detail: err?.message || 'Erro inesperado ao processar a requisição.',
+      hint: `Verifique os parâmetros e tente novamente, ou consulte ${BASE_URL}/docs.`,
+      instance: request.originalUrl
+    });
+  });
 
   return app;
 }

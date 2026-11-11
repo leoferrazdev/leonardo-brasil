@@ -39,6 +39,11 @@ const ComoFazerSiteAparecerNoGoogle = lazy(() => import("./pages/ComoFazerSiteAp
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
+const AboutPage = lazy(() => import("./pages/TrustPages").then((m) => ({ default: m.AboutPage })));
+const ContactPage = lazy(() => import("./pages/TrustPages").then((m) => ({ default: m.ContactPage })));
+const DeveloperDocs = lazy(() => import("./pages/DeveloperDocs").then((m) => ({ default: m.DeveloperDocs })));
+const WebMcpDocsPage = lazy(() => import("./pages/DeveloperDocs").then((m) => ({ default: m.WebMcpDocsPage })));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 // Módulo CRM de Prospecção Local
 const CrmLogin = lazy(() => import("./pages/crm/Login"));
@@ -53,7 +58,7 @@ const CrmProtectedRoute = lazy(() =>
 );
 
 /**
- * Redirecionamento de rotas legadas para a nova máquina de Google Meu Negócio
+ * Redirecionamento de rotas legadas e exibição de 404 explícito para URLs desconhecidas
  */
 function RouteFallback() {
   const { pathname } = useLocation();
@@ -65,7 +70,7 @@ function RouteFallback() {
     }
     return <Navigate to={`/google-meu-negocio/${clean}`} replace />;
   }
-  return <App />;
+  return <NotFoundPage />;
 }
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -127,7 +132,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/porto-alegre-digital" element={<PortoAlegreDigital />} />
             <Route path="/termos" element={<TermsPage />} />
             <Route path="/privacidade" element={<PrivacyPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/exclusao-de-dados" element={<DataDeletionPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/docs" element={<DeveloperDocs variant="docs" />} />
+            <Route path="/api" element={<DeveloperDocs variant="api" />} />
+            <Route path="/developers" element={<DeveloperDocs variant="developers" />} />
+            <Route path="/webmcp" element={<WebMcpDocsPage />} />
 
             {/* Rotas do CRM de Prospecção Local */}
             <Route path="/crm" element={<Navigate to="/crm/dashboard" replace />} />

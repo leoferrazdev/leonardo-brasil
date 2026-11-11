@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const DOMAIN = "https://leonardobrasil.com.br";
 const PUBLIC_DIR = path.resolve(__dirname, "../public");
+const DIST_DIR = path.resolve(__dirname, "../dist");
 const SITEMAP_INDEX_PATH = path.join(PUBLIC_DIR, "sitemap.xml");
 const LOCATIONS_JSON_PATH = path.resolve(__dirname, "../src/data/seoLocations.json");
 const BLOG_PATH = path.resolve(__dirname, "../src/data/blogData.ts");
@@ -37,6 +38,13 @@ const STATIC_ROUTES = [
   "/como-fazer-um-site-aparecer-no-google",
   "/brandbook",
   "/cidades",
+  "/about",
+  "/contact",
+  "/privacy",
+  "/docs",
+  "/api",
+  "/developers",
+  "/webmcp",
   "/termos",
   "/privacidade",
   "/exclusao-de-dados",
@@ -190,6 +198,18 @@ function generateSitemap() {
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapIndexNodes}\n</sitemapindex>`;
 
   safeWriteFileSync(SITEMAP_INDEX_PATH, sitemapIndex);
+
+  // Espelha todos os sitemaps gerados em dist/ quando o diretório existir,
+  // evitando divergência quando generate-sitemap roda após vite build.
+  if (fs.existsSync(DIST_DIR)) {
+    for (const fileName of ["sitemap.xml", ...allSitemapFiles]) {
+      const srcFile = path.join(PUBLIC_DIR, fileName);
+      const destFile = path.join(DIST_DIR, fileName);
+      if (fs.existsSync(srcFile)) {
+        safeWriteFileSync(destFile, fs.readFileSync(srcFile, "utf8"));
+      }
+    }
+  }
 
   console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
   console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);

@@ -28,16 +28,19 @@ import GoogleMeuNegocioMedicosCfm from "./pages/GoogleMeuNegocioMedicosCfm";
 import GoogleMeuNegocioAdvogadosOab from "./pages/GoogleMeuNegocioAdvogadosOab";
 import GoogleMeuNegocioDentistasCfo from "./pages/GoogleMeuNegocioDentistasCfo";
 import { TermsPage, PrivacyPage, DataDeletionPage } from "./pages/LegalPages";
+import { AboutPage, ContactPage } from "./pages/TrustPages";
+import { DeveloperDocs, WebMcpDocsPage } from "./pages/DeveloperDocs";
+import NotFoundPage from "./pages/NotFoundPage";
 
 /**
- * Fallback: direciona qualquer rota legada para o fluxo principal de Google Meu Negócio
+ * Fallback: direciona rotas legadas e exibe 404 para rotas inexistentes
  */
 function RouteFallback() {
   const { pathname } = useLocation();
   if (pathname.startsWith("/estrutura-de-vendas-para-")) {
     return <GoogleMeuNegocioLanding />;
   }
-  return <App />;
+  return <NotFoundPage />;
 }
 
 /**
@@ -102,7 +105,14 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/porto-alegre-digital" element={<PortoAlegreDigital />} />
           <Route path="/termos" element={<TermsPage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/exclusao-de-dados" element={<DataDeletionPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/docs" element={<DeveloperDocs variant="docs" />} />
+          <Route path="/api" element={<DeveloperDocs variant="api" />} />
+          <Route path="/developers" element={<DeveloperDocs variant="developers" />} />
+          <Route path="/webmcp" element={<WebMcpDocsPage />} />
           <Route path="*" element={<RouteFallback />} />
         </Routes>
       </StaticRouter>
