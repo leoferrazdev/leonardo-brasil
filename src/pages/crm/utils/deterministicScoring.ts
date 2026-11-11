@@ -20,7 +20,11 @@ export function resolveArchetypeTier(segment: string): 1 | 2 | 3 | 4 {
     s.includes("elétrica") ||
     s.includes("eletrica") ||
     s.includes("bateria") ||
+    s.includes("borracharia") ||
+    s.includes("pneu") ||
     s.includes("guincho") ||
+    s.includes("reboque") ||
+    s.includes("socorro") ||
     s.includes("veterin") ||
     s.includes("chaveiro") ||
     s.includes("desentupidora") ||

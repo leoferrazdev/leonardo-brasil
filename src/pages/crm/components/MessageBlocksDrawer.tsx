@@ -49,7 +49,11 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     if (lead) {
       setNotes(lead.notes || "");
       setActiveTab(initialTab ?? (lead.stage === "em_conversa" ? "followup" : 1));
-      setBloco1Mode("volume");
+      setBloco1Mode(
+        lead.bloco1 === lead.bloco1Falha && lead.bloco1 !== lead.bloco1Volume
+          ? "falha"
+          : "volume"
+      );
     }
   }, [lead, initialTab]);
 

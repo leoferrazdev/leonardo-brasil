@@ -134,6 +134,9 @@ export default function CrmDashboard() {
             segLow.includes("eletrica") ||
             segLow.includes("bateria") ||
             segLow.includes("guincho") ||
+            segLow.includes("reboque") ||
+            segLow.includes("borracharia") ||
+            segLow.includes("socorro") ||
             (segLow.includes("veterin") &&
               (lead.name.toLowerCase().includes("24") ||
                 (lead.canalStatus || "").toLowerCase().includes("24h") ||
@@ -143,7 +146,9 @@ export default function CrmDashboard() {
               segLow.includes("elétrica") ||
               segLow.includes("eletrica") ||
               segLow.includes("bateria") ||
-              segLow.includes("automot")
+              segLow.includes("automot") ||
+              segLow.includes("borracharia") ||
+              segLow.includes("pneu")
             : lead.segment === selectedSegment);
       const matchNeighborhood =
         selectedNeighborhood === "todos" || lead.neighborhood === selectedNeighborhood;

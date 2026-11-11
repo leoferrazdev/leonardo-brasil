@@ -59,7 +59,7 @@ flowchart LR
   2. **Modo Offline Local (Acesso Rápido):** Botão de contingência imediata que armazena `localStorage.setItem("crm_offline_session", "true")`, garantindo acesso total mesmo em instabilidades de rede ou durante manutenções no Supabase.
 * **Segurança de Indexação:** Todas as rotas do CRM contêm `<meta name="robots" content="noindex, nofollow" />` e são excluídas da pré-renderização estática do SSR.
 * **Versionamento e Hidratação Determinística:** Chave `crm_prospect_leads_v8` em `crmProspectService.ts`, que preserva os avanços manuais (`stage` e `notes`) já feitos no navegador e hidrata automaticamente novos leads (`INITIAL_PROSPECTS`) junto ao cálculo puro de `deterministicScoring.ts` (0–100 pts).
-* **Ordenação e Filtros Executivos:** Cada coluna do Kanban é ordenada deterministicamente por **Score (↓) → Posição no Maps (↑) → Volume Mensal (↓)**, com filtro rápido para **`Só Classe A (≥75 pts)`**, **`Classe A + B (≥60)`**, chips de **`Urgência 24h`**, **`Oficinas Mecânicas`** (incluindo Auto Elétricas) e **`Veterinárias`**.
+* **Ordenação e Filtros Executivos:** Cada coluna do Kanban é ordenada deterministicamente por **Score (↓) → Posição no Maps (↑) → Volume Mensal (↓)**, com filtro rápido para **`Só Classe A (≥75 pts)`**, **`Classe A + B (≥60)`**, chips de **`Urgência 24h`** (Chaveiro, Guincho/Reboque, Desentupidora, Auto Elétrica, Borracharia/Auto Socorro), **`Oficinas Mecânicas`** (incluindo Auto Elétricas, Ar Automotivo e Borracharias) e **`Veterinárias`**. Incluídos em Arquétipo Tier 1 (`+20 pts`): `"borracharia"`, `"pneu"`, `"reboque"` e `"socorro"`.
 
 ---
 
@@ -108,11 +108,11 @@ Cada card do pipeline traz alta densidade factual sem subjetividade:
 
 Ao tocar no botão *"Ver Roteiro"* de qualquer card, a gaveta lateral (`MessageBlocksDrawer.tsx`) exibe o **Detalhamento dos Critérios Auditados (0–100 pts)** (`Posição`, `Arquétipo`, `D`, `WA`, `U/C`, `H/R`, `L`, `Demanda`) e oferece:
 
-### 4.1. Alternador Dinâmico de Bloco 1 (Modelo A vs Modelo B)
-* **🎯 Modelo A (Demanda & Top 3):**
+### 4.1. Alternador Dinâmico de Bloco 1 (Modelo A vs Modelo B — Padrão Rodada 05)
+* **🔍 Modelo B (Falha Factual Auditada — Padrão Ativo na Rodada 05):** quando `lead.bloco1 === lead.bloco1Falha`, tanto o botão verde 1-clique `WhatsApp` do card quanto o `MessageBlocksDrawer` abrem diretamente na abordagem factual citando o erro concreto auditado (ex.: *Hospedagem Suspensa*, *link `wa.me` sem 9º dígito*, *Perfil Não Reivindicado*, *categoria errada*), sem precisar alternar manualmente;
+  > *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google. Estava analisando o segmento na região de [bairro] pelo celular e [falha específica auditada]. Posso te mandar um resumo rápido e gratuito mostrando o que dá para ajustar para colocar a [empresa] no Top 3?"*
+* **🎯 Modelo A (Demanda & Top 3):** preservado no alternador do Drawer para testes ou retomadas baseadas em volume de busca mensal.
   > *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google. Só a palavra '[nicho]' tem cerca de [__] buscas por mês na cidade e o perfil da [empresa] ainda não aparece entre os 3 primeiros no Google Maps (está atualmente em [X]º lugar). Posso te mandar uma análise rápida e gratuita, mostrando o que dá para ajustar para colocar vocês no Top 3?"*
-* **🔍 Modelo B (Falha Factual Auditada):**
-  > *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google. Estava analisando o segmento na região de [bairro] pelo Google Maps e notei um ponto técnico claro no perfil da [empresa]: [falha específica auditada]. Posso te mandar uma análise rápida e gratuita mostrando o que dá para ajustar para vocês subirem para o Top 3?"*
 
 ### 4.2. Edição ao Vivo nos Blocos 1 a 4 + Follow-up (1ª Pessoa & 100% Nativos Google)
 Todos os blocos (incluindo a aba **Follow-up** para a coluna `3. Em Conversa`, com dados do CNPJ `65.993.728/0001-07`, opção de chamada de vídeo e visita presencial) são exibidos em campos de texto (`<textarea>`) editáveis ao vivo em **1ª pessoa do singular**, com entregáveis **100% nativos do Perfil da Empresa no Google** e proposta comercial pontual exclusiva na primeira abordagem (**R$ 497,00 à vista no Pix ou em 2x de R$ 250,00** — *sem mensalidade nem fidelidade*, com fechamento direto pelo WhatsApp ou vídeo/visita). Nos cards posicionados em **`3. Em Conversa`**, o botão rápido **`Follow-up Conversão (Pix CNPJ)`** abre a gaveta diretamente na aba **Follow-up** com cópia e abertura direta no WhatsApp Web. A gestão contínua pós-entrega é controlada separadamente no painel `/crm/clientes`.
@@ -135,6 +135,7 @@ Todos os blocos (incluindo a aba **Follow-up** para a coluna `3. Em Conversa`, c
 * [[Fluxo Modular de Abordagem WhatsApp (4 Blocos)]]
 * [[Taxonomia e Matriz de Nichos de Alta Conversao para Prospeccao]]
 * [[Gestão de Objeções e Scripts de Contorno]]
+* [[Base de Leads Fora do Top 3 (Rodada 05)]]
 * [[Base de Leads Fora do Top 3 (Rodada 04)]]
 * [[Base de Leads Fora do Top 3 (Rodada 03)]]
 * [[Base de Leads Fora do Top 3 (Rodada 02)]]

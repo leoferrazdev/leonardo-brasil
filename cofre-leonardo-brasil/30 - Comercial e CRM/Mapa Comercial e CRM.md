@@ -5,7 +5,7 @@ area: Comercial e CRM
 tags:
 - leonardo-brasil
 - cofre/indice
-revisao_estrutura: 2026-11-10
+revisao_estrutura: 2026-11-11
 ---
 
 # Comercial e CRM
@@ -28,6 +28,7 @@ Oferta, abordagem consultiva e organização da operação comercial.
 ## CRM e leads
 
 - [[Sistema CRM Local e Manual Operacional]]
+- [[Base de Leads Fora do Top 3 (Rodada 05)|Base de Leads Fora do Top 3 (Rodada 05 - Decisor Direto & Urgência)]]
 - [[Base de Leads Fora do Top 3 (Rodada 04)|Base de Leads Fora do Top 3 (Rodada 04 - Motor Determinístico 0–100 pts)]]
 - [[Base de Leads Fora do Top 3 (Rodada 03)|Base de Leads Fora do Top 3 (Rodada 03 - Foco Mecânicas e Veterinárias)]]
 - [[Base de Leads Fora do Top 3 (Rodada 02)]]
