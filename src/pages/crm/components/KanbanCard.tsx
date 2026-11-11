@@ -19,11 +19,12 @@ import {
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
-import type { ProspectLead, PipelineStageId } from "../types";
+import { resolveFollowUpMessage } from "../utils/followUpGenerator";
+import type { ProspectLead, PipelineStageId, DrawerBlockTab } from "../types";
 
 interface KanbanCardProps {
   lead: ProspectLead;
-  onOpenDrawer: (lead: ProspectLead) => void;
+  onOpenDrawer: (lead: ProspectLead, initialTab?: DrawerBlockTab) => void;
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onPreviousStage?: (leadId: string, prevStage: PipelineStageId) => void;
   linkedClientSlug?: string | null;
@@ -62,11 +63,14 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
   const nextStage = currentIdx >= 0 && currentIdx < STAGES_ORDER.length - 1 ? STAGES_ORDER[currentIdx + 1] : null;
   const prevStage = currentIdx > 0 ? STAGES_ORDER[currentIdx - 1] : null;
 
-  const activeBlockText = 
-    lead.stage === "a_abordar" ? lead.bloco1 :
-    lead.stage === "contatado" ? lead.bloco2 :
-    lead.stage === "em_conversa" ? lead.bloco3 :
-    lead.bloco4;
+  const activeBlockText =
+    lead.stage === "a_abordar"
+      ? lead.bloco1
+      : lead.stage === "contatado"
+      ? lead.bloco2
+      : lead.stage === "em_conversa"
+      ? resolveFollowUpMessage(lead)
+      : lead.bloco4;
 
   const whatsappWebUrl = lead.formattedPhone && lead.whatsappConfirmed
     ? `https://web.whatsapp.com/send?phone=${lead.formattedPhone}&text=${encodeURIComponent(activeBlockText)}`
@@ -267,6 +271,20 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
           <span className="truncate">Ver Roteiro</span>
         </button>
       </div>
+
+      {lead.stage === "em_conversa" && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenDrawer(lead, "followup");
+          }}
+          className="mt-2 w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-300 text-[11px] font-bold transition-all"
+        >
+          <Sparkles className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+          <span>Follow-up Conversão (Pix CNPJ)</span>
+        </button>
+      )}
 
       {(lead.stage === "fechado_ganho" || linkedClientSlug) && (
         <button

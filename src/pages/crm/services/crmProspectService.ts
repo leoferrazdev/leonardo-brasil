@@ -2,6 +2,7 @@ import { supabase, isSupabaseConfigured } from "../../../lib/supabase";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { INITIAL_PROSPECTS } from "../data/initialProspects";
 import { resolveLeadScore } from "../utils/deterministicScoring";
+import { resolveFollowUpMessage } from "../utils/followUpGenerator";
 
 const STORAGE_KEY = "crm_prospect_leads_v8";
 
@@ -12,6 +13,7 @@ function hydrateDeterministicFields(lead: ProspectLead): ProspectLead {
     opportunityClass: computed.classLabel,
     deterministicScore: computed.score,
     deterministicBreakdown: computed.breakdown.signalsTriggered,
+    blocoFollowUp: resolveFollowUpMessage(lead),
   };
 }
 

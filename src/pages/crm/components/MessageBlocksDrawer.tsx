@@ -18,10 +18,12 @@ import {
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
-import type { ProspectLead, PipelineStageId } from "../types";
+import { resolveFollowUpMessage } from "../utils/followUpGenerator";
+import type { ProspectLead, PipelineStageId, DrawerBlockTab } from "../types";
 
 interface MessageBlocksDrawerProps {
   lead: ProspectLead | null;
+  initialTab?: DrawerBlockTab;
   onClose: () => void;
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onSaveNotes: (leadId: string, notes: string) => void;
@@ -30,25 +32,26 @@ interface MessageBlocksDrawerProps {
 
 export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
   lead,
+  initialTab,
   onClose,
   onAdvanceStage,
   onSaveNotes,
   linkedClientSlug,
 }) => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<1 | 2 | 3 | 4>(1);
+  const [activeTab, setActiveTab] = useState<DrawerBlockTab>(1);
   const [bloco1Mode, setBloco1Mode] = useState<"volume" | "falha">("volume");
-  const [copiedBlock, setCopiedBlock] = useState<number | null>(null);
+  const [copiedBlock, setCopiedBlock] = useState<DrawerBlockTab | null>(null);
   const [notes, setNotes] = useState("");
   const [customText, setCustomText] = useState("");
 
   useEffect(() => {
     if (lead) {
       setNotes(lead.notes || "");
-      setActiveTab(1);
+      setActiveTab(initialTab ?? (lead.stage === "em_conversa" ? "followup" : 1));
       setBloco1Mode("volume");
     }
-  }, [lead]);
+  }, [lead, initialTab]);
 
   const defaultBlockText = !lead
     ? ""
@@ -60,7 +63,9 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     ? lead.bloco2
     : activeTab === 3
     ? lead.bloco3
-    : lead.bloco4;
+    : activeTab === 4
+    ? lead.bloco4
+    : resolveFollowUpMessage(lead);
 
   useEffect(() => {
     setCustomText(defaultBlockText);
@@ -70,46 +75,71 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
 
   const scoreResult = resolveLeadScore(lead);
 
-  const blocks = [
+  const blocks: Array<{
+    num: DrawerBlockTab;
+    pill: string;
+    tabLabel: string;
+    name: string;
+    subtitle: string;
+    targetStage: PipelineStageId;
+    advanceLabel: string;
+  }> = [
     {
-      num: 1 as const,
+      num: 1,
+      pill: "1",
+      tabLabel: "Bloco 1",
       name: "Bloco 1: Gancho Inicial",
       subtitle:
         bloco1Mode === "volume"
           ? `Modelo A: Volume de Buscas (~${lead.monthlySearches || "2.400"}/mês) & Top 3`
           : "Modelo B: Falha Concreta / Divergência Auditada",
-      targetStage: "contatado" as PipelineStageId,
+      targetStage: "contatado",
       advanceLabel: "Marcar Bloco 1 Enviado → Mover para Contatado",
     },
     {
-      num: 2 as const,
+      num: 2,
+      pill: "2",
+      tabLabel: "Bloco 2",
       name: "Bloco 2: Diagnóstico Gratuito",
       subtitle: "Análise de 3 pontos entregue quando o lead responde 'Sim'",
-      targetStage: "em_conversa" as PipelineStageId,
+      targetStage: "em_conversa",
       advanceLabel: "Marcar Diagnóstico Enviado → Mover para 'Em Conversa'",
     },
     {
-      num: 3 as const,
+      num: 3,
+      pill: "3",
+      tabLabel: "Bloco 3",
       name: "Bloco 3: Escopo da Solução",
       subtitle: "Os 4 pilares de Otimização, Implantação e Blindagem",
-      targetStage: "proposta_enviada" as PipelineStageId,
+      targetStage: "proposta_enviada",
       advanceLabel: "Avançar para Proposta Enviada",
     },
     {
-      num: 4 as const,
+      num: 4,
+      pill: "4",
+      tabLabel: "Bloco 4",
       name: "Bloco 4: Proposta e Valores",
       subtitle: "Implantação pontual única: R$ 497,00 à vista no Pix (ou 2x de R$ 250,00) — sem mensalidade",
-      targetStage: "proposta_enviada" as PipelineStageId,
+      targetStage: "proposta_enviada",
       advanceLabel: "Confirmar Proposta Enviada",
+    },
+    {
+      num: "followup",
+      pill: "FU",
+      tabLabel: "Follow-up",
+      name: "Follow-up de Conversão (Pix CNPJ)",
+      subtitle: "Retomada na coluna 3. Em Conversa · CNPJ 65.993.728/0001-07 · Vídeo ou Visita Presencial",
+      targetStage: "proposta_enviada",
+      advanceLabel: "Marcar Follow-up Enviado → Mover para Proposta Enviada",
     },
   ];
 
   const currentBlock = blocks.find((b) => b.num === activeTab) || blocks[0];
 
-  const handleCopy = (num: number, text: string) => {
+  const handleCopy = (num: DrawerBlockTab, text: string) => {
     navigator.clipboard.writeText(text);
     setCopiedBlock(num);
-    toast.success(`Bloco ${num} copiado para o WhatsApp!`);
+    toast.success(num === "followup" ? "Follow-up copiado para o WhatsApp!" : `Bloco ${num} copiado para o WhatsApp!`);
     setTimeout(() => setCopiedBlock(null), 2500);
   };
 
@@ -271,30 +301,42 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
           )}
         </div>
 
-        {/* Abas dos 4 Blocos */}
+        {/* Abas dos Blocos + Follow-up */}
         <div className="px-5 pt-3 border-b border-[#1a2030] bg-[#0e1320] flex items-center gap-2 overflow-x-auto">
-          {blocks.map((b) => (
-            <button
-              key={b.num}
-              onClick={() => setActiveTab(b.num)}
-              className={`pb-3 px-3.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap flex items-center gap-2 ${
-                activeTab === b.num
-                  ? "border-blue-500 text-blue-400"
-                  : "border-transparent text-[#94a3b8] hover:text-white"
-              }`}
-            >
-              <span
-                className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center font-mono ${
-                  activeTab === b.num
-                    ? "bg-blue-600 text-white"
-                    : "bg-[#161d2e] text-[#94a3b8]"
+          {blocks.map((b) => {
+            const isFollowUp = b.num === "followup";
+            const isSelected = activeTab === b.num;
+            return (
+              <button
+                key={String(b.num)}
+                onClick={() => setActiveTab(b.num)}
+                className={`pb-3 px-3.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap flex items-center gap-2 ${
+                  isSelected
+                    ? isFollowUp
+                      ? "border-emerald-400 text-emerald-300"
+                      : "border-blue-500 text-blue-400"
+                    : isFollowUp
+                    ? "border-transparent text-emerald-400/80 hover:text-emerald-300"
+                    : "border-transparent text-[#94a3b8] hover:text-white"
                 }`}
               >
-                {b.num}
-              </span>
-              <span>Bloco {b.num}</span>
-            </button>
-          ))}
+                <span
+                  className={`w-5 h-5 rounded-full text-[10px] flex items-center justify-center font-mono ${
+                    isSelected
+                      ? isFollowUp
+                        ? "bg-emerald-600 text-white"
+                        : "bg-blue-600 text-white"
+                      : isFollowUp
+                      ? "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"
+                      : "bg-[#161d2e] text-[#94a3b8]"
+                  }`}
+                >
+                  {b.pill}
+                </span>
+                <span>{b.tabLabel}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Área Central: Texto Editável do Bloco e Botões de Ação */}
@@ -350,7 +392,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
 
             {/* Caixa de Texto Editável para WhatsApp */}
             <textarea
-              rows={8}
+              rows={activeTab === "followup" ? 11 : 8}
               value={customText}
               onChange={(e) => setCustomText(e.target.value)}
               className="w-full rounded-xl border border-[#1a2030] focus:border-blue-500 bg-[#06080e] p-4 text-sm font-mono text-[#f1f5f9] leading-relaxed focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-inner"
@@ -374,7 +416,11 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
               ) : (
                 <>
                   <Copy className="w-4 h-4" />
-                  <span>Copiar Bloco {currentBlock.num}</span>
+                  <span>
+                    {currentBlock.num === "followup"
+                      ? "Copiar Follow-up"
+                      : `Copiar Bloco ${currentBlock.num}`}
+                  </span>
                 </>
               )}
             </button>

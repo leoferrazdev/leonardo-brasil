@@ -15,7 +15,7 @@ import { MessageBlocksDrawer } from "./components/MessageBlocksDrawer";
 import { crmProspectService } from "./services/crmProspectService";
 import { crmClientService } from "./services/crmClientService";
 import { resolveLeadScore, parseMonthlySearchVolume } from "./utils/deterministicScoring";
-import type { ProspectLead, PipelineStage, PipelineStageId } from "./types";
+import type { ProspectLead, PipelineStage, PipelineStageId, DrawerBlockTab } from "./types";
 
 const PIPELINE_STAGES: PipelineStage[] = [
   {
@@ -34,7 +34,7 @@ const PIPELINE_STAGES: PipelineStage[] = [
     id: "em_conversa",
     title: "3. Em Conversa",
     badgeColor: "bg-indigo-400",
-    description: "Prospect respondeu; apresentação dos Blocos 2 e 3",
+    description: "Prospect respondeu; Blocos 2, 3 e Follow-up de conversão",
   },
   {
     id: "proposta_enviada",
@@ -60,6 +60,7 @@ export default function CrmDashboard() {
   const [leads, setLeads] = useState<ProspectLead[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedLead, setSelectedLead] = useState<ProspectLead | null>(null);
+  const [drawerInitialTab, setDrawerInitialTab] = useState<DrawerBlockTab | undefined>(undefined);
   const [clientSlugByLeadId, setClientSlugByLeadId] = useState<Record<string, string>>({});
 
   // Filtros (WhatsApp Confirmado ativo por padrão para focar na conversão imediata)
@@ -232,6 +233,11 @@ export default function CrmDashboard() {
     await crmProspectService.updateLeadNotes(leadId, notes);
   };
 
+  const handleOpenDrawer = (lead: ProspectLead, initialTab?: DrawerBlockTab) => {
+    setDrawerInitialTab(initialTab);
+    setSelectedLead(lead);
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center text-[#f1f5f9]">
@@ -339,7 +345,7 @@ export default function CrmDashboard() {
                       key={stage.id}
                       stage={stage}
                       leads={filteredLeads.filter((lead) => lead.stage === stage.id)}
-                      onOpenDrawer={(lead) => setSelectedLead(lead)}
+                      onOpenDrawer={handleOpenDrawer}
                       onAdvanceStage={handleAdvanceStage}
                       onPreviousStage={handlePreviousStage}
                       clientSlugByLeadId={clientSlugByLeadId}
@@ -357,7 +363,7 @@ export default function CrmDashboard() {
                   <KanbanColumn
                     stage={stage}
                     leads={filteredLeads.filter((lead) => lead.stage === stage.id)}
-                    onOpenDrawer={(lead) => setSelectedLead(lead)}
+                    onOpenDrawer={handleOpenDrawer}
                     onAdvanceStage={handleAdvanceStage}
                     onPreviousStage={handlePreviousStage}
                     isSingleView={true}
@@ -373,7 +379,11 @@ export default function CrmDashboard() {
       {/* Gaveta de Roteiros de Mensagens para WhatsApp */}
       <MessageBlocksDrawer
         lead={selectedLead}
-        onClose={() => setSelectedLead(null)}
+        initialTab={drawerInitialTab}
+        onClose={() => {
+          setSelectedLead(null);
+          setDrawerInitialTab(undefined);
+        }}
         onAdvanceStage={handleAdvanceStage}
         onSaveNotes={handleSaveNotes}
         linkedClientSlug={selectedLead ? clientSlugByLeadId[selectedLead.id] ?? null : null}

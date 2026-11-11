@@ -1,12 +1,12 @@
 import React from "react";
 import { useDroppable } from "@dnd-kit/core";
 import { KanbanCard } from "./KanbanCard";
-import type { ProspectLead, PipelineStage, PipelineStageId } from "../types";
+import type { ProspectLead, PipelineStage, PipelineStageId, DrawerBlockTab } from "../types";
 
 interface KanbanColumnProps {
   stage: PipelineStage;
   leads: ProspectLead[];
-  onOpenDrawer: (lead: ProspectLead) => void;
+  onOpenDrawer: (lead: ProspectLead, initialTab?: DrawerBlockTab) => void;
   onAdvanceStage: (leadId: string, nextStage: PipelineStageId) => void;
   onPreviousStage?: (leadId: string, prevStage: PipelineStageId) => void;
   isSingleView?: boolean;

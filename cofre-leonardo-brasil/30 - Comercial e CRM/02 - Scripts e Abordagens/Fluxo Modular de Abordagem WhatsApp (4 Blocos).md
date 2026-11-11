@@ -13,7 +13,7 @@ aliases:
 - Roteiro Modular WhatsApp
 tipo: referencia
 area: Comercial e CRM
-revisao_estrutura: 2026-11-10
+revisao_estrutura: 2026-11-11
 ---
 
 > [[Início|Painel]] › [[Mapa Comercial e CRM|Comercial e CRM]]
@@ -124,6 +124,24 @@ O CRM disponibiliza **dois modelos alternáveis com 1 clique**:
 
 > [!note] Regra Comercial de Recorrência
 > Na **primeira prospecção**, o **Bloco 4** nunca apresenta *"dois formatos"* nem mensalidade recorrente. Eventual continuidade/manutenção só é apresentada após a entrega e comprovação dos primeiros resultados em `/crm/clientes`.
+
+---
+
+### 🟢 Bloco Follow-up de Conversão (Coluna `3. Em Conversa`)
+* **Quando enviar:** Para leads já em negociação na coluna **`3. Em Conversa`** que interagiram anteriormente e precisam de confiança final para fechar o Pix.
+* **Objetivo:** Retomar a dor factual auditada com transparência jurídica máxima (**conta bancária e chave Pix CNPJ**), oferecer **chamada de vídeo prévia** e, em último caso, **visita presencial** no endereço local.
+* **Dados Oficiais Obrigatórios:** `LEONARDO FERRAZ DA SILVA BRASIL · CNPJ 65.993.728/0001-07` (Chave Pix = próprio CNPJ).
+* **Template Mestre:**
+> *"Oi! Tudo bem? Passando aqui para retomar a conversa sobre o perfil da *{{Nome da Empresa}}* no Google Maps.*  
+>  
+> *A empresa segue em *{{X}}º lugar* para \"{{Palavra-Chave}}\" (~{{Volume}}/mês), ainda fora do Top 3 que concentra os cliques no celular. Com a implantação completa (*R$ 497,00* à vista no Pix ou *2x de R$ 250,00*, 100% pontual e sem mensalidade, entregue em 3 a 5 dias úteis), um único cliente novo vindo do Top 3 já paga todo o ajuste.*  
+>  
+> *Para você fechar com 100% de segurança e transparência:*  
+> *• **Pagamento no meu CNPJ:** realizado direto na conta bancária jurídica de *LEONARDO FERRAZ DA SILVA BRASIL* (*CNPJ 65.993.728/0001-07*), sendo a *chave Pix o próprio CNPJ 65.993.728/0001-07*;*  
+> *• **Chamada de vídeo antes do pagamento:** se preferir validar tudo olhando olho no olho antes do Pix, eu faço uma chamada de vídeo rápida mostrando os pontos na tela;*  
+> *• **Visita presencial:** e, em último caso, posso ir pessoalmente até {{Endereço / Bairro}} para alinhar os detalhes e fechar negócio.*  
+>  
+> *Como prefere seguir hoje: iniciar direto pelo WhatsApp, fazer uma chamada de vídeo rápida ou prefere que eu passe aí?"*
 
 ---
 

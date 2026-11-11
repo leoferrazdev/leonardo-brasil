@@ -17,7 +17,7 @@ aliases:
 - Pipeline e Estágios do Kanban
 tipo: referencia
 area: Comercial e CRM
-revisao_estrutura: 2026-11-10
+revisao_estrutura: 2026-11-11
 ---
 
 > [[Início|Painel]] › [[Mapa Comercial e CRM|Comercial e CRM]]
@@ -114,8 +114,8 @@ Ao tocar no botão *"Ver Roteiro"* de qualquer card, a gaveta lateral (`MessageB
 * **🔍 Modelo B (Falha Factual Auditada):**
   > *"Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google. Estava analisando o segmento na região de [bairro] pelo Google Maps e notei um ponto técnico claro no perfil da [empresa]: [falha específica auditada]. Posso te mandar uma análise rápida e gratuita mostrando o que dá para ajustar para vocês subirem para o Top 3?"*
 
-### 4.2. Edição ao Vivo nos Blocos 1 a 4 (1ª Pessoa & 100% Nativos Google)
-Todos os 4 blocos são exibidos em campos de texto (`<textarea>`) editáveis ao vivo em **1ª pessoa do singular**, com entregáveis **100% nativos do Perfil da Empresa no Google** e proposta comercial pontual exclusiva na primeira abordagem (**R$ 497,00 à vista no Pix ou em 2x de R$ 250,00** — *sem mensalidade nem fidelidade*, com fechamento direto pelo WhatsApp sem agendar reunião). A gestão contínua pós-entrega é controlada separadamente no painel `/crm/clientes`.
+### 4.2. Edição ao Vivo nos Blocos 1 a 4 + Follow-up (1ª Pessoa & 100% Nativos Google)
+Todos os blocos (incluindo a aba **Follow-up** para a coluna `3. Em Conversa`, com dados do CNPJ `65.993.728/0001-07`, opção de chamada de vídeo e visita presencial) são exibidos em campos de texto (`<textarea>`) editáveis ao vivo em **1ª pessoa do singular**, com entregáveis **100% nativos do Perfil da Empresa no Google** e proposta comercial pontual exclusiva na primeira abordagem (**R$ 497,00 à vista no Pix ou em 2x de R$ 250,00** — *sem mensalidade nem fidelidade*, com fechamento direto pelo WhatsApp ou vídeo/visita). Nos cards posicionados em **`3. Em Conversa`**, o botão rápido **`Follow-up Conversão (Pix CNPJ)`** abre a gaveta diretamente na aba **Follow-up** com cópia e abertura direta no WhatsApp Web. A gestão contínua pós-entrega é controlada separadamente no painel `/crm/clientes`.
 
 ---
 
