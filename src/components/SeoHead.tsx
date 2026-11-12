@@ -93,7 +93,7 @@ export function SeoHead({
               "https://www.instagram.com/oleonardobrasil/",
               "https://www.facebook.com/oleonardobrasil",
               "https://www.threads.com/@oleonardobrasil",
-              "https://funilcomercial.com",
+
               "https://github.com/leoferrazdev",
             ],
             knowsAbout: [

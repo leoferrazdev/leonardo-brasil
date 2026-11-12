@@ -235,7 +235,7 @@ export function Footer() {
           <div className="flex items-center gap-4 text-xs">
             <a href="mailto:contato@leonardobrasil.com.br" className="hover:text-text transition-colors">contato@leonardobrasil.com.br</a>
             <span className="text-line-strong">·</span>
-            <a href="https://funilcomercial.com" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">Funil Comercial ↗</a>
+
           </div>
         </div>
         
