@@ -1,0 +1,27 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Aplica 410 antes do redirecionamento HTTPS, inclusive a URLs de spam em HTTP.
+  RewriteRule (^|/)force(/|$) - [G,NC]
+  # Nesta implantacao estatica, nenhum PHP deve ser servido ou executado.
+  RewriteRule \.(?:php[0-9]?|phtml|phar)(?:[./]|$) - [F,NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://leonardobrasil.com.br%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+
+<FilesMatch "(?i)\.(?:php[0-9]?|phtml|phar|cgi|pl|py|sh|sql|ini|env|bak|old|log)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "DENY"
+  Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>

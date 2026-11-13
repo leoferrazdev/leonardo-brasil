@@ -1,0 +1,4 @@
+# Rejeicao de backlinks externos avaliados como artificiais para leonardobrasil.com.br.
+# Adicione somente dominios verificados na auditoria, um por linha.
+# Exemplo de sintaxe (comentado; nao rejeita nenhum dominio):
+# domain:exemplo-toxico.com
