@@ -15,6 +15,6 @@
 
 ## Revisão QA em 13/11/2026
 
-- `robots.txt` foi ajustado no workspace para incluir `Disallow: /force/` e `Disallow: /*?*`, conforme o checklist. A implantação dessa versão ficou pendente: o File Manager da Hostinger exibiu “You don't have permissions to access this” ao abrir `public_html`; não foram alteradas permissões para contornar o bloqueio. Essas diretivas também impedem o rastreamento das URLs `/force/` enquanto estiverem ativas.
+- `robots.txt` foi ajustado no workspace e publicado em `public_html` pelo File Manager da Hostinger em 13/11/2026. Verificação pública de `https://leonardobrasil.com.br/robots.txt` confirmou `User-agent: *`, `Allow: /`, `Disallow: /force/`, `Disallow: /*?*` e o sitemap. Essas diretivas também impedem o rastreamento das URLs `/force/` enquanto estiverem ativas.
 - `sanitize-public-html.sh` agora aceita opcionalmente o nome explícito do banco e chama `drop-old-database.sh`, com uma confirmação independente antes do `DROP DATABASE`.
 - Os três scripts Bash passaram em `bash -n`; `sitemap.xml` foi parseado como XML; verificações estáticas confirmaram HTTPS/410/índices bloqueados, CTA `nofollow`, permissões rsync e comandos Certbot documentados.
