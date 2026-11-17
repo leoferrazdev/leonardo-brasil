@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "../../../lib/local-router";
 import { 
   X, 
@@ -42,8 +42,24 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
   const [activeTab, setActiveTab] = useState<DrawerBlockTab>(1);
   const [bloco1Mode, setBloco1Mode] = useState<"volume" | "falha">("volume");
   const [copiedBlock, setCopiedBlock] = useState<DrawerBlockTab | null>(null);
+  const [copiedChunkIndex, setCopiedChunkIndex] = useState<number | null>(null);
   const [notes, setNotes] = useState("");
   const [customText, setCustomText] = useState("");
+
+  const messageChunks = useMemo(() => {
+    if (!customText) return [];
+    return customText
+      .split(/\n\s*\n/)
+      .map((c) => c.trim())
+      .filter((c) => c.length > 0);
+  }, [customText]);
+
+  const handleCopyChunk = (chunkText: string, index: number) => {
+    navigator.clipboard.writeText(chunkText);
+    setCopiedChunkIndex(index);
+    toast.success(`Mensagem ${index + 1} copiada para o WhatsApp!`);
+    setTimeout(() => setCopiedChunkIndex(null), 2500);
+  };
 
   useEffect(() => {
     if (lead) {
@@ -64,7 +80,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
       ? lead.bloco1Volume || lead.bloco1
       : lead.bloco1Falha || lead.bloco1
     : activeTab === 2
-    ? lead.bloco2
+    ? lead.bloco2?.replace(/^Com certeza!\s*/i, "")
     : activeTab === 3
     ? lead.bloco3
     : activeTab === 4
@@ -396,7 +412,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
 
             {/* Caixa de Texto Editável para WhatsApp */}
             <textarea
-              rows={activeTab === "followup" ? 11 : 8}
+              rows={activeTab === "followup" ? 8 : 6}
               value={customText}
               onChange={(e) => setCustomText(e.target.value)}
               className="w-full rounded-xl border border-[#1a2030] focus:border-blue-500 bg-[#06080e] p-4 text-sm font-mono text-[#f1f5f9] leading-relaxed focus:outline-none focus:ring-1 focus:ring-blue-500 shadow-inner"
@@ -404,6 +420,60 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
             <p className="text-[11px] text-[#94a3b8] mt-1">
               💡 Você pode editar qualquer palavra acima antes de copiar ou abrir no WhatsApp.
             </p>
+
+            {/* Envio Fracionado em Balões / Mensagens (Evita Parecer Automação / IA) */}
+            {messageChunks.length > 1 && (
+              <div className="mt-4 pt-3 border-t border-[#1a2030] space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-200 flex items-center gap-1.5">
+                    <MessageCircle className="w-3.5 h-3.5 text-blue-400" />
+                    <span>Envio Fracionado em Balões ({messageChunks.length} mensagens)</span>
+                  </span>
+                  <span className="text-[11px] text-[#94a3b8]">
+                    Envie uma por vez para ritmo 100% natural
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  {messageChunks.map((chunk: string, idx: number) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-xl border border-[#1a2030] bg-[#0c101c] hover:bg-[#101626] hover:border-blue-500/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 text-xs shadow-sm"
+                    >
+                      <div className="flex-1 min-w-0 pr-2">
+                        <span className="font-bold text-[10px] uppercase px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono inline-block mb-1">
+                          Mensagem {idx + 1} de {messageChunks.length}
+                        </span>
+                        <p className="text-slate-300 whitespace-pre-wrap font-sans text-xs leading-relaxed line-clamp-3 hover:line-clamp-none transition-all">
+                          {chunk}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyChunk(chunk, idx)}
+                        className={`shrink-0 flex items-center gap-1.5 py-1.5 px-3 rounded-lg font-bold text-xs transition-all ${
+                          copiedChunkIndex === idx
+                            ? "bg-emerald-600 text-white shadow-sm"
+                            : "bg-[#161d2e] hover:bg-blue-600 text-blue-300 hover:text-white border border-[#1a2030] hover:border-blue-600 shadow-sm active:scale-95"
+                        }`}
+                      >
+                        {copiedChunkIndex === idx ? (
+                          <>
+                            <Check className="w-3.5 h-3.5" />
+                            <span>Copiada!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3.5 h-3.5" />
+                            <span>Copiar Mensagem {idx + 1}</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Botões de Ação Principal */}
