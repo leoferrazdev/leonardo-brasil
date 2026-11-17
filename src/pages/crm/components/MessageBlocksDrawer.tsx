@@ -73,22 +73,29 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     }
   }, [lead, initialTab]);
 
-  const defaultBlockText = !lead
-    ? ""
-    : activeTab === 1
-    ? bloco1Mode === "volume"
-      ? lead.bloco1Volume || lead.bloco1
-      : lead.bloco1Falha || lead.bloco1
-    : activeTab === 2
-    ? lead.bloco2?.replace(/^Com certeza!\s*/i, "")
-    : activeTab === 3
-    ? lead.bloco3?.replace(
+  const resolveRawBlockText = (): string => {
+    if (!lead) return "";
+    if (activeTab === 1) {
+      return (bloco1Mode === "volume"
+        ? lead.bloco1Volume || lead.bloco1
+        : lead.bloco1Falha || lead.bloco1) || "";
+    }
+    if (activeTab === 2) {
+      return (lead.bloco2 || "").replace(/^Com certeza!\s*/i, "");
+    }
+    if (activeTab === 3) {
+      return (lead.bloco3 || "").replace(
         /^(?:Eu sou|Nós somos)\s+especialista(?:s)?\s+em\s+estruturação\s+e\s+(?:gestão estratégica|posicionamento)\s+do\s+\*?Perfil da Empresa no Google\*?[^\n.]*\.?/im,
         "Eu sou especialista em estruturação e gestão estratégica do perfil da empresa no Google."
-      )
-    : activeTab === 4
-    ? lead.bloco4
-    : resolveFollowUpMessage(lead);
+      );
+    }
+    if (activeTab === 4) {
+      return lead.bloco4 || "";
+    }
+    return resolveFollowUpMessage(lead);
+  };
+
+  const defaultBlockText = resolveRawBlockText().replace(/\*\*([^*]+)\*\*/g, "*$1*");
 
   useEffect(() => {
     setCustomText(defaultBlockText);
