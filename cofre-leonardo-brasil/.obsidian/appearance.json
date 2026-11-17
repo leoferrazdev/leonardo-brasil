@@ -6,5 +6,6 @@
   "accentColor": "#3b82f6",
   "enabledCssSnippets": [
     "leonardo-brasil-cofre"
-  ]
+  ],
+  "showRibbon": true
 }
