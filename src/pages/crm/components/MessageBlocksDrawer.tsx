@@ -82,7 +82,10 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     : activeTab === 2
     ? lead.bloco2?.replace(/^Com certeza!\s*/i, "")
     : activeTab === 3
-    ? lead.bloco3
+    ? lead.bloco3?.replace(
+        /^(?:Eu sou|Nós somos)\s+especialista(?:s)?\s+em\s+estruturação\s+e\s+(?:gestão estratégica|posicionamento)\s+do\s+\*?Perfil da Empresa no Google\*?[^\n.]*\.?/im,
+        "Eu sou especialista em estruturação e gestão estratégica do perfil da empresa no Google."
+      )
     : activeTab === 4
     ? lead.bloco4
     : resolveFollowUpMessage(lead);
