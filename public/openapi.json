@@ -7,7 +7,7 @@
     "description": "API REST pública versionada sob /api/v1/. Oferece consulta gratuita sem chave aos catálogos públicos (/api/v1/services, /api/v1/niches, /api/v1/health) e provisionamento instantâneo de credenciais OAuth 2.0 sandbox (/api/v1/oauth/sandbox-clients + /api/v1/oauth/token) com escopos granulares (health:read, catalog:read, audit:write).\n\nPolítica de Versionamento e Depreciação: Todas as rotas estáveis usam o prefixo de versão /api/v1/ e aceitam o cabeçalho opcional X-API-Version: 1. Alterações incompatíveis geram novo prefixo (/api/v2/). Eventual descontinuação de rotas antigas é comunicada com antecedência mínima de 6 meses por meio dos cabeçalhos RFC 9745 Deprecation, RFC 8594 Sunset e Link rel=\"successor-version\".\n\nRate Limiting e Erros: Todas as respostas incluem cabeçalhos IETF RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset e API-Version. Erros 4xx/5xx seguem RFC 9457 application/problem+json com code, message e hint.",
     "contact": {
       "name": "Leonardo Brasil",
-      "email": "contato@leonardobrasil.com.br",
+      "email": "contato@leobrasil.com.br",
       "url": "https://leobrasil.com.br/docs"
     },
     "license": {

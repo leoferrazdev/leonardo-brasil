@@ -26,7 +26,7 @@ Solicite apenas os escopos mínimos necessários para a tarefa. Requisições se
 ## Limites e ambientes separados
 
 - **CRM (`/crm/*`) e integrações internas do aplicativo Brasa (`/api/anthropic/*`, `/api/elevenlabs/*`, `/api/stt/*`):** permanecem restritos ao aplicativo interno e autenticados separadamente; sessões de usuário do CRM (Supabase) não concedem acesso às rotas de agentes e vice-versa.
-- **Suporte e parcerias customizadas:** para necessidades corporativas além do sandbox gratuito, escreva para contato@leonardobrasil.com.br.
+- **Suporte e parcerias customizadas:** para necessidades corporativas além do sandbox gratuito, escreva para contato@leobrasil.com.br.
 
 ## Descoberta das APIs
 

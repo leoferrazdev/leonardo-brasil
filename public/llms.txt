@@ -45,7 +45,7 @@ A API pública v1 usa prefixo `/api/v1/` (com suporte ao cabeçalho opcional `X-
 ## Contato e políticas
 
 - [WhatsApp oficial](https://wa.me/5551996737359) (`+55 51 99673-7359`)
-- E-mail: `contato@leonardobrasil.com.br`
+- E-mail: `contato@leobrasil.com.br`
 - GitHub: [https://github.com/leoferrazdev](https://github.com/leoferrazdev)
 - [Privacidade](https://leobrasil.com.br/privacy) · [Termos](https://leobrasil.com.br/termos)
 

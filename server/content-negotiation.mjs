@@ -152,11 +152,11 @@ As páginas públicas de \`leobrasil.com.br\` registram ferramentas client-side 
 
 - **Empresa:** LEONARDO FERRAZ DA SILVA BRASIL (CNPJ 65.993.728/0001-07)
 - **Localização base:** Porto Alegre - RS, Brasil (atendimento nacional em 5.571 municípios)
-- **E-mail oficial:** contato@leonardobrasil.com.br
+- **E-mail oficial:** contato@leobrasil.com.br
 - **WhatsApp comercial:** +55 51 99673-7359 (https://wa.me/5551996737359)
 - **Horário de atendimento:** Segunda a Sexta, das 09h00 às 18h00 (BRT, UTC-3)
 - **Documentação para Desenvolvedores e Agentes:** ${BASE_URL}/docs
-- **Suporte técnico de API:** contato@leonardobrasil.com.br
+- **Suporte técnico de API:** contato@leobrasil.com.br
 `;
   }
 
@@ -167,7 +167,7 @@ Controlador: LEONARDO FERRAZ DA SILVA BRASIL (CNPJ 65.993.728/0001-07), respons�
 
 - **Dados coletados no site institucional:** Informações enviadas voluntariamente pelo usuário via WhatsApp/e-mail e dados técnicos mínimos de navegação/analytics quando aplicável.
 - **API pública / Sandbox OAuth 2.0:** Os endpoints públicos \`/api/v1/*\` operam com tokens stateless HMAC-SHA256 e não armazenam dados pessoais de clientes sandbox em banco de dados permanente.
-- **Direitos do titular e exclusão:** Solicitações de acesso, correção ou exclusão podem ser enviadas para \`contato@leonardobrasil.com.br\` com assunto "Exclusão de dados" ou consultando ${BASE_URL}/exclusao-de-dados.
+- **Direitos do titular e exclusão:** Solicitações de acesso, correção ou exclusão podem ser enviadas para \`contato@leobrasil.com.br\` com assunto "Exclusão de dados" ou consultando ${BASE_URL}/exclusao-de-dados.
 - **Versão HTML completa:** ${BASE_URL}/privacy
 `;
   }

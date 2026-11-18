@@ -60,7 +60,7 @@ export function SeoHead({
             logo: "https://leobrasil.com.br/logo-completo.png",
             image: "https://leobrasil.com.br/logo-completo.png",
             telephone: "+55-51-99673-7359",
-            email: "contato@leonardobrasil.com.br",
+            email: "contato@leobrasil.com.br",
             taxID: "65.993.728/0001-07",
             address: {
               "@type": "PostalAddress",
@@ -72,7 +72,7 @@ export function SeoHead({
               {
                 "@type": "ContactPoint",
                 telephone: "+55-51-99673-7359",
-                email: "contato@leonardobrasil.com.br",
+                email: "contato@leobrasil.com.br",
                 contactType: "customer support",
                 areaServed: "BR",
                 availableLanguage: ["Portuguese", "pt-BR"],
@@ -80,7 +80,7 @@ export function SeoHead({
               {
                 "@type": "ContactPoint",
                 telephone: "+55-51-99673-7359",
-                email: "contato@leonardobrasil.com.br",
+                email: "contato@leobrasil.com.br",
                 contactType: "sales",
                 areaServed: "BR",
                 availableLanguage: ["Portuguese", "pt-BR"],

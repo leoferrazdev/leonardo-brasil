@@ -150,7 +150,7 @@ export function ContactPage() {
     <div className="min-h-screen bg-ink text-text flex flex-col font-sans">
       <SeoHead
         title="Contato — Leonardo Brasil (SEO Local & Google Meu Negócio)"
-        description="Entre em contato com Leonardo Brasil via WhatsApp (+55 51 99673-7359) ou e-mail (contato@leonardobrasil.com.br). Atendimento comercial em Porto Alegre - RS e todo o Brasil."
+        description="Entre em contato com Leonardo Brasil via WhatsApp (+55 51 99673-7359) ou e-mail (contato@leobrasil.com.br). Atendimento comercial em Porto Alegre - RS e todo o Brasil."
         canonicalUrl="https://leobrasil.com.br/contact"
         schema={contactSchema}
       />
@@ -187,8 +187,8 @@ export function ContactPage() {
           <SectionCard title="E-mail & Suporte Técnico">
             <p>Canal oficial para propostas corporativas, questões de privacidade (LGPD) e integrações com a API Leonardo Brasil.</p>
             <p>
-              <a href="mailto:contato@leonardobrasil.com.br" className="text-accent font-bold hover:underline">
-                contato@leonardobrasil.com.br
+              <a href="mailto:contato@leobrasil.com.br" className="text-accent font-bold hover:underline">
+                contato@leobrasil.com.br
               </a>
             </p>
             <p className="text-xs text-muted">Para testar nossa API imediatamente sem aprovação manual, use o sandbox gratuito self-serve.</p>

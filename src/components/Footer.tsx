@@ -303,7 +303,7 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-xs">
-            <a href="mailto:contato@leonardobrasil.com.br" className="hover:text-text transition-colors">contato@leonardobrasil.com.br</a>
+            <a href="mailto:contato@leobrasil.com.br" className="hover:text-text transition-colors">contato@leobrasil.com.br</a>
             <span className="text-line-strong">·</span>
 
           </div>

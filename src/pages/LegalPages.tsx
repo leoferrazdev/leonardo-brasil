@@ -12,7 +12,7 @@ const COMPANY = {
   brand: "Leonardo Brasil",
   legalName: "LEONARDO FERRAZ DA SILVA BRASIL",
   cnpj: "65.993.728/0001-07",
-  email: "contato@leonardobrasil.com.br",
+  email: "contato@leobrasil.com.br",
   site: "https://leobrasil.com.br",
 };
 
