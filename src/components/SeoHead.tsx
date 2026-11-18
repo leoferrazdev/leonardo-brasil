@@ -27,11 +27,11 @@ export function SeoHead({
   const location = useLocation();
   const currentPath = location.pathname === "/" ? "" : location.pathname;
   
-  const defaultTitle = "Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio";
+  const defaultTitle = "Leonardo Brasil — Especialista em Google Meu Negócio e Google Ads";
   const defaultDescription =
-    "Leonardo Brasil SEO Local e Google Meu Negócio: otimização de perfil no Google Maps, posicionamento orgânico e atração de clientes locais via WhatsApp. Diagnóstico gratuito.";
+    "Leonardo Brasil: especialista em Google Meu Negócio e Google Ads para negócios locais. Consultoria e gestão de Google Maps e anúncios de alta conversão no WhatsApp.";
   const defaultKeywords =
-    "Leonardo Brasil SEO Local, Leonardo Brasil Google Meu Negócio, consultoria SEO Local, especialista Google Maps, Perfil da Empresa no Google";
+    "Leonardo Brasil, Google Meu Negócio, Google Ads, especialista Google Meu Negócio, gestor Google Ads, consultor Google Ads, anúncios locais no Google, SEO Local";
   const autoCanonical = `https://leobrasil.com.br${currentPath}`;
   const defaultOgImage = "https://leobrasil.com.br/logo-completo.png";
 
@@ -54,7 +54,11 @@ export function SeoHead({
             "@type": "Organization",
             "@id": "https://leobrasil.com.br/#organization",
             name: "Leonardo Brasil",
-            alternateName: ["Leonardo Brasil SEO Local", "Leonardo Brasil Google Meu Negócio"],
+            alternateName: [
+              "Leonardo Brasil Google Meu Negócio",
+              "Leonardo Brasil Google Ads",
+              "Leonardo Brasil SEO Local",
+            ],
             legalName: "LEONARDO FERRAZ DA SILVA BRASIL",
             url: "https://leobrasil.com.br",
             logo: "https://leobrasil.com.br/logo-completo.png",
@@ -199,7 +203,7 @@ export function SeoHead({
           {
             "@type": "ProfessionalService",
             "@id": "https://leobrasil.com.br/#service",
-            name: "Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio",
+            name: "Leonardo Brasil — Especialista em Google Meu Negócio e Google Ads",
             url: "https://leobrasil.com.br",
             telephone: "+55-51-99673-7359",
             address: {
@@ -217,7 +221,7 @@ export function SeoHead({
             "@type": "WebSite",
             "@id": "https://leobrasil.com.br/#website",
             url: "https://leobrasil.com.br",
-            name: "Leonardo Brasil — SEO Local & Google Meu Negócio",
+            name: "Leonardo Brasil — Google Meu Negócio e Google Ads",
             publisher: { "@id": "https://leobrasil.com.br/#organization" },
           },
         ],

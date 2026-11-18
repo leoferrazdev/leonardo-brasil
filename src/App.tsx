@@ -90,9 +90,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-ink text-text overflow-x-hidden selection:bg-accent selection:text-white">
       <SeoHead
-        title="Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio"
-        description="Leonardo Brasil SEO Local e Google Meu Negócio: otimização e gestão de Perfil da Empresa no Google Maps para atrair clientes locais sem depender apenas de anúncios diários."
-        keywords="Leonardo Brasil SEO Local, Leonardo Brasil Google Meu Negócio, especialista SEO Local, consultor Google Maps, Perfil da Empresa no Google"
+        title="Leonardo Brasil — Especialista em Google Meu Negócio e Google Ads"
+        description="Leonardo Brasil: consultoria e gestão de Google Meu Negócio e Google Ads para empresas e negócios locais. Posicionamento no Google Maps e anúncios de alta conversão no WhatsApp."
+        keywords="Leonardo Brasil, Google Meu Negócio, Google Ads, especialista Google Meu Negócio, gestor Google Ads, consultor Google Ads, anúncios no Google Maps, SEO Local"
         canonicalUrl="https://leobrasil.com.br"
         schema={faqSchema}
       />

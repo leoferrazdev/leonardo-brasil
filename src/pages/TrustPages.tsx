@@ -48,7 +48,7 @@ export function AboutPage() {
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "Sobre Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio",
+    name: "Sobre Leonardo Brasil — Especialista em Google Meu Negócio e Google Ads",
     url: "https://leobrasil.com.br/about",
     mainEntity: { "@id": "https://leobrasil.com.br/#organization" },
   };
@@ -56,8 +56,8 @@ export function AboutPage() {
   return (
     <div className="min-h-screen bg-ink text-text flex flex-col font-sans">
       <SeoHead
-        title="Sobre Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio"
-        description="Conheça Leonardo Brasil (CNPJ 65.993.728/0001-07), especialista em SEO Local e Google Meu Negócio em Porto Alegre - RS com atendimento para todo o Brasil."
+        title="Sobre Leonardo Brasil — Especialista em Google Meu Negócio e Google Ads"
+        description="Conheça Leonardo Brasil (CNPJ 65.993.728/0001-07), especialista em Google Meu Negócio e Google Ads em Porto Alegre - RS com atendimento para todo o Brasil."
         canonicalUrl="https://leobrasil.com.br/about"
         schema={aboutSchema}
       />
