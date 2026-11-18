@@ -148,6 +148,13 @@ export default function GoogleMeuNegocioNicheHub() {
                 <span>Fazer Raio-X Gratuito</span>
                 <span aria-hidden="true">&rarr;</span>
               </Link>
+              <Link
+                to={`/google-ads/${nicho}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-gold/40 bg-gold/10 hover:bg-gold/20 text-gold font-bold text-sm transition-all"
+              >
+                <span>Google Ads para {nicheInfo.nome}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
           </div>
 

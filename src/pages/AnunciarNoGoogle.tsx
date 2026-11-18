@@ -443,6 +443,36 @@ export default function AnunciarNoGoogle() {
         </div>
       </section>
 
+      {/* CONTRATE A GESTÃO ESPECIALIZADA (SILO COMERCIAL GOOGLE ADS) */}
+      <section className="py-16 border-b border-line bg-panel/40">
+        <div className="mx-auto max-w-5xl px-5">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-gold">Serviços de Google Ads</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2">
+              Quer delegar suas campanhas de Google Ads a um especialista?
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link to="/google-ads" className="rounded-2xl border border-line bg-panel p-5 hover:border-gold transition-colors">
+              <p className="font-bold text-sm text-gold">Gestão de Google Ads</p>
+              <p className="text-xs text-muted mt-1.5">Campanhas locais fundo de funil focadas em WhatsApp.</p>
+            </Link>
+            <Link to="/gestor-google-ads" className="rounded-2xl border border-line bg-panel p-5 hover:border-accent transition-colors">
+              <p className="font-bold text-sm text-white">Gestor de Google Ads</p>
+              <p className="text-xs text-muted mt-1.5">Atendimento sênior direto sem terceirização.</p>
+            </Link>
+            <Link to="/auditoria-google-ads" className="rounded-2xl border border-line bg-panel p-5 hover:border-gold transition-colors">
+              <p className="font-bold text-sm text-white">Auditoria de Conta Ads</p>
+              <p className="text-xs text-muted mt-1.5">Corte desperdícios de verba e reduza seu CPL.</p>
+            </Link>
+            <Link to="/google-ads-e-google-meu-negocio" className="rounded-2xl border border-line bg-panel p-5 hover:border-accent transition-colors">
+              <p className="font-bold text-sm text-accent-300">Google Ads + Maps</p>
+              <p className="text-xs text-muted mt-1.5">Domine os anúncios e o Top 3 orgânico juntos.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="py-20 bg-gradient-to-t from-accent/15 via-ink to-ink text-center">
         <div className="mx-auto max-w-3xl px-5">

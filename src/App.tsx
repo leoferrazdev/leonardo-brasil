@@ -111,6 +111,9 @@ export default function App() {
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="whitespace-nowrap text-xs xl:text-sm font-medium text-muted hover:text-text transition-colors">{n.label}</a>
             ))}
+            <Link to="/google-ads" className="whitespace-nowrap text-xs xl:text-sm font-bold text-gold hover:text-gold-300 transition-colors">
+              Google Ads
+            </Link>
             <Link to="/auditoria-perfil-google" className="whitespace-nowrap text-xs xl:text-sm font-bold text-accent hover:text-accent-300 transition-colors flex items-center gap-1.5">
               <span>Raio-X</span>
               <span className="text-[10px] uppercase tracking-wider bg-accent/20 px-1.5 py-0.5 rounded text-accent-300 font-extrabold">Grátis</span>
@@ -138,7 +141,10 @@ export default function App() {
             {NAV.map((n) => (
               <a key={n.id} href={`#${n.id}`} onClick={(e) => scrollTo(e, n.id)} className="text-base font-medium text-text hover:text-accent transition-colors">{n.mobileLabel || n.label}</a>
             ))}
-            <Link to="/auditoria-perfil-google" onClick={() => setMenu(false)} className="text-base font-bold text-accent flex items-center justify-between py-1 border-t border-line/60 pt-3">
+            <Link to="/google-ads" onClick={() => setMenu(false)} className="text-base font-bold text-gold hover:text-gold-300 transition-colors border-t border-line/60 pt-3">
+              Gestão de Google Ads Local
+            </Link>
+            <Link to="/auditoria-perfil-google" onClick={() => setMenu(false)} className="text-base font-bold text-accent flex items-center justify-between py-1">
               <span>Fazer Raio-X do Perfil</span>
               <span className="text-[10px] uppercase tracking-wider bg-accent/20 px-2 py-0.5 rounded text-accent-300 font-extrabold">Grátis</span>
             </Link>
@@ -381,6 +387,77 @@ export default function App() {
                   <p className="mt-2 text-muted leading-relaxed text-sm">{p.d}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ECOSSISTEMA DE SERVIÇOS: GOOGLE MEU NEGÓCIO + GOOGLE ADS */}
+        <section aria-labelledby="servicos-google" className="py-20 border-b border-line bg-ink">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-widest text-gold">Estrutura Completa de Aquisição no Google</span>
+              <h2 id="servicos-google" className="text-3xl sm:text-4xl font-black tracking-tight mt-2">
+                Google Meu Negócio + Google Ads trabalhando juntos
+              </h2>
+              <p className="mt-3 text-muted text-sm sm:text-base">
+                Escolha o serviço exato para a fase do seu negócio local — do orgânico no Google Maps até campanhas de alta intenção no Google Ads.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <Link to="/otimizacao-google-meu-negocio" className="rounded-2xl border border-line bg-panel p-6 hover:border-accent transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent-300">Projeto Único</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-accent transition-colors">Otimização de Google Meu Negócio</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Reestruturação técnica completa do seu Perfil da Empresa no Google Maps para subir ao Top 3 sem mensalidade obrigatória.</p>
+                </div>
+                <span className="text-xs font-bold text-accent mt-4">Ver escopo da otimização →</span>
+              </Link>
+
+              <Link to="/gestao-google-meu-negocio" className="rounded-2xl border border-line bg-panel p-6 hover:border-accent transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent-300">Recorrente</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-accent transition-colors">Gestão Mensal de Google Meu Negócio</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Postagens semanais, gestão de avaliações com SEO local, blindagem contra concorrentes e relatórios mensais de ligações e rotas.</p>
+                </div>
+                <span className="text-xs font-bold text-accent mt-4">Conhecer gestão mensal →</span>
+              </Link>
+
+              <Link to="/criar-e-verificar-google-meu-negocio" className="rounded-2xl border border-line bg-panel p-6 hover:border-emerald-400 transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">Do Zero</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-emerald-300 transition-colors">Criar e Verificar Perfil no Google</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Cadastro blindado e roteiro completo para aprovação na verificação por vídeo do Google sem risco de suspensão.</p>
+                </div>
+                <span className="text-xs font-bold text-emerald-400 mt-4">Ver como funciona →</span>
+              </Link>
+
+              <Link to="/google-ads" className="rounded-2xl border border-gold/30 bg-gold/5 p-6 hover:border-gold transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gold">Tráfego Pago Local</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-gold transition-colors">Gestão de Google Ads para Negócios Locais</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Campanhas na Rede de Pesquisa e Google Maps focadas em palavras fundo de funil, negativação semanal e leads no WhatsApp.</p>
+                </div>
+                <span className="text-xs font-bold text-gold mt-4">Conhecer gestão de Google Ads →</span>
+              </Link>
+
+              <Link to="/auditoria-google-ads" className="rounded-2xl border border-line bg-panel p-6 hover:border-gold transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gold">Diagnóstico Técnico</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-gold transition-colors">Auditoria de Conta Google Ads</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Já anuncia e sente que está queimando dinheiro? Faça o teste de vazamento de verba e agende uma auditoria sênior.</p>
+                </div>
+                <span className="text-xs font-bold text-gold mt-4">Fazer diagnóstico de verba →</span>
+              </Link>
+
+              <Link to="/google-ads-e-google-meu-negocio" className="rounded-2xl border border-accent/40 bg-accent/10 p-6 hover:border-accent transition-all group flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent-300">Dominação Dupla</span>
+                  <h3 className="text-lg font-bold text-text mt-1 group-hover:text-accent-300 transition-colors">Google Ads + Google Meu Negócio</h3>
+                  <p className="mt-2 text-xs text-muted leading-relaxed">Ocupe dois espaços na 1ª tela: anúncio patrocinado com Extensão de Local + Top 3 orgânico do Google Maps.</p>
+                </div>
+                <span className="text-xs font-bold text-accent-300 mt-4">Ver estratégia híbrida →</span>
+              </Link>
             </div>
           </div>
         </section>

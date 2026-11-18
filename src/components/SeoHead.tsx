@@ -99,7 +99,12 @@ export function SeoHead({
             knowsAbout: [
               "SEO Local",
               "Google Meu Negócio",
+              "Gestão de Google Meu Negócio",
               "Google Maps",
+              "Google Ads",
+              "Gestão de Google Ads para Negócios Locais",
+              "Anúncios Locais no Google Maps",
+              "Auditoria de Google Ads",
               "Leonardo Brasil SEO Local",
               "Otimização de Perfil da Empresa no Google",
               "Posicionamento no Topo das Buscas Locais",
@@ -108,15 +113,51 @@ export function SeoHead({
             ],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
-              name: "Serviços de SEO Local e Google Meu Negócio",
+              name: "Serviços de SEO Local, Google Meu Negócio e Google Ads",
               itemListElement: [
                 {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name: "Otimização e Gestão de Google Meu Negócio",
+                    name: "Otimização de Google Meu Negócio",
                     description: "Colocamos sua empresa nas 3 primeiras posições do Google Maps para atrair clientes prontos para comprar.",
                     url: "https://leonardobrasil.com.br/google-meu-negocio",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Gestão Mensal de Google Meu Negócio",
+                    description: "Gerenciamento recorrente do Perfil da Empresa no Google com postagens semanais, respostas com SEO local e relatórios mensais.",
+                    url: "https://leonardobrasil.com.br/gestao-google-meu-negocio",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Gestão de Google Ads para Negócios Locais",
+                    description: "Campanhas na Rede de Pesquisa e Google Maps focadas em palavras-chave fundo de funil e leads qualificados no WhatsApp.",
+                    url: "https://leonardobrasil.com.br/google-ads",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Auditoria Técnica de Google Ads",
+                    description: "Diagnóstico completo para eliminar desperdício de verba, negativar curiosos e reduzir o custo por lead no Google Ads.",
+                    url: "https://leonardobrasil.com.br/auditoria-google-ads",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Estratégia Integrada Google Ads + Google Meu Negócio",
+                    description: "Dominação dupla da primeira tela do Google com anúncios no Maps (Extensão de Local) e Top 3 orgânico.",
+                    url: "https://leonardobrasil.com.br/google-ads-e-google-meu-negocio",
                   },
                 },
                 {
@@ -135,7 +176,7 @@ export function SeoHead({
             "@type": "Person",
             "@id": "https://leonardobrasil.com.br/#person",
             name: "Leonardo Brasil",
-            jobTitle: "Especialista em SEO Local e Google Meu Negócio",
+            jobTitle: "Especialista em SEO Local, Google Meu Negócio e Google Ads",
             worksFor: { "@id": "https://leonardobrasil.com.br/#organization" },
             image: "https://leonardobrasil.com.br/avatar-leonardo-brasil.jpg",
             sameAs: [
@@ -149,6 +190,8 @@ export function SeoHead({
               "SEO Local",
               "Google Meu Negócio",
               "Google Maps",
+              "Google Ads",
+              "Gestão de Tráfego Pago Local",
               "SEO Programático Local",
               "Otimização de Conversão no Google",
             ],

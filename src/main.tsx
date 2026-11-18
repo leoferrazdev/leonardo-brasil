@@ -15,6 +15,12 @@ const App = lazy(() => import("./App"));
 const GoogleMeuNegocioLanding = lazy(() => import("./pages/GoogleMeuNegocioLanding"));
 const GoogleMeuNegocioNicheHub = lazy(() => import("./pages/GoogleMeuNegocioNicheHub"));
 const GoogleMeuNegocioLocalLanding = lazy(() => import("./pages/GoogleMeuNegocioLocalLanding"));
+const GestaoGoogleMeuNegocio = lazy(() => import("./pages/GestaoGoogleMeuNegocio"));
+const CriarVerificarGoogleMeuNegocio = lazy(() => import("./pages/CriarVerificarGoogleMeuNegocio"));
+const GoogleAdsLanding = lazy(() => import("./pages/GoogleAdsLanding"));
+const GoogleAdsEGmn = lazy(() => import("./pages/GoogleAdsEGmn"));
+const AuditoriaGoogleAds = lazy(() => import("./pages/AuditoriaGoogleAds"));
+const GoogleAdsNicheHub = lazy(() => import("./pages/GoogleAdsNicheHub"));
 const RecuperarPerfilSuspenso = lazy(() => import("./pages/RecuperarPerfilSuspenso"));
 const AuditoriaPerfilGoogle = lazy(() => import("./pages/AuditoriaPerfilGoogle"));
 const GoogleMeuNegocioMedicosCfm = lazy(() => import("./pages/GoogleMeuNegocioMedicosCfm"));
@@ -109,6 +115,19 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/especialista-google-maps" element={<GoogleMeuNegocioLanding />} />
             <Route path="/especialista-google-maps/:nicho" element={<GoogleMeuNegocioNicheHub />} />
             <Route path="/especialista-google-maps/:nicho/:estado/:cidade" element={<GoogleMeuNegocioLocalLanding />} />
+
+            {/* Serviços Específicos de Google Meu Negócio */}
+            <Route path="/gestao-google-meu-negocio" element={<GestaoGoogleMeuNegocio />} />
+            <Route path="/criar-e-verificar-google-meu-negocio" element={<CriarVerificarGoogleMeuNegocio />} />
+
+            {/* Silo Completo de Prestação de Serviços de Google Ads */}
+            <Route path="/google-ads" element={<GoogleAdsLanding />} />
+            <Route path="/gestor-google-ads" element={<GoogleAdsLanding />} />
+            <Route path="/consultor-google-ads" element={<GoogleAdsLanding />} />
+            <Route path="/agencia-google-ads-negocios-locais" element={<GoogleAdsLanding />} />
+            <Route path="/google-ads-e-google-meu-negocio" element={<GoogleAdsEGmn />} />
+            <Route path="/auditoria-google-ads" element={<AuditoriaGoogleAds />} />
+            <Route path="/google-ads/:nicho" element={<GoogleAdsNicheHub />} />
 
             {/* Guias Estratégicos de SEO Local e Aquisição */}
             <Route path="/primeiro-lugar-no-google-2027" element={<PrimeiroLugarNoGoogle2027 />} />

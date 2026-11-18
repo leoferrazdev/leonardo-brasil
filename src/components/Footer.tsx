@@ -14,11 +14,36 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12 text-sm text-muted">
         
         {/* SEO Linking Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-line">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-10 pb-10 border-b border-line">
           <div>
             <h4 className="font-semibold text-text mb-4">Google Meu Negócio</h4>
             <ul className="grid grid-cols-1 gap-2 text-xs">
-              {niches.slice(0, 7).map(niche => (
+              <li>
+                <Link to="/otimizacao-google-meu-negocio" className="hover:text-accent transition-colors font-medium text-text">
+                  Otimização de Google Meu Negócio
+                </Link>
+              </li>
+              <li>
+                <Link to="/gestao-google-meu-negocio" className="hover:text-accent transition-colors font-medium text-text">
+                  Gestão Mensal de GMN
+                </Link>
+              </li>
+              <li>
+                <Link to="/criar-e-verificar-google-meu-negocio" className="hover:text-accent transition-colors font-medium text-text">
+                  Criar e Verificar Perfil (Vídeo)
+                </Link>
+              </li>
+              <li>
+                <Link to="/consultor-google-meu-negocio" className="hover:text-accent transition-colors">
+                  Consultor Google Meu Negócio
+                </Link>
+              </li>
+              <li>
+                <Link to="/especialista-google-maps" className="hover:text-accent transition-colors">
+                  Especialista em Google Maps
+                </Link>
+              </li>
+              {niches.slice(0, 6).map(niche => (
                 <li key={niche.slug}>
                   <Link to={`/google-meu-negocio/${niche.slug}`} className="hover:text-accent transition-colors">
                     Google Maps para {niche.nome}
@@ -34,9 +59,64 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-text mb-4">Mais Especialidades</h4>
+            <h4 className="font-semibold text-gold mb-4">Google Ads &amp; Tráfego Local</h4>
             <ul className="grid grid-cols-1 gap-2 text-xs">
-              {niches.slice(7, 14).map(niche => (
+              <li>
+                <Link to="/google-ads" className="text-gold font-bold hover:underline">
+                  ★ Gestão de Google Ads Local
+                </Link>
+              </li>
+              <li>
+                <Link to="/gestor-google-ads" className="hover:text-gold transition-colors font-medium text-text">
+                  Gestor de Tráfego Google Ads
+                </Link>
+              </li>
+              <li>
+                <Link to="/consultor-google-ads" className="hover:text-gold transition-colors font-medium text-text">
+                  Consultor de Google Ads
+                </Link>
+              </li>
+              <li>
+                <Link to="/auditoria-google-ads" className="text-gold hover:text-gold-300 transition-colors font-semibold">
+                  Auditoria de Conta Google Ads
+                </Link>
+              </li>
+              <li>
+                <Link to="/google-ads-e-google-meu-negocio" className="hover:text-gold transition-colors font-medium text-text">
+                  Google Ads + Google Meu Negócio
+                </Link>
+              </li>
+              <li>
+                <Link to="/agencia-google-ads-negocios-locais" className="hover:text-gold transition-colors">
+                  Especialista vs Agência Google Ads
+                </Link>
+              </li>
+              <li className="pt-2 text-text font-semibold">Google Ads por Nicho:</li>
+              <li>
+                <Link to="/google-ads/dentistas" className="hover:text-accent transition-colors">Google Ads para Dentistas</Link>
+              </li>
+              <li>
+                <Link to="/google-ads/medicos" className="hover:text-accent transition-colors">Google Ads para Médicos</Link>
+              </li>
+              <li>
+                <Link to="/google-ads/advogados" className="hover:text-accent transition-colors">Google Ads para Advogados</Link>
+              </li>
+              <li>
+                <Link to="/google-ads/esteticistas" className="hover:text-accent transition-colors">Google Ads para Estética</Link>
+              </li>
+              <li>
+                <Link to="/google-ads/oficinas-mecanicas" className="hover:text-accent transition-colors">Google Ads para Oficinas</Link>
+              </li>
+              <li>
+                <Link to="/google-ads/desentupidoras" className="hover:text-accent transition-colors">Google Ads para Desentupidoras</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-text mb-4">Mais Especialidades Maps</h4>
+            <ul className="grid grid-cols-1 gap-2 text-xs">
+              {niches.slice(6, 16).map(niche => (
                 <li key={niche.slug}>
                   <Link to={`/google-meu-negocio/${niche.slug}`} className="hover:text-accent transition-colors">
                     Google Maps para {niche.nome}
@@ -47,7 +127,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-text mb-4">Hubs Éticos & Ferramentas</h4>
+            <h4 className="font-semibold text-text mb-4">Hubs Éticos &amp; Guias</h4>
             <ul className="grid grid-cols-1 gap-2 text-xs">
               <li>
                 <Link to="/auditoria-perfil-google" className="text-accent font-bold hover:underline">
@@ -56,12 +136,12 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/google-meu-negocio/medicos-cfm" className="hover:text-emerald-400 transition-colors">
-                  Médicos & Clínicas (Regras CFM)
+                  Médicos &amp; Clínicas (Regras CFM)
                 </Link>
               </li>
               <li>
                 <Link to="/google-meu-negocio/advogados-oab" className="hover:text-blue-400 transition-colors">
-                  Advogados & Bancas (Provimento OAB)
+                  Advogados &amp; Bancas (Provimento OAB)
                 </Link>
               </li>
               <li>
@@ -72,16 +152,6 @@ export function Footer() {
               <li>
                 <Link to="/recuperar-perfil-suspenso-google" className="text-red-400 hover:text-red-300 transition-colors font-medium">
                   Recuperar Perfil Suspenso no Google
-                </Link>
-              </li>
-              <li>
-                <Link to="/consultor-google-meu-negocio" className="hover:text-accent transition-colors">
-                  Consultor Google Meu Negócio
-                </Link>
-              </li>
-              <li>
-                <Link to="/especialista-google-maps" className="hover:text-accent transition-colors">
-                  Especialista em Google Maps
                 </Link>
               </li>
               <li className="pt-2 text-text font-semibold">Guias de SEO Local:</li>
@@ -127,7 +197,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/anunciar-no-google" className="hover:text-accent transition-colors">
-                  Anunciar no Google (Ads + Maps)
+                  Anunciar no Google (Guia de Custos)
                 </Link>
               </li>
               <li>

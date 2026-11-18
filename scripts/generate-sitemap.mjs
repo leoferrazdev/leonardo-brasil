@@ -20,6 +20,14 @@ const STATIC_ROUTES = [
   "/otimizacao-google-meu-negocio",
   "/consultor-google-meu-negocio",
   "/especialista-google-maps",
+  "/gestao-google-meu-negocio",
+  "/criar-e-verificar-google-meu-negocio",
+  "/google-ads",
+  "/gestor-google-ads",
+  "/consultor-google-ads",
+  "/agencia-google-ads-negocios-locais",
+  "/google-ads-e-google-meu-negocio",
+  "/auditoria-google-ads",
   "/recuperar-perfil-suspenso-google",
   "/auditoria-perfil-google",
   "/google-meu-negocio/medicos-cfm",
@@ -127,12 +135,13 @@ function generateSitemap() {
     coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
   });
 
-  // Hubs de Nicho das 4 Verticais
+  // Hubs de Nicho das 4 Verticais de GMN + Vertical de Google Ads
   nicheSlugs.forEach((niche) => {
     coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
     coreUrls.push(generateUrlNode(`/otimizacao-google-meu-negocio/${niche}`, "0.9", "weekly"));
     coreUrls.push(generateUrlNode(`/consultor-google-meu-negocio/${niche}`, "0.9", "weekly"));
     coreUrls.push(generateUrlNode(`/especialista-google-maps/${niche}`, "0.9", "weekly"));
+    coreUrls.push(generateUrlNode(`/google-ads/${niche}`, "0.9", "weekly"));
   });
 
   // Blog

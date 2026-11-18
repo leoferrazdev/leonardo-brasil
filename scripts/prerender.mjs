@@ -19,7 +19,18 @@ const templatePath = path.join(distDir, "index.html");
 const serverEntry = path.join(distDir, "server", "entry-server.js");
 
 const NICHES_PATH = path.resolve(root, "src/data/niches.ts");
+const LOCATIONS_JSON_PATH = path.resolve(root, "src/data/seoLocations.json");
 const BLOG_PATH = path.resolve(root, "src/data/blogData.ts");
+
+function readLocationNicheSlugs() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(LOCATIONS_JSON_PATH, "utf8"));
+    return Array.isArray(parsed.NICHES) ? parsed.NICHES.map((n) => n.slug) : [];
+  } catch (error) {
+    console.error("[prerender] Falha ao ler seoLocations.json:", error.message);
+    return [];
+  }
+}
 
 function readSlugs(filePath, label) {
   try {
@@ -38,6 +49,14 @@ function buildRoutes() {
     "/otimizacao-google-meu-negocio",
     "/consultor-google-meu-negocio",
     "/especialista-google-maps",
+    "/gestao-google-meu-negocio",
+    "/criar-e-verificar-google-meu-negocio",
+    "/google-ads",
+    "/gestor-google-ads",
+    "/consultor-google-ads",
+    "/agencia-google-ads-negocios-locais",
+    "/google-ads-e-google-meu-negocio",
+    "/auditoria-google-ads",
     "/recuperar-perfil-suspenso-google",
     "/auditoria-perfil-google",
     "/google-meu-negocio/medicos-cfm",
@@ -71,13 +90,15 @@ function buildRoutes() {
     "/webmcp",
   ];
 
-  const niches = readSlugs(NICHES_PATH, "niches.ts");
+  const niches = [...new Set([...readSlugs(NICHES_PATH, "niches.ts"), ...readLocationNicheSlugs()])];
+  const adsNiches = readLocationNicheSlugs();
   const blogSlugs = readSlugs(BLOG_PATH, "blogData.ts");
 
   const gmnHubRoutes = niches.map((slug) => `/google-meu-negocio/${slug}`);
   const otimizacaoHubRoutes = niches.map((slug) => `/otimizacao-google-meu-negocio/${slug}`);
   const consultorHubRoutes = niches.map((slug) => `/consultor-google-meu-negocio/${slug}`);
   const especialistaHubRoutes = niches.map((slug) => `/especialista-google-maps/${slug}`);
+  const googleAdsHubRoutes = adsNiches.map((slug) => `/google-ads/${slug}`);
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   // Set para evitar rotas duplicadas
@@ -87,6 +108,7 @@ function buildRoutes() {
     ...otimizacaoHubRoutes,
     ...consultorHubRoutes,
     ...especialistaHubRoutes,
+    ...googleAdsHubRoutes,
     ...blogRoutes
   ])];
 }

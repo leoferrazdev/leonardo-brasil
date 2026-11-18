@@ -69,6 +69,14 @@ export const STATIC_WEB_ROUTES = new Set([
   '/otimizacao-google-meu-negocio',
   '/consultor-google-meu-negocio',
   '/especialista-google-maps',
+  '/gestao-google-meu-negocio',
+  '/criar-e-verificar-google-meu-negocio',
+  '/google-ads',
+  '/gestor-google-ads',
+  '/consultor-google-ads',
+  '/agencia-google-ads-negocios-locais',
+  '/google-ads-e-google-meu-negocio',
+  '/auditoria-google-ads',
   '/google-meu-negocio/medicos-cfm',
   '/google-meu-negocio/advogados-oab',
   '/google-meu-negocio/dentistas-cfo',
@@ -143,6 +151,10 @@ export function isKnownWebRoute(rawPath) {
 
   if (segments.length === 3 && segments[0] === 'crm' && segments[1] === 'clientes') {
     return /^[a-z0-9-]+$/i.test(segments[2]);
+  }
+
+  if (segments.length === 2 && segments[0] === 'google-ads') {
+    return VALID_NICHE_SLUGS.has(segments[1]);
   }
 
   if (segments.length === 2 && VALID_VERTICALS.has(segments[0])) {
