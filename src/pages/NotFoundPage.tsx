@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <div className="min-h-screen bg-ink text-text flex flex-col font-sans">
       <SeoHead
         title="404 — Página não encontrada | Leonardo Brasil"
-        description="O endereço acessado não foi encontrado em leonardobrasil.com.br."
+        description="O endereço acessado não foi encontrado em leobrasil.com.br."
         robots="noindex, nofollow"
       />
       <main className="flex-1 flex items-center justify-center px-5 py-16">

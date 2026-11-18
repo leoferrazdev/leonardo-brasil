@@ -113,7 +113,7 @@ export default function GoogleMeuNegocioLocalLanding() {
     ? seoNicheData[nicho]
     : getDefaultNicheData(formattedNicho, formattedCidade);
 
-  const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}/${estado}/${cidade}`;
+  const canonicalUrl = `https://leobrasil.com.br${basePath}/${nicho}/${estado}/${cidade}`;
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Navegação cruzada (cidades próximas no mesmo estado)

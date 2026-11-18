@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOMAIN = "https://leonardobrasil.com.br";
+const DOMAIN = "https://leobrasil.com.br";
 const PUBLIC_DIR = path.resolve(__dirname, "../public");
 const DIST_DIR = path.resolve(__dirname, "../dist");
 const SITEMAP_INDEX_PATH = path.join(PUBLIC_DIR, "sitemap.xml");

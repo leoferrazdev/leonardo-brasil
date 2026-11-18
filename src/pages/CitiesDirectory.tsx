@@ -43,7 +43,7 @@ export default function CitiesDirectory() {
       <SeoHead
         title="Regiões & Cidades Atendidas — Google Meu Negócio | Leonardo Brasil"
         description="Diretório completo de otimização de Google Meu Negócio e presença no Google Maps para negócios locais nas principais capitais e cidades do Brasil."
-        canonicalUrl="https://leonardobrasil.com.br/cidades"
+        canonicalUrl="https://leobrasil.com.br/cidades"
       />
 
       {/* HEADER */}

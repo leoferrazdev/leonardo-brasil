@@ -12,7 +12,7 @@ export interface ModelContext {
 }
 
 type ContextHost = { modelContext?: ModelContext };
-const origin = "https://leonardobrasil.com.br";
+const origin = "https://leobrasil.com.br";
 
 export function createSiteTools(navigate: (path: string) => void, fetcher: typeof fetch = fetch): SiteTool[] {
   const inputSchema = { type: "object" as const, properties: {}, additionalProperties: false as const };

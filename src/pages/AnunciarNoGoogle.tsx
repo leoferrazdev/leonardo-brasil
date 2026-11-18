@@ -137,21 +137,21 @@ export default function AnunciarNoGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/anunciar-no-google#article",
+        "@id": "https://leobrasil.com.br/anunciar-no-google#article",
         headline: "Anunciar no Google para Negócios Locais: Como Usar Google Ads Sem Queimar Verba",
         description: "Guia estratégico sobre como anunciar no Google Ads para negócios locais, custos reais de CPC, erros que desperdiçam verba e como combinar tráfego pago com SEO no Google Maps.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Estrutura de Vendas no Google",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/anunciar-no-google",
+        mainEntityOfPage: "https://leobrasil.com.br/anunciar-no-google",
         datePublished: "2026-11-10T16:45:00-03:00",
         dateModified: "2026-11-10T16:45:00-03:00"
       },
@@ -172,7 +172,7 @@ export default function AnunciarNoGoogle() {
         provider: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         areaServed: "BR",
         description: "Estruturação de Perfil da Empresa no Google, SEO Local e páginas de alta conversão no WhatsApp para potencializar resultados orgânicos e pagos."
@@ -196,7 +196,7 @@ export default function AnunciarNoGoogle() {
       <SeoHead
         title="Anunciar no Google: Guia Local Para Lucrar Sem Queimar Verba | Leonardo Brasil"
         description="Quer anunciar no Google? Entenda os custos reais do Google Ads para negócios locais, os 4 ralos que queimam seu orçamento e como unir Google Maps orgânico + anúncios."
-        canonicalUrl="https://leonardobrasil.com.br/anunciar-no-google"
+        canonicalUrl="https://leobrasil.com.br/anunciar-no-google"
         ogType="article"
         schema={schema}
       />

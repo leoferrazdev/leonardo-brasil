@@ -310,7 +310,7 @@ export default function GoogleMeuNegocioLanding() {
 
   const niches = locationsData.NICHES;
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(config.waMessage)}`;
-  const canonicalUrl = `https://leonardobrasil.com.br${config.canonicalPath}`;
+  const canonicalUrl = `https://leobrasil.com.br${config.canonicalPath}`;
 
   const schema = [
     {
@@ -321,7 +321,7 @@ export default function GoogleMeuNegocioLanding() {
       url: canonicalUrl,
       provider: {
         "@type": "Organization",
-        "@id": "https://leonardobrasil.com.br/#organization",
+        "@id": "https://leobrasil.com.br/#organization",
         name: "Leonardo Brasil",
       },
       areaServed: {
@@ -350,7 +350,7 @@ export default function GoogleMeuNegocioLanding() {
           "@type": "ListItem",
           position: 1,
           name: "Início",
-          item: "https://leonardobrasil.com.br",
+          item: "https://leobrasil.com.br",
         },
         {
           "@type": "ListItem",

@@ -646,7 +646,7 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
       <SeoHead
         title="Planejador de Palavras-Chave Google Ads | CRM Leonardo Brasil"
         description="Ferramenta interna de inteligência de demanda local e planejamento de campanhas Google Ads."
-        canonicalUrl="https://leonardobrasil.com.br/crm/planejador"
+        canonicalUrl="https://leobrasil.com.br/crm/planejador"
         robots="noindex, nofollow"
       />
 

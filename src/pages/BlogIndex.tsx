@@ -9,7 +9,7 @@ export default function BlogIndex() {
       <SeoHead 
         title="Blog de Google Meu Negócio e SEO Local | Leonardo Brasil"
         description="Aprenda como dominar o Google Maps e atrair clientes locais todos os dias. Artigos sobre Google Meu Negócio, SEO Local e conversão."
-        canonicalUrl="https://leonardobrasil.com.br/blog"
+        canonicalUrl="https://leobrasil.com.br/blog"
       />
       
       <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">

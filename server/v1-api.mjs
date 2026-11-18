@@ -1,7 +1,7 @@
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 import { CITIES_COUNT, NICHES_CATALOG } from './routes-manifest.mjs';
 
-export const BASE_URL = 'https://leonardobrasil.com.br';
+export const BASE_URL = 'https://leobrasil.com.br';
 export const API_VERSION = '1.0.0';
 export const LEGACY_SUNSET_HTTP_DATE = 'Fri, 31 Dec 2027 23:59:59 GMT';
 

@@ -48,7 +48,7 @@ export default function BlogPost() {
       <SeoHead 
         title={`${post.title} | Blog Leonardo Brasil`}
         description={post.excerpt}
-        canonicalUrl={`https://leonardobrasil.com.br/blog/${post.slug}`}
+        canonicalUrl={`https://leobrasil.com.br/blog/${post.slug}`}
         schema={articleSchema}
       />
       

@@ -60,7 +60,7 @@ test('prerendered commercial routes have unique titles, self-referencing canonic
     assert.equal(seenTitles.has(title), false, `Duplicate <title> detected on ${route}: ${title}`);
     seenTitles.add(title);
 
-    const expectedCanonical = `https://leonardobrasil.com.br${route}`;
+    const expectedCanonical = `https://leobrasil.com.br${route}`;
     assert.ok(
       html.includes(`href="${expectedCanonical}"`),
       `Expected self-referencing canonical ${expectedCanonical} in ${route}`
@@ -76,7 +76,7 @@ test('prerendered commercial routes have unique titles, self-referencing canonic
     assert.equal(existsSync(htmlPath), true, `Missing prerendered HTML for ${route}`);
     const html = readFileSync(htmlPath, 'utf8');
     assert.ok(
-      html.includes(`href="https://leonardobrasil.com.br${route}"`),
+      html.includes(`href="https://leobrasil.com.br${route}"`),
       `Expected self-referencing canonical on ${route}`
     );
   }
@@ -88,14 +88,14 @@ test('sitemap-core.xml includes all GMN and Google Ads commercial pages and nich
 
   for (const route of COMMERCIAL_ROUTES) {
     assert.ok(
-      sitemap.includes(`<loc>https://leonardobrasil.com.br${route}</loc>`),
+      sitemap.includes(`<loc>https://leobrasil.com.br${route}</loc>`),
       `Missing ${route} in sitemap-core.xml`
     );
   }
 
   for (const niche of NICHES_CATALOG) {
     assert.ok(
-      sitemap.includes(`<loc>https://leonardobrasil.com.br/google-ads/${niche.slug}</loc>`),
+      sitemap.includes(`<loc>https://leobrasil.com.br/google-ads/${niche.slug}</loc>`),
       `Missing /google-ads/${niche.slug} in sitemap-core.xml`
     );
   }

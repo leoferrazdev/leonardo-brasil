@@ -128,21 +128,21 @@ export default function PrimeiroLugarNoGoogle2027() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/primeiro-lugar-no-google-2027#article",
+        "@id": "https://leobrasil.com.br/primeiro-lugar-no-google-2027#article",
         headline: "Como Ficar em Primeiro Lugar no Google em 2027: O Guia Definitivo de SEO Local",
         description: "Aprenda as técnicas avançadas de SEO Local e GEO para colocar sua empresa em primeiro lugar no Google e dominar o Top 3 do Google Maps em 2027.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Especialista em Google Meu Negócio e SEO Local",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/primeiro-lugar-no-google-2027",
+        mainEntityOfPage: "https://leobrasil.com.br/primeiro-lugar-no-google-2027",
         datePublished: "2026-11-09T20:00:00-03:00",
         dateModified: "2026-11-09T20:30:00-03:00"
       },
@@ -176,7 +176,7 @@ export default function PrimeiroLugarNoGoogle2027() {
       <SeoHead
         title="Primeiro Lugar no Google 2027: Como Liderar o Top 3 do Maps | Leonardo Brasil"
         description="Descubra como colocar sua empresa em primeiro lugar no Google em 2027. Técnicas avançadas de SEO Local, algoritmos de IA (GEO) e conversão no WhatsApp."
-        canonicalUrl="https://leonardobrasil.com.br/primeiro-lugar-no-google-2027"
+        canonicalUrl="https://leobrasil.com.br/primeiro-lugar-no-google-2027"
         schema={schema}
       />
 

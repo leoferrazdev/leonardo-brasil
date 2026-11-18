@@ -196,21 +196,21 @@ export default function SegmentosLocaisGoogleMaps() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/segmentos-locais-google-maps#article",
+        "@id": "https://leobrasil.com.br/segmentos-locais-google-maps#article",
         headline: "Os 6 Pilares de Negócios Locais Mais Lucrativos no Google Maps e SEO Local",
         description: "Guia estratégico para posicionar negócios de alta urgência, gastronomia, saúde, serviços, varejo e B2B no topo do Google Maps e nas respostas de IA (GEO).",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/segmentos-locais-google-maps",
+        mainEntityOfPage: "https://leobrasil.com.br/segmentos-locais-google-maps",
         datePublished: "2026-02-09T08:00:00-03:00",
         dateModified: "2026-11-09T18:00:00-03:00"
       },
@@ -243,7 +243,7 @@ export default function SegmentosLocaisGoogleMaps() {
       <SeoHead
         title="Os 6 Segmentos de Negócios Mais Lucrativos no Google Maps | Leonardo Brasil"
         description="Descubra por que negócios de urgência, gastronomia, saúde, serviços e B2B dominam o tráfego do Google Maps. Análise de SEO Local, GEO e conversão no WhatsApp."
-        canonicalUrl="https://leonardobrasil.com.br/segmentos-locais-google-maps"
+        canonicalUrl="https://leobrasil.com.br/segmentos-locais-google-maps"
         schema={schema}
       />
 

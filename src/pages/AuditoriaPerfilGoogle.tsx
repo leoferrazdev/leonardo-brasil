@@ -131,7 +131,7 @@ export default function AuditoriaPerfilGoogle() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Raio-X do Google Meu Negócio — Auditoria Gratuita",
-    url: "https://leonardobrasil.com.br/auditoria-perfil-google",
+    url: "https://leobrasil.com.br/auditoria-perfil-google",
     applicationCategory: "BusinessApplication",
     operatingSystem: "All",
     offers: {
@@ -143,7 +143,7 @@ export default function AuditoriaPerfilGoogle() {
       "@type": "Person",
       name: "Leonardo Brasil",
       jobTitle: "Especialista em Google Meu Negócio e SEO Local",
-      url: "https://leonardobrasil.com.br",
+      url: "https://leobrasil.com.br",
     },
   };
 
@@ -152,7 +152,7 @@ export default function AuditoriaPerfilGoogle() {
       <SeoHead
         title="Raio-X do Google Meu Negócio — Auditoria Gratuita de Visibilidade no Maps"
         description="Avalie a pontuação da sua empresa no Google Maps em 2 minutos. Descubra falhas que afastam clientes e receba o diagnóstico prático do consultor Leonardo Brasil."
-        canonicalUrl="https://leonardobrasil.com.br/auditoria-perfil-google"
+        canonicalUrl="https://leobrasil.com.br/auditoria-perfil-google"
         schema={schema}
       />
 

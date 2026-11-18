@@ -2,14 +2,14 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "Leonardo Brasil",
-    "identifier": "https://leonardobrasil.com.br"
+    "identifier": "https://leobrasil.com.br"
   },
   "entries": [
     {
-      "identifier": "urn:air:leonardobrasil.com.br:api:leonardo-brasil-v1",
+      "identifier": "urn:air:leobrasil.com.br:api:leonardo-brasil-v1",
       "displayName": "Especificação OpenAPI 3.1 da API Leonardo Brasil (v1)",
       "type": "application/json",
-      "url": "https://leonardobrasil.com.br/openapi.json",
+      "url": "https://leobrasil.com.br/openapi.json",
       "representativeQueries": [
         "Onde encontro a especificação OpenAPI das APIs v1 de Leonardo Brasil?",
         "Quais schemas tipados, códigos de erro e escopos OAuth a API v1 suporta?",
@@ -17,10 +17,10 @@
       ]
     },
     {
-      "identifier": "urn:air:leonardobrasil.com.br:docs:api-docs",
+      "identifier": "urn:air:leobrasil.com.br:docs:api-docs",
       "displayName": "Documentação Markdown da API v1 de Leonardo Brasil",
       "type": "text/markdown",
-      "url": "https://leonardobrasil.com.br/api-docs.md",
+      "url": "https://leobrasil.com.br/api-docs.md",
       "representativeQueries": [
         "Como provisionar credenciais OAuth 2.0 sandbox gratuitamente na API Leonardo Brasil?",
         "Quais cabeçalhos RateLimit e políticas de versionamento a API v1 utiliza?",
@@ -28,10 +28,10 @@
       ]
     },
     {
-      "identifier": "urn:air:leonardobrasil.com.br:oauth:authorization-server",
+      "identifier": "urn:air:leobrasil.com.br:oauth:authorization-server",
       "displayName": "Metadados OAuth 2.0 RFC 8414 — Leonardo Brasil",
       "type": "application/json",
-      "url": "https://leonardobrasil.com.br/.well-known/oauth-authorization-server",
+      "url": "https://leobrasil.com.br/.well-known/oauth-authorization-server",
       "representativeQueries": [
         "Qual o endpoint token_endpoint e registration_endpoint OAuth 2.0 do domínio?",
         "Quais scopes_supported estão disponíveis para agentes?",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "identifier": "urn:air:leonardobrasil.com.br:skill:consultar-api-leonardo-brasil",
+      "identifier": "urn:air:leobrasil.com.br:skill:consultar-api-leonardo-brasil",
       "displayName": "Consultar APIs e Diagnóstico v1 de Leonardo Brasil",
       "type": "text/markdown",
-      "url": "https://leonardobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
+      "url": "https://leobrasil.com.br/.well-known/agent-skills/consultar-api-leonardo-brasil/SKILL.md",
       "representativeQueries": [
         "Quando e como um agente deve usar a API v1 de Leonardo Brasil?",
         "Como obter credenciais sandbox e executar o cálculo de auditoria de Google Meu Negócio?",

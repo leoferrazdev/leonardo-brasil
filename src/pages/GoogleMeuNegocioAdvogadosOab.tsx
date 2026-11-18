@@ -31,7 +31,7 @@ export default function GoogleMeuNegocioAdvogadosOab() {
     "@type": "LegalService",
     name: "Consultoria em Google Meu Negócio para Advogados — Leonardo Brasil",
     description: "Posicionamento sóbrio e estratégico de escritórios de advocacia no Top 3 do Google Maps, em total conformidade com o Provimento nº 205/2021 da OAB.",
-    url: "https://leonardobrasil.com.br/google-meu-negocio/advogados-oab",
+    url: "https://leobrasil.com.br/google-meu-negocio/advogados-oab",
     telephone: `+${WHATSAPP_NUMBER}`,
     priceRange: "$$",
     address: {
@@ -45,7 +45,7 @@ export default function GoogleMeuNegocioAdvogadosOab() {
       <SeoHead
         title="Google Meu Negócio para Advogados — Normas do Provimento OAB | Leonardo Brasil"
         description="Atraia clientes para seu escritório de advocacia no Google Maps com sobriedade. Posicionamento no Top 3 dentro das normas do Provimento 205/2021 da OAB."
-        canonicalUrl="https://leonardobrasil.com.br/google-meu-negocio/advogados-oab"
+        canonicalUrl="https://leobrasil.com.br/google-meu-negocio/advogados-oab"
         schema={schema}
       />
 

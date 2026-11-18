@@ -64,7 +64,7 @@ export default function CriarVerificarGoogleMeuNegocio() {
     window.scrollTo(0, 0);
   }, []);
 
-  const canonicalUrl = "https://leonardobrasil.com.br/criar-e-verificar-google-meu-negocio";
+  const canonicalUrl = "https://leobrasil.com.br/criar-e-verificar-google-meu-negocio";
 
   const schema = [
     {
@@ -76,7 +76,7 @@ export default function CriarVerificarGoogleMeuNegocio() {
       url: canonicalUrl,
       provider: {
         "@type": "Organization",
-        "@id": "https://leonardobrasil.com.br/#organization",
+        "@id": "https://leobrasil.com.br/#organization",
         name: "Leonardo Brasil",
       },
       areaServed: { "@type": "Country", name: "Brasil" },
@@ -95,8 +95,8 @@ export default function CriarVerificarGoogleMeuNegocio() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: "https://leonardobrasil.com.br" },
-        { "@type": "ListItem", position: 2, name: "Google Meu Negócio", item: "https://leonardobrasil.com.br/google-meu-negocio" },
+        { "@type": "ListItem", position: 1, name: "Início", item: "https://leobrasil.com.br" },
+        { "@type": "ListItem", position: 2, name: "Google Meu Negócio", item: "https://leobrasil.com.br/google-meu-negocio" },
         { "@type": "ListItem", position: 3, name: "Criar e Verificar Google Meu Negócio", item: canonicalUrl },
       ],
     },

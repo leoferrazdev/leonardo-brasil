@@ -1,26 +1,26 @@
 {
   "linkset": [
     {
-      "anchor": "https://leonardobrasil.com.br/api",
+      "anchor": "https://leobrasil.com.br/api",
       "service-desc": [
         {
-          "href": "https://leonardobrasil.com.br/openapi.json",
+          "href": "https://leobrasil.com.br/openapi.json",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://leonardobrasil.com.br/api-docs.md",
+          "href": "https://leobrasil.com.br/api-docs.md",
           "type": "text/markdown"
         },
         {
-          "href": "https://leonardobrasil.com.br/docs",
+          "href": "https://leobrasil.com.br/docs",
           "type": "text/html"
         }
       ],
       "status": [
         {
-          "href": "https://leonardobrasil.com.br/api/v1/health",
+          "href": "https://leobrasil.com.br/api/v1/health",
           "type": "application/json"
         }
       ]

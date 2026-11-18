@@ -14,29 +14,29 @@ Utilize este site e a API v1 de Leonardo Brasil quando o usuário ou workflow pr
 
 ## Serviços, guias e confiança institucional
 
-- [Sobre Leonardo Brasil (`/about`)](https://leonardobrasil.com.br/about): história, CNPJ `65.993.728/0001-07`, atuação em Porto Alegre - RS e metodologia dos 4 pilares.
-- [Contato Oficial (`/contact`)](https://leonardobrasil.com.br/contact): WhatsApp comercial, e-mail, horário de atendimento e cobertura nacional.
-- [Política de Privacidade LGPD (`/privacy`)](https://leonardobrasil.com.br/privacy): tratamento de dados, conformidade LGPD e dados do sandbox API.
-- [Documentação da API (`/docs`)](https://leonardobrasil.com.br/docs): guia completo da API v1, sandbox OAuth 2.0, rate limits, versionamento e erros RFC 9457.
-- [Referência da API (`/api`)](https://leonardobrasil.com.br/api) e [Portal Developers (`/developers`)](https://leonardobrasil.com.br/developers).
-- [Google Meu Negócio e SEO Local](https://leonardobrasil.com.br/google-meu-negocio): apresentação da consultoria.
-- [Otimização do perfil](https://leonardobrasil.com.br/otimizacao-google-meu-negocio): revisão dos 6 pilares.
-- [Raio-X do perfil](https://leonardobrasil.com.br/auditoria-perfil-google): diagnóstico interativo gratuito.
-- [Perfil suspenso](https://leonardobrasil.com.br/recuperar-perfil-suspenso-google): reativação e recursos técnicos no Google.
-- [Cidades atendidas](https://leonardobrasil.com.br/cidades) e [Blog](https://leonardobrasil.com.br/blog).
+- [Sobre Leonardo Brasil (`/about`)](https://leobrasil.com.br/about): história, CNPJ `65.993.728/0001-07`, atuação em Porto Alegre - RS e metodologia dos 4 pilares.
+- [Contato Oficial (`/contact`)](https://leobrasil.com.br/contact): WhatsApp comercial, e-mail, horário de atendimento e cobertura nacional.
+- [Política de Privacidade LGPD (`/privacy`)](https://leobrasil.com.br/privacy): tratamento de dados, conformidade LGPD e dados do sandbox API.
+- [Documentação da API (`/docs`)](https://leobrasil.com.br/docs): guia completo da API v1, sandbox OAuth 2.0, rate limits, versionamento e erros RFC 9457.
+- [Referência da API (`/api`)](https://leobrasil.com.br/api) e [Portal Developers (`/developers`)](https://leobrasil.com.br/developers).
+- [Google Meu Negócio e SEO Local](https://leobrasil.com.br/google-meu-negocio): apresentação da consultoria.
+- [Otimização do perfil](https://leobrasil.com.br/otimizacao-google-meu-negocio): revisão dos 6 pilares.
+- [Raio-X do perfil](https://leobrasil.com.br/auditoria-perfil-google): diagnóstico interativo gratuito.
+- [Perfil suspenso](https://leobrasil.com.br/recuperar-perfil-suspenso-google): reativação e recursos técnicos no Google.
+- [Cidades atendidas](https://leobrasil.com.br/cidades) e [Blog](https://leobrasil.com.br/blog).
 
 ## Descoberta e integração para agentes
 
-- [Documentação HTML (`/docs`)](https://leonardobrasil.com.br/docs) e [Referência Markdown (`/api-docs.md`)](https://leonardobrasil.com.br/api-docs.md).
-- [Especificação OpenAPI 3.1 (`/openapi.json`)](https://leonardobrasil.com.br/openapi.json).
-- [Catálogo de APIs RFC 9727 (`/.well-known/api-catalog`)](https://leonardobrasil.com.br/.well-known/api-catalog).
-- [Metadados OAuth 2.0 Authorization Server (RFC 8414)](https://leonardobrasil.com.br/.well-known/oauth-authorization-server).
-- [Metadados OAuth 2.0 Protected Resource (RFC 9728)](https://leonardobrasil.com.br/.well-known/oauth-protected-resource).
-- [Autenticação, sandbox gratuito e escopos (`/auth.md`)](https://leonardobrasil.com.br/auth.md).
-- [Manifesto de capacidades ARD (`/.well-known/ai-catalog.json`)](https://leonardobrasil.com.br/.well-known/ai-catalog.json).
-- [Índice de Agent Skills (`/.well-known/agent-skills/index.json`)](https://leonardobrasil.com.br/.well-known/agent-skills/index.json).
-- [WebMCP no navegador (`/webmcp`)](https://leonardobrasil.com.br/webmcp): ferramentas client-side (`consultar_servicos`, `abrir_diagnostico`, `consultar_catalogo_apis`) disponíveis apenas no navegador.
-- [Poppy: declaração de navegação no site (`/.well-known/poppy.json`)](https://leonardobrasil.com.br/.well-known/poppy.json).
+- [Documentação HTML (`/docs`)](https://leobrasil.com.br/docs) e [Referência Markdown (`/api-docs.md`)](https://leobrasil.com.br/api-docs.md).
+- [Especificação OpenAPI 3.1 (`/openapi.json`)](https://leobrasil.com.br/openapi.json).
+- [Catálogo de APIs RFC 9727 (`/.well-known/api-catalog`)](https://leobrasil.com.br/.well-known/api-catalog).
+- [Metadados OAuth 2.0 Authorization Server (RFC 8414)](https://leobrasil.com.br/.well-known/oauth-authorization-server).
+- [Metadados OAuth 2.0 Protected Resource (RFC 9728)](https://leobrasil.com.br/.well-known/oauth-protected-resource).
+- [Autenticação, sandbox gratuito e escopos (`/auth.md`)](https://leobrasil.com.br/auth.md).
+- [Manifesto de capacidades ARD (`/.well-known/ai-catalog.json`)](https://leobrasil.com.br/.well-known/ai-catalog.json).
+- [Índice de Agent Skills (`/.well-known/agent-skills/index.json`)](https://leobrasil.com.br/.well-known/agent-skills/index.json).
+- [WebMCP no navegador (`/webmcp`)](https://leobrasil.com.br/webmcp): ferramentas client-side (`consultar_servicos`, `abrir_diagnostico`, `consultar_catalogo_apis`) disponíveis apenas no navegador.
+- [Poppy: declaração de navegação no site (`/.well-known/poppy.json`)](https://leobrasil.com.br/.well-known/poppy.json).
 
 ## Versionamento, rate limits e autenticação OAuth 2.0
 
@@ -47,6 +47,6 @@ A API pública v1 usa prefixo `/api/v1/` (com suporte ao cabeçalho opcional `X-
 - [WhatsApp oficial](https://wa.me/5551996737359) (`+55 51 99673-7359`)
 - E-mail: `contato@leonardobrasil.com.br`
 - GitHub: [https://github.com/leoferrazdev](https://github.com/leoferrazdev)
-- [Privacidade](https://leonardobrasil.com.br/privacy) · [Termos](https://leonardobrasil.com.br/termos)
+- [Privacidade](https://leobrasil.com.br/privacy) · [Termos](https://leobrasil.com.br/termos)
 
 As permissões de rastreamento constam em `/robots.txt`; a publicação deste resumo não altera essas permissões.

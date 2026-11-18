@@ -66,7 +66,7 @@ export default function PortoAlegreDigital() {
       <SeoHead
         title="Plano de Implantação Comercial | Porto Alegre Digital"
         description="Plano executivo para estruturar CRM próprio, prospecção, ofertas, rotina comercial e acompanhamento de metas da Porto Alegre Digital."
-        canonicalUrl="https://leonardobrasil.com.br/porto-alegre-digital"
+        canonicalUrl="https://leobrasil.com.br/porto-alegre-digital"
         robots="noindex, nofollow"
         includeBrandGraph={false}
       />

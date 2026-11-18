@@ -32,8 +32,8 @@ export function SeoHead({
     "Leonardo Brasil SEO Local e Google Meu Negócio: otimização de perfil no Google Maps, posicionamento orgânico e atração de clientes locais via WhatsApp. Diagnóstico gratuito.";
   const defaultKeywords =
     "Leonardo Brasil SEO Local, Leonardo Brasil Google Meu Negócio, consultoria SEO Local, especialista Google Maps, Perfil da Empresa no Google";
-  const autoCanonical = `https://leonardobrasil.com.br${currentPath}`;
-  const defaultOgImage = "https://leonardobrasil.com.br/logo-completo.png";
+  const autoCanonical = `https://leobrasil.com.br${currentPath}`;
+  const defaultOgImage = "https://leobrasil.com.br/logo-completo.png";
 
   const finalTitle = title
     ? title.includes("Leonardo Brasil")
@@ -52,13 +52,13 @@ export function SeoHead({
         "@graph": [
           {
             "@type": "Organization",
-            "@id": "https://leonardobrasil.com.br/#organization",
+            "@id": "https://leobrasil.com.br/#organization",
             name: "Leonardo Brasil",
             alternateName: ["Leonardo Brasil SEO Local", "Leonardo Brasil Google Meu Negócio"],
             legalName: "LEONARDO FERRAZ DA SILVA BRASIL",
-            url: "https://leonardobrasil.com.br",
-            logo: "https://leonardobrasil.com.br/logo-completo.png",
-            image: "https://leonardobrasil.com.br/logo-completo.png",
+            url: "https://leobrasil.com.br",
+            logo: "https://leobrasil.com.br/logo-completo.png",
+            image: "https://leobrasil.com.br/logo-completo.png",
             telephone: "+55-51-99673-7359",
             email: "contato@leonardobrasil.com.br",
             taxID: "65.993.728/0001-07",
@@ -121,7 +121,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Otimização de Google Meu Negócio",
                     description: "Colocamos sua empresa nas 3 primeiras posições do Google Maps para atrair clientes prontos para comprar.",
-                    url: "https://leonardobrasil.com.br/google-meu-negocio",
+                    url: "https://leobrasil.com.br/google-meu-negocio",
                   },
                 },
                 {
@@ -130,7 +130,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Gestão Mensal de Google Meu Negócio",
                     description: "Gerenciamento recorrente do Perfil da Empresa no Google com postagens semanais, respostas com SEO local e relatórios mensais.",
-                    url: "https://leonardobrasil.com.br/gestao-google-meu-negocio",
+                    url: "https://leobrasil.com.br/gestao-google-meu-negocio",
                   },
                 },
                 {
@@ -139,7 +139,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Gestão de Google Ads para Negócios Locais",
                     description: "Campanhas na Rede de Pesquisa e Google Maps focadas em palavras-chave fundo de funil e leads qualificados no WhatsApp.",
-                    url: "https://leonardobrasil.com.br/google-ads",
+                    url: "https://leobrasil.com.br/google-ads",
                   },
                 },
                 {
@@ -148,7 +148,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Auditoria Técnica de Google Ads",
                     description: "Diagnóstico completo para eliminar desperdício de verba, negativar curiosos e reduzir o custo por lead no Google Ads.",
-                    url: "https://leonardobrasil.com.br/auditoria-google-ads",
+                    url: "https://leobrasil.com.br/auditoria-google-ads",
                   },
                 },
                 {
@@ -157,7 +157,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Estratégia Integrada Google Ads + Google Meu Negócio",
                     description: "Dominação dupla da primeira tela do Google com anúncios no Maps (Extensão de Local) e Top 3 orgânico.",
-                    url: "https://leonardobrasil.com.br/google-ads-e-google-meu-negocio",
+                    url: "https://leobrasil.com.br/google-ads-e-google-meu-negocio",
                   },
                 },
                 {
@@ -166,7 +166,7 @@ export function SeoHead({
                     "@type": "Service",
                     name: "Diagnóstico Gratuito de Google Meu Negócio",
                     description: "Análise completa do seu perfil da empresa no Google e mapa de oportunidades para dominar as buscas locais.",
-                    url: "https://leonardobrasil.com.br/auditoria-perfil-google",
+                    url: "https://leobrasil.com.br/auditoria-perfil-google",
                   },
                 },
               ],
@@ -174,11 +174,11 @@ export function SeoHead({
           },
           {
             "@type": "Person",
-            "@id": "https://leonardobrasil.com.br/#person",
+            "@id": "https://leobrasil.com.br/#person",
             name: "Leonardo Brasil",
             jobTitle: "Especialista em SEO Local, Google Meu Negócio e Google Ads",
-            worksFor: { "@id": "https://leonardobrasil.com.br/#organization" },
-            image: "https://leonardobrasil.com.br/avatar-leonardo-brasil.jpg",
+            worksFor: { "@id": "https://leobrasil.com.br/#organization" },
+            image: "https://leobrasil.com.br/avatar-leonardo-brasil.jpg",
             sameAs: [
               "https://www.linkedin.com/in/oleonardobrasil/",
               "https://www.instagram.com/oleonardobrasil/",
@@ -198,9 +198,9 @@ export function SeoHead({
           },
           {
             "@type": "ProfessionalService",
-            "@id": "https://leonardobrasil.com.br/#service",
+            "@id": "https://leobrasil.com.br/#service",
             name: "Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio",
-            url: "https://leonardobrasil.com.br",
+            url: "https://leobrasil.com.br",
             telephone: "+55-51-99673-7359",
             address: {
               "@type": "PostalAddress",
@@ -211,14 +211,14 @@ export function SeoHead({
             priceRange: "$$$",
             areaServed: "BR",
             knowsLanguage: "pt-BR",
-            publisher: { "@id": "https://leonardobrasil.com.br/#organization" },
+            publisher: { "@id": "https://leobrasil.com.br/#organization" },
           },
           {
             "@type": "WebSite",
-            "@id": "https://leonardobrasil.com.br/#website",
-            url: "https://leonardobrasil.com.br",
+            "@id": "https://leobrasil.com.br/#website",
+            url: "https://leobrasil.com.br",
             name: "Leonardo Brasil — SEO Local & Google Meu Negócio",
-            publisher: { "@id": "https://leonardobrasil.com.br/#organization" },
+            publisher: { "@id": "https://leobrasil.com.br/#organization" },
           },
         ],
       }

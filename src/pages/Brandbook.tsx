@@ -156,7 +156,7 @@ export default function Brandbook() {
       <SeoHead 
         title="Brandbook & Guia de Estilo | Leonardo Brasil" 
         description="Manual oficial de identidade visual, diretrizes de marca e tom de voz da marca Leonardo Brasil."
-        canonicalUrl="https://leonardobrasil.com.br/brandbook"
+        canonicalUrl="https://leobrasil.com.br/brandbook"
       />
 
       {/* MOBILE HEADER */}

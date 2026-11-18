@@ -123,21 +123,21 @@ export default function ComoAparecerNoGoogleDeGraca() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-aparecer-no-google-de-graca#article",
+        "@id": "https://leobrasil.com.br/como-aparecer-no-google-de-graca#article",
         headline: "Como Aparecer no Google de Graça: Os 3 Canais Orgânicos Sem Pagar Anúncios",
         description: "Descubra como aparecer no Google de graça usando Perfil da Empresa, Google Maps, Search Console e SEO Local para IA Overviews sem depender de mídia paga.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-aparecer-no-google-de-graca",
+        mainEntityOfPage: "https://leobrasil.com.br/como-aparecer-no-google-de-graca",
         datePublished: "2026-11-10T16:30:00-03:00",
         dateModified: "2026-11-10T16:30:00-03:00"
       },
@@ -171,7 +171,7 @@ export default function ComoAparecerNoGoogleDeGraca() {
       <SeoHead
         title="Como Aparecer no Google de Graça Sem Pagar Anúncios | Leonardo Brasil"
         description="Aprenda como aparecer no Google de graça usando o Google Perfil de Empresa, Google Maps e SEO Orgânico para atrair clientes todos os dias com custo zero por clique."
-        canonicalUrl="https://leonardobrasil.com.br/como-aparecer-no-google-de-graca"
+        canonicalUrl="https://leobrasil.com.br/como-aparecer-no-google-de-graca"
         schema={schema}
       />
 

@@ -121,7 +121,7 @@ export default function RecuperarPerfilSuspenso() {
       "@type": "Person",
       name: "Leonardo Brasil",
       jobTitle: "Especialista em Google Meu Negócio",
-      url: "https://leonardobrasil.com.br"
+      url: "https://leobrasil.com.br"
     },
     areaServed: "BR",
     description: "Serviço especializado de auditoria, ajuste de diretrizes e contestação técnica para reativação de fichas e perfis suspensos no Google Maps."
@@ -132,7 +132,7 @@ export default function RecuperarPerfilSuspenso() {
       <SeoHead
         title="Recuperação de Perfil Suspenso no Google Meu Negócio | Leonardo Brasil"
         description="Perfil da Empresa no Google suspenso ou desativado? Recupere sua ficha no Google Maps com auditoria técnica, adequação de diretrizes e contestação oficial."
-        canonicalUrl="https://leonardobrasil.com.br/recuperar-perfil-suspenso-google"
+        canonicalUrl="https://leobrasil.com.br/recuperar-perfil-suspenso-google"
         schema={[schemaFaq, schemaService]}
       />
 

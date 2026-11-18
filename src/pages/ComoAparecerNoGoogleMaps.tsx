@@ -89,21 +89,21 @@ export default function ComoAparecerNoGoogleMaps() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-aparecer-no-google-maps#article",
+        "@id": "https://leobrasil.com.br/como-aparecer-no-google-maps#article",
         headline: "Como Aparecer no Google Maps: Guia Completo de SEO Local e GEO para Estar no Top 3",
         description: "Aprenda como colocar sua empresa no Google Maps gratuitamente, otimizar sinais de entidade para IAs (GEO) e ranquear no Top 3 para gerar ligações e WhatsApp.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-aparecer-no-google-maps",
+        mainEntityOfPage: "https://leobrasil.com.br/como-aparecer-no-google-maps",
         datePublished: "2026-02-01T08:00:00-03:00",
         dateModified: "2026-11-10T16:45:00-03:00"
       },
@@ -137,7 +137,7 @@ export default function ComoAparecerNoGoogleMaps() {
       <SeoHead
         title="Como Aparecer no Google Maps: Guia Top 3, SEO Local e IA | Leonardo Brasil"
         description="Descubra como colocar sua empresa no Google Maps gratuitamente, otimizar sinais de entidade para Google AI Overviews (GEO) e ranquear no Top 3 da sua região."
-        canonicalUrl="https://leonardobrasil.com.br/como-aparecer-no-google-maps"
+        canonicalUrl="https://leobrasil.com.br/como-aparecer-no-google-maps"
         ogType="article"
         schema={schema}
       />

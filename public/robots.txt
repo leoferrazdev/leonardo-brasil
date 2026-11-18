@@ -3,4 +3,4 @@ Allow: /
 
 Content-Signal: ai-train=no, search=yes, ai-input=no
 
-Sitemap: https://leonardobrasil.com.br/sitemap.xml
+Sitemap: https://leobrasil.com.br/sitemap.xml

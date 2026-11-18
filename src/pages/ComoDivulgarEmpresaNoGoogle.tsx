@@ -99,21 +99,21 @@ export default function ComoDivulgarEmpresaNoGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-divulgar-minha-empresa-no-google#article",
+        "@id": "https://leobrasil.com.br/como-divulgar-minha-empresa-no-google#article",
         headline: "Como Divulgar Minha Empresa no Google e Atrair Clientes Locais",
         description: "Descubra como divulgar sua empresa no Google de forma orgânica e profissional. O método dos 4 Pilares para transformar buscas locais em vendas no WhatsApp.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Especialista em Google Meu Negócio e SEO Local",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-divulgar-minha-empresa-no-google",
+        mainEntityOfPage: "https://leobrasil.com.br/como-divulgar-minha-empresa-no-google",
         datePublished: "2026-01-25T08:00:00-03:00",
         dateModified: "2026-11-09T09:00:00-03:00"
       },
@@ -136,7 +136,7 @@ export default function ComoDivulgarEmpresaNoGoogle() {
       <SeoHead
         title="Como Divulgar Minha Empresa no Google: Guia Completo | Leonardo Brasil"
         description="Aprenda como divulgar sua empresa no Google e atrair clientes locais todos os dias. Estratégias gratuitas e profissionais para negócios locais e autônomos."
-        canonicalUrl="https://leonardobrasil.com.br/como-divulgar-minha-empresa-no-google"
+        canonicalUrl="https://leobrasil.com.br/como-divulgar-minha-empresa-no-google"
         schema={schema}
       />
 

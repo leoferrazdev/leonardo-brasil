@@ -16,7 +16,7 @@ Acione esta skill quando:
 ## Passo a passo de descoberta e uso
 
 1. **Descoberta do catálogo (GET):**
-   - Consulte `https://leonardobrasil.com.br/.well-known/api-catalog` (`application/linkset+json`), `https://leonardobrasil.com.br/openapi.json` (OpenAPI 3.1.0) e `https://leonardobrasil.com.br/.well-known/oauth-authorization-server` (RFC 8414).
+   - Consulte `https://leobrasil.com.br/.well-known/api-catalog` (`application/linkset+json`), `https://leobrasil.com.br/openapi.json` (OpenAPI 3.1.0) e `https://leobrasil.com.br/.well-known/oauth-authorization-server` (RFC 8414).
 2. **Consultas públicas sem chave (`keyless`):**
    - Use `GET /api/v1/health`, `GET /api/v1/services` e `GET /api/v1/niches?q=<termo>&limit=20`.
 3. **Autenticação OAuth 2.0 Sandbox com menor privilégio:**

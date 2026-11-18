@@ -178,7 +178,7 @@ export default function CrmLogin() {
         </div>
 
         <div className="mt-8 text-center text-xs text-[#94a3b8]">
-          Ambiente executivo restrito • leonardobrasil.com.br/crm
+          Ambiente executivo restrito • leobrasil.com.br/crm
         </div>
       </div>
     </div>

@@ -93,7 +93,7 @@ export default function App() {
         title="Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio"
         description="Leonardo Brasil SEO Local e Google Meu Negócio: otimização e gestão de Perfil da Empresa no Google Maps para atrair clientes locais sem depender apenas de anúncios diários."
         keywords="Leonardo Brasil SEO Local, Leonardo Brasil Google Meu Negócio, especialista SEO Local, consultor Google Maps, Perfil da Empresa no Google"
-        canonicalUrl="https://leonardobrasil.com.br"
+        canonicalUrl="https://leobrasil.com.br"
         schema={faqSchema}
       />
 

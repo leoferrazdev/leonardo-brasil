@@ -111,21 +111,21 @@ export default function ComoColocarEmpresaNoGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google#article",
+        "@id": "https://leobrasil.com.br/como-colocar-minha-empresa-no-google#article",
         headline: "Como Colocar Minha Empresa no Google Gratuitamente: Passo a Passo Definitivo",
         description: "Aprenda como colocar sua empresa no Google gratuitamente usando o Perfil da Empresa no Google e Google Maps. Guia prático com verificação, proteção contra golpes e dicas para atrair clientes locais.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google",
+        mainEntityOfPage: "https://leobrasil.com.br/como-colocar-minha-empresa-no-google",
         datePublished: "2026-01-15T08:00:00-03:00",
         dateModified: "2026-11-10T16:45:00-03:00"
       },
@@ -159,7 +159,7 @@ export default function ComoColocarEmpresaNoGoogle() {
       <SeoHead
         title="Como Colocar Minha Empresa no Google Gratuitamente | Leonardo Brasil"
         description="Descubra como colocar sua empresa no Google gratuitamente usando o Google Perfil de Empresa e Google Maps. Passo a passo oficial, blindagem contra golpes e SEO Local."
-        canonicalUrl="https://leonardobrasil.com.br/como-colocar-minha-empresa-no-google"
+        canonicalUrl="https://leobrasil.com.br/como-colocar-minha-empresa-no-google"
         ogType="article"
         schema={schema}
       />

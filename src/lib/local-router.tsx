@@ -54,7 +54,7 @@ function getBrowserLocation(): LocationState {
 }
 
 function parseLocation(location: string): LocationState {
-  const url = new URL(location, "https://leonardobrasil.com.br");
+  const url = new URL(location, "https://leobrasil.com.br");
   return {
     pathname: normalizePath(url.pathname),
     search: url.search,

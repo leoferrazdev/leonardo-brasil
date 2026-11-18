@@ -95,7 +95,7 @@ export default function ClientPortfolio() {
       <SeoHead
         title="Clientes & Histórico Antes × Depois | CRM Leonardo Brasil"
         description="Acompanhamento mensal de clientes, registro imutável do Antes, Modo Apresentação e Relatórios WhatsApp."
-        canonicalUrl="https://leonardobrasil.com.br/crm/clientes"
+        canonicalUrl="https://leobrasil.com.br/crm/clientes"
         robots="noindex, nofollow"
       />
 

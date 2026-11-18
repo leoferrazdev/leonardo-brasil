@@ -105,7 +105,7 @@ export default function AuditoriaGoogleAds() {
       : "Olá, Leonardo! Quero solicitar uma auditoria técnica da minha conta de Google Ads para parar de desperdiçar verba e aumentar meus leads no WhatsApp.";
 
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
-  const canonicalUrl = "https://leonardobrasil.com.br/auditoria-google-ads";
+  const canonicalUrl = "https://leobrasil.com.br/auditoria-google-ads";
 
   const schema = [
     {
@@ -117,7 +117,7 @@ export default function AuditoriaGoogleAds() {
       url: canonicalUrl,
       provider: {
         "@type": "Organization",
-        "@id": "https://leonardobrasil.com.br/#organization",
+        "@id": "https://leobrasil.com.br/#organization",
         name: "Leonardo Brasil",
       },
       areaServed: { "@type": "Country", name: "Brasil" },
@@ -136,8 +136,8 @@ export default function AuditoriaGoogleAds() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: "https://leonardobrasil.com.br" },
-        { "@type": "ListItem", position: 2, name: "Google Ads", item: "https://leonardobrasil.com.br/google-ads" },
+        { "@type": "ListItem", position: 1, name: "Início", item: "https://leobrasil.com.br" },
+        { "@type": "ListItem", position: 2, name: "Google Ads", item: "https://leobrasil.com.br/google-ads" },
         { "@type": "ListItem", position: 3, name: "Auditoria de Google Ads", item: canonicalUrl },
       ],
     },

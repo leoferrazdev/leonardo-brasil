@@ -197,7 +197,7 @@ export default function ClientDetail() {
       <SeoHead
         title={`${client.name} — Evolução & Histórico | CRM Leonardo Brasil`}
         description="Acompanhamento de evolução mensal e registro Antes × Depois."
-        canonicalUrl={`https://leonardobrasil.com.br/crm/clientes/${client.slug}`}
+        canonicalUrl={`https://leobrasil.com.br/crm/clientes/${client.slug}`}
         robots="noindex, nofollow"
       />
 

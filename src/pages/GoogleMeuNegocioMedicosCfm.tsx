@@ -31,7 +31,7 @@ export default function GoogleMeuNegocioMedicosCfm() {
     "@type": "MedicalBusiness",
     name: "Consultoria em Google Meu Negócio para Médicos e Clínicas — Leonardo Brasil",
     description: "Posicionamento ético de consultórios e clínicas médicas no Top 3 do Google Maps, em total conformidade com a Resolução CFM nº 2.336/2023.",
-    url: "https://leonardobrasil.com.br/google-meu-negocio/medicos-cfm",
+    url: "https://leobrasil.com.br/google-meu-negocio/medicos-cfm",
     telephone: `+${WHATSAPP_NUMBER}`,
     priceRange: "$$",
     address: {
@@ -45,7 +45,7 @@ export default function GoogleMeuNegocioMedicosCfm() {
       <SeoHead
         title="Google Meu Negócio para Médicos e Clínicas — Regras do CFM | Leonardo Brasil"
         description="Atraia pacientes particulares no Google Maps com segurança jurídica. Otimização de Perfil da Empresa para Médicos e Clínicas em total conformidade com o CFM."
-        canonicalUrl="https://leonardobrasil.com.br/google-meu-negocio/medicos-cfm"
+        canonicalUrl="https://leobrasil.com.br/google-meu-negocio/medicos-cfm"
         schema={schema}
       />
 

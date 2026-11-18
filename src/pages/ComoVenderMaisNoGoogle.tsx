@@ -92,21 +92,21 @@ export default function ComoVenderMaisNoGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-vender-mais-no-google#article",
+        "@id": "https://leobrasil.com.br/como-vender-mais-no-google#article",
         headline: "Como Vender Mais no Google: O Funil Local de Alta Conversão no WhatsApp",
         description: "Aprenda como transformar pesquisas do Google em vendas e agendamentos reais no seu WhatsApp. Elimine gargalos e aumente seu faturamento.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Especialista em Google Meu Negócio e Estrutura de Vendas",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-vender-mais-no-google",
+        mainEntityOfPage: "https://leobrasil.com.br/como-vender-mais-no-google",
         datePublished: "2026-02-05T08:00:00-03:00",
         dateModified: "2026-11-09T09:00:00-03:00"
       },
@@ -129,7 +129,7 @@ export default function ComoVenderMaisNoGoogle() {
       <SeoHead
         title="Como Vender Mais no Google: Funil Local para WhatsApp | Leonardo Brasil"
         description="Descubra como transformar pesquisas do Google em clientes pagantes no seu WhatsApp. Estratégia de funil de vendas para profissionais e empresas locais."
-        canonicalUrl="https://leonardobrasil.com.br/como-vender-mais-no-google"
+        canonicalUrl="https://leobrasil.com.br/como-vender-mais-no-google"
         schema={schema}
       />
 

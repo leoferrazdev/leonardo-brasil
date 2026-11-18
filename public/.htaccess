@@ -3,9 +3,9 @@
   RewriteEngine On
   RewriteBase /
 
-  # Redirecionamento 301 de www para non-www (consolidação SEO)
-  RewriteCond %{HTTP_HOST} ^www\.leonardobrasil\.com\.br$ [NC]
-  RewriteRule ^(.*)$ https://leonardobrasil.com.br/$1 [R=301,L]
+  # Redirecionamento 301 de www para non-www (consolidacao SEO no dominio principal leobrasil.com.br)
+  RewriteCond %{HTTP_HOST} ^www\.leobrasil\.com\.br$ [NC]
+  RewriteRule ^(.*)$ https://leobrasil.com.br/$1 [R=301,L]
 
   # Serve arquivos/pastas existentes normalmente
   RewriteCond %{REQUEST_FILENAME} -f [OR]

@@ -14,8 +14,8 @@ A API pública versionada de Leonardo Brasil (`/api/v1/*`) possui onboarding sel
 
 ## Metadados e Escopos Declarados
 
-- **Authorization Server Metadata (RFC 8414):** https://leonardobrasil.com.br/.well-known/oauth-authorization-server
-- **Protected Resource Metadata (RFC 9728):** https://leonardobrasil.com.br/.well-known/oauth-protected-resource
+- **Authorization Server Metadata (RFC 8414):** https://leobrasil.com.br/.well-known/oauth-authorization-server
+- **Protected Resource Metadata (RFC 9728):** https://leobrasil.com.br/.well-known/oauth-protected-resource
 - **Escopos suportados (`scopes_supported`):**
   - `health:read`: consultar status operacional e metadados de versão da API v1.
   - `catalog:read`: ler a matriz oficial dos 6 pilares e pesos de auditoria em `GET /api/v1/audit/checklist`.
@@ -30,7 +30,7 @@ Solicite apenas os escopos mínimos necessários para a tarefa. Requisições se
 
 ## Descoberta das APIs
 
-- [Portal de Documentação HTML](https://leonardobrasil.com.br/docs)
-- [Referência Markdown da API](https://leonardobrasil.com.br/api-docs.md)
-- [Especificação OpenAPI 3.1](https://leonardobrasil.com.br/openapi.json)
-- [Catálogo de APIs RFC 9727](https://leonardobrasil.com.br/.well-known/api-catalog)
+- [Portal de Documentação HTML](https://leobrasil.com.br/docs)
+- [Referência Markdown da API](https://leobrasil.com.br/api-docs.md)
+- [Especificação OpenAPI 3.1](https://leobrasil.com.br/openapi.json)
+- [Catálogo de APIs RFC 9727](https://leobrasil.com.br/.well-known/api-catalog)

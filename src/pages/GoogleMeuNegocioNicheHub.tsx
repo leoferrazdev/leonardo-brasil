@@ -58,7 +58,7 @@ export default function GoogleMeuNegocioNicheHub() {
   const activeWaMessage = detailedNiche?.waMessage || `Olá, Leonardo! Tenho um negócio no segmento de ${nicheInfo.nome} e quero posicionar meu perfil no topo do Google Maps.`;
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeWaMessage)}`;
 
-  const canonicalUrl = `https://leonardobrasil.com.br${basePath}/${nicho}`;
+  const canonicalUrl = `https://leobrasil.com.br${basePath}/${nicho}`;
 
   const allCities = locationsData.TARGET_CITIES;
   const statesList = ["TODOS", ...Array.from(new Set(allCities.map((c) => c.estado.toUpperCase()))).sort()];

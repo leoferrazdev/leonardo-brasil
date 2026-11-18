@@ -18,7 +18,7 @@ export default function GoogleAdsNicheHub() {
 
   const locationNiche = locationsData.NICHES.find((item) => item.slug === nicho);
   const config = getGoogleAdsNiche(nicho, locationNiche?.nome);
-  const canonicalUrl = `https://leonardobrasil.com.br/google-ads/${config.slug}`;
+  const canonicalUrl = `https://leobrasil.com.br/google-ads/${config.slug}`;
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(config.waMessage)}`;
 
   const relatedNiches = locationsData.NICHES.filter((item) => item.slug !== config.slug).slice(0, 8);
@@ -32,7 +32,7 @@ export default function GoogleAdsNicheHub() {
       url: canonicalUrl,
       provider: {
         "@type": "Organization",
-        "@id": "https://leonardobrasil.com.br/#organization",
+        "@id": "https://leobrasil.com.br/#organization",
         name: "Leonardo Brasil",
       },
       areaServed: { "@type": "Country", name: "Brasil" },
@@ -51,8 +51,8 @@ export default function GoogleAdsNicheHub() {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: "https://leonardobrasil.com.br" },
-        { "@type": "ListItem", position: 2, name: "Google Ads", item: "https://leonardobrasil.com.br/google-ads" },
+        { "@type": "ListItem", position: 1, name: "Início", item: "https://leobrasil.com.br" },
+        { "@type": "ListItem", position: 2, name: "Google Ads", item: "https://leobrasil.com.br/google-ads" },
         { "@type": "ListItem", position: 3, name: `Google Ads para ${config.nome}`, item: canonicalUrl },
       ],
     },

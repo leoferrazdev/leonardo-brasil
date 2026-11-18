@@ -4,23 +4,23 @@ import { SeoHead } from "../components/SeoHead";
 import { Footer } from "../components/Footer";
 
 const SANDBOX_SNIPPET = `# 1. Provisionar cliente OAuth 2.0 gratuito (self-serve, sem aprovação manual)
-curl -s -X POST https://leonardobrasil.com.br/api/v1/oauth/sandbox-clients \\
+curl -s -X POST https://leobrasil.com.br/api/v1/oauth/sandbox-clients \\
   -H "Content-Type: application/json" \\
   -d '{"clientName":"Agente SEO","requestedScopes":["catalog:read","audit:write"]}'
 
 # 2. Emitir Bearer token via grant_type=client_credentials
-curl -s -X POST https://leonardobrasil.com.br/api/v1/oauth/token \\
+curl -s -X POST https://leobrasil.com.br/api/v1/oauth/token \\
   -H "Content-Type: application/x-www-form-urlencoded" \\
   -d "grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=catalog:read audit:write"
 
 # 3. Calcular score 0-100 do Perfil da Empresa no Google
-curl -s -X POST https://leonardobrasil.com.br/api/v1/audit/score \\
+curl -s -X POST https://leobrasil.com.br/api/v1/audit/score \\
   -H "Authorization: Bearer SEU_ACCESS_TOKEN" \\
   -H "Content-Type: application/json" \\
   -d '{"companyName":"Clínica Exemplo","cityState":"Porto Alegre - RS","answers":{"category":true,"nap":false,"description":true,"catalog":false,"reviews":false,"photos":true}}'`;
 
 const PROBLEM_EXAMPLE = `{
-  "type": "https://leonardobrasil.com.br/docs#error-insufficient_scope",
+  "type": "https://leobrasil.com.br/docs#error-insufficient_scope",
   "title": "Permissão insuficiente (least privilege)",
   "status": 403,
   "detail": "O token autenticado possui escopos [catalog:read], mas esta operação exige 'audit:write'.",
@@ -72,9 +72,9 @@ export function DeveloperDocs({ variant = "docs" }: { variant?: "docs" | "api" |
     "@type": "TechArticle",
     headline: titles[variant],
     name: "Leonardo Brasil API",
-    url: `https://leonardobrasil.com.br${canonicalPath}`,
-    author: { "@id": "https://leonardobrasil.com.br/#person" },
-    publisher: { "@id": "https://leonardobrasil.com.br/#organization" },
+    url: `https://leobrasil.com.br${canonicalPath}`,
+    author: { "@id": "https://leobrasil.com.br/#person" },
+    publisher: { "@id": "https://leobrasil.com.br/#organization" },
     about: [
       "Leonardo Brasil API",
       "OAuth 2.0 Client Credentials",
@@ -88,7 +88,7 @@ export function DeveloperDocs({ variant = "docs" }: { variant?: "docs" | "api" |
       <SeoHead
         title={titles[variant]}
         description="Documentação oficial da Leonardo Brasil API v1: endpoints públicos gratuitos, sandbox OAuth 2.0 self-serve com escopos granulares, rate limits IETF, erros RFC 9457 e especificação OpenAPI 3.1."
-        canonicalUrl={`https://leonardobrasil.com.br${canonicalPath}`}
+        canonicalUrl={`https://leobrasil.com.br${canonicalPath}`}
         schema={apiSchema}
       />
       <DocsHeader />
@@ -267,17 +267,17 @@ export function WebMcpDocsPage() {
     "@type": "TechArticle",
     headline: "Leonardo Brasil WebMCP — Ferramentas no Navegador para Agentes",
     name: "Leonardo Brasil WebMCP",
-    url: "https://leonardobrasil.com.br/webmcp",
-    author: { "@id": "https://leonardobrasil.com.br/#person" },
-    publisher: { "@id": "https://leonardobrasil.com.br/#organization" },
+    url: "https://leobrasil.com.br/webmcp",
+    author: { "@id": "https://leobrasil.com.br/#person" },
+    publisher: { "@id": "https://leobrasil.com.br/#organization" },
   };
 
   return (
     <div className="min-h-screen bg-ink text-text flex flex-col font-sans">
       <SeoHead
         title="Leonardo Brasil WebMCP — Ferramentas no Navegador para Agentes"
-        description="Conheça as 3 ferramentas WebMCP registradas em navegador compatível por leonardobrasil.com.br via modelContext e quando utilizar a API REST v1."
-        canonicalUrl="https://leonardobrasil.com.br/webmcp"
+        description="Conheça as 3 ferramentas WebMCP registradas em navegador compatível por leobrasil.com.br via modelContext e quando utilizar a API REST v1."
+        canonicalUrl="https://leobrasil.com.br/webmcp"
         schema={schema}
       />
       <DocsHeader />

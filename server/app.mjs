@@ -48,8 +48,8 @@ const ttsCircuit = {
 
 const allowedOrigins = new Set([
   'https://brasa.leonardobrasil.com.br',
-  'https://leonardobrasil.com.br',
-  'https://www.leonardobrasil.com.br',
+  'https://leobrasil.com.br',
+  'https://www.leobrasil.com.br',
   'http://localhost:5173',
   'http://127.0.0.1:5173'
 ]);
@@ -878,7 +878,7 @@ export function createMainApp(options = {}) {
             status: 404,
             code: 'resource_not_found',
             title: 'Recurso não encontrado',
-            detail: `O caminho '${cleanPath}' não existe em leonardobrasil.com.br.`,
+            detail: `O caminho '${cleanPath}' não existe em leobrasil.com.br.`,
             hint: `Consulte ${BASE_URL}/docs, ${BASE_URL}/llms.txt ou ${BASE_URL}/sitemap.xml.`,
             instance: request.originalUrl
           });
@@ -935,7 +935,7 @@ export function createMainApp(options = {}) {
           status: 404,
           code: 'resource_not_found',
           title: 'Recurso não encontrado',
-          detail: `O caminho '${cleanPath}' não existe em leonardobrasil.com.br.`,
+          detail: `O caminho '${cleanPath}' não existe em leobrasil.com.br.`,
           hint: `Consulte ${BASE_URL}/docs, ${BASE_URL}/llms.txt ou ${BASE_URL}/sitemap.xml.`,
           instance: request.originalUrl
         });

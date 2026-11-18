@@ -45,7 +45,7 @@ export function prefersJsonOverHtml(acceptHeader = '') {
 export function buildNotFoundMarkdown(requestPath) {
   return `# 404 — Recurso não encontrado
 
-O caminho \`${requestPath}\` não existe em \`leonardobrasil.com.br\`. Verifique a URL solicitada ou utilize um dos pontos de entrada documentados abaixo.
+O caminho \`${requestPath}\` não existe em \`leobrasil.com.br\`. Verifique a URL solicitada ou utilize um dos pontos de entrada documentados abaixo.
 
 ## Onde encontrar recursos válidos
 
@@ -110,7 +110,7 @@ export function getMarkdownForKnownRoute(cleanPath, distDir) {
   if (cleanPath === '/webmcp') {
     return `# Leonardo Brasil WebMCP — Ferramentas no Navegador
 
-As páginas públicas de \`leonardobrasil.com.br\` registram ferramentas client-side via API experimental \`navigator.modelContext\` / \`document.modelContext\` (WebMCP) em navegadores compatíveis.
+As páginas públicas de \`leobrasil.com.br\` registram ferramentas client-side via API experimental \`navigator.modelContext\` / \`document.modelContext\` (WebMCP) em navegadores compatíveis.
 
 ## Ferramentas registradas
 
@@ -163,7 +163,7 @@ As páginas públicas de \`leonardobrasil.com.br\` registram ferramentas client-
   if (cleanPath === '/privacy' || cleanPath === '/privacidade') {
     return `# Política de Privacidade — Leonardo Brasil
 
-Controlador: LEONARDO FERRAZ DA SILVA BRASIL (CNPJ 65.993.728/0001-07), responsável pelo domínio \`leonardobrasil.com.br\`, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
+Controlador: LEONARDO FERRAZ DA SILVA BRASIL (CNPJ 65.993.728/0001-07), responsável pelo domínio \`leobrasil.com.br\`, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).
 
 - **Dados coletados no site institucional:** Informações enviadas voluntariamente pelo usuário via WhatsApp/e-mail e dados técnicos mínimos de navegação/analytics quando aplicável.
 - **API pública / Sandbox OAuth 2.0:** Os endpoints públicos \`/api/v1/*\` operam com tokens stateless HMAC-SHA256 e não armazenam dados pessoais de clientes sandbox em banco de dados permanente.

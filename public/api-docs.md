@@ -2,31 +2,31 @@
 
 API pública versionada para consulta de serviços de **SEO Local e Google Meu Negócio**, catálogo de segmentos atendidos no Brasil e execução programática do **Raio-X do Perfil no Google (0 a 100)** com autenticação OAuth 2.0 `client_credentials`.
 
-- **Base URL:** `https://leonardobrasil.com.br`
-- **Portal HTML:** [`https://leonardobrasil.com.br/docs`](https://leonardobrasil.com.br/docs)
-- **Especificação OpenAPI 3.1:** [`/openapi.json`](https://leonardobrasil.com.br/openapi.json)
-- **Catálogo RFC 9727:** [`/.well-known/api-catalog`](https://leonardobrasil.com.br/.well-known/api-catalog)
-- **OAuth 2.0 Discovery:** [`/.well-known/oauth-authorization-server`](https://leonardobrasil.com.br/.well-known/oauth-authorization-server) | [`/.well-known/oauth-protected-resource`](https://leonardobrasil.com.br/.well-known/oauth-protected-resource)
+- **Base URL:** `https://leobrasil.com.br`
+- **Portal HTML:** [`https://leobrasil.com.br/docs`](https://leobrasil.com.br/docs)
+- **Especificação OpenAPI 3.1:** [`/openapi.json`](https://leobrasil.com.br/openapi.json)
+- **Catálogo RFC 9727:** [`/.well-known/api-catalog`](https://leobrasil.com.br/.well-known/api-catalog)
+- **OAuth 2.0 Discovery:** [`/.well-known/oauth-authorization-server`](https://leobrasil.com.br/.well-known/oauth-authorization-server) | [`/.well-known/oauth-protected-resource`](https://leobrasil.com.br/.well-known/oauth-protected-resource)
 
 ## Início rápido (Zero atrito / Sandbox gratuito)
 
 ### 1. Consultar endpoints públicos (sem autenticação)
 
 ```bash
-curl -s https://leonardobrasil.com.br/api/v1/services
-curl -s "https://leonardobrasil.com.br/api/v1/niches?q=dentistas&limit=5"
+curl -s https://leobrasil.com.br/api/v1/services
+curl -s "https://leobrasil.com.br/api/v1/niches?q=dentistas&limit=5"
 ```
 
 ### 2. Provisionar cliente sandbox OAuth 2.0 e emitir token
 
 ```bash
 # Passo 1: gerar client_id e client_secret instantaneamente (free-sandbox)
-curl -s -X POST https://leonardobrasil.com.br/api/v1/oauth/sandbox-clients \
+curl -s -X POST https://leobrasil.com.br/api/v1/oauth/sandbox-clients \
   -H "Content-Type: application/json" \
   -d '{"clientName":"Meu Agente SEO","requestedScopes":["catalog:read","audit:write"]}'
 
 # Passo 2: obter access_token Bearer via grant_type=client_credentials
-curl -s -X POST https://leonardobrasil.com.br/api/v1/oauth/token \
+curl -s -X POST https://leobrasil.com.br/api/v1/oauth/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=client_credentials&client_id=SEU_CLIENT_ID&client_secret=SEU_CLIENT_SECRET&scope=catalog:read audit:write"
 ```
@@ -34,7 +34,7 @@ curl -s -X POST https://leonardobrasil.com.br/api/v1/oauth/token \
 ### 3. Executar diagnóstico de perfil no Google Meu Negócio (`audit:write`)
 
 ```bash
-curl -s -X POST https://leonardobrasil.com.br/api/v1/audit/score \
+curl -s -X POST https://leobrasil.com.br/api/v1/audit/score \
   -H "Authorization: Bearer SEU_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{

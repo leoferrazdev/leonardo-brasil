@@ -101,21 +101,21 @@ export default function ComoFicarNaPrimeiraPaginaGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-ficar-na-primeira-pagina-do-google#article",
+        "@id": "https://leobrasil.com.br/como-ficar-na-primeira-pagina-do-google#article",
         headline: "Como Ficar na Primeira Página do Google: O Guia Real para Negócios Locais",
         description: "Descubra como colocar sua empresa na primeira página do Google e dominar o Top 3 do Google Maps sem depender de promessas falsas de agências.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Especialista em Google Meu Negócio e SEO Local",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-ficar-na-primeira-pagina-do-google",
+        mainEntityOfPage: "https://leobrasil.com.br/como-ficar-na-primeira-pagina-do-google",
         datePublished: "2026-01-20T08:00:00-03:00",
         dateModified: "2026-11-09T09:00:00-03:00"
       },
@@ -138,7 +138,7 @@ export default function ComoFicarNaPrimeiraPaginaGoogle() {
       <SeoHead
         title="Como Ficar na Primeira Página do Google: Guia Real | Leonardo Brasil"
         description="Aprenda como colocar sua empresa na primeira página do Google e no Top 3 do Google Maps. Fatores reais de ranqueamento e estratégias para atrair clientes locais."
-        canonicalUrl="https://leonardobrasil.com.br/como-ficar-na-primeira-pagina-do-google"
+        canonicalUrl="https://leobrasil.com.br/como-ficar-na-primeira-pagina-do-google"
         schema={schema}
       />
 

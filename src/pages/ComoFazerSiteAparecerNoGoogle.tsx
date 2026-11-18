@@ -102,21 +102,21 @@ export default function ComoFazerSiteAparecerNoGoogle() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-fazer-um-site-aparecer-no-google#article",
+        "@id": "https://leobrasil.com.br/como-fazer-um-site-aparecer-no-google#article",
         headline: "Como Fazer um Site Aparecer no Google do Zero: Checklist Técnico de Indexação",
         description: "Aprenda como fazer um site novo aparecer no Google em 24h a 72h usando Google Search Console, sitemap.xml, verificação de robots.txt/noindex e vínculo com Google Maps.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-fazer-um-site-aparecer-no-google",
+        mainEntityOfPage: "https://leobrasil.com.br/como-fazer-um-site-aparecer-no-google",
         datePublished: "2026-11-10T16:45:00-03:00",
         dateModified: "2026-11-10T16:45:00-03:00"
       },
@@ -150,7 +150,7 @@ export default function ComoFazerSiteAparecerNoGoogle() {
       <SeoHead
         title="Como Fazer um Site Aparecer no Google: Guia de Indexação | Leonardo Brasil"
         description="Site novo não aparece nas pesquisas? Veja o checklist técnico de 5 passos com Search Console, sitemap.xml e correção de bloqueios para indexar seu site no Google."
-        canonicalUrl="https://leonardobrasil.com.br/como-fazer-um-site-aparecer-no-google"
+        canonicalUrl="https://leobrasil.com.br/como-fazer-um-site-aparecer-no-google"
         ogType="article"
         schema={schema}
       />

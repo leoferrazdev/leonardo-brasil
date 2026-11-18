@@ -348,7 +348,7 @@ export function Footer() {
             <Link to="/exclusao-de-dados" className="hover:text-text transition-colors">Exclusão de Dados</Link>
           </div>
           <p>LEONARDO FERRAZ DA SILVA BRASIL · CNPJ 65.993.728/0001-07 · Porto Alegre - RS</p>
-          <p className="mt-1">© {new Date().getFullYear()} · Consultoria em SEO Local &amp; Google Meu Negócio · leonardobrasil.com.br</p>
+          <p className="mt-1">© {new Date().getFullYear()} · Consultoria em SEO Local &amp; Google Meu Negócio · leobrasil.com.br</p>
         </div>
       </div>
     </footer>

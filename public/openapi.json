@@ -8,16 +8,16 @@
     "contact": {
       "name": "Leonardo Brasil",
       "email": "contato@leonardobrasil.com.br",
-      "url": "https://leonardobrasil.com.br/docs"
+      "url": "https://leobrasil.com.br/docs"
     },
     "license": {
       "name": "Proprietary - Public Sandbox API",
-      "url": "https://leonardobrasil.com.br/termos"
+      "url": "https://leobrasil.com.br/termos"
     }
   },
   "servers": [
     {
-      "url": "https://leonardobrasil.com.br",
+      "url": "https://leobrasil.com.br",
       "description": "Servidor de produção Leonardo Brasil (API v1)"
     }
   ],
@@ -363,7 +363,7 @@
         "description": "Autenticação OAuth 2.0 via client_credentials com credenciais sandbox self-serve emitidas por POST /api/v1/oauth/sandbox-clients.",
         "flows": {
           "clientCredentials": {
-            "tokenUrl": "https://leonardobrasil.com.br/api/v1/oauth/token",
+            "tokenUrl": "https://leobrasil.com.br/api/v1/oauth/token",
             "scopes": {
               "health:read": "Consultar status operacional e metadados de versão da API v1.",
               "catalog:read": "Consultar catálogo de serviços, nichos atendidos e matriz de auditoria.",
@@ -452,7 +452,7 @@
           "type": {
             "type": "string",
             "format": "uri",
-            "example": "https://leonardobrasil.com.br/docs#error-validation_error"
+            "example": "https://leobrasil.com.br/docs#error-validation_error"
           },
           "title": {
             "type": "string",
@@ -517,7 +517,7 @@
           "status": { "type": "string", "example": "operational" },
           "integrations": { "$ref": "#/components/schemas/IntegrationsStatus" },
           "runtime": { "$ref": "#/components/schemas/RuntimeStatus" },
-          "docsUrl": { "type": "string", "format": "uri", "example": "https://leonardobrasil.com.br/docs" }
+          "docsUrl": { "type": "string", "format": "uri", "example": "https://leobrasil.com.br/docs" }
         }
       },
       "ServiceItem": {
@@ -561,7 +561,7 @@
         "properties": {
           "slug": { "type": "string", "example": "dentistas" },
           "name": { "type": "string", "example": "Dentistas" },
-          "url": { "type": "string", "format": "uri", "example": "https://leonardobrasil.com.br/google-meu-negocio/dentistas" }
+          "url": { "type": "string", "format": "uri", "example": "https://leobrasil.com.br/google-meu-negocio/dentistas" }
         }
       },
       "NichesListResponse": {

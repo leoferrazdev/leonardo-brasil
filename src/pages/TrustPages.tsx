@@ -49,8 +49,8 @@ export function AboutPage() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "Sobre Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio",
-    url: "https://leonardobrasil.com.br/about",
-    mainEntity: { "@id": "https://leonardobrasil.com.br/#organization" },
+    url: "https://leobrasil.com.br/about",
+    mainEntity: { "@id": "https://leobrasil.com.br/#organization" },
   };
 
   return (
@@ -58,7 +58,7 @@ export function AboutPage() {
       <SeoHead
         title="Sobre Leonardo Brasil — Especialista em SEO Local e Google Meu Negócio"
         description="Conheça Leonardo Brasil (CNPJ 65.993.728/0001-07), especialista em SEO Local e Google Meu Negócio em Porto Alegre - RS com atendimento para todo o Brasil."
-        canonicalUrl="https://leonardobrasil.com.br/about"
+        canonicalUrl="https://leobrasil.com.br/about"
         schema={aboutSchema}
       />
       <TrustHeader />
@@ -142,8 +142,8 @@ export function ContactPage() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contato Oficial — Leonardo Brasil SEO Local",
-    url: "https://leonardobrasil.com.br/contact",
-    mainEntity: { "@id": "https://leonardobrasil.com.br/#organization" },
+    url: "https://leobrasil.com.br/contact",
+    mainEntity: { "@id": "https://leobrasil.com.br/#organization" },
   };
 
   return (
@@ -151,7 +151,7 @@ export function ContactPage() {
       <SeoHead
         title="Contato — Leonardo Brasil (SEO Local & Google Meu Negócio)"
         description="Entre em contato com Leonardo Brasil via WhatsApp (+55 51 99673-7359) ou e-mail (contato@leonardobrasil.com.br). Atendimento comercial em Porto Alegre - RS e todo o Brasil."
-        canonicalUrl="https://leonardobrasil.com.br/contact"
+        canonicalUrl="https://leobrasil.com.br/contact"
         schema={contactSchema}
       />
       <TrustHeader />

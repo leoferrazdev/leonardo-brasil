@@ -129,21 +129,21 @@ export default function ComoFazerSiteAparecerEmPrimeiro() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://leonardobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro#article",
+        "@id": "https://leobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro#article",
         headline: "Como Fazer Meu Site Aparecer no Google em Primeiro: Os 5 Pilares Técnicos e GEO",
         description: "Descubra o que realmente faz um site subir para o topo orgânico do Google e ser citado em resumos de IA (GEO): Topic Clusters, Core Web Vitals, SSR, Schema.org e SEO Local.",
         author: {
           "@type": "Person",
           name: "Leonardo Brasil",
           jobTitle: "Diretor de SEO e Especialista em Google Meu Negócio",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
         publisher: {
           "@type": "Organization",
           name: "Leonardo Brasil",
-          url: "https://leonardobrasil.com.br"
+          url: "https://leobrasil.com.br"
         },
-        mainEntityOfPage: "https://leonardobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro",
+        mainEntityOfPage: "https://leobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro",
         datePublished: "2026-11-10T16:45:00-03:00",
         dateModified: "2026-11-10T16:45:00-03:00"
       },
@@ -177,7 +177,7 @@ export default function ComoFazerSiteAparecerEmPrimeiro() {
       <SeoHead
         title="Como Fazer Meu Site Aparecer no Google em Primeiro | Leonardo Brasil"
         description="Aprenda os 5 pilares técnicos de SEO e GEO para fazer seu site subir para os primeiros lugares do Google e atrair clientes locais sem depender só de anúncios."
-        canonicalUrl="https://leonardobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro"
+        canonicalUrl="https://leobrasil.com.br/como-fazer-meu-site-aparecer-no-google-em-primeiro"
         ogType="article"
         schema={schema}
       />

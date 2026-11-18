@@ -31,7 +31,7 @@ export default function GoogleMeuNegocioDentistasCfo() {
     "@type": "Dentist",
     name: "Consultoria em Google Meu Negócio para Dentistas — Leonardo Brasil",
     description: "Atraia pacientes particulares para implantes, alinhadores e estética odontológica no Top 3 do Google Maps, de acordo com as normas do CFO.",
-    url: "https://leonardobrasil.com.br/google-meu-negocio/dentistas-cfo",
+    url: "https://leobrasil.com.br/google-meu-negocio/dentistas-cfo",
     telephone: `+${WHATSAPP_NUMBER}`,
     priceRange: "$$",
     address: {
@@ -45,7 +45,7 @@ export default function GoogleMeuNegocioDentistasCfo() {
       <SeoHead
         title="Google Meu Negócio para Dentistas — Capte Pacientes Particulares no Maps | Leonardo Brasil"
         description="Coloque sua clínica odontológica no Top 3 do Google Maps. Atraia pacientes de implantes, ortodontia e estética com otimização profissional alinhada ao CFO."
-        canonicalUrl="https://leonardobrasil.com.br/google-meu-negocio/dentistas-cfo"
+        canonicalUrl="https://leobrasil.com.br/google-meu-negocio/dentistas-cfo"
         schema={schema}
       />
 

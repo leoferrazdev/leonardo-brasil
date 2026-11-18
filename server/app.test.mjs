@@ -32,9 +32,9 @@ test('unsupported discovery protocols return JSON 404 while implemented OAuth me
   assert.equal(oauthAs.status, 200);
   assert.equal(oauthAs.headers.get('access-control-allow-origin'), '*');
   const asMeta = await oauthAs.json();
-  assert.equal(asMeta.issuer, 'https://leonardobrasil.com.br');
-  assert.equal(asMeta.token_endpoint, 'https://leonardobrasil.com.br/api/v1/oauth/token');
-  assert.equal(asMeta.registration_endpoint, 'https://leonardobrasil.com.br/api/v1/oauth/sandbox-clients');
+  assert.equal(asMeta.issuer, 'https://leobrasil.com.br');
+  assert.equal(asMeta.token_endpoint, 'https://leobrasil.com.br/api/v1/oauth/token');
+  assert.equal(asMeta.registration_endpoint, 'https://leobrasil.com.br/api/v1/oauth/sandbox-clients');
   assert.deepEqual(asMeta.scopes_supported, ['health:read', 'catalog:read', 'audit:write']);
 
   const oauthPr = await request(app, '/.well-known/oauth-protected-resource', {
@@ -43,7 +43,7 @@ test('unsupported discovery protocols return JSON 404 while implemented OAuth me
   assert.equal(oauthPr.status, 200);
   assert.equal(oauthPr.headers.get('access-control-allow-origin'), '*');
   const prMeta = await oauthPr.json();
-  assert.equal(prMeta.resource, 'https://leonardobrasil.com.br/api/v1');
+  assert.equal(prMeta.resource, 'https://leobrasil.com.br/api/v1');
   assert.deepEqual(prMeta.scopes_supported, ['health:read', 'catalog:read', 'audit:write']);
 });
 
@@ -77,7 +77,7 @@ test('Poppy discovery declares website-only support without claiming OAuth or se
   const manifest = await response.json();
   assert.deepEqual(manifest, {
     protocol_version: '0.1',
-    organization: { name: 'Leonardo Brasil', domain: 'leonardobrasil.com.br' },
+    organization: { name: 'Leonardo Brasil', domain: 'leobrasil.com.br' },
     web: {}
   });
 });
@@ -94,7 +94,7 @@ test('ARD manifest serves JSON with public CORS and valid resolvable resources',
   assert.ok(manifest.entries.length > 0);
   const identifiers = new Set();
   for (const entry of manifest.entries) {
-    assert.match(entry.identifier, /^urn:air:leonardobrasil\.com\.br:[a-z0-9-]+:[a-z0-9-]+$/);
+    assert.match(entry.identifier, /^urn:air:leobrasil\.com\.br:[a-z0-9-]+:[a-z0-9-]+$/);
     assert.ok(!identifiers.has(entry.identifier));
     identifiers.add(entry.identifier);
     assert.ok(entry.displayName);
@@ -1014,10 +1014,10 @@ test('trust pages, developer docs and Organization JSON-LD completeness are wire
 
   const llmsTxt = readFileSync(fileURLToPath(new URL('../public/llms.txt', import.meta.url)), 'utf8');
   assert.match(llmsTxt, /When to use this/i);
-  assert.ok(llmsTxt.includes('https://leonardobrasil.com.br/docs'));
-  assert.ok(llmsTxt.includes('https://leonardobrasil.com.br/about'));
-  assert.ok(llmsTxt.includes('https://leonardobrasil.com.br/contact'));
-  assert.ok(llmsTxt.includes('https://leonardobrasil.com.br/privacy'));
+  assert.ok(llmsTxt.includes('https://leobrasil.com.br/docs'));
+  assert.ok(llmsTxt.includes('https://leobrasil.com.br/about'));
+  assert.ok(llmsTxt.includes('https://leobrasil.com.br/contact'));
+  assert.ok(llmsTxt.includes('https://leobrasil.com.br/privacy'));
 
   const appSource = readFileSync(fileURLToPath(new URL('../src/App.tsx', import.meta.url)), 'utf8');
   assert.ok(appSource.includes('to="/docs"'));
