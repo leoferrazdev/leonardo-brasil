@@ -26,6 +26,7 @@ export function resolveArchetypeTier(segment: string): 1 | 2 | 3 | 4 {
     s.includes("reboque") ||
     s.includes("socorro") ||
     s.includes("veterin") ||
+    s.includes("pet") ||
     s.includes("chaveiro") ||
     s.includes("desentupidora") ||
     s.includes("encanador")

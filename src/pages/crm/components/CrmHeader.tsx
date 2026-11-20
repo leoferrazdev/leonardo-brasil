@@ -100,6 +100,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   const segments = [
     { label: "Todos", val: "todos" },
     { label: "Veterinárias", val: "Clínica Veterinária" },
+    { label: "Pet Shops", val: "Pet Shop" },
     { label: "Oficinas Mecânicas", val: "Oficina Mecânica" },
     { label: "Urgência 24h", val: "URGENCIA_24H" },
     { label: "Odontologia", val: "Clínica Odontológica" },
