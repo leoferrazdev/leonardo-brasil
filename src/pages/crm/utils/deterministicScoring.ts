@@ -27,6 +27,11 @@ export function resolveArchetypeTier(segment: string): 1 | 2 | 3 | 4 {
     s.includes("socorro") ||
     s.includes("veterin") ||
     s.includes("pet") ||
+    s.includes("agro") ||
+    s.includes("ração") ||
+    s.includes("racao") ||
+    s.includes("banho") ||
+    s.includes("tosa") ||
     s.includes("chaveiro") ||
     s.includes("desentupidora") ||
     s.includes("encanador")

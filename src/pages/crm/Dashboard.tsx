@@ -149,6 +149,15 @@ export default function CrmDashboard() {
               segLow.includes("automot") ||
               segLow.includes("borracharia") ||
               segLow.includes("pneu")
+          : selectedSegment === "Pet Shop"
+            ? lead.segment === "Pet Shop" ||
+              segLow.includes("pet") ||
+              segLow.includes("agro") ||
+              segLow.includes("ração") ||
+              segLow.includes("racao") ||
+              segLow.includes("banho") ||
+              segLow.includes("tosa") ||
+              segLow.includes("veterin")
             : lead.segment === selectedSegment);
       const matchNeighborhood =
         selectedNeighborhood === "todos" || lead.neighborhood === selectedNeighborhood;
