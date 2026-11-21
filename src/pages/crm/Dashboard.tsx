@@ -291,7 +291,7 @@ export default function CrmDashboard() {
       />
 
       {/* Barra de Foco e Navegação de Etapas (Mobile & Desktop) */}
-      <div className="border-b border-[#1a2030] bg-[#0c101b]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sticky top-[73px] z-20">
+      <div className="border-b border-[#1a2030] bg-[#0c101b]/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sticky top-0 z-20">
         <div className="max-w-[1760px] mx-auto flex items-center justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none flex-nowrap w-full sm:w-auto">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1.5 hidden md:inline-flex items-center gap-1">

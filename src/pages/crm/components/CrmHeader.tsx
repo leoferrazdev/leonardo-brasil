@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "../../../lib/local-router";
 import { supabase } from "../../../lib/supabase";
 import { 
@@ -14,7 +14,10 @@ import {
   TrendingUp,
   Target,
   MessageCircle,
-  Filter
+  Filter,
+  ChevronDown,
+  ChevronUp,
+  SlidersHorizontal
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
@@ -51,6 +54,12 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   setSearchQuery,
 }) => {
   const navigate = useNavigate();
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+
+  const activeFiltersCount =
+    (selectedSegment !== "todos" ? 1 : 0) +
+    (selectedNeighborhood !== "todos" ? 1 : 0) +
+    (scoreTierFilter !== "todos" ? 1 : 0);
 
   const handleLogout = async () => {
     if (typeof window !== "undefined") {
@@ -121,11 +130,11 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   ];
 
   return (
-    <header className="border-b border-[#1a2030] bg-[#0a0d14]/95 backdrop-blur-xl sticky top-0 z-30 shadow-2xl shadow-black/50">
+    <header className="border-b border-[#1a2030] bg-[#0a0d14] relative z-30 shadow-md">
       {/* Barra Finíssima Dourada/Azul Royal de Destaque no Topo */}
       <div className="h-1 w-full bg-gradient-to-r from-blue-600 via-amber-400 to-blue-600" />
 
-      <div className="max-w-[1760px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="max-w-[1760px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         {/* Linha 1: Identidade Executiva, Barra de Meta Diária, Busca e Logout */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full lg:w-auto min-w-0">
@@ -212,6 +221,40 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
           </div>
         </div>
 
+        {/* Barra Compacta Mobile para Expandir/Recolher KPIs e Filtros */}
+        <div className="mt-3 pt-2.5 border-t border-[#1a2030] flex items-center justify-between gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={() => setShowMobileFilters((v) => !v)}
+            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+              showMobileFilters || activeFiltersCount > 0
+                ? "bg-blue-500/15 text-blue-300 border-blue-500/40"
+                : "bg-[#0f1420] text-white border-[#1a2030]"
+            }`}
+          >
+            <SlidersHorizontal className="w-3.5 h-3.5" />
+            <span>{showMobileFilters ? "Ocultar Filtros & KPIs" : "Filtros & KPIs"}</span>
+            {activeFiltersCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-blue-500 text-white text-[10px] font-mono">
+                {activeFiltersCount}
+              </span>
+            )}
+            {showMobileFilters ? (
+              <ChevronUp className="w-3.5 h-3.5" />
+            ) : (
+              <ChevronDown className="w-3.5 h-3.5" />
+            )}
+          </button>
+
+          <span className="text-[11px] font-mono text-[#94a3b8] bg-[#0f1420] px-2.5 py-1 rounded-lg border border-[#1a2030] flex items-center gap-1.5">
+            <Filter className="w-3 h-3 text-blue-400" />
+            <span>
+              <strong className="text-white">{filteredCount}</strong>/{leads.length}
+            </span>
+          </span>
+        </div>
+
+        <div className={showMobileFilters ? "block" : "hidden lg:block"}>
         {/* Linha 2: Painel de KPIs de Conversão e Potencial Financeiro (R$) */}
         <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {/* KPI 1: Potencial na Mesa */}
@@ -317,26 +360,34 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-xs font-semibold text-[#94a3b8] flex items-center gap-1 mr-1.5">
+          <div className="flex flex-wrap items-center gap-2">
+            <label
+              htmlFor="crm-neighborhood-filter"
+              className="text-xs font-semibold text-[#94a3b8] flex items-center gap-1"
+            >
               <MapPin className="w-3.5 h-3.5 text-amber-400" />
               Bairro:
-            </span>
-            {neighborhoods.map((nb) => (
-              <button
-                key={nb.val}
-                onClick={() => setSelectedNeighborhood(nb.val)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                  selectedNeighborhood === nb.val
-                    ? "bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-500/20 border border-amber-400"
-                    : "bg-[#0f1420] text-[#94a3b8] hover:bg-[#161d2e] hover:text-white border border-[#1a2030]"
-                }`}
-              >
-                {nb.label}
-              </button>
-            ))}
+            </label>
+            <select
+              id="crm-neighborhood-filter"
+              value={selectedNeighborhood}
+              onChange={(e) => setSelectedNeighborhood(e.target.value)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all bg-[#0f1420] focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                selectedNeighborhood !== "todos"
+                  ? "border-amber-400 text-amber-300 font-bold"
+                  : "border-[#1a2030] text-white"
+              }`}
+            >
+              {neighborhoods.map((nb) => (
+                <option key={nb.val} value={nb.val}>
+                  {nb.val === "todos"
+                    ? `Todos os Bairros (${dynamicNeighborhoods.length})`
+                    : `${nb.label} (${neighborhoodCounts[nb.val] || 0})`}
+                </option>
+              ))}
+            </select>
 
-            <span className="ml-2 text-[11px] font-mono text-[#94a3b8] bg-[#0f1420] px-2.5 py-1 rounded-lg border border-[#1a2030] flex items-center gap-1.5">
+            <span className="text-[11px] font-mono text-[#94a3b8] bg-[#0f1420] px-2.5 py-1 rounded-lg border border-[#1a2030] flex items-center gap-1.5">
               <Filter className="w-3 h-3 text-blue-400" />
               <span>
                 Exibindo <strong className="text-white">{filteredCount}</strong> de {leads.length}
@@ -379,6 +430,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
           <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
             Ordenação automática por Score (0–100 pts) • Posição ≥ 4º Maps
           </span>
+        </div>
         </div>
       </div>
     </header>
