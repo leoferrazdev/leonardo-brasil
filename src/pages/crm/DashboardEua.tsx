@@ -32,12 +32,12 @@ import { KanbanColumn } from "./components/KanbanColumn";
 import { MessageBlocksDrawer } from "./components/MessageBlocksDrawer";
 
 const PIPELINE_STAGES: PipelineStage[] = [
-  { id: "a_abordar", title: "1. To Approach", badgeColor: "bg-amber-400", description: "Audited US leads ready for Block 1" },
-  { id: "contatado", title: "2. Contacted", badgeColor: "bg-blue-400", description: "Block 1 sent" },
-  { id: "em_conversa", title: "3. In Conversation", badgeColor: "bg-indigo-400", description: "Diagnosis & follow-up" },
-  { id: "proposta_enviada", title: "4. Proposal Sent", badgeColor: "bg-purple-400", description: "US$ 497 offer sent" },
-  { id: "fechado_ganho", title: "5. Closed Won", badgeColor: "bg-emerald-400", description: "Paid & onboarding" },
-  { id: "perdido_invalido", title: "6. Lost / Invalid", badgeColor: "bg-rose-400", description: "Archived" },
+  { id: "a_abordar", title: "1. A Abordar (EUA)", badgeColor: "bg-amber-400", description: "Leads de brasileiros nos EUA auditados para Bloco 1" },
+  { id: "contatado", title: "2. Contatado", badgeColor: "bg-blue-400", description: "Bloco 1 enviado pelo WhatsApp em português" },
+  { id: "em_conversa", title: "3. Em Conversa", badgeColor: "bg-indigo-400", description: "Diagnóstico e negociação em andamento" },
+  { id: "proposta_enviada", title: "4. Em Proposta (US$)", badgeColor: "bg-purple-400", description: "Oferta US$ 497 apresentada" },
+  { id: "fechado_ganho", title: "5. Fechado Ganho (US$)", badgeColor: "bg-emerald-400", description: "Venda concluída (+US$ 497)" },
+  { id: "perdido_invalido", title: "6. Perdido / Inválido", badgeColor: "bg-rose-400", description: "Sem retorno ou número inválido" },
 ];
 
 const TICKET_USD = 497;
@@ -180,11 +180,11 @@ export const DashboardEua: React.FC = () => {
                       Estratégia EUA
                     </span>
                     <span className="px-2.5 py-0.5 text-[11px] uppercase font-bold tracking-wider rounded-full bg-emerald-500/15 text-[#1E7E34] border border-emerald-500/30">
-                      USD • EN-US
+                      USD • Donos Brasileiros
                     </span>
                   </div>
                   <p className="text-xs text-[#65686D] font-medium">
-                    Google Business Profile • Ticket Pontual US$ {TICKET_USD}
+                    Perfil no Google • Implantação e Otimização US$ {TICKET_USD}
                   </p>
                 </div>
               </Link>
@@ -195,7 +195,7 @@ export const DashboardEua: React.FC = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#65686D]" />
               <input
                 type="text"
-                placeholder="Search company, city or +1 phone..."
+                placeholder="Buscar empresa, cidade ou telefone +1..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111111] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -225,7 +225,7 @@ export const DashboardEua: React.FC = () => {
             <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="bg-white border border-blue-500/25 rounded-xl p-3 flex items-center justify-between shadow-sm">
                 <div>
-                  <p className="text-[11px] font-semibold uppercase text-[#1967D2]">Pipeline EUA</p>
+                  <p className="text-[11px] font-semibold uppercase text-[#1967D2]">Pipeline EUA (US$)</p>
                   <p className="text-lg font-black text-[#111111] mt-0.5">
                     {formatUSD(activeCount * TICKET_USD)}
                   </p>
@@ -238,9 +238,9 @@ export const DashboardEua: React.FC = () => {
 
               <div className="bg-white border border-[#E5E7EB] rounded-xl p-3 flex items-center justify-between">
                 <div>
-                  <p className="text-[11px] font-semibold text-[#65686D]">1. To Approach</p>
+                  <p className="text-[11px] font-semibold text-[#65686D]">1. A Abordar</p>
                   <p className="text-xl font-black text-[#8A6400] mt-0.5">{countByStage("a_abordar")}</p>
-                  <p className="text-[10px] text-[#65686D]">Outreach queue</p>
+                  <p className="text-[10px] text-[#65686D]">Fila de disparo</p>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-[#8A6400] flex items-center justify-center">
                   <Send className="w-4 h-4" />
@@ -249,11 +249,11 @@ export const DashboardEua: React.FC = () => {
 
               <div className="bg-white border border-amber-500/25 rounded-xl p-3 flex items-center justify-between">
                 <div>
-                  <p className="text-[11px] font-semibold text-[#8A6400]">In Proposal (USD)</p>
+                  <p className="text-[11px] font-semibold text-[#8A6400]">4. Em Proposta (US$)</p>
                   <p className="text-lg font-black text-[#8A6400] mt-0.5">
                     {formatUSD(countByStage("proposta_enviada") * TICKET_USD)}
                   </p>
-                  <p className="text-[10px] text-[#65686D]">{countByStage("proposta_enviada")} sent</p>
+                  <p className="text-[10px] text-[#65686D]">{countByStage("proposta_enviada")} proposta(s)</p>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-amber-500/15 text-[#8A6400] flex items-center justify-center">
                   <Sparkles className="w-4 h-4" />
@@ -262,11 +262,11 @@ export const DashboardEua: React.FC = () => {
 
               <div className="bg-emerald-50/30 border border-emerald-500/30 rounded-xl p-3 flex items-center justify-between">
                 <div>
-                  <p className="text-[11px] font-semibold text-[#1E7E34]">Closed Revenue (USD)</p>
+                  <p className="text-[11px] font-semibold text-[#1E7E34]">Receita Fechada (US$)</p>
                   <p className="text-lg font-black text-[#1E7E34] mt-0.5">
                     {formatUSD(countByStage("fechado_ganho") * TICKET_USD)}
                   </p>
-                  <p className="text-[10px] text-[#1E7E34]/80">{countByStage("fechado_ganho")} closed</p>
+                  <p className="text-[10px] text-[#1E7E34]/80">{countByStage("fechado_ganho")} fechado(s)</p>
                 </div>
                 <div className="w-9 h-9 rounded-xl bg-emerald-500/15 text-[#1E7E34] flex items-center justify-center">
                   <Trophy className="w-4 h-4" />
@@ -279,7 +279,7 @@ export const DashboardEua: React.FC = () => {
               <div className="flex flex-wrap items-center gap-1.5">
                 <span className="text-xs font-semibold text-[#65686D] flex items-center gap-1 mr-1">
                   <Building2 className="w-3.5 h-3.5 text-[#1967D2]" />
-                  Niche:
+                  Nicho:
                 </span>
                 {["todos", "House Cleaning", "Handyman", "Remodeling"].map((seg) => (
                   <button
@@ -291,7 +291,7 @@ export const DashboardEua: React.FC = () => {
                         : "bg-white text-[#65686D] border-[#E5E7EB] hover:bg-[#F8F9FA]"
                     }`}
                   >
-                    {seg === "todos" ? "All Niches" : seg}
+                    {seg === "todos" ? "Todos os Nichos" : seg}
                   </button>
                 ))}
               </div>
@@ -299,7 +299,7 @@ export const DashboardEua: React.FC = () => {
               <div className="flex items-center gap-2">
                 <label htmlFor="us-city-filter" className="text-xs font-semibold text-[#65686D] flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-[#8A6400]" />
-                  City:
+                  Cidade/Região:
                 </label>
                 <select
                   id="us-city-filter"
@@ -307,7 +307,7 @@ export const DashboardEua: React.FC = () => {
                   onChange={(e) => setSelectedCity(e.target.value)}
                   className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-[#E5E7EB] bg-white text-[#111111]"
                 >
-                  <option value="todos">All Cities ({cities.length})</option>
+                  <option value="todos">Todas as Cidades ({cities.length})</option>
                   {cities.map((c) => (
                     <option key={c.label} value={c.label}>
                       {c.label} ({c.count})
@@ -331,7 +331,7 @@ export const DashboardEua: React.FC = () => {
                 : "bg-white text-[#65686D] border-[#E5E7EB]"
             }`}
           >
-            All 6 Columns ({filteredLeads.length})
+            Todas as 6 Colunas ({filteredLeads.length})
           </button>
           {PIPELINE_STAGES.map((stage) => {
             const count = filteredLeads.filter((l) => l.stage === stage.id).length;
