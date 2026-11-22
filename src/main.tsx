@@ -43,6 +43,7 @@ const AnunciarNoGoogle = lazy(() => import("./pages/AnunciarNoGoogle"));
 const ComoFazerSiteAparecerEmPrimeiro = lazy(() => import("./pages/ComoFazerSiteAparecerEmPrimeiro"));
 const ComoFazerSiteAparecerNoGoogle = lazy(() => import("./pages/ComoFazerSiteAparecerNoGoogle"));
 const TermsPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.TermsPage })));
+const CrmDashboardEua = lazy(() => import("./pages/crm/DashboardEua"));
 const PrivacyPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.PrivacyPage })));
 const DataDeletionPage = lazy(() => import("./pages/LegalPages").then((m) => ({ default: m.DataDeletionPage })));
 const AboutPage = lazy(() => import("./pages/TrustPages").then((m) => ({ default: m.AboutPage })));
@@ -176,6 +177,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               element={
                 <CrmProtectedRoute>
                   <CrmKeywordPlanner />
+                </CrmProtectedRoute>
+              }
+            />
+            <Route
+              path="/crm/eua"
+              element={
+                <CrmProtectedRoute>
+                  <CrmDashboardEua />
                 </CrmProtectedRoute>
               }
             />

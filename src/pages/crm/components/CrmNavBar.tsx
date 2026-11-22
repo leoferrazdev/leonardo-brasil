@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "../../../lib/local-router";
-import { BarChart3, Kanban, Users } from "lucide-react";
+import { BarChart3, Globe, Kanban, Users } from "lucide-react";
 
 export const CrmNavBar: React.FC = () => {
   const { pathname } = useLocation();
@@ -14,6 +14,15 @@ export const CrmNavBar: React.FC = () => {
       active: pathname === "/crm/dashboard",
       activeClass: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40",
       iconClass: "text-emerald-400",
+    },
+    {
+      label: "EUA (USD)",
+      shortLabel: "EUA",
+      to: "/crm/eua",
+      icon: Globe,
+      active: pathname === "/crm/eua",
+      activeClass: "bg-blue-600/20 text-blue-300 border-blue-500/40",
+      iconClass: "text-blue-400",
     },
     {
       label: "Clientes & Histórico",
