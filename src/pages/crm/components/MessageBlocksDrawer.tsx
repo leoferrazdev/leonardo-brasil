@@ -92,7 +92,7 @@ export const MessageBlocksDrawer: React.FC<MessageBlocksDrawerProps> = ({
     if (activeTab === 4) {
       return (lead.bloco4 || "").replace(
         /Se fizer sentido para você, eu já libero o início esta semana pelo WhatsApp mesmo, sem reunião nem burocracia\. Prefere no Pix à vista ou em 2x de R\$ 250\?/i,
-        "Como prefere seguir hoje, iniciar direto pelo WhatsApp, fazer uma chamada de vídeo rápida ou prefere que eu passe aí?"
+        "Como prefere seguir hoje, iniciar direto pelo WhatsApp, fazer uma chamada de vídeo ou prefere que eu passe aí?"
       );
     }
     return resolveFollowUpMessage(lead);

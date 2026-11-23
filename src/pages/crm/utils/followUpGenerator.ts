@@ -25,10 +25,10 @@ export function buildDefaultFollowUpMessage(lead: ProspectLead): string {
     ``,
     `Para você fechar com 100% de segurança e transparência:`,
     `• *Pagamento no meu CNPJ:* realizado direto na conta bancária jurídica de *${FOLLOW_UP_CNPJ_DATA.razaoSocial}* (*CNPJ ${FOLLOW_UP_CNPJ_DATA.cnpj}*), sendo a *chave Pix o próprio CNPJ ${FOLLOW_UP_CNPJ_DATA.pixKey}*;`,
-    `• *Chamada de vídeo antes do pagamento:* se você preferir validar tudo olhando olho no olho antes do Pix, eu faço uma chamada de vídeo rápida mostrando os pontos na tela;`,
+    `• *Chamada de vídeo antes do pagamento:* se você preferir validar tudo olhando olho no olho antes do Pix, eu faço uma chamada de vídeo mostrando os pontos na tela;`,
     `• *Visita presencial:* e, em último caso, como atendo em ${lead.city || "Porto Alegre"}, posso ir pessoalmente até ${localRef} para alinhar os detalhes e fechar negócio.`,
     ``,
-    `Como prefere seguir hoje: iniciar direto pelo WhatsApp, fazer uma chamada de vídeo rápida ou prefere que eu passe aí?`,
+    `Como prefere seguir hoje: iniciar direto pelo WhatsApp, fazer uma chamada de vídeo ou prefere que eu passe aí?`,
   ].join("\n");
 }
 
