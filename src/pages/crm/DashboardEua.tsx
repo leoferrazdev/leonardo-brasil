@@ -83,6 +83,16 @@ export const DashboardEua: React.FC = () => {
       .map((c) => ({ label: c, count: counts[c] }));
   }, [leads]);
 
+  const segments = useMemo(() => {
+    const counts = leads.reduce<Record<string, number>>((acc, l) => {
+      if (l.segment) acc[l.segment] = (acc[l.segment] || 0) + 1;
+      return acc;
+    }, {});
+    return Object.keys(counts)
+      .sort((a, b) => counts[b] - counts[a] || a.localeCompare(b))
+      .map((s) => ({ label: s, count: counts[s] }));
+  }, [leads]);
+
   const filteredLeads = useMemo(() => {
     const filtered = leads.filter((lead) => {
       const matchSegment = selectedSegment === "todos" || lead.segment === selectedSegment;
@@ -281,17 +291,27 @@ export const DashboardEua: React.FC = () => {
                   <Building2 className="w-3.5 h-3.5 text-[#1967D2]" />
                   Nicho:
                 </span>
-                {["todos", "House Cleaning", "Handyman", "Remodeling"].map((seg) => (
+                <button
+                  onClick={() => setSelectedSegment("todos")}
+                  className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all border ${
+                    selectedSegment === "todos"
+                      ? "bg-blue-600 text-white border-blue-500"
+                      : "bg-white text-[#65686D] border-[#E5E7EB] hover:bg-[#F8F9FA]"
+                  }`}
+                >
+                  Todos ({leads.length})
+                </button>
+                {segments.map((seg) => (
                   <button
-                    key={seg}
-                    onClick={() => setSelectedSegment(seg)}
+                    key={seg.label}
+                    onClick={() => setSelectedSegment(seg.label)}
                     className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all border ${
-                      selectedSegment === seg
+                      selectedSegment === seg.label
                         ? "bg-blue-600 text-white border-blue-500"
                         : "bg-white text-[#65686D] border-[#E5E7EB] hover:bg-[#F8F9FA]"
                     }`}
                   >
-                    {seg === "todos" ? "Todos os Nichos" : seg}
+                    {seg.label} ({seg.count})
                   </button>
                 ))}
               </div>
