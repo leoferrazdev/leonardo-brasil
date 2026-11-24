@@ -104,6 +104,7 @@ export const STATIC_WEB_ROUTES = new Set([
   '/crm/login',
   '/crm/dashboard',
   '/crm/eua',
+  '/crm/portugal',
   '/crm/planejador',
   '/crm/keywords',
   '/crm/clientes'

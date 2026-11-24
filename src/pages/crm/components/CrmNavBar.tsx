@@ -25,6 +25,15 @@ export const CrmNavBar: React.FC = () => {
       iconClass: "text-blue-400",
     },
     {
+      label: "Portugal (EUR)",
+      shortLabel: "Portugal",
+      to: "/crm/portugal",
+      icon: Globe,
+      active: pathname === "/crm/portugal",
+      activeClass: "bg-emerald-600/20 text-emerald-300 border-emerald-500/40",
+      iconClass: "text-emerald-400",
+    },
+    {
       label: "Clientes & Histórico",
       shortLabel: "Clientes",
       to: "/crm/clientes",
