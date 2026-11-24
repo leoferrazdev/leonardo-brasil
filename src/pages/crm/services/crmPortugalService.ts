@@ -1,12 +1,16 @@
 import type { PipelineStageId, ProspectLead } from "../types";
 import { INITIAL_PROSPECTS_PORTUGAL } from "../data/initialProspectsPortugal";
 
-const STORAGE_KEY_PORTUGAL = "crm_portugal_prospects_v1";
+const STORAGE_KEY_PORTUGAL = "crm_portugal_prospects_v2";
+const STORAGE_KEY_PORTUGAL_OLD = "crm_portugal_prospects_v1";
 
 function loadStoredLeads(): ProspectLead[] {
   if (typeof window === "undefined") return INITIAL_PROSPECTS_PORTUGAL;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY_PORTUGAL);
+    let raw = localStorage.getItem(STORAGE_KEY_PORTUGAL);
+    if (!raw) {
+      raw = localStorage.getItem(STORAGE_KEY_PORTUGAL_OLD);
+    }
     if (!raw) return INITIAL_PROSPECTS_PORTUGAL;
     const saved = JSON.parse(raw) as ProspectLead[];
     const savedMap = new Map(saved.map((l) => [l.id, l]));

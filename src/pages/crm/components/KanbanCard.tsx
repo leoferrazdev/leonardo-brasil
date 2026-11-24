@@ -38,6 +38,14 @@ const STAGES_ORDER: PipelineStageId[] = [
   "fechado_ganho"
 ];
 
+function formatRoundBadge(round: string): string {
+  if (!round) return "";
+  if (/^Rodada\s+\d+/i.test(round)) {
+    return round.replace(/^Rodada\s+/i, "R");
+  }
+  return round.replace(/^Rodada\s+/i, "");
+}
+
 export const KanbanCard: React.FC<KanbanCardProps> = ({
   lead,
   onOpenDrawer,
@@ -99,7 +107,7 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
     <div
       ref={setNodeRef}
       style={style}
-      className={`bg-gradient-to-b from-[#111726] to-[#0c101b] border rounded-2xl p-3.5 shadow-lg transition-all select-none group w-full max-w-full box-border ${
+      className={`bg-gradient-to-b from-[#111726] to-[#0c101b] border rounded-2xl p-3.5 shadow-lg transition-all select-none group w-full max-w-full box-border overflow-hidden ${
         isDragging
           ? "border-blue-500 shadow-2xl shadow-blue-500/25 opacity-90 scale-[1.02]"
           : lead.stage === "perdido_invalido"
@@ -112,13 +120,16 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
       {/* Topo do Card: ID, Badges e Ações Utilitárias (100% contidas no cabeçalho) */}
       <div className="flex items-start justify-between gap-1.5 min-w-0">
         <div {...listeners} {...attributes} className="cursor-grab active:cursor-grabbing flex-1 min-w-0 pr-1">
-          <div className="flex items-center gap-1.5 flex-wrap">
+          <div className="flex items-center gap-1.5 flex-wrap min-w-0 max-w-full">
             <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#080b12] text-[#94a3b8] border border-[#1a2030] shrink-0">
               {lead.sampleId}
             </span>
             {lead.round && (
-              <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/25 shrink-0">
-                {lead.round.replace("Rodada ", "R")}
+              <span
+                title={lead.round}
+                className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/25 max-w-full truncate inline-block shrink"
+              >
+                {formatRoundBadge(lead.round)}
               </span>
             )}
             {lead.observedPosition && (

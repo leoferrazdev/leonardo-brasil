@@ -4,7 +4,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-028",
     "sampleId": "US-028",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Mastercar Auto Repair (Orlando, FL)",
     "segment": "Auto Repair",
     "neighborhood": "Orlando / MetroWest, FL",
@@ -48,7 +48,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-033",
     "sampleId": "US-033",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Fort USA Mobile Mechanic (Orlando, FL)",
     "segment": "Auto Repair",
     "neighborhood": "Orlando / Kissimmee / Winter Garden, FL",
@@ -92,7 +92,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-034",
     "sampleId": "US-034",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Phil's Electric Auto Expert (Pompano Beach, FL)",
     "segment": "Auto Repair",
     "neighborhood": "Pompano Beach / Coconut Creek, FL",
@@ -136,7 +136,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-025",
     "sampleId": "US-025",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Brazilian Mechanics - Mecânica Brasileira (Margate, FL)",
     "segment": "Auto Repair",
     "neighborhood": "Margate / Pompano Beach, FL",
@@ -180,7 +180,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-024",
     "sampleId": "US-024",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Brazilian Auto Repair (Pompano Beach, FL)",
     "segment": "Auto Repair",
     "neighborhood": "Pompano Beach / Deerfield Beach, FL",
@@ -224,7 +224,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-029",
     "sampleId": "US-029",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "Brazil Tires & Autocare (Newark, NJ)",
     "segment": "Auto Repair",
     "neighborhood": "Newark, NJ",
@@ -268,7 +268,7 @@ export const INITIAL_PROSPECTS_EUA: ProspectLead[] = [
   {
     "id": "US-035",
     "sampleId": "US-035",
-    "round": "Rodada Oficinas Mecânicas EUA (WhatsApp Confirmado)",
+    "round": "Oficinas Mecânicas (EUA)",
     "name": "John's Auto & Tires Repair (Malden, MA)",
     "segment": "Auto Repair",
     "neighborhood": "Malden / Greater Boston, MA",

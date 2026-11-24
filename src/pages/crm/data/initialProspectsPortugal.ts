@@ -4,7 +4,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-001",
     "sampleId": "PT-001",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Repair Car - Oficina Automóvel (Agualva-Cacém)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Agualva-Cacém, Sintra",
@@ -36,7 +36,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 5400
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Repair Car - Oficina Automóvel* em Agualva-Cacém: são mais de 5.400 buscas mensais de condutores à procura de oficina mecânica e revisão nesta região de Sintra, mas a empresa aparece na posição #11 do Google Maps — fora do Top 3 que capta a maior fatia das chamadas e orçamentos —, principalmente porque o perfil não possui o catálogo de serviços estruturado nem categorias secundárias de diagnóstico e travões configuradas.\n\nQuer saber COMO faríamos para ajustar o perfil da Repair Car e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "5.400+ buscas/mês em Sintra, Cacém e Rio de Mouro",
     "bloco1Falha": "Perfil sem catálogo de serviços estruturado e fora do Top 3 no Google Maps.",
@@ -49,7 +49,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-002",
     "sampleId": "PT-002",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Turbo Lab Sintra | Oficina Mecânica (Ral, Sintra)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Ral / Sintra",
@@ -81,7 +81,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 4200
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Turbo Lab Sintra* na N9 em Sintra: são mais de 4.200 buscas mensais de condutores à procura de mecânica e diagnóstico automóvel, mas a oficina aparece na posição #9 do Google Maps — fora do Top 3 que capta a maioria das ligações —, principalmente porque os serviços especializados de turbo, injeção e mecânica geral não estão cadastrados no catálogo de produtos do Google.\n\nQuer saber COMO faríamos para ajustar o perfil da Turbo Lab e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "4.200+ buscas/mês em Sintra e N9",
     "bloco1Falha": "Serviços especializados ausentes do catálogo no Google Maps e posição #9.",
@@ -94,7 +94,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-003",
     "sampleId": "PT-003",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "KAI AUTO Reparações Automóveis (Sintra / Estoril)",
     "segment": "Bate-Chapas e Mecânica",
     "neighborhood": "Sintra Estoril / Albarraque",
@@ -126,7 +126,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 3800
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *KAI AUTO Reparações Automóveis* no Centro Empresarial Sintra Estoril: são mais de 3.800 buscas mensais de proprietários de viaturas à procura de bate-chapas, pintura e reparação na região, mas a oficina aparece na posição #14 do Google Maps — apesar da nota máxima de 5.0 estrelas —, perdendo sinistros e clientes particulares porque o perfil não tem o catálogo de bate-chapa e pintura estruturado no Maps.\n\nQuer saber COMO faríamos para ajustar o perfil da KAI AUTO e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "3.800+ buscas/mês no eixo Sintra, Estoril e Cascais",
     "bloco1Falha": "Nota 5.0, porém na posição #14 por ausência de catálogo de bate-chapas e pintura.",
@@ -139,7 +139,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-004",
     "sampleId": "PT-004",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Boxauto Auto Care Center (Cabriz, Sintra)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Cabriz / Sintra",
@@ -171,7 +171,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 3200
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Boxauto Auto Care Center* em Cabriz, Sintra: são mais de 3.200 buscas mensais de condutores à procura de manutenção automóvel na região, mas a oficina aparece na posição #12 do Google Maps — fora do Top 3 que atrai quem precisa de revisão e pneus —, principalmente porque o perfil não tem o catálogo de serviços cadastrado e as categorias secundárias de alinhamento e travões estão omissas.\n\nQuer saber COMO faríamos para ajustar o perfil da Boxauto e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "3.200+ buscas/mês em Sintra e Cabriz",
     "bloco1Falha": "Sem catálogo de serviços no Maps e categorias secundárias de pneus e travões omissas.",
@@ -184,7 +184,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-005",
     "sampleId": "PT-005",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Eco-Motor Oficina e Stand (Sobreda, Almada)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Sobreda / Almada",
@@ -216,7 +216,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 6100
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Eco-Motor* na Sobreda, Almada: são mais de 6.100 buscas mensais de condutores à procura de oficina mecânica na Margem Sul, mas a empresa aparece na posição #10 do Google Maps — perdendo dezenas de marcações de manutenção —, principalmente porque o perfil destaca a vertente de stand de viaturas e não possui o catálogo de oficina mecânica e revisões estruturado no Google.\n\nQuer saber COMO faríamos para ajustar o perfil da Eco-Motor e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "6.100+ buscas/mês em Almada, Sobreda e Feijó",
     "bloco1Falha": "Catálogo de oficina ausente e posição #10 no Google Maps.",
@@ -229,7 +229,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-006",
     "sampleId": "PT-006",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Jorge da Silva Vitorino Oficina (Charneca de Caparica)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Charneca de Caparica / Almada",
@@ -261,7 +261,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 4500
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da oficina na Charneca de Caparica: são mais de 4.500 buscas mensais de motoristas à procura de mecânico de confiança na zona da Charneca, Aroeira e Costa de Caparica, mas a oficina aparece na posição #8 do Google Maps — fora do Top 3 que capta a maior parte das marcações —, principalmente porque o perfil não tem o catálogo de serviços estruturado no mapa e faltam as palavras-chave geolocalizadas da Aroeira e Caparica.\n\nQuer saber COMO faríamos para ajustar o perfil da oficina e colocar o negócio no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "4.500+ buscas/mês na Charneca de Caparica, Aroeira e Almada",
     "bloco1Falha": "Perfil básico sem catálogo e fora do Top 3 no Google Maps.",
@@ -274,7 +274,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-007",
     "sampleId": "PT-007",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "José Bandeira - Oficina Automóvel (Pedroso, Gaia)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Pedroso / Vila Nova de Gaia",
@@ -306,7 +306,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 7200
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *José Bandeira - Oficina* em Vila Nova de Gaia: são mais de 7.200 buscas mensais de condutores à procura de oficina mecânica no eixo Gaia-Porto, mas a sua oficina aparece na posição #13 do Google Maps — fora do Top 3 que capta o maior fluxo de orçamentos —, principalmente porque o perfil não tem o catálogo de serviços estruturado e faltam as categorias secundárias de revisão para IPO e diagnóstico.\n\nQuer saber COMO faríamos para ajustar o perfil da sua oficina e colocar o negócio no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "7.200+ buscas/mês em Vila Nova de Gaia, Pedroso e Carvalhos",
     "bloco1Falha": "Posição #13 no Google Maps no maior centro urbano do Norte.",
@@ -319,7 +319,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-008",
     "sampleId": "PT-008",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Rolcar / Rolmax Assistência (Vila Nova de Gaia)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Vila Nova de Gaia",
@@ -351,7 +351,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 5800
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Rolcar* em Vila Nova de Gaia: são mais de 5.800 buscas mensais de condutores à procura de assistência e mecânica automóvel na região do Porto e Gaia, mas a empresa aparece na posição #11 do Google Maps — fora do Top 3 que fica com a quase totalidade das chamadas —, principalmente porque o catálogo de serviços mecânicos e elétricos não está cadastrado no perfil do Google.\n\nQuer saber COMO faríamos para ajustar o perfil da Rolcar e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "5.800+ buscas/mês em Gaia e Porto",
     "bloco1Falha": "Catálogo ausente no Google Maps e posição #11.",
@@ -364,7 +364,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-009",
     "sampleId": "PT-009",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Auto Nogueira (Braga)",
     "segment": "Oficinas Mecânicas e Pneus",
     "neighborhood": "Braga",
@@ -396,7 +396,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 4900
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Auto Nogueira* na R. da Ribeira em Braga: são mais de 4.900 buscas mensais de condutores à procura de oficina mecânica, pneus e revisão na cidade, mas a empresa aparece na posição #10 do Google Maps — fora do Top 3 que capta a imensa maioria dos novos clientes —, principalmente porque o perfil não tem o catálogo de pneus e serviços de mecânica estruturado no Google com palavras-chave de Braga.\n\nQuer saber COMO faríamos para ajustar o perfil da Auto Nogueira e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "4.900+ buscas/mês em Braga e arredores",
     "bloco1Falha": "Perfil sem catálogo de pneus e serviços no Maps e posição #10 em Braga.",
@@ -409,7 +409,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-010",
     "sampleId": "PT-010",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "Manuel Arraia Automóveis (Portimão, Algarve)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Zona Industrial Coca Maravilhas / Portimão",
@@ -441,7 +441,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 3900
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *Manuel Arraia Automóveis* na Zona Industrial de Portimão: são mais de 3.900 buscas mensais de condutores à procura de oficina mecânica e reparação no Algarve, mas a oficina aparece na posição #12 do Google Maps — fora do Top 3 que capta o maior fluxo de orçamentos —, principalmente porque o perfil não possui o catálogo de serviços estruturado no Google com palavras-chave de assistência rápida e manutenção.\n\nQuer saber COMO faríamos para ajustar o perfil da sua oficina e colocar o negócio no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "3.900+ buscas/mês em Portimão, Lagoa e Lagos",
     "bloco1Falha": "Perfil sem catálogo de serviços na Zona Industrial de Portimão.",
@@ -454,7 +454,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
   {
     "id": "PT-011",
     "sampleId": "PT-011",
-    "round": "Rodada Oficinas Mecânicas Portugal (WhatsApp Telemóvel)",
+    "round": "Oficinas Mecânicas (Portugal)",
     "name": "A.R. Performance Oficina Mecânica (Albufeira, Algarve)",
     "segment": "Oficinas Mecânicas",
     "neighborhood": "Ferreiras / Albufeira",
@@ -486,7 +486,7 @@ export const INITIAL_PROSPECTS_PORTUGAL: ProspectLead[] = [
       "monthlySearchVolume": 3600
     },
     "stage": "a_abordar",
-    "updatedAt": "2026-11-24T14:00:00.000Z",
+    "updatedAt": "2026-11-24T14:45:00.000Z",
     "bloco1": "Olá, tudo bem? Aqui é o Leonardo Brasil, trabalho com posicionamento de empresas no Google.\n\nAnalisei o perfil da *A.R. Performance* em Albufeira: são mais de 3.600 buscas mensais de condutores à procura de oficina mecânica de confiança na região de Albufeira e Ferreiras, mas a oficina aparece na posição #9 do Google Maps — fora do Top 3 que capta a maior fatia das chamadas —, principalmente porque o catálogo de manutenção e revisões não está cadastrado no perfil do Google Meu Negócio.\n\nQuer saber COMO faríamos para ajustar o perfil da A.R. Performance e colocar a oficina no Top 3 do Google Maps disputando esses clientes?",
     "bloco1Volume": "3.600+ buscas/mês em Albufeira, Ferreiras e Guia",
     "bloco1Falha": "Perfil sem catálogo de revisões e posição #9 no Google Maps.",
