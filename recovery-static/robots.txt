@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /force/
 Disallow: /*?*
 
 Sitemap: https://leonardobrasil.com.br/sitemap.xml

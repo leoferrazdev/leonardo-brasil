@@ -3,8 +3,10 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Aplica 410 antes do redirecionamento HTTPS, inclusive a URLs de spam em HTTP.
+  # Aplica 410 antes do redirecionamento HTTPS para o diretório do ataque e para as rotas antigas de SEO Local
+  # (evitando canibalização/duplicidade com leobrasil.com.br e acelerando a remoção das 2.754 páginas antigas do índice).
   RewriteRule (^|/)force(/|$) - [G,NC]
+  RewriteRule ^(?:google-meu-negocio|otimizacao-google-meu-negocio|consultor-google-meu-negocio|especialista-google-maps|gestao-google-meu-negocio|criar-e-verificar-google-meu-negocio|recuperar-perfil-suspenso-google|auditoria-perfil-google|google-ads|blog|cidades|exclusao-de-dados|privacidade|termos|segmentos-locais-google-maps)(?:/|$) - [G,NC]
   # Nesta implantacao estatica, nenhum PHP deve ser servido ou executado.
   RewriteRule \.(?:php[0-9]?|phtml|phar)(?:[./]|$) - [F,NC]
   RewriteCond %{HTTPS} !=on
