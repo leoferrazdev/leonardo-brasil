@@ -72,6 +72,7 @@ export const STATIC_WEB_ROUTES = new Set([
   '/gestao-google-meu-negocio',
   '/criar-e-verificar-google-meu-negocio',
   '/google-ads',
+  '/anuncios-google',
   '/gestor-google-ads',
   '/consultor-google-ads',
   '/agencia-google-ads-negocios-locais',
@@ -105,9 +106,11 @@ export const STATIC_WEB_ROUTES = new Set([
   '/crm/dashboard',
   '/crm/eua',
   '/crm/portugal',
+  '/crm/trafego',
   '/crm/planejador',
   '/crm/keywords',
-  '/crm/clientes'
+  '/crm/clientes',
+  '/crm/torre'
 ]);
 
 export function normalizeWebPath(pathname = '/') {
@@ -153,6 +156,18 @@ export function isKnownWebRoute(rawPath) {
 
   if (segments.length === 3 && segments[0] === 'crm' && segments[1] === 'clientes') {
     return /^[a-z0-9-]+$/i.test(segments[2]);
+  }
+
+  if (segments.length === 2 && segments[0] === 'relatorio') {
+    return /^[a-z0-9-]+$/i.test(segments[1]);
+  }
+
+  if (segments.length === 2 && segments[0] === 'prova') {
+    return /^[a-z0-9-]+$/i.test(segments[1]);
+  }
+
+  if (segments.length === 2 && segments[0] === 'cidades') {
+    return true;
   }
 
   if (segments.length === 2 && segments[0] === 'google-ads') {

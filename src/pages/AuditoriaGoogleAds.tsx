@@ -144,16 +144,16 @@ export default function AuditoriaGoogleAds() {
   ];
 
   return (
-    <div className="min-h-screen bg-ink text-text font-sans selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-white text-text font-sans">
       <SeoHead
-        title="Auditoria de Google Ads: Pare de Queimar Verba e Reduza seu CPL | Leonardo Brasil"
-        description="Auditoria técnica de conta Google Ads para negócios locais. Identifique ralos de orçamento, corrija palavras negativas, segmentação geográfica e rastreamento no WhatsApp."
-        keywords="auditoria google ads, auditoria de conta google ads, por que meu google ads não vende, otimização de campanhas google ads, reduzir cpc google ads"
+        title="Auditoria de Google Ads e Tráfego Pago: Elimine Desperdício e Reduza seu CPL | Leonardo Brasil"
+        description="Auditoria técnica de Google Ads e tráfego pago para negócios locais. Identifique ralos de orçamento, termos de pesquisa negativos, segmentação geográfica e rastreamento no WhatsApp."
+        keywords="auditoria google ads, auditoria de tráfego pago, auditoria de conta google ads, consultoria google ads, otimização de campanhas google ads, reduzir cpc google ads, gestor de tráfego pago local"
         canonicalUrl={canonicalUrl}
         schema={schema}
       />
 
-      <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 font-black text-lg tracking-tight text-text hover:text-accent transition-colors">
             <span className="w-2.5 h-2.5 rounded-full bg-accent"></span>
@@ -169,7 +169,7 @@ export default function AuditoriaGoogleAds() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold bg-accent text-white px-4 py-2 rounded-full hover:bg-accent-600 transition-all shadow-lg shadow-accent/20"
+            className="inline-flex items-center gap-2 text-xs font-bold bg-accent text-white px-4 py-2 rounded-full hover:bg-accent-600 transition-all shadow-sm"
           >
             Auditar Minha Conta
           </a>
@@ -177,15 +177,13 @@ export default function AuditoriaGoogleAds() {
       </header>
 
       <main>
-        {/* HERO */}
-        <section className="relative overflow-hidden border-b border-line py-20 md:py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/15 via-ink to-ink -z-10" />
+        <section className="border-b border-line py-20 md:py-24 bg-gradient-to-b from-amber-50/60 to-white">
           <div className="mx-auto max-w-4xl px-5 text-center">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-gold bg-gold/10 px-4 py-1.5 rounded-full border border-gold/30 mb-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#8A6400] bg-amber-100 px-4 py-1.5 rounded-full border border-amber-200 mb-6">
               Auditoria Técnica Independente · Google Ads
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-balance">
-              Sua conta de Google Ads gera cliques, mas <span className="text-gold">poucos clientes fechando no WhatsApp?</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-text text-balance">
+              Sua conta de Google Ads gera cliques, mas <span className="text-accent">poucos clientes fechando no WhatsApp?</span>
             </h1>
             <p className="mt-6 text-base sm:text-xl text-muted leading-relaxed max-w-2xl mx-auto">
               Antes de aumentar seu orçamento de mídia, descubra exatamente onde o dinheiro está escapando. Na Auditoria de Google Ads, identifico cada ralo de verba e entrego o plano cirúrgico para derrubar seu Custo por Lead.
@@ -193,12 +191,11 @@ export default function AuditoriaGoogleAds() {
           </div>
         </section>
 
-        {/* CHECKLIST INTERATIVO DE RISCO DE DESPERDÍCIO */}
-        <section className="py-16 border-b border-line bg-panel/40">
+        <section className="py-16 border-b border-line bg-panel-2">
           <div className="mx-auto max-w-4xl px-5">
-            <div className="rounded-3xl border border-line bg-panel p-6 sm:p-10">
-              <span className="text-xs font-bold uppercase tracking-widest text-gold">Autoavaliação Rápida (30 segundos)</span>
-              <h2 className="text-2xl sm:text-3xl font-black mt-2">
+            <div className="ui-card p-6 sm:p-10">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#8A6400]">Autoavaliação Rápida (30 segundos)</span>
+              <h2 className="text-2xl sm:text-3xl font-black mt-2 text-text">
                 Marque os sinais que acontecem na sua conta hoje:
               </h2>
               <p className="mt-2 text-sm text-muted">
@@ -215,14 +212,14 @@ export default function AuditoriaGoogleAds() {
                       onClick={() => toggleItem(item.id)}
                       className={`w-full text-left rounded-2xl border p-4 transition-all ${
                         isSelected
-                          ? "border-gold/60 bg-gold/10"
-                          : "border-line bg-ink/60 hover:border-accent/40"
+                          ? "border-amber-400 bg-amber-50"
+                          : "border-line bg-white hover:border-accent/50"
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <span
                           className={`mt-0.5 grid place-items-center w-5 h-5 rounded border text-xs font-black shrink-0 ${
-                            isSelected ? "bg-gold border-gold text-ink" : "border-line-strong text-transparent"
+                            isSelected ? "bg-accent border-accent text-white" : "border-line-strong text-transparent"
                           }`}
                         >
                           ✓
@@ -237,18 +234,17 @@ export default function AuditoriaGoogleAds() {
                 })}
               </div>
 
-              {/* RESULTADO */}
-              <div className="mt-8 rounded-2xl border border-accent/30 bg-ink p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              <div className="mt-8 rounded-2xl border border-blue-200 bg-blue-50/70 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div>
                   <p className="text-xs uppercase tracking-wider font-bold text-muted">Índice de Vazamento de Verba</p>
-                  <p className="text-3xl font-black text-gold mt-1">{riskScore} / 100</p>
+                  <p className="text-3xl font-black text-accent mt-1">{riskScore} / 100</p>
                   <p className="text-sm font-semibold text-text mt-1">{riskLabel}</p>
                 </div>
                 <a
                   href={waLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shrink-0 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-black text-white hover:bg-accent-600 transition-all shadow-lg shadow-accent/25"
+                  className="shrink-0 inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-white hover:bg-accent-600 transition-all shadow-md"
                 >
                   Solicitar Auditoria no WhatsApp →
                 </a>
@@ -257,18 +253,17 @@ export default function AuditoriaGoogleAds() {
           </div>
         </section>
 
-        {/* OS 6 PILARES DA AUDITORIA */}
-        <section className="py-20 border-b border-line bg-ink">
+        <section className="py-20 border-b border-line bg-white">
           <div className="mx-auto max-w-6xl px-5">
             <div className="max-w-2xl mb-12">
               <span className="text-xs font-bold uppercase tracking-widest text-accent">Profundidade Técnica</span>
-              <h2 className="text-2xl sm:text-4xl font-black mt-2">O que inspeciono na sua conta Google Ads</h2>
+              <h2 className="text-2xl sm:text-4xl font-black mt-2 text-text">O que inspeciono na sua conta Google Ads</h2>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {PONTOS_AUDITORIA.map((p) => (
-                <div key={p.n} className="rounded-2xl border border-line bg-panel p-6">
-                  <span className="text-xs font-black text-gold">{p.n}</span>
+                <div key={p.n} className="ui-card p-6">
+                  <span className="text-xs font-black text-[#8A6400]">{p.n}</span>
                   <h3 className="text-lg font-bold text-text mt-2 mb-2">{p.titulo}</h3>
                   <p className="text-sm text-muted leading-relaxed">{p.desc}</p>
                 </div>
@@ -277,13 +272,12 @@ export default function AuditoriaGoogleAds() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-20 bg-ink">
+        <section className="py-20 bg-white">
           <div className="mx-auto max-w-3xl px-5">
-            <h2 className="text-2xl sm:text-3xl font-black text-center mb-10">Perguntas Frequentes</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-center mb-10 text-text">Perguntas Frequentes</h2>
             <div className="space-y-3">
               {FAQ.map((item, idx) => (
-                <div key={item.q} className="rounded-2xl border border-line bg-panel overflow-hidden">
+                <div key={item.q} className="ui-card overflow-hidden">
                   <button
                     type="button"
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}

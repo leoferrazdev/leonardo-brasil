@@ -7,6 +7,7 @@ import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import Brandbook from "./pages/Brandbook";
 import CitiesDirectory from "./pages/CitiesDirectory";
+import CityHubLanding from "./pages/CityHubLanding";
 import PortoAlegreDigital from "./pages/PortoAlegreDigital";
 import ComoColocarEmpresaNoGoogle from "./pages/ComoColocarEmpresaNoGoogle";
 import ComoFicarNaPrimeiraPaginaGoogle from "./pages/ComoFicarNaPrimeiraPaginaGoogle";
@@ -25,9 +26,9 @@ import GoogleMeuNegocioLocalLanding from "./pages/GoogleMeuNegocioLocalLanding";
 import GestaoGoogleMeuNegocio from "./pages/GestaoGoogleMeuNegocio";
 import CriarVerificarGoogleMeuNegocio from "./pages/CriarVerificarGoogleMeuNegocio";
 import GoogleAdsLanding from "./pages/GoogleAdsLanding";
+import GoogleAdsNicheHub from "./pages/GoogleAdsNicheHub";
 import GoogleAdsEGmn from "./pages/GoogleAdsEGmn";
 import AuditoriaGoogleAds from "./pages/AuditoriaGoogleAds";
-import GoogleAdsNicheHub from "./pages/GoogleAdsNicheHub";
 import RecuperarPerfilSuspenso from "./pages/RecuperarPerfilSuspenso";
 import AuditoriaPerfilGoogle from "./pages/AuditoriaPerfilGoogle";
 import GoogleMeuNegocioMedicosCfm from "./pages/GoogleMeuNegocioMedicosCfm";
@@ -93,14 +94,15 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/gestao-google-meu-negocio" element={<GestaoGoogleMeuNegocio />} />
           <Route path="/criar-e-verificar-google-meu-negocio" element={<CriarVerificarGoogleMeuNegocio />} />
 
-          {/* Silo Completo de Prestação de Serviços de Google Ads */}
+          {/* Vertical 5: Google Ads & Tráfego Pago Local */}
           <Route path="/google-ads" element={<GoogleAdsLanding />} />
+          <Route path="/google-ads/:nicho" element={<GoogleAdsNicheHub />} />
+          <Route path="/anuncios-google" element={<GoogleAdsLanding />} />
           <Route path="/gestor-google-ads" element={<GoogleAdsLanding />} />
           <Route path="/consultor-google-ads" element={<GoogleAdsLanding />} />
           <Route path="/agencia-google-ads-negocios-locais" element={<GoogleAdsLanding />} />
           <Route path="/google-ads-e-google-meu-negocio" element={<GoogleAdsEGmn />} />
           <Route path="/auditoria-google-ads" element={<AuditoriaGoogleAds />} />
-          <Route path="/google-ads/:nicho" element={<GoogleAdsNicheHub />} />
 
           {/* Guias Estratégicos de SEO Local e Aquisição */}
           <Route path="/primeiro-lugar-no-google-2027" element={<PrimeiroLugarNoGoogle2027 />} />
@@ -121,6 +123,7 @@ export function render(url: string): { appHtml: string; head: string } {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/brandbook" element={<Brandbook />} />
           <Route path="/cidades" element={<CitiesDirectory />} />
+          <Route path="/cidades/:cidade" element={<CityHubLanding />} />
           <Route path="/porto-alegre-digital" element={<PortoAlegreDigital />} />
           <Route path="/termos" element={<TermsPage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />

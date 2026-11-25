@@ -41,16 +41,17 @@ export default function GoogleMeuNegocioAdvogadosOab() {
   };
 
   return (
-    <div className="min-h-screen bg-ink text-text selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-white text-text selection:bg-accent selection:text-white">
       <SeoHead
-        title="Google Meu Negócio para Advogados — Normas do Provimento OAB | Leonardo Brasil"
+        title="Google Meu Negócio para Advogados — Provimento 205/2021 OAB | Leonardo Brasil"
         description="Atraia clientes para seu escritório de advocacia no Google Maps com sobriedade. Posicionamento no Top 3 dentro das normas do Provimento 205/2021 da OAB."
+        keywords="provimento 205 oab, provimento 205 2021 oab, google meu negocio advogados oab, marketing juridico oab, google ads advogados oab, captar clientes advocacia oab"
         canonicalUrl="https://leobrasil.com.br/google-meu-negocio/advogados-oab"
         schema={schema}
       />
 
       {/* HEADER */}
-      <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 font-extrabold tracking-tight hover:text-accent transition-colors">
             <span className="grid place-items-center w-8 h-8 rounded-lg bg-accent/15 border border-accent/30">
@@ -69,7 +70,6 @@ export default function GoogleMeuNegocioAdvogadosOab() {
       <main>
         {/* HERO */}
         <section className="relative py-16 sm:py-24 border-b border-line overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.15), transparent 70%)" }} />
           <div className="relative mx-auto max-w-5xl px-5 text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent-300 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent" />
@@ -89,7 +89,7 @@ export default function GoogleMeuNegocioAdvogadosOab() {
                 href={WA_ADVOGADOS}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex justify-center items-center gap-2 rounded-full bg-accent px-8 py-4 font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-[0_0_35px_rgba(59,130,246,0.4)]"
+                className="inline-flex justify-center items-center gap-2 rounded-full bg-accent px-8 py-4 font-bold text-white hover:bg-accent-600 transition-all active:scale-95 shadow-sm"
               >
                 Avaliar meu Escritório no WhatsApp →
               </a>
@@ -163,9 +163,9 @@ export default function GoogleMeuNegocioAdvogadosOab() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="py-16 border-t border-line bg-ink text-center">
+        <section className="py-16 border-t border-line bg-white text-center">
           <div className="mx-auto max-w-3xl px-5">
-            <h2 className="text-3xl font-black tracking-tight text-white">
+            <h2 className="text-3xl font-black tracking-tight text-[#111111]">
               Pronto para colocar sua banca de advocacia no topo do Google Maps?
             </h2>
             <p className="mt-4 text-muted text-base max-w-xl mx-auto">
@@ -175,7 +175,7 @@ export default function GoogleMeuNegocioAdvogadosOab() {
               href={WA_ADVOGADOS}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 font-bold text-white hover:bg-accent-600 transition-all shadow-[0_0_40px_rgba(59,130,246,0.4)]"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 font-bold text-white hover:bg-accent-600 transition-all shadow-sm"
             >
               Falar no WhatsApp com Leonardo Brasil →
             </a>

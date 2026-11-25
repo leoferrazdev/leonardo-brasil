@@ -51,12 +51,6 @@ function buildRoutes() {
     "/especialista-google-maps",
     "/gestao-google-meu-negocio",
     "/criar-e-verificar-google-meu-negocio",
-    "/google-ads",
-    "/gestor-google-ads",
-    "/consultor-google-ads",
-    "/agencia-google-ads-negocios-locais",
-    "/google-ads-e-google-meu-negocio",
-    "/auditoria-google-ads",
     "/recuperar-perfil-suspenso-google",
     "/auditoria-perfil-google",
     "/google-meu-negocio/medicos-cfm",
@@ -76,6 +70,13 @@ function buildRoutes() {
     "/como-vender-mais-no-google",
     "/como-aparecer-no-google-de-graca",
     "/anunciar-no-google",
+    "/google-ads",
+    "/anuncios-google",
+    "/gestor-google-ads",
+    "/consultor-google-ads",
+    "/agencia-google-ads-negocios-locais",
+    "/google-ads-e-google-meu-negocio",
+    "/auditoria-google-ads",
     "/como-fazer-meu-site-aparecer-no-google-em-primeiro",
     "/como-fazer-um-site-aparecer-no-google",
     "/termos",
@@ -101,6 +102,19 @@ function buildRoutes() {
   const googleAdsHubRoutes = adsNiches.map((slug) => `/google-ads/${slug}`);
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
+  const priorityCities = [
+    "curitiba",
+    "joinville",
+    "belo-horizonte",
+    "brasilia",
+    "uberlandia",
+    "juiz-de-fora",
+    "guarapuava",
+    "porto-alegre",
+    "sao-paulo",
+  ];
+  const cityHubRoutes = priorityCities.map((slug) => `/cidades/${slug}`);
+
   // Set para evitar rotas duplicadas
   return [...new Set([
     ...staticRoutes,
@@ -109,7 +123,8 @@ function buildRoutes() {
     ...consultorHubRoutes,
     ...especialistaHubRoutes,
     ...googleAdsHubRoutes,
-    ...blogRoutes
+    ...blogRoutes,
+    ...cityHubRoutes
   ])];
 }
 

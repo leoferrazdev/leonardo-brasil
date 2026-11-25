@@ -22,12 +22,6 @@ const STATIC_ROUTES = [
   "/especialista-google-maps",
   "/gestao-google-meu-negocio",
   "/criar-e-verificar-google-meu-negocio",
-  "/google-ads",
-  "/gestor-google-ads",
-  "/consultor-google-ads",
-  "/agencia-google-ads-negocios-locais",
-  "/google-ads-e-google-meu-negocio",
-  "/auditoria-google-ads",
   "/recuperar-perfil-suspenso-google",
   "/auditoria-perfil-google",
   "/google-meu-negocio/medicos-cfm",
@@ -42,6 +36,12 @@ const STATIC_ROUTES = [
   "/como-vender-mais-no-google",
   "/como-aparecer-no-google-de-graca",
   "/anunciar-no-google",
+  "/google-ads",
+  "/gestor-google-ads",
+  "/consultor-google-ads",
+  "/agencia-google-ads-negocios-locais",
+  "/google-ads-e-google-meu-negocio",
+  "/auditoria-google-ads",
   "/como-fazer-meu-site-aparecer-no-google-em-primeiro",
   "/como-fazer-um-site-aparecer-no-google",
   "/brandbook",
@@ -135,7 +135,7 @@ function generateSitemap() {
     coreUrls.push(generateUrlNode(route, route === "" ? "1.0" : "0.8", "weekly"));
   });
 
-  // Hubs de Nicho das 4 Verticais de GMN + Vertical de Google Ads
+  // Hubs de Nicho das 5 Verticais (GMN, Otimização, Consultor, Especialista Maps e Google Ads)
   nicheSlugs.forEach((niche) => {
     coreUrls.push(generateUrlNode(`/google-meu-negocio/${niche}`, "0.9", "weekly"));
     coreUrls.push(generateUrlNode(`/otimizacao-google-meu-negocio/${niche}`, "0.9", "weekly"));
@@ -150,50 +150,38 @@ function generateSitemap() {
     coreUrls.push(generateUrlNode(route, "0.8", "weekly"));
   });
 
-  allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-core", coreUrls));
-
-  // 2. Malha Local Multivertical (5.571 Cidades x 14 Nichos x 4 Verticais = 311.976 rotas)
-  const localGmnUrls = [];
-  TARGET_CITIES.forEach((location) => {
-    nicheSlugs.forEach((niche) => {
-      // Vertical 1: Especialista Google Meu Negócio
-      localGmnUrls.push(
-        generateUrlNode(
-          `/google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
-          "0.7",
-          "monthly"
-        )
-      );
-      // Vertical 2: Otimização de Google Meu Negócio
-      localGmnUrls.push(
-        generateUrlNode(
-          `/otimizacao-google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
-          "0.7",
-          "monthly"
-        )
-      );
-      // Vertical 3: Consultor Google Meu Negócio
-      localGmnUrls.push(
-        generateUrlNode(
-          `/consultor-google-meu-negocio/${niche}/${location.estado}/${location.cidade}`,
-          "0.7",
-          "monthly"
-        )
-      );
-      // Vertical 4: Especialista Google Maps
-      localGmnUrls.push(
-        generateUrlNode(
-          `/especialista-google-maps/${niche}/${location.estado}/${location.cidade}`,
-          "0.7",
-          "monthly"
-        )
-      );
-    });
+  // City Hubs das Capitais e Polos Prioritários
+  const priorityCities = [
+    "curitiba",
+    "joinville",
+    "belo-horizonte",
+    "brasilia",
+    "uberlandia",
+    "juiz-de-fora",
+    "guarapuava",
+    "porto-alegre",
+    "sao-paulo",
+  ];
+  priorityCities.forEach((city) => {
+    coreUrls.push(generateUrlNode(`/cidades/${city}`, "0.9", "weekly"));
   });
 
-  allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-local", localGmnUrls));
+  allSitemapFiles.push(...writeSitemapFiles(PUBLIC_DIR, "sitemap-core", coreUrls));
 
-  // 3. Sitemap Index Master (Índice Raiz)
+  // Remove sitemaps locais antigos não pré-renderizados (evita desperdício de crawl budget e canonical contraditório)
+  for (const dir of [PUBLIC_DIR, DIST_DIR]) {
+    if (fs.existsSync(dir)) {
+      for (const f of fs.readdirSync(dir)) {
+        if (/^sitemap-local(-\d+)?\.xml$/i.test(f)) {
+          try {
+            fs.unlinkSync(path.join(dir, f));
+          } catch {}
+        }
+      }
+    }
+  }
+
+  // 2. Sitemap Index Master (Índice Raiz apontando apenas para rotas pré-renderizadas com canonical próprio)
   const sitemapIndexNodes = allSitemapFiles
     .map(
       (file) => `
@@ -221,8 +209,7 @@ function generateSitemap() {
   }
 
   console.log(`✅ Sitemap Index gerado em ${SITEMAP_INDEX_PATH} com ${allSitemapFiles.length} arquivos.`);
-  console.log(`🚀 Rotas Core / Hubs / Blog: ${coreUrls.length}`);
-  console.log(`🚀 Rotas Locais Multiplicadas (4 verticais): ${localGmnUrls.length}`);
+  console.log(`🚀 Rotas Core / Hubs / Blog pré-renderizadas: ${coreUrls.length}`);
 }
 
 generateSitemap();

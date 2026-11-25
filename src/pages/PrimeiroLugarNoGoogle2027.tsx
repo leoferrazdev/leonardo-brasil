@@ -172,19 +172,20 @@ export default function PrimeiroLugarNoGoogle2027() {
   };
 
   return (
-    <div className="min-h-screen bg-ink text-text selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-white text-text selection:bg-accent selection:text-white">
       <SeoHead
-        title="Primeiro Lugar no Google 2027: Como Liderar o Top 3 do Maps | Leonardo Brasil"
-        description="Descubra como colocar sua empresa em primeiro lugar no Google em 2027. Técnicas avançadas de SEO Local, algoritmos de IA (GEO) e conversão no WhatsApp."
+        title="Google Maps 2027: Como Ficar em Primeiro Lugar no Google | Leonardo Brasil"
+        description="Descubra como colocar sua empresa em primeiro lugar no Google Maps em 2027. Técnicas avançadas de SEO Local, algoritmos de IA (GEO), Perfil da Empresa e conversão no WhatsApp."
+        keywords="google maps 2027, google2027, primeiro lugar no google 2027, primeiro lugar no google, topo do google maps 2027, seo local 2027, algoritmo google maps 2027"
         canonicalUrl="https://leobrasil.com.br/primeiro-lugar-no-google-2027"
         schema={schema}
       />
 
       {/* HEADER */}
-      <header className="sticky top-0 z-40 border-b border-line bg-ink/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-line bg-white/80 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-semibold text-lg text-white group-hover:text-accent transition-colors">
+            <span className="font-semibold text-lg text-[#111111] group-hover:text-accent transition-colors">
               Leonardo Brasil
             </span>
             <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium">
@@ -195,7 +196,7 @@ export default function PrimeiroLugarNoGoogle2027() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25 transition-all shadow-sm"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-500/15 border border-emerald-500/30 text-[#1E7E34] hover:bg-emerald-500/25 transition-all shadow-sm"
           >
             <WhatsApp className="w-3.5 h-3.5" />
             Planejar Posicionamento 2027
@@ -204,23 +205,23 @@ export default function PrimeiroLugarNoGoogle2027() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative pt-16 pb-20 overflow-hidden border-b border-line bg-gradient-to-b from-ink via-ink-card/30 to-ink">
+      <section className="relative pt-16 pb-20 overflow-hidden border-b border-line bg-[#F8F9FA]">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold mb-6">
             <span>Algoritmo 2027 • SEO Local & GEO</span>
-            <span className="text-white/40">•</span>
+            <span className="text-[#65686D]">•</span>
             <span>Antecipação Estratégica</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-            Primeiro Lugar no Google em 2027: <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-              Como Dominar as Buscas da Sua Cidade
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] mb-6 leading-tight">
+            Google Maps 2027: <br className="hidden sm:inline" />
+            <span className="text-[#1967D2]">
+              Primeiro Lugar no Google e Top 3 Local
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
-            As regras de ranqueamento mudaram radicalmente. Entenda o que é necessário para colocar sua empresa no topo do Google Maps e nas recomendações de inteligência artificial em 2027.
+            As regras de ranqueamento no <strong>Google Maps 2027</strong> e nas respostas de IA (GEO) mudaram. Descubra as técnicas avançadas de SEO Local para colocar sua empresa no topo da sua cidade com custo zero por clique.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -235,7 +236,7 @@ export default function PrimeiroLugarNoGoogle2027() {
             </a>
             <a
               href="#pilares"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-text-muted hover:text-white bg-ink-card border border-line hover:border-accent/40 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-text-muted hover:text-[#111111] bg-ink-card border border-line hover:border-accent/40 transition-all"
             >
               Conhecer as Novas Regras
               <Arrow className="w-4 h-4" />
@@ -252,7 +253,7 @@ export default function PrimeiroLugarNoGoogle2027() {
               <div className="text-xs text-text-muted">Citado por Gemini, SearchGPT e Perplexity</div>
             </div>
             <div className="col-span-2 sm:col-span-1 p-3.5 rounded-xl bg-ink-card/60 border border-line">
-              <div className="text-emerald-400 font-bold text-lg mb-0.5">Custo Zero/Clique</div>
+              <div className="text-[#1E7E34] font-bold text-lg mb-0.5">Custo Zero/Clique</div>
               <div className="text-xs text-text-muted">Ativo perpétuo para o seu negócio</div>
             </div>
           </div>
@@ -263,7 +264,7 @@ export default function PrimeiroLugarNoGoogle2027() {
       <section id="pilares" className="py-20 border-b border-line">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-4">
               O Que Define o 1º Lugar no Google em 2027?
             </h2>
             <p className="text-sm sm:text-base text-text-muted">
@@ -280,7 +281,7 @@ export default function PrimeiroLugarNoGoogle2027() {
                 <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center font-bold text-accent text-sm mb-4">
                   {item.num}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.titulo}</h3>
+                <h3 className="text-lg font-bold text-[#111111] mb-2">{item.titulo}</h3>
                 <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -292,7 +293,7 @@ export default function PrimeiroLugarNoGoogle2027() {
       <section className="py-20 border-b border-line bg-ink-card/20">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-4">
               SEO Tradicional vs. Primeiro Lugar em 2027
             </h2>
             <p className="text-sm sm:text-base text-text-muted">
@@ -304,7 +305,7 @@ export default function PrimeiroLugarNoGoogle2027() {
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs sm:text-sm">
                 <thead>
-                  <tr className="border-b border-line bg-ink/60 text-white font-semibold">
+                  <tr className="border-b border-line bg-white/60 text-[#111111] font-semibold">
                     <th className="p-4">Dimensão</th>
                     <th className="p-4 text-text-muted">SEO do Passado</th>
                     <th className="p-4 text-accent">Novo Primeiro Lugar (2027)</th>
@@ -313,9 +314,9 @@ export default function PrimeiroLugarNoGoogle2027() {
                 <tbody className="divide-y divide-line/60">
                   {COMPARATIVO_EVOLUCAO.map((row, idx) => (
                     <tr key={idx} className="hover:bg-ink-card/40 transition-colors">
-                      <td className="p-4 font-semibold text-white whitespace-nowrap">{row.criterio}</td>
+                      <td className="p-4 font-semibold text-[#111111] whitespace-nowrap">{row.criterio}</td>
                       <td className="p-4 text-text-muted">{row.passado}</td>
-                      <td className="p-4 text-emerald-400 font-medium">{row.cenario2027}</td>
+                      <td className="p-4 text-[#1E7E34] font-medium">{row.cenario2027}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -329,7 +330,7 @@ export default function PrimeiroLugarNoGoogle2027() {
       <section className="py-20 border-b border-line">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-4">
               Como Chegar ao Topo em 4 Etapas Estruturadas
             </h2>
             <p className="text-sm sm:text-base text-text-muted">
@@ -347,7 +348,7 @@ export default function PrimeiroLugarNoGoogle2027() {
                   0{item.passo}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{item.titulo}</h3>
+                  <h3 className="text-lg font-bold text-[#111111] mb-1">{item.titulo}</h3>
                   <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -360,7 +361,7 @@ export default function PrimeiroLugarNoGoogle2027() {
       <section className="py-20 border-b border-line bg-ink-card/20">
         <div className="mx-auto max-w-3xl px-5">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-3">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-3">
               Perguntas Frequentes
             </h2>
             <p className="text-sm text-text-muted">
@@ -377,7 +378,7 @@ export default function PrimeiroLugarNoGoogle2027() {
                 <button
                   type="button"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 text-white font-semibold text-sm sm:text-base hover:text-accent transition-colors"
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 text-[#111111] font-semibold text-sm sm:text-base hover:text-accent transition-colors"
                 >
                   <span>{f.q}</span>
                   <Chevron
@@ -398,9 +399,9 @@ export default function PrimeiroLugarNoGoogle2027() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 bg-gradient-to-t from-accent/15 via-ink to-ink text-center">
+      <section className="py-20 bg-[#F8F9FA] text-center">
         <div className="mx-auto max-w-3xl px-5">
-          <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl font-bold text-[#111111] mb-4">
             Pronto para colocar sua empresa em 1º lugar em 2027?
           </h2>
           <p className="text-sm sm:text-base text-text-muted mb-8 max-w-xl mx-auto leading-relaxed">

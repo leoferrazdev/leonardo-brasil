@@ -30,6 +30,7 @@ const BlogIndex = lazy(() => import("./pages/BlogIndex"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Brandbook = lazy(() => import("./pages/Brandbook"));
 const CitiesDirectory = lazy(() => import("./pages/CitiesDirectory"));
+const CityHubLanding = lazy(() => import("./pages/CityHubLanding"));
 const PortoAlegreDigital = lazy(() => import("./pages/PortoAlegreDigital"));
 const ComoColocarEmpresaNoGoogle = lazy(() => import("./pages/ComoColocarEmpresaNoGoogle"));
 const ComoFicarNaPrimeiraPaginaGoogle = lazy(() => import("./pages/ComoFicarNaPrimeiraPaginaGoogle"));
@@ -150,6 +151,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/brandbook" element={<Brandbook />} />
             <Route path="/cidades" element={<CitiesDirectory />} />
+            <Route path="/cidades/:cidade" element={<CityHubLanding />} />
             <Route path="/porto-alegre-digital" element={<PortoAlegreDigital />} />
             <Route path="/termos" element={<TermsPage />} />
             <Route path="/privacidade" element={<PrivacyPage />} />
