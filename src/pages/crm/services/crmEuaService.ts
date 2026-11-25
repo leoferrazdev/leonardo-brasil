@@ -1,8 +1,8 @@
 import type { PipelineStageId, ProspectLead } from "../types";
 import { INITIAL_PROSPECTS_EUA } from "../data/initialProspectsEua";
 
-const STORAGE_KEY_EUA = "crm_eua_prospects_v5";
-const STORAGE_KEY_EUA_OLD = "crm_eua_prospects_v4";
+const STORAGE_KEY_EUA = "crm_eua_prospects_v6";
+const STORAGE_KEY_EUA_OLD = "crm_eua_prospects_v5";
 
 function loadStoredLeads(): ProspectLead[] {
   if (typeof window === "undefined") return INITIAL_PROSPECTS_EUA;
