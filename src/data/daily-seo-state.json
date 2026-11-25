@@ -1,0 +1,67 @@
+{
+  "publishedMoneyPages": [
+    "cirurgia-plastica",
+    "dermatologia",
+    "oftalmologia",
+    "direito-previdenciario",
+    "direito-trabalhista",
+    "direito-familia",
+    "energia-solar",
+    "climatizacao"
+  ],
+  "publishedCityHubs": [
+    "campinas",
+    "santos",
+    "ribeirao-preto",
+    "londrina",
+    "maringa",
+    "caxias-do-sul",
+    "florianopolis",
+    "blumenau"
+  ],
+  "publishedBlogSlugs": [
+    "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    "qual-o-melhor-tipo-de-campanha-do-google-ads-para-servicos",
+    "como-evitar-cliques-invalidos-e-concorrentes-no-google-ads",
+    "como-aumentar-a-taxa-de-conversao-do-whatsapp-no-google-ads",
+    "quanto-custa-anunciar-no-google-ads-para-negocio-local",
+    "por-que-meu-perfil-do-google-meu-negocio-foi-suspenso",
+    "o-que-e-nap-em-seo-local-e-por-que-ele-define-o-top-3",
+    "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes"
+  ],
+  "runs": [
+    {
+      "timestamp": "2026-11-25T20:08:30.629Z",
+      "batchNiches": [
+        "cirurgia-plastica",
+        "dermatologia",
+        "oftalmologia",
+        "direito-previdenciario",
+        "direito-trabalhista",
+        "direito-familia",
+        "energia-solar",
+        "climatizacao"
+      ],
+      "batchCities": [
+        "campinas",
+        "santos",
+        "ribeirao-preto",
+        "londrina",
+        "maringa",
+        "caxias-do-sul",
+        "florianopolis",
+        "blumenau"
+      ],
+      "batchBlog": [
+        "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+        "qual-o-melhor-tipo-de-campanha-do-google-ads-para-servicos",
+        "como-evitar-cliques-invalidos-e-concorrentes-no-google-ads",
+        "como-aumentar-a-taxa-de-conversao-do-whatsapp-no-google-ads",
+        "quanto-custa-anunciar-no-google-ads-para-negocio-local",
+        "por-que-meu-perfil-do-google-meu-negocio-foi-suspenso",
+        "o-que-e-nap-em-seo-local-e-por-que-ele-define-o-top-3",
+        "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes"
+      ]
+    }
+  ]
+}

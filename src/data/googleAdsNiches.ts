@@ -20,6 +20,209 @@ export interface GoogleAdsNicheConfig {
 }
 
 export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {
+  "climatizacao": {
+    slug: "climatizacao",
+    nome: "Climatização e Ar Condicionado",
+    badge: "Google Ads · Climatização e Ar Condicionado",
+    headline: "Google Ads para Climatização e Ar Condicionado: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "climatização e ar condicionado especialista perto de mim",
+      "climatização e ar condicionado particular orçamento",
+      "melhor climatização e ar condicionado na minha cidade",
+      "serviço de climatização e ar condicionado atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Climatização e Ar Condicionado no Google Ads?",
+        a: "Sim. Quem pesquisa por Climatização e Ar Condicionado no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Climatização e Ar Condicionado e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "direito-familia": {
+    slug: "direito-familia",
+    nome: "Direito de Família",
+    badge: "Google Ads · Direito de Família",
+    headline: "Google Ads para Direito de Família: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "direito de família especialista perto de mim",
+      "direito de família particular orçamento",
+      "melhor direito de família na minha cidade",
+      "serviço de direito de família atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Direito de Família no Google Ads?",
+        a: "Sim. Quem pesquisa por Direito de Família no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Direito de Família e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "direito-trabalhista": {
+    slug: "direito-trabalhista",
+    nome: "Direito Trabalhista",
+    badge: "Google Ads · Direito Trabalhista",
+    headline: "Google Ads para Direito Trabalhista: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "direito trabalhista especialista perto de mim",
+      "direito trabalhista particular orçamento",
+      "melhor direito trabalhista na minha cidade",
+      "serviço de direito trabalhista atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Direito Trabalhista no Google Ads?",
+        a: "Sim. Quem pesquisa por Direito Trabalhista no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Direito Trabalhista e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "direito-previdenciario": {
+    slug: "direito-previdenciario",
+    nome: "Direito Previdenciário",
+    badge: "Google Ads · Direito Previdenciário",
+    headline: "Google Ads para Direito Previdenciário: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "direito previdenciário especialista perto de mim",
+      "direito previdenciário particular orçamento",
+      "melhor direito previdenciário na minha cidade",
+      "serviço de direito previdenciário atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Direito Previdenciário no Google Ads?",
+        a: "Sim. Quem pesquisa por Direito Previdenciário no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Direito Previdenciário e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "oftalmologia": {
+    slug: "oftalmologia",
+    nome: "Oftalmologia",
+    badge: "Google Ads · Oftalmologia",
+    headline: "Google Ads para Oftalmologia: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "oftalmologia especialista perto de mim",
+      "oftalmologia particular orçamento",
+      "melhor oftalmologia na minha cidade",
+      "serviço de oftalmologia atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Oftalmologia no Google Ads?",
+        a: "Sim. Quem pesquisa por Oftalmologia no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Oftalmologia e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "dermatologia": {
+    slug: "dermatologia",
+    nome: "Dermatologia",
+    badge: "Google Ads · Dermatologia",
+    headline: "Google Ads para Dermatologia: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "dermatologia especialista perto de mim",
+      "dermatologia particular orçamento",
+      "melhor dermatologia na minha cidade",
+      "serviço de dermatologia atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Dermatologia no Google Ads?",
+        a: "Sim. Quem pesquisa por Dermatologia no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Dermatologia e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
+  "cirurgia-plastica": {
+    slug: "cirurgia-plastica",
+    nome: "Cirurgia Plástica",
+    badge: "Google Ads · Cirurgia Plástica",
+    headline: "Google Ads para Cirurgia Plástica: Atraia Clientes Qualificados no Fundo de Funil",
+    subheadline: "Campanhas na Rede de Pesquisa e Google Maps estruturadas por intenção imediata, eliminando desperdício e focando em fechamentos diretos no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa + Extensão de Local no Google Maps + Atendimento Consultivo",
+    typicalIntent: "Alta intenção de contratação e busca por profissionais de confiança",
+    bottomFunnelKeywords: [
+      "cirurgia plástica especialista perto de mim",
+      "cirurgia plástica particular orçamento",
+      "melhor cirurgia plástica na minha cidade",
+      "serviço de cirurgia plástica atendimento imediato"
+    ],
+    negativeKeywords: ["grátis", "curso", "vaga", "modelo", "pdf", "barato"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito",
+      "Bloqueio diário de curiosos e palavras-chave de baixa intenção",
+      "Integração do Google Meu Negócio ao anúncio para exibir avaliações em estrelas",
+      "Rastreamento de conversões reais de chamadas e mensagens iniciadas no WhatsApp"
+    ],
+    faqs: [
+      {
+        q: "Vale a pena anunciar Cirurgia Plástica no Google Ads?",
+        a: "Sim. Quem pesquisa por Cirurgia Plástica no Google já tomou a decisão de compra ou contratação e busca quem transmite mais segurança e rapidez de atendimento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo com Cirurgia Plástica e quero estruturar campanhas de Google Ads focadas em conversão no WhatsApp."
+  },
   dentistas: {
     slug: "dentistas",
     nome: "Dentistas e Clínicas Odontológicas",

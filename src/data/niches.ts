@@ -13,6 +13,134 @@ export interface NicheData {
 
 export const NICHES: NicheData[] = [
   {
+    slug: "climatizacao",
+    title: "Google Meu Negócio para Climatização e Ar Condicionado | Leonardo Brasil",
+    description: "Coloque sua empresa de Climatização e Ar Condicionado no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Climatização e Ar Condicionado",
+    h1: "Sua empresa de Climatização e Ar Condicionado fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Climatização e Ar Condicionado no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Climatização e Ar Condicionado",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Climatização e Ar Condicionado e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "energia-solar",
+    title: "Google Meu Negócio para Energia Solar | Leonardo Brasil",
+    description: "Coloque sua empresa de Energia Solar no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Energia Solar",
+    h1: "Sua empresa de Energia Solar fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Energia Solar no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Energia Solar",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Energia Solar e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "direito-familia",
+    title: "Google Meu Negócio para Direito de Família | Leonardo Brasil",
+    description: "Coloque sua empresa de Direito de Família no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Direito de Família",
+    h1: "Sua empresa de Direito de Família fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Direito de Família no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito de Família",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Direito de Família e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "direito-trabalhista",
+    title: "Google Meu Negócio para Direito Trabalhista | Leonardo Brasil",
+    description: "Coloque sua empresa de Direito Trabalhista no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Direito Trabalhista",
+    h1: "Sua empresa de Direito Trabalhista fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Direito Trabalhista no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito Trabalhista",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Direito Trabalhista e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "direito-previdenciario",
+    title: "Google Meu Negócio para Direito Previdenciário | Leonardo Brasil",
+    description: "Coloque sua empresa de Direito Previdenciário no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Direito Previdenciário",
+    h1: "Sua empresa de Direito Previdenciário fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Direito Previdenciário no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito Previdenciário",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Direito Previdenciário e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "oftalmologia",
+    title: "Google Meu Negócio para Oftalmologia | Leonardo Brasil",
+    description: "Coloque sua empresa de Oftalmologia no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Oftalmologia",
+    h1: "Sua empresa de Oftalmologia fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Oftalmologia no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Oftalmologia",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Oftalmologia e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "dermatologia",
+    title: "Google Meu Negócio para Dermatologia | Leonardo Brasil",
+    description: "Coloque sua empresa de Dermatologia no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Dermatologia",
+    h1: "Sua empresa de Dermatologia fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Dermatologia no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Dermatologia",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Dermatologia e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
+    slug: "cirurgia-plastica",
+    title: "Google Meu Negócio para Cirurgia Plástica | Leonardo Brasil",
+    description: "Coloque sua empresa de Cirurgia Plástica no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",
+    badge: "Cirurgia Plástica",
+    h1: "Sua empresa de Cirurgia Plástica fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Quem busca por Cirurgia Plástica no Google Maps tem alta intenção de fechamento. Otimizamos seu Perfil da Empresa no Google para você dominar as primeiras posições locais.",
+    painPoints: [
+      "Perfil no Google Maps mal configurado perdendo clientes para concorrentes vizinhos",
+      "Poucas avaliações e sem respostas estratégicas com termos de SEO local",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Cirurgia Plástica",
+    waMessage: "Olá, Leonardo! Atuo no segmento de Cirurgia Plástica e quero posicionar meu perfil no topo do Google Maps."
+  },
+  {
     slug: "dentistas",
     title: "Google Meu Negócio para Dentistas e Clínicas Odontológicas | Leonardo Brasil",
     description: "Coloque sua clínica odontológica no Top 3 do Google Maps. Atraia pacientes particulares para implantes, próteses e alinhadores na sua cidade.",

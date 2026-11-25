@@ -152,6 +152,14 @@ function generateSitemap() {
 
   // City Hubs das Capitais e Polos Prioritários
   const priorityCities = [
+    "blumenau",
+    "florianopolis",
+    "caxias-do-sul",
+    "maringa",
+    "londrina",
+    "ribeirao-preto",
+    "santos",
+    "campinas",
     "curitiba",
     "joinville",
     "belo-horizonte",

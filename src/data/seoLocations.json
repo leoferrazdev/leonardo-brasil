@@ -27964,6 +27964,34 @@
     {
       "slug": "instalacao-ar-condicionado",
       "nome": "Instalação de Ar-Condicionado"
+    },
+    {
+      "slug": "cirurgia-plastica",
+      "nome": "Cirurgia Plástica"
+    },
+    {
+      "slug": "dermatologia",
+      "nome": "Dermatologia"
+    },
+    {
+      "slug": "oftalmologia",
+      "nome": "Oftalmologia"
+    },
+    {
+      "slug": "direito-previdenciario",
+      "nome": "Direito Previdenciário"
+    },
+    {
+      "slug": "direito-trabalhista",
+      "nome": "Direito Trabalhista"
+    },
+    {
+      "slug": "direito-familia",
+      "nome": "Direito de Família"
+    },
+    {
+      "slug": "climatizacao",
+      "nome": "Climatização e Ar Condicionado"
     }
   ]
 }
