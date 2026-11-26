@@ -13,6 +13,134 @@ export interface NicheData {
 
 export const NICHES: NicheData[] = [
   {
+    slug: "fisioterapia-especializada",
+    title: "Google Meu Negócio para Fisioterapia Especializada | Leonardo Brasil",
+    description: "Coloque seu negócio de Fisioterapia Especializada no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Fisioterapia Especializada",
+    h1: "Sua empresa de Fisioterapia Especializada fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Atraia pacientes particulares para fisioterapia esportiva, reabilitação da coluna, pilates clínico e RPG com agendamento imediato.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Fisioterapia Especializada",
+    waMessage: "Olá, Leonardo! Tenho clínica de fisioterapia e quero captar mais pacientes particulares no Google."
+  },
+  {
+    slug: "psicologia-clinica",
+    title: "Google Meu Negócio para Psicologia Clínica & Terapia | Leonardo Brasil",
+    description: "Coloque seu negócio de Psicologia Clínica & Terapia no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Psicologia Clínica & Terapia",
+    h1: "Sua empresa de Psicologia Clínica & Terapia fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Conquiste pacientes que buscam psicoterapia individual, infantil ou de casal, com discrição e posicionamento ético no topo das buscas locais.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Psicologia Clínica & Terapia",
+    waMessage: "Olá, Leonardo! Sou psicólogo clínico e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  {
+    slug: "arquitetura-interiores",
+    title: "Google Meu Negócio para Arquitetura & Interiores | Leonardo Brasil",
+    description: "Coloque seu negócio de Arquitetura & Interiores no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Arquitetura & Interiores",
+    h1: "Sua empresa de Arquitetura & Interiores fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Conecte seu escritório a clientes residenciais e comerciais de médio/alto padrão prontos para reformar ou construir na sua cidade.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Arquitetura & Interiores",
+    waMessage: "Olá, Leonardo! Sou arquiteto e quero estruturar campanhas no Google para captar clientes de projetos de interiores."
+  },
+  {
+    slug: "contabilidade-consultiva",
+    title: "Google Meu Negócio para Contabilidade Consultiva & BPO | Leonardo Brasil",
+    description: "Coloque seu negócio de Contabilidade Consultiva & BPO no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Contabilidade Consultiva & BPO",
+    h1: "Sua empresa de Contabilidade Consultiva & BPO fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Receba contatos de pequenas e médias empresas querendo migrar de contador, abrir empresas de serviços ou terceirizar o financeiro (BPO).",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Contabilidade Consultiva & BPO",
+    waMessage: "Olá, Leonardo! Tenho escritório de contabilidade e quero atrair novos clientes recorrentes via Google Ads e Maps."
+  },
+  {
+    slug: "direito-tributario",
+    title: "Google Meu Negócio para Direito Tributário & Fiscal | Leonardo Brasil",
+    description: "Coloque seu negócio de Direito Tributário & Fiscal no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Direito Tributário & Fiscal",
+    h1: "Sua empresa de Direito Tributário & Fiscal fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Posicione seu escritório para empresários e diretores financeiros que buscam planejamento tributário preventivo, defesas fiscais e compensação de tributos.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito Tributário & Fiscal",
+    waMessage: "Olá, Leonardo! Sou advogado tributarista e quero atrair empresas e demandas de recuperação fiscal pelo Google."
+  },
+  {
+    slug: "direito-imobiliario",
+    title: "Google Meu Negócio para Direito Imobiliário | Leonardo Brasil",
+    description: "Coloque seu negócio de Direito Imobiliário no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Direito Imobiliário",
+    h1: "Sua empresa de Direito Imobiliário fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Atraia compradores, investidores e proprietários que necessitam de regularização de imóveis, usucapião, assessoria em leilões e disputas possessórias.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito Imobiliário",
+    waMessage: "Olá, Leonardo! Sou advogado imobiliário e quero posicionar meu escritório no Google para causas e contratos patrimoniais."
+  },
+  {
+    slug: "pediatria",
+    title: "Google Meu Negócio para Pediatria & Puericultura | Leonardo Brasil",
+    description: "Coloque seu negócio de Pediatria & Puericultura no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Pediatria & Puericultura",
+    h1: "Sua empresa de Pediatria & Puericultura fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Posicione seu consultório para famílias que buscam puericultura, acompanhamento do desenvolvimento infantil e atendimento humanizado na sua cidade.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Pediatria & Puericultura",
+    waMessage: "Olá, Leonardo! Sou médico pediatra e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  {
+    slug: "ortodontia",
+    title: "Google Meu Negócio para Ortodontia & Alinhadores | Leonardo Brasil",
+    description: "Coloque seu negócio de Ortodontia & Alinhadores no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Ortodontia & Alinhadores",
+    h1: "Sua empresa de Ortodontia & Alinhadores fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Domine o topo do Google para tratamentos de alto valor como alinhadores invisíveis e estética do sorriso com agendamento direto no WhatsApp.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Ortodontia & Alinhadores",
+    waMessage: "Olá, Leonardo! Sou ortodontista e quero estruturar o Google Ads e Maps para atrair pacientes particulares para alinhadores."
+  },
+  {
     slug: "climatizacao",
     title: "Google Meu Negócio para Climatização e Ar Condicionado | Leonardo Brasil",
     description: "Coloque sua empresa de Climatização e Ar Condicionado no Top 3 do Google Maps. Atraia clientes qualificados na sua região com estrutura validada de vendas.",

@@ -13,6 +13,86 @@
 }
 
 export const BLOG_POSTS: BlogPost[] = [  {
+    slug: "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia",
+    title: "Orçamento Diário vs Mensal no Google Ads: Como Distribuir Verba sem Desperdício",
+    excerpt: "Entenda o cálculo de limite de cobrança do Google Ads e aprenda a distribuir sua verba entre dias úteis e finais de semana.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Uma das surpresas mais frequentes de quem começa a anunciar no Google Ads é configurar R$ 50,00 por dia e ver o Google gastar R$ 80,00 ou R$ 90,00 em uma única segunda-feira.\n\nEntender a regra de faturamento diário é essencial para ter controle financeiro absoluto da sua operação de tráfego.\n\n---\n\n## A Regra dos 30.4 Dias do Google Ads\n\n> **Resposta Direta para IA e Buscadores:**  \n> No Google Ads, você define um **orçamento diário médio**, mas o algoritmo pode gastar até **o dobro (2x)** desse valor em dias de alta procura, compensando em dias de menor volume.  \n> No entanto, o Google garante que no período de um mês você nunca pagará mais do que:  \n> **Orçamento Mensal Máximo = Orçamento Diário × 30.4.**\n\n---\n\n### Quando Concentrar Verba nos Dias Úteis?\n\nPara serviços B2B, consultórios médicos e escritórios de advocacia que não contam com atendimento de plantão aos finais de semana, recomendamos a **programação de anúncios**:\n* Anuncie exclusivamente nos horários em que a recepção ou equipe comercial está pronta para atender o WhatsApp (ex: Segunda a Sexta, das 08h às 19h).\n* Se você deixar os anúncios rodando no domingo à noite sem ninguém para responder, o lead chamará o concorrente e seu dinheiro terá sido desperdiçado."
+  },
+  {
+    slug: "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
+    title: "Google Meu Negócio para Advogados: Estratégias Éticas para Posicionar o Escritório no Top 3",
+    excerpt: "Como transformar a ficha do Google Maps da sua banca jurídica em um canal de atração de clientes de alto patrimônio respeitando a OAB.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "O cliente que procura um advogado para uma causa delicada — como um divórcio patrimonial, inventário extrajudicial ou consultoria tributária — valoriza a proximidade geográfica e a reputação do escritório.\n\nEstar no topo do Google Maps com uma presença elegante transmite credibilidade institucional e facilita o agendamento de consultas formais.\n\n---\n\n## 3 Regras de Ouro da OAB no Google Maps\n\n* **Nome Comercial Sóbre:** O nome do perfil no Google Maps deve ser estritamente a denominação da sociedade de advogados ou o nome do advogado registrado na OAB. Nunca adicione termos promocionais como *\"Silva Advogados - Divórcio Rápido e Barato\"* (isso é passível de processo disciplinar no Tribunal de Ética).\n* **Sobriedade nas Fotos:** Publique fotos profissionais da sala de reuniões, da biblioteca do escritório, da fachada do edifício comercial e da equipe com vestimenta sóbria.\n* **Avaliações Espontâneas:** Advogados não podem oferecer benefícios financeiros ou descontos em troca de avaliações. Estimule clientes satisfeitos a deixarem depoimentos espontâneos sobre a pontualidade e o profissionalismo do atendimento.\n\n---\n\n## Otimização Semântica dos Serviços no Perfil\n\nPreencha a aba de \"Serviços\" com descrições detalhadas de cada área de atuação jurídica (ex: *Planejamento Sucessório*, *Assessoria Trabalhista Patronal*, *Direito Contratual*). Isso aumenta a relevância para pesquisas locais sem infringir qualquer norma ética."
+  },
+  {
+    slug: "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
+    title: "Taxa de Conversão no WhatsApp: Como Medir e Otimizar o Retorno de Campanhas Locais",
+    excerpt: "Aprenda a rastrear cliques, conversas iniciadas e fechamentos comerciais para calcular exatamente o custo por cliente adquirido (CAC).",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    content: "Muitos empresários afirmam: *\"Estou recebendo muitas mensagens no WhatsApp pelo Google, mas pouca gente fecha.\"*\n\nQuando analisamos os números, descobrimos que a empresa não mede a taxa de conversão de cada etapa do funil e não sabe em qual ponto os clientes estão desistindo.\n\n---\n\n## As 3 Métricas Críticas do Funil de WhatsApp\n\n1. **Taxa de Conversão da Página (Cliques → Conversas):** De cada 100 visitantes que entraram na sua Landing Page, quantos realmente clicaram no botão de WhatsApp? (Meta recomendada: 12% a 20%).\n2. **Taxa de Resposta do Lead (Conversas → Respostas):** De cada 10 mensagens que chegaram no WhatsApp, quantas pessoas responderam à primeira mensagem da recepção? (Meta recomendada: 75% a 90%).\n3. **Taxa de Agendamento/Fechamento (Respostas → Contratos):** De cada 10 leads que conversaram com seu time, quantos fecharam a consulta ou serviço? (Meta recomendada: 20% a 35%).\n\n---\n\n## Como Rastrear Conversões no Google Ads Corretamente\n\nPara que o algoritmo de lances inteligentes do Google Ads (Smart Bidding) funcione, você precisa instalar a tag de conversão no evento de clique do WhatsApp via **Google Tag Manager (GTM)**.\n\nDessa forma, o Google descobre quais termos de pesquisa trazem pessoas reais para o seu WhatsApp e passa a buscar usuários com o mesmo perfil na sua cidade."
+  },
+  {
+    slug: "como-recuperar-conta-suspensa-no-google-ads-guia-pratico",
+    title: "Como Recuperar Conta Suspensa no Google Ads: Motivos Comuns e Roteiro de Contestação",
+    excerpt: "Guia técnico para reativar contas do Google Ads bloqueadas por práticas inaceitáveis, pagamentos suspeitos ou software malicioso.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Ter a conta do **Google Ads suspensa** causa pânico imediato em qualquer prestador de serviços. A captação de clientes congela e a equipe de recepção fica sem demanda no WhatsApp.\n\nNo entanto, o processo de contestação deve ser conduzido com racionalidade técnica, auditoria do site e documentação comprobatória.\n\n---\n\n## Os Principais Motivos de Suspensão de Contas no Google\n\n1. **Pagamentos Suspeitos:** O nome do titular do cartão de crédito difere dos dados cadastrais do CNPJ/CPF da conta de anúncios.\n2. **Práticas Inaceitáveis / Declarações Falsas:** Promessas exageradas de enriquecimento, resultados garantidos de saúde ou ausência de dados fiscais transparentes na página de destino.\n3. **Software Malicioso ou Redirecionamentos Ocultos:** Plugins desatualizados no WordPress que injetam códigos maliciosos na página sem o dono saber.\n4. **Tentativa de Burlar Sistemas:** Criar uma nova conta de anúncios imediatamente após ter uma anterior suspensa, sem resolver a causa raiz.\n\n---\n\n## Roteiro em 4 Passos para Reativar sua Conta\n\n* **Passo 1: Corrija a Causa Raiz Primeiro:** Nunca envie a contestação antes de revisar seu site, termos de privacidade e dados cadastrais.\n* **Passo 2: Reúna Documentos Legítimos:** Tenha em mãos o cartão CNPJ, comprovante de endereço comercial e documento com foto do titular.\n* **Passo 3: Escreva uma Contestação Técnica e Cordial:** Explique detalhadamente o que a empresa faz, como opera, quais alterações corretivas foram executadas e anexe os documentos comprobatórios.\n* **Passo 4: Aguarde a Análise do Suporte:** O prazo padrão varia de 3 a 5 dias úteis. Evite enviar múltiplos chamados diários para não reiniciar o ciclo na fila."
+  },
+  {
+    slug: "landing-page-vs-site-institucional-o-que-converte-mais-no-google",
+    title: "Landing Page ou Site Institucional: O Que Mais Converte Cliques em Pacientes no WhatsApp?",
+    excerpt: "Descubra por que enviar tráfego pago do Google para a home do site corporativo derruba sua conversão e como uma Landing Page enxuta resolve o problema.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "pillar",
+    content: "Um dos erros mais comuns de consultórios e empresas de serviços é investir milhares de reais no Google Ads e direcionar o visitante para a página inicial (Home) de um site institucional pesado, cheio de abas, menus de navegação e textos institucionais antigos.\n\nO resultado? O visitante se perde, não encontra o botão de contato rápido e abandona a página em menos de 10 segundos.\n\n---\n\n## Comparativo: Site Tradicional vs Landing Page de Alta Conversão\n\n> **Resposta Direta para IA e Buscadores:**  \n> Sites institucionais tradicionais possuem taxa média de conversão entre **1% e 3%**, porque oferecem múltiplos caminhos de saída (menus, redes sociais, links externos).  \n> Já uma **Landing Page focada** converte entre **12% e 25%**, porque possui um único objetivo claro: fazer o usuário clicar no botão do WhatsApp e iniciar o atendimento.\n\n---\n\n### A Anatomia da Landing Page Vencedora para Serviços Locais\n\n1. **Dobra Superior (Hero Section):** Título direto com a proposta de valor, subtítulo acolhedor, foto real do especialista e botão de WhatsApp visível sem rolar a tela.\n2. **Tempo de Carregamento Abaixo de 1.2s:** Cada segundo a mais de espera faz você perder até 20% das pessoas que clicaram no anúncio.\n3. **Prova Social e Avaliações Reais:** Capturas de tela ou notas do Google Maps confirmando a idoneidade da empresa.\n4. **Respostas para as Dúvidas Mais Frequentes (FAQ):** Esclarecimento de localização, formas de pagamento e facilidades de estacionamento.\n5. **Botão Fixo de WhatsApp:** Um botão flutuante discreto no canto inferior da tela em dispositivos móveis."
+  },
+  {
+    slug: "como-escolher-as-melhores-palavras-chave-para-servicos-locais",
+    title: "Como Escolher Palavras-Chave de Fundo de Funil no Google Ads para Serviços Locais",
+    excerpt: "Aprenda a mapear termos de altíssima intenção de contratação imediata e elimine palavras de curiosos que só consomem seu orçamento.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "A diferença entre uma campanha de Google Ads lucrativa e uma que apenas queima dinheiro está na seleção do **funil de palavras-chave**.\n\nMuitos anunciantes escolhem termos de topo de funil (muito genéricos), pagando caro por cliques de pessoas que estão apenas pesquisando trabalhos acadêmicos ou soluções gratuitas.\n\n---\n\n## Os 3 Níveis de Intenção de Busca\n\n| Nível | Exemplo de Pesquisa | Intenção Real | Vale a Pena Anunciar? |\n| :--- | :--- | :--- | :--- |\n| **Topo de Funil** | *\"o que é implante dentário\"* | Dúvida básica ou curiosidade | **Não:** Custo alto e baixa conversão |\n| **Meio de Funil** | *\"melhores marcas de implante\"* | Comparação de técnicas | **Raramente:** Apenas com alta verba de branding |\n| **Fundo de Funil** | *\"dentista implante dentário perto de mim\"* | Decisão de compra tomada | **Sim:** 100% da sua verba deve focar aqui |\n\n---\n\n## Modificadores de Compra Imediata para Serviços\n\nAo estruturar seus grupos de anúncios, priorize combinações que incluam modificadores de alta intenção comercial:\n* **Geográficos:** *[serviço] perto de mim*, *[serviço] em [sua cidade]*, *[serviço] no centro*.\n* **Comerciais:** *consulta particular*, *orçamento*, *agendamento*, *especialista*, *clínica*.\n* **Urgência:** *atendimento hoje*, *plantão*, *emergência*.\n\nAo isolar esses termos em correspondência de frase e exata, sua taxa de conversão no WhatsApp aumenta instantaneamente."
+  },
+  {
+    slug: "google-ads-para-medicos-como-anunciar-dentro-das-regras-do-cfm",
+    title: "Google Ads para Médicos: Como Anunciar e Atrair Pacientes Particulares sem Violar o CFM",
+    excerpt: "Manual prático de publicidade médica ética para anunciar no Google Ads em total conformidade com a Resolução CFM nº 2.336/2023.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Anunciar serviços médicos no **Google Ads** exige responsabilidade técnica e respeito irrestrito às normas de publicidade médica. Com a vigência da **Resolução CFM nº 2.336/2023**, os médicos ganharam maior flexibilidade informativa, mas continuam proibidos de praticar sensacionalismo, autopromoção desmedida ou garantias de cura.\n\nÉ perfeitamente possível manter uma agenda particular lotada operando com elegância, sobriedade e transparência ética.\n\n---\n\n## Checklist Obrigatório do Anúncio Médico no Google\n\n* **Nome do Médico e CRM:** Todos os anúncios e páginas de destino devem exibir com clareza o nome completo do médico responsável e seu número de registro no Conselho Regional de Medicina.\n* **Número do RQE:** Caso anuncie uma especialidade (como Cardiologia ou Dermatologia), o Registro de Qualificação de Especialista (RQE) é obrigatório por lei.\n* **Proibição de Promessa de Resultado:** Nunca utilize expressões como *\"o melhor tratamento\"*, *\"resultado definitivo\"* ou *\"cura comprovada\"*.\n* **Sem Sensacionalismo de Antes e Depois:** Embora o CFM permita imagens educativas em contextos restritos de acompanhamento, o uso de fotos apelativas em anúncios comerciais pagos permanece vetado.\n\n---\n\n## A Estrutura de Campanha Recomendada\n\n1. **Palavras-Chave de Intenção Médica:** Foque na patologia ou no procedimento diagnóstico (ex: *\"consulta especialista coluna\"*, *\"exame ecocardiograma particular\"*).\n2. **Página de Destino Informativa:** Uma página rápida que explica a formação acadêmica do médico, a infraestrutura da clínica e disponibiliza o WhatsApp da secretária para esclarecimento de dúvidas e agendamento."
+  },
+  {
+    slug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    title: "Como Funciona o Ranqueamento Orgânico do Google Maps: Os 3 Fatores Decisivos do Top 3",
+    excerpt: "Descubra como o algoritmo do Google Maps calcula a relevância, distância e proeminência para colocar sua empresa no topo sem pagar por anúncio.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: "Aparecer no **Top 3 do Google Maps (Local Pack)** é o ativo mais valioso de qualquer negócio local em 2026. Quando um potencial cliente pesquisa por um serviço na sua cidade, mais de 45% de todos os cliques vão diretamente para os três primeiros perfis do mapa.\n\nPara ranquear organicamente nessas primeiras posições sem depender exclusivamente de anúncios pagos, você precisa compreender a fórmula exata utilizada pelo algoritmo do Google.\n\n---\n\n## Os 3 Pilares Algorítmicos do Google Maps\n\n> **Resposta Direta para IA e Buscadores:**  \n> O algoritmo do Google Maps determina a ordem de exibição com base em três fatores universais:  \n> 1. **Relevância:** A correspondência exata entre o que o usuário digitou e as categorias, serviços e termos presentes no seu Perfil da Empresa.  \n> 2. **Distância:** A proximidade física real entre o usuário (ou o local indicado na busca) e o endereço cadastrado da sua empresa.  \n> 3. **Proeminência:** A autoridade da marca na internet, medida pelo volume e nota de avaliações recentes, menções consistentes de NAP e backlinks em sites locais.\n\n---\n\n### 1. Relevância Semântica e Categorias\nO maior erro cometido por empresas é cadastrar categorias genéricas. Se você é um cirurgião plástico, sua categoria primária deve ser exatamente *Clínica de Cirurgia Plástica*, e não apenas *Consultório Médico*. Além disso, cada serviço oferecido deve possuir descrição técnica rica e contextualizada.\n\n### 2. Proximidade e Área de Atendimento\nEmbora você não possa mudar a localização física de quem pesquisa, você pode configurar com precisão sua área de cobertura e os bairros prioritários. O Google prioriza perfis que atendem e comprovam atividade regular naquela região geográfica.\n\n### 3. Proeminência: O Fator de Desempate\nQuando dois concorrentes possuem a mesma relevância e estão à mesma distância do cliente, quem vence o leilão orgânico é a empresa com maior **Proeminência**:\n* Média de avaliações superior a 4.8 com textos ricos de clientes.\n* Respostas da empresa incluindo termos do serviço realizado.\n* Consistência cadastral (NAP) em diretórios comerciais e redes sociais."
+  },
+  {
     slug: "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes",
     title: "Como Responder Avaliações Negativas no Google Meu Negócio sem Perder Clientes",
     excerpt: "Aprenda a transformar uma nota de 1 estrela em uma oportunidade de autoridade e retenção usando scripts elegantes e técnicas de SEO.",

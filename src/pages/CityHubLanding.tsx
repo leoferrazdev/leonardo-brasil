@@ -15,6 +15,62 @@ interface CityMeta {
 }
 
 const CITIES_METADATA: Record<string, CityMeta> = {
+  "balneario-camboriu": {
+    name: "Balneário Camboriú",
+    state: "Santa Catarina",
+    uf: "SC",
+    regiao: "no Litoral Norte catarinense e polo de alto padrão",
+    descriptionSnippet: "em Balneário Camboriú e Litoral Norte de Santa Catarina",
+  },
+  "fortaleza": {
+    name: "Fortaleza",
+    state: "Ceará",
+    uf: "CE",
+    regiao: "na capital cearense e polo comercial do Ceará",
+    descriptionSnippet: "em Fortaleza e região metropolitana do Ceará",
+  },
+  "salvador": {
+    name: "Salvador",
+    state: "Bahia",
+    uf: "BA",
+    regiao: "na capital baiana e maior mercado da Bahia",
+    descriptionSnippet: "em Salvador e região metropolitana da Bahia",
+  },
+  "recife": {
+    name: "Recife",
+    state: "Pernambuco",
+    uf: "PE",
+    regiao: "na capital pernambucana e maior polo médico do Nordeste",
+    descriptionSnippet: "em Recife e região metropolitana de Pernambuco",
+  },
+  "niteroi": {
+    name: "Niterói",
+    state: "Rio de Janeiro",
+    uf: "RJ",
+    regiao: "na Baía de Guanabara e polo fluminense de alto padrão",
+    descriptionSnippet: "em Niterói e Região Oceânica do Rio de Janeiro",
+  },
+  "goiania": {
+    name: "Goiânia",
+    state: "Goiás",
+    uf: "GO",
+    regiao: "na capital goiana e coração do Centro-Oeste",
+    descriptionSnippet: "em Goiânia e região metropolitana de Goiás",
+  },
+  "sao-jose-dos-campos": {
+    name: "São José dos Campos",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no Vale do Paraíba e polo de alta tecnologia",
+    descriptionSnippet: "em São José dos Campos e região do Vale do Paraíba",
+  },
+  "sorocaba": {
+    name: "Sorocaba",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no polo industrial do interior paulista",
+    descriptionSnippet: "em Sorocaba e região metropolitana do interior de SP",
+  },
   "curitiba": {
     name: "Curitiba",
     state: "Paraná",

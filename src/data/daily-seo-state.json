@@ -7,7 +7,15 @@
     "direito-trabalhista",
     "direito-familia",
     "energia-solar",
-    "climatizacao"
+    "climatizacao",
+    "ortodontia",
+    "pediatria",
+    "direito-imobiliario",
+    "direito-tributario",
+    "contabilidade-consultiva",
+    "arquitetura-interiores",
+    "psicologia-clinica",
+    "fisioterapia-especializada"
   ],
   "publishedCityHubs": [
     "campinas",
@@ -17,7 +25,15 @@
     "maringa",
     "caxias-do-sul",
     "florianopolis",
-    "blumenau"
+    "blumenau",
+    "sorocaba",
+    "sao-jose-dos-campos",
+    "goiania",
+    "niteroi",
+    "recife",
+    "salvador",
+    "fortaleza",
+    "balneario-camboriu"
   ],
   "publishedBlogSlugs": [
     "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
@@ -27,11 +43,19 @@
     "quanto-custa-anunciar-no-google-ads-para-negocio-local",
     "por-que-meu-perfil-do-google-meu-negocio-foi-suspenso",
     "o-que-e-nap-em-seo-local-e-por-que-ele-define-o-top-3",
-    "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes"
+    "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes",
+    "como-funciona-o-ranqueamento-organico-do-google-maps",
+    "google-ads-para-medicos-como-anunciar-dentro-das-regras-do-cfm",
+    "como-escolher-as-melhores-palavras-chave-para-servicos-locais",
+    "landing-page-vs-site-institucional-o-que-converte-mais-no-google",
+    "como-recuperar-conta-suspensa-no-google-ads-guia-pratico",
+    "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
+    "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
+    "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia"
   ],
   "runs": [
     {
-      "timestamp": "2026-11-25T20:08:30.629Z",
+      "timestamp": "2026-11-25T20:08:31.068Z",
       "batchNiches": [
         "cirurgia-plastica",
         "dermatologia",
@@ -61,6 +85,39 @@
         "por-que-meu-perfil-do-google-meu-negocio-foi-suspenso",
         "o-que-e-nap-em-seo-local-e-por-que-ele-define-o-top-3",
         "como-responder-avaliacoes-negativas-no-google-sem-perder-clientes"
+      ]
+    },
+    {
+      "timestamp": "2026-11-26T13:07:40.188Z",
+      "batchNiches": [
+        "ortodontia",
+        "pediatria",
+        "direito-imobiliario",
+        "direito-tributario",
+        "contabilidade-consultiva",
+        "arquitetura-interiores",
+        "psicologia-clinica",
+        "fisioterapia-especializada"
+      ],
+      "batchCities": [
+        "sorocaba",
+        "sao-jose-dos-campos",
+        "goiania",
+        "niteroi",
+        "recife",
+        "salvador",
+        "fortaleza",
+        "balneario-camboriu"
+      ],
+      "batchBlog": [
+        "como-funciona-o-ranqueamento-organico-do-google-maps",
+        "google-ads-para-medicos-como-anunciar-dentro-das-regras-do-cfm",
+        "como-escolher-as-melhores-palavras-chave-para-servicos-locais",
+        "landing-page-vs-site-institucional-o-que-converte-mais-no-google",
+        "como-recuperar-conta-suspensa-no-google-ads-guia-pratico",
+        "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
+        "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
+        "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia"
       ]
     }
   ]

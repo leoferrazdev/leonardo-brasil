@@ -9,12 +9,17 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const STATE_FILE = path.join(ROOT_DIR, 'src', 'data', 'daily-seo-state.json');
 const NICHES_FILE = path.join(ROOT_DIR, 'src', 'data', 'niches.ts');
 const ADS_NICHES_FILE = path.join(ROOT_DIR, 'src', 'data', 'googleAdsNiches.ts');
+const LOCATIONS_JSON_FILE = path.join(ROOT_DIR, 'src', 'data', 'seoLocations.json');
 const BLOG_FILE = path.join(ROOT_DIR, 'src', 'data', 'blogData.ts');
 const PRERENDER_FILE = path.join(ROOT_DIR, 'scripts', 'prerender.mjs');
 const SITEMAP_FILE = path.join(ROOT_DIR, 'scripts', 'generate-sitemap.mjs');
+const CITY_LANDING_FILE = path.join(ROOT_DIR, 'src', 'pages', 'CityHubLanding.tsx');
 
-// Catálogo Mestre de Nichos para Money Pages (Camada 1)
-const MASTER_NICHES = [
+// ============================================================================
+// Catálogo Mestre de Nichos para Money Pages (Camada 1 - Serviços de Alto Valor)
+// ============================================================================
+export const MASTER_NICHES = [
+  // --- LOTE 1 (Publicado em 25/11/2026) ---
   {
     slug: "cirurgia-plastica",
     nome: "Cirurgiões Plásticos e Clínicas",
@@ -263,23 +268,293 @@ const MASTER_NICHES = [
       }
     ],
     waMessage: "Olá, Leonardo! Tenho empresa de climatização e ar condicionado e quero expandir meus contratos e instalações via Google."
+  },
+
+  // --- LOTE 2 (Publicação em 26/11/2026) ---
+  {
+    slug: "ortodontia",
+    nome: "Ortodontistas e Clínicas Odontológicas",
+    badge: "Ortodontia & Alinhadores",
+    headline: "Google Ads e Google Maps para Ortodontistas: Atraia Pacientes para Alinhadores e Aparelhos",
+    subheadline: "Domine o topo do Google para tratamentos de alto valor como alinhadores invisíveis e estética do sorriso com agendamento direto no WhatsApp.",
+    campaignFocus: "Rede de Pesquisa por alinhadores invisíveis + Google Maps + Triagem no WhatsApp",
+    typicalIntent: "Alta consideração estética e busca por tratamentos ortodônticos modernos",
+    bottomFunnelKeywords: [
+      "ortodontista especialista perto de mim",
+      "alinhador invisível consulta avaliação orçamento",
+      "clínica de ortodontia estética particular",
+      "aparelho ortodôntico transparente especialista",
+      "invisalign consulta ortodontista credenciado"
+    ],
+    negativeKeywords: ["grátis", "manutenção barata", "curso", "faculdade", "sindicato", "tabela sus"],
+    deliverables: [
+      "Segmentação de campanhas por alinhadores invisíveis e estética do sorriso",
+      "Destaque no Google Maps com avaliações de pacientes e fotos da infraestrutura clínica",
+      "Exclusão diária de buscas populares por aparelhos gratuitos ou manutenções a preço de custo",
+      "Rastreamento de conversões reais no WhatsApp da recepção com script de triagem"
+    ],
+    regulatoryNote: "Conforme o Código de Ética Odontológica do CFO: comunicação sóbria, informativa e sem sensacionalismo de antes e depois.",
+    faqs: [
+      {
+        q: "Como o Google Ads atrai pacientes particulares de alinhadores invisíveis?",
+        a: "Posicionamos seu consultório para pesquisas de alta intenção como 'alinhador transparente preço consulta' com anúncios focados em previsibilidade, conforto e tecnologia."
+      },
+      {
+        q: "Como qualificar o lead que busca ortodontia?",
+        a: "Utilizamos termos específicos de marcas e materiais estéticos, excluindo termos populares de aparelhos metálicos convencionais de baixo custo."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou ortodontista e quero estruturar o Google Ads e Maps para atrair pacientes particulares para alinhadores."
+  },
+  {
+    slug: "pediatria",
+    nome: "Pediatras e Clínicas de Pediatria",
+    badge: "Pediatria & Puericultura",
+    headline: "Google Ads e Google Maps para Pediatras: Atraia Famílias para Consultas Particulares",
+    subheadline: "Posicione seu consultório para famílias que buscam puericultura, acompanhamento do desenvolvimento infantil e atendimento humanizado na sua cidade.",
+    campaignFocus: "Pesquisa por pediatra particular + Presença no Top 3 do Google Maps",
+    typicalIntent: "Urgência de saúde infantil ou busca de pediatra de confiança para acompanhamento contínuo",
+    bottomFunnelKeywords: [
+      "pediatra particular perto de mim",
+      "clínica de pediatria consulta particular",
+      "médico pediatra puericultura agendamento",
+      "consulta pediátrica recém nascido especialista",
+      "pediatra humanizado acolhimento particular"
+    ],
+    negativeKeywords: ["sus", "upa infantil", "posto de saúde", "grátis", "estágio"],
+    deliverables: [
+      "Campanhas segmentadas por raio geográfico estrito próximo aos bairros residenciais familiares",
+      "Perfil no Google Maps transmitindo aconchego, segurança e reputação impecável",
+      "Negativação de termos do SUS e emergências públicas",
+      "Botão de WhatsApp integrado para agendamento direto com a secretária"
+    ],
+    regulatoryNote: "Em conformidade com a Resolução CFM nº 2.336/2023: caráter educativo, menção clara de CRM e RQE, sem promessas sensacionalistas.",
+    faqs: [
+      {
+        q: "Como famílias encontram pediatras no Google?",
+        a: "Mães e pais utilizam o Google Maps e a Pesquisa no smartphone buscando 'pediatra particular perto de mim'. O perfil com melhores avaliações e localização clara é o primeiro a ser contatado."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou médico pediatra e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  {
+    slug: "direito-imobiliario",
+    nome: "Advogados Imobiliários e de Regularização",
+    badge: "Direito Imobiliário",
+    headline: "Google Ads e Google Maps para Escritórios de Direito Imobiliário e Contratos",
+    subheadline: "Atraia compradores, investidores e proprietários que necessitam de regularização de imóveis, usucapião, assessoria em leilões e disputas possessórias.",
+    campaignFocus: "Regularização imobiliária + Contratos de compra e venda + Usucapião",
+    typicalIntent: "Segurança jurídica patrimonial em operações financeiras e conflitos de alto valor",
+    bottomFunnelKeywords: [
+      "advogado imobiliário especialista perto de mim",
+      "advogado regularização de imóveis usucapião",
+      "escritório advocacia direito imobiliário consulta",
+      "assessoria jurídica compra e venda imóvel segurança",
+      "advogado para arrematação leilão judicial imobiliário"
+    ],
+    negativeKeywords: ["modelo contrato grátis", "aluguel barato", "defensoria pública", "cohab"],
+    deliverables: [
+      "Segmentação focada em transações e regularizações de patrimônio de médio e alto valor",
+      "Posicionamento no Google Maps como referência jurídica imobiliária local",
+      "Negativação de termos de modelos gratuitos de contratos e dúvidas acadêmicas",
+      "Fluxo de triagem no WhatsApp para entender o caso antes da consulta formal"
+    ],
+    regulatoryNote: "Em conformidade com o Provimento 205/2021 do CFOAB: sobriedade, foco informativo e respeito à dignidade da advocacia.",
+    faqs: [
+      {
+        q: "Como o Google Ads capta clientes de regularização e usucapião?",
+        a: "Anunciamos para quem pesquisa termos de dor jurídica imediata ('como regularizar imóvel sem escritura', 'advogado usucapião'), direcionando para um contato consultivo."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou advogado imobiliário e quero posicionar meu escritório no Google para causas e contratos patrimoniais."
+  },
+  {
+    slug: "direito-tributario",
+    nome: "Advogados Tributaristas e Planejamento Fiscal",
+    badge: "Direito Tributário & Fiscal",
+    headline: "Google Ads e Google Maps para Advocacia Tributária e Recuperação de Créditos",
+    subheadline: "Posicione seu escritório para empresários e diretores financeiros que buscam planejamento tributário preventivo, defesas fiscais e compensação de tributos.",
+    campaignFocus: "Recuperação de créditos tributários + Defesa de execuções fiscais + Planejamento",
+    typicalIntent: "Empresas com passivos ou oportunidades tributárias buscando escritórios de renome",
+    bottomFunnelKeywords: [
+      "advogado tributarista empresarial perto de mim",
+      "escritório de advocacia tributária planejamento fiscal",
+      "defesa de execução fiscal advogado tributário",
+      "recuperação de créditos tributários consultoria jurídica",
+      "advogado especialista em impostos empresas consulta"
+    ],
+    negativeKeywords: ["tabela simples nacional grátis", "como sonegar", "modelo impugnação", "concurso receita"],
+    deliverables: [
+      "Campanhas B2B altamente filtradas para tomadores de decisão (CFOs, CEOs, diretores)",
+      "Anúncios institucionais no Google Maps destacando a sede e a solidez do escritório",
+      "Negativação agressiva de estudantes, pesquisas acadêmicas e microempreendedores individuais",
+      "Integração com WhatsApp institucional para agendamento de reuniões técnicas"
+    ],
+    regulatoryNote: "Conforme Provimento 205/2021 do CFOAB: discrição absoluta e caráter informativo sem mercantilização.",
+    faqs: [
+      {
+        q: "Google Ads funciona para captação tributária B2B?",
+        a: "Sim, porque diretores e sócios de empresas pesquisam no Google no momento em que são notificados pela Receita ou buscam estratégias legais para otimizar a carga tributária."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou advogado tributarista e quero atrair empresas e demandas de recuperação fiscal pelo Google."
+  },
+  {
+    slug: "contabilidade-consultiva",
+    nome: "Escritórios de Contabilidade e BPO Financeiro",
+    badge: "Contabilidade Consultiva & BPO",
+    headline: "Google Ads e Maps para Contabilidades Consultivas e Gestão Financeira",
+    subheadline: "Receba contatos de pequenas e médias empresas querendo migrar de contador, abrir empresas de serviços ou terceirizar o financeiro (BPO).",
+    campaignFocus: "Abertura e migração de empresas + BPO Financeiro + Gestão Contábil Consultiva",
+    typicalIntent: "Troca de contabilidade por falta de suporte ou busca por redução de custos fiscais",
+    bottomFunnelKeywords: [
+      "escritório de contabilidade perto de mim",
+      "trocar de contador empresa de serviços consultoria",
+      "contabilidade consultiva para clínicas e médicos",
+      "terceirização do financeiro bpo empresas orçamento",
+      "abertura de empresa ltda simples nacional contador"
+    ],
+    negativeKeywords: ["mei grátis", "declaração imposto renda gratuita", "estágio contabilidade", "como emitir nota mei"],
+    deliverables: [
+      "Segmentação por nichos de alto valor (médicos, advogados, e-commerces, prestadores de serviços)",
+      "Presença de destaque no Google Maps com avaliações de empresários locais",
+      "Filtro contra pesquisas por MEI gratuito e consultas básicas de IRPF",
+      "WhatsApp comercial preparado com diagnóstico inicial de regime tributário"
+    ],
+    regulatoryNote: "Em conformidade com as diretrizes do CFC para publicidade e integridade contábil.",
+    faqs: [
+      {
+        q: "Como atrair empresas com mensalidades maiores e não apenas MEIs?",
+        a: "Direcionamos os anúncios para buscas corporativas como 'contabilidade para clínicas médicas' ou 'BPO financeiro para empresas', negativando buscas de microempreendedor individual."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho escritório de contabilidade e quero atrair novos clientes recorrentes via Google Ads e Maps."
+  },
+  {
+    slug: "arquitetura-interiores",
+    nome: "Arquitetos e Escritórios de Interiores",
+    badge: "Arquitetura & Interiores",
+    headline: "Google Ads e Google Maps para Escritórios de Arquitetura e Interiores",
+    subheadline: "Conecte seu escritório a clientes residenciais e comerciais de médio/alto padrão prontos para reformar ou construir na sua cidade.",
+    campaignFocus: "Projetos de interiores residenciais de luxo + Projetos comerciais corporativos",
+    typicalIntent: "Busca de portfólio visual, bom gosto arquitetônico e acompanhamento de obras",
+    bottomFunnelKeywords: [
+      "escritório de arquitetura perto de mim",
+      "arquiteto de interiores residencial orçamento",
+      "projeto de arquitetura e reforma apartamento alto padrão",
+      "arquiteto comercial para clínicas e escritórios",
+      "contratar arquiteto para projeto executivo e obra"
+    ],
+    negativeKeywords: ["planta de casa grátis", "curso autocad", "ideias pinterest", "decoração barata diy"],
+    deliverables: [
+      "Campanhas geolocalizadas em condomínios fechados e bairros nobres da cidade",
+      "Google Maps enriquecido com fotos profissionais de projetos finalizados",
+      "Negativação de buscas de tutoriais, faça você mesmo (DIY) e plantas gratuitas",
+      "Link direto para WhatsApp com apresentação do portfólio em alta resolução"
+    ],
+    regulatoryNote: "Conforme o código de ética do CAU/BR sobre autoria e comunicação profissional.",
+    faqs: [
+      {
+        q: "Como atrair clientes que valorizam projeto de arquitetura e não pedem apenas desconto?",
+        a: "Apresentamos a autoridade do arquiteto, a sofisticação das entregas e focamos as palavras-chave em 'projeto executivo', 'arquitetura residencial de alto padrão' e bairros nobres."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou arquiteto e quero estruturar campanhas no Google para captar clientes de projetos de interiores."
+  },
+  {
+    slug: "psicologia-clinica",
+    nome: "Psicólogos e Clínicas de Psicologia",
+    badge: "Psicologia Clínica & Terapia",
+    headline: "Google Ads e Google Maps para Psicólogos: Consultas Particulares Presenciais e Online",
+    subheadline: "Conquiste pacientes que buscam psicoterapia individual, infantil ou de casal, com discrição e posicionamento ético no topo das buscas locais.",
+    campaignFocus: "Psicoterapia particular presencial + Atendimento online especializado",
+    typicalIntent: "Busca de apoio emocional e acolhimento para ansiedade, depressão e relações",
+    bottomFunnelKeywords: [
+      "psicólogo particular perto de mim",
+      "clínica de psicologia consulta particular",
+      "terapia cognitivo comportamental psicólogo especialista",
+      "psicólogo infantil acolhimento avaliação",
+      "consulta com psicólogo presencial agendamento"
+    ],
+    negativeKeywords: ["sus", "terapia gratuita", "faculdade psicologia estágio", "teste psicológico online grátis"],
+    deliverables: [
+      "Segmentação por proximidade para consultório presencial e raio estendido para terapia online",
+      "Google Maps com depoimentos éticos focados na pontualidade e estrutura do consultório",
+      "Negativação de serviços gratuitos e testes de personalidade populares",
+      "WhatsApp com mensagem receptiva e acolhedora para agendamento de sessão de acolhimento"
+    ],
+    regulatoryNote: "Em conformidade com a Resolução CFP nº 011/2018 e Código de Ética: sigilo profissional e sem promessas de cura.",
+    faqs: [
+      {
+        q: "Como o Google Maps ajuda o consultório de psicologia?",
+        a: "Muitos pacientes preferem terapeutas próximos de sua residência ou trabalho. Estar no Top 3 do Google Maps garante autoridade e facilidade de acesso."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou psicólogo clínico e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  {
+    slug: "fisioterapia-especializada",
+    nome: "Clínicas de Fisioterapia e Reabilitação",
+    badge: "Fisioterapia Especializada",
+    headline: "Google Ads e Maps para Clínicas de Fisioterapia, Coluna e Ortopedia",
+    subheadline: "Atraia pacientes particulares para fisioterapia esportiva, reabilitação da coluna, pilates clínico e RPG com agendamento imediato.",
+    campaignFocus: "Reabilitação ortopédica + Fisioterapia da coluna + Pilates clínico",
+    typicalIntent: "Dor crônica ou pós-operatório com alta urgência de alívio e reabilitação",
+    bottomFunnelKeywords: [
+      "clínica de fisioterapia perto de mim",
+      "fisioterapia para coluna tratamento hérnia de disco",
+      "fisioterapeuta ortopédico reabilitação particular",
+      "sessão de pilates clínico com fisioterapeuta",
+      "fisioterapia esportiva recuperação lesão agendamento"
+    ],
+    negativeKeywords: ["sus", "exercício para dor no youtube", "fisioterapia gratuita", "curso massagem"],
+    deliverables: [
+      "Campanhas por patologia (coluna, joelho, ombro, reabilitação desportiva)",
+      "Presença forte no Google Maps com fotos de equipamentos e equipe qualificada",
+      "Filtro contra pesquisas de tutoriais caseiros e tratamentos populares",
+      "WhatsApp com triagem rápida para agendar a primeira avaliação fisioterapêutica"
+    ],
+    regulatoryNote: "Conforme o código de ética do COFFITO: integridade da assistência fisioterapêutica e informação em saúde.",
+    faqs: [
+      {
+        q: "Como atrair pacientes particulares de fisioterapia fora dos convênios?",
+        a: "Posicionamos sua clínica para tratamentos especializados de alta tecnologia e atendimento individualizado, mostrando por que a reabilitação particular entrega resultados mais rápidos."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho clínica de fisioterapia e quero captar mais pacientes particulares no Google."
   }
 ];
 
-// Catálogo de Cidades Prioritárias (Camada 2 - Polos Econômicos)
-const MASTER_CITIES = [
-  { slug: "campinas", name: "Campinas", state: "São Paulo", uf: "SP", regiao: "no maior polo tecnológico do interior paulista" },
-  { slug: "santos", name: "Santos", state: "São Paulo", uf: "SP", regiao: "na Baixada Santista e polo portuário" },
-  { slug: "ribeirao-preto", name: "Ribeirão Preto", state: "São Paulo", uf: "SP", regiao: "na capital do agronegócio e interior de SP" },
-  { slug: "londrina", name: "Londrina", state: "Paraná", uf: "PR", regiao: "no norte do Paraná" },
-  { slug: "maringa", name: "Maringá", state: "Paraná", uf: "PR", regiao: "no noroeste paranaense" },
-  { slug: "caxias-do-sul", name: "Caxias do Sul", state: "Rio Grande do Sul", uf: "RS", regiao: "na Serra Gaúcha e polo metalmecânico" },
-  { slug: "florianopolis", name: "Florianópolis", state: "Santa Catarina", uf: "SC", regiao: "na capital catarinense e polo de inovação" },
-  { slug: "blumenau", name: "Blumenau", state: "Santa Catarina", uf: "SC", regiao: "no Vale do Itajaí e polo econômico de SC" }
+// ============================================================================
+// Catálogo de Cidades Prioritárias (Camada 2 - Polos Econômicos e Capitais)
+// ============================================================================
+export const MASTER_CITIES = [
+  // --- LOTE 1 (Publicado em 25/11/2026) ---
+  { slug: "campinas", name: "Campinas", state: "São Paulo", uf: "SP", regiao: "no maior polo tecnológico do interior paulista", descriptionSnippet: "em Campinas e região metropolitana do interior de SP" },
+  { slug: "santos", name: "Santos", state: "São Paulo", uf: "SP", regiao: "na Baixada Santista e polo portuário", descriptionSnippet: "em Santos e na Baixada Santista" },
+  { slug: "ribeirao-preto", name: "Ribeirão Preto", state: "São Paulo", uf: "SP", regiao: "na capital do agronegócio e interior de SP", descriptionSnippet: "em Ribeirão Preto e no interior paulista" },
+  { slug: "londrina", name: "Londrina", state: "Paraná", uf: "PR", regiao: "no norte do Paraná", descriptionSnippet: "em Londrina e no norte do Paraná" },
+  { slug: "maringa", name: "Maringá", state: "Paraná", uf: "PR", regiao: "no noroeste paranaense", descriptionSnippet: "em Maringá e no noroeste do Paraná" },
+  { slug: "caxias-do-sul", name: "Caxias do Sul", state: "Rio Grande do Sul", uf: "RS", regiao: "na Serra Gaúcha e polo metalmecânico", descriptionSnippet: "em Caxias do Sul e na Serra Gaúcha" },
+  { slug: "florianopolis", name: "Florianópolis", state: "Santa Catarina", uf: "SC", regiao: "na capital catarinense e polo de inovação", descriptionSnippet: "em Florianópolis e região metropolitana de SC" },
+  { slug: "blumenau", name: "Blumenau", state: "Santa Catarina", uf: "SC", regiao: "no Vale do Itajaí e polo econômico de SC", descriptionSnippet: "em Blumenau e no Vale do Itajaí" },
+
+  // --- LOTE 2 (Publicação em 26/11/2026) ---
+  { slug: "sorocaba", name: "Sorocaba", state: "São Paulo", uf: "SP", regiao: "no polo industrial do interior paulista", descriptionSnippet: "em Sorocaba e região metropolitana do interior de SP" },
+  { slug: "sao-jose-dos-campos", name: "São José dos Campos", state: "São Paulo", uf: "SP", regiao: "no Vale do Paraíba e polo de alta tecnologia", descriptionSnippet: "em São José dos Campos e região do Vale do Paraíba" },
+  { slug: "goiania", name: "Goiânia", state: "Goiás", uf: "GO", regiao: "na capital goiana e coração do Centro-Oeste", descriptionSnippet: "em Goiânia e região metropolitana de Goiás" },
+  { slug: "niteroi", name: "Niterói", state: "Rio de Janeiro", uf: "RJ", regiao: "na Baía de Guanabara e polo fluminense de alto padrão", descriptionSnippet: "em Niterói e Região Oceânica do Rio de Janeiro" },
+  { slug: "recife", name: "Recife", state: "Pernambuco", uf: "PE", regiao: "na capital pernambucana e maior polo médico do Nordeste", descriptionSnippet: "em Recife e região metropolitana de Pernambuco" },
+  { slug: "salvador", name: "Salvador", state: "Bahia", uf: "BA", regiao: "na capital baiana e maior mercado da Bahia", descriptionSnippet: "em Salvador e região metropolitana da Bahia" },
+  { slug: "fortaleza", name: "Fortaleza", state: "Ceará", uf: "CE", regiao: "na capital cearense e polo comercial do Ceará", descriptionSnippet: "em Fortaleza e região metropolitana do Ceará" },
+  { slug: "balneario-camboriu", name: "Balneário Camboriú", state: "Santa Catarina", uf: "SC", regiao: "no Litoral Norte catarinense e polo de alto padrão", descriptionSnippet: "em Balneário Camboriú e Litoral Norte de Santa Catarina" }
 ];
 
-// Catálogo de Artigos de Blog (Camada 3 - Alta Intenção Comercial)
-const MASTER_BLOG_POSTS = [
+// ============================================================================
+// Catálogo de Artigos de Blog (Camada 3 - Alta Intenção Comercial e SEO Informativo)
+// ============================================================================
+export const MASTER_BLOG_POSTS = [
+  // --- LOTE 1 (Publicado em 25/11/2026) ---
   {
     slug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
     title: "Leilão do Google Ads para Negócios Locais: Como Pagar Menos por Clique e Vencer Concorrentes",
@@ -558,9 +833,272 @@ Além disso, futuros clientes leem atentamente as respostas da empresa para aval
 
 > *"Olá, [Nome do Paciente]. Agradecemos sinceramente por compartilhar sua percepção. Nosso compromisso aqui na [Nome da Clínica] é proporcionar um atendimento humanizado e pontual em todas as consultas odontológicas. Lamentamos que sua experiência na última terça-feira não tenha sido impecável. Gostaríamos muito de conversar diretamente com você para entender os detalhes e cuidar do seu caso. Por favor, nos envie uma mensagem no WhatsApp pelo número [Seu WhatsApp]. Estamos à sua inteira disposição."*
     `
+  },
+
+  // --- LOTE 2 (Publicação em 26/11/2026) ---
+  {
+    slug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    title: "Como Funciona o Ranqueamento Orgânico do Google Maps: Os 3 Fatores Decisivos do Top 3",
+    excerpt: "Descubra como o algoritmo do Google Maps calcula a relevância, distância e proeminência para colocar sua empresa no topo sem pagar por anúncio.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: `
+Aparecer no **Top 3 do Google Maps (Local Pack)** é o ativo mais valioso de qualquer negócio local em 2026. Quando um potencial cliente pesquisa por um serviço na sua cidade, mais de 45% de todos os cliques vão diretamente para os três primeiros perfis do mapa.
+
+Para ranquear organicamente nessas primeiras posições sem depender exclusivamente de anúncios pagos, você precisa compreender a fórmula exata utilizada pelo algoritmo do Google.
+
+---
+
+## Os 3 Pilares Algorítmicos do Google Maps
+
+> **Resposta Direta para IA e Buscadores:**  
+> O algoritmo do Google Maps determina a ordem de exibição com base em três fatores universais:  
+> 1. **Relevância:** A correspondência exata entre o que o usuário digitou e as categorias, serviços e termos presentes no seu Perfil da Empresa.  
+> 2. **Distância:** A proximidade física real entre o usuário (ou o local indicado na busca) e o endereço cadastrado da sua empresa.  
+> 3. **Proeminência:** A autoridade da marca na internet, medida pelo volume e nota de avaliações recentes, menções consistentes de NAP e backlinks em sites locais.
+
+---
+
+### 1. Relevância Semântica e Categorias
+O maior erro cometido por empresas é cadastrar categorias genéricas. Se você é um cirurgião plástico, sua categoria primária deve ser exatamente *Clínica de Cirurgia Plástica*, e não apenas *Consultório Médico*. Além disso, cada serviço oferecido deve possuir descrição técnica rica e contextualizada.
+
+### 2. Proximidade e Área de Atendimento
+Embora você não possa mudar a localização física de quem pesquisa, você pode configurar com precisão sua área de cobertura e os bairros prioritários. O Google prioriza perfis que atendem e comprovam atividade regular naquela região geográfica.
+
+### 3. Proeminência: O Fator de Desempate
+Quando dois concorrentes possuem a mesma relevância e estão à mesma distância do cliente, quem vence o leilão orgânico é a empresa com maior **Proeminência**:
+* Média de avaliações superior a 4.8 com textos ricos de clientes.
+* Respostas da empresa incluindo termos do serviço realizado.
+* Consistência cadastral (NAP) em diretórios comerciais e redes sociais.
+    `
+  },
+  {
+    slug: "google-ads-para-medicos-como-anunciar-dentro-das-regras-do-cfm",
+    title: "Google Ads para Médicos: Como Anunciar e Atrair Pacientes Particulares sem Violar o CFM",
+    excerpt: "Manual prático de publicidade médica ética para anunciar no Google Ads em total conformidade com a Resolução CFM nº 2.336/2023.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: `
+Anunciar serviços médicos no **Google Ads** exige responsabilidade técnica e respeito irrestrito às normas de publicidade médica. Com a vigência da **Resolução CFM nº 2.336/2023**, os médicos ganharam maior flexibilidade informativa, mas continuam proibidos de praticar sensacionalismo, autopromoção desmedida ou garantias de cura.
+
+É perfeitamente possível manter uma agenda particular lotada operando com elegância, sobriedade e transparência ética.
+
+---
+
+## Checklist Obrigatório do Anúncio Médico no Google
+
+* **Nome do Médico e CRM:** Todos os anúncios e páginas de destino devem exibir com clareza o nome completo do médico responsável e seu número de registro no Conselho Regional de Medicina.
+* **Número do RQE:** Caso anuncie uma especialidade (como Cardiologia ou Dermatologia), o Registro de Qualificação de Especialista (RQE) é obrigatório por lei.
+* **Proibição de Promessa de Resultado:** Nunca utilize expressões como *"o melhor tratamento"*, *"resultado definitivo"* ou *"cura comprovada"*.
+* **Sem Sensacionalismo de Antes e Depois:** Embora o CFM permita imagens educativas em contextos restritos de acompanhamento, o uso de fotos apelativas em anúncios comerciais pagos permanece vetado.
+
+---
+
+## A Estrutura de Campanha Recomendada
+
+1. **Palavras-Chave de Intenção Médica:** Foque na patologia ou no procedimento diagnóstico (ex: *"consulta especialista coluna"*, *"exame ecocardiograma particular"*).
+2. **Página de Destino Informativa:** Uma página rápida que explica a formação acadêmica do médico, a infraestrutura da clínica e disponibiliza o WhatsApp da secretária para esclarecimento de dúvidas e agendamento.
+    `
+  },
+  {
+    slug: "como-escolher-as-melhores-palavras-chave-para-servicos-locais",
+    title: "Como Escolher Palavras-Chave de Fundo de Funil no Google Ads para Serviços Locais",
+    excerpt: "Aprenda a mapear termos de altíssima intenção de contratação imediata e elimine palavras de curiosos que só consomem seu orçamento.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    content: `
+A diferença entre uma campanha de Google Ads lucrativa e uma que apenas queima dinheiro está na seleção do **funil de palavras-chave**.
+
+Muitos anunciantes escolhem termos de topo de funil (muito genéricos), pagando caro por cliques de pessoas que estão apenas pesquisando trabalhos acadêmicos ou soluções gratuitas.
+
+---
+
+## Os 3 Níveis de Intenção de Busca
+
+| Nível | Exemplo de Pesquisa | Intenção Real | Vale a Pena Anunciar? |
+| :--- | :--- | :--- | :--- |
+| **Topo de Funil** | *"o que é implante dentário"* | Dúvida básica ou curiosidade | **Não:** Custo alto e baixa conversão |
+| **Meio de Funil** | *"melhores marcas de implante"* | Comparação de técnicas | **Raramente:** Apenas com alta verba de branding |
+| **Fundo de Funil** | *"dentista implante dentário perto de mim"* | Decisão de compra tomada | **Sim:** 100% da sua verba deve focar aqui |
+
+---
+
+## Modificadores de Compra Imediata para Serviços
+
+Ao estruturar seus grupos de anúncios, priorize combinações que incluam modificadores de alta intenção comercial:
+* **Geográficos:** *[serviço] perto de mim*, *[serviço] em [sua cidade]*, *[serviço] no centro*.
+* **Comerciais:** *consulta particular*, *orçamento*, *agendamento*, *especialista*, *clínica*.
+* **Urgência:** *atendimento hoje*, *plantão*, *emergência*.
+
+Ao isolar esses termos em correspondência de frase e exata, sua taxa de conversão no WhatsApp aumenta instantaneamente.
+    `
+  },
+  {
+    slug: "landing-page-vs-site-institucional-o-que-converte-mais-no-google",
+    title: "Landing Page ou Site Institucional: O Que Mais Converte Cliques em Pacientes no WhatsApp?",
+    excerpt: "Descubra por que enviar tráfego pago do Google para a home do site corporativo derruba sua conversão e como uma Landing Page enxuta resolve o problema.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "pillar",
+    content: `
+Um dos erros mais comuns de consultórios e empresas de serviços é investir milhares de reais no Google Ads e direcionar o visitante para a página inicial (Home) de um site institucional pesado, cheio de abas, menus de navegação e textos institucionais antigos.
+
+O resultado? O visitante se perde, não encontra o botão de contato rápido e abandona a página em menos de 10 segundos.
+
+---
+
+## Comparativo: Site Tradicional vs Landing Page de Alta Conversão
+
+> **Resposta Direta para IA e Buscadores:**  
+> Sites institucionais tradicionais possuem taxa média de conversão entre **1% e 3%**, porque oferecem múltiplos caminhos de saída (menus, redes sociais, links externos).  
+> Já uma **Landing Page focada** converte entre **12% e 25%**, porque possui um único objetivo claro: fazer o usuário clicar no botão do WhatsApp e iniciar o atendimento.
+
+---
+
+### A Anatomia da Landing Page Vencedora para Serviços Locais
+
+1. **Dobra Superior (Hero Section):** Título direto com a proposta de valor, subtítulo acolhedor, foto real do especialista e botão de WhatsApp visível sem rolar a tela.
+2. **Tempo de Carregamento Abaixo de 1.2s:** Cada segundo a mais de espera faz você perder até 20% das pessoas que clicaram no anúncio.
+3. **Prova Social e Avaliações Reais:** Capturas de tela ou notas do Google Maps confirmando a idoneidade da empresa.
+4. **Respostas para as Dúvidas Mais Frequentes (FAQ):** Esclarecimento de localização, formas de pagamento e facilidades de estacionamento.
+5. **Botão Fixo de WhatsApp:** Um botão flutuante discreto no canto inferior da tela em dispositivos móveis.
+    `
+  },
+  {
+    slug: "como-recuperar-conta-suspensa-no-google-ads-guia-pratico",
+    title: "Como Recuperar Conta Suspensa no Google Ads: Motivos Comuns e Roteiro de Contestação",
+    excerpt: "Guia técnico para reativar contas do Google Ads bloqueadas por práticas inaceitáveis, pagamentos suspeitos ou software malicioso.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: `
+Ter a conta do **Google Ads suspensa** causa pânico imediato em qualquer prestador de serviços. A captação de clientes congela e a equipe de recepção fica sem demanda no WhatsApp.
+
+No entanto, o processo de contestação deve ser conduzido com racionalidade técnica, auditoria do site e documentação comprobatória.
+
+---
+
+## Os Principais Motivos de Suspensão de Contas no Google
+
+1. **Pagamentos Suspeitos:** O nome do titular do cartão de crédito difere dos dados cadastrais do CNPJ/CPF da conta de anúncios.
+2. **Práticas Inaceitáveis / Declarações Falsas:** Promessas exageradas de enriquecimento, resultados garantidos de saúde ou ausência de dados fiscais transparentes na página de destino.
+3. **Software Malicioso ou Redirecionamentos Ocultos:** Plugins desatualizados no WordPress que injetam códigos maliciosos na página sem o dono saber.
+4. **Tentativa de Burlar Sistemas:** Criar uma nova conta de anúncios imediatamente após ter uma anterior suspensa, sem resolver a causa raiz.
+
+---
+
+## Roteiro em 4 Passos para Reativar sua Conta
+
+* **Passo 1: Corrija a Causa Raiz Primeiro:** Nunca envie a contestação antes de revisar seu site, termos de privacidade e dados cadastrais.
+* **Passo 2: Reúna Documentos Legítimos:** Tenha em mãos o cartão CNPJ, comprovante de endereço comercial e documento com foto do titular.
+* **Passo 3: Escreva uma Contestação Técnica e Cordial:** Explique detalhadamente o que a empresa faz, como opera, quais alterações corretivas foram executadas e anexe os documentos comprobatórios.
+* **Passo 4: Aguarde a Análise do Suporte:** O prazo padrão varia de 3 a 5 dias úteis. Evite enviar múltiplos chamados diários para não reiniciar o ciclo na fila.
+    `
+  },
+  {
+    slug: "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
+    title: "Taxa de Conversão no WhatsApp: Como Medir e Otimizar o Retorno de Campanhas Locais",
+    excerpt: "Aprenda a rastrear cliques, conversas iniciadas e fechamentos comerciais para calcular exatamente o custo por cliente adquirido (CAC).",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    pillarSlug: "landing-page-vs-site-institucional-o-que-converte-mais-no-google",
+    content: `
+Muitos empresários afirmam: *"Estou recebendo muitas mensagens no WhatsApp pelo Google, mas pouca gente fecha."*
+
+Quando analisamos os números, descobrimos que a empresa não mede a taxa de conversão de cada etapa do funil e não sabe em qual ponto os clientes estão desistindo.
+
+---
+
+## As 3 Métricas Críticas do Funil de WhatsApp
+
+1. **Taxa de Conversão da Página (Cliques → Conversas):** De cada 100 visitantes que entraram na sua Landing Page, quantos realmente clicaram no botão de WhatsApp? (Meta recomendada: 12% a 20%).
+2. **Taxa de Resposta do Lead (Conversas → Respostas):** De cada 10 mensagens que chegaram no WhatsApp, quantas pessoas responderam à primeira mensagem da recepção? (Meta recomendada: 75% a 90%).
+3. **Taxa de Agendamento/Fechamento (Respostas → Contratos):** De cada 10 leads que conversaram com seu time, quantos fecharam a consulta ou serviço? (Meta recomendada: 20% a 35%).
+
+---
+
+## Como Rastrear Conversões no Google Ads Corretamente
+
+Para que o algoritmo de lances inteligentes do Google Ads (Smart Bidding) funcione, você precisa instalar a tag de conversão no evento de clique do WhatsApp via **Google Tag Manager (GTM)**.
+
+Dessa forma, o Google descobre quais termos de pesquisa trazem pessoas reais para o seu WhatsApp e passa a buscar usuários com o mesmo perfil na sua cidade.
+    `
+  },
+  {
+    slug: "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
+    title: "Google Meu Negócio para Advogados: Estratégias Éticas para Posicionar o Escritório no Top 3",
+    excerpt: "Como transformar a ficha do Google Maps da sua banca jurídica em um canal de atração de clientes de alto patrimônio respeitando a OAB.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: `
+O cliente que procura um advogado para uma causa delicada — como um divórcio patrimonial, inventário extrajudicial ou consultoria tributária — valoriza a proximidade geográfica e a reputação do escritório.
+
+Estar no topo do Google Maps com uma presença elegante transmite credibilidade institucional e facilita o agendamento de consultas formais.
+
+---
+
+## 3 Regras de Ouro da OAB no Google Maps
+
+* **Nome Comercial Sóbre:** O nome do perfil no Google Maps deve ser estritamente a denominação da sociedade de advogados ou o nome do advogado registrado na OAB. Nunca adicione termos promocionais como *"Silva Advogados - Divórcio Rápido e Barato"* (isso é passível de processo disciplinar no Tribunal de Ética).
+* **Sobriedade nas Fotos:** Publique fotos profissionais da sala de reuniões, da biblioteca do escritório, da fachada do edifício comercial e da equipe com vestimenta sóbria.
+* **Avaliações Espontâneas:** Advogados não podem oferecer benefícios financeiros ou descontos em troca de avaliações. Estimule clientes satisfeitos a deixarem depoimentos espontâneos sobre a pontualidade e o profissionalismo do atendimento.
+
+---
+
+## Otimização Semântica dos Serviços no Perfil
+
+Preencha a aba de "Serviços" com descrições detalhadas de cada área de atuação jurídica (ex: *Planejamento Sucessório*, *Assessoria Trabalhista Patronal*, *Direito Contratual*). Isso aumenta a relevância para pesquisas locais sem infringir qualquer norma ética.
+    `
+  },
+  {
+    slug: "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia",
+    title: "Orçamento Diário vs Mensal no Google Ads: Como Distribuir Verba sem Desperdício",
+    excerpt: "Entenda o cálculo de limite de cobrança do Google Ads e aprenda a distribuir sua verba entre dias úteis e finais de semana.",
+    date: "2026-11-26",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: `
+Uma das surpresas mais frequentes de quem começa a anunciar no Google Ads é configurar R$ 50,00 por dia e ver o Google gastar R$ 80,00 ou R$ 90,00 em uma única segunda-feira.
+
+Entender a regra de faturamento diário é essencial para ter controle financeiro absoluto da sua operação de tráfego.
+
+---
+
+## A Regra dos 30.4 Dias do Google Ads
+
+> **Resposta Direta para IA e Buscadores:**  
+> No Google Ads, você define um **orçamento diário médio**, mas o algoritmo pode gastar até **o dobro (2x)** desse valor em dias de alta procura, compensando em dias de menor volume.  
+> No entanto, o Google garante que no período de um mês você nunca pagará mais do que:  
+> **Orçamento Mensal Máximo = Orçamento Diário × 30.4.**
+
+---
+
+### Quando Concentrar Verba nos Dias Úteis?
+
+Para serviços B2B, consultórios médicos e escritórios de advocacia que não contam com atendimento de plantão aos finais de semana, recomendamos a **programação de anúncios**:
+* Anuncie exclusivamente nos horários em que a recepção ou equipe comercial está pronta para atender o WhatsApp (ex: Segunda a Sexta, das 08h às 19h).
+* Se você deixar os anúncios rodando no domingo à noite sem ninguém para responder, o lead chamará o concorrente e seu dinheiro terá sido desperdiçado.
+    `
   }
 ];
 
+// ============================================================================
+// Motor Principal de Execução Diária
+// ============================================================================
 export async function runDailyEngine() {
   console.log('🚀 Iniciando Motor Diário de SEO do Leonardo Brasil...');
 
@@ -588,8 +1126,13 @@ export async function runDailyEngine() {
 
   console.log(`📦 Lote selecionado: ${batchNiches.length} Money Pages, ${batchCities.length} City Hubs, ${batchBlog.length} Blog Posts`);
 
+  if (batchNiches.length === 0 && batchCities.length === 0 && batchBlog.length === 0) {
+    console.log('ℹ️ Nenhuma nova página pendente para publicação no catálogo.');
+    return { batchNiches: [], batchCities: [], batchBlog: [] };
+  }
+
   // 5. Injetar novos Artigos de Blog em src/data/blogData.ts
-  if (batchBlog.length > 0) {
+  if (batchBlog.length > 0 && fs.existsSync(BLOG_FILE)) {
     let blogContent = fs.readFileSync(BLOG_FILE, 'utf8');
     for (const post of batchBlog) {
       if (!blogContent.includes(`"${post.slug}"`)) {
@@ -605,7 +1148,74 @@ export async function runDailyEngine() {
     console.log(`✅ Injetados ${batchBlog.length} novos artigos em blogData.ts`);
   }
 
-  // 6. Atualizar Cidades em prerender.mjs e generate-sitemap.mjs
+  // 6. Injetar novos Nichos em src/data/niches.ts
+  if (batchNiches.length > 0 && fs.existsSync(NICHES_FILE)) {
+    let nichesContent = fs.readFileSync(NICHES_FILE, 'utf8');
+    for (const niche of batchNiches) {
+      if (!nichesContent.includes(`"${niche.slug}"`)) {
+        const nicheObjCode = `  {\n    slug: ${JSON.stringify(niche.slug)},\n    title: ${JSON.stringify(`Google Meu Negócio para ${niche.badge || niche.nome} | Leonardo Brasil`)},\n    description: ${JSON.stringify(`Coloque seu negócio de ${niche.badge || niche.nome} no Top 3 do Google Maps. Atraia clientes qualificados na sua região.`)},\n    badge: ${JSON.stringify(niche.badge || niche.nome)},\n    h1: ${JSON.stringify(`Sua empresa de ${niche.badge || niche.nome} fora do Top 3 do Google Maps? Crie uma `)},\n    h1Highlight: "máquina de clientes qualificados no Google.",\n    subheadline: ${JSON.stringify(niche.subheadline)},\n    painPoints: [\n      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",\n      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",\n      "Falta de previsibilidade na captação de clientes e serviços de alto valor"\n    ],\n    ctaText: ${JSON.stringify(`Diagnóstico de Google Meu Negócio para ${niche.badge || niche.nome}`)},\n    waMessage: ${JSON.stringify(niche.waMessage)}\n  },\n`;
+        const insertIdx = nichesContent.indexOf('export const NICHES: NicheData[] = [');
+        if (insertIdx !== -1) {
+          const afterArrStart = insertIdx + 'export const NICHES: NicheData[] = [\n'.length;
+          nichesContent = nichesContent.slice(0, afterArrStart) + nicheObjCode + nichesContent.slice(afterArrStart);
+        }
+      }
+    }
+    fs.writeFileSync(NICHES_FILE, nichesContent, 'utf8');
+    console.log(`✅ Injetados ${batchNiches.length} novos nichos em niches.ts`);
+  }
+
+  // 7. Injetar novos Nichos em src/data/googleAdsNiches.ts
+  if (batchNiches.length > 0 && fs.existsSync(ADS_NICHES_FILE)) {
+    let adsContent = fs.readFileSync(ADS_NICHES_FILE, 'utf8');
+    for (const niche of batchNiches) {
+      if (!adsContent.includes(`"${niche.slug}":`)) {
+        const adsObj = {
+          slug: niche.slug,
+          nome: niche.nome,
+          badge: `Google Ads · ${niche.badge || niche.nome}`,
+          headline: niche.headline,
+          subheadline: niche.subheadline,
+          campaignFocus: niche.campaignFocus,
+          typicalIntent: niche.typicalIntent,
+          bottomFunnelKeywords: niche.bottomFunnelKeywords,
+          negativeKeywords: niche.negativeKeywords,
+          deliverables: niche.deliverables,
+          regulatoryNote: niche.regulatoryNote,
+          faqs: niche.faqs,
+          waMessage: niche.waMessage
+        };
+        const adsObjCode = `  "${niche.slug}": ${JSON.stringify(adsObj, null, 2).replace(/\n/g, '\n  ')},\n`;
+        const insertIdx = adsContent.indexOf('export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {');
+        if (insertIdx !== -1) {
+          const afterObjStart = insertIdx + 'export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {\n'.length;
+          adsContent = adsContent.slice(0, afterObjStart) + adsObjCode + adsContent.slice(afterObjStart);
+        }
+      }
+    }
+    fs.writeFileSync(ADS_NICHES_FILE, adsContent, 'utf8');
+    console.log(`✅ Injetados ${batchNiches.length} novos nichos em googleAdsNiches.ts`);
+  }
+
+  // 8. Injetar novos Nichos em src/data/seoLocations.json
+  if (batchNiches.length > 0 && fs.existsSync(LOCATIONS_JSON_FILE)) {
+    const locationsRaw = fs.readFileSync(LOCATIONS_JSON_FILE, 'utf8');
+    const locationsData = JSON.parse(locationsRaw);
+    if (Array.isArray(locationsData.NICHES)) {
+      for (const niche of batchNiches) {
+        if (!locationsData.NICHES.some(n => n.slug === niche.slug)) {
+          locationsData.NICHES.push({
+            slug: niche.slug,
+            nome: niche.badge || niche.nome
+          });
+        }
+      }
+      fs.writeFileSync(LOCATIONS_JSON_FILE, JSON.stringify(locationsData, null, 2), 'utf8');
+      console.log(`✅ Injetados ${batchNiches.length} novos nichos em seoLocations.json`);
+    }
+  }
+
+  // 9. Atualizar Cidades em prerender.mjs e generate-sitemap.mjs
   if (batchCities.length > 0) {
     for (const file of [PRERENDER_FILE, SITEMAP_FILE]) {
       if (fs.existsSync(file)) {
@@ -621,7 +1231,24 @@ export async function runDailyEngine() {
     console.log(`✅ Registradas ${batchCities.length} novas cidades nos pipelines de SSR e Sitemap`);
   }
 
-  // 7. Atualizar Estado
+  // 10. Injetar Metadados de Cidades em CityHubLanding.tsx
+  if (batchCities.length > 0 && fs.existsSync(CITY_LANDING_FILE)) {
+    let cityLandingContent = fs.readFileSync(CITY_LANDING_FILE, 'utf8');
+    for (const city of batchCities) {
+      if (!cityLandingContent.includes(`"${city.slug}":`)) {
+        const cityMetaCode = `  "${city.slug}": {\n    name: ${JSON.stringify(city.name)},\n    state: ${JSON.stringify(city.state)},\n    uf: ${JSON.stringify(city.uf)},\n    regiao: ${JSON.stringify(city.regiao)},\n    descriptionSnippet: ${JSON.stringify(city.descriptionSnippet || `em ${city.name} - ${city.uf}`)},\n  },\n`;
+        const insertIdx = cityLandingContent.indexOf('const CITIES_METADATA: Record<string, CityMeta> = {');
+        if (insertIdx !== -1) {
+          const afterObjStart = insertIdx + 'const CITIES_METADATA: Record<string, CityMeta> = {\n'.length;
+          cityLandingContent = cityLandingContent.slice(0, afterObjStart) + cityMetaCode + cityLandingContent.slice(afterObjStart);
+        }
+      }
+    }
+    fs.writeFileSync(CITY_LANDING_FILE, cityLandingContent, 'utf8');
+    console.log(`✅ Injetados metadados de ${batchCities.length} cidades em CityHubLanding.tsx`);
+  }
+
+  // 11. Atualizar Estado
   state.publishedMoneyPages.push(...batchNiches.map(n => n.slug));
   state.publishedCityHubs.push(...batchCities.map(c => c.slug));
   state.publishedBlogSlugs.push(...batchBlog.map(b => b.slug));

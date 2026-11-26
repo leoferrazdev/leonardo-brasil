@@ -103,6 +103,14 @@ function buildRoutes() {
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   const priorityCities = [
+    "balneario-camboriu",
+    "fortaleza",
+    "salvador",
+    "recife",
+    "niteroi",
+    "goiania",
+    "sao-jose-dos-campos",
+    "sorocaba",
     "blumenau",
     "florianopolis",
     "caxias-do-sul",

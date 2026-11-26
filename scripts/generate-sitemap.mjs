@@ -152,6 +152,14 @@ function generateSitemap() {
 
   // City Hubs das Capitais e Polos Prioritários
   const priorityCities = [
+    "balneario-camboriu",
+    "fortaleza",
+    "salvador",
+    "recife",
+    "niteroi",
+    "goiania",
+    "sao-jose-dos-campos",
+    "sorocaba",
     "blumenau",
     "florianopolis",
     "caxias-do-sul",

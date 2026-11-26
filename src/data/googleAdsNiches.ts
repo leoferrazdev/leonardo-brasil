@@ -20,6 +20,301 @@ export interface GoogleAdsNicheConfig {
 }
 
 export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {
+  "fisioterapia-especializada": {
+    "slug": "fisioterapia-especializada",
+    "nome": "Clínicas de Fisioterapia e Reabilitação",
+    "badge": "Google Ads · Fisioterapia Especializada",
+    "headline": "Google Ads e Maps para Clínicas de Fisioterapia, Coluna e Ortopedia",
+    "subheadline": "Atraia pacientes particulares para fisioterapia esportiva, reabilitação da coluna, pilates clínico e RPG com agendamento imediato.",
+    "campaignFocus": "Reabilitação ortopédica + Fisioterapia da coluna + Pilates clínico",
+    "typicalIntent": "Dor crônica ou pós-operatório com alta urgência de alívio e reabilitação",
+    "bottomFunnelKeywords": [
+      "clínica de fisioterapia perto de mim",
+      "fisioterapia para coluna tratamento hérnia de disco",
+      "fisioterapeuta ortopédico reabilitação particular",
+      "sessão de pilates clínico com fisioterapeuta",
+      "fisioterapia esportiva recuperação lesão agendamento"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "exercício para dor no youtube",
+      "fisioterapia gratuita",
+      "curso massagem"
+    ],
+    "deliverables": [
+      "Campanhas por patologia (coluna, joelho, ombro, reabilitação desportiva)",
+      "Presença forte no Google Maps com fotos de equipamentos e equipe qualificada",
+      "Filtro contra pesquisas de tutoriais caseiros e tratamentos populares",
+      "WhatsApp com triagem rápida para agendar a primeira avaliação fisioterapêutica"
+    ],
+    "regulatoryNote": "Conforme o código de ética do COFFITO: integridade da assistência fisioterapêutica e informação em saúde.",
+    "faqs": [
+      {
+        "q": "Como atrair pacientes particulares de fisioterapia fora dos convênios?",
+        "a": "Posicionamos sua clínica para tratamentos especializados de alta tecnologia e atendimento individualizado, mostrando por que a reabilitação particular entrega resultados mais rápidos."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho clínica de fisioterapia e quero captar mais pacientes particulares no Google."
+  },
+  "psicologia-clinica": {
+    "slug": "psicologia-clinica",
+    "nome": "Psicólogos e Clínicas de Psicologia",
+    "badge": "Google Ads · Psicologia Clínica & Terapia",
+    "headline": "Google Ads e Google Maps para Psicólogos: Consultas Particulares Presenciais e Online",
+    "subheadline": "Conquiste pacientes que buscam psicoterapia individual, infantil ou de casal, com discrição e posicionamento ético no topo das buscas locais.",
+    "campaignFocus": "Psicoterapia particular presencial + Atendimento online especializado",
+    "typicalIntent": "Busca de apoio emocional e acolhimento para ansiedade, depressão e relações",
+    "bottomFunnelKeywords": [
+      "psicólogo particular perto de mim",
+      "clínica de psicologia consulta particular",
+      "terapia cognitivo comportamental psicólogo especialista",
+      "psicólogo infantil acolhimento avaliação",
+      "consulta com psicólogo presencial agendamento"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "terapia gratuita",
+      "faculdade psicologia estágio",
+      "teste psicológico online grátis"
+    ],
+    "deliverables": [
+      "Segmentação por proximidade para consultório presencial e raio estendido para terapia online",
+      "Google Maps com depoimentos éticos focados na pontualidade e estrutura do consultório",
+      "Negativação de serviços gratuitos e testes de personalidade populares",
+      "WhatsApp com mensagem receptiva e acolhedora para agendamento de sessão de acolhimento"
+    ],
+    "regulatoryNote": "Em conformidade com a Resolução CFP nº 011/2018 e Código de Ética: sigilo profissional e sem promessas de cura.",
+    "faqs": [
+      {
+        "q": "Como o Google Maps ajuda o consultório de psicologia?",
+        "a": "Muitos pacientes preferem terapeutas próximos de sua residência ou trabalho. Estar no Top 3 do Google Maps garante autoridade e facilidade de acesso."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou psicólogo clínico e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  "arquitetura-interiores": {
+    "slug": "arquitetura-interiores",
+    "nome": "Arquitetos e Escritórios de Interiores",
+    "badge": "Google Ads · Arquitetura & Interiores",
+    "headline": "Google Ads e Google Maps para Escritórios de Arquitetura e Interiores",
+    "subheadline": "Conecte seu escritório a clientes residenciais e comerciais de médio/alto padrão prontos para reformar ou construir na sua cidade.",
+    "campaignFocus": "Projetos de interiores residenciais de luxo + Projetos comerciais corporativos",
+    "typicalIntent": "Busca de portfólio visual, bom gosto arquitetônico e acompanhamento de obras",
+    "bottomFunnelKeywords": [
+      "escritório de arquitetura perto de mim",
+      "arquiteto de interiores residencial orçamento",
+      "projeto de arquitetura e reforma apartamento alto padrão",
+      "arquiteto comercial para clínicas e escritórios",
+      "contratar arquiteto para projeto executivo e obra"
+    ],
+    "negativeKeywords": [
+      "planta de casa grátis",
+      "curso autocad",
+      "ideias pinterest",
+      "decoração barata diy"
+    ],
+    "deliverables": [
+      "Campanhas geolocalizadas em condomínios fechados e bairros nobres da cidade",
+      "Google Maps enriquecido com fotos profissionais de projetos finalizados",
+      "Negativação de buscas de tutoriais, faça você mesmo (DIY) e plantas gratuitas",
+      "Link direto para WhatsApp com apresentação do portfólio em alta resolução"
+    ],
+    "regulatoryNote": "Conforme o código de ética do CAU/BR sobre autoria e comunicação profissional.",
+    "faqs": [
+      {
+        "q": "Como atrair clientes que valorizam projeto de arquitetura e não pedem apenas desconto?",
+        "a": "Apresentamos a autoridade do arquiteto, a sofisticação das entregas e focamos as palavras-chave em 'projeto executivo', 'arquitetura residencial de alto padrão' e bairros nobres."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou arquiteto e quero estruturar campanhas no Google para captar clientes de projetos de interiores."
+  },
+  "contabilidade-consultiva": {
+    "slug": "contabilidade-consultiva",
+    "nome": "Escritórios de Contabilidade e BPO Financeiro",
+    "badge": "Google Ads · Contabilidade Consultiva & BPO",
+    "headline": "Google Ads e Maps para Contabilidades Consultivas e Gestão Financeira",
+    "subheadline": "Receba contatos de pequenas e médias empresas querendo migrar de contador, abrir empresas de serviços ou terceirizar o financeiro (BPO).",
+    "campaignFocus": "Abertura e migração de empresas + BPO Financeiro + Gestão Contábil Consultiva",
+    "typicalIntent": "Troca de contabilidade por falta de suporte ou busca por redução de custos fiscais",
+    "bottomFunnelKeywords": [
+      "escritório de contabilidade perto de mim",
+      "trocar de contador empresa de serviços consultoria",
+      "contabilidade consultiva para clínicas e médicos",
+      "terceirização do financeiro bpo empresas orçamento",
+      "abertura de empresa ltda simples nacional contador"
+    ],
+    "negativeKeywords": [
+      "mei grátis",
+      "declaração imposto renda gratuita",
+      "estágio contabilidade",
+      "como emitir nota mei"
+    ],
+    "deliverables": [
+      "Segmentação por nichos de alto valor (médicos, advogados, e-commerces, prestadores de serviços)",
+      "Presença de destaque no Google Maps com avaliações de empresários locais",
+      "Filtro contra pesquisas por MEI gratuito e consultas básicas de IRPF",
+      "WhatsApp comercial preparado com diagnóstico inicial de regime tributário"
+    ],
+    "regulatoryNote": "Em conformidade com as diretrizes do CFC para publicidade e integridade contábil.",
+    "faqs": [
+      {
+        "q": "Como atrair empresas com mensalidades maiores e não apenas MEIs?",
+        "a": "Direcionamos os anúncios para buscas corporativas como 'contabilidade para clínicas médicas' ou 'BPO financeiro para empresas', negativando buscas de microempreendedor individual."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho escritório de contabilidade e quero atrair novos clientes recorrentes via Google Ads e Maps."
+  },
+  "direito-tributario": {
+    "slug": "direito-tributario",
+    "nome": "Advogados Tributaristas e Planejamento Fiscal",
+    "badge": "Google Ads · Direito Tributário & Fiscal",
+    "headline": "Google Ads e Google Maps para Advocacia Tributária e Recuperação de Créditos",
+    "subheadline": "Posicione seu escritório para empresários e diretores financeiros que buscam planejamento tributário preventivo, defesas fiscais e compensação de tributos.",
+    "campaignFocus": "Recuperação de créditos tributários + Defesa de execuções fiscais + Planejamento",
+    "typicalIntent": "Empresas com passivos ou oportunidades tributárias buscando escritórios de renome",
+    "bottomFunnelKeywords": [
+      "advogado tributarista empresarial perto de mim",
+      "escritório de advocacia tributária planejamento fiscal",
+      "defesa de execução fiscal advogado tributário",
+      "recuperação de créditos tributários consultoria jurídica",
+      "advogado especialista em impostos empresas consulta"
+    ],
+    "negativeKeywords": [
+      "tabela simples nacional grátis",
+      "como sonegar",
+      "modelo impugnação",
+      "concurso receita"
+    ],
+    "deliverables": [
+      "Campanhas B2B altamente filtradas para tomadores de decisão (CFOs, CEOs, diretores)",
+      "Anúncios institucionais no Google Maps destacando a sede e a solidez do escritório",
+      "Negativação agressiva de estudantes, pesquisas acadêmicas e microempreendedores individuais",
+      "Integração com WhatsApp institucional para agendamento de reuniões técnicas"
+    ],
+    "regulatoryNote": "Conforme Provimento 205/2021 do CFOAB: discrição absoluta e caráter informativo sem mercantilização.",
+    "faqs": [
+      {
+        "q": "Google Ads funciona para captação tributária B2B?",
+        "a": "Sim, porque diretores e sócios de empresas pesquisam no Google no momento em que são notificados pela Receita ou buscam estratégias legais para otimizar a carga tributária."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou advogado tributarista e quero atrair empresas e demandas de recuperação fiscal pelo Google."
+  },
+  "direito-imobiliario": {
+    "slug": "direito-imobiliario",
+    "nome": "Advogados Imobiliários e de Regularização",
+    "badge": "Google Ads · Direito Imobiliário",
+    "headline": "Google Ads e Google Maps para Escritórios de Direito Imobiliário e Contratos",
+    "subheadline": "Atraia compradores, investidores e proprietários que necessitam de regularização de imóveis, usucapião, assessoria em leilões e disputas possessórias.",
+    "campaignFocus": "Regularização imobiliária + Contratos de compra e venda + Usucapião",
+    "typicalIntent": "Segurança jurídica patrimonial em operações financeiras e conflitos de alto valor",
+    "bottomFunnelKeywords": [
+      "advogado imobiliário especialista perto de mim",
+      "advogado regularização de imóveis usucapião",
+      "escritório advocacia direito imobiliário consulta",
+      "assessoria jurídica compra e venda imóvel segurança",
+      "advogado para arrematação leilão judicial imobiliário"
+    ],
+    "negativeKeywords": [
+      "modelo contrato grátis",
+      "aluguel barato",
+      "defensoria pública",
+      "cohab"
+    ],
+    "deliverables": [
+      "Segmentação focada em transações e regularizações de patrimônio de médio e alto valor",
+      "Posicionamento no Google Maps como referência jurídica imobiliária local",
+      "Negativação de termos de modelos gratuitos de contratos e dúvidas acadêmicas",
+      "Fluxo de triagem no WhatsApp para entender o caso antes da consulta formal"
+    ],
+    "regulatoryNote": "Em conformidade com o Provimento 205/2021 do CFOAB: sobriedade, foco informativo e respeito à dignidade da advocacia.",
+    "faqs": [
+      {
+        "q": "Como o Google Ads capta clientes de regularização e usucapião?",
+        "a": "Anunciamos para quem pesquisa termos de dor jurídica imediata ('como regularizar imóvel sem escritura', 'advogado usucapião'), direcionando para um contato consultivo."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou advogado imobiliário e quero posicionar meu escritório no Google para causas e contratos patrimoniais."
+  },
+  "pediatria": {
+    "slug": "pediatria",
+    "nome": "Pediatras e Clínicas de Pediatria",
+    "badge": "Google Ads · Pediatria & Puericultura",
+    "headline": "Google Ads e Google Maps para Pediatras: Atraia Famílias para Consultas Particulares",
+    "subheadline": "Posicione seu consultório para famílias que buscam puericultura, acompanhamento do desenvolvimento infantil e atendimento humanizado na sua cidade.",
+    "campaignFocus": "Pesquisa por pediatra particular + Presença no Top 3 do Google Maps",
+    "typicalIntent": "Urgência de saúde infantil ou busca de pediatra de confiança para acompanhamento contínuo",
+    "bottomFunnelKeywords": [
+      "pediatra particular perto de mim",
+      "clínica de pediatria consulta particular",
+      "médico pediatra puericultura agendamento",
+      "consulta pediátrica recém nascido especialista",
+      "pediatra humanizado acolhimento particular"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "upa infantil",
+      "posto de saúde",
+      "grátis",
+      "estágio"
+    ],
+    "deliverables": [
+      "Campanhas segmentadas por raio geográfico estrito próximo aos bairros residenciais familiares",
+      "Perfil no Google Maps transmitindo aconchego, segurança e reputação impecável",
+      "Negativação de termos do SUS e emergências públicas",
+      "Botão de WhatsApp integrado para agendamento direto com a secretária"
+    ],
+    "regulatoryNote": "Em conformidade com a Resolução CFM nº 2.336/2023: caráter educativo, menção clara de CRM e RQE, sem promessas sensacionalistas.",
+    "faqs": [
+      {
+        "q": "Como famílias encontram pediatras no Google?",
+        "a": "Mães e pais utilizam o Google Maps e a Pesquisa no smartphone buscando 'pediatra particular perto de mim'. O perfil com melhores avaliações e localização clara é o primeiro a ser contatado."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou médico pediatra e quero posicionar meu consultório no Google para consultas particulares."
+  },
+  "ortodontia": {
+    "slug": "ortodontia",
+    "nome": "Ortodontistas e Clínicas Odontológicas",
+    "badge": "Google Ads · Ortodontia & Alinhadores",
+    "headline": "Google Ads e Google Maps para Ortodontistas: Atraia Pacientes para Alinhadores e Aparelhos",
+    "subheadline": "Domine o topo do Google para tratamentos de alto valor como alinhadores invisíveis e estética do sorriso com agendamento direto no WhatsApp.",
+    "campaignFocus": "Rede de Pesquisa por alinhadores invisíveis + Google Maps + Triagem no WhatsApp",
+    "typicalIntent": "Alta consideração estética e busca por tratamentos ortodônticos modernos",
+    "bottomFunnelKeywords": [
+      "ortodontista especialista perto de mim",
+      "alinhador invisível consulta avaliação orçamento",
+      "clínica de ortodontia estética particular",
+      "aparelho ortodôntico transparente especialista",
+      "invisalign consulta ortodontista credenciado"
+    ],
+    "negativeKeywords": [
+      "grátis",
+      "manutenção barata",
+      "curso",
+      "faculdade",
+      "sindicato",
+      "tabela sus"
+    ],
+    "deliverables": [
+      "Segmentação de campanhas por alinhadores invisíveis e estética do sorriso",
+      "Destaque no Google Maps com avaliações de pacientes e fotos da infraestrutura clínica",
+      "Exclusão diária de buscas populares por aparelhos gratuitos ou manutenções a preço de custo",
+      "Rastreamento de conversões reais no WhatsApp da recepção com script de triagem"
+    ],
+    "regulatoryNote": "Conforme o Código de Ética Odontológica do CFO: comunicação sóbria, informativa e sem sensacionalismo de antes e depois.",
+    "faqs": [
+      {
+        "q": "Como o Google Ads atrai pacientes particulares de alinhadores invisíveis?",
+        "a": "Posicionamos seu consultório para pesquisas de alta intenção como 'alinhador transparente preço consulta' com anúncios focados em previsibilidade, conforto e tecnologia."
+      },
+      {
+        "q": "Como qualificar o lead que busca ortodontia?",
+        "a": "Utilizamos termos específicos de marcas e materiais estéticos, excluindo termos populares de aparelhos metálicos convencionais de baixo custo."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou ortodontista e quero estruturar o Google Ads e Maps para atrair pacientes particulares para alinhadores."
+  },
   "climatizacao": {
     slug: "climatizacao",
     nome: "Climatização e Ar Condicionado",
