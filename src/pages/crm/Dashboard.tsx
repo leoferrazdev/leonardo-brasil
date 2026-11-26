@@ -204,7 +204,12 @@ export default function CrmDashboard() {
     if (!currentLead || currentLead.stage === newStage) return;
 
     setLeads((prev) =>
-      prev.map((l) => (l.id === leadId ? { ...l, stage: newStage } : l))
+      prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = newStage === 'contatado' ? (l.contactedAt || nowIso) : newStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: newStage, contactedAt, updatedAt: nowIso };
+      })
     );
 
     const stageTitle = PIPELINE_STAGES.find((s) => s.id === newStage)?.title || newStage;
@@ -216,7 +221,12 @@ export default function CrmDashboard() {
   // Avanço rápido com botão
   const handleAdvanceStage = async (leadId: string, nextStage: PipelineStageId) => {
     setLeads((prev) =>
-      prev.map((l) => (l.id === leadId ? { ...l, stage: nextStage } : l))
+      prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = nextStage === 'contatado' ? (l.contactedAt || nowIso) : nextStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: nextStage, contactedAt, updatedAt: nowIso };
+      })
     );
 
     if (selectedLead && selectedLead.id === leadId) {
@@ -231,7 +241,12 @@ export default function CrmDashboard() {
 
   const handlePreviousStage = async (leadId: string, prevStage: PipelineStageId) => {
     setLeads((prev) =>
-      prev.map((l) => (l.id === leadId ? { ...l, stage: prevStage } : l))
+      prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = prevStage === 'contatado' ? (l.contactedAt || nowIso) : prevStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: prevStage, contactedAt, updatedAt: nowIso };
+      })
     );
 
     await crmProspectService.updateLeadStage(leadId, prevStage);
@@ -254,7 +269,7 @@ export default function CrmDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center text-[#f1f5f9]">
+      <div data-crm-page="" className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center text-[#f1f5f9]">
         <div className="w-11 h-11 border-4 border-blue-500 border-t-amber-400 rounded-full animate-spin mb-4" />
         <p className="text-sm font-bold text-[#94a3b8]">Carregando CRM Executivo de Prospecção...</p>
       </div>

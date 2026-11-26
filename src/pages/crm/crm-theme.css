@@ -1,0 +1,104 @@
+/* CRM Global Light & Dark Theme System */
+
+/* =========================================================
+   LIGHT MODE OVERRIDES (converts dark-first CRM components)
+   ========================================================= */
+html[data-crm-theme="light"] .crm-root,
+html[data-crm-theme="light"] [data-crm-page] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] header,
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#060911\],
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#070b14\]\/90,
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#070b14\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0b0f19\],
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0b0f19\]\/90,
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0e1320\],
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0e1320\]\/80,
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0f1420\],
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#111624\],
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#131926\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#0c0910\]\/80,
+html[data-crm-theme="light"] [data-crm-page] .bg-\[\#161d2e\] {
+  background-color: #f1f5f9 !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] .border-\[\#1a2030\],
+html[data-crm-theme="light"] [data-crm-page] .border-\[\#1e2638\],
+html[data-crm-theme="light"] [data-crm-page] .border-\[\#252e42\] {
+  border-color: #e2e8f0 !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] .text-white {
+  color: #0f172a !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] .text-slate-300,
+html[data-crm-theme="light"] [data-crm-page] .text-slate-400,
+html[data-crm-theme="light"] [data-crm-page] .text-\[\#94a3b8\] {
+  color: #475569 !important;
+}
+
+html[data-crm-theme="light"] [data-crm-page] input,
+html[data-crm-theme="light"] [data-crm-page] select,
+html[data-crm-theme="light"] [data-crm-page] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES (converts light-first EUA/PT pages)
+   ========================================================= */
+html[data-crm-theme="dark"] [data-crm-page].bg-slate-50,
+html[data-crm-theme="dark"] [data-crm-page] .bg-slate-50 {
+  background-color: #060911 !important;
+  color: #f8fafc !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .bg-white,
+html[data-crm-theme="dark"] [data-crm-page] .bg-white\/90 {
+  background-color: #0b0f19 !important;
+  color: #f8fafc !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .bg-slate-100 {
+  background-color: #0f1420 !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .border-slate-200,
+html[data-crm-theme="dark"] [data-crm-page] .border-slate-300 {
+  border-color: #1a2030 !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .text-slate-900,
+html[data-crm-theme="dark"] [data-crm-page] .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .text-slate-700,
+html[data-crm-theme="dark"] [data-crm-page] .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html[data-crm-theme="dark"] [data-crm-page] input,
+html[data-crm-theme="dark"] [data-crm-page] select,
+html[data-crm-theme="dark"] [data-crm-page] textarea {
+  background-color: #0f1420 !important;
+  color: #f8fafc !important;
+  border-color: #1a2030 !important;
+}

@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { resolveLeadScore } from "../utils/deterministicScoring";
+import { countContactedToday } from "../utils/dailyStats";
 import type { ProspectLead, PipelineStageId } from "../types";
 import { CrmNavBar } from "./CrmNavBar";
 
@@ -101,7 +102,8 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
   const potentialPipelineValue = whatsappLeadsCount * TICKET_PONTUAL;
   const negotiationValue = inNegotiationCount * TICKET_PONTUAL;
   const closedRevenue = closedCount * TICKET_PONTUAL;
-  const dailyGoalPercent = Math.min(100, Math.round((actionedCount / META_DIARIA_CONTATOS) * 100));
+  const contactedTodayCount = countContactedToday(leads);
+  const dailyGoalPercent = Math.min(100, Math.round((contactedTodayCount / META_DIARIA_CONTATOS) * 100));
 
   const formatBRL = (val: number) =>
     val.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
@@ -168,9 +170,9 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between text-xs mb-1">
-                <span className="font-bold text-[#f1f5f9]">Meta Diária de Abordagens</span>
+                <span className="font-bold text-[#f1f5f9]">Contatados Hoje (Meta Diária)</span>
                 <span className="font-mono font-bold text-amber-400">
-                  {actionedCount} / {META_DIARIA_CONTATOS} leads ({dailyGoalPercent}%)
+                  {contactedTodayCount} / {META_DIARIA_CONTATOS} hoje ({dailyGoalPercent}%)
                 </span>
               </div>
               <div className="w-full h-2 bg-[#06080d] rounded-full overflow-hidden border border-[#1a2030]">

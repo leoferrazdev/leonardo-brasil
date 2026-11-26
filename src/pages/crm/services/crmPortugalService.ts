@@ -16,7 +16,9 @@ function loadStoredLeads(): ProspectLead[] {
     const savedMap = new Map(saved.map((l) => [l.id, l]));
     return INITIAL_PROSPECTS_PORTUGAL.map((initLead) => {
       const existing = savedMap.get(initLead.id);
-      return existing ? { ...initLead, stage: existing.stage, notes: existing.notes } : initLead;
+      return existing
+        ? { ...initLead, stage: existing.stage, notes: existing.notes, contactedAt: existing.contactedAt }
+        : initLead;
     });
   } catch {
     return INITIAL_PROSPECTS_PORTUGAL;
@@ -38,9 +40,17 @@ export const crmPortugalService = {
   },
 
   async updateLeadStage(leadId: string, newStage: PipelineStageId): Promise<void> {
-    const leads = loadStoredLeads().map((l) =>
-      l.id === leadId ? { ...l, stage: newStage, updatedAt: new Date().toISOString() } : l
-    );
+    const nowIso = new Date().toISOString();
+    const leads = loadStoredLeads().map((l) => {
+      if (l.id !== leadId) return l;
+      const contactedAt =
+        newStage === "contatado"
+          ? l.contactedAt || nowIso
+          : newStage === "a_abordar"
+          ? undefined
+          : l.contactedAt;
+      return { ...l, stage: newStage, contactedAt, updatedAt: nowIso };
+    });
     saveLeads(leads);
   },
 

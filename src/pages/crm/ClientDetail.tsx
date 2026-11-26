@@ -156,7 +156,7 @@ export default function ClientDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center text-xs text-[#94a3b8]">
+      <div data-crm-page="" className="min-h-screen bg-[#0a0d14] flex flex-col items-center justify-center text-xs text-[#94a3b8]">
         <div className="w-10 h-10 border-4 border-blue-500 border-t-amber-400 rounded-full animate-spin mb-3" />
         Carregando ficha e histórico completo do cliente...
       </div>

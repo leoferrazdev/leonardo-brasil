@@ -70,6 +70,7 @@ export interface ProspectLead {
   deterministicScore?: number; // Score puro 0-100
   deterministicBreakdown?: string[]; // Ex: ["P4 (+20)", "Arq1 (+20)", "WA (+15)", "U/C (+10)"]
   auditTimestamp?: string;
+  contactedAt?: string;
   stage: PipelineStageId;
   bloco1: string; // Mensagem ativa (padrão)
   bloco1Volume: string; // Variação 1: Modelo de Volume de Buscas & Top 3

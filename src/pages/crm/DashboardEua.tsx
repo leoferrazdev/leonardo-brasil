@@ -123,18 +123,33 @@ export const DashboardEua: React.FC = () => {
     const lead = leads.find((l) => l.id === leadId);
     if (!lead || lead.stage === newStage) return;
 
-    setLeads((prev) => prev.map((l) => (l.id === leadId ? { ...l, stage: newStage } : l)));
+    setLeads((prev) => prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = newStage === 'contatado' ? (l.contactedAt || nowIso) : newStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: newStage, contactedAt, updatedAt: nowIso };
+      }));
     toast.success(`${lead.name} movido!`);
     await crmEuaService.updateLeadStage(leadId, newStage);
   };
 
   const handleAdvanceStage = async (leadId: string, nextStage: PipelineStageId) => {
-    setLeads((prev) => prev.map((l) => (l.id === leadId ? { ...l, stage: nextStage } : l)));
+    setLeads((prev) => prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = nextStage === 'contatado' ? (l.contactedAt || nowIso) : nextStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: nextStage, contactedAt, updatedAt: nowIso };
+      }));
     await crmEuaService.updateLeadStage(leadId, nextStage);
   };
 
   const handlePreviousStage = async (leadId: string, prevStage: PipelineStageId) => {
-    setLeads((prev) => prev.map((l) => (l.id === leadId ? { ...l, stage: prevStage } : l)));
+    setLeads((prev) => prev.map((l) => {
+        if (l.id !== leadId) return l;
+        const nowIso = new Date().toISOString();
+        const contactedAt = prevStage === 'contatado' ? (l.contactedAt || nowIso) : prevStage === 'a_abordar' ? undefined : l.contactedAt;
+        return { ...l, stage: prevStage, contactedAt, updatedAt: nowIso };
+      }));
     await crmEuaService.updateLeadStage(leadId, prevStage);
   };
 
@@ -158,7 +173,7 @@ export const DashboardEua: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center text-[#111111]">
+      <div data-crm-page="" className="min-h-screen bg-white flex flex-col items-center justify-center text-[#111111]">
         <div className="w-11 h-11 border-4 border-blue-500 border-t-amber-400 rounded-full animate-spin mb-4" />
         <p className="text-sm font-bold text-[#65686D]">Carregando Kanban EUA (USD)...</p>
       </div>

@@ -642,7 +642,7 @@ Posso te mandar um print rápido de como estruturar o perfil e a captação de v
     : `https://web.whatsapp.com/send?text=${encodeURIComponent(generatedWhatsAppPitch)}`;
 
   return (
-    <div className="min-h-screen bg-[#070a12] text-slate-100 flex flex-col">
+    <div data-crm-page="" className="min-h-screen bg-[#070a12] text-slate-100 flex flex-col">
       <SeoHead
         title="Planejador de Palavras-Chave Google Ads | CRM Leonardo Brasil"
         description="Ferramenta interna de inteligência de demanda local e planejamento de campanhas Google Ads."

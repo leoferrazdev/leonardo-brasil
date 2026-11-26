@@ -91,7 +91,7 @@ export default function ClientPortfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0d14] text-[#f1f5f9] flex flex-col overflow-x-hidden">
+    <div data-crm-page="" className="min-h-screen bg-[#0a0d14] text-[#f1f5f9] flex flex-col overflow-x-hidden">
       <SeoHead
         title="Clientes & Histórico Antes × Depois | CRM Leonardo Brasil"
         description="Acompanhamento mensal de clientes, registro imutável do Antes, Modo Apresentação e Relatórios WhatsApp."

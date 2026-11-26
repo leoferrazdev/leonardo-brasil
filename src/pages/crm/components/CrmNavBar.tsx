@@ -1,9 +1,12 @@
 import React from "react";
 import { Link, useLocation } from "../../../lib/local-router";
-import { BarChart3, Globe, Kanban, Users } from "lucide-react";
+import { BarChart3, Globe, Kanban, Moon, Sun, Users } from "lucide-react";
+import { useCrmTheme } from "../hooks/useCrmTheme";
+import "../crm-theme.css";
 
 export const CrmNavBar: React.FC = () => {
   const { pathname } = useLocation();
+  const { isDark, toggleTheme } = useCrmTheme();
 
   const items = [
     {
@@ -76,6 +79,24 @@ export const CrmNavBar: React.FC = () => {
           </Link>
         );
       })}
+      <button
+        type="button"
+        onClick={toggleTheme}
+        title={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
+        className="ml-auto inline-flex items-center gap-1.5 px-3 min-h-[44px] sm:min-h-[36px] py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all border border-[#1a2030] text-[#94a3b8] hover:text-white hover:bg-[#161d2e] cursor-pointer"
+      >
+        {isDark ? (
+          <>
+            <Sun className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <span className="hidden sm:inline">Claro</span>
+          </>
+        ) : (
+          <>
+            <Moon className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+            <span className="hidden sm:inline">Escuro</span>
+          </>
+        )}
+      </button>
     </nav>
   );
 };

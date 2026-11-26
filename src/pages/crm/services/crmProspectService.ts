@@ -83,6 +83,7 @@ export const crmProspectService = {
                         ? cachedLead.notes
                         : fresh.notes,
                     updatedAt: cachedLead.updatedAt || fresh.updatedAt,
+                    contactedAt: cachedLead.contactedAt || fresh.contactedAt,
                   }
                 : cachedLead;
               return hydrateDeterministicFields(base);
@@ -135,9 +136,17 @@ export const crmProspectService = {
 
   async updateLeadStage(leadId: string, stage: PipelineStageId): Promise<void> {
     const currentLeads = await this.getLeads();
-    const updated = currentLeads.map(l =>
-      l.id === leadId ? hydrateDeterministicFields({ ...l, stage, updatedAt: new Date().toISOString() }) : l
-    );
+    const nowIso = new Date().toISOString();
+    const updated = currentLeads.map((l) => {
+      if (l.id !== leadId) return l;
+      const contactedAt =
+        stage === "contatado"
+          ? l.contactedAt || nowIso
+          : stage === "a_abordar"
+          ? undefined
+          : l.contactedAt;
+      return hydrateDeterministicFields({ ...l, stage, contactedAt, updatedAt: nowIso });
+    });
     this.saveLocal(updated);
 
     if (isSupabaseConfigured) {
