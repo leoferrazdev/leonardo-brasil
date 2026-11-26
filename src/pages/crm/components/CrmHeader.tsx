@@ -80,7 +80,7 @@ export const CrmHeader: React.FC<CrmHeaderProps> = ({
 
   // Cálculos de KPIs e Metas Financeiras (Prospecção inicial focada em implantação pontual R$ 497 ou 2x de R$ 250)
   const TICKET_PONTUAL = 497;
-  const META_DIARIA_CONTATOS = 5;
+  const META_DIARIA_CONTATOS = 20;
 
   // Apenas leads válidos e não descartados compõem a base ativa de prospecção
   const activeWhatsappLeads = leads.filter(l => l.whatsappConfirmed && l.stage !== "perdido_invalido");
