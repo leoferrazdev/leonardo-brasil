@@ -13,6 +13,134 @@ export interface NicheData {
 
 export const NICHES: NicheData[] = [
   {
+    slug: "seguranca-eletronica",
+    title: "Google Meu Negócio para Segurança Eletrônica & CFTV | Leonardo Brasil",
+    description: "Coloque seu negócio de Segurança Eletrônica & CFTV no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Segurança Eletrônica & CFTV",
+    h1: "Sua empresa de Segurança Eletrônica & CFTV fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Gere orçamentos qualificados de condomínios, empresas e residências para instalação de CFTV, cercas elétricas, controle de acesso e monitoramento 24h.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Segurança Eletrônica & CFTV",
+    waMessage: "Olá, Leonardo! Tenho empresa de segurança eletrônica e quero gerar mais orçamentos qualificados pelo Google."
+  },
+  {
+    slug: "nutricao-esportiva",
+    title: "Google Meu Negócio para Nutrição Esportiva & Clínica | Leonardo Brasil",
+    description: "Coloque seu negócio de Nutrição Esportiva & Clínica no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Nutrição Esportiva & Clínica",
+    h1: "Sua empresa de Nutrição Esportiva & Clínica fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Atraia pacientes particulares dispostos a investir em acompanhamento nutricional para emagrecimento sustentável, hipertrofia, longevidade e performance esportiva.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Nutrição Esportiva & Clínica",
+    waMessage: "Olá, Leonardo! Sou nutricionista e quero estruturar o Google Ads e o Google Maps para lotar minha agenda particular."
+  },
+  {
+    slug: "direito-empresarial",
+    title: "Google Meu Negócio para Direito Empresarial | Leonardo Brasil",
+    description: "Coloque seu negócio de Direito Empresarial no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Direito Empresarial",
+    h1: "Sua empresa de Direito Empresarial fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Posicione sua banca jurídica para empresários e sócios que buscam assessoria contratual, reestruturação societária, holding patrimonial e prevenção de litígios.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Direito Empresarial",
+    waMessage: "Olá, Leonardo! Sou advogado empresarial e quero posicionar meu escritório no Google para empresas e sócios."
+  },
+  {
+    slug: "harmonizacao-facial",
+    title: "Google Meu Negócio para Harmonização Facial | Leonardo Brasil",
+    description: "Coloque seu negócio de Harmonização Facial no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Harmonização Facial",
+    h1: "Sua empresa de Harmonização Facial fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Conquiste clientes qualificados buscando bioestimuladores, preenchimento natural, toxina botulínica e protocolos faciais premium na sua cidade.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Harmonização Facial",
+    waMessage: "Olá, Leonardo! Tenho clínica de harmonização facial e quero atrair clientes qualificados pelo Google."
+  },
+  {
+    slug: "urologia",
+    title: "Google Meu Negócio para Urologia & Saúde Masculina | Leonardo Brasil",
+    description: "Coloque seu negócio de Urologia & Saúde Masculina no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Urologia & Saúde Masculina",
+    h1: "Sua empresa de Urologia & Saúde Masculina fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Atraia pacientes particulares com discrição e autoridade técnica para consultas urológicas, check-up masculino, cálculo renal e procedimentos especializados.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Urologia & Saúde Masculina",
+    waMessage: "Olá, Leonardo! Sou urologista e quero estruturar a captação de pacientes particulares via Google."
+  },
+  {
+    slug: "ortopedia",
+    title: "Google Meu Negócio para Ortopedia & Coluna | Leonardo Brasil",
+    description: "Coloque seu negócio de Ortopedia & Coluna no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Ortopedia & Coluna",
+    h1: "Sua empresa de Ortopedia & Coluna fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Capte pacientes particulares com dor aguda ou lesões ortopédicas que pesquisam por especialistas em coluna, joelho, quadril e traumatologia na sua região.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Ortopedia & Coluna",
+    waMessage: "Olá, Leonardo! Sou ortopedista e quero atrair mais pacientes particulares para minha subespecialidade no Google."
+  },
+  {
+    slug: "cardiologia",
+    title: "Google Meu Negócio para Cardiologia & Exames | Leonardo Brasil",
+    description: "Coloque seu negócio de Cardiologia & Exames no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Cardiologia & Exames",
+    h1: "Sua empresa de Cardiologia & Exames fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Posicione seu consultório ou centro cardiológico no topo das buscas locais para consultas particulares, check-up cardíaco e exames diagnósticos.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Cardiologia & Exames",
+    waMessage: "Olá, Leonardo! Sou cardiologista e quero estruturar o Google Ads e o Google Maps para minha clínica."
+  },
+  {
+    slug: "implantodontia",
+    title: "Google Meu Negócio para Implantodontia & Implantes | Leonardo Brasil",
+    description: "Coloque seu negócio de Implantodontia & Implantes no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",
+    badge: "Implantodontia & Implantes",
+    h1: "Sua empresa de Implantodontia & Implantes fora do Top 3 do Google Maps? Crie uma ",
+    h1Highlight: "máquina de clientes qualificados no Google.",
+    subheadline: "Atraia pacientes particulares decididos a realizar implantes dentários, protocolo carga imediata e próteses fixas com previsibilidade no WhatsApp.",
+    painPoints: [
+      "Perfil no Google Maps invisível perdendo clientes para concorrentes da região",
+      "Poucas avaliações e sem palavras-chave estratégicas nas respostas da empresa",
+      "Falta de previsibilidade na captação de clientes e serviços de alto valor"
+    ],
+    ctaText: "Diagnóstico de Google Meu Negócio para Implantodontia & Implantes",
+    waMessage: "Olá, Leonardo! Tenho clínica de implantodontia e quero atrair mais pacientes particulares de implantes pelo Google."
+  },
+  {
     slug: "fisioterapia-especializada",
     title: "Google Meu Negócio para Fisioterapia Especializada | Leonardo Brasil",
     description: "Coloque seu negócio de Fisioterapia Especializada no Top 3 do Google Maps. Atraia clientes qualificados na sua região.",

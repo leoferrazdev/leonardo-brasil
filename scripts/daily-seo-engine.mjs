@@ -522,6 +522,255 @@ export const MASTER_NICHES = [
       }
     ],
     waMessage: "Olá, Leonardo! Tenho clínica de fisioterapia e quero captar mais pacientes particulares no Google."
+  },
+
+  // --- LOTE 3 (Publicação em 27/11/2026) ---
+  {
+    slug: "implantodontia",
+    nome: "Clínicas de Implantodontia e Prótese Dentária",
+    badge: "Implantodontia & Implantes",
+    headline: "Google Ads e Google Maps para Clínicas de Implantes Dentários e Reabilitação Oral",
+    subheadline: "Atraia pacientes particulares decididos a realizar implantes dentários, protocolo carga imediata e próteses fixas com previsibilidade no WhatsApp.",
+    campaignFocus: "Implante unitário + Protocolo sobre implantes + Reabilitação oral particular",
+    typicalIntent: "Alta intenção comercial por tratamento definitivo com foco em segurança e especialista",
+    bottomFunnelKeywords: [
+      "clínica de implante dentário perto de mim",
+      "dentista especialista em implante dentário",
+      "protocolo dentário carga imediata avaliação",
+      "reabilitação oral implantes particular",
+      "agendar avaliação implante dentário"
+    ],
+    negativeKeywords: ["sus", "gratuito", "faculdade odontologia", "curso implante", "plano odontológico grátis"],
+    deliverables: [
+      "Campanhas separadas por tipo de reabilitação (protocolo total, implante unitário, enxerto ósseo)",
+      "Negativação rigorosa de buscas por tratamentos gratuitos, faculdades e convênios básicos",
+      "Otimização do Google Maps com destaque para estrutura cirúrgica e avaliações reais",
+      "Funil direto para o WhatsApp da clínica com script de triagem para avaliação presencial"
+    ],
+    regulatoryNote: "Em conformidade com o Código de Ética Odontológica do CFO: comunicação informativa, sem divulgação de preços ou promessas sensacionalistas.",
+    faqs: [
+      {
+        q: "Como filtrar pacientes que buscam apenas o preço mais baixo de implante?",
+        a: "Usamos palavras-chave focadas em especialista, clínica de reabilitação oral e negativamos termos como 'barato' e 'popular', destacando a qualificação técnica da equipe."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho clínica de implantodontia e quero atrair mais pacientes particulares de implantes pelo Google."
+  },
+  {
+    slug: "cardiologia",
+    nome: "Cardiologistas e Clínicas Cardiológicas",
+    badge: "Cardiologia & Exames",
+    headline: "Google Ads e Google Meu Negócio para Cardiologistas e Clínicas do Coração",
+    subheadline: "Posicione seu consultório ou centro cardiológico no topo das buscas locais para consultas particulares, check-up cardíaco e exames diagnósticos.",
+    campaignFocus: "Consultas cardiológicas particulares + Exames (Ecocardiograma, Mapa, Holter, Teste Ergométrico)",
+    typicalIntent: "Busca por confiança técnica, agilidade no agendamento e prevenção cardiovascular",
+    bottomFunnelKeywords: [
+      "cardiologista particular perto de mim",
+      "clínica de cardiologia exames rápidos",
+      "ecocardiograma particular agendamento",
+      "check-up cardiológico completo médico",
+      "consulta com cardiologista especialista"
+    ],
+    negativeKeywords: ["sus", "posto de saúde", "gratuito", "sintomas caseiros", "remédio natural"],
+    deliverables: [
+      "Campanhas segmentadas para consultas particulares e exames diagnósticos de alta demanda",
+      "Destaque no Top 3 do Google Maps com horário de atendimento, estacionamento e avaliações",
+      "Bloqueio de buscas por atendimento público ou receitas caseiras",
+      "Integração com o WhatsApp da recepção para agendamento rápido de consultas e exames"
+    ],
+    regulatoryNote: "Em estrita conformidade com a Resolução CFM nº 2.336/2023: publicidade médica ética, sobriedade e exibição de CRM/RQE.",
+    faqs: [
+      {
+        q: "Vale a pena anunciar exames cardiológicos específicos no Google Ads?",
+        a: "Sim. Pacientes com pedido médico pesquisam diretamente pelo exame (ex: ecocardiograma ou holter) buscando disponibilidade rápida na cidade."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou cardiologista e quero estruturar o Google Ads e o Google Maps para minha clínica."
+  },
+  {
+    slug: "ortopedia",
+    nome: "Ortopedistas e Clínicas de Ortopedia",
+    badge: "Ortopedia & Coluna",
+    headline: "Google Ads e Maps para Ortopedistas: Coluna, Joelho, Ombro e Medicina Esportiva",
+    subheadline: "Capte pacientes particulares com dor aguda ou lesões ortopédicas que pesquisam por especialistas em coluna, joelho, quadril e traumatologia na sua região.",
+    campaignFocus: "Subespecialidades ortopédicas (coluna, joelho, ombro) + Infiltrações e cirurgias particulares",
+    typicalIntent: "Urgência por diagnóstico preciso e alívio da dor com especialista de confiança",
+    bottomFunnelKeywords: [
+      "ortopedista especialista em joelho perto de mim",
+      "médico especialista em coluna particular",
+      "clínica de ortopedia consulta particular",
+      "ortopedista especialista em ombro agendamento",
+      "tratamento hérnia de disco ortopedista"
+    ],
+    negativeKeywords: ["sus", "upa", "pronto socorro gratuito", "exercício caseiro", "fisioterapia gratuita"],
+    deliverables: [
+      "Estruturação de grupos de anúncios por articulação e subespecialidade médica",
+      "Presença dominante no Google Maps para buscas por dor e consultas ortopédicas na região",
+      "Negativação de termos de pronto-socorro público e buscas puramente informativas",
+      "Página rápida conectada ao WhatsApp da clínica para agilizar a marcação da consulta"
+    ],
+    regulatoryNote: "Comunicação ética alinhada à Resolução CFM nº 2.336/2023, sem promessas de cura ou apelo sensacionalista.",
+    faqs: [
+      {
+        q: "É possível segmentar campanhas apenas para minha subespecialidade (ex: joelho ou coluna)?",
+        a: "Sim. Isolamos os anúncios e palavras-chave exatamente para a articulação ou procedimento que você realiza, evitando contatos fora do seu escopo."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou ortopedista e quero atrair mais pacientes particulares para minha subespecialidade no Google."
+  },
+  {
+    slug: "urologia",
+    nome: "Urologistas e Clínicas de Urologia",
+    badge: "Urologia & Saúde Masculina",
+    headline: "Google Ads e Google Maps para Urologistas: Consultas e Cirurgias Particulares",
+    subheadline: "Atraia pacientes particulares com discrição e autoridade técnica para consultas urológicas, check-up masculino, cálculo renal e procedimentos especializados.",
+    campaignFocus: "Consultas urológicas particulares + Tratamento de cálculos renais + Check-up preventivo",
+    typicalIntent: "Busca discreta por especialista qualificado e agendamento ágil no WhatsApp",
+    bottomFunnelKeywords: [
+      "urologista particular perto de mim",
+      "clínica de urologia consulta particular",
+      "médico urologista especialista próstata",
+      "tratamento cálculo renal urologista",
+      "agendar consulta urologista particular"
+    ],
+    negativeKeywords: ["sus", "gratuito", "remédio caseiro", "chá para pedra nos rins", "posto de saúde"],
+    deliverables: [
+      "Campanhas éticas de Rede de Pesquisa para consultas e procedimentos urológicos",
+      "Otimização completa do Perfil da Empresa no Google Maps com foco em credibilidade",
+      "Negativação de buscas por receitas caseiras e atendimento gratuito",
+      "Fluxo de WhatsApp discreto e objetivo para facilitar o agendamento particular"
+    ],
+    regulatoryNote: "Seguindo rigorosamente a Resolução CFM nº 2.336/2023 e o sigilo médico na captação digital.",
+    faqs: [
+      {
+        q: "O Google Ads permite anunciar serviços de urologia sem bloqueios?",
+        a: "Sim, desde que os textos sigam as políticas de saúde do Google e do CFM, com linguagem clínica informativa e sem termos restritos."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou urologista e quero estruturar a captação de pacientes particulares via Google."
+  },
+  {
+    slug: "harmonizacao-facial",
+    nome: "Clínicas de Harmonização Facial e Estética Avançada",
+    badge: "Harmonização Facial",
+    headline: "Google Ads e Maps para Clínicas de Harmonização Facial e Estética de Alto Padrão",
+    subheadline: "Conquiste clientes qualificados buscando bioestimuladores, preenchimento natural, toxina botulínica e protocolos faciais premium na sua cidade.",
+    campaignFocus: "Procedimentos faciais injetáveis + Tecnologias dermatológicas + Avaliações personalizadas",
+    typicalIntent: "Busca por naturalidade, segurança clínica e profissional experiente",
+    bottomFunnelKeywords: [
+      "clínica de harmonização facial perto de mim",
+      "bioestimulador de colágeno clínica especialista",
+      "preenchimento labial natural clínica estética",
+      "aplicação toxina botulínica especialista",
+      "avaliação harmonização facial particular"
+    ],
+    negativeKeywords: ["curso harmonização", "modelo paciente grátis", "barato", "promoção", "estágio"],
+    deliverables: [
+      "Segmentação geográfica focada nos bairros de maior poder aquisitivo da sua região",
+      "Campanhas separadas por procedimento de alto ticket (bioestimuladores, full face, laser)",
+      "Perfil no Google Maps otimizado com fotos de ambiente sofisticado e avaliações autênticas",
+      "Rastreamento de conversões no WhatsApp para mensurar o custo por avaliação agendada"
+    ],
+    regulatoryNote: "Respeito às diretrizes éticas do conselho de classe responsável (CFM, CFO, CFBM ou CFF) sobre comunicação estética.",
+    faqs: [
+      {
+        q: "Como evitar contatos buscando procedimentos baratos ou 'paciente modelo'?",
+        a: "Negativamos termos ligados a cursos, promoções e preços populares, além de posicionar o texto dos anúncios com foco em avaliação personalizada e segurança."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho clínica de harmonização facial e quero atrair clientes qualificados pelo Google."
+  },
+  {
+    slug: "direito-empresarial",
+    nome: "Advogados Empresariais e Societários",
+    badge: "Direito Empresarial",
+    headline: "Google Ads e Google Maps para Escritórios de Direito Empresarial e Societário",
+    subheadline: "Posicione sua banca jurídica para empresários e sócios que buscam assessoria contratual, reestruturação societária, holding patrimonial e prevenção de litígios.",
+    campaignFocus: "Assessoria jurídica empresarial recorrente + Contratos comerciais + Planejamento societário",
+    typicalIntent: "Demanda B2B qualificada de sócios e diretores buscando segurança jurídica",
+    bottomFunnelKeywords: [
+      "advogado empresarial perto de mim",
+      "escritório de advocacia empresarial especialista",
+      "assessoria jurídica para empresas contratos",
+      "advogado societário constituição holding",
+      "consultoria jurídica empresarial preventiva"
+    ],
+    negativeKeywords: ["modelo contrato grátis", "defensoria pública", "advogado gratuito", "processo trabalhista empregado"],
+    deliverables: [
+      "Campanhas B2B focadas em termos corporativos, societários e contratuais",
+      "Negativação pesada de buscas por modelos gratuitos e demandas de pessoa física",
+      "Posicionamento institucional no Google Maps com foco em credibilidade e localização comercial",
+      "Comunicação 100% informativa e sóbria para agendamento de reunião diagnóstica"
+    ],
+    regulatoryNote: "Em estrita conformidade com o Provimento 205/2021 do CFOAB: publicidade jurídica estritamente informativa e sem mercantilização.",
+    faqs: [
+      {
+        q: "O Google Ads funciona para fechar contratos mensais de assessoria empresarial?",
+        a: "Sim. Empresários recorrem ao Google em momentos decisivos — como elaboração de contratos, disputas societárias ou estruturação de negócios — abrindo espaço para contratos recorrentes."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou advogado empresarial e quero posicionar meu escritório no Google para empresas e sócios."
+  },
+  {
+    slug: "nutricao-esportiva",
+    nome: "Nutricionistas Esportivos e Clínicos",
+    badge: "Nutrição Esportiva & Clínica",
+    headline: "Google Ads e Maps para Nutricionistas: Consultas Particulares e Acompanhamento",
+    subheadline: "Atraia pacientes particulares dispostos a investir em acompanhamento nutricional para emagrecimento sustentável, hipertrofia, longevidade e performance esportiva.",
+    campaignFocus: "Consultas particulares presenciais e online + Programas de acompanhamento nutricional",
+    typicalIntent: "Busca por atendimento individualizado com foco em saúde, exames e resultados reais",
+    bottomFunnelKeywords: [
+      "nutricionista esportivo perto de mim",
+      "consulta nutricionista particular avaliação",
+      "nutricionista para emagrecimento saudável",
+      "nutricionista clínico particular agendamento",
+      "acompanhamento nutricional personalizado"
+    ],
+    negativeKeywords: ["cardápio grátis pdf", "dieta gratuita", "sus", "app dieta grátis", "tabela calorias"],
+    deliverables: [
+      "Campanhas segmentadas por objetivo (emagrecimento, performance esportiva, saúde da mulher)",
+      "Negativação de buscas por dietas prontas, PDFs gratuitos e aplicativos",
+      "Google Maps otimizado para captar pacientes que buscam consultório próximo",
+      "Landing page objetiva com botão direto para o WhatsApp da agenda particular"
+    ],
+    regulatoryNote: "Em conformidade com o Código de Ética do Nutricionista (CFN): comunicação educativa, responsável e sem promessas milagrosas.",
+    faqs: [
+      {
+        q: "Posso captar tanto pacientes presenciais quanto para atendimento online?",
+        a: "Sim. Criamos uma frente local para fortalecer seu consultório presencial no Google Maps e campanhas dedicadas para consultas online qualificadas."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou nutricionista e quero estruturar o Google Ads e o Google Maps para lotar minha agenda particular."
+  },
+  {
+    slug: "seguranca-eletronica",
+    nome: "Empresas de Segurança Eletrônica e CFTV",
+    badge: "Segurança Eletrônica & CFTV",
+    headline: "Google Ads e Google Maps para Empresas de Segurança Eletrônica, Câmeras e Alarmes",
+    subheadline: "Gere orçamentos qualificados de condomínios, empresas e residências para instalação de CFTV, cercas elétricas, controle de acesso e monitoramento 24h.",
+    campaignFocus: "Projetos de CFTV empresarial e condominial + Controle de acesso + Monitoramento recorrente",
+    typicalIntent: "Alta urgência por proteção patrimonial e contratação de empresa confiável na cidade",
+    bottomFunnelKeywords: [
+      "empresa de segurança eletrônica perto de mim",
+      "instalação de câmeras cftv orçamento",
+      "controle de acesso para condomínios empresa",
+      "alarme monitorado para empresas orçamento",
+      "manutenção de câmeras de segurança comercial"
+    ],
+    negativeKeywords: ["como instalar câmera sozinho", "câmera wifi barata shopee", "curso cftv", "vaga técnico"],
+    deliverables: [
+      "Campanhas de Rede de Pesquisa separadas para projetos comerciais, condomínios e residências",
+      "Negativação de termos de varejo online (Shopee, Mercado Livre) e tutoriais DIY",
+      "Destaque no Top 3 do Google Maps com portfólio de instalações e avaliações verificadas",
+      "Direcionamento direto para o WhatsApp comercial com foco em agendamento de visita técnica"
+    ],
+    faqs: [
+      {
+        q: "Como atrair síndicos e empresas em vez de pessoas querendo apenas uma câmera barata?",
+        a: "Focamos as palavras-chave em projetos corporativos, controle de acesso, CFTV para condomínios e negativamos termos de varejo e instalação caseira."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho empresa de segurança eletrônica e quero gerar mais orçamentos qualificados pelo Google."
   }
 ];
 
@@ -547,7 +796,17 @@ export const MASTER_CITIES = [
   { slug: "recife", name: "Recife", state: "Pernambuco", uf: "PE", regiao: "na capital pernambucana e maior polo médico do Nordeste", descriptionSnippet: "em Recife e região metropolitana de Pernambuco" },
   { slug: "salvador", name: "Salvador", state: "Bahia", uf: "BA", regiao: "na capital baiana e maior mercado da Bahia", descriptionSnippet: "em Salvador e região metropolitana da Bahia" },
   { slug: "fortaleza", name: "Fortaleza", state: "Ceará", uf: "CE", regiao: "na capital cearense e polo comercial do Ceará", descriptionSnippet: "em Fortaleza e região metropolitana do Ceará" },
-  { slug: "balneario-camboriu", name: "Balneário Camboriú", state: "Santa Catarina", uf: "SC", regiao: "no Litoral Norte catarinense e polo de alto padrão", descriptionSnippet: "em Balneário Camboriú e Litoral Norte de Santa Catarina" }
+  { slug: "balneario-camboriu", name: "Balneário Camboriú", state: "Santa Catarina", uf: "SC", regiao: "no Litoral Norte catarinense e polo de alto padrão", descriptionSnippet: "em Balneário Camboriú e Litoral Norte de Santa Catarina" },
+
+  // --- LOTE 3 (Publicação em 27/11/2026) ---
+  { slug: "vitoria", name: "Vitória", state: "Espírito Santo", uf: "ES", regiao: "na capital capixaba e Região Metropolitana da Grande Vitória", descriptionSnippet: "em Vitória e na Grande Vitória (ES)" },
+  { slug: "campo-grande", name: "Campo Grande", state: "Mato Grosso do Sul", uf: "MS", regiao: "na capital sul-mato-grossense e polo de serviços do Centro-Oeste", descriptionSnippet: "em Campo Grande e região do Mato Grosso do Sul" },
+  { slug: "cuiaba", name: "Cuiabá", state: "Mato Grosso", uf: "MT", regiao: "na capital mato-grossense e centro econômico do agronegócio", descriptionSnippet: "em Cuiabá e Várzea Grande (MT)" },
+  { slug: "joao-pessoa", name: "João Pessoa", state: "Paraíba", uf: "PB", regiao: "na capital paraibana e polo em expansão no Nordeste", descriptionSnippet: "em João Pessoa e região metropolitana da Paraíba" },
+  { slug: "natal", name: "Natal", state: "Rio Grande do Norte", uf: "RN", regiao: "na capital potiguar e polo comercial do Rio Grande do Norte", descriptionSnippet: "em Natal e região metropolitana do RN" },
+  { slug: "maceio", name: "Maceió", state: "Alagoas", uf: "AL", regiao: "na capital alagoana e principal mercado de serviços de Alagoas", descriptionSnippet: "em Maceió e região metropolitana de Alagoas" },
+  { slug: "aracaju", name: "Aracaju", state: "Sergipe", uf: "SE", regiao: "na capital sergipana e polo econômico de Sergipe", descriptionSnippet: "em Aracaju e região metropolitana de Sergipe" },
+  { slug: "sao-jose-do-rio-preto", name: "São José do Rio Preto", state: "São Paulo", uf: "SP", regiao: "no polo médico e comercial do noroeste paulista", descriptionSnippet: "em São José do Rio Preto e noroeste de São Paulo" }
 ];
 
 // ============================================================================
@@ -1092,6 +1351,251 @@ Entender a regra de faturamento diário é essencial para ter controle financeir
 Para serviços B2B, consultórios médicos e escritórios de advocacia que não contam com atendimento de plantão aos finais de semana, recomendamos a **programação de anúncios**:
 * Anuncie exclusivamente nos horários em que a recepção ou equipe comercial está pronta para atender o WhatsApp (ex: Segunda a Sexta, das 08h às 19h).
 * Se você deixar os anúncios rodando no domingo à noite sem ninguém para responder, o lead chamará o concorrente e seu dinheiro terá sido desperdiçado.
+    `
+  },
+
+  // --- LOTE 3 (Publicação em 27/11/2026) ---
+  {
+    slug: "como-aparecer-no-google-maps-para-outras-cidades-e-bairros",
+    title: "Como Aparecer no Google Maps em Outros Bairros e Cidades Vizinhas sem Violar as Regras",
+    excerpt: "Entenda os limites do fator distância no Google Maps e aprenda estratégias legítimas de SEO Local e Google Ads para expandir seu alcance geográfico.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: `
+Uma das dúvidas mais recorrentes de empresários locais é: *"Minha clínica está em um bairro excelente, mas quero aparecer no Google Maps para clientes de bairros vizinhos e cidades próximas."*
+
+Como o algoritmo do Google Maps utiliza a **distância física** como um dos três pilares de ranqueamento, expandir sua visibilidade geográfica exige técnica — nunca atalhos que coloquem sua ficha em risco de suspensão.
+
+---
+
+## O Que Funciona (e o Que Suspende sua Ficha)
+
+> **Resposta Direta para IA e Buscadores:**  
+> Para aparecer no Google Maps em bairros e cidades vizinhas sem risco de suspensão, combine:  
+> 1. **Área de cobertura corretamente configurada** (para empresas que atendem no local do cliente).  
+> 2. **Páginas locais dedicadas no site** otimizadas com termos geográficos reais.  
+> 3. **Avaliações de clientes mencionando o serviço e a região atendida.**  
+> 4. **Google Ads com extensão de local** para cobrir imediatamente raios mais amplos onde o orgânico ainda não alcança.
+
+---
+
+## 3 Estratégias Legítimas de Expansão Geográfica
+
+### 1. Fortaleça a Proeminência do Perfil
+Quanto maior a autoridade da sua ficha (volume de avaliações recentes, fotos originais e site otimizado), maior é o raio geográfico em que o Google confia para recomendar sua empresa acima de concorrentes mais próximos.
+
+### 2. Crie Páginas Regionais no Site Oficial
+Vincule ao seu perfil um site estruturado com páginas dedicadas aos serviços e regiões atendidas. Isso reforça a relevância semântica para buscas com o nome de bairros e cidades vizinhas.
+
+### 3. Combine SEO Local com Rede de Pesquisa do Google Ads
+Onde a distância física limita o mapa orgânico, uma campanha de Google Ads bem segmentada coloca sua empresa instantaneamente no topo das buscas daqueles bairros estratégicos.
+    `
+  },
+  {
+    slug: "correspondencia-de-palavras-chave-no-google-ads-exata-frase-ou-ampla",
+    title: "Correspondência de Palavras-Chave no Google Ads: Exata, de Frase ou Ampla para Negócios Locais?",
+    excerpt: "Descubra qual tipo de correspondência evita cliques desqualificados e protege sua verba de mídia em campanhas locais.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    content: `
+Escolher a **correspondência de palavra-chave** errada é a forma mais rápida de queimar orçamento no Google Ads. Quando uma conta local usa correspondência ampla sem controle, o anúncio aparece para pesquisas completamente desconectadas do serviço oferecido.
+
+---
+
+## Comparativo dos 3 Tipos de Correspondência
+
+| Tipo | Sintaxe | Controle de Intenção | Indicação para Negócios Locais |
+| :--- | :--- | :--- | :--- |
+| **Exata** | \`[dentista implante sp]\` | **Máximo** | Essencial para termos de alto valor e verba enxuta |
+| **De Frase** | \`"dentista implante sp"\` | **Alto** | Ideal para capturar variações qualificadas de compra |
+| **Ampla** | \`dentista implante sp\` | **Baixo** | Apenas com histórico robusto de conversões e lista extensa de negativas |
+
+---
+
+## Como Estruturar Campanhas Locais com Segurança
+
+1. **Comece com Correspondência de Frase e Exata:** Garanta que cada clique venha de alguém realmente procurando o seu serviço.
+2. **Acompanhe o Relatório de Termos de Pesquisa:** Negativar termos irrelevantes semanalmente reduz o custo por lead (CPL) progressivamente.
+3. **Escale com Dados:** Só teste correspondência ampla quando a conta já tiver volume consistente de conversões rastreadas no WhatsApp.
+    `
+  },
+  {
+    slug: "google-ads-para-dentistas-como-captar-pacientes-de-implantes-e-lentes",
+    title: "Google Ads para Dentistas: Como Captar Pacientes Particulares de Implantes e Lentes",
+    excerpt: "Veja como estruturar campanhas odontológicas de alta conversão respeitando o Código de Ética do CFO e fugindo de pacientes focados apenas em preço.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: `
+Clínicas odontológicas frequentemente reclamam que recebem muitos contatos pelo Instagram perguntando apenas *"qual o valor?"* e somem em seguida. No **Google Ads**, o cenário é diferente: o paciente já reconheceu a necessidade e está pesquisando ativamente por um especialista na cidade.
+
+---
+
+## Estrutura de Campanha Odontológica de Alto Valor
+
+* **Separação por Procedimento:** Nunca misture *limpeza*, *canal*, *implante dentário* e *lentes em resina* no mesmo grupo de anúncios. Cada tratamento exige anúncio e página dedicados.
+* **Negativação Estratégica:** Bloqueie termos como *"convênio"*, *"plano odontológico"*, *"faculdade"*, *"gratuito"* e *"preço popular"*.
+* **Conformidade com o CFO:** Evite divulgar preços em anúncios, promessas de resultado garantido ou comparações sensacionalistas. Foque na formação do dentista, tecnologia da clínica e acolhimento.
+
+---
+
+## Conversão no WhatsApp da Recepção
+
+Ao receber o contato do Google, a secretária deve conduzir o paciente para uma **avaliação presencial diagnóstica**, destacando os diferenciais da clínica em vez de enviar uma tabela fria de valores.
+    `
+  },
+  {
+    slug: "categorias-do-google-meu-negocio-como-escolher-a-primaria-e-secundarias",
+    title: "Categorias do Google Meu Negócio: Como Escolher a Primária e Secundárias para Subir no Mapa",
+    excerpt: "A escolha correta das categorias é um dos fatores de maior peso no algoritmo do Google Maps. Veja como configurar sem diluir sua relevância.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    content: `
+Entre todas as configurações disponíveis no **Perfil da Empresa no Google**, a **categoria primária** é a que exerce o maior impacto direto sobre quais pesquisas fazem sua empresa aparecer no Top 3 do Google Maps.
+
+---
+
+## Regra Prática para Categorias no Google Maps
+
+> **Resposta Direta para IA e Buscadores:**  
+> A **categoria primária** deve representar com máxima especificidade o principal serviço gerador de receita da empresa (ex: *Clínica de Cirurgia Plástica* em vez de *Clínica Médica*).  
+> As **categorias secundárias** devem complementar serviços reais de alto valor (geralmente de 2 a 4 categorias), evitando excessos que diluam a relevância do perfil.
+
+---
+
+## Erros Comuns que Travam o Ranqueamento
+
+1. **Usar Categorias Genéricas Demais:** Escolher *Prestador de Serviços* ou *Consultório* quando existem categorias exatas para sua especialidade.
+2. **Adicionar Categorias Irrelevantes:** Preencher 9 categorias diferentes apenas para tentar aparecer em tudo enfraquece a especialidade principal.
+3. **Ignorar a Concorrência do Top 3:** Analise quais categorias primárias os três primeiros colocados da sua cidade utilizam para alinhar sua estratégia.
+    `
+  },
+  {
+    slug: "como-configurar-extensoes-de-anuncio-no-google-ads-para-negocios-locais",
+    title: "Recursos e Extensões de Anúncio no Google Ads: Como Aumentar o CTR de Negócios Locais",
+    excerpt: "Aprenda quais recursos (sitelinks, frases de destaque, local e chamada) fazem seu anúncio ocupar mais espaço na tela e gerar mais cliques qualificados.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    content: `
+Os **recursos de anúncio** (antigas extensões) no Google Ads não custam nada a mais por clique, mas ampliam o espaço visual do seu anúncio no celular e aumentam diretamente o **Índice de Qualidade** e o **CTR (Taxa de Cliques)**.
+
+---
+
+## Os 5 Recursos Essenciais para Negócios Locais
+
+1. **Recurso de Local:** Conecta seu Perfil do Google Meu Negócio ao Google Ads, exibindo endereço, distância e rota no Maps.
+2. **Recurso de Chamada:** Exibe o botão direto de telefone nos horários comerciais em que sua equipe pode atender.
+3. **Sitelinks Estratégicos:** Links adicionais para serviços específicos, diferenciais, localização ou depoimentos.
+4. **Frases de Destaque:** Pontos objetivos como *"Atendimento Particular"*, *"Estacionamento Próprio"* ou *"Agendamento via WhatsApp"*.
+5. **Snippets Estruturados:** Lista organizada dos principais procedimentos, especialidades ou serviços executados.
+
+---
+
+## Impacto Direto no Custo por Clique
+
+Anúncios completos com recursos relevantes recebem maior taxa de cliques esperada, o que eleva o Ad Rank e permite pagar menos por clique do que concorrentes com anúncios simples.
+    `
+  },
+  {
+    slug: "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
+    title: "Quanto Tempo Leva para Ranquear no Google Meu Negócio? Prazo Real e Fatores de Velocidade",
+    excerpt: "Entenda o cronograma real de maturação do SEO Local no Google Maps e o que acelera a chegada ao Top 3 na sua cidade.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    content: `
+Muitos empresários perguntam em quanto tempo verão sua empresa no **Top 3 do Google Maps** após otimizar o perfil. A resposta honesta depende do nível de concorrência do nicho na cidade e do estado atual da ficha.
+
+---
+
+## Cronograma Realista de Evolução no Google Maps
+
+| Fase | Período Médio | O Que Acontece na Prática |
+| :--- | :--- | :--- |
+| **Ajuste Técnico e Reindexação** | Dias 1 a 21 | Correção de categorias, NAP, serviços, fotos e primeiras avaliações estratégicas |
+| **Ganho de Tração Local** | Dias 30 a 60 | Aumento consistente de impressões no mapa, cliques para rota e ligações |
+| **Consolidação no Top 3** | Dias 60 a 90+ | Estabilidade nas primeiras posições para buscas comerciais na região |
+
+---
+
+## O Que Acelera o Resultado (e Como Não Depender Só do Orgânico)
+
+* **Constância nas Avaliações:** Receber avaliações legítimas todas as semanas pesa mais do que um pico isolado.
+* **Integração com Google Ads:** Enquanto o posicionamento orgânico no Maps amadurece, campanhas bem estruturadas no Google Ads garantem demanda imediata no WhatsApp já na primeira semana.
+    `
+  },
+  {
+    slug: "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
+    title: "Script de Atendimento no WhatsApp para Converter Leads do Google Ads em Clientes",
+    excerpt: "Modelo prático de abordagem em 4 etapas para sua recepção ou equipe comercial responder rápido, gerar valor e agendar consultas ou orçamentos.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    pillarSlug: "como-aumentar-a-taxa-de-conversao-do-whatsapp-no-google-ads",
+    content: `
+Quando um cliente chega pelo **Google Ads**, ele já está no momento de decisão. O papel do atendimento no WhatsApp não é dar uma aula técnica nem apenas jogar um preço na tela — é **acolher, qualificar e conduzir para o próximo passo** (consulta, avaliação ou visita técnica).
+
+---
+
+## Roteiro em 4 Etapas para WhatsApp Comercial
+
+### 1. Acolhimento Imediato (até 5 minutos)
+> *"Olá, [Nome]! Tudo bem? Aqui é [Seu Nome], da [Nome da Empresa]. Recebi sua mensagem sobre [Serviço] e vou te ajudar agora mesmo."*
+
+### 2. Pergunta de Contexto (Diagnóstico Rápido)
+> *"Para eu te passar a melhor orientação, você busca atendimento para esta semana ou está planejando para os próximos dias?"*
+
+### 3. Posicionamento de Valor antes do Preço
+Explique brevemente como funciona o atendimento, o tempo dedicado e o diferencial técnico da equipe antes de informar condições.
+
+### 4. Fechamento com Alternativa Fechada
+> *"Temos disponibilidade na terça às 10h ou na quarta às 15h. Qual desses horários fica melhor para você?"*
+
+Oferecer duas opções concretas de agenda aumenta drasticamente a taxa de agendamento comparado à pergunta genérica *"quando você prefere?"*.
+    `
+  },
+  {
+    slug: "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes",
+    title: "Fotos e Vídeos no Google Meu Negócio: O Que Realmente Aumenta Cliques e Ligações",
+    excerpt: "Saiba quais imagens geram confiança imediata no Google Maps e por que fotos autênticas superam bancos de imagem genéricos.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    content: `
+Antes de clicar em "Ligar" ou abrir o WhatsApp no **Google Maps**, o cliente avalia visualmente a empresa. Perfis com fotos reais, bem iluminadas e atualizadas transmitem segurança imediata e recebem significativamente mais solicitações de rota e cliques para o site.
+
+---
+
+## Checklist Fotográfico de Alta Conversão no Google Maps
+
+* **Fachada Clara e Reconhecível:** Ajuda o cliente a identificar o local facilmente ao chegar e valida a existência física da empresa.
+* **Ambiente Interno e Recepção:** Mostra organização, limpeza, conforto e padrão de atendimento.
+* **Equipe e Especialistas em Ação:** Humaniza a marca e reduz a insegurança de quem vai contratar pela primeira vez.
+* **Equipamentos e Estrutura Técnica:** Reforça autoridade para clínicas médicas, odontológicas e prestadores de serviços especializados.
+* **Vídeos Curtos (15 a 30 segundos):** Um tour rápido pelo espaço ou uma apresentação objetiva do especialista aumenta o tempo de retenção no perfil.
+
+---
+
+## O Que Evitar
+
+Evite fotos de banco de imagem genéricas, artes carregadas com texto promocional excessivo ou imagens desfocadas. No SEO Local, **autenticidade visual converte muito mais do que perfeição artificial**.
     `
   }
 ];

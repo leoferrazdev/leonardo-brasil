@@ -152,6 +152,14 @@ function generateSitemap() {
 
   // City Hubs das Capitais e Polos Prioritários
   const priorityCities = [
+    "sao-jose-do-rio-preto",
+    "aracaju",
+    "maceio",
+    "natal",
+    "joao-pessoa",
+    "cuiaba",
+    "campo-grande",
+    "vitoria",
     "balneario-camboriu",
     "fortaleza",
     "salvador",

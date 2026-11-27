@@ -28024,6 +28024,38 @@
     {
       "slug": "fisioterapia-especializada",
       "nome": "Fisioterapia Especializada"
+    },
+    {
+      "slug": "implantodontia",
+      "nome": "Implantodontia & Implantes"
+    },
+    {
+      "slug": "cardiologia",
+      "nome": "Cardiologia & Exames"
+    },
+    {
+      "slug": "ortopedia",
+      "nome": "Ortopedia & Coluna"
+    },
+    {
+      "slug": "urologia",
+      "nome": "Urologia & Saúde Masculina"
+    },
+    {
+      "slug": "harmonizacao-facial",
+      "nome": "Harmonização Facial"
+    },
+    {
+      "slug": "direito-empresarial",
+      "nome": "Direito Empresarial"
+    },
+    {
+      "slug": "nutricao-esportiva",
+      "nome": "Nutrição Esportiva & Clínica"
+    },
+    {
+      "slug": "seguranca-eletronica",
+      "nome": "Segurança Eletrônica & CFTV"
     }
   ]
 }

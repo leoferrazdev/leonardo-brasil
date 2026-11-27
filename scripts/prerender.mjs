@@ -103,6 +103,14 @@ function buildRoutes() {
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   const priorityCities = [
+    "sao-jose-do-rio-preto",
+    "aracaju",
+    "maceio",
+    "natal",
+    "joao-pessoa",
+    "cuiaba",
+    "campo-grande",
+    "vitoria",
     "balneario-camboriu",
     "fortaleza",
     "salvador",

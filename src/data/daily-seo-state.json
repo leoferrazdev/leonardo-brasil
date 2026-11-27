@@ -15,7 +15,15 @@
     "contabilidade-consultiva",
     "arquitetura-interiores",
     "psicologia-clinica",
-    "fisioterapia-especializada"
+    "fisioterapia-especializada",
+    "implantodontia",
+    "cardiologia",
+    "ortopedia",
+    "urologia",
+    "harmonizacao-facial",
+    "direito-empresarial",
+    "nutricao-esportiva",
+    "seguranca-eletronica"
   ],
   "publishedCityHubs": [
     "campinas",
@@ -33,7 +41,15 @@
     "recife",
     "salvador",
     "fortaleza",
-    "balneario-camboriu"
+    "balneario-camboriu",
+    "vitoria",
+    "campo-grande",
+    "cuiaba",
+    "joao-pessoa",
+    "natal",
+    "maceio",
+    "aracaju",
+    "sao-jose-do-rio-preto"
   ],
   "publishedBlogSlugs": [
     "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
@@ -51,7 +67,15 @@
     "como-recuperar-conta-suspensa-no-google-ads-guia-pratico",
     "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
     "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
-    "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia"
+    "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia",
+    "como-aparecer-no-google-maps-para-outras-cidades-e-bairros",
+    "correspondencia-de-palavras-chave-no-google-ads-exata-frase-ou-ampla",
+    "google-ads-para-dentistas-como-captar-pacientes-de-implantes-e-lentes",
+    "categorias-do-google-meu-negocio-como-escolher-a-primaria-e-secundarias",
+    "como-configurar-extensoes-de-anuncio-no-google-ads-para-negocios-locais",
+    "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
+    "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
+    "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes"
   ],
   "runs": [
     {
@@ -118,6 +142,39 @@
         "o-que-e-taxa-de-conversao-no-whatsapp-e-como-medir",
         "google-meu-negocio-para-advogados-como-posicionar-o-escritorio",
         "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia"
+      ]
+    },
+    {
+      "timestamp": "2026-11-27T12:28:51.894Z",
+      "batchNiches": [
+        "implantodontia",
+        "cardiologia",
+        "ortopedia",
+        "urologia",
+        "harmonizacao-facial",
+        "direito-empresarial",
+        "nutricao-esportiva",
+        "seguranca-eletronica"
+      ],
+      "batchCities": [
+        "vitoria",
+        "campo-grande",
+        "cuiaba",
+        "joao-pessoa",
+        "natal",
+        "maceio",
+        "aracaju",
+        "sao-jose-do-rio-preto"
+      ],
+      "batchBlog": [
+        "como-aparecer-no-google-maps-para-outras-cidades-e-bairros",
+        "correspondencia-de-palavras-chave-no-google-ads-exata-frase-ou-ampla",
+        "google-ads-para-dentistas-como-captar-pacientes-de-implantes-e-lentes",
+        "categorias-do-google-meu-negocio-como-escolher-a-primaria-e-secundarias",
+        "como-configurar-extensoes-de-anuncio-no-google-ads-para-negocios-locais",
+        "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
+        "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
+        "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes"
       ]
     }
   ]

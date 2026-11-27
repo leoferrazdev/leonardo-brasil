@@ -20,6 +20,299 @@ export interface GoogleAdsNicheConfig {
 }
 
 export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {
+  "seguranca-eletronica": {
+    "slug": "seguranca-eletronica",
+    "nome": "Empresas de Segurança Eletrônica e CFTV",
+    "badge": "Google Ads · Segurança Eletrônica & CFTV",
+    "headline": "Google Ads e Google Maps para Empresas de Segurança Eletrônica, Câmeras e Alarmes",
+    "subheadline": "Gere orçamentos qualificados de condomínios, empresas e residências para instalação de CFTV, cercas elétricas, controle de acesso e monitoramento 24h.",
+    "campaignFocus": "Projetos de CFTV empresarial e condominial + Controle de acesso + Monitoramento recorrente",
+    "typicalIntent": "Alta urgência por proteção patrimonial e contratação de empresa confiável na cidade",
+    "bottomFunnelKeywords": [
+      "empresa de segurança eletrônica perto de mim",
+      "instalação de câmeras cftv orçamento",
+      "controle de acesso para condomínios empresa",
+      "alarme monitorado para empresas orçamento",
+      "manutenção de câmeras de segurança comercial"
+    ],
+    "negativeKeywords": [
+      "como instalar câmera sozinho",
+      "câmera wifi barata shopee",
+      "curso cftv",
+      "vaga técnico"
+    ],
+    "deliverables": [
+      "Campanhas de Rede de Pesquisa separadas para projetos comerciais, condomínios e residências",
+      "Negativação de termos de varejo online (Shopee, Mercado Livre) e tutoriais DIY",
+      "Destaque no Top 3 do Google Maps com portfólio de instalações e avaliações verificadas",
+      "Direcionamento direto para o WhatsApp comercial com foco em agendamento de visita técnica"
+    ],
+    "faqs": [
+      {
+        "q": "Como atrair síndicos e empresas em vez de pessoas querendo apenas uma câmera barata?",
+        "a": "Focamos as palavras-chave em projetos corporativos, controle de acesso, CFTV para condomínios e negativamos termos de varejo e instalação caseira."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho empresa de segurança eletrônica e quero gerar mais orçamentos qualificados pelo Google."
+  },
+  "nutricao-esportiva": {
+    "slug": "nutricao-esportiva",
+    "nome": "Nutricionistas Esportivos e Clínicos",
+    "badge": "Google Ads · Nutrição Esportiva & Clínica",
+    "headline": "Google Ads e Maps para Nutricionistas: Consultas Particulares e Acompanhamento",
+    "subheadline": "Atraia pacientes particulares dispostos a investir em acompanhamento nutricional para emagrecimento sustentável, hipertrofia, longevidade e performance esportiva.",
+    "campaignFocus": "Consultas particulares presenciais e online + Programas de acompanhamento nutricional",
+    "typicalIntent": "Busca por atendimento individualizado com foco em saúde, exames e resultados reais",
+    "bottomFunnelKeywords": [
+      "nutricionista esportivo perto de mim",
+      "consulta nutricionista particular avaliação",
+      "nutricionista para emagrecimento saudável",
+      "nutricionista clínico particular agendamento",
+      "acompanhamento nutricional personalizado"
+    ],
+    "negativeKeywords": [
+      "cardápio grátis pdf",
+      "dieta gratuita",
+      "sus",
+      "app dieta grátis",
+      "tabela calorias"
+    ],
+    "deliverables": [
+      "Campanhas segmentadas por objetivo (emagrecimento, performance esportiva, saúde da mulher)",
+      "Negativação de buscas por dietas prontas, PDFs gratuitos e aplicativos",
+      "Google Maps otimizado para captar pacientes que buscam consultório próximo",
+      "Landing page objetiva com botão direto para o WhatsApp da agenda particular"
+    ],
+    "regulatoryNote": "Em conformidade com o Código de Ética do Nutricionista (CFN): comunicação educativa, responsável e sem promessas milagrosas.",
+    "faqs": [
+      {
+        "q": "Posso captar tanto pacientes presenciais quanto para atendimento online?",
+        "a": "Sim. Criamos uma frente local para fortalecer seu consultório presencial no Google Maps e campanhas dedicadas para consultas online qualificadas."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou nutricionista e quero estruturar o Google Ads e o Google Maps para lotar minha agenda particular."
+  },
+  "direito-empresarial": {
+    "slug": "direito-empresarial",
+    "nome": "Advogados Empresariais e Societários",
+    "badge": "Google Ads · Direito Empresarial",
+    "headline": "Google Ads e Google Maps para Escritórios de Direito Empresarial e Societário",
+    "subheadline": "Posicione sua banca jurídica para empresários e sócios que buscam assessoria contratual, reestruturação societária, holding patrimonial e prevenção de litígios.",
+    "campaignFocus": "Assessoria jurídica empresarial recorrente + Contratos comerciais + Planejamento societário",
+    "typicalIntent": "Demanda B2B qualificada de sócios e diretores buscando segurança jurídica",
+    "bottomFunnelKeywords": [
+      "advogado empresarial perto de mim",
+      "escritório de advocacia empresarial especialista",
+      "assessoria jurídica para empresas contratos",
+      "advogado societário constituição holding",
+      "consultoria jurídica empresarial preventiva"
+    ],
+    "negativeKeywords": [
+      "modelo contrato grátis",
+      "defensoria pública",
+      "advogado gratuito",
+      "processo trabalhista empregado"
+    ],
+    "deliverables": [
+      "Campanhas B2B focadas em termos corporativos, societários e contratuais",
+      "Negativação pesada de buscas por modelos gratuitos e demandas de pessoa física",
+      "Posicionamento institucional no Google Maps com foco em credibilidade e localização comercial",
+      "Comunicação 100% informativa e sóbria para agendamento de reunião diagnóstica"
+    ],
+    "regulatoryNote": "Em estrita conformidade com o Provimento 205/2021 do CFOAB: publicidade jurídica estritamente informativa e sem mercantilização.",
+    "faqs": [
+      {
+        "q": "O Google Ads funciona para fechar contratos mensais de assessoria empresarial?",
+        "a": "Sim. Empresários recorrem ao Google em momentos decisivos — como elaboração de contratos, disputas societárias ou estruturação de negócios — abrindo espaço para contratos recorrentes."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou advogado empresarial e quero posicionar meu escritório no Google para empresas e sócios."
+  },
+  "harmonizacao-facial": {
+    "slug": "harmonizacao-facial",
+    "nome": "Clínicas de Harmonização Facial e Estética Avançada",
+    "badge": "Google Ads · Harmonização Facial",
+    "headline": "Google Ads e Maps para Clínicas de Harmonização Facial e Estética de Alto Padrão",
+    "subheadline": "Conquiste clientes qualificados buscando bioestimuladores, preenchimento natural, toxina botulínica e protocolos faciais premium na sua cidade.",
+    "campaignFocus": "Procedimentos faciais injetáveis + Tecnologias dermatológicas + Avaliações personalizadas",
+    "typicalIntent": "Busca por naturalidade, segurança clínica e profissional experiente",
+    "bottomFunnelKeywords": [
+      "clínica de harmonização facial perto de mim",
+      "bioestimulador de colágeno clínica especialista",
+      "preenchimento labial natural clínica estética",
+      "aplicação toxina botulínica especialista",
+      "avaliação harmonização facial particular"
+    ],
+    "negativeKeywords": [
+      "curso harmonização",
+      "modelo paciente grátis",
+      "barato",
+      "promoção",
+      "estágio"
+    ],
+    "deliverables": [
+      "Segmentação geográfica focada nos bairros de maior poder aquisitivo da sua região",
+      "Campanhas separadas por procedimento de alto ticket (bioestimuladores, full face, laser)",
+      "Perfil no Google Maps otimizado com fotos de ambiente sofisticado e avaliações autênticas",
+      "Rastreamento de conversões no WhatsApp para mensurar o custo por avaliação agendada"
+    ],
+    "regulatoryNote": "Respeito às diretrizes éticas do conselho de classe responsável (CFM, CFO, CFBM ou CFF) sobre comunicação estética.",
+    "faqs": [
+      {
+        "q": "Como evitar contatos buscando procedimentos baratos ou 'paciente modelo'?",
+        "a": "Negativamos termos ligados a cursos, promoções e preços populares, além de posicionar o texto dos anúncios com foco em avaliação personalizada e segurança."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho clínica de harmonização facial e quero atrair clientes qualificados pelo Google."
+  },
+  "urologia": {
+    "slug": "urologia",
+    "nome": "Urologistas e Clínicas de Urologia",
+    "badge": "Google Ads · Urologia & Saúde Masculina",
+    "headline": "Google Ads e Google Maps para Urologistas: Consultas e Cirurgias Particulares",
+    "subheadline": "Atraia pacientes particulares com discrição e autoridade técnica para consultas urológicas, check-up masculino, cálculo renal e procedimentos especializados.",
+    "campaignFocus": "Consultas urológicas particulares + Tratamento de cálculos renais + Check-up preventivo",
+    "typicalIntent": "Busca discreta por especialista qualificado e agendamento ágil no WhatsApp",
+    "bottomFunnelKeywords": [
+      "urologista particular perto de mim",
+      "clínica de urologia consulta particular",
+      "médico urologista especialista próstata",
+      "tratamento cálculo renal urologista",
+      "agendar consulta urologista particular"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "gratuito",
+      "remédio caseiro",
+      "chá para pedra nos rins",
+      "posto de saúde"
+    ],
+    "deliverables": [
+      "Campanhas éticas de Rede de Pesquisa para consultas e procedimentos urológicos",
+      "Otimização completa do Perfil da Empresa no Google Maps com foco em credibilidade",
+      "Negativação de buscas por receitas caseiras e atendimento gratuito",
+      "Fluxo de WhatsApp discreto e objetivo para facilitar o agendamento particular"
+    ],
+    "regulatoryNote": "Seguindo rigorosamente a Resolução CFM nº 2.336/2023 e o sigilo médico na captação digital.",
+    "faqs": [
+      {
+        "q": "O Google Ads permite anunciar serviços de urologia sem bloqueios?",
+        "a": "Sim, desde que os textos sigam as políticas de saúde do Google e do CFM, com linguagem clínica informativa e sem termos restritos."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou urologista e quero estruturar a captação de pacientes particulares via Google."
+  },
+  "ortopedia": {
+    "slug": "ortopedia",
+    "nome": "Ortopedistas e Clínicas de Ortopedia",
+    "badge": "Google Ads · Ortopedia & Coluna",
+    "headline": "Google Ads e Maps para Ortopedistas: Coluna, Joelho, Ombro e Medicina Esportiva",
+    "subheadline": "Capte pacientes particulares com dor aguda ou lesões ortopédicas que pesquisam por especialistas em coluna, joelho, quadril e traumatologia na sua região.",
+    "campaignFocus": "Subespecialidades ortopédicas (coluna, joelho, ombro) + Infiltrações e cirurgias particulares",
+    "typicalIntent": "Urgência por diagnóstico preciso e alívio da dor com especialista de confiança",
+    "bottomFunnelKeywords": [
+      "ortopedista especialista em joelho perto de mim",
+      "médico especialista em coluna particular",
+      "clínica de ortopedia consulta particular",
+      "ortopedista especialista em ombro agendamento",
+      "tratamento hérnia de disco ortopedista"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "upa",
+      "pronto socorro gratuito",
+      "exercício caseiro",
+      "fisioterapia gratuita"
+    ],
+    "deliverables": [
+      "Estruturação de grupos de anúncios por articulação e subespecialidade médica",
+      "Presença dominante no Google Maps para buscas por dor e consultas ortopédicas na região",
+      "Negativação de termos de pronto-socorro público e buscas puramente informativas",
+      "Página rápida conectada ao WhatsApp da clínica para agilizar a marcação da consulta"
+    ],
+    "regulatoryNote": "Comunicação ética alinhada à Resolução CFM nº 2.336/2023, sem promessas de cura ou apelo sensacionalista.",
+    "faqs": [
+      {
+        "q": "É possível segmentar campanhas apenas para minha subespecialidade (ex: joelho ou coluna)?",
+        "a": "Sim. Isolamos os anúncios e palavras-chave exatamente para a articulação ou procedimento que você realiza, evitando contatos fora do seu escopo."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou ortopedista e quero atrair mais pacientes particulares para minha subespecialidade no Google."
+  },
+  "cardiologia": {
+    "slug": "cardiologia",
+    "nome": "Cardiologistas e Clínicas Cardiológicas",
+    "badge": "Google Ads · Cardiologia & Exames",
+    "headline": "Google Ads e Google Meu Negócio para Cardiologistas e Clínicas do Coração",
+    "subheadline": "Posicione seu consultório ou centro cardiológico no topo das buscas locais para consultas particulares, check-up cardíaco e exames diagnósticos.",
+    "campaignFocus": "Consultas cardiológicas particulares + Exames (Ecocardiograma, Mapa, Holter, Teste Ergométrico)",
+    "typicalIntent": "Busca por confiança técnica, agilidade no agendamento e prevenção cardiovascular",
+    "bottomFunnelKeywords": [
+      "cardiologista particular perto de mim",
+      "clínica de cardiologia exames rápidos",
+      "ecocardiograma particular agendamento",
+      "check-up cardiológico completo médico",
+      "consulta com cardiologista especialista"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "posto de saúde",
+      "gratuito",
+      "sintomas caseiros",
+      "remédio natural"
+    ],
+    "deliverables": [
+      "Campanhas segmentadas para consultas particulares e exames diagnósticos de alta demanda",
+      "Destaque no Top 3 do Google Maps com horário de atendimento, estacionamento e avaliações",
+      "Bloqueio de buscas por atendimento público ou receitas caseiras",
+      "Integração com o WhatsApp da recepção para agendamento rápido de consultas e exames"
+    ],
+    "regulatoryNote": "Em estrita conformidade com a Resolução CFM nº 2.336/2023: publicidade médica ética, sobriedade e exibição de CRM/RQE.",
+    "faqs": [
+      {
+        "q": "Vale a pena anunciar exames cardiológicos específicos no Google Ads?",
+        "a": "Sim. Pacientes com pedido médico pesquisam diretamente pelo exame (ex: ecocardiograma ou holter) buscando disponibilidade rápida na cidade."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou cardiologista e quero estruturar o Google Ads e o Google Maps para minha clínica."
+  },
+  "implantodontia": {
+    "slug": "implantodontia",
+    "nome": "Clínicas de Implantodontia e Prótese Dentária",
+    "badge": "Google Ads · Implantodontia & Implantes",
+    "headline": "Google Ads e Google Maps para Clínicas de Implantes Dentários e Reabilitação Oral",
+    "subheadline": "Atraia pacientes particulares decididos a realizar implantes dentários, protocolo carga imediata e próteses fixas com previsibilidade no WhatsApp.",
+    "campaignFocus": "Implante unitário + Protocolo sobre implantes + Reabilitação oral particular",
+    "typicalIntent": "Alta intenção comercial por tratamento definitivo com foco em segurança e especialista",
+    "bottomFunnelKeywords": [
+      "clínica de implante dentário perto de mim",
+      "dentista especialista em implante dentário",
+      "protocolo dentário carga imediata avaliação",
+      "reabilitação oral implantes particular",
+      "agendar avaliação implante dentário"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "gratuito",
+      "faculdade odontologia",
+      "curso implante",
+      "plano odontológico grátis"
+    ],
+    "deliverables": [
+      "Campanhas separadas por tipo de reabilitação (protocolo total, implante unitário, enxerto ósseo)",
+      "Negativação rigorosa de buscas por tratamentos gratuitos, faculdades e convênios básicos",
+      "Otimização do Google Maps com destaque para estrutura cirúrgica e avaliações reais",
+      "Funil direto para o WhatsApp da clínica com script de triagem para avaliação presencial"
+    ],
+    "regulatoryNote": "Em conformidade com o Código de Ética Odontológica do CFO: comunicação informativa, sem divulgação de preços ou promessas sensacionalistas.",
+    "faqs": [
+      {
+        "q": "Como filtrar pacientes que buscam apenas o preço mais baixo de implante?",
+        "a": "Usamos palavras-chave focadas em especialista, clínica de reabilitação oral e negativamos termos como 'barato' e 'popular', destacando a qualificação técnica da equipe."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho clínica de implantodontia e quero atrair mais pacientes particulares de implantes pelo Google."
+  },
   "fisioterapia-especializada": {
     "slug": "fisioterapia-especializada",
     "nome": "Clínicas de Fisioterapia e Reabilitação",

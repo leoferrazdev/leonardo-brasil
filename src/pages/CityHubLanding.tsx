@@ -15,6 +15,62 @@ interface CityMeta {
 }
 
 const CITIES_METADATA: Record<string, CityMeta> = {
+  "sao-jose-do-rio-preto": {
+    name: "São José do Rio Preto",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no polo médico e comercial do noroeste paulista",
+    descriptionSnippet: "em São José do Rio Preto e noroeste de São Paulo",
+  },
+  "aracaju": {
+    name: "Aracaju",
+    state: "Sergipe",
+    uf: "SE",
+    regiao: "na capital sergipana e polo econômico de Sergipe",
+    descriptionSnippet: "em Aracaju e região metropolitana de Sergipe",
+  },
+  "maceio": {
+    name: "Maceió",
+    state: "Alagoas",
+    uf: "AL",
+    regiao: "na capital alagoana e principal mercado de serviços de Alagoas",
+    descriptionSnippet: "em Maceió e região metropolitana de Alagoas",
+  },
+  "natal": {
+    name: "Natal",
+    state: "Rio Grande do Norte",
+    uf: "RN",
+    regiao: "na capital potiguar e polo comercial do Rio Grande do Norte",
+    descriptionSnippet: "em Natal e região metropolitana do RN",
+  },
+  "joao-pessoa": {
+    name: "João Pessoa",
+    state: "Paraíba",
+    uf: "PB",
+    regiao: "na capital paraibana e polo em expansão no Nordeste",
+    descriptionSnippet: "em João Pessoa e região metropolitana da Paraíba",
+  },
+  "cuiaba": {
+    name: "Cuiabá",
+    state: "Mato Grosso",
+    uf: "MT",
+    regiao: "na capital mato-grossense e centro econômico do agronegócio",
+    descriptionSnippet: "em Cuiabá e Várzea Grande (MT)",
+  },
+  "campo-grande": {
+    name: "Campo Grande",
+    state: "Mato Grosso do Sul",
+    uf: "MS",
+    regiao: "na capital sul-mato-grossense e polo de serviços do Centro-Oeste",
+    descriptionSnippet: "em Campo Grande e região do Mato Grosso do Sul",
+  },
+  "vitoria": {
+    name: "Vitória",
+    state: "Espírito Santo",
+    uf: "ES",
+    regiao: "na capital capixaba e Região Metropolitana da Grande Vitória",
+    descriptionSnippet: "em Vitória e na Grande Vitória (ES)",
+  },
   "balneario-camboriu": {
     name: "Balneário Camboriú",
     state: "Santa Catarina",

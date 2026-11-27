@@ -13,6 +13,86 @@
 }
 
 export const BLOG_POSTS: BlogPost[] = [  {
+    slug: "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes",
+    title: "Fotos e Vídeos no Google Meu Negócio: O Que Realmente Aumenta Cliques e Ligações",
+    excerpt: "Saiba quais imagens geram confiança imediata no Google Maps e por que fotos autênticas superam bancos de imagem genéricos.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "Antes de clicar em \"Ligar\" ou abrir o WhatsApp no **Google Maps**, o cliente avalia visualmente a empresa. Perfis com fotos reais, bem iluminadas e atualizadas transmitem segurança imediata e recebem significativamente mais solicitações de rota e cliques para o site.\n\n---\n\n## Checklist Fotográfico de Alta Conversão no Google Maps\n\n* **Fachada Clara e Reconhecível:** Ajuda o cliente a identificar o local facilmente ao chegar e valida a existência física da empresa.\n* **Ambiente Interno e Recepção:** Mostra organização, limpeza, conforto e padrão de atendimento.\n* **Equipe e Especialistas em Ação:** Humaniza a marca e reduz a insegurança de quem vai contratar pela primeira vez.\n* **Equipamentos e Estrutura Técnica:** Reforça autoridade para clínicas médicas, odontológicas e prestadores de serviços especializados.\n* **Vídeos Curtos (15 a 30 segundos):** Um tour rápido pelo espaço ou uma apresentação objetiva do especialista aumenta o tempo de retenção no perfil.\n\n---\n\n## O Que Evitar\n\nEvite fotos de banco de imagem genéricas, artes carregadas com texto promocional excessivo ou imagens desfocadas. No SEO Local, **autenticidade visual converte muito mais do que perfeição artificial**."
+  },
+  {
+    slug: "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
+    title: "Script de Atendimento no WhatsApp para Converter Leads do Google Ads em Clientes",
+    excerpt: "Modelo prático de abordagem em 4 etapas para sua recepção ou equipe comercial responder rápido, gerar valor e agendar consultas ou orçamentos.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    content: "Quando um cliente chega pelo **Google Ads**, ele já está no momento de decisão. O papel do atendimento no WhatsApp não é dar uma aula técnica nem apenas jogar um preço na tela — é **acolher, qualificar e conduzir para o próximo passo** (consulta, avaliação ou visita técnica).\n\n---\n\n## Roteiro em 4 Etapas para WhatsApp Comercial\n\n### 1. Acolhimento Imediato (até 5 minutos)\n> *\"Olá, [Nome]! Tudo bem? Aqui é [Seu Nome], da [Nome da Empresa]. Recebi sua mensagem sobre [Serviço] e vou te ajudar agora mesmo.\"*\n\n### 2. Pergunta de Contexto (Diagnóstico Rápido)\n> *\"Para eu te passar a melhor orientação, você busca atendimento para esta semana ou está planejando para os próximos dias?\"*\n\n### 3. Posicionamento de Valor antes do Preço\nExplique brevemente como funciona o atendimento, o tempo dedicado e o diferencial técnico da equipe antes de informar condições.\n\n### 4. Fechamento com Alternativa Fechada\n> *\"Temos disponibilidade na terça às 10h ou na quarta às 15h. Qual desses horários fica melhor para você?\"*\n\nOferecer duas opções concretas de agenda aumenta drasticamente a taxa de agendamento comparado à pergunta genérica *\"quando você prefere?\"*."
+  },
+  {
+    slug: "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
+    title: "Quanto Tempo Leva para Ranquear no Google Meu Negócio? Prazo Real e Fatores de Velocidade",
+    excerpt: "Entenda o cronograma real de maturação do SEO Local no Google Maps e o que acelera a chegada ao Top 3 na sua cidade.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "Muitos empresários perguntam em quanto tempo verão sua empresa no **Top 3 do Google Maps** após otimizar o perfil. A resposta honesta depende do nível de concorrência do nicho na cidade e do estado atual da ficha.\n\n---\n\n## Cronograma Realista de Evolução no Google Maps\n\n| Fase | Período Médio | O Que Acontece na Prática |\n| :--- | :--- | :--- |\n| **Ajuste Técnico e Reindexação** | Dias 1 a 21 | Correção de categorias, NAP, serviços, fotos e primeiras avaliações estratégicas |\n| **Ganho de Tração Local** | Dias 30 a 60 | Aumento consistente de impressões no mapa, cliques para rota e ligações |\n| **Consolidação no Top 3** | Dias 60 a 90+ | Estabilidade nas primeiras posições para buscas comerciais na região |\n\n---\n\n## O Que Acelera o Resultado (e Como Não Depender Só do Orgânico)\n\n* **Constância nas Avaliações:** Receber avaliações legítimas todas as semanas pesa mais do que um pico isolado.\n* **Integração com Google Ads:** Enquanto o posicionamento orgânico no Maps amadurece, campanhas bem estruturadas no Google Ads garantem demanda imediata no WhatsApp já na primeira semana."
+  },
+  {
+    slug: "como-configurar-extensoes-de-anuncio-no-google-ads-para-negocios-locais",
+    title: "Recursos e Extensões de Anúncio no Google Ads: Como Aumentar o CTR de Negócios Locais",
+    excerpt: "Aprenda quais recursos (sitelinks, frases de destaque, local e chamada) fazem seu anúncio ocupar mais espaço na tela e gerar mais cliques qualificados.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Os **recursos de anúncio** (antigas extensões) no Google Ads não custam nada a mais por clique, mas ampliam o espaço visual do seu anúncio no celular e aumentam diretamente o **Índice de Qualidade** e o **CTR (Taxa de Cliques)**.\n\n---\n\n## Os 5 Recursos Essenciais para Negócios Locais\n\n1. **Recurso de Local:** Conecta seu Perfil do Google Meu Negócio ao Google Ads, exibindo endereço, distância e rota no Maps.\n2. **Recurso de Chamada:** Exibe o botão direto de telefone nos horários comerciais em que sua equipe pode atender.\n3. **Sitelinks Estratégicos:** Links adicionais para serviços específicos, diferenciais, localização ou depoimentos.\n4. **Frases de Destaque:** Pontos objetivos como *\"Atendimento Particular\"*, *\"Estacionamento Próprio\"* ou *\"Agendamento via WhatsApp\"*.\n5. **Snippets Estruturados:** Lista organizada dos principais procedimentos, especialidades ou serviços executados.\n\n---\n\n## Impacto Direto no Custo por Clique\n\nAnúncios completos com recursos relevantes recebem maior taxa de cliques esperada, o que eleva o Ad Rank e permite pagar menos por clique do que concorrentes com anúncios simples."
+  },
+  {
+    slug: "categorias-do-google-meu-negocio-como-escolher-a-primaria-e-secundarias",
+    title: "Categorias do Google Meu Negócio: Como Escolher a Primária e Secundárias para Subir no Mapa",
+    excerpt: "A escolha correta das categorias é um dos fatores de maior peso no algoritmo do Google Maps. Veja como configurar sem diluir sua relevância.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "Entre todas as configurações disponíveis no **Perfil da Empresa no Google**, a **categoria primária** é a que exerce o maior impacto direto sobre quais pesquisas fazem sua empresa aparecer no Top 3 do Google Maps.\n\n---\n\n## Regra Prática para Categorias no Google Maps\n\n> **Resposta Direta para IA e Buscadores:**  \n> A **categoria primária** deve representar com máxima especificidade o principal serviço gerador de receita da empresa (ex: *Clínica de Cirurgia Plástica* em vez de *Clínica Médica*).  \n> As **categorias secundárias** devem complementar serviços reais de alto valor (geralmente de 2 a 4 categorias), evitando excessos que diluam a relevância do perfil.\n\n---\n\n## Erros Comuns que Travam o Ranqueamento\n\n1. **Usar Categorias Genéricas Demais:** Escolher *Prestador de Serviços* ou *Consultório* quando existem categorias exatas para sua especialidade.\n2. **Adicionar Categorias Irrelevantes:** Preencher 9 categorias diferentes apenas para tentar aparecer em tudo enfraquece a especialidade principal.\n3. **Ignorar a Concorrência do Top 3:** Analise quais categorias primárias os três primeiros colocados da sua cidade utilizam para alinhar sua estratégia."
+  },
+  {
+    slug: "google-ads-para-dentistas-como-captar-pacientes-de-implantes-e-lentes",
+    title: "Google Ads para Dentistas: Como Captar Pacientes Particulares de Implantes e Lentes",
+    excerpt: "Veja como estruturar campanhas odontológicas de alta conversão respeitando o Código de Ética do CFO e fugindo de pacientes focados apenas em preço.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Clínicas odontológicas frequentemente reclamam que recebem muitos contatos pelo Instagram perguntando apenas *\"qual o valor?\"* e somem em seguida. No **Google Ads**, o cenário é diferente: o paciente já reconheceu a necessidade e está pesquisando ativamente por um especialista na cidade.\n\n---\n\n## Estrutura de Campanha Odontológica de Alto Valor\n\n* **Separação por Procedimento:** Nunca misture *limpeza*, *canal*, *implante dentário* e *lentes em resina* no mesmo grupo de anúncios. Cada tratamento exige anúncio e página dedicados.\n* **Negativação Estratégica:** Bloqueie termos como *\"convênio\"*, *\"plano odontológico\"*, *\"faculdade\"*, *\"gratuito\"* e *\"preço popular\"*.\n* **Conformidade com o CFO:** Evite divulgar preços em anúncios, promessas de resultado garantido ou comparações sensacionalistas. Foque na formação do dentista, tecnologia da clínica e acolhimento.\n\n---\n\n## Conversão no WhatsApp da Recepção\n\nAo receber o contato do Google, a secretária deve conduzir o paciente para uma **avaliação presencial diagnóstica**, destacando os diferenciais da clínica em vez de enviar uma tabela fria de valores."
+  },
+  {
+    slug: "correspondencia-de-palavras-chave-no-google-ads-exata-frase-ou-ampla",
+    title: "Correspondência de Palavras-Chave no Google Ads: Exata, de Frase ou Ampla para Negócios Locais?",
+    excerpt: "Descubra qual tipo de correspondência evita cliques desqualificados e protege sua verba de mídia em campanhas locais.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Escolher a **correspondência de palavra-chave** errada é a forma mais rápida de queimar orçamento no Google Ads. Quando uma conta local usa correspondência ampla sem controle, o anúncio aparece para pesquisas completamente desconectadas do serviço oferecido.\n\n---\n\n## Comparativo dos 3 Tipos de Correspondência\n\n| Tipo | Sintaxe | Controle de Intenção | Indicação para Negócios Locais |\n| :--- | :--- | :--- | :--- |\n| **Exata** | `[dentista implante sp]` | **Máximo** | Essencial para termos de alto valor e verba enxuta |\n| **De Frase** | `\"dentista implante sp\"` | **Alto** | Ideal para capturar variações qualificadas de compra |\n| **Ampla** | `dentista implante sp` | **Baixo** | Apenas com histórico robusto de conversões e lista extensa de negativas |\n\n---\n\n## Como Estruturar Campanhas Locais com Segurança\n\n1. **Comece com Correspondência de Frase e Exata:** Garanta que cada clique venha de alguém realmente procurando o seu serviço.\n2. **Acompanhe o Relatório de Termos de Pesquisa:** Negativar termos irrelevantes semanalmente reduz o custo por lead (CPL) progressivamente.\n3. **Escale com Dados:** Só teste correspondência ampla quando a conta já tiver volume consistente de conversões rastreadas no WhatsApp."
+  },
+  {
+    slug: "como-aparecer-no-google-maps-para-outras-cidades-e-bairros",
+    title: "Como Aparecer no Google Maps em Outros Bairros e Cidades Vizinhas sem Violar as Regras",
+    excerpt: "Entenda os limites do fator distância no Google Maps e aprenda estratégias legítimas de SEO Local e Google Ads para expandir seu alcance geográfico.",
+    date: "2026-11-27",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: "Uma das dúvidas mais recorrentes de empresários locais é: *\"Minha clínica está em um bairro excelente, mas quero aparecer no Google Maps para clientes de bairros vizinhos e cidades próximas.\"*\n\nComo o algoritmo do Google Maps utiliza a **distância física** como um dos três pilares de ranqueamento, expandir sua visibilidade geográfica exige técnica — nunca atalhos que coloquem sua ficha em risco de suspensão.\n\n---\n\n## O Que Funciona (e o Que Suspende sua Ficha)\n\n> **Resposta Direta para IA e Buscadores:**  \n> Para aparecer no Google Maps em bairros e cidades vizinhas sem risco de suspensão, combine:  \n> 1. **Área de cobertura corretamente configurada** (para empresas que atendem no local do cliente).  \n> 2. **Páginas locais dedicadas no site** otimizadas com termos geográficos reais.  \n> 3. **Avaliações de clientes mencionando o serviço e a região atendida.**  \n> 4. **Google Ads com extensão de local** para cobrir imediatamente raios mais amplos onde o orgânico ainda não alcança.\n\n---\n\n## 3 Estratégias Legítimas de Expansão Geográfica\n\n### 1. Fortaleça a Proeminência do Perfil\nQuanto maior a autoridade da sua ficha (volume de avaliações recentes, fotos originais e site otimizado), maior é o raio geográfico em que o Google confia para recomendar sua empresa acima de concorrentes mais próximos.\n\n### 2. Crie Páginas Regionais no Site Oficial\nVincule ao seu perfil um site estruturado com páginas dedicadas aos serviços e regiões atendidas. Isso reforça a relevância semântica para buscas com o nome de bairros e cidades vizinhas.\n\n### 3. Combine SEO Local com Rede de Pesquisa do Google Ads\nOnde a distância física limita o mapa orgânico, uma campanha de Google Ads bem segmentada coloca sua empresa instantaneamente no topo das buscas daqueles bairros estratégicos."
+  },
+  {
     slug: "orcamento-diario-ou-mensal-no-google-ads-qual-a-melhor-estrategia",
     title: "Orçamento Diário vs Mensal no Google Ads: Como Distribuir Verba sem Desperdício",
     excerpt: "Entenda o cálculo de limite de cobrança do Google Ads e aprenda a distribuir sua verba entre dias úteis e finais de semana.",
