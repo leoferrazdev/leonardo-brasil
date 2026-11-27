@@ -4,7 +4,7 @@ import { INITIAL_PROSPECTS } from "../data/initialProspects";
 import { resolveLeadScore } from "../utils/deterministicScoring";
 import { resolveFollowUpMessage } from "../utils/followUpGenerator";
 
-const STORAGE_KEY = "crm_prospect_leads_v12";
+const STORAGE_KEY = "crm_prospect_leads_v13";
 
 function hydrateDeterministicFields(lead: ProspectLead): ProspectLead {
   const computed = resolveLeadScore(lead);
@@ -67,7 +67,7 @@ export const crmProspectService = {
     // 2. Fallback para LocalStorage (preserva stage e notes manuais + injeta novos leads + hidrata score determinístico)
     if (typeof window !== "undefined") {
       try {
-        const cached = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("crm_prospect_leads_v11");
+        const cached = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("crm_prospect_leads_v12");
         if (cached) {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
