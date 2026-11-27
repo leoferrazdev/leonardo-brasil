@@ -771,6 +771,254 @@ export const MASTER_NICHES = [
       }
     ],
     waMessage: "Olá, Leonardo! Tenho empresa de segurança eletrônica e quero gerar mais orçamentos qualificados pelo Google."
+  },
+
+  // --- LOTE 4 (Agendado para 28/11/2026) ---
+  {
+    slug: "ginecologia",
+    nome: "Ginecologistas e Clínicas de Saúde da Mulher",
+    badge: "Ginecologia & Obstetrícia",
+    headline: "Google Ads e Google Maps para Ginecologistas e Clínicas de Saúde da Mulher",
+    subheadline: "Atraia pacientes particulares para consultas ginecológicas, pré-natal de alto padrão, inserção de DIU, exames preventivos e ginecologia regenerativa.",
+    campaignFocus: "Consultas particulares + Pré-natal + Procedimentos ginecológicos em consultório",
+    typicalIntent: "Busca por acolhimento, confiança médica e facilidade de agendamento na cidade",
+    bottomFunnelKeywords: [
+      "ginecologista particular perto de mim",
+      "clínica de ginecologia consulta particular",
+      "ginecologista especialista inserção diu",
+      "obstetra particular pré-natal avaliação",
+      "agendar consulta ginecologista particular"
+    ],
+    negativeKeywords: ["sus", "posto de saúde", "gratuito", "remédio caseiro", "sintomas gravidez grátis"],
+    deliverables: [
+      "Campanhas segmentadas por demanda (consultas, obstetrícia, procedimentos em consultório)",
+      "Otimização do Google Maps destacando acolhimento, privacidade e avaliações autênticas",
+      "Negativação de termos de atendimento público e dúvidas genéricas de topo de funil",
+      "Fluxo de WhatsApp acolhedor para conversão rápida de mensagens em consultas agendadas"
+    ],
+    regulatoryNote: "Em estrita conformidade com a Resolução CFM nº 2.336/2023: comunicação médica sóbria, ética e com exibição de CRM/RQE.",
+    faqs: [
+      {
+        q: "É possível direcionar os anúncios apenas para consultas e procedimentos particulares?",
+        a: "Sim. Negativamos termos ligados a planos de saúde específicos e atendimento público, destacando nos textos o foco em atendimento particular individualizado."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou ginecologista e quero estruturar o Google Ads e o Google Maps para meu consultório."
+  },
+  {
+    slug: "endocrinologia",
+    nome: "Endocrinologistas e Clínicas de Metabologia",
+    badge: "Endocrinologia & Metabologia",
+    headline: "Google Ads e Maps para Endocrinologistas: Emagrecimento Médico, Tireoide e Diabetes",
+    subheadline: "Posicione seu consultório no topo das buscas locais para pacientes particulares que buscam acompanhamento endocrinológico sério e baseado em evidências.",
+    campaignFocus: "Consultas particulares de endocrinologia + Tireoide + Emagrecimento médico e metabolismo",
+    typicalIntent: "Busca por especialista confiável para tratamento contínuo e acompanhamento de exames",
+    bottomFunnelKeywords: [
+      "endocrinologista particular perto de mim",
+      "médico endocrinologista especialista tireoide",
+      "endocrinologista para emagrecimento particular",
+      "consulta endocrinologista diabetes tratamento",
+      "clínica de endocrinologia agendamento"
+    ],
+    negativeKeywords: ["sus", "dieta grátis", "remédio sem receita", "chá emagrecedor", "gratuito"],
+    deliverables: [
+      "Campanhas separadas por patologia e objetivo clínico (tireoide, diabetes, metabologia)",
+      "Negativação rigorosa de buscas por receitas caseiras, medicamentos sem prescrição e SUS",
+      "Fortalecimento do Google Maps com foco em credibilidade acadêmica e avaliações reais",
+      "Landing page objetiva com botão de WhatsApp para triagem e agendamento particular"
+    ],
+    regulatoryNote: "Em estrita conformidade com a Resolução CFM nº 2.336/2023: sem promessas de perda de peso garantida ou sensacionalismo.",
+    faqs: [
+      {
+        q: "Como anunciar emagrecimento médico no Google Ads sem sofrer reprovações?",
+        a: "Utilizamos linguagem estritamente clínica focada em consulta com endocrinologista e avaliação metabólica, respeitando tanto o CFM quanto as políticas de saúde do Google."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou endocrinologista e quero atrair mais pacientes particulares pelo Google."
+  },
+  {
+    slug: "neurologia",
+    nome: "Neurologistas e Clínicas de Neurologia",
+    badge: "Neurologia & Cefaleia",
+    headline: "Google Ads e Google Maps para Neurologistas: Consultas e Exames Neurológicos",
+    subheadline: "Conecte seu consultório a pacientes particulares buscando especialistas em enxaqueca, distúrbios do sono, memória, neuropediatria e eletroencefalograma.",
+    campaignFocus: "Consultas neurológicas particulares + Subespecialidades + Exames diagnósticos",
+    typicalIntent: "Busca de alta consideração por diagnóstico especializado e agilidade na consulta",
+    bottomFunnelKeywords: [
+      "neurologista particular perto de mim",
+      "médico neurologista especialista enxaqueca",
+      "clínica de neurologia consulta particular",
+      "eletroencefalograma particular agendamento",
+      "neurologista especialista sono e memória"
+    ],
+    negativeKeywords: ["sus", "gratuito", "upa", "sintomas dor de cabeça remédio", "posto de saúde"],
+    deliverables: [
+      "Segmentação por queixa clínica e subespecialidade neurológica",
+      "Presença de destaque no Google Maps com clareza sobre exames, localização e horários",
+      "Filtro contínuo contra pesquisas informativas de automedicação e rede pública",
+      "Integração direta com o WhatsApp da clínica para agilizar o agendamento particular"
+    ],
+    regulatoryNote: "Conforme a Resolução CFM nº 2.336/2023: publicidade médica ética, informativa e com identificação de CRM e RQE.",
+    faqs: [
+      {
+        q: "Vale a pena segmentar campanhas para condições específicas como enxaqueca ou distúrbios do sono?",
+        a: "Sim. Pacientes frequentemente pesquisam diretamente pelo sintoma somado ao termo 'especialista' ou 'neurologista', gerando alta intenção de agendamento."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou neurologista e quero estruturar o Google Ads e o Google Maps para minha clínica."
+  },
+  {
+    slug: "otorrinolaringologia",
+    nome: "Otorrinolaringologistas e Clínicas de Otorrino",
+    badge: "Otorrinolaringologia",
+    headline: "Google Ads e Maps para Otorrinolaringologistas: Consultas, Exames e Cirurgias",
+    subheadline: "Atraia pacientes particulares para consultas de otorrino, tratamento de sinusite, apneia do sono, audiometria, nasofibroscopia e cirurgias nasais.",
+    campaignFocus: "Consultas particulares + Exames otorrinolaringológicos + Cirurgias (septoplastia, amígdalas)",
+    typicalIntent: "Urgência por alívio respiratório/auditivo e agendamento rápido com especialista",
+    bottomFunnelKeywords: [
+      "otorrinolaringologista particular perto de mim",
+      "clínica de otorrino consulta particular",
+      "exame nasofibroscopia particular agendamento",
+      "otorrino especialista sinusite e desvio de septo",
+      "consulta otorrino particular hoje"
+    ],
+    negativeKeywords: ["sus", "pronto socorro gratuito", "remédio caseiro ouvido", "lavagem nasal caseira"],
+    deliverables: [
+      "Campanhas separadas para consultas rápidas, exames diagnósticos e cirurgias eletivas",
+      "Destaque no Top 3 do Google Maps para pacientes buscando atendimento ágil na região",
+      "Negativação de termos caseiros e pronto-socorro público",
+      "Atendimento conectado ao WhatsApp da recepção para agendamento no mesmo dia"
+    ],
+    regulatoryNote: "Alinhado integralmente à Resolução CFM nº 2.336/2023 sobre publicidade médica ética.",
+    faqs: [
+      {
+        q: "Como o Google Maps impacta clínicas de otorrinolaringologia?",
+        a: "Muitos pacientes com dor de ouvido, sinusite ou rouquidão procuram o otorrino mais bem avaliado e próximo no Google Maps para agendar ainda na mesma semana."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou otorrinolaringologista e quero aumentar os agendamentos particulares da minha clínica no Google."
+  },
+  {
+    slug: "direito-criminal",
+    nome: "Advogados Criminalistas e Defesa Penal",
+    badge: "Direito Criminal & Penal",
+    headline: "Google Ads e Google Maps para Advocacia Criminal e Defesa Penal Estratégica",
+    subheadline: "Posicione seu escritório para ser encontrado imediatamente em demandas urgentes de flagrante, audiência de custódia, inquérito policial e defesa penal.",
+    campaignFocus: "Atendimento penal de urgência + Inquéritos e processos criminais + Habeas Corpus",
+    typicalIntent: "Altíssima urgência de familiares e investigados buscando advogado criminalista confiável",
+    bottomFunnelKeywords: [
+      "advogado criminalista perto de mim",
+      "advogado criminal urgente atendimento",
+      "escritório de advocacia criminal especialista",
+      "advogado defesa penal audiência de custódia",
+      "advogado para inquérito policial particular"
+    ],
+    negativeKeywords: ["defensoria pública", "advogado gratuito", "boletim de ocorrência online", "telefone polícia"],
+    deliverables: [
+      "Campanhas de Rede de Pesquisa com programação flexível para demandas urgentes",
+      "Negativação rigorosa de órgãos públicos, delegacias e serviços gratuitos",
+      "Otimização ética do Google Maps transmitindo seriedade, discrição e pronta resposta",
+      "Botão direto para WhatsApp e telefone com rastreamento de contatos qualificados"
+    ],
+    regulatoryNote: "Em estrita conformidade com o Provimento 205/2021 do CFOAB: comunicação sóbria, informativa e sem promessa de resultado judicial.",
+    faqs: [
+      {
+        q: "É permitido anunciar advocacia criminal no Google Ads pela OAB?",
+        a: "Sim. O Provimento 205/2021 autoriza o marketing jurídico informativo no Google Ads, desde que sem captação mercantilizada, promessas de absolvição ou sensacionalismo."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Sou advogado criminalista e quero estruturar a presença do meu escritório no Google."
+  },
+  {
+    slug: "direito-consumidor",
+    nome: "Advogados de Direito do Consumidor",
+    badge: "Direito do Consumidor",
+    headline: "Google Ads e Maps para Advogados Especialistas em Direito do Consumidor",
+    subheadline: "Capte demandas qualificadas envolvendo planos de saúde, direito aéreo, contratos bancários abusivos e defesa técnica do consumidor dentro das regras da OAB.",
+    campaignFocus: "Planos de saúde (negativas de cobertura) + Demandas bancárias + Direito do consumidor",
+    typicalIntent: "Busca ativa por orientação jurídica diante de negativas, cobranças ou prejuízos relevantes",
+    bottomFunnelKeywords: [
+      "advogado direito do consumidor perto de mim",
+      "advogado especialista plano de saúde negativa",
+      "escritório advocacia direito do consumidor",
+      "advogado contra abusos bancários consulta",
+      "orientação jurídica direito do consumidor"
+    ],
+    negativeKeywords: ["procon telefone", "reclame aqui", "consumidor gov login", "advogado gratuito", "defensoria"],
+    deliverables: [
+      "Campanhas focadas nos nichos de maior complexidade e viabilidade jurídica",
+      "Bloqueio de buscas pelo Procon, Reclame Aqui e plataformas gratuitas",
+      "Posicionamento institucional no Google Maps com foco em credibilidade e avaliações éticas",
+      "Landing page informativa conectada ao WhatsApp do escritório para triagem inicial"
+    ],
+    regulatoryNote: "Conforme o Provimento 205/2021 do CFOAB: caráter estritamente informativo e sem indução ao litígio.",
+    faqs: [
+      {
+        q: "Como evitar pessoas que só querem o telefone do Procon?",
+        a: "Aplicamos uma lista robusta de palavras-chave negativas bloqueando termos ligados a Procon, Reclame Aqui e órgãos públicos, filtrando apenas quem busca advogado particular."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Atuo em Direito do Consumidor e quero estruturar o Google Ads e Maps para meu escritório."
+  },
+  {
+    slug: "moveis-planejados",
+    nome: "Lojas de Móveis Planejados e Marcenaria Sob Medida",
+    badge: "Móveis Planejados",
+    headline: "Google Ads e Google Maps para Lojas de Móveis Planejados e Marcenaria de Alto Padrão",
+    subheadline: "Atraia proprietários de apartamentos, casas e arquitetos prontos para fechar projetos completos de cozinha, dormitórios e ambientes corporativos.",
+    campaignFocus: "Projetos completos residenciais + Cozinhas e closets sob medida + Parcerias com arquitetos",
+    typicalIntent: "Alta intenção de orçamento para imóveis recém-entregues ou em reforma",
+    bottomFunnelKeywords: [
+      "móveis planejados perto de mim",
+      "loja de móveis planejados alto padrão",
+      "marcenaria sob medida orçamento projeto",
+      "cozinha planejada sob medida empresa",
+      "móveis planejados apartamento completo"
+    ],
+    negativeKeywords: ["móveis usados", "casas bahia", "magalu", "mdf barato", "curso marcenaria", "vaga marceneiro"],
+    deliverables: [
+      "Segmentação geográfica nos bairros e lançamentos imobiliários de maior ticket médio",
+      "Negativação de grandes varejistas, móveis modulados baratos e buscas por emprego",
+      "Google Maps enriquecido com fotos reais de ambientes entregues e avaliações de clientes",
+      "Funil direto para o WhatsApp comercial solicitando planta baixa para orçamento"
+    ],
+    faqs: [
+      {
+        q: "Como atrair clientes de apartamento completo em vez de pequenos reparos?",
+        a: "Focamos os anúncios e palavras-chave em projetos completos, alto padrão e sob medida, negativando termos como 'conserto', 'pequeno reparo' e 'barato'."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho loja de móveis planejados e quero atrair clientes qualificados pelo Google."
+  },
+  {
+    slug: "automacao-residencial",
+    nome: "Empresas de Automação Residencial, Áudio e Vídeo",
+    badge: "Automação Residencial",
+    headline: "Google Ads e Maps para Empresas de Automação Residencial, Home Theater e Casa Inteligente",
+    subheadline: "Gere orçamentos de alto padrão com proprietários, construtoras e arquitetos buscando iluminação automatizada, som ambiente, cortinas motorizadas e rede Wi-Fi corporativa.",
+    campaignFocus: "Projetos residenciais de alto padrão + Home Cinema + Integração com arquitetura",
+    typicalIntent: "Busca especializada durante obra ou reforma de imóveis de médio e alto padrão",
+    bottomFunnelKeywords: [
+      "empresa de automação residencial perto de mim",
+      "projeto de automação residencial alto padrão",
+      "instalação home theater e som ambiente empresa",
+      "automação de iluminação e cortinas orçamento",
+      "integrador de automação residencial"
+    ],
+    negativeKeywords: ["alexa barata", "interruptor wifi shopee", "como fazer automação caseira", "curso automação", "arduino"],
+    deliverables: [
+      "Campanhas segmentadas para condomínios de alto padrão e bairros nobres da região",
+      "Negativação rigorosa de gadgets baratos de varejo, tutoriais DIY e projetos acadêmicos",
+      "Presença de autoridade no Google Maps com portfólio visual de projetos executados",
+      "Direcionamento para WhatsApp comercial focado em agendamento de reunião de projeto"
+    ],
+    faqs: [
+      {
+        q: "Como filtrar curiosos buscando apenas lâmpadas Wi-Fi baratas?",
+        a: "Negativamos termos de varejo (Shopee, Mercado Livre, Alexa barata) e concentramos a verba em buscas por 'projeto de automação', 'integrador' e 'empresa especializada'."
+      }
+    ],
+    waMessage: "Olá, Leonardo! Tenho empresa de automação residencial e quero gerar projetos de alto padrão pelo Google."
   }
 ];
 
@@ -806,7 +1054,17 @@ export const MASTER_CITIES = [
   { slug: "natal", name: "Natal", state: "Rio Grande do Norte", uf: "RN", regiao: "na capital potiguar e polo comercial do Rio Grande do Norte", descriptionSnippet: "em Natal e região metropolitana do RN" },
   { slug: "maceio", name: "Maceió", state: "Alagoas", uf: "AL", regiao: "na capital alagoana e principal mercado de serviços de Alagoas", descriptionSnippet: "em Maceió e região metropolitana de Alagoas" },
   { slug: "aracaju", name: "Aracaju", state: "Sergipe", uf: "SE", regiao: "na capital sergipana e polo econômico de Sergipe", descriptionSnippet: "em Aracaju e região metropolitana de Sergipe" },
-  { slug: "sao-jose-do-rio-preto", name: "São José do Rio Preto", state: "São Paulo", uf: "SP", regiao: "no polo médico e comercial do noroeste paulista", descriptionSnippet: "em São José do Rio Preto e noroeste de São Paulo" }
+  { slug: "sao-jose-do-rio-preto", name: "São José do Rio Preto", state: "São Paulo", uf: "SP", regiao: "no polo médico e comercial do noroeste paulista", descriptionSnippet: "em São José do Rio Preto e noroeste de São Paulo" },
+
+  // --- LOTE 4 (Agendado para 28/11/2026) ---
+  { slug: "manaus", name: "Manaus", state: "Amazonas", uf: "AM", regiao: "na capital amazonense e principal polo econômico da Região Norte", descriptionSnippet: "em Manaus e região metropolitana do Amazonas" },
+  { slug: "belem", name: "Belém", state: "Pará", uf: "PA", regiao: "na capital paraense e centro de serviços da Amazônia Oriental", descriptionSnippet: "em Belém e Região Metropolitana do Pará" },
+  { slug: "sao-luis", name: "São Luís", state: "Maranhão", uf: "MA", regiao: "na capital maranhense e principal polo comercial do Maranhão", descriptionSnippet: "em São Luís e ilha do Maranhão" },
+  { slug: "teresina", name: "Teresina", state: "Piauí", uf: "PI", regiao: "na capital piauiense e referência médica do Meio-Norte", descriptionSnippet: "em Teresina e região integrada do Piauí" },
+  { slug: "piracicaba", name: "Piracicaba", state: "São Paulo", uf: "SP", regiao: "no polo industrial e universitário do interior paulista", descriptionSnippet: "em Piracicaba e região do interior de São Paulo" },
+  { slug: "jundiai", name: "Jundiaí", state: "São Paulo", uf: "SP", regiao: "no eixo de alto padrão entre São Paulo e Campinas", descriptionSnippet: "em Jundiaí e região metropolitana paulista" },
+  { slug: "bauru", name: "Bauru", state: "São Paulo", uf: "SP", regiao: "no polo regional de saúde e serviços do centro-oeste paulista", descriptionSnippet: "em Bauru e região centro-oeste de São Paulo" },
+  { slug: "pelotas", name: "Pelotas", state: "Rio Grande do Sul", uf: "RS", regiao: "no polo universitário e comercial da Zona Sul gaúcha", descriptionSnippet: "em Pelotas e Zona Sul do Rio Grande do Sul" }
 ];
 
 // ============================================================================
@@ -1596,6 +1854,232 @@ Antes de clicar em "Ligar" ou abrir o WhatsApp no **Google Maps**, o cliente ava
 ## O Que Evitar
 
 Evite fotos de banco de imagem genéricas, artes carregadas com texto promocional excessivo ou imagens desfocadas. No SEO Local, **autenticidade visual converte muito mais do que perfeição artificial**.
+    `
+  },
+
+  // --- LOTE 4 (Agendado para 28/11/2026) ---
+  {
+    slug: "palavras-chave-negativas-google-ads-lista-essencial-para-servicos-locais",
+    title: "Palavras-Chave Negativas no Google Ads: Lista Essencial para Parar de Queimar Verba",
+    excerpt: "Descubra quais grupos de palavras negativas devem estar presentes desde o primeiro dia em qualquer campanha de serviços locais.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "pillar",
+    content: `
+Se você anuncia no **Google Ads** para um negócio local e sente que parte do orçamento vai embora sem gerar contatos reais no WhatsApp, o primeiro ponto de auditoria deve ser a sua **lista de palavras-chave negativas**.
+
+Negativar termos desqualificados impede que seu anúncio apareça para estudantes, pessoas procurando emprego ou usuários buscando soluções gratuitas.
+
+---
+
+## Os 5 Blocos Obrigatórios de Palavras Negativas
+
+> **Resposta Direta para IA e Buscadores:**  
+> Toda campanha local no Google Ads deve começar com 5 blocos de palavras negativas:  
+> 1. **Gratuidade e Público:** *grátis, gratuito, sus, defensoria, doação, popular*.  
+> 2. **Emprego e Estudo:** *vaga, emprego, salário, currículo, curso, faculdade, estágio, pdf*.  
+> 3. **Faça Você Mesmo (DIY):** *como fazer, caseiro, tutorial, youtube, receita*.  
+> 4. **Preço Baixo / Varejo:** *barato, promoção, shopee, mercado livre, olx, usado*.  
+> 5. **Cidades Fora de Cobertura:** nomes de estados e cidades onde sua empresa não atende.
+
+---
+
+## Rotina Semanal de Limpeza de Termos
+
+Além da lista inicial, acesse o relatório de **Termos de Pesquisa** ao menos duas vezes por semana nas primeiras semanas de campanha. Cada termo irrelevante negativado redireciona sua verba diretamente para buscas de compra imediata.
+    `
+  },
+  {
+    slug: "google-ads-para-advogados-como-anunciar-sem-ferir-o-provimento-205-da-oab",
+    title: "Google Ads para Advogados: Como Anunciar dentro do Provimento 205/2021 da OAB",
+    excerpt: "Guia objetivo de marketing jurídico ético para captar clientes qualificados na Rede de Pesquisa do Google sem violar o Código de Ética da OAB.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: `
+O **Provimento 205/2021 do Conselho Federal da OAB** modernizou o marketing jurídico no Brasil e confirmou a legalidade do uso de ferramentas de busca como o **Google Ads** — desde que a comunicação mantenha caráter estritamente informativo e sóbrio.
+
+---
+
+## O Que é Permitido e o Que é Proibido nos Anúncios Jurídicos
+
+* **Permitido:** Anunciar áreas de atuação (ex: *Direito Empresarial*, *Direito Imobiliário*, *Planejamento Sucessório*), publicar conteúdo informativo e disponibilizar contato institucional do escritório.
+* **Proibido:** Prometer ganho de causa, usar expressões mercantilizadas (*"consulta grátis"*, *"melhor preço"*, *"ganhe sua indenização hoje"*), induzir ao litígio ou usar cores e chamadas apelativas.
+
+---
+
+## Como Gerar Demandas Qualificadas com Sobriedade
+
+Quando um cliente pesquisa *"advogado especialista inventário extrajudicial"*, ele busca segurança técnica. Um anúncio claro, elegante e direcionado para uma página institucional rápida com WhatsApp converte clientes de maior patrimônio respeitando integralmente a OAB.
+    `
+  },
+  {
+    slug: "como-usar-postagens-e-atualizacoes-no-google-meu-negocio",
+    title: "Postagens no Google Meu Negócio: Com Que Frequência Publicar e O Que Realmente Funciona",
+    excerpt: "Aprenda a transformar as atualizações do Perfil da Empresa no Google em sinais constantes de atividade e conversão local.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-ranqueamento-organico-do-google-maps",
+    content: `
+As **Atualizações (Postagens)** do Google Meu Negócio mostram ao algoritmo e aos potenciais clientes que a empresa está ativa, estruturada e operando normalmente.
+
+---
+
+## Frequência e Estrutura Ideal de Postagens
+
+1. **Frequência Recomendada:** 1 a 2 publicações por semana já mantêm o perfil atualizado de forma consistente.
+2. **Conteúdo Objetivo (150 a 300 palavras):** Explique um serviço específico, responda uma dúvida real dos clientes ou apresente a infraestrutura da empresa.
+3. **Imagem Real e Clara:** Use fotos autênticas do ambiente, equipe ou atendimento, evitando textos poluídos sobre a imagem.
+4. **Botão de Ação (CTA):** Utilize sempre o botão *"Saiba mais"*, *"Agendar"* ou *"Ligar agora"* apontando para a página correspondente no site oficial.
+
+---
+
+## Benefício Semântico
+
+Inserir naturalmente o nome do serviço e a cidade nas atualizações reforça a relevância do perfil para pesquisas locais de cauda longa no Google Maps.
+    `
+  },
+  {
+    slug: "indice-de-qualidade-no-google-ads-como-melhorar-e-reduzir-o-cpc",
+    title: "Índice de Qualidade no Google Ads: Como Subir a Nota para Pagar Menos por Clique",
+    excerpt: "Veja os ajustes práticos em palavras-chave, anúncios e páginas de destino que elevam o Índice de Qualidade e barateiam seus leads.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    content: `
+O **Índice de Qualidade** (nota de 1 a 10) é o termômetro técnico que o Google Ads utiliza para medir o quão relevante é o seu anúncio para quem pesquisou. Quanto maior essa nota, menor tende a ser o seu **Custo por Clique (CPC)** para ocupar as primeiras posições.
+
+---
+
+## Como Otimizar os 3 Componentes da Nota
+
+1. **Relevância do Anúncio:** Agrupe poucas palavras-chave altamente relacionadas por grupo de anúncios e repita o termo exato do serviço no título principal.
+2. **CTR Esperado:** Escreva títulos claros que respondam diretamente à dor do cliente e ative todos os recursos (extensões) aplicáveis.
+3. **Experiência na Página de Destino:** A página deve abrir em menos de 2 segundos no celular, espelhar a promessa do anúncio e exibir contato claro sem pop-ups invasivos.
+
+---
+
+## Resultado Prático no Orçamento
+
+Elevar o Índice de Qualidade de 5 para 8 ou 9 permite gerar mais cliques qualificados com exatamente o mesmo orçamento diário.
+    `
+  },
+  {
+    slug: "como-ativar-e-otimizar-o-botao-de-whatsapp-no-google-meu-negocio",
+    title: "Botão de WhatsApp no Google Meu Negócio: Como Configurar e Aumentar Contatos Diretos",
+    excerpt: "Passo a passo para vincular o WhatsApp ao seu Perfil da Empresa no Google e reduzir o atrito entre a busca no Maps e o início da conversa.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    pillarSlug: "como-aumentar-a-taxa-de-conversao-do-whatsapp-no-google-ads",
+    content: `
+O Google passou a permitir a integração direta do **WhatsApp** na aba de bate-papo do **Perfil da Empresa no Google**. Para negócios locais no Brasil, onde a maior parte dos agendamentos acontece pelo WhatsApp, ativar esse recurso reduz drasticamente o atrito na conversão.
+
+---
+
+## Como Configurar Corretamente
+
+1. Acesse o painel do seu **Perfil da Empresa no Google** (estando logado na conta proprietária).
+2. Clique em **Editar perfil → Contato → Bate-papo**.
+3. Selecione **WhatsApp** e informe a URL oficial no formato \`https://wa.me/55DDDNUMERO\`.
+4. Salve e teste no celular se o redirecionamento abre diretamente a conversa com o WhatsApp Business da empresa.
+
+---
+
+## Dica de Rastreamento e Atendimento
+
+Use uma saudação clara no WhatsApp Business e mantenha a equipe preparada para responder em menos de 5 minutos durante o horário comercial informado na ficha.
+    `
+  },
+  {
+    slug: "segmentacao-geografica-no-google-ads-raio-cep-ou-cidade-inteira",
+    title: "Segmentação Geográfica no Google Ads: Quando Usar Raio, Bairros ou Cidade Inteira?",
+    excerpt: "Aprenda a delimitar o mapa das suas campanhas locais para concentrar verba onde estão seus melhores clientes e evitar cliques fora da sua área.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    pillarSlug: "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
+    content: `
+Anunciar para uma metrópole inteira com orçamento enxuto dilui sua verba e reduz a frequência de exibição nos bairros que realmente geram clientes. A escolha do modelo de **segmentação geográfica** depende do tipo de serviço prestado.
+
+---
+
+## Qual Modelo Escolher?
+
+* **Raio de 3 a 8 km em torno do endereço:** Ideal para clínicas, consultórios, estética e serviços presenciais em capitais e grandes centros.
+* **Seleção por Bairros ou CEPs Nobres:** Excelente para serviços de alto ticket (cirurgia plástica, arquitetura, móveis planejados, automação residencial).
+* **Cidade Inteira + Cidades Vizinhas:** Recomendado para cidades de médio porte ou serviços especializados onde o cliente aceita se deslocar de municípios próximos.
+
+---
+
+## Configuração Obrigatória
+
+Em *Opções de local*, selecione sempre **"Presença: pessoas que estão nas suas regiões de segmentação ou as frequentam regularmente"**, evitando pagar por cliques de pessoas em outros estados.
+    `
+  },
+  {
+    slug: "checklist-de-auditoria-do-google-meu-negocio-para-empresas-locais",
+    title: "Checklist de Auditoria do Google Meu Negócio: 12 Pontos Críticos para Subir ao Top 3",
+    excerpt: "Use este diagnóstico prático em 12 itens para identificar gargalos no seu Perfil da Empresa no Google e destravar ligações e rotas.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: `
+Antes de investir em tráfego pago ou alterar configurações aleatórias, toda empresa local deveria executar uma **auditoria completa do Perfil da Empresa no Google**. Pequenas falhas cadastrais costumam explicar por que concorrentes menores aparecem na frente.
+
+---
+
+## Os 12 Pontos da Auditoria Técnica
+
+1. **Propriedade verificada** em e-mail corporativo seguro da empresa.
+2. **Nome comercial fiel** à fachada e sem excesso de palavras-chave proibidas.
+3. **Categoria primária exata** alinhada ao serviço principal de maior margem.
+4. **Categorias secundárias enxutas** (2 a 4 complementares reais).
+5. **Consistência de NAP** (Nome, Endereço e Telefone idênticos ao site e redes).
+6. **Horários atualizados**, incluindo feriados e atendimento especial.
+7. **Descrição comercial otimizada** nos primeiros 250 caracteres com foco em serviços e cidade.
+8. **Aba de Serviços preenchida** com descrições técnicas detalhadas.
+9. **Link do site com UTM** para mensurar visitas vindas do Maps no Analytics.
+10. **Botão de WhatsApp ativo** e testado em dispositivos móveis.
+11. **Fotos reais recentes** (fachada, interior, equipe e estrutura).
+12. **Rotina ativa de avaliações** com 100% das avaliações respondidas de forma personalizada.
+    `
+  },
+  {
+    slug: "como-medir-o-retorno-do-google-meu-negocio-cliques-rotas-e-ligacoes",
+    title: "Como Medir o Retorno do Google Meu Negócio: Cliques, Rotas, Ligações e Vendas Reais",
+    excerpt: "Saiba quais métricas acompanhar no painel de Desempenho do Perfil da Empresa e como usar parâmetros UTM para rastrear clientes no WhatsApp.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    pillarSlug: "checklist-de-auditoria-do-google-meu-negocio-para-empresas-locais",
+    content: `
+O painel de **Desempenho** do Google Meu Negócio oferece dados preciosos sobre como os clientes encontram e interagem com sua empresa todos os meses. Saber ler essas métricas evita decisões baseadas em achismo.
+
+---
+
+## As 4 Métricas que Importam de Verdade
+
+1. **Pesquisas que mostraram seu perfil:** Revela exatamente quais palavras-chave estão trazendo visibilidade orgânica na sua cidade.
+2. **Ligações realizadas:** Chamadas diretas disparadas a partir do botão de telefone no celular.
+3. **Solicitações de rota:** Forte indicador de intenção presencial de visita à clínica, escritório ou loja.
+4. **Cliques no site e WhatsApp:** Visitantes que avançaram para aprofundar o contato comercial.
+
+---
+
+## Como Rastrear com Precisão no Site
+
+Adicione parâmetros UTM ao link do site cadastrado na ficha (por exemplo: \`?utm_source=google&utm_medium=organic&utm_campaign=gbp\`). Assim, você identifica no Google Analytics exatamente quantos acessos e cliques no WhatsApp vieram do seu perfil no Google Maps.
     `
   }
 ];
