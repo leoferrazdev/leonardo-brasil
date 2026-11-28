@@ -23,7 +23,15 @@
     "harmonizacao-facial",
     "direito-empresarial",
     "nutricao-esportiva",
-    "seguranca-eletronica"
+    "seguranca-eletronica",
+    "ginecologia",
+    "endocrinologia",
+    "neurologia",
+    "otorrinolaringologia",
+    "direito-criminal",
+    "direito-consumidor",
+    "moveis-planejados",
+    "automacao-residencial"
   ],
   "publishedCityHubs": [
     "campinas",
@@ -49,7 +57,15 @@
     "natal",
     "maceio",
     "aracaju",
-    "sao-jose-do-rio-preto"
+    "sao-jose-do-rio-preto",
+    "manaus",
+    "belem",
+    "sao-luis",
+    "teresina",
+    "piracicaba",
+    "jundiai",
+    "bauru",
+    "pelotas"
   ],
   "publishedBlogSlugs": [
     "como-funciona-o-leilao-do-google-ads-para-negocios-locais",
@@ -75,7 +91,15 @@
     "como-configurar-extensoes-de-anuncio-no-google-ads-para-negocios-locais",
     "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
     "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
-    "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes"
+    "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes",
+    "palavras-chave-negativas-google-ads-lista-essencial-para-servicos-locais",
+    "google-ads-para-advogados-como-anunciar-sem-ferir-o-provimento-205-da-oab",
+    "como-usar-postagens-e-atualizacoes-no-google-meu-negocio",
+    "indice-de-qualidade-no-google-ads-como-melhorar-e-reduzir-o-cpc",
+    "como-ativar-e-otimizar-o-botao-de-whatsapp-no-google-meu-negocio",
+    "segmentacao-geografica-no-google-ads-raio-cep-ou-cidade-inteira",
+    "checklist-de-auditoria-do-google-meu-negocio-para-empresas-locais",
+    "como-medir-o-retorno-do-google-meu-negocio-cliques-rotas-e-ligacoes"
   ],
   "runs": [
     {
@@ -175,6 +199,39 @@
         "quanto-tempo-leva-para-ranquear-no-google-meu-negocio",
         "script-de-atendimento-no-whatsapp-para-converter-leads-do-google-ads",
         "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes"
+      ]
+    },
+    {
+      "timestamp": "2026-11-28T12:01:04.633Z",
+      "batchNiches": [
+        "ginecologia",
+        "endocrinologia",
+        "neurologia",
+        "otorrinolaringologia",
+        "direito-criminal",
+        "direito-consumidor",
+        "moveis-planejados",
+        "automacao-residencial"
+      ],
+      "batchCities": [
+        "manaus",
+        "belem",
+        "sao-luis",
+        "teresina",
+        "piracicaba",
+        "jundiai",
+        "bauru",
+        "pelotas"
+      ],
+      "batchBlog": [
+        "palavras-chave-negativas-google-ads-lista-essencial-para-servicos-locais",
+        "google-ads-para-advogados-como-anunciar-sem-ferir-o-provimento-205-da-oab",
+        "como-usar-postagens-e-atualizacoes-no-google-meu-negocio",
+        "indice-de-qualidade-no-google-ads-como-melhorar-e-reduzir-o-cpc",
+        "como-ativar-e-otimizar-o-botao-de-whatsapp-no-google-meu-negocio",
+        "segmentacao-geografica-no-google-ads-raio-cep-ou-cidade-inteira",
+        "checklist-de-auditoria-do-google-meu-negocio-para-empresas-locais",
+        "como-medir-o-retorno-do-google-meu-negocio-cliques-rotas-e-ligacoes"
       ]
     }
   ]

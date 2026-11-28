@@ -15,6 +15,62 @@ interface CityMeta {
 }
 
 const CITIES_METADATA: Record<string, CityMeta> = {
+  "pelotas": {
+    name: "Pelotas",
+    state: "Rio Grande do Sul",
+    uf: "RS",
+    regiao: "no polo universitário e comercial da Zona Sul gaúcha",
+    descriptionSnippet: "em Pelotas e Zona Sul do Rio Grande do Sul",
+  },
+  "bauru": {
+    name: "Bauru",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no polo regional de saúde e serviços do centro-oeste paulista",
+    descriptionSnippet: "em Bauru e região centro-oeste de São Paulo",
+  },
+  "jundiai": {
+    name: "Jundiaí",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no eixo de alto padrão entre São Paulo e Campinas",
+    descriptionSnippet: "em Jundiaí e região metropolitana paulista",
+  },
+  "piracicaba": {
+    name: "Piracicaba",
+    state: "São Paulo",
+    uf: "SP",
+    regiao: "no polo industrial e universitário do interior paulista",
+    descriptionSnippet: "em Piracicaba e região do interior de São Paulo",
+  },
+  "teresina": {
+    name: "Teresina",
+    state: "Piauí",
+    uf: "PI",
+    regiao: "na capital piauiense e referência médica do Meio-Norte",
+    descriptionSnippet: "em Teresina e região integrada do Piauí",
+  },
+  "sao-luis": {
+    name: "São Luís",
+    state: "Maranhão",
+    uf: "MA",
+    regiao: "na capital maranhense e principal polo comercial do Maranhão",
+    descriptionSnippet: "em São Luís e ilha do Maranhão",
+  },
+  "belem": {
+    name: "Belém",
+    state: "Pará",
+    uf: "PA",
+    regiao: "na capital paraense e centro de serviços da Amazônia Oriental",
+    descriptionSnippet: "em Belém e Região Metropolitana do Pará",
+  },
+  "manaus": {
+    name: "Manaus",
+    state: "Amazonas",
+    uf: "AM",
+    regiao: "na capital amazonense e principal polo econômico da Região Norte",
+    descriptionSnippet: "em Manaus e região metropolitana do Amazonas",
+  },
   "sao-jose-do-rio-preto": {
     name: "São José do Rio Preto",
     state: "São Paulo",

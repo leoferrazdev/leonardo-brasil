@@ -152,6 +152,14 @@ function generateSitemap() {
 
   // City Hubs das Capitais e Polos Prioritários
   const priorityCities = [
+    "pelotas",
+    "bauru",
+    "jundiai",
+    "piracicaba",
+    "teresina",
+    "sao-luis",
+    "belem",
+    "manaus",
     "sao-jose-do-rio-preto",
     "aracaju",
     "maceio",

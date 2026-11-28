@@ -20,6 +20,299 @@ export interface GoogleAdsNicheConfig {
 }
 
 export const GOOGLE_ADS_NICHES: Record<string, GoogleAdsNicheConfig> = {
+  "automacao-residencial": {
+    "slug": "automacao-residencial",
+    "nome": "Empresas de Automação Residencial, Áudio e Vídeo",
+    "badge": "Google Ads · Automação Residencial",
+    "headline": "Google Ads e Maps para Empresas de Automação Residencial, Home Theater e Casa Inteligente",
+    "subheadline": "Gere orçamentos de alto padrão com proprietários, construtoras e arquitetos buscando iluminação automatizada, som ambiente, cortinas motorizadas e rede Wi-Fi corporativa.",
+    "campaignFocus": "Projetos residenciais de alto padrão + Home Cinema + Integração com arquitetura",
+    "typicalIntent": "Busca especializada durante obra ou reforma de imóveis de médio e alto padrão",
+    "bottomFunnelKeywords": [
+      "empresa de automação residencial perto de mim",
+      "projeto de automação residencial alto padrão",
+      "instalação home theater e som ambiente empresa",
+      "automação de iluminação e cortinas orçamento",
+      "integrador de automação residencial"
+    ],
+    "negativeKeywords": [
+      "alexa barata",
+      "interruptor wifi shopee",
+      "como fazer automação caseira",
+      "curso automação",
+      "arduino"
+    ],
+    "deliverables": [
+      "Campanhas segmentadas para condomínios de alto padrão e bairros nobres da região",
+      "Negativação rigorosa de gadgets baratos de varejo, tutoriais DIY e projetos acadêmicos",
+      "Presença de autoridade no Google Maps com portfólio visual de projetos executados",
+      "Direcionamento para WhatsApp comercial focado em agendamento de reunião de projeto"
+    ],
+    "faqs": [
+      {
+        "q": "Como filtrar curiosos buscando apenas lâmpadas Wi-Fi baratas?",
+        "a": "Negativamos termos de varejo (Shopee, Mercado Livre, Alexa barata) e concentramos a verba em buscas por 'projeto de automação', 'integrador' e 'empresa especializada'."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho empresa de automação residencial e quero gerar projetos de alto padrão pelo Google."
+  },
+  "moveis-planejados": {
+    "slug": "moveis-planejados",
+    "nome": "Lojas de Móveis Planejados e Marcenaria Sob Medida",
+    "badge": "Google Ads · Móveis Planejados",
+    "headline": "Google Ads e Google Maps para Lojas de Móveis Planejados e Marcenaria de Alto Padrão",
+    "subheadline": "Atraia proprietários de apartamentos, casas e arquitetos prontos para fechar projetos completos de cozinha, dormitórios e ambientes corporativos.",
+    "campaignFocus": "Projetos completos residenciais + Cozinhas e closets sob medida + Parcerias com arquitetos",
+    "typicalIntent": "Alta intenção de orçamento para imóveis recém-entregues ou em reforma",
+    "bottomFunnelKeywords": [
+      "móveis planejados perto de mim",
+      "loja de móveis planejados alto padrão",
+      "marcenaria sob medida orçamento projeto",
+      "cozinha planejada sob medida empresa",
+      "móveis planejados apartamento completo"
+    ],
+    "negativeKeywords": [
+      "móveis usados",
+      "casas bahia",
+      "magalu",
+      "mdf barato",
+      "curso marcenaria",
+      "vaga marceneiro"
+    ],
+    "deliverables": [
+      "Segmentação geográfica nos bairros e lançamentos imobiliários de maior ticket médio",
+      "Negativação de grandes varejistas, móveis modulados baratos e buscas por emprego",
+      "Google Maps enriquecido com fotos reais de ambientes entregues e avaliações de clientes",
+      "Funil direto para o WhatsApp comercial solicitando planta baixa para orçamento"
+    ],
+    "faqs": [
+      {
+        "q": "Como atrair clientes de apartamento completo em vez de pequenos reparos?",
+        "a": "Focamos os anúncios e palavras-chave em projetos completos, alto padrão e sob medida, negativando termos como 'conserto', 'pequeno reparo' e 'barato'."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Tenho loja de móveis planejados e quero atrair clientes qualificados pelo Google."
+  },
+  "direito-consumidor": {
+    "slug": "direito-consumidor",
+    "nome": "Advogados de Direito do Consumidor",
+    "badge": "Google Ads · Direito do Consumidor",
+    "headline": "Google Ads e Maps para Advogados Especialistas em Direito do Consumidor",
+    "subheadline": "Capte demandas qualificadas envolvendo planos de saúde, direito aéreo, contratos bancários abusivos e defesa técnica do consumidor dentro das regras da OAB.",
+    "campaignFocus": "Planos de saúde (negativas de cobertura) + Demandas bancárias + Direito do consumidor",
+    "typicalIntent": "Busca ativa por orientação jurídica diante de negativas, cobranças ou prejuízos relevantes",
+    "bottomFunnelKeywords": [
+      "advogado direito do consumidor perto de mim",
+      "advogado especialista plano de saúde negativa",
+      "escritório advocacia direito do consumidor",
+      "advogado contra abusos bancários consulta",
+      "orientação jurídica direito do consumidor"
+    ],
+    "negativeKeywords": [
+      "procon telefone",
+      "reclame aqui",
+      "consumidor gov login",
+      "advogado gratuito",
+      "defensoria"
+    ],
+    "deliverables": [
+      "Campanhas focadas nos nichos de maior complexidade e viabilidade jurídica",
+      "Bloqueio de buscas pelo Procon, Reclame Aqui e plataformas gratuitas",
+      "Posicionamento institucional no Google Maps com foco em credibilidade e avaliações éticas",
+      "Landing page informativa conectada ao WhatsApp do escritório para triagem inicial"
+    ],
+    "regulatoryNote": "Conforme o Provimento 205/2021 do CFOAB: caráter estritamente informativo e sem indução ao litígio.",
+    "faqs": [
+      {
+        "q": "Como evitar pessoas que só querem o telefone do Procon?",
+        "a": "Aplicamos uma lista robusta de palavras-chave negativas bloqueando termos ligados a Procon, Reclame Aqui e órgãos públicos, filtrando apenas quem busca advogado particular."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Atuo em Direito do Consumidor e quero estruturar o Google Ads e Maps para meu escritório."
+  },
+  "direito-criminal": {
+    "slug": "direito-criminal",
+    "nome": "Advogados Criminalistas e Defesa Penal",
+    "badge": "Google Ads · Direito Criminal & Penal",
+    "headline": "Google Ads e Google Maps para Advocacia Criminal e Defesa Penal Estratégica",
+    "subheadline": "Posicione seu escritório para ser encontrado imediatamente em demandas urgentes de flagrante, audiência de custódia, inquérito policial e defesa penal.",
+    "campaignFocus": "Atendimento penal de urgência + Inquéritos e processos criminais + Habeas Corpus",
+    "typicalIntent": "Altíssima urgência de familiares e investigados buscando advogado criminalista confiável",
+    "bottomFunnelKeywords": [
+      "advogado criminalista perto de mim",
+      "advogado criminal urgente atendimento",
+      "escritório de advocacia criminal especialista",
+      "advogado defesa penal audiência de custódia",
+      "advogado para inquérito policial particular"
+    ],
+    "negativeKeywords": [
+      "defensoria pública",
+      "advogado gratuito",
+      "boletim de ocorrência online",
+      "telefone polícia"
+    ],
+    "deliverables": [
+      "Campanhas de Rede de Pesquisa com programação flexível para demandas urgentes",
+      "Negativação rigorosa de órgãos públicos, delegacias e serviços gratuitos",
+      "Otimização ética do Google Maps transmitindo seriedade, discrição e pronta resposta",
+      "Botão direto para WhatsApp e telefone com rastreamento de contatos qualificados"
+    ],
+    "regulatoryNote": "Em estrita conformidade com o Provimento 205/2021 do CFOAB: comunicação sóbria, informativa e sem promessa de resultado judicial.",
+    "faqs": [
+      {
+        "q": "É permitido anunciar advocacia criminal no Google Ads pela OAB?",
+        "a": "Sim. O Provimento 205/2021 autoriza o marketing jurídico informativo no Google Ads, desde que sem captação mercantilizada, promessas de absolvição ou sensacionalismo."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou advogado criminalista e quero estruturar a presença do meu escritório no Google."
+  },
+  "otorrinolaringologia": {
+    "slug": "otorrinolaringologia",
+    "nome": "Otorrinolaringologistas e Clínicas de Otorrino",
+    "badge": "Google Ads · Otorrinolaringologia",
+    "headline": "Google Ads e Maps para Otorrinolaringologistas: Consultas, Exames e Cirurgias",
+    "subheadline": "Atraia pacientes particulares para consultas de otorrino, tratamento de sinusite, apneia do sono, audiometria, nasofibroscopia e cirurgias nasais.",
+    "campaignFocus": "Consultas particulares + Exames otorrinolaringológicos + Cirurgias (septoplastia, amígdalas)",
+    "typicalIntent": "Urgência por alívio respiratório/auditivo e agendamento rápido com especialista",
+    "bottomFunnelKeywords": [
+      "otorrinolaringologista particular perto de mim",
+      "clínica de otorrino consulta particular",
+      "exame nasofibroscopia particular agendamento",
+      "otorrino especialista sinusite e desvio de septo",
+      "consulta otorrino particular hoje"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "pronto socorro gratuito",
+      "remédio caseiro ouvido",
+      "lavagem nasal caseira"
+    ],
+    "deliverables": [
+      "Campanhas separadas para consultas rápidas, exames diagnósticos e cirurgias eletivas",
+      "Destaque no Top 3 do Google Maps para pacientes buscando atendimento ágil na região",
+      "Negativação de termos caseiros e pronto-socorro público",
+      "Atendimento conectado ao WhatsApp da recepção para agendamento no mesmo dia"
+    ],
+    "regulatoryNote": "Alinhado integralmente à Resolução CFM nº 2.336/2023 sobre publicidade médica ética.",
+    "faqs": [
+      {
+        "q": "Como o Google Maps impacta clínicas de otorrinolaringologia?",
+        "a": "Muitos pacientes com dor de ouvido, sinusite ou rouquidão procuram o otorrino mais bem avaliado e próximo no Google Maps para agendar ainda na mesma semana."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou otorrinolaringologista e quero aumentar os agendamentos particulares da minha clínica no Google."
+  },
+  "neurologia": {
+    "slug": "neurologia",
+    "nome": "Neurologistas e Clínicas de Neurologia",
+    "badge": "Google Ads · Neurologia & Cefaleia",
+    "headline": "Google Ads e Google Maps para Neurologistas: Consultas e Exames Neurológicos",
+    "subheadline": "Conecte seu consultório a pacientes particulares buscando especialistas em enxaqueca, distúrbios do sono, memória, neuropediatria e eletroencefalograma.",
+    "campaignFocus": "Consultas neurológicas particulares + Subespecialidades + Exames diagnósticos",
+    "typicalIntent": "Busca de alta consideração por diagnóstico especializado e agilidade na consulta",
+    "bottomFunnelKeywords": [
+      "neurologista particular perto de mim",
+      "médico neurologista especialista enxaqueca",
+      "clínica de neurologia consulta particular",
+      "eletroencefalograma particular agendamento",
+      "neurologista especialista sono e memória"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "gratuito",
+      "upa",
+      "sintomas dor de cabeça remédio",
+      "posto de saúde"
+    ],
+    "deliverables": [
+      "Segmentação por queixa clínica e subespecialidade neurológica",
+      "Presença de destaque no Google Maps com clareza sobre exames, localização e horários",
+      "Filtro contínuo contra pesquisas informativas de automedicação e rede pública",
+      "Integração direta com o WhatsApp da clínica para agilizar o agendamento particular"
+    ],
+    "regulatoryNote": "Conforme a Resolução CFM nº 2.336/2023: publicidade médica ética, informativa e com identificação de CRM e RQE.",
+    "faqs": [
+      {
+        "q": "Vale a pena segmentar campanhas para condições específicas como enxaqueca ou distúrbios do sono?",
+        "a": "Sim. Pacientes frequentemente pesquisam diretamente pelo sintoma somado ao termo 'especialista' ou 'neurologista', gerando alta intenção de agendamento."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou neurologista e quero estruturar o Google Ads e o Google Maps para minha clínica."
+  },
+  "endocrinologia": {
+    "slug": "endocrinologia",
+    "nome": "Endocrinologistas e Clínicas de Metabologia",
+    "badge": "Google Ads · Endocrinologia & Metabologia",
+    "headline": "Google Ads e Maps para Endocrinologistas: Emagrecimento Médico, Tireoide e Diabetes",
+    "subheadline": "Posicione seu consultório no topo das buscas locais para pacientes particulares que buscam acompanhamento endocrinológico sério e baseado em evidências.",
+    "campaignFocus": "Consultas particulares de endocrinologia + Tireoide + Emagrecimento médico e metabolismo",
+    "typicalIntent": "Busca por especialista confiável para tratamento contínuo e acompanhamento de exames",
+    "bottomFunnelKeywords": [
+      "endocrinologista particular perto de mim",
+      "médico endocrinologista especialista tireoide",
+      "endocrinologista para emagrecimento particular",
+      "consulta endocrinologista diabetes tratamento",
+      "clínica de endocrinologia agendamento"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "dieta grátis",
+      "remédio sem receita",
+      "chá emagrecedor",
+      "gratuito"
+    ],
+    "deliverables": [
+      "Campanhas separadas por patologia e objetivo clínico (tireoide, diabetes, metabologia)",
+      "Negativação rigorosa de buscas por receitas caseiras, medicamentos sem prescrição e SUS",
+      "Fortalecimento do Google Maps com foco em credibilidade acadêmica e avaliações reais",
+      "Landing page objetiva com botão de WhatsApp para triagem e agendamento particular"
+    ],
+    "regulatoryNote": "Em estrita conformidade com a Resolução CFM nº 2.336/2023: sem promessas de perda de peso garantida ou sensacionalismo.",
+    "faqs": [
+      {
+        "q": "Como anunciar emagrecimento médico no Google Ads sem sofrer reprovações?",
+        "a": "Utilizamos linguagem estritamente clínica focada em consulta com endocrinologista e avaliação metabólica, respeitando tanto o CFM quanto as políticas de saúde do Google."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou endocrinologista e quero atrair mais pacientes particulares pelo Google."
+  },
+  "ginecologia": {
+    "slug": "ginecologia",
+    "nome": "Ginecologistas e Clínicas de Saúde da Mulher",
+    "badge": "Google Ads · Ginecologia & Obstetrícia",
+    "headline": "Google Ads e Google Maps para Ginecologistas e Clínicas de Saúde da Mulher",
+    "subheadline": "Atraia pacientes particulares para consultas ginecológicas, pré-natal de alto padrão, inserção de DIU, exames preventivos e ginecologia regenerativa.",
+    "campaignFocus": "Consultas particulares + Pré-natal + Procedimentos ginecológicos em consultório",
+    "typicalIntent": "Busca por acolhimento, confiança médica e facilidade de agendamento na cidade",
+    "bottomFunnelKeywords": [
+      "ginecologista particular perto de mim",
+      "clínica de ginecologia consulta particular",
+      "ginecologista especialista inserção diu",
+      "obstetra particular pré-natal avaliação",
+      "agendar consulta ginecologista particular"
+    ],
+    "negativeKeywords": [
+      "sus",
+      "posto de saúde",
+      "gratuito",
+      "remédio caseiro",
+      "sintomas gravidez grátis"
+    ],
+    "deliverables": [
+      "Campanhas segmentadas por demanda (consultas, obstetrícia, procedimentos em consultório)",
+      "Otimização do Google Maps destacando acolhimento, privacidade e avaliações autênticas",
+      "Negativação de termos de atendimento público e dúvidas genéricas de topo de funil",
+      "Fluxo de WhatsApp acolhedor para conversão rápida de mensagens em consultas agendadas"
+    ],
+    "regulatoryNote": "Em estrita conformidade com a Resolução CFM nº 2.336/2023: comunicação médica sóbria, ética e com exibição de CRM/RQE.",
+    "faqs": [
+      {
+        "q": "É possível direcionar os anúncios apenas para consultas e procedimentos particulares?",
+        "a": "Sim. Negativamos termos ligados a planos de saúde específicos e atendimento público, destacando nos textos o foco em atendimento particular individualizado."
+      }
+    ],
+    "waMessage": "Olá, Leonardo! Sou ginecologista e quero estruturar o Google Ads e o Google Maps para meu consultório."
+  },
   "seguranca-eletronica": {
     "slug": "seguranca-eletronica",
     "nome": "Empresas de Segurança Eletrônica e CFTV",

@@ -28056,6 +28056,38 @@
     {
       "slug": "seguranca-eletronica",
       "nome": "Segurança Eletrônica & CFTV"
+    },
+    {
+      "slug": "ginecologia",
+      "nome": "Ginecologia & Obstetrícia"
+    },
+    {
+      "slug": "endocrinologia",
+      "nome": "Endocrinologia & Metabologia"
+    },
+    {
+      "slug": "neurologia",
+      "nome": "Neurologia & Cefaleia"
+    },
+    {
+      "slug": "otorrinolaringologia",
+      "nome": "Otorrinolaringologia"
+    },
+    {
+      "slug": "direito-criminal",
+      "nome": "Direito Criminal & Penal"
+    },
+    {
+      "slug": "direito-consumidor",
+      "nome": "Direito do Consumidor"
+    },
+    {
+      "slug": "moveis-planejados",
+      "nome": "Móveis Planejados"
+    },
+    {
+      "slug": "automacao-residencial",
+      "nome": "Automação Residencial"
     }
   ]
 }

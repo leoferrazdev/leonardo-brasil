@@ -13,6 +13,86 @@
 }
 
 export const BLOG_POSTS: BlogPost[] = [  {
+    slug: "como-medir-o-retorno-do-google-meu-negocio-cliques-rotas-e-ligacoes",
+    title: "Como Medir o Retorno do Google Meu Negócio: Cliques, Rotas, Ligações e Vendas Reais",
+    excerpt: "Saiba quais métricas acompanhar no painel de Desempenho do Perfil da Empresa e como usar parâmetros UTM para rastrear clientes no WhatsApp.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "O painel de **Desempenho** do Google Meu Negócio oferece dados preciosos sobre como os clientes encontram e interagem com sua empresa todos os meses. Saber ler essas métricas evita decisões baseadas em achismo.\n\n---\n\n## As 4 Métricas que Importam de Verdade\n\n1. **Pesquisas que mostraram seu perfil:** Revela exatamente quais palavras-chave estão trazendo visibilidade orgânica na sua cidade.\n2. **Ligações realizadas:** Chamadas diretas disparadas a partir do botão de telefone no celular.\n3. **Solicitações de rota:** Forte indicador de intenção presencial de visita à clínica, escritório ou loja.\n4. **Cliques no site e WhatsApp:** Visitantes que avançaram para aprofundar o contato comercial.\n\n---\n\n## Como Rastrear com Precisão no Site\n\nAdicione parâmetros UTM ao link do site cadastrado na ficha (por exemplo: `?utm_source=google&utm_medium=organic&utm_campaign=gbp`). Assim, você identifica no Google Analytics exatamente quantos acessos e cliques no WhatsApp vieram do seu perfil no Google Maps."
+  },
+  {
+    slug: "checklist-de-auditoria-do-google-meu-negocio-para-empresas-locais",
+    title: "Checklist de Auditoria do Google Meu Negócio: 12 Pontos Críticos para Subir ao Top 3",
+    excerpt: "Use este diagnóstico prático em 12 itens para identificar gargalos no seu Perfil da Empresa no Google e destravar ligações e rotas.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "pillar",
+    content: "Antes de investir em tráfego pago ou alterar configurações aleatórias, toda empresa local deveria executar uma **auditoria completa do Perfil da Empresa no Google**. Pequenas falhas cadastrais costumam explicar por que concorrentes menores aparecem na frente.\n\n---\n\n## Os 12 Pontos da Auditoria Técnica\n\n1. **Propriedade verificada** em e-mail corporativo seguro da empresa.\n2. **Nome comercial fiel** à fachada e sem excesso de palavras-chave proibidas.\n3. **Categoria primária exata** alinhada ao serviço principal de maior margem.\n4. **Categorias secundárias enxutas** (2 a 4 complementares reais).\n5. **Consistência de NAP** (Nome, Endereço e Telefone idênticos ao site e redes).\n6. **Horários atualizados**, incluindo feriados e atendimento especial.\n7. **Descrição comercial otimizada** nos primeiros 250 caracteres com foco em serviços e cidade.\n8. **Aba de Serviços preenchida** com descrições técnicas detalhadas.\n9. **Link do site com UTM** para mensurar visitas vindas do Maps no Analytics.\n10. **Botão de WhatsApp ativo** e testado em dispositivos móveis.\n11. **Fotos reais recentes** (fachada, interior, equipe e estrutura).\n12. **Rotina ativa de avaliações** com 100% das avaliações respondidas de forma personalizada."
+  },
+  {
+    slug: "segmentacao-geografica-no-google-ads-raio-cep-ou-cidade-inteira",
+    title: "Segmentação Geográfica no Google Ads: Quando Usar Raio, Bairros ou Cidade Inteira?",
+    excerpt: "Aprenda a delimitar o mapa das suas campanhas locais para concentrar verba onde estão seus melhores clientes e evitar cliques fora da sua área.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "Anunciar para uma metrópole inteira com orçamento enxuto dilui sua verba e reduz a frequência de exibição nos bairros que realmente geram clientes. A escolha do modelo de **segmentação geográfica** depende do tipo de serviço prestado.\n\n---\n\n## Qual Modelo Escolher?\n\n* **Raio de 3 a 8 km em torno do endereço:** Ideal para clínicas, consultórios, estética e serviços presenciais em capitais e grandes centros.\n* **Seleção por Bairros ou CEPs Nobres:** Excelente para serviços de alto ticket (cirurgia plástica, arquitetura, móveis planejados, automação residencial).\n* **Cidade Inteira + Cidades Vizinhas:** Recomendado para cidades de médio porte ou serviços especializados onde o cliente aceita se deslocar de municípios próximos.\n\n---\n\n## Configuração Obrigatória\n\nEm *Opções de local*, selecione sempre **\"Presença: pessoas que estão nas suas regiões de segmentação ou as frequentam regularmente\"**, evitando pagar por cliques de pessoas em outros estados."
+  },
+  {
+    slug: "como-ativar-e-otimizar-o-botao-de-whatsapp-no-google-meu-negocio",
+    title: "Botão de WhatsApp no Google Meu Negócio: Como Configurar e Aumentar Contatos Diretos",
+    excerpt: "Passo a passo para vincular o WhatsApp ao seu Perfil da Empresa no Google e reduzir o atrito entre a busca no Maps e o início da conversa.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Conversão",
+    clusterType: "satellite",
+    content: "O Google passou a permitir a integração direta do **WhatsApp** na aba de bate-papo do **Perfil da Empresa no Google**. Para negócios locais no Brasil, onde a maior parte dos agendamentos acontece pelo WhatsApp, ativar esse recurso reduz drasticamente o atrito na conversão.\n\n---\n\n## Como Configurar Corretamente\n\n1. Acesse o painel do seu **Perfil da Empresa no Google** (estando logado na conta proprietária).\n2. Clique em **Editar perfil → Contato → Bate-papo**.\n3. Selecione **WhatsApp** e informe a URL oficial no formato `https://wa.me/55DDDNUMERO`.\n4. Salve e teste no celular se o redirecionamento abre diretamente a conversa com o WhatsApp Business da empresa.\n\n---\n\n## Dica de Rastreamento e Atendimento\n\nUse uma saudação clara no WhatsApp Business e mantenha a equipe preparada para responder em menos de 5 minutos durante o horário comercial informado na ficha."
+  },
+  {
+    slug: "indice-de-qualidade-no-google-ads-como-melhorar-e-reduzir-o-cpc",
+    title: "Índice de Qualidade no Google Ads: Como Subir a Nota para Pagar Menos por Clique",
+    excerpt: "Veja os ajustes práticos em palavras-chave, anúncios e páginas de destino que elevam o Índice de Qualidade e barateiam seus leads.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "O **Índice de Qualidade** (nota de 1 a 10) é o termômetro técnico que o Google Ads utiliza para medir o quão relevante é o seu anúncio para quem pesquisou. Quanto maior essa nota, menor tende a ser o seu **Custo por Clique (CPC)** para ocupar as primeiras posições.\n\n---\n\n## Como Otimizar os 3 Componentes da Nota\n\n1. **Relevância do Anúncio:** Agrupe poucas palavras-chave altamente relacionadas por grupo de anúncios e repita o termo exato do serviço no título principal.\n2. **CTR Esperado:** Escreva títulos claros que respondam diretamente à dor do cliente e ative todos os recursos (extensões) aplicáveis.\n3. **Experiência na Página de Destino:** A página deve abrir em menos de 2 segundos no celular, espelhar a promessa do anúncio e exibir contato claro sem pop-ups invasivos.\n\n---\n\n## Resultado Prático no Orçamento\n\nElevar o Índice de Qualidade de 5 para 8 ou 9 permite gerar mais cliques qualificados com exatamente o mesmo orçamento diário."
+  },
+  {
+    slug: "como-usar-postagens-e-atualizacoes-no-google-meu-negocio",
+    title: "Postagens no Google Meu Negócio: Com Que Frequência Publicar e O Que Realmente Funciona",
+    excerpt: "Aprenda a transformar as atualizações do Perfil da Empresa no Google em sinais constantes de atividade e conversão local.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "SEO Local",
+    clusterType: "satellite",
+    content: "As **Atualizações (Postagens)** do Google Meu Negócio mostram ao algoritmo e aos potenciais clientes que a empresa está ativa, estruturada e operando normalmente.\n\n---\n\n## Frequência e Estrutura Ideal de Postagens\n\n1. **Frequência Recomendada:** 1 a 2 publicações por semana já mantêm o perfil atualizado de forma consistente.\n2. **Conteúdo Objetivo (150 a 300 palavras):** Explique um serviço específico, responda uma dúvida real dos clientes ou apresente a infraestrutura da empresa.\n3. **Imagem Real e Clara:** Use fotos autênticas do ambiente, equipe ou atendimento, evitando textos poluídos sobre a imagem.\n4. **Botão de Ação (CTA):** Utilize sempre o botão *\"Saiba mais\"*, *\"Agendar\"* ou *\"Ligar agora\"* apontando para a página correspondente no site oficial.\n\n---\n\n## Benefício Semântico\n\nInserir naturalmente o nome do serviço e a cidade nas atualizações reforça a relevância do perfil para pesquisas locais de cauda longa no Google Maps."
+  },
+  {
+    slug: "google-ads-para-advogados-como-anunciar-sem-ferir-o-provimento-205-da-oab",
+    title: "Google Ads para Advogados: Como Anunciar dentro do Provimento 205/2021 da OAB",
+    excerpt: "Guia objetivo de marketing jurídico ético para captar clientes qualificados na Rede de Pesquisa do Google sem violar o Código de Ética da OAB.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "satellite",
+    content: "O **Provimento 205/2021 do Conselho Federal da OAB** modernizou o marketing jurídico no Brasil e confirmou a legalidade do uso de ferramentas de busca como o **Google Ads** — desde que a comunicação mantenha caráter estritamente informativo e sóbrio.\n\n---\n\n## O Que é Permitido e o Que é Proibido nos Anúncios Jurídicos\n\n* **Permitido:** Anunciar áreas de atuação (ex: *Direito Empresarial*, *Direito Imobiliário*, *Planejamento Sucessório*), publicar conteúdo informativo e disponibilizar contato institucional do escritório.\n* **Proibido:** Prometer ganho de causa, usar expressões mercantilizadas (*\"consulta grátis\"*, *\"melhor preço\"*, *\"ganhe sua indenização hoje\"*), induzir ao litígio ou usar cores e chamadas apelativas.\n\n---\n\n## Como Gerar Demandas Qualificadas com Sobriedade\n\nQuando um cliente pesquisa *\"advogado especialista inventário extrajudicial\"*, ele busca segurança técnica. Um anúncio claro, elegante e direcionado para uma página institucional rápida com WhatsApp converte clientes de maior patrimônio respeitando integralmente a OAB."
+  },
+  {
+    slug: "palavras-chave-negativas-google-ads-lista-essencial-para-servicos-locais",
+    title: "Palavras-Chave Negativas no Google Ads: Lista Essencial para Parar de Queimar Verba",
+    excerpt: "Descubra quais grupos de palavras negativas devem estar presentes desde o primeiro dia em qualquer campanha de serviços locais.",
+    date: "2026-11-28",
+    author: "Leonardo Brasil",
+    category: "Google Ads",
+    clusterType: "pillar",
+    content: "Se você anuncia no **Google Ads** para um negócio local e sente que parte do orçamento vai embora sem gerar contatos reais no WhatsApp, o primeiro ponto de auditoria deve ser a sua **lista de palavras-chave negativas**.\n\nNegativar termos desqualificados impede que seu anúncio apareça para estudantes, pessoas procurando emprego ou usuários buscando soluções gratuitas.\n\n---\n\n## Os 5 Blocos Obrigatórios de Palavras Negativas\n\n> **Resposta Direta para IA e Buscadores:**  \n> Toda campanha local no Google Ads deve começar com 5 blocos de palavras negativas:  \n> 1. **Gratuidade e Público:** *grátis, gratuito, sus, defensoria, doação, popular*.  \n> 2. **Emprego e Estudo:** *vaga, emprego, salário, currículo, curso, faculdade, estágio, pdf*.  \n> 3. **Faça Você Mesmo (DIY):** *como fazer, caseiro, tutorial, youtube, receita*.  \n> 4. **Preço Baixo / Varejo:** *barato, promoção, shopee, mercado livre, olx, usado*.  \n> 5. **Cidades Fora de Cobertura:** nomes de estados e cidades onde sua empresa não atende.\n\n---\n\n## Rotina Semanal de Limpeza de Termos\n\nAlém da lista inicial, acesse o relatório de **Termos de Pesquisa** ao menos duas vezes por semana nas primeiras semanas de campanha. Cada termo irrelevante negativado redireciona sua verba diretamente para buscas de compra imediata."
+  },
+  {
     slug: "fotos-e-videos-no-google-meu-negocio-o-que-aumenta-cliques-e-ligacoes",
     title: "Fotos e Vídeos no Google Meu Negócio: O Que Realmente Aumenta Cliques e Ligações",
     excerpt: "Saiba quais imagens geram confiança imediata no Google Maps e por que fotos autênticas superam bancos de imagem genéricos.",

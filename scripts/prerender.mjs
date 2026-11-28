@@ -103,6 +103,14 @@ function buildRoutes() {
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`);
 
   const priorityCities = [
+    "pelotas",
+    "bauru",
+    "jundiai",
+    "piracicaba",
+    "teresina",
+    "sao-luis",
+    "belem",
+    "manaus",
     "sao-jose-do-rio-preto",
     "aracaju",
     "maceio",
